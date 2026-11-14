@@ -1,0 +1,32 @@
+{
+  "kind": "published_upstream_measurements_not_locally_rerun",
+  "source_url": "https://github.com/leanEthereum/leanVM/pull/490",
+  "head_revision": "354f7ef2d4a4fee2b9fc3300f93dbc00ec23f7ab",
+  "base_branch": "riscv-exploration",
+  "hardware": "AMD Ryzen 9 9950X3D",
+  "threads": 32,
+  "rows": [
+    {
+      "signatures": 28,
+      "cycles_per_signature": 146664,
+      "prover_s": 1.902,
+      "reported_variation_percent": 0.8,
+      "proof_kib": 355.5,
+      "verify_ms": 3.33,
+      "peak_gib": 10.8
+    },
+    {
+      "signatures": 7,
+      "prover_s": 0.468,
+      "reported_variation_percent": 3.9,
+      "proof_kib": 318.0,
+      "verify_ms": 3.36,
+      "peak_gib": 3.1
+    }
+  ],
+  "four_threads_seven_signatures": {
+    "prover_s": 0.737,
+    "reported_variation_percent": 6.1
+  },
+  "comparison_boundary": "Different ISA branch, guest/codec boundaries and CPU/thread count; no speedup ratio to local custom-ISA M4 measurements."
+}

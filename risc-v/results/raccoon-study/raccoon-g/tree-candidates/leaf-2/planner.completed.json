@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "command": [
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/.cache/raccoon-study-target/release/riscv-raccoon-tree",
+    "plan",
+    "--scheme",
+    "raccoon-g",
+    "--n",
+    "100",
+    "--leaf-size",
+    "2",
+    "--outdir",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/results/raccoon-study/raccoon-g/tree-candidates/leaf-2",
+    "--threads",
+    "8",
+    "--rate",
+    "1"
+  ],
+  "cwd": "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288",
+  "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "binary_sha256": "134ba51bb7b408e78af54757595503486055a538ddf5fe7f0fa03840f181a817",
+  "runner_sha256": "e88ba4f399bd7d4314efe6d03f18df27740f89bbdf8068f239c1a4abe535f62b",
+  "started_utc": "2026-11-09T22:34:53.310130+00:00",
+  "timeout_s": 1800,
+  "rss_limit_bytes": 19327352832,
+  "exit_code": 1,
+  "aborted": null,
+  "process_elapsed_s": 0.2600666669999985,
+  "finished_utc": "2026-11-09T22:34:53.570486+00:00"
+}

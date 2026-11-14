@@ -1,0 +1,2605 @@
+{
+  "base_rows": {
+    "ALU": 535923,
+    "DIV": 0,
+    "EXT": 0,
+    "HASH": 22,
+    "LD": 56354,
+    "LOAD": 76312,
+    "MUL": 60488,
+    "MULH": 0,
+    "SD": 50229,
+    "SHIFT": 226299,
+    "STORE": 66054
+  },
+  "cycles": 1071681,
+  "fill_external_jumps": 1470,
+  "filled_rows": {
+    "ALU": 1048576,
+    "DIV": 16,
+    "EXT": 8,
+    "HASH": 32,
+    "LD": 65536,
+    "LOAD": 131072,
+    "MUL": 65536,
+    "MULH": 16,
+    "SD": 65536,
+    "SHIFT": 262144,
+    "STORE": 131072
+  },
+  "final": {
+    "committed_words": 51534184,
+    "direct_words": 5308848,
+    "fits": true,
+    "mu": 26,
+    "packed_words": 44054272,
+    "register_groups": [
+      [
+        1048576,
+        16,
+        [
+          "ALU"
+        ]
+      ],
+      [
+        131072,
+        21,
+        [
+          "LOAD",
+          "STORE"
+        ]
+      ],
+      [
+        65536,
+        37,
+        [
+          "LD",
+          "SD",
+          "MUL"
+        ]
+      ],
+      [
+        262144,
+        16,
+        [
+          "SHIFT"
+        ]
+      ],
+      [
+        16,
+        32,
+        [
+          "MULH",
+          "DIV"
+        ]
+      ],
+      [
+        32,
+        10,
+        [
+          "HASH"
+        ]
+      ],
+      [
+        8,
+        15,
+        [
+          "EXT"
+        ]
+      ]
+    ],
+    "register_words": 1507384,
+    "shared_words": 663680,
+    "tables": {
+      "ALU": {
+        "direct_columns": 3,
+        "direct_words": 3145728,
+        "height": 1048576,
+        "packed_words": 25165824,
+        "register_bits": 16
+      },
+      "DIV": {
+        "direct_columns": 3,
+        "direct_words": 48,
+        "height": 16,
+        "packed_words": 2176,
+        "register_bits": 16
+      },
+      "EXT": {
+        "direct_columns": 14,
+        "direct_words": 112,
+        "height": 8,
+        "packed_words": 512,
+        "register_bits": 15
+      },
+      "HASH": {
+        "direct_columns": 7,
+        "direct_words": 224,
+        "height": 32,
+        "packed_words": 9216,
+        "register_bits": 10
+      },
+      "LD": {
+        "direct_columns": 4,
+        "direct_words": 262144,
+        "height": 65536,
+        "packed_words": 786432,
+        "register_bits": 11
+      },
+      "LOAD": {
+        "direct_columns": 3,
+        "direct_words": 393216,
+        "height": 131072,
+        "packed_words": 3145728,
+        "register_bits": 11
+      },
+      "MUL": {
+        "direct_columns": 3,
+        "direct_words": 196608,
+        "height": 65536,
+        "packed_words": 4718592,
+        "register_bits": 16
+      },
+      "MULH": {
+        "direct_columns": 3,
+        "direct_words": 48,
+        "height": 16,
+        "packed_words": 2176,
+        "register_bits": 16
+      },
+      "SD": {
+        "direct_columns": 4,
+        "direct_words": 262144,
+        "height": 65536,
+        "packed_words": 786432,
+        "register_bits": 10
+      },
+      "SHIFT": {
+        "direct_columns": 3,
+        "direct_words": 786432,
+        "height": 262144,
+        "packed_words": 6291456,
+        "register_bits": 16
+      },
+      "STORE": {
+        "direct_columns": 2,
+        "direct_words": 262144,
+        "height": 131072,
+        "packed_words": 3145728,
+        "register_bits": 10
+      }
+    }
+  },
+  "guest_output": [
+    1186242386725543137,
+    4999119412128461267,
+    15321043661871145605,
+    15637938484121482023
+  ],
+  "max_periodic_words": 36847008,
+  "n": 1,
+  "natural_final": {
+    "committed_words": 51534184,
+    "direct_words": 5308848,
+    "fits": true,
+    "mu": 26,
+    "packed_words": 44054272,
+    "register_groups": [
+      [
+        1048576,
+        16,
+        [
+          "ALU"
+        ]
+      ],
+      [
+        131072,
+        21,
+        [
+          "LOAD",
+          "STORE"
+        ]
+      ],
+      [
+        65536,
+        37,
+        [
+          "LD",
+          "SD",
+          "MUL"
+        ]
+      ],
+      [
+        262144,
+        16,
+        [
+          "SHIFT"
+        ]
+      ],
+      [
+        16,
+        32,
+        [
+          "MULH",
+          "DIV"
+        ]
+      ],
+      [
+        32,
+        10,
+        [
+          "HASH"
+        ]
+      ],
+      [
+        8,
+        15,
+        [
+          "EXT"
+        ]
+      ]
+    ],
+    "register_words": 1507384,
+    "shared_words": 663680,
+    "tables": {
+      "ALU": {
+        "direct_columns": 3,
+        "direct_words": 3145728,
+        "height": 1048576,
+        "packed_words": 25165824,
+        "register_bits": 16
+      },
+      "DIV": {
+        "direct_columns": 3,
+        "direct_words": 48,
+        "height": 16,
+        "packed_words": 2176,
+        "register_bits": 16
+      },
+      "EXT": {
+        "direct_columns": 14,
+        "direct_words": 112,
+        "height": 8,
+        "packed_words": 512,
+        "register_bits": 15
+      },
+      "HASH": {
+        "direct_columns": 7,
+        "direct_words": 224,
+        "height": 32,
+        "packed_words": 9216,
+        "register_bits": 10
+      },
+      "LD": {
+        "direct_columns": 4,
+        "direct_words": 262144,
+        "height": 65536,
+        "packed_words": 786432,
+        "register_bits": 11
+      },
+      "LOAD": {
+        "direct_columns": 3,
+        "direct_words": 393216,
+        "height": 131072,
+        "packed_words": 3145728,
+        "register_bits": 11
+      },
+      "MUL": {
+        "direct_columns": 3,
+        "direct_words": 196608,
+        "height": 65536,
+        "packed_words": 4718592,
+        "register_bits": 16
+      },
+      "MULH": {
+        "direct_columns": 3,
+        "direct_words": 48,
+        "height": 16,
+        "packed_words": 2176,
+        "register_bits": 16
+      },
+      "SD": {
+        "direct_columns": 4,
+        "direct_words": 262144,
+        "height": 65536,
+        "packed_words": 786432,
+        "register_bits": 10
+      },
+      "SHIFT": {
+        "direct_columns": 3,
+        "direct_words": 786432,
+        "height": 262144,
+        "packed_words": 6291456,
+        "register_bits": 16
+      },
+      "STORE": {
+        "direct_columns": 2,
+        "direct_words": 262144,
+        "height": 131072,
+        "packed_words": 3145728,
+        "register_bits": 10
+      }
+    }
+  },
+  "periodic_checks": [
+    {
+      "detail": {
+        "committed_words": 2626128,
+        "direct_words": 221496,
+        "fits": true,
+        "mu": 22,
+        "packed_words": 1679488,
+        "register_groups": [
+          [
+            32768,
+            16,
+            [
+              "ALU"
+            ]
+          ],
+          [
+            8192,
+            21,
+            [
+              "LOAD",
+              "STORE"
+            ]
+          ],
+          [
+            4096,
+            21,
+            [
+              "LD",
+              "SD"
+            ]
+          ],
+          [
+            16384,
+            16,
+            [
+              "SHIFT"
+            ]
+          ],
+          [
+            16,
+            48,
+            [
+              "MUL",
+              "MULH",
+              "DIV"
+            ]
+          ],
+          [
+            8,
+            25,
+            [
+              "HASH",
+              "EXT"
+            ]
+          ]
+        ],
+        "register_words": 61464,
+        "shared_words": 663680,
+        "tables": {
+          "ALU": {
+            "direct_columns": 3,
+            "direct_words": 98304,
+            "height": 32768,
+            "packed_words": 786432,
+            "register_bits": 16
+          },
+          "DIV": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "EXT": {
+            "direct_columns": 14,
+            "direct_words": 112,
+            "height": 8,
+            "packed_words": 512,
+            "register_bits": 15
+          },
+          "HASH": {
+            "direct_columns": 7,
+            "direct_words": 56,
+            "height": 8,
+            "packed_words": 2304,
+            "register_bits": 10
+          },
+          "LD": {
+            "direct_columns": 4,
+            "direct_words": 16384,
+            "height": 4096,
+            "packed_words": 49152,
+            "register_bits": 11
+          },
+          "LOAD": {
+            "direct_columns": 3,
+            "direct_words": 24576,
+            "height": 8192,
+            "packed_words": 196608,
+            "register_bits": 11
+          },
+          "MUL": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 1152,
+            "register_bits": 16
+          },
+          "MULH": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "SD": {
+            "direct_columns": 4,
+            "direct_words": 16384,
+            "height": 4096,
+            "packed_words": 49152,
+            "register_bits": 10
+          },
+          "SHIFT": {
+            "direct_columns": 3,
+            "direct_words": 49152,
+            "height": 16384,
+            "packed_words": 393216,
+            "register_bits": 16
+          },
+          "STORE": {
+            "direct_columns": 2,
+            "direct_words": 16384,
+            "height": 8192,
+            "packed_words": 196608,
+            "register_bits": 10
+          }
+        }
+      },
+      "fits": true,
+      "next_cycle": 65536,
+      "words": 2626128
+    },
+    {
+      "detail": {
+        "committed_words": 5964368,
+        "direct_words": 598328,
+        "fits": true,
+        "mu": 23,
+        "packed_words": 4530304,
+        "register_groups": [
+          [
+            131072,
+            16,
+            [
+              "ALU"
+            ]
+          ],
+          [
+            8192,
+            42,
+            [
+              "LOAD",
+              "STORE",
+              "LD",
+              "SD"
+            ]
+          ],
+          [
+            32768,
+            16,
+            [
+              "SHIFT"
+            ]
+          ],
+          [
+            16,
+            48,
+            [
+              "MUL",
+              "MULH",
+              "DIV"
+            ]
+          ],
+          [
+            8,
+            25,
+            [
+              "HASH",
+              "EXT"
+            ]
+          ]
+        ],
+        "register_words": 172056,
+        "shared_words": 663680,
+        "tables": {
+          "ALU": {
+            "direct_columns": 3,
+            "direct_words": 393216,
+            "height": 131072,
+            "packed_words": 3145728,
+            "register_bits": 16
+          },
+          "DIV": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "EXT": {
+            "direct_columns": 14,
+            "direct_words": 112,
+            "height": 8,
+            "packed_words": 512,
+            "register_bits": 15
+          },
+          "HASH": {
+            "direct_columns": 7,
+            "direct_words": 56,
+            "height": 8,
+            "packed_words": 2304,
+            "register_bits": 10
+          },
+          "LD": {
+            "direct_columns": 4,
+            "direct_words": 32768,
+            "height": 8192,
+            "packed_words": 98304,
+            "register_bits": 11
+          },
+          "LOAD": {
+            "direct_columns": 3,
+            "direct_words": 24576,
+            "height": 8192,
+            "packed_words": 196608,
+            "register_bits": 11
+          },
+          "MUL": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 1152,
+            "register_bits": 16
+          },
+          "MULH": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "SD": {
+            "direct_columns": 4,
+            "direct_words": 32768,
+            "height": 8192,
+            "packed_words": 98304,
+            "register_bits": 10
+          },
+          "SHIFT": {
+            "direct_columns": 3,
+            "direct_words": 98304,
+            "height": 32768,
+            "packed_words": 786432,
+            "register_bits": 16
+          },
+          "STORE": {
+            "direct_columns": 2,
+            "direct_words": 16384,
+            "height": 8192,
+            "packed_words": 196608,
+            "register_bits": 10
+          }
+        }
+      },
+      "fits": true,
+      "next_cycle": 131072,
+      "words": 5964368
+    },
+    {
+      "detail": {
+        "committed_words": 7586384,
+        "direct_words": 803128,
+        "fits": true,
+        "mu": 23,
+        "packed_words": 5906560,
+        "register_groups": [
+          [
+            131072,
+            16,
+            [
+              "ALU"
+            ]
+          ],
+          [
+            16384,
+            42,
+            [
+              "LOAD",
+              "STORE",
+              "LD",
+              "SD"
+            ]
+          ],
+          [
+            65536,
+            16,
+            [
+              "SHIFT"
+            ]
+          ],
+          [
+            16,
+            48,
+            [
+              "MUL",
+              "MULH",
+              "DIV"
+            ]
+          ],
+          [
+            8,
+            25,
+            [
+              "HASH",
+              "EXT"
+            ]
+          ]
+        ],
+        "register_words": 213016,
+        "shared_words": 663680,
+        "tables": {
+          "ALU": {
+            "direct_columns": 3,
+            "direct_words": 393216,
+            "height": 131072,
+            "packed_words": 3145728,
+            "register_bits": 16
+          },
+          "DIV": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "EXT": {
+            "direct_columns": 14,
+            "direct_words": 112,
+            "height": 8,
+            "packed_words": 512,
+            "register_bits": 15
+          },
+          "HASH": {
+            "direct_columns": 7,
+            "direct_words": 56,
+            "height": 8,
+            "packed_words": 2304,
+            "register_bits": 10
+          },
+          "LD": {
+            "direct_columns": 4,
+            "direct_words": 65536,
+            "height": 16384,
+            "packed_words": 196608,
+            "register_bits": 11
+          },
+          "LOAD": {
+            "direct_columns": 3,
+            "direct_words": 49152,
+            "height": 16384,
+            "packed_words": 393216,
+            "register_bits": 11
+          },
+          "MUL": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 1152,
+            "register_bits": 16
+          },
+          "MULH": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "SD": {
+            "direct_columns": 4,
+            "direct_words": 65536,
+            "height": 16384,
+            "packed_words": 196608,
+            "register_bits": 10
+          },
+          "SHIFT": {
+            "direct_columns": 3,
+            "direct_words": 196608,
+            "height": 65536,
+            "packed_words": 1572864,
+            "register_bits": 16
+          },
+          "STORE": {
+            "direct_columns": 2,
+            "direct_words": 32768,
+            "height": 16384,
+            "packed_words": 393216,
+            "register_bits": 10
+          }
+        }
+      },
+      "fits": true,
+      "next_cycle": 196608,
+      "words": 7586384
+    },
+    {
+      "detail": {
+        "committed_words": 11551312,
+        "direct_words": 1261880,
+        "fits": true,
+        "mu": 24,
+        "packed_words": 9248896,
+        "register_groups": [
+          [
+            262144,
+            16,
+            [
+              "ALU"
+            ]
+          ],
+          [
+            16384,
+            31,
+            [
+              "LOAD",
+              "STORE",
+              "SD"
+            ]
+          ],
+          [
+            32768,
+            11,
+            [
+              "LD"
+            ]
+          ],
+          [
+            65536,
+            16,
+            [
+              "SHIFT"
+            ]
+          ],
+          [
+            16,
+            48,
+            [
+              "MUL",
+              "MULH",
+              "DIV"
+            ]
+          ],
+          [
+            8,
+            25,
+            [
+              "HASH",
+              "EXT"
+            ]
+          ]
+        ],
+        "register_words": 376856,
+        "shared_words": 663680,
+        "tables": {
+          "ALU": {
+            "direct_columns": 3,
+            "direct_words": 786432,
+            "height": 262144,
+            "packed_words": 6291456,
+            "register_bits": 16
+          },
+          "DIV": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "EXT": {
+            "direct_columns": 14,
+            "direct_words": 112,
+            "height": 8,
+            "packed_words": 512,
+            "register_bits": 15
+          },
+          "HASH": {
+            "direct_columns": 7,
+            "direct_words": 56,
+            "height": 8,
+            "packed_words": 2304,
+            "register_bits": 10
+          },
+          "LD": {
+            "direct_columns": 4,
+            "direct_words": 131072,
+            "height": 32768,
+            "packed_words": 393216,
+            "register_bits": 11
+          },
+          "LOAD": {
+            "direct_columns": 3,
+            "direct_words": 49152,
+            "height": 16384,
+            "packed_words": 393216,
+            "register_bits": 11
+          },
+          "MUL": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 1152,
+            "register_bits": 16
+          },
+          "MULH": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "SD": {
+            "direct_columns": 4,
+            "direct_words": 65536,
+            "height": 16384,
+            "packed_words": 196608,
+            "register_bits": 10
+          },
+          "SHIFT": {
+            "direct_columns": 3,
+            "direct_words": 196608,
+            "height": 65536,
+            "packed_words": 1572864,
+            "register_bits": 16
+          },
+          "STORE": {
+            "direct_columns": 2,
+            "direct_words": 32768,
+            "height": 16384,
+            "packed_words": 393216,
+            "register_bits": 10
+          }
+        }
+      },
+      "fits": true,
+      "next_cycle": 262144,
+      "words": 11551312
+    },
+    {
+      "detail": {
+        "committed_words": 13648464,
+        "direct_words": 1524024,
+        "fits": true,
+        "mu": 24,
+        "packed_words": 11018368,
+        "register_groups": [
+          [
+            262144,
+            16,
+            [
+              "ALU"
+            ]
+          ],
+          [
+            16384,
+            21,
+            [
+              "LOAD",
+              "STORE"
+            ]
+          ],
+          [
+            32768,
+            21,
+            [
+              "LD",
+              "SD"
+            ]
+          ],
+          [
+            131072,
+            16,
+            [
+              "SHIFT"
+            ]
+          ],
+          [
+            16,
+            48,
+            [
+              "MUL",
+              "MULH",
+              "DIV"
+            ]
+          ],
+          [
+            8,
+            25,
+            [
+              "HASH",
+              "EXT"
+            ]
+          ]
+        ],
+        "register_words": 442392,
+        "shared_words": 663680,
+        "tables": {
+          "ALU": {
+            "direct_columns": 3,
+            "direct_words": 786432,
+            "height": 262144,
+            "packed_words": 6291456,
+            "register_bits": 16
+          },
+          "DIV": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "EXT": {
+            "direct_columns": 14,
+            "direct_words": 112,
+            "height": 8,
+            "packed_words": 512,
+            "register_bits": 15
+          },
+          "HASH": {
+            "direct_columns": 7,
+            "direct_words": 56,
+            "height": 8,
+            "packed_words": 2304,
+            "register_bits": 10
+          },
+          "LD": {
+            "direct_columns": 4,
+            "direct_words": 131072,
+            "height": 32768,
+            "packed_words": 393216,
+            "register_bits": 11
+          },
+          "LOAD": {
+            "direct_columns": 3,
+            "direct_words": 49152,
+            "height": 16384,
+            "packed_words": 393216,
+            "register_bits": 11
+          },
+          "MUL": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 1152,
+            "register_bits": 16
+          },
+          "MULH": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "SD": {
+            "direct_columns": 4,
+            "direct_words": 131072,
+            "height": 32768,
+            "packed_words": 393216,
+            "register_bits": 10
+          },
+          "SHIFT": {
+            "direct_columns": 3,
+            "direct_words": 393216,
+            "height": 131072,
+            "packed_words": 3145728,
+            "register_bits": 16
+          },
+          "STORE": {
+            "direct_columns": 2,
+            "direct_words": 32768,
+            "height": 16384,
+            "packed_words": 393216,
+            "register_bits": 10
+          }
+        }
+      },
+      "fits": true,
+      "next_cycle": 327680,
+      "words": 13648464
+    },
+    {
+      "detail": {
+        "committed_words": 13648464,
+        "direct_words": 1524024,
+        "fits": true,
+        "mu": 24,
+        "packed_words": 11018368,
+        "register_groups": [
+          [
+            262144,
+            16,
+            [
+              "ALU"
+            ]
+          ],
+          [
+            16384,
+            21,
+            [
+              "LOAD",
+              "STORE"
+            ]
+          ],
+          [
+            32768,
+            21,
+            [
+              "LD",
+              "SD"
+            ]
+          ],
+          [
+            131072,
+            16,
+            [
+              "SHIFT"
+            ]
+          ],
+          [
+            16,
+            48,
+            [
+              "MUL",
+              "MULH",
+              "DIV"
+            ]
+          ],
+          [
+            8,
+            25,
+            [
+              "HASH",
+              "EXT"
+            ]
+          ]
+        ],
+        "register_words": 442392,
+        "shared_words": 663680,
+        "tables": {
+          "ALU": {
+            "direct_columns": 3,
+            "direct_words": 786432,
+            "height": 262144,
+            "packed_words": 6291456,
+            "register_bits": 16
+          },
+          "DIV": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "EXT": {
+            "direct_columns": 14,
+            "direct_words": 112,
+            "height": 8,
+            "packed_words": 512,
+            "register_bits": 15
+          },
+          "HASH": {
+            "direct_columns": 7,
+            "direct_words": 56,
+            "height": 8,
+            "packed_words": 2304,
+            "register_bits": 10
+          },
+          "LD": {
+            "direct_columns": 4,
+            "direct_words": 131072,
+            "height": 32768,
+            "packed_words": 393216,
+            "register_bits": 11
+          },
+          "LOAD": {
+            "direct_columns": 3,
+            "direct_words": 49152,
+            "height": 16384,
+            "packed_words": 393216,
+            "register_bits": 11
+          },
+          "MUL": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 1152,
+            "register_bits": 16
+          },
+          "MULH": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "SD": {
+            "direct_columns": 4,
+            "direct_words": 131072,
+            "height": 32768,
+            "packed_words": 393216,
+            "register_bits": 10
+          },
+          "SHIFT": {
+            "direct_columns": 3,
+            "direct_words": 393216,
+            "height": 131072,
+            "packed_words": 3145728,
+            "register_bits": 16
+          },
+          "STORE": {
+            "direct_columns": 2,
+            "direct_words": 32768,
+            "height": 16384,
+            "packed_words": 393216,
+            "register_bits": 10
+          }
+        }
+      },
+      "fits": true,
+      "next_cycle": 393216,
+      "words": 13648464
+    },
+    {
+      "detail": {
+        "committed_words": 14664272,
+        "direct_words": 1687864,
+        "fits": true,
+        "mu": 24,
+        "packed_words": 11804800,
+        "register_groups": [
+          [
+            262144,
+            16,
+            [
+              "ALU"
+            ]
+          ],
+          [
+            16384,
+            11,
+            [
+              "LOAD"
+            ]
+          ],
+          [
+            32768,
+            20,
+            [
+              "STORE",
+              "SD"
+            ]
+          ],
+          [
+            65536,
+            11,
+            [
+              "LD"
+            ]
+          ],
+          [
+            131072,
+            16,
+            [
+              "SHIFT"
+            ]
+          ],
+          [
+            16,
+            48,
+            [
+              "MUL",
+              "MULH",
+              "DIV"
+            ]
+          ],
+          [
+            8,
+            25,
+            [
+              "HASH",
+              "EXT"
+            ]
+          ]
+        ],
+        "register_words": 507928,
+        "shared_words": 663680,
+        "tables": {
+          "ALU": {
+            "direct_columns": 3,
+            "direct_words": 786432,
+            "height": 262144,
+            "packed_words": 6291456,
+            "register_bits": 16
+          },
+          "DIV": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "EXT": {
+            "direct_columns": 14,
+            "direct_words": 112,
+            "height": 8,
+            "packed_words": 512,
+            "register_bits": 15
+          },
+          "HASH": {
+            "direct_columns": 7,
+            "direct_words": 56,
+            "height": 8,
+            "packed_words": 2304,
+            "register_bits": 10
+          },
+          "LD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 11
+          },
+          "LOAD": {
+            "direct_columns": 3,
+            "direct_words": 49152,
+            "height": 16384,
+            "packed_words": 393216,
+            "register_bits": 11
+          },
+          "MUL": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 1152,
+            "register_bits": 16
+          },
+          "MULH": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "SD": {
+            "direct_columns": 4,
+            "direct_words": 131072,
+            "height": 32768,
+            "packed_words": 393216,
+            "register_bits": 10
+          },
+          "SHIFT": {
+            "direct_columns": 3,
+            "direct_words": 393216,
+            "height": 131072,
+            "packed_words": 3145728,
+            "register_bits": 16
+          },
+          "STORE": {
+            "direct_columns": 2,
+            "direct_words": 65536,
+            "height": 32768,
+            "packed_words": 786432,
+            "register_bits": 10
+          }
+        }
+      },
+      "fits": true,
+      "next_cycle": 458752,
+      "words": 14664272
+    },
+    {
+      "detail": {
+        "committed_words": 22528592,
+        "direct_words": 2605368,
+        "fits": true,
+        "mu": 25,
+        "packed_words": 18489472,
+        "register_groups": [
+          [
+            524288,
+            16,
+            [
+              "ALU"
+            ]
+          ],
+          [
+            16384,
+            11,
+            [
+              "LOAD"
+            ]
+          ],
+          [
+            32768,
+            10,
+            [
+              "STORE"
+            ]
+          ],
+          [
+            65536,
+            21,
+            [
+              "LD",
+              "SD"
+            ]
+          ],
+          [
+            131072,
+            16,
+            [
+              "SHIFT"
+            ]
+          ],
+          [
+            16,
+            48,
+            [
+              "MUL",
+              "MULH",
+              "DIV"
+            ]
+          ],
+          [
+            8,
+            25,
+            [
+              "HASH",
+              "EXT"
+            ]
+          ]
+        ],
+        "register_words": 770072,
+        "shared_words": 663680,
+        "tables": {
+          "ALU": {
+            "direct_columns": 3,
+            "direct_words": 1572864,
+            "height": 524288,
+            "packed_words": 12582912,
+            "register_bits": 16
+          },
+          "DIV": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "EXT": {
+            "direct_columns": 14,
+            "direct_words": 112,
+            "height": 8,
+            "packed_words": 512,
+            "register_bits": 15
+          },
+          "HASH": {
+            "direct_columns": 7,
+            "direct_words": 56,
+            "height": 8,
+            "packed_words": 2304,
+            "register_bits": 10
+          },
+          "LD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 11
+          },
+          "LOAD": {
+            "direct_columns": 3,
+            "direct_words": 49152,
+            "height": 16384,
+            "packed_words": 393216,
+            "register_bits": 11
+          },
+          "MUL": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 1152,
+            "register_bits": 16
+          },
+          "MULH": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "SD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 10
+          },
+          "SHIFT": {
+            "direct_columns": 3,
+            "direct_words": 393216,
+            "height": 131072,
+            "packed_words": 3145728,
+            "register_bits": 16
+          },
+          "STORE": {
+            "direct_columns": 2,
+            "direct_words": 65536,
+            "height": 32768,
+            "packed_words": 786432,
+            "register_bits": 10
+          }
+        }
+      },
+      "fits": true,
+      "next_cycle": 524288,
+      "words": 22528592
+    },
+    {
+      "detail": {
+        "committed_words": 26624592,
+        "direct_words": 3047736,
+        "fits": true,
+        "mu": 25,
+        "packed_words": 22028416,
+        "register_groups": [
+          [
+            524288,
+            16,
+            [
+              "ALU"
+            ]
+          ],
+          [
+            32768,
+            21,
+            [
+              "LOAD",
+              "STORE"
+            ]
+          ],
+          [
+            65536,
+            21,
+            [
+              "LD",
+              "SD"
+            ]
+          ],
+          [
+            262144,
+            16,
+            [
+              "SHIFT"
+            ]
+          ],
+          [
+            16,
+            48,
+            [
+              "MUL",
+              "MULH",
+              "DIV"
+            ]
+          ],
+          [
+            8,
+            25,
+            [
+              "HASH",
+              "EXT"
+            ]
+          ]
+        ],
+        "register_words": 884760,
+        "shared_words": 663680,
+        "tables": {
+          "ALU": {
+            "direct_columns": 3,
+            "direct_words": 1572864,
+            "height": 524288,
+            "packed_words": 12582912,
+            "register_bits": 16
+          },
+          "DIV": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "EXT": {
+            "direct_columns": 14,
+            "direct_words": 112,
+            "height": 8,
+            "packed_words": 512,
+            "register_bits": 15
+          },
+          "HASH": {
+            "direct_columns": 7,
+            "direct_words": 56,
+            "height": 8,
+            "packed_words": 2304,
+            "register_bits": 10
+          },
+          "LD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 11
+          },
+          "LOAD": {
+            "direct_columns": 3,
+            "direct_words": 98304,
+            "height": 32768,
+            "packed_words": 786432,
+            "register_bits": 11
+          },
+          "MUL": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 1152,
+            "register_bits": 16
+          },
+          "MULH": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "SD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 10
+          },
+          "SHIFT": {
+            "direct_columns": 3,
+            "direct_words": 786432,
+            "height": 262144,
+            "packed_words": 6291456,
+            "register_bits": 16
+          },
+          "STORE": {
+            "direct_columns": 2,
+            "direct_words": 65536,
+            "height": 32768,
+            "packed_words": 786432,
+            "register_bits": 10
+          }
+        }
+      },
+      "fits": true,
+      "next_cycle": 589824,
+      "words": 26624592
+    },
+    {
+      "detail": {
+        "committed_words": 26624592,
+        "direct_words": 3047736,
+        "fits": true,
+        "mu": 25,
+        "packed_words": 22028416,
+        "register_groups": [
+          [
+            524288,
+            16,
+            [
+              "ALU"
+            ]
+          ],
+          [
+            32768,
+            21,
+            [
+              "LOAD",
+              "STORE"
+            ]
+          ],
+          [
+            65536,
+            21,
+            [
+              "LD",
+              "SD"
+            ]
+          ],
+          [
+            262144,
+            16,
+            [
+              "SHIFT"
+            ]
+          ],
+          [
+            16,
+            48,
+            [
+              "MUL",
+              "MULH",
+              "DIV"
+            ]
+          ],
+          [
+            8,
+            25,
+            [
+              "HASH",
+              "EXT"
+            ]
+          ]
+        ],
+        "register_words": 884760,
+        "shared_words": 663680,
+        "tables": {
+          "ALU": {
+            "direct_columns": 3,
+            "direct_words": 1572864,
+            "height": 524288,
+            "packed_words": 12582912,
+            "register_bits": 16
+          },
+          "DIV": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "EXT": {
+            "direct_columns": 14,
+            "direct_words": 112,
+            "height": 8,
+            "packed_words": 512,
+            "register_bits": 15
+          },
+          "HASH": {
+            "direct_columns": 7,
+            "direct_words": 56,
+            "height": 8,
+            "packed_words": 2304,
+            "register_bits": 10
+          },
+          "LD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 11
+          },
+          "LOAD": {
+            "direct_columns": 3,
+            "direct_words": 98304,
+            "height": 32768,
+            "packed_words": 786432,
+            "register_bits": 11
+          },
+          "MUL": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 1152,
+            "register_bits": 16
+          },
+          "MULH": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "SD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 10
+          },
+          "SHIFT": {
+            "direct_columns": 3,
+            "direct_words": 786432,
+            "height": 262144,
+            "packed_words": 6291456,
+            "register_bits": 16
+          },
+          "STORE": {
+            "direct_columns": 2,
+            "direct_words": 65536,
+            "height": 32768,
+            "packed_words": 786432,
+            "register_bits": 10
+          }
+        }
+      },
+      "fits": true,
+      "next_cycle": 655360,
+      "words": 26624592
+    },
+    {
+      "detail": {
+        "committed_words": 27245984,
+        "direct_words": 3072264,
+        "fits": true,
+        "mu": 25,
+        "packed_words": 22617088,
+        "register_groups": [
+          [
+            524288,
+            16,
+            [
+              "ALU"
+            ]
+          ],
+          [
+            32768,
+            21,
+            [
+              "LOAD",
+              "STORE"
+            ]
+          ],
+          [
+            65536,
+            21,
+            [
+              "LD",
+              "SD"
+            ]
+          ],
+          [
+            262144,
+            16,
+            [
+              "SHIFT"
+            ]
+          ],
+          [
+            8192,
+            16,
+            [
+              "MUL"
+            ]
+          ],
+          [
+            16,
+            32,
+            [
+              "MULH",
+              "DIV"
+            ]
+          ],
+          [
+            8,
+            25,
+            [
+              "HASH",
+              "EXT"
+            ]
+          ]
+        ],
+        "register_words": 892952,
+        "shared_words": 663680,
+        "tables": {
+          "ALU": {
+            "direct_columns": 3,
+            "direct_words": 1572864,
+            "height": 524288,
+            "packed_words": 12582912,
+            "register_bits": 16
+          },
+          "DIV": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "EXT": {
+            "direct_columns": 14,
+            "direct_words": 112,
+            "height": 8,
+            "packed_words": 512,
+            "register_bits": 15
+          },
+          "HASH": {
+            "direct_columns": 7,
+            "direct_words": 56,
+            "height": 8,
+            "packed_words": 2304,
+            "register_bits": 10
+          },
+          "LD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 11
+          },
+          "LOAD": {
+            "direct_columns": 3,
+            "direct_words": 98304,
+            "height": 32768,
+            "packed_words": 786432,
+            "register_bits": 11
+          },
+          "MUL": {
+            "direct_columns": 3,
+            "direct_words": 24576,
+            "height": 8192,
+            "packed_words": 589824,
+            "register_bits": 16
+          },
+          "MULH": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "SD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 10
+          },
+          "SHIFT": {
+            "direct_columns": 3,
+            "direct_words": 786432,
+            "height": 262144,
+            "packed_words": 6291456,
+            "register_bits": 16
+          },
+          "STORE": {
+            "direct_columns": 2,
+            "direct_words": 65536,
+            "height": 32768,
+            "packed_words": 786432,
+            "register_bits": 10
+          }
+        }
+      },
+      "fits": true,
+      "next_cycle": 720896,
+      "words": 27245984
+    },
+    {
+      "detail": {
+        "committed_words": 30817696,
+        "direct_words": 3309832,
+        "fits": true,
+        "mu": 25,
+        "packed_words": 25959424,
+        "register_groups": [
+          [
+            524288,
+            16,
+            [
+              "ALU"
+            ]
+          ],
+          [
+            65536,
+            42,
+            [
+              "LOAD",
+              "STORE",
+              "LD",
+              "SD"
+            ]
+          ],
+          [
+            262144,
+            16,
+            [
+              "SHIFT"
+            ]
+          ],
+          [
+            32768,
+            16,
+            [
+              "MUL"
+            ]
+          ],
+          [
+            16,
+            32,
+            [
+              "MULH",
+              "DIV"
+            ]
+          ],
+          [
+            8,
+            25,
+            [
+              "HASH",
+              "EXT"
+            ]
+          ]
+        ],
+        "register_words": 884760,
+        "shared_words": 663680,
+        "tables": {
+          "ALU": {
+            "direct_columns": 3,
+            "direct_words": 1572864,
+            "height": 524288,
+            "packed_words": 12582912,
+            "register_bits": 16
+          },
+          "DIV": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "EXT": {
+            "direct_columns": 14,
+            "direct_words": 112,
+            "height": 8,
+            "packed_words": 512,
+            "register_bits": 15
+          },
+          "HASH": {
+            "direct_columns": 7,
+            "direct_words": 56,
+            "height": 8,
+            "packed_words": 2304,
+            "register_bits": 10
+          },
+          "LD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 11
+          },
+          "LOAD": {
+            "direct_columns": 3,
+            "direct_words": 196608,
+            "height": 65536,
+            "packed_words": 1572864,
+            "register_bits": 11
+          },
+          "MUL": {
+            "direct_columns": 3,
+            "direct_words": 98304,
+            "height": 32768,
+            "packed_words": 2359296,
+            "register_bits": 16
+          },
+          "MULH": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "SD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 10
+          },
+          "SHIFT": {
+            "direct_columns": 3,
+            "direct_words": 786432,
+            "height": 262144,
+            "packed_words": 6291456,
+            "register_bits": 16
+          },
+          "STORE": {
+            "direct_columns": 2,
+            "direct_words": 131072,
+            "height": 65536,
+            "packed_words": 1572864,
+            "register_bits": 10
+          }
+        }
+      },
+      "fits": true,
+      "next_cycle": 786432,
+      "words": 30817696
+    },
+    {
+      "detail": {
+        "committed_words": 30817696,
+        "direct_words": 3309832,
+        "fits": true,
+        "mu": 25,
+        "packed_words": 25959424,
+        "register_groups": [
+          [
+            524288,
+            16,
+            [
+              "ALU"
+            ]
+          ],
+          [
+            65536,
+            42,
+            [
+              "LOAD",
+              "STORE",
+              "LD",
+              "SD"
+            ]
+          ],
+          [
+            262144,
+            16,
+            [
+              "SHIFT"
+            ]
+          ],
+          [
+            32768,
+            16,
+            [
+              "MUL"
+            ]
+          ],
+          [
+            16,
+            32,
+            [
+              "MULH",
+              "DIV"
+            ]
+          ],
+          [
+            8,
+            25,
+            [
+              "HASH",
+              "EXT"
+            ]
+          ]
+        ],
+        "register_words": 884760,
+        "shared_words": 663680,
+        "tables": {
+          "ALU": {
+            "direct_columns": 3,
+            "direct_words": 1572864,
+            "height": 524288,
+            "packed_words": 12582912,
+            "register_bits": 16
+          },
+          "DIV": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "EXT": {
+            "direct_columns": 14,
+            "direct_words": 112,
+            "height": 8,
+            "packed_words": 512,
+            "register_bits": 15
+          },
+          "HASH": {
+            "direct_columns": 7,
+            "direct_words": 56,
+            "height": 8,
+            "packed_words": 2304,
+            "register_bits": 10
+          },
+          "LD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 11
+          },
+          "LOAD": {
+            "direct_columns": 3,
+            "direct_words": 196608,
+            "height": 65536,
+            "packed_words": 1572864,
+            "register_bits": 11
+          },
+          "MUL": {
+            "direct_columns": 3,
+            "direct_words": 98304,
+            "height": 32768,
+            "packed_words": 2359296,
+            "register_bits": 16
+          },
+          "MULH": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "SD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 10
+          },
+          "SHIFT": {
+            "direct_columns": 3,
+            "direct_words": 786432,
+            "height": 262144,
+            "packed_words": 6291456,
+            "register_bits": 16
+          },
+          "STORE": {
+            "direct_columns": 2,
+            "direct_words": 131072,
+            "height": 65536,
+            "packed_words": 1572864,
+            "register_bits": 10
+          }
+        }
+      },
+      "fits": true,
+      "next_cycle": 851968,
+      "words": 30817696
+    },
+    {
+      "detail": {
+        "committed_words": 33242528,
+        "direct_words": 3408136,
+        "fits": true,
+        "mu": 25,
+        "packed_words": 28318720,
+        "register_groups": [
+          [
+            524288,
+            16,
+            [
+              "ALU"
+            ]
+          ],
+          [
+            65536,
+            58,
+            [
+              "LOAD",
+              "STORE",
+              "LD",
+              "SD",
+              "MUL"
+            ]
+          ],
+          [
+            262144,
+            16,
+            [
+              "SHIFT"
+            ]
+          ],
+          [
+            16,
+            32,
+            [
+              "MULH",
+              "DIV"
+            ]
+          ],
+          [
+            8,
+            25,
+            [
+              "HASH",
+              "EXT"
+            ]
+          ]
+        ],
+        "register_words": 851992,
+        "shared_words": 663680,
+        "tables": {
+          "ALU": {
+            "direct_columns": 3,
+            "direct_words": 1572864,
+            "height": 524288,
+            "packed_words": 12582912,
+            "register_bits": 16
+          },
+          "DIV": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "EXT": {
+            "direct_columns": 14,
+            "direct_words": 112,
+            "height": 8,
+            "packed_words": 512,
+            "register_bits": 15
+          },
+          "HASH": {
+            "direct_columns": 7,
+            "direct_words": 56,
+            "height": 8,
+            "packed_words": 2304,
+            "register_bits": 10
+          },
+          "LD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 11
+          },
+          "LOAD": {
+            "direct_columns": 3,
+            "direct_words": 196608,
+            "height": 65536,
+            "packed_words": 1572864,
+            "register_bits": 11
+          },
+          "MUL": {
+            "direct_columns": 3,
+            "direct_words": 196608,
+            "height": 65536,
+            "packed_words": 4718592,
+            "register_bits": 16
+          },
+          "MULH": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "SD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 10
+          },
+          "SHIFT": {
+            "direct_columns": 3,
+            "direct_words": 786432,
+            "height": 262144,
+            "packed_words": 6291456,
+            "register_bits": 16
+          },
+          "STORE": {
+            "direct_columns": 2,
+            "direct_words": 131072,
+            "height": 65536,
+            "packed_words": 1572864,
+            "register_bits": 10
+          }
+        }
+      },
+      "fits": true,
+      "next_cycle": 917504,
+      "words": 33242528
+    },
+    {
+      "detail": {
+        "committed_words": 35143072,
+        "direct_words": 3604744,
+        "fits": true,
+        "mu": 26,
+        "packed_words": 29891584,
+        "register_groups": [
+          [
+            524288,
+            16,
+            [
+              "ALU"
+            ]
+          ],
+          [
+            131072,
+            11,
+            [
+              "LOAD"
+            ]
+          ],
+          [
+            65536,
+            47,
+            [
+              "STORE",
+              "LD",
+              "SD",
+              "MUL"
+            ]
+          ],
+          [
+            262144,
+            16,
+            [
+              "SHIFT"
+            ]
+          ],
+          [
+            16,
+            32,
+            [
+              "MULH",
+              "DIV"
+            ]
+          ],
+          [
+            8,
+            25,
+            [
+              "HASH",
+              "EXT"
+            ]
+          ]
+        ],
+        "register_words": 983064,
+        "shared_words": 663680,
+        "tables": {
+          "ALU": {
+            "direct_columns": 3,
+            "direct_words": 1572864,
+            "height": 524288,
+            "packed_words": 12582912,
+            "register_bits": 16
+          },
+          "DIV": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "EXT": {
+            "direct_columns": 14,
+            "direct_words": 112,
+            "height": 8,
+            "packed_words": 512,
+            "register_bits": 15
+          },
+          "HASH": {
+            "direct_columns": 7,
+            "direct_words": 56,
+            "height": 8,
+            "packed_words": 2304,
+            "register_bits": 10
+          },
+          "LD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 11
+          },
+          "LOAD": {
+            "direct_columns": 3,
+            "direct_words": 393216,
+            "height": 131072,
+            "packed_words": 3145728,
+            "register_bits": 11
+          },
+          "MUL": {
+            "direct_columns": 3,
+            "direct_words": 196608,
+            "height": 65536,
+            "packed_words": 4718592,
+            "register_bits": 16
+          },
+          "MULH": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "SD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 10
+          },
+          "SHIFT": {
+            "direct_columns": 3,
+            "direct_words": 786432,
+            "height": 262144,
+            "packed_words": 6291456,
+            "register_bits": 16
+          },
+          "STORE": {
+            "direct_columns": 2,
+            "direct_words": 131072,
+            "height": 65536,
+            "packed_words": 1572864,
+            "register_bits": 10
+          }
+        }
+      },
+      "fits": true,
+      "next_cycle": 983040,
+      "words": 35143072
+    },
+    {
+      "detail": {
+        "committed_words": 36847008,
+        "direct_words": 3735816,
+        "fits": true,
+        "mu": 26,
+        "packed_words": 31464448,
+        "register_groups": [
+          [
+            524288,
+            16,
+            [
+              "ALU"
+            ]
+          ],
+          [
+            131072,
+            21,
+            [
+              "LOAD",
+              "STORE"
+            ]
+          ],
+          [
+            65536,
+            37,
+            [
+              "LD",
+              "SD",
+              "MUL"
+            ]
+          ],
+          [
+            262144,
+            16,
+            [
+              "SHIFT"
+            ]
+          ],
+          [
+            16,
+            32,
+            [
+              "MULH",
+              "DIV"
+            ]
+          ],
+          [
+            8,
+            25,
+            [
+              "HASH",
+              "EXT"
+            ]
+          ]
+        ],
+        "register_words": 983064,
+        "shared_words": 663680,
+        "tables": {
+          "ALU": {
+            "direct_columns": 3,
+            "direct_words": 1572864,
+            "height": 524288,
+            "packed_words": 12582912,
+            "register_bits": 16
+          },
+          "DIV": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "EXT": {
+            "direct_columns": 14,
+            "direct_words": 112,
+            "height": 8,
+            "packed_words": 512,
+            "register_bits": 15
+          },
+          "HASH": {
+            "direct_columns": 7,
+            "direct_words": 56,
+            "height": 8,
+            "packed_words": 2304,
+            "register_bits": 10
+          },
+          "LD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 11
+          },
+          "LOAD": {
+            "direct_columns": 3,
+            "direct_words": 393216,
+            "height": 131072,
+            "packed_words": 3145728,
+            "register_bits": 11
+          },
+          "MUL": {
+            "direct_columns": 3,
+            "direct_words": 196608,
+            "height": 65536,
+            "packed_words": 4718592,
+            "register_bits": 16
+          },
+          "MULH": {
+            "direct_columns": 3,
+            "direct_words": 48,
+            "height": 16,
+            "packed_words": 2176,
+            "register_bits": 16
+          },
+          "SD": {
+            "direct_columns": 4,
+            "direct_words": 262144,
+            "height": 65536,
+            "packed_words": 786432,
+            "register_bits": 10
+          },
+          "SHIFT": {
+            "direct_columns": 3,
+            "direct_words": 786432,
+            "height": 262144,
+            "packed_words": 6291456,
+            "register_bits": 16
+          },
+          "STORE": {
+            "direct_columns": 2,
+            "direct_words": 262144,
+            "height": 131072,
+            "packed_words": 3145728,
+            "register_bits": 10
+          }
+        }
+      },
+      "fits": true,
+      "next_cycle": 1048576,
+      "words": 36847008
+    }
+  ],
+  "production_measure": {
+    "accepted": true,
+    "committed_words": 51534184
+  },
+  "scheme": "mldsa",
+  "scope": "Unchanged raw interpreter + owned exact public-layout replica. Not a proof; no cap or production check disabled.",
+  "start": 0
+}

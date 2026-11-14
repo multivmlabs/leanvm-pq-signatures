@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "scheme": "fors",
+  "count": 7,
+  "elf_sha256": "64480a3bf424f97578f6477a7a4045c2452853a0801f45fc191648eb253e36da",
+  "expected_output": [
+    9821342783143118241,
+    8676897593615824519,
+    10444083998305517993,
+    12099189965904534121
+  ],
+  "public_records": [
+    {
+      "message": "587ec7773dce95516c3dd92662f23d71e55a5bd44db9e14629dfd82a01b1ad73",
+      "root": "efb8dd3c0da59d2599c946f9b77917e6b5e77b503d4836bcd524fe61482d58b4",
+      "seed": "c8474432ebfd23d0c96c7ce1bd34bb0a9de3c5e9afa69d571d7f7c47c0fb6b1f"
+    },
+    {
+      "message": "52834d5bbfeac4a3a52dea6d690685970d3f5fe9c33dbcabf1b216bc6b29838e",
+      "root": "5baa024393e295a99f67c7f8e76cc5f835ee6c4e241d2d0455fa88b35db5cd44",
+      "seed": "e1cd8c72165f8d7dfcc3c3ccff1adb332a1822be7664224dc1cbc74388e2c1d3"
+    },
+    {
+      "message": "84ae1523a4f3e50b78dcadc46b5f1946f853a49addcad932caccff3bb6c87377",
+      "root": "92e0c86ff9b3dc89084c7f3ee5d5330e2aefdba66772cc35d34d2f50d1358582",
+      "seed": "0691124a5c704048b7b11264b4233a59eda03656177e7b4c8c41e0555ce98882"
+    },
+    {
+      "message": "b90c4e8aa9dd6e5dea3fbd70093a864f9602ea3315d099ebd96de167c07c697a",
+      "root": "ae5c4b16252a0c35db42346a71847694abe9505cdebf90022710c9a4bf302b79",
+      "seed": "c9ee691a4ff3af2d5a49f9f10fd0ecfddf12b273918c648ad40a9eddfceaf8a3"
+    },
+    {
+      "message": "438df705802d1df7bd1b51ccc1132fea682b78058ab712f0125f3f18c3017777",
+      "root": "9671d523eadfb2d61630564934a13b6f9a4dd525e57dbaf3f06e218445c66bc6",
+      "seed": "444c01d11ae70a581a2274722fb3b493b5832d0662c774b69e07c69c5c8f7aea"
+    },
+    {
+      "message": "d658cd9e604f2c5f2f7069963089942d810151221081e6859cc9df29817e77ba",
+      "root": "862cb949d7682c1862fc4b5f5ba4681f28be59bf4dfe460227dfd8b544dfcc9e",
+      "seed": "268b4d97179dd729daf4a15a8646a0ac8cb8b157a56525aec4871bd815e8b2ac"
+    },
+    {
+      "message": "a62c910c98b5e87b9013629953de1c2de4ce1b3a3c2c93e9ba63812dc12d0cd5",
+      "root": "442381b96a52d35067cb89e108dead54bd8c0b632ad8acb018ccaf6c1116b3c3",
+      "seed": "492aaa1ed51948eb831f97b06a696635209f7b2410976db1525da79685ab334b"
+    }
+  ]
+}

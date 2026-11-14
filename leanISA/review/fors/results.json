@@ -1,0 +1,567 @@
+{
+  "coverage": "execution with fixed compiled constraints; no new proof generated",
+  "results": [
+    {
+      "label": "base",
+      "expected_accept": true,
+      "accepted": true,
+      "matched": true,
+      "stderr": "",
+      "cycles": 7534,
+      "guest_hash": "ab88c7f6ed1c7be82bdb63f879189789bd64aab82e83343958f970280a31870b",
+      "public_input_hex": "4f07d711c89625babcd4c659337c9cd6a0dc4c0501acc4e6e36adbeaf90405e2",
+      "scheme": "fors-keccak-research",
+      "metadata": {
+        "baseline_native_verify_s": 0.0006757079999999971,
+        "count": 1,
+        "fixture_start": 0,
+        "native_implementation": "Python reference FORS verifier using PyCryptodome Keccak; not an optimized native baseline",
+        "native_verify_seconds": 0.0006757079999999971,
+        "parameters": {
+          "a": 8,
+          "k": 16,
+          "n": 32
+        },
+        "public_key_bytes": 64,
+        "public_key_bytes_per_signature": 64,
+        "raw_key_bytes": 64,
+        "raw_signature_bytes": 4608,
+        "scheme": "fors-keccak-research",
+        "security_note": "Unreviewed few-time FORS variant; not FIPS 205 or leanSPHINCS; benchmark keys are deterministic and distinct.",
+        "signature_bytes": 4608,
+        "signature_bytes_per_signature": 4608
+      }
+    },
+    {
+      "label": "external-advice-honest",
+      "expected_accept": true,
+      "accepted": true,
+      "matched": true,
+      "stderr": "",
+      "cycles": 7534,
+      "guest_hash": "ab88c7f6ed1c7be82bdb63f879189789bd64aab82e83343958f970280a31870b",
+      "public_input_hex": "4f07d711c89625babcd4c659337c9cd6a0dc4c0501acc4e6e36adbeaf90405e2",
+      "scheme": "fors-keccak-research",
+      "metadata": {
+        "baseline_native_verify_s": 0.0006757079999999971,
+        "count": 1,
+        "fixture_start": 0,
+        "native_implementation": "Python reference FORS verifier using PyCryptodome Keccak; not an optimized native baseline",
+        "native_verify_seconds": 0.0006757079999999971,
+        "parameters": {
+          "a": 8,
+          "k": 16,
+          "n": 32
+        },
+        "public_key_bytes": 64,
+        "public_key_bytes_per_signature": 64,
+        "raw_key_bytes": 64,
+        "raw_signature_bytes": 4608,
+        "scheme": "fors-keccak-research",
+        "security_note": "Unreviewed few-time FORS variant; not FIPS 205 or leanSPHINCS; benchmark keys are deterministic and distinct.",
+        "signature_bytes": 4608,
+        "signature_bytes_per_signature": 4608
+      }
+    },
+    {
+      "label": "advice-low-header",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 40, site: \"canonical (line 19)\", fault: NotInK { what: \"JUMP fp\", value: F192 { c0: 773269751160663240, c1: 0, c2: 1 } } }"
+    },
+    {
+      "label": "advice-low-secret",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 40, site: \"canonical (line 19)\", fault: NotInK { what: \"JUMP fp\", value: F192 { c0: 9862030870505975383, c1: 0, c2: 1 } } }"
+    },
+    {
+      "label": "advice-low-auth",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 40, site: \"canonical (line 19)\", fault: NotInK { what: \"JUMP fp\", value: F192 { c0: 1117093558595476179, c1: 0, c2: 1 } } }"
+    },
+    {
+      "label": "advice-bits-low-bit",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 810, site: \"bits128 (line 33)\", fault: Conflict { cell: 6124, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 1, c1: 0, c2: 0 }, hint: None } }"
+    },
+    {
+      "label": "advice-bits-high-bit",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 810, site: \"bits128 (line 33)\", fault: Conflict { cell: 6124, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 0, c1: 9223372036854775808, c2: 0 }, hint: None } }"
+    },
+    {
+      "label": "advice-bits-nonboolean",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 74, site: \"bits128 (line 28)\", fault: Conflict { cell: 6124, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 6, c1: 0, c2: 0 }, hint: None } }"
+    },
+    {
+      "label": "advice-bits-nonbase-field",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 74, site: \"bits128 (line 28)\", fault: Conflict { cell: 6124, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 0, c1: 1, c2: 1 }, hint: None } }"
+    },
+    {
+      "label": "noncanonical-fors_header-0",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 40, site: \"canonical (line 19)\", fault: NotInK { what: \"JUMP fp\", value: F192 { c0: 773269751160663241, c1: 1, c2: 0 } } }"
+    },
+    {
+      "label": "noncanonical-fors_header-1",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 40, site: \"canonical (line 19)\", fault: NotInK { what: \"JUMP fp\", value: F192 { c0: 2264180040935440157, c1: 1, c2: 0 } } }"
+    },
+    {
+      "label": "noncanonical-fors_header-2",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 40, site: \"canonical (line 19)\", fault: NotInK { what: \"JUMP fp\", value: F192 { c0: 16579854384255912345, c1: 1, c2: 0 } } }"
+    },
+    {
+      "label": "noncanonical-fors_header-3",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 40, site: \"canonical (line 19)\", fault: NotInK { what: \"JUMP fp\", value: F192 { c0: 12995186513682506965, c1: 1, c2: 0 } } }"
+    },
+    {
+      "label": "noncanonical-fors_header-4",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 40, site: \"canonical (line 19)\", fault: NotInK { what: \"JUMP fp\", value: F192 { c0: 8159944603237694828, c1: 1, c2: 0 } } }"
+    },
+    {
+      "label": "noncanonical-fors_header-5",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 40, site: \"canonical (line 19)\", fault: NotInK { what: \"JUMP fp\", value: F192 { c0: 8335513103904595753, c1: 1, c2: 0 } } }"
+    },
+    {
+      "label": "noncanonical-fors_secret-1",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 40, site: \"canonical (line 19)\", fault: NotInK { what: \"JUMP fp\", value: F192 { c0: 3536659248638212533, c1: 1, c2: 0 } } }"
+    },
+    {
+      "label": "noncanonical-fors_auth-1",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 40, site: \"canonical (line 19)\", fault: NotInK { what: \"JUMP fp\", value: F192 { c0: 2522134937727344631, c1: 1, c2: 0 } } }"
+    },
+    {
+      "label": "independent-1-1-1",
+      "expected_accept": true,
+      "accepted": true,
+      "matched": true,
+      "stderr": "",
+      "cycles": 1269,
+      "guest_hash": "2cbe2e3f7c44cd3566f3d99a40908ff8a49f989f97cae3098ab3ce8a656eb47c",
+      "public_input_hex": "fdd4f63947afb1c3fe7b7ed964eee24fd52b6322456d681ac9c726928c96ef6f",
+      "scheme": "fors-keccak-research",
+      "metadata": {
+        "baseline_native_verify_s": 0.00017000000000000348,
+        "count": 1,
+        "fixture_start": 0,
+        "native_implementation": "Python reference FORS verifier using PyCryptodome Keccak; not an optimized native baseline",
+        "native_verify_seconds": 0.00017000000000000348,
+        "parameters": {
+          "a": 1,
+          "k": 1,
+          "n": 32
+        },
+        "public_key_bytes": 64,
+        "public_key_bytes_per_signature": 64,
+        "raw_key_bytes": 64,
+        "raw_signature_bytes": 64,
+        "scheme": "fors-keccak-research",
+        "security_note": "Unreviewed few-time FORS variant; not FIPS 205 or leanSPHINCS; benchmark keys are deterministic and distinct.",
+        "signature_bytes": 64,
+        "signature_bytes_per_signature": 64
+      }
+    },
+    {
+      "label": "independent-3-5-3",
+      "expected_accept": true,
+      "accepted": true,
+      "matched": true,
+      "stderr": "",
+      "cycles": 5748,
+      "guest_hash": "33b75c9e6d87b9d9dda680cc3721a23ef995f647eaf3737ea10305a592f8610b",
+      "public_input_hex": "81dab710945e706586041d7be034cda0180064d92dda5f65b1def211186e8194",
+      "scheme": "fors-keccak-research",
+      "metadata": {
+        "baseline_native_verify_s": 0.00022212500000007296,
+        "count": 3,
+        "fixture_start": 0,
+        "native_implementation": "Python reference FORS verifier using PyCryptodome Keccak; not an optimized native baseline",
+        "native_verify_seconds": 0.00022212500000007296,
+        "parameters": {
+          "a": 5,
+          "k": 3,
+          "n": 32
+        },
+        "public_key_bytes": 192,
+        "public_key_bytes_per_signature": 64,
+        "raw_key_bytes": 192,
+        "raw_signature_bytes": 1728,
+        "scheme": "fors-keccak-research",
+        "security_note": "Unreviewed few-time FORS variant; not FIPS 205 or leanSPHINCS; benchmark keys are deterministic and distinct.",
+        "signature_bytes": 1728,
+        "signature_bytes_per_signature": 576
+      }
+    },
+    {
+      "label": "order-binding",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 53, site: \"main (line 101)\", fault: Conflict { cell: 7, had: F192 { c0: 13906606631151426353, c1: 15346526033388358087, c2: 0 }, new: F192 { c0: 7309446185250970241, c1: 11586975555036972166, c2: 0 }, hint: None } }"
+    },
+    {
+      "label": "count-binding",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 30, site: \"main (line 101)\", fault: Conflict { cell: 7, had: F192 { c0: 9819784290558876214, c1: 4215061114724120887, c2: 0 }, new: F192 { c0: 7309446185250970241, c1: 11586975555036972166, c2: 0 }, hint: None } }"
+    },
+    {
+      "label": "independent-16-8-1",
+      "expected_accept": true,
+      "accepted": true,
+      "matched": true,
+      "stderr": "",
+      "cycles": 7534,
+      "guest_hash": "ab88c7f6ed1c7be82bdb63f879189789bd64aab82e83343958f970280a31870b",
+      "public_input_hex": "19fe7d943364b7e0c9fa9eeea83ab9030ad75014daec5406d720b98aef53e1e6",
+      "scheme": "fors-keccak-research",
+      "metadata": {
+        "baseline_native_verify_s": 0.0005221669999999623,
+        "count": 1,
+        "fixture_start": 0,
+        "native_implementation": "Python reference FORS verifier using PyCryptodome Keccak; not an optimized native baseline",
+        "native_verify_seconds": 0.0005221669999999623,
+        "parameters": {
+          "a": 8,
+          "k": 16,
+          "n": 32
+        },
+        "public_key_bytes": 64,
+        "public_key_bytes_per_signature": 64,
+        "raw_key_bytes": 64,
+        "raw_signature_bytes": 4608,
+        "scheme": "fors-keccak-research",
+        "security_note": "Unreviewed few-time FORS variant; not FIPS 205 or leanSPHINCS; benchmark keys are deterministic and distinct.",
+        "signature_bytes": 4608,
+        "signature_bytes_per_signature": 4608
+      }
+    },
+    {
+      "label": "independent-1-12-1",
+      "expected_accept": true,
+      "accepted": true,
+      "matched": true,
+      "stderr": "",
+      "cycles": 1830,
+      "guest_hash": "47bc9450f83726cf6b882094dfd3306a5d873ec582325bcacd05eb537f4247ae",
+      "public_input_hex": "ba775040589debc68e469673e7f5e68a0e6ad0d94dafea313dfd77e464c85848",
+      "scheme": "fors-keccak-research",
+      "metadata": {
+        "baseline_native_verify_s": 6.345900000004345e-05,
+        "count": 1,
+        "fixture_start": 0,
+        "native_implementation": "Python reference FORS verifier using PyCryptodome Keccak; not an optimized native baseline",
+        "native_verify_seconds": 6.345900000004345e-05,
+        "parameters": {
+          "a": 12,
+          "k": 1,
+          "n": 32
+        },
+        "public_key_bytes": 64,
+        "public_key_bytes_per_signature": 64,
+        "raw_key_bytes": 64,
+        "raw_signature_bytes": 416,
+        "scheme": "fors-keccak-research",
+        "security_note": "Unreviewed few-time FORS variant; not FIPS 205 or leanSPHINCS; benchmark keys are deterministic and distinct.",
+        "signature_bytes": 416,
+        "signature_bytes_per_signature": 416
+      }
+    },
+    {
+      "label": "independent-128-1-1",
+      "expected_accept": true,
+      "accepted": true,
+      "matched": true,
+      "stderr": "",
+      "cycles": 10708,
+      "guest_hash": "a8d3d9e164f4ffc8c990c262b47940ecfbed5bc56fda250b8fc1446fb03fb395",
+      "public_input_hex": "7b296d2e90ccbbcc21599d0e020f650dd1964d5d57e203d5e7492daff63e6425",
+      "scheme": "fors-keccak-research",
+      "metadata": {
+        "baseline_native_verify_s": 0.0008933329999999406,
+        "count": 1,
+        "fixture_start": 0,
+        "native_implementation": "Python reference FORS verifier using PyCryptodome Keccak; not an optimized native baseline",
+        "native_verify_seconds": 0.0008933329999999406,
+        "parameters": {
+          "a": 1,
+          "k": 128,
+          "n": 32
+        },
+        "public_key_bytes": 64,
+        "public_key_bytes_per_signature": 64,
+        "raw_key_bytes": 64,
+        "raw_signature_bytes": 8192,
+        "scheme": "fors-keccak-research",
+        "security_note": "Unreviewed few-time FORS variant; not FIPS 205 or leanSPHINCS; benchmark keys are deterministic and distinct.",
+        "signature_bytes": 8192,
+        "signature_bytes_per_signature": 8192
+      }
+    },
+    {
+      "label": "independent-10-12-1",
+      "expected_accept": true,
+      "accepted": true,
+      "matched": true,
+      "stderr": "",
+      "cycles": 7440,
+      "guest_hash": "a822bdcd1acf5e2d52fe63357d822d9aa81f72c041236303733286a6c5fa49a3",
+      "public_input_hex": "d02a137a6512ac867c9fbae74a5b6ead241567c952e52b8d32d9346acd6bc26d",
+      "scheme": "fors-keccak-research",
+      "metadata": {
+        "baseline_native_verify_s": 0.0004975000000000396,
+        "count": 1,
+        "fixture_start": 0,
+        "native_implementation": "Python reference FORS verifier using PyCryptodome Keccak; not an optimized native baseline",
+        "native_verify_seconds": 0.0004975000000000396,
+        "parameters": {
+          "a": 12,
+          "k": 10,
+          "n": 32
+        },
+        "public_key_bytes": 64,
+        "public_key_bytes_per_signature": 64,
+        "raw_key_bytes": 64,
+        "raw_signature_bytes": 4160,
+        "scheme": "fors-keccak-research",
+        "security_note": "Unreviewed few-time FORS variant; not FIPS 205 or leanSPHINCS; benchmark keys are deterministic and distinct.",
+        "signature_bytes": 4160,
+        "signature_bytes_per_signature": 4160
+      }
+    },
+    {
+      "label": "recommitted-seed",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 5456, site: \"verify_one (line 89)\", fault: Conflict { cell: 91, had: F192 { c0: 16205924602560621999, c1: 969551889423777587, c2: 0 }, new: F192 { c0: 5586397120724454399, c1: 17661032235089662357, c2: 0 }, hint: None } }"
+    },
+    {
+      "label": "recommitted-root",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 5456, site: \"verify_one (line 89)\", fault: Conflict { cell: 91, had: F192 { c0: 16205924602560621998, c1: 969551889423777587, c2: 0 }, new: F192 { c0: 5040927088854881312, c1: 6315524762996359543, c2: 0 }, hint: None } }"
+    },
+    {
+      "label": "recommitted-message",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 5456, site: \"verify_one (line 89)\", fault: Conflict { cell: 91, had: F192 { c0: 16205924602560621999, c1: 969551889423777587, c2: 0 }, new: F192 { c0: 11404058816623209499, c1: 10171683540005526985, c2: 0 }, hint: None } }"
+    },
+    {
+      "label": "relation-secret",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 5456, site: \"verify_one (line 89)\", fault: Conflict { cell: 91, had: F192 { c0: 16205924602560621999, c1: 969551889423777587, c2: 0 }, new: F192 { c0: 749307754318232789, c1: 8248570468265420962, c2: 0 }, hint: None } }"
+    },
+    {
+      "label": "relation-auth",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 5456, site: \"verify_one (line 89)\", fault: Conflict { cell: 91, had: F192 { c0: 16205924602560621999, c1: 969551889423777587, c2: 0 }, new: F192 { c0: 1333603284873966931, c1: 18370626820952395074, c2: 0 }, hint: None } }"
+    },
+    {
+      "label": "relation-tree-order",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 5456, site: \"verify_one (line 89)\", fault: Conflict { cell: 91, had: F192 { c0: 16205924602560621999, c1: 969551889423777587, c2: 0 }, new: F192 { c0: 17617569888145311059, c1: 14877600016480830341, c2: 0 }, hint: None } }"
+    },
+    {
+      "label": "duplicates-permitted",
+      "expected_accept": true,
+      "accepted": true,
+      "matched": true,
+      "stderr": "",
+      "cycles": 15045,
+      "guest_hash": "141c050dbfed8e4ca80db506fa9b370682f570ab52ed2c71afe00757f8e62d27",
+      "public_input_hex": "83c131f1d81d4efa6cdfbe23cfb2550754a6a00f171665f2928cdb4662efc97f",
+      "scheme": "fors-keccak-research",
+      "metadata": {
+        "baseline_native_verify_s": 0.0010288750000000402,
+        "count": 2,
+        "fixture_start": 0,
+        "native_implementation": "Python reference FORS verifier using PyCryptodome Keccak; not an optimized native baseline",
+        "native_verify_seconds": 0.0010288750000000402,
+        "parameters": {
+          "a": 8,
+          "k": 16,
+          "n": 32
+        },
+        "public_key_bytes": 128,
+        "public_key_bytes_per_signature": 64,
+        "raw_key_bytes": 128,
+        "raw_signature_bytes": 9216,
+        "scheme": "fors-keccak-research",
+        "security_note": "Unreviewed few-time FORS variant; not FIPS 205 or leanSPHINCS; benchmark keys are deterministic and distinct.",
+        "signature_bytes": 9216,
+        "signature_bytes_per_signature": 4608
+      }
+    },
+    {
+      "label": "collision-original-k1-a8",
+      "expected_accept": true,
+      "accepted": true,
+      "matched": true,
+      "stderr": "",
+      "cycles": 1598,
+      "guest_hash": "ce9d95865846318a98ea876d3beb14cb63737eccddb51dda6f2c89f0f488f4f6",
+      "public_input_hex": "0960849378a6e3772b53e473ec57438ef45d6dc9e5844542223ed83742e89b20",
+      "scheme": "fors-keccak-research",
+      "metadata": {
+        "baseline_native_verify_s": 4.1749999999840526e-05,
+        "count": 1,
+        "fixture_start": 0,
+        "native_implementation": "Python reference FORS verifier using PyCryptodome Keccak; not an optimized native baseline",
+        "native_verify_seconds": 4.1749999999840526e-05,
+        "parameters": {
+          "a": 8,
+          "k": 1,
+          "n": 32
+        },
+        "public_key_bytes": 64,
+        "public_key_bytes_per_signature": 64,
+        "raw_key_bytes": 64,
+        "raw_signature_bytes": 288,
+        "scheme": "fors-keccak-research",
+        "security_note": "Unreviewed few-time FORS variant; not FIPS 205 or leanSPHINCS; benchmark keys are deterministic and distinct.",
+        "signature_bytes": 288,
+        "signature_bytes_per_signature": 288
+      }
+    },
+    {
+      "label": "collision-reused-signature-k1-a8",
+      "expected_accept": true,
+      "accepted": true,
+      "matched": true,
+      "stderr": "",
+      "cycles": 1598,
+      "guest_hash": "ce9d95865846318a98ea876d3beb14cb63737eccddb51dda6f2c89f0f488f4f6",
+      "public_input_hex": "fed93a9c7db6ac2107a6fc152a40d259429b359b553a69c8759ba281d3a08772",
+      "scheme": "fors-keccak-research",
+      "metadata": {
+        "baseline_native_verify_s": 0.00013658299999996792,
+        "count": 1,
+        "fixture_start": 0,
+        "native_implementation": "Python reference FORS verifier using PyCryptodome Keccak; not an optimized native baseline",
+        "native_verify_seconds": 0.00013658299999996792,
+        "parameters": {
+          "a": 8,
+          "k": 1,
+          "n": 32
+        },
+        "public_key_bytes": 64,
+        "public_key_bytes_per_signature": 64,
+        "raw_key_bytes": 64,
+        "raw_signature_bytes": 288,
+        "scheme": "fors-keccak-research",
+        "security_note": "Unreviewed few-time FORS variant; not FIPS 205 or leanSPHINCS; benchmark keys are deterministic and distinct.",
+        "signature_bytes": 288,
+        "signature_bytes_per_signature": 288
+      }
+    },
+    {
+      "label": "collision-control-distinct-index-k1-a8",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: execution: ExecError { pc: 1410, site: \"verify_one (line 89)\", fault: Conflict { cell: 91, had: F192 { c0: 6666326771329842749, c1: 3436876618781977174, c2: 0 }, new: F192 { c0: 17935348538777646672, c1: 7675969767295479608, c2: 0 }, hint: None } }"
+    },
+    {
+      "label": "metadata-is-not-bound",
+      "expected_accept": true,
+      "accepted": true,
+      "matched": true,
+      "stderr": "",
+      "cycles": 7534,
+      "guest_hash": "ab88c7f6ed1c7be82bdb63f879189789bd64aab82e83343958f970280a31870b",
+      "public_input_hex": "4f07d711c89625babcd4c659337c9cd6a0dc4c0501acc4e6e36adbeaf90405e2",
+      "scheme": "forged-label",
+      "metadata": {
+        "count": 999999,
+        "verified_signers": "untrusted-description"
+      }
+    },
+    {
+      "label": "arbitrary-program-is-allowed",
+      "expected_accept": true,
+      "accepted": true,
+      "matched": true,
+      "stderr": "",
+      "cycles": 3,
+      "guest_hash": "cf3354ef79809d787f1c71d8f21872651878f4bfb6bba186fae7dd6a360234d6",
+      "public_input_hex": "4f07d711c89625babcd4c659337c9cd6a0dc4c0501acc4e6e36adbeaf90405e2",
+      "scheme": "fors-keccak-research",
+      "metadata": {
+        "baseline_native_verify_s": 0.0006757079999999971,
+        "count": 1,
+        "fixture_start": 0,
+        "native_implementation": "Python reference FORS verifier using PyCryptodome Keccak; not an optimized native baseline",
+        "native_verify_seconds": 0.0006757079999999971,
+        "parameters": {
+          "a": 8,
+          "k": 16,
+          "n": 32
+        },
+        "public_key_bytes": 64,
+        "public_key_bytes_per_signature": 64,
+        "raw_key_bytes": 64,
+        "raw_signature_bytes": 4608,
+        "scheme": "fors-keccak-research",
+        "security_note": "Unreviewed few-time FORS variant; not FIPS 205 or leanSPHINCS; benchmark keys are deterministic and distinct.",
+        "signature_bytes": 4608,
+        "signature_bytes_per_signature": 4608
+      }
+    },
+    {
+      "label": "public-input-high-limb",
+      "expected_accept": false,
+      "accepted": false,
+      "matched": true,
+      "stderr": "error: public inputs must be two canonical 128-bit cells"
+    }
+  ]
+}

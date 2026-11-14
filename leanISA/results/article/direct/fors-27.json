@@ -1,0 +1,93 @@
+{
+  "action": "prove",
+  "arch": "aarch64",
+  "bytecode_instructions": 5821,
+  "committed_cells": 4866048,
+  "compile_s": 0.003513625,
+  "cycles": 202820,
+  "execute_s": 0.006161417,
+  "guest_hash": "ec9572e637295c046d31ccc90b1ec2e3157e6f94ac39329113cbdcef23e9721f",
+  "leanvm_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "leanvm_source_dirty_at_build": "false",
+  "log_inv_rate": 1,
+  "log_memory_cells": 18,
+  "memory_cells": 251512,
+  "metadata": {
+    "count": 27,
+    "fixture_generation_s": 0.018270458000017697,
+    "parameters": {
+      "a": 8,
+      "k": 16,
+      "n": 32
+    },
+    "public_key_bytes": 1728,
+    "raw_key_bytes": 1728,
+    "raw_signature_bytes": 124416,
+    "signature_bytes": 124416
+  },
+  "min_log_committed": 0,
+  "opcode_rows": [
+    55570,
+    52518,
+    38918,
+    27792,
+    23952,
+    4070
+  ],
+  "os": "macos",
+  "process_peak_rss_bytes": 386351104,
+  "proof_bytes": 267536,
+  "proof_bytes_samples": [
+    267536,
+    267536,
+    267536
+  ],
+  "proof_encoding": {
+    "merkle_bytes": 215616,
+    "merkle_phases": [
+      {
+        "opened_field_words": 8512,
+        "opened_rows": 224,
+        "sibling_hashes": 2051
+      },
+      {
+        "opened_field_words": 2688,
+        "opened_rows": 56,
+        "sibling_hashes": 586
+      },
+      {
+        "opened_field_words": 1536,
+        "opened_rows": 32,
+        "sibling_hashes": 325
+      },
+      {
+        "opened_field_words": 1104,
+        "opened_rows": 23,
+        "sibling_hashes": 230
+      }
+    ],
+    "scalar_stream_bytes": 51920,
+    "scalar_stream_count": 2163
+  },
+  "prove_s": [
+    0.086958792,
+    0.085350708,
+    0.088144792
+  ],
+  "public_input_hex": "8c4a6048265a1b752a21e8a6f11926601d772fd7e55bd91b7e1c1c9636dbcc70",
+  "schema_version": 1,
+  "scheme": "fors-keccak-research",
+  "statement_pinned": false,
+  "threads_env": null,
+  "verified": true,
+  "verify_s": [
+    0.008846917,
+    0.008925042,
+    0.0090975
+  ],
+  "warmup_passes": 1,
+  "zero_knowledge": false,
+  "input_sha256": "fa79bb25b5230bddd6ce7ab5f17c9d7a44fdcf98562b60edd743d37b9f678f76",
+  "experiment_process_elapsed_s": 0.44374562499999115,
+  "article_scheme": "fors"
+}

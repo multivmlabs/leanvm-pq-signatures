@@ -1,0 +1,10 @@
+{
+  "repository": "leanEthereum/leanVM",
+  "pr": 605,
+  "url": "https://github.com/leanEthereum/leanVM/pull/605",
+  "state": "closed",
+  "merged_at": null,
+  "head_sha": "c67701c037c11d229c563671419ccc48827b5c2d",
+  "base": "riscv-exploration",
+  "scope": "Isolated guest/kernel optimization, not a merged upstream change. Backend stays at06e5c9cd6981103786f9d0a17324241b559a50d3."
+}

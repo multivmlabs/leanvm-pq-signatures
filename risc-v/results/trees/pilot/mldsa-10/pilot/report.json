@@ -1,0 +1,201 @@
+{
+  "action": "prove",
+  "actual_leaves": 2,
+  "all_folded_claims_settled": true,
+  "arity": 2,
+  "arity_0": 2,
+  "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "depth": 1,
+  "elf_sha256": "73fa19d855adbd0ad6d8368260b5e1b173cc57a854e52624dd1b8e65d95f69d6",
+  "first_circuit": {
+    "committed_words": 10191872,
+    "tables": [
+      {
+        "height_log": 17,
+        "name": "EMUL",
+        "rows": 114431
+      },
+      {
+        "height_log": 16,
+        "name": "EXK",
+        "rows": 49440
+      },
+      {
+        "height_log": 15,
+        "name": "HASH",
+        "rows": 21351
+      },
+      {
+        "height_log": 10,
+        "name": "SPLIT",
+        "rows": 1022
+      },
+      {
+        "height_log": 14,
+        "name": "CAST",
+        "rows": 13673
+      },
+      {
+        "height_log": 10,
+        "name": "PUB",
+        "rows": 582
+      }
+    ]
+  },
+  "fixture_s": 0.0326995,
+  "leaf_prove_s": 55.567794083,
+  "leaf_reports": [
+    {
+      "execution": {
+        "committed_words": 257345640,
+        "cycles": 5356788,
+        "padded_rows": {
+          "ALU": 4194304,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 128,
+          "LD": 524288,
+          "LOAD": 524288,
+          "MUL": 524288,
+          "MULH": 16,
+          "SD": 262144,
+          "SHIFT": 2097152,
+          "STORE": 524288
+        },
+        "proven_rows": 8650920,
+        "rows": {
+          "ALU": 2678571,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 106,
+          "LD": 281618,
+          "LOAD": 381522,
+          "MUL": 302383,
+          "MULH": 0,
+          "SD": 251017,
+          "SHIFT": 1131454,
+          "STORE": 330117
+        }
+      },
+      "leaf": 0,
+      "proof_bytes": 409734,
+      "proof_sha256": "0a150cc64ef97c0ddb74d64fbd72f9f68bc00df10492f635311793367c633b1c",
+      "prove_s": 13.665836333,
+      "signatures": 5,
+      "verify_s": 0.005675125
+    },
+    {
+      "execution": {
+        "committed_words": 257345640,
+        "cycles": 5356814,
+        "padded_rows": {
+          "ALU": 4194304,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 128,
+          "LD": 524288,
+          "LOAD": 524288,
+          "MUL": 524288,
+          "MULH": 16,
+          "SD": 262144,
+          "SHIFT": 2097152,
+          "STORE": 524288
+        },
+        "proven_rows": 8650920,
+        "rows": {
+          "ALU": 2678597,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 106,
+          "LD": 281618,
+          "LOAD": 381513,
+          "MUL": 302388,
+          "MULH": 0,
+          "SD": 251017,
+          "SHIFT": 1131453,
+          "STORE": 330122
+        }
+      },
+      "leaf": 1,
+      "proof_bytes": 409670,
+      "proof_sha256": "1d5ae4be12fb8db0e9650a95979d69588e7cb84ea35414317315d3e63ba22b8f",
+      "prove_s": 41.90195775,
+      "signatures": 5,
+      "verify_s": 0.005570666
+    }
+  ],
+  "leaf_size": 5,
+  "leaf_slots": 2,
+  "log_inverse_rate": 1,
+  "merge_count": 1,
+  "merge_prove_s": 1.430766834,
+  "merge_reports": [
+    {
+      "children": 2,
+      "kind": "first",
+      "level": 0,
+      "node": 0,
+      "proof_bytes": 266271,
+      "proof_sha256": "b22de58483e7555c7d86e9d415d092c65e4154f98cc90b1fda7038535bb3b888",
+      "prove_s": 1.430766834
+    }
+  ],
+  "node_circuit": {
+    "committed_words": 10191872,
+    "tables": [
+      {
+        "height_log": 17,
+        "name": "EMUL",
+        "rows": 58420
+      },
+      {
+        "height_log": 16,
+        "name": "EXK",
+        "rows": 37772
+      },
+      {
+        "height_log": 15,
+        "name": "HASH",
+        "rows": 14900
+      },
+      {
+        "height_log": 10,
+        "name": "SPLIT",
+        "rows": 924
+      },
+      {
+        "height_log": 14,
+        "name": "CAST",
+        "rows": 9160
+      },
+      {
+        "height_log": 10,
+        "name": "PUB",
+        "rows": 550
+      }
+    ]
+  },
+  "padding_policy": "Repeat final real leaf proof in canonical padding slots; no extra signatures counted. All merge proofs freshly produced and charged.",
+  "padding_slots": 0,
+  "peak_rss_bytes": 11867193344,
+  "pipeline_elapsed_s": 57.104000709,
+  "prepared_complete_verify_s": [
+    0.001676542,
+    0.00161825,
+    0.001587125
+  ],
+  "program_load_s": 0.001957167,
+  "root_proof_bytes": 266271,
+  "root_proof_sha256": "b22de58483e7555c7d86e9d415d092c65e4154f98cc90b1fda7038535bb3b888",
+  "sample": "pilot",
+  "schema": 1,
+  "scheme": "mldsa",
+  "signatures": 10,
+  "statement_sha256": "19a9ac0b1cc902d709202683076a1bbb22e2741ba6193ef6efa0bf08cde56b69",
+  "status": "accepted",
+  "threads_requested": 8,
+  "total_prove_s": 56.998560917000006,
+  "tree_setup_s": 0.046913167,
+  "verified": true,
+  "zero_knowledge": false
+}

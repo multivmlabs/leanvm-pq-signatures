@@ -1,0 +1,28 @@
+   Compiling pq-leanbench v0.1.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288)
+    Finished `release` profile [optimized] target(s) in 7.52s
+     Running unittests src/bin/aggregate-tree.rs (target/release/deps/aggregate_tree-7a0d498828c7d411)
+
+running 1 test
+leaf 0: proved
+leaf 1: proved
+leaf 2: proved
+leaf 3: proved
+leaf 4: proved
+pass 0 merge 5: 0.237394s
+pass 0 merge 6: 0.206809s
+pass 0 merge 7: 0.200038s
+pass 0 merge 8: 0.201394s
+{
+  "depth": 3,
+  "edges": 8,
+  "lowest_inherited_point_mutation_rejected": true,
+  "missing_points_rejected": true,
+  "plan_hash": "ba77ad8968ba98333b934ba970df83ce7ef7feaa52399312ba2513703f4f8aaa",
+  "result_directory": "/var/folders/h5/8z9cb2vj2cn4zrnzgdqkfdr40000gn/T/pqbench-tree-35513-1793728022555581000",
+  "source_only_reload_verified": true,
+  "test": "toy_three_level_tree"
+}
+test tests::toy_three_level_tree_preserves_all_inherited_obligations ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 7 filtered out; finished in 4.51s
+

@@ -1,0 +1,18 @@
+[
+  {
+    "scheme": "falcon",
+    "n": 32,
+    "independent_public_digest_match": true,
+    "full_proof_verified": true,
+    "proof_sha256": "a4f461ffee5e4872272b24bfd1f142957cc838a3932b40c714c74894d18fab74",
+    "statement_sha256": "b4668695713699a2f38a5d720a884711dcf95709b5c6415e63e088ff65b95855"
+  },
+  {
+    "scheme": "mldsa",
+    "n": 6,
+    "independent_public_digest_match": true,
+    "full_proof_verified": true,
+    "proof_sha256": "1c083d96d27c5d5a4125eadf0220932302e9366005b3152dc32a4ce16c6ef7d5",
+    "statement_sha256": "2929a8975c35f824086356ef5320bc86e4e838ec5f167a83902719e15819653b"
+  }
+]

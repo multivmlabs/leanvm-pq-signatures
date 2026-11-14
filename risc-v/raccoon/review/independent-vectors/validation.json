@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "controls": [
+    {
+      "name": "first-one",
+      "expected_accept": true,
+      "native_accept": true,
+      "actual_guest_accept": true,
+      "public_digest_matches_independent_blake2s": true
+    },
+    {
+      "name": "honest-two",
+      "expected_accept": true,
+      "native_accept": true,
+      "actual_guest_accept": true,
+      "public_digest_matches_independent_blake2s": true
+    },
+    {
+      "name": "nist-pdf-order",
+      "expected_accept": false,
+      "native_accept": false,
+      "actual_guest_accept": false,
+      "public_digest_matches_independent_blake2s": true
+    },
+    {
+      "name": "reference-order",
+      "expected_accept": true,
+      "native_accept": true,
+      "actual_guest_accept": true,
+      "public_digest_matches_independent_blake2s": true
+    },
+    {
+      "name": "reversed-two",
+      "expected_accept": true,
+      "native_accept": true,
+      "actual_guest_accept": true,
+      "public_digest_matches_independent_blake2s": true
+    },
+    {
+      "name": "second-late-key",
+      "expected_accept": false,
+      "native_accept": false,
+      "actual_guest_accept": false,
+      "public_digest_matches_independent_blake2s": true
+    },
+    {
+      "name": "second-late-message",
+      "expected_accept": false,
+      "native_accept": false,
+      "actual_guest_accept": false,
+      "public_digest_matches_independent_blake2s": true
+    },
+    {
+      "name": "second-noncanonical-final-coefficient",
+      "expected_accept": false,
+      "native_accept": false,
+      "actual_guest_accept": false,
+      "public_digest_matches_independent_blake2s": true
+    },
+    {
+      "name": "second-nonzero-final-padding",
+      "expected_accept": false,
+      "native_accept": false,
+      "actual_guest_accept": false,
+      "public_digest_matches_independent_blake2s": true
+    },
+    {
+      "name": "second-one",
+      "expected_accept": true,
+      "native_accept": true,
+      "actual_guest_accept": true,
+      "public_digest_matches_independent_blake2s": true
+    },
+    {
+      "name": "second-seed",
+      "expected_accept": false,
+      "native_accept": false,
+      "actual_guest_accept": false,
+      "public_digest_matches_independent_blake2s": true
+    },
+    {
+      "name": "second-signature",
+      "expected_accept": false,
+      "native_accept": false,
+      "actual_guest_accept": false,
+      "public_digest_matches_independent_blake2s": true
+    },
+    {
+      "name": "swapped-signatures",
+      "expected_accept": false,
+      "native_accept": false,
+      "actual_guest_accept": false,
+      "public_digest_matches_independent_blake2s": true
+    }
+  ],
+  "elf_sha256": "b8b78438d96258c436a4a34f5f40505d469555bb29d289936e01c863dd1f7e6a",
+  "benchmarks_run": false,
+  "prover_invoked": false
+}

@@ -1,0 +1,101 @@
+{
+  "cases": [
+    {
+      "baseline_committed_words": 51534184,
+      "baseline_error": null,
+      "committed_words": 51534184,
+      "count": 1,
+      "cycles": 1070114,
+      "measure_error": null,
+      "output_matches": true,
+      "rows": {
+        "ALU": 534932,
+        "HASH": 22,
+        "LD": 59290,
+        "LOAD": 73088,
+        "MUL": 60488,
+        "SD": 49941,
+        "SHIFT": 226299,
+        "STORE": 66054
+      }
+    },
+    {
+      "baseline_committed_words": 261277800,
+      "baseline_error": null,
+      "committed_words": 261277800,
+      "count": 6,
+      "cycles": 6418565,
+      "measure_error": null,
+      "output_matches": true,
+      "rows": {
+        "ALU": 3208213,
+        "HASH": 127,
+        "LD": 355550,
+        "LOAD": 438471,
+        "MUL": 362852,
+        "SD": 299486,
+        "SHIFT": 1357738,
+        "STORE": 396128
+      }
+    },
+    {
+      "baseline_committed_words": null,
+      "baseline_error": "TooLong",
+      "committed_words": 261315688,
+      "count": 7,
+      "cycles": 7488466,
+      "measure_error": null,
+      "output_matches": true,
+      "rows": {
+        "ALU": 3743032,
+        "HASH": 148,
+        "LD": 414802,
+        "LOAD": 511559,
+        "MUL": 423339,
+        "SD": 349395,
+        "SHIFT": 1584034,
+        "STORE": 462157
+      }
+    },
+    {
+      "baseline_committed_words": null,
+      "baseline_error": "TooLong",
+      "committed_words": null,
+      "count": 8,
+      "cycles": 8558306,
+      "measure_error": "TooLong",
+      "output_matches": true,
+      "rows": {
+        "ALU": 4277811,
+        "HASH": 169,
+        "LD": 474054,
+        "LOAD": 584635,
+        "MUL": 483825,
+        "SD": 399304,
+        "SHIFT": 1810323,
+        "STORE": 528185
+      }
+    },
+    {
+      "baseline_committed_words": null,
+      "baseline_error": "TooLong",
+      "committed_words": null,
+      "count": 9,
+      "cycles": 9628033,
+      "measure_error": "TooLong",
+      "output_matches": true,
+      "rows": {
+        "ALU": 4812483,
+        "HASH": 190,
+        "LD": 533306,
+        "LOAD": 657720,
+        "MUL": 544299,
+        "SD": 449213,
+        "SHIFT": 2036621,
+        "STORE": 594201
+      }
+    }
+  ],
+  "guest_sha256": "8d1a19b35874db7c3ffff15e851d0312a97c6c9b370ce58c300b674ac57922ee",
+  "scope": "Full actual RISC-V guest execution and measure only, no STARK production"
+}

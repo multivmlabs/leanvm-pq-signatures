@@ -1,0 +1,15 @@
+{
+  "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "backend_branch": "riscv-exploration",
+  "host_binary_sha256": "3ebadbc341e04bdf96201af2a247234f0c5dc210a454337725595a1b7cc72629",
+  "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: aarch64-apple-darwin\nrelease: 1.99.0\nLLVM version: 23.1.1\n",
+  "guest_rustc": "rustc 1.101.0-nightly (0abfedbc7 2026-10-02)\nbinary: rustc\ncommit-hash: 0abfedbc7cd4e725f126913880c95800394f7c37\ncommit-date: 2026-10-02\nhost: aarch64-apple-darwin\nrelease: 1.101.0-nightly\nLLVM version: 23.1.1\n",
+  "platform": "macOS-26.3-arm64-arm-64bit",
+  "machine": "Apple M4 Pro, 24 GiB RAM, 12 logical CPUs",
+  "threads": 8,
+  "rate_log_inverse": 1,
+  "warmup": 1,
+  "measured_repeats": 3,
+  "hardware_source": "Earlier local environment inventory; sandbox sysctl unavailable during this run",
+  "timing": "Fresh process per batch count; proves sequentially, exact committed witnesses, three measured fresh proofs after one warmup; fixture generation, program loading, serialization and disk writes excluded from proving; proof decoding and full Program::verify included in verification; public record derivation excluded."
+}

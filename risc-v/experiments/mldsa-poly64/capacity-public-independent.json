@@ -1,0 +1,6 @@
+{
+  "independent_public_digest_matches": true,
+  "count": 7,
+  "public_digest_hex": "8407a84b631592772bc6a3256c5666f0526798c5a79a8162df101e5a119393b7",
+  "method": "Python standard hashlib.blake2s, byte encoding of profile/count/compact keys/messages only; no signatures in digest"
+}

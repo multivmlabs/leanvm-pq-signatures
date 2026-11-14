@@ -1,0 +1,32 @@
+{
+  "revision": "e023b6a46143f7b23199ccecb2684192baf7b640",
+  "copied_git_tracked_files": 1482,
+  "omitted_gitlinks": [
+    "third_party/lattice-estimator"
+  ],
+  "overlay": "experiments/aerie-port/akita",
+  "changed_files": {
+    "crates/akita-types/src/lib.rs": {
+      "upstream_sha256": "42a2a219ba5874ed96543bfdcd54e0de87eda27498ccf13d3bc6102dc8171385",
+      "overlay_sha256": "010c2e477e05fbdc82c81eaf1b20b1bea5284e0ef79d9d824786b67f6148a832"
+    },
+    "crates/akita-types/src/ntt_cache.rs": {
+      "upstream_sha256": "798f750e544c512a1074b21dd19e4d74a1faa2f4cdb892f05e015525cbe70a83",
+      "overlay_sha256": "3555e4c10e894a2ea02b4e2e7a3c200dcb8006f6fd58fd5d602107d17d2958fc"
+    },
+    "crates/akita-types/src/ntt_cache/prepared_artifact.rs": {
+      "upstream_sha256": "3273aff839fe62cb7487c3dbc42fdd31561e30525b98c1a9a2189f03289549cc",
+      "overlay_sha256": "35330c6b5ad5921579e0345374bc89ab141f2e9129363fe5609d82535752b7c5"
+    },
+    "crates/akita-verifier/src/prepared_cache.rs": {
+      "upstream_sha256": "769fe1e89b78c586fbf63e044ee802db2db77c142adc0268765a3c0f7e0f0754",
+      "overlay_sha256": "435b4b3c4e5fdf027bfb95ea8bd65069cc23aaa48ad9cb46eae1447a42f87503"
+    },
+    "crates/akita-verifier/src/verifier.rs": {
+      "upstream_sha256": "6e144f13a9b164078fd8566c00de6b40ae16b2a761e3811607a9209db32f54f7",
+      "overlay_sha256": "73d1867c9f125a188c749c81d26c94077d9afca71dcfeae36fded346cb6c9921"
+    }
+  },
+  "patch_sha256": "ee37dd9dad5aafda9f951eea3e325f6c1f4d0429b74e7b5c20bc0f1a8df5ab73",
+  "unchanged_tracked_files": 1477
+}

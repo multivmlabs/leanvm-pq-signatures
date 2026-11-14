@@ -1,0 +1,1200 @@
+{
+  "scope": "Independent Python hashlib SHAKE256 and bit-level Falcon compressed-codec parser on exact upstream-generated advice. Not a signature verifier or proof producer.",
+  "upstream_corpus_advice_sha256": "f7710ea6053208ec66abe0cdb3ce3f7bb346ddc3f0ccb2749abc24412bf851b5",
+  "proved_window_is_exact_slice_of_upstream_corpus": true,
+  "windows": [
+    {
+      "count": 33,
+      "start": 0,
+      "aggregate": {
+        "hash_samples": 18038,
+        "hash_rejections": 1142,
+        "keccak_permutations": 283,
+        "decompression_unary_zero_bits": 9843,
+        "compressed_body_used_bits": 161907,
+        "decompression_window_reloads": 3419,
+        "s2_squared_norm": 459428484
+      },
+      "eight_permutation_records": 14,
+      "nine_permutation_records": 19
+    },
+    {
+      "count": 33,
+      "start": 96,
+      "aggregate": {
+        "hash_samples": 17941,
+        "hash_rejections": 1045,
+        "keccak_permutations": 279,
+        "decompression_unary_zero_bits": 9957,
+        "compressed_body_used_bits": 162021,
+        "decompression_window_reloads": 3424,
+        "s2_squared_norm": 464576700
+      },
+      "eight_permutation_records": 18,
+      "nine_permutation_records": 15
+    }
+  ],
+  "records": [
+    {
+      "hash_samples": 543,
+      "hash_rejections": 31,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 299,
+      "compressed_body_used_bits": 4907,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13995078
+    },
+    {
+      "hash_samples": 549,
+      "hash_rejections": 37,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 263,
+      "compressed_body_used_bits": 4871,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 12130003
+    },
+    {
+      "hash_samples": 550,
+      "hash_rejections": 38,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 303,
+      "compressed_body_used_bits": 4911,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14143111
+    },
+    {
+      "hash_samples": 551,
+      "hash_rejections": 39,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 298,
+      "compressed_body_used_bits": 4906,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13745811
+    },
+    {
+      "hash_samples": 560,
+      "hash_rejections": 48,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 308,
+      "compressed_body_used_bits": 4916,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14675109
+    },
+    {
+      "hash_samples": 543,
+      "hash_rejections": 31,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 304,
+      "compressed_body_used_bits": 4912,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14651424
+    },
+    {
+      "hash_samples": 542,
+      "hash_rejections": 30,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 298,
+      "compressed_body_used_bits": 4906,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13633131
+    },
+    {
+      "hash_samples": 548,
+      "hash_rejections": 36,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 324,
+      "compressed_body_used_bits": 4932,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 15381568
+    },
+    {
+      "hash_samples": 542,
+      "hash_rejections": 30,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 314,
+      "compressed_body_used_bits": 4922,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14742834
+    },
+    {
+      "hash_samples": 550,
+      "hash_rejections": 38,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 324,
+      "compressed_body_used_bits": 4932,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 15032455
+    },
+    {
+      "hash_samples": 546,
+      "hash_rejections": 34,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 282,
+      "compressed_body_used_bits": 4890,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13087737
+    },
+    {
+      "hash_samples": 557,
+      "hash_rejections": 45,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 288,
+      "compressed_body_used_bits": 4896,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13720643
+    },
+    {
+      "hash_samples": 546,
+      "hash_rejections": 34,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 289,
+      "compressed_body_used_bits": 4897,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13983076
+    },
+    {
+      "hash_samples": 544,
+      "hash_rejections": 32,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 316,
+      "compressed_body_used_bits": 4924,
+      "decompression_window_reloads": 105,
+      "s2_squared_norm": 14653888
+    },
+    {
+      "hash_samples": 540,
+      "hash_rejections": 28,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 306,
+      "compressed_body_used_bits": 4914,
+      "decompression_window_reloads": 105,
+      "s2_squared_norm": 13841207
+    },
+    {
+      "hash_samples": 548,
+      "hash_rejections": 36,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 302,
+      "compressed_body_used_bits": 4910,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13919054
+    },
+    {
+      "hash_samples": 544,
+      "hash_rejections": 32,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 306,
+      "compressed_body_used_bits": 4914,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13984410
+    },
+    {
+      "hash_samples": 543,
+      "hash_rejections": 31,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 296,
+      "compressed_body_used_bits": 4904,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13821714
+    },
+    {
+      "hash_samples": 549,
+      "hash_rejections": 37,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 306,
+      "compressed_body_used_bits": 4914,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13478992
+    },
+    {
+      "hash_samples": 548,
+      "hash_rejections": 36,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 272,
+      "compressed_body_used_bits": 4880,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13039244
+    },
+    {
+      "hash_samples": 548,
+      "hash_rejections": 36,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 288,
+      "compressed_body_used_bits": 4896,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13152593
+    },
+    {
+      "hash_samples": 544,
+      "hash_rejections": 32,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 311,
+      "compressed_body_used_bits": 4919,
+      "decompression_window_reloads": 105,
+      "s2_squared_norm": 14650283
+    },
+    {
+      "hash_samples": 546,
+      "hash_rejections": 34,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 296,
+      "compressed_body_used_bits": 4904,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13243148
+    },
+    {
+      "hash_samples": 554,
+      "hash_rejections": 42,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 293,
+      "compressed_body_used_bits": 4901,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13934436
+    },
+    {
+      "hash_samples": 547,
+      "hash_rejections": 35,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 269,
+      "compressed_body_used_bits": 4877,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 12536333
+    },
+    {
+      "hash_samples": 544,
+      "hash_rejections": 32,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 294,
+      "compressed_body_used_bits": 4902,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13466860
+    },
+    {
+      "hash_samples": 543,
+      "hash_rejections": 31,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 290,
+      "compressed_body_used_bits": 4898,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13788058
+    },
+    {
+      "hash_samples": 546,
+      "hash_rejections": 34,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 275,
+      "compressed_body_used_bits": 4883,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13299004
+    },
+    {
+      "hash_samples": 543,
+      "hash_rejections": 31,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 324,
+      "compressed_body_used_bits": 4932,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 15082376
+    },
+    {
+      "hash_samples": 544,
+      "hash_rejections": 32,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 299,
+      "compressed_body_used_bits": 4907,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13789967
+    },
+    {
+      "hash_samples": 536,
+      "hash_rejections": 24,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 302,
+      "compressed_body_used_bits": 4910,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13973053
+    },
+    {
+      "hash_samples": 554,
+      "hash_rejections": 42,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 296,
+      "compressed_body_used_bits": 4904,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 14306627
+    },
+    {
+      "hash_samples": 546,
+      "hash_rejections": 34,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 308,
+      "compressed_body_used_bits": 4916,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14545257
+    },
+    {
+      "hash_samples": 537,
+      "hash_rejections": 25,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 295,
+      "compressed_body_used_bits": 4903,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14433418
+    },
+    {
+      "hash_samples": 554,
+      "hash_rejections": 42,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 306,
+      "compressed_body_used_bits": 4914,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13910554
+    },
+    {
+      "hash_samples": 549,
+      "hash_rejections": 37,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 310,
+      "compressed_body_used_bits": 4918,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14565585
+    },
+    {
+      "hash_samples": 550,
+      "hash_rejections": 38,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 291,
+      "compressed_body_used_bits": 4899,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13942998
+    },
+    {
+      "hash_samples": 548,
+      "hash_rejections": 36,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 281,
+      "compressed_body_used_bits": 4889,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13837347
+    },
+    {
+      "hash_samples": 547,
+      "hash_rejections": 35,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 289,
+      "compressed_body_used_bits": 4897,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13298272
+    },
+    {
+      "hash_samples": 545,
+      "hash_rejections": 33,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 317,
+      "compressed_body_used_bits": 4925,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 15293835
+    },
+    {
+      "hash_samples": 544,
+      "hash_rejections": 32,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 336,
+      "compressed_body_used_bits": 4944,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 16267665
+    },
+    {
+      "hash_samples": 551,
+      "hash_rejections": 39,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 284,
+      "compressed_body_used_bits": 4892,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13172847
+    },
+    {
+      "hash_samples": 537,
+      "hash_rejections": 25,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 306,
+      "compressed_body_used_bits": 4914,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 14109135
+    },
+    {
+      "hash_samples": 547,
+      "hash_rejections": 35,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 308,
+      "compressed_body_used_bits": 4916,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 14578068
+    },
+    {
+      "hash_samples": 550,
+      "hash_rejections": 38,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 326,
+      "compressed_body_used_bits": 4934,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 15859552
+    },
+    {
+      "hash_samples": 555,
+      "hash_rejections": 43,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 333,
+      "compressed_body_used_bits": 4941,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 15770529
+    },
+    {
+      "hash_samples": 545,
+      "hash_rejections": 33,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 332,
+      "compressed_body_used_bits": 4940,
+      "decompression_window_reloads": 105,
+      "s2_squared_norm": 16568822
+    },
+    {
+      "hash_samples": 543,
+      "hash_rejections": 31,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 296,
+      "compressed_body_used_bits": 4904,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13351261
+    },
+    {
+      "hash_samples": 545,
+      "hash_rejections": 33,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 313,
+      "compressed_body_used_bits": 4921,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14578767
+    },
+    {
+      "hash_samples": 548,
+      "hash_rejections": 36,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 290,
+      "compressed_body_used_bits": 4898,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13030423
+    },
+    {
+      "hash_samples": 539,
+      "hash_rejections": 27,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 336,
+      "compressed_body_used_bits": 4944,
+      "decompression_window_reloads": 105,
+      "s2_squared_norm": 15942888
+    },
+    {
+      "hash_samples": 545,
+      "hash_rejections": 33,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 332,
+      "compressed_body_used_bits": 4940,
+      "decompression_window_reloads": 105,
+      "s2_squared_norm": 15553177
+    },
+    {
+      "hash_samples": 546,
+      "hash_rejections": 34,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 289,
+      "compressed_body_used_bits": 4897,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13473148
+    },
+    {
+      "hash_samples": 535,
+      "hash_rejections": 23,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 319,
+      "compressed_body_used_bits": 4927,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14814205
+    },
+    {
+      "hash_samples": 548,
+      "hash_rejections": 36,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 317,
+      "compressed_body_used_bits": 4925,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 15041954
+    },
+    {
+      "hash_samples": 550,
+      "hash_rejections": 38,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 298,
+      "compressed_body_used_bits": 4906,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13611415
+    },
+    {
+      "hash_samples": 543,
+      "hash_rejections": 31,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 297,
+      "compressed_body_used_bits": 4905,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 14486908
+    },
+    {
+      "hash_samples": 542,
+      "hash_rejections": 30,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 324,
+      "compressed_body_used_bits": 4932,
+      "decompression_window_reloads": 105,
+      "s2_squared_norm": 14915596
+    },
+    {
+      "hash_samples": 550,
+      "hash_rejections": 38,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 342,
+      "compressed_body_used_bits": 4950,
+      "decompression_window_reloads": 105,
+      "s2_squared_norm": 15664743
+    },
+    {
+      "hash_samples": 539,
+      "hash_rejections": 27,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 306,
+      "compressed_body_used_bits": 4914,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13470227
+    },
+    {
+      "hash_samples": 547,
+      "hash_rejections": 35,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 302,
+      "compressed_body_used_bits": 4910,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13583776
+    },
+    {
+      "hash_samples": 546,
+      "hash_rejections": 34,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 295,
+      "compressed_body_used_bits": 4903,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13618128
+    },
+    {
+      "hash_samples": 548,
+      "hash_rejections": 36,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 314,
+      "compressed_body_used_bits": 4922,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14711340
+    },
+    {
+      "hash_samples": 556,
+      "hash_rejections": 44,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 280,
+      "compressed_body_used_bits": 4888,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13378605
+    },
+    {
+      "hash_samples": 549,
+      "hash_rejections": 37,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 297,
+      "compressed_body_used_bits": 4905,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13679817
+    },
+    {
+      "hash_samples": 546,
+      "hash_rejections": 34,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 325,
+      "compressed_body_used_bits": 4933,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14910051
+    },
+    {
+      "hash_samples": 543,
+      "hash_rejections": 31,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 305,
+      "compressed_body_used_bits": 4913,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14175156
+    },
+    {
+      "hash_samples": 550,
+      "hash_rejections": 38,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 290,
+      "compressed_body_used_bits": 4898,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 12911551
+    },
+    {
+      "hash_samples": 547,
+      "hash_rejections": 35,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 293,
+      "compressed_body_used_bits": 4901,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14133016
+    },
+    {
+      "hash_samples": 560,
+      "hash_rejections": 48,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 256,
+      "compressed_body_used_bits": 4864,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 12435182
+    },
+    {
+      "hash_samples": 541,
+      "hash_rejections": 29,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 282,
+      "compressed_body_used_bits": 4890,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13118991
+    },
+    {
+      "hash_samples": 550,
+      "hash_rejections": 38,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 300,
+      "compressed_body_used_bits": 4908,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13812242
+    },
+    {
+      "hash_samples": 555,
+      "hash_rejections": 43,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 339,
+      "compressed_body_used_bits": 4947,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 16048124
+    },
+    {
+      "hash_samples": 542,
+      "hash_rejections": 30,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 293,
+      "compressed_body_used_bits": 4901,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13446701
+    },
+    {
+      "hash_samples": 537,
+      "hash_rejections": 25,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 281,
+      "compressed_body_used_bits": 4889,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13051263
+    },
+    {
+      "hash_samples": 542,
+      "hash_rejections": 30,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 269,
+      "compressed_body_used_bits": 4877,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 12766982
+    },
+    {
+      "hash_samples": 544,
+      "hash_rejections": 32,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 299,
+      "compressed_body_used_bits": 4907,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13386574
+    },
+    {
+      "hash_samples": 541,
+      "hash_rejections": 29,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 291,
+      "compressed_body_used_bits": 4899,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13146707
+    },
+    {
+      "hash_samples": 541,
+      "hash_rejections": 29,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 298,
+      "compressed_body_used_bits": 4906,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14031230
+    },
+    {
+      "hash_samples": 540,
+      "hash_rejections": 28,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 318,
+      "compressed_body_used_bits": 4926,
+      "decompression_window_reloads": 105,
+      "s2_squared_norm": 15623038
+    },
+    {
+      "hash_samples": 541,
+      "hash_rejections": 29,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 288,
+      "compressed_body_used_bits": 4896,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13221934
+    },
+    {
+      "hash_samples": 554,
+      "hash_rejections": 42,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 304,
+      "compressed_body_used_bits": 4912,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 14818986
+    },
+    {
+      "hash_samples": 546,
+      "hash_rejections": 34,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 291,
+      "compressed_body_used_bits": 4899,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13650783
+    },
+    {
+      "hash_samples": 541,
+      "hash_rejections": 29,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 309,
+      "compressed_body_used_bits": 4917,
+      "decompression_window_reloads": 105,
+      "s2_squared_norm": 14314480
+    },
+    {
+      "hash_samples": 536,
+      "hash_rejections": 24,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 260,
+      "compressed_body_used_bits": 4868,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 12602766
+    },
+    {
+      "hash_samples": 548,
+      "hash_rejections": 36,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 316,
+      "compressed_body_used_bits": 4924,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14887138
+    },
+    {
+      "hash_samples": 535,
+      "hash_rejections": 23,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 304,
+      "compressed_body_used_bits": 4912,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14595781
+    },
+    {
+      "hash_samples": 540,
+      "hash_rejections": 28,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 311,
+      "compressed_body_used_bits": 4919,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14350475
+    },
+    {
+      "hash_samples": 561,
+      "hash_rejections": 49,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 308,
+      "compressed_body_used_bits": 4916,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13843447
+    },
+    {
+      "hash_samples": 545,
+      "hash_rejections": 33,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 296,
+      "compressed_body_used_bits": 4904,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13791999
+    },
+    {
+      "hash_samples": 559,
+      "hash_rejections": 47,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 305,
+      "compressed_body_used_bits": 4913,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13926864
+    },
+    {
+      "hash_samples": 537,
+      "hash_rejections": 25,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 303,
+      "compressed_body_used_bits": 4911,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14474561
+    },
+    {
+      "hash_samples": 550,
+      "hash_rejections": 38,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 296,
+      "compressed_body_used_bits": 4904,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13399874
+    },
+    {
+      "hash_samples": 541,
+      "hash_rejections": 29,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 314,
+      "compressed_body_used_bits": 4922,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14482202
+    },
+    {
+      "hash_samples": 549,
+      "hash_rejections": 37,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 307,
+      "compressed_body_used_bits": 4915,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14504918
+    },
+    {
+      "hash_samples": 550,
+      "hash_rejections": 38,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 293,
+      "compressed_body_used_bits": 4901,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13849629
+    },
+    {
+      "hash_samples": 549,
+      "hash_rejections": 37,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 328,
+      "compressed_body_used_bits": 4936,
+      "decompression_window_reloads": 105,
+      "s2_squared_norm": 15370551
+    },
+    {
+      "hash_samples": 541,
+      "hash_rejections": 29,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 327,
+      "compressed_body_used_bits": 4935,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14492545
+    },
+    {
+      "hash_samples": 537,
+      "hash_rejections": 25,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 333,
+      "compressed_body_used_bits": 4941,
+      "decompression_window_reloads": 105,
+      "s2_squared_norm": 15271003
+    },
+    {
+      "hash_samples": 545,
+      "hash_rejections": 33,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 308,
+      "compressed_body_used_bits": 4916,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13980879
+    },
+    {
+      "hash_samples": 544,
+      "hash_rejections": 32,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 276,
+      "compressed_body_used_bits": 4884,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13097155
+    },
+    {
+      "hash_samples": 539,
+      "hash_rejections": 27,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 306,
+      "compressed_body_used_bits": 4914,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13969092
+    },
+    {
+      "hash_samples": 551,
+      "hash_rejections": 39,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 286,
+      "compressed_body_used_bits": 4894,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13127772
+    },
+    {
+      "hash_samples": 539,
+      "hash_rejections": 27,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 296,
+      "compressed_body_used_bits": 4904,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 14287687
+    },
+    {
+      "hash_samples": 547,
+      "hash_rejections": 35,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 353,
+      "compressed_body_used_bits": 4961,
+      "decompression_window_reloads": 105,
+      "s2_squared_norm": 16335675
+    },
+    {
+      "hash_samples": 545,
+      "hash_rejections": 33,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 310,
+      "compressed_body_used_bits": 4918,
+      "decompression_window_reloads": 105,
+      "s2_squared_norm": 14417338
+    },
+    {
+      "hash_samples": 542,
+      "hash_rejections": 30,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 313,
+      "compressed_body_used_bits": 4921,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14853546
+    },
+    {
+      "hash_samples": 543,
+      "hash_rejections": 31,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 290,
+      "compressed_body_used_bits": 4898,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13384889
+    },
+    {
+      "hash_samples": 542,
+      "hash_rejections": 30,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 281,
+      "compressed_body_used_bits": 4889,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13534911
+    },
+    {
+      "hash_samples": 539,
+      "hash_rejections": 27,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 285,
+      "compressed_body_used_bits": 4893,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 13318997
+    },
+    {
+      "hash_samples": 548,
+      "hash_rejections": 36,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 318,
+      "compressed_body_used_bits": 4926,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 15415067
+    },
+    {
+      "hash_samples": 546,
+      "hash_rejections": 34,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 312,
+      "compressed_body_used_bits": 4920,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14961641
+    },
+    {
+      "hash_samples": 541,
+      "hash_rejections": 29,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 272,
+      "compressed_body_used_bits": 4880,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 12522925
+    },
+    {
+      "hash_samples": 542,
+      "hash_rejections": 30,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 270,
+      "compressed_body_used_bits": 4878,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 12822257
+    },
+    {
+      "hash_samples": 555,
+      "hash_rejections": 43,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 328,
+      "compressed_body_used_bits": 4936,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14973820
+    },
+    {
+      "hash_samples": 542,
+      "hash_rejections": 30,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 297,
+      "compressed_body_used_bits": 4905,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 14049916
+    },
+    {
+      "hash_samples": 545,
+      "hash_rejections": 33,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 310,
+      "compressed_body_used_bits": 4918,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14330375
+    },
+    {
+      "hash_samples": 546,
+      "hash_rejections": 34,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 286,
+      "compressed_body_used_bits": 4894,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13737444
+    },
+    {
+      "hash_samples": 530,
+      "hash_rejections": 18,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 266,
+      "compressed_body_used_bits": 4874,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 12363083
+    },
+    {
+      "hash_samples": 551,
+      "hash_rejections": 39,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 310,
+      "compressed_body_used_bits": 4918,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14789720
+    },
+    {
+      "hash_samples": 536,
+      "hash_rejections": 24,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 314,
+      "compressed_body_used_bits": 4922,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 15150767
+    },
+    {
+      "hash_samples": 539,
+      "hash_rejections": 27,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 303,
+      "compressed_body_used_bits": 4911,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14148549
+    },
+    {
+      "hash_samples": 536,
+      "hash_rejections": 24,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 287,
+      "compressed_body_used_bits": 4895,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13689100
+    },
+    {
+      "hash_samples": 552,
+      "hash_rejections": 40,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 310,
+      "compressed_body_used_bits": 4918,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14237194
+    },
+    {
+      "hash_samples": 550,
+      "hash_rejections": 38,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 317,
+      "compressed_body_used_bits": 4925,
+      "decompression_window_reloads": 104,
+      "s2_squared_norm": 14673750
+    },
+    {
+      "hash_samples": 547,
+      "hash_rejections": 35,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 284,
+      "compressed_body_used_bits": 4892,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13173226
+    },
+    {
+      "hash_samples": 550,
+      "hash_rejections": 38,
+      "keccak_permutations": 9,
+      "decompression_unary_zero_bits": 279,
+      "compressed_body_used_bits": 4887,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13382512
+    },
+    {
+      "hash_samples": 544,
+      "hash_rejections": 32,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 309,
+      "compressed_body_used_bits": 4917,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 13762699
+    },
+    {
+      "hash_samples": 538,
+      "hash_rejections": 26,
+      "keccak_permutations": 8,
+      "decompression_unary_zero_bits": 293,
+      "compressed_body_used_bits": 4901,
+      "decompression_window_reloads": 103,
+      "s2_squared_norm": 12950615
+    }
+  ]
+}

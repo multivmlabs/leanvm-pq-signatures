@@ -1,0 +1,48 @@
+[package]
+name = "akita-recursion-guest"
+version = "0.1.0"
+edition = "2021"
+description = "Jolt guest program: deserializes Akita verifier inputs and runs the Akita verifier."
+license = "Apache-2.0 OR MIT"
+publish = false
+
+[package.metadata.cargo-machete]
+ignored = ["jolt-field"]
+
+[features]
+# `--features guest` is the flag the `jolt` build CLI passes when building
+# the guest for RISC-V; it activates `guest-std` so std becomes available to
+# the Akita verifier (its dependencies use `std::io`, `std::sync::Arc`,
+# etc., and rolling them all into `alloc::*` would be a sweeping refactor).
+# `stdout` routes the guest's stdout/stderr to a host-readable VFS device so
+# panic messages (and `jolt::println!`) make it back to us.
+guest = ["jolt/guest-std", "jolt/stdout", "jolt/random"]
+field-inline = ["jolt/field-inline"]
+# This profile is a benchmark harness: artifact generation does strict setup
+# round-trip validation, while the host/Jolt benchmark path explicitly opts
+# into trusted cached-matrix setup decode to avoid rehashing the full expanded
+# matrix inside the guest. Plain `guest` builds keep the strict production
+# decode shape. The host binary also sets
+# `AKITA_RECURSION_TRUSTED_BENCHMARK_ARTIFACT=1` before invoking Jolt's
+# hard-coded `--features guest` RISC-V build, so the traced benchmark ELF uses
+# the same trusted decode path without making `guest` itself trusted.
+benchmark-artifact = ["trusted-benchmark-artifact"]
+benchmark-guest = ["guest", "trusted-benchmark-artifact"]
+trusted-benchmark-artifact = ["akita-recursion-glue/trusted-benchmark-artifact"]
+
+[dependencies]
+akita-error = { path = "../../../crates/akita-error" }
+# Aliased as `jolt` so `#[jolt::provable]` and `jolt::start_cycle_tracking`
+# resolve the same way as in the upstream Jolt examples.
+jolt = { package = "jolt-sdk", git = "https://github.com/a16z/jolt", rev = "c7c2d08d5bb0c7c80501f29f723e595af7fcff3c", default-features = false }
+akita-recursion-glue = { path = "../glue" }
+akita-config = { path = "../../../crates/akita-config", default-features = false, features = [
+] }
+jolt-field = { version = "=0.1.0", git = "https://github.com/a16z/jolt", rev = "c7c2d08d5bb0c7c80501f29f723e595af7fcff3c", default-features = false, features = [
+  "asm",
+  "solinas",
+] }
+akita-serialization = { path = "../../../crates/akita-serialization" }
+akita-types = { path = "../../../crates/akita-types" }
+akita-params = { path = "../../../crates/akita-params" }
+akita-verifier = { path = "../../../crates/akita-verifier", default-features = false }

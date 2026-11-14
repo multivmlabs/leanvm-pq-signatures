@@ -1,0 +1,17 @@
+[package]
+name = "raccoong-segmented-host"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+raccoong-segmented-guest = { path = "../guest" }
+original = { package = "raccoong-riscv-host", path = "../../../raccoon-g/host" }
+leanvm_guest = { path = "../../../../vendor/leanVM-riscv/sdk" }
+leanvm = { path = "../../../../vendor/leanVM-riscv/crates/leanvm_core" }
+serde_json = "1"
+
+[workspace]
+
+[profile.release]
+opt-level = 3

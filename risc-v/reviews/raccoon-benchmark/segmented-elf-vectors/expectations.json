@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "source": "Previous independent original Python oracle W and bytes",
+  "binding": "3c571d876f12e74e83ae5fc39b86b65469d9d343ad827c906cdc2476196efa5cf7b1a8ce1f3ea500fdc600a7c1667ad4a71290343e008025bc2412aafc67183d",
+  "vectors": {
+    "honest-part-0.bin": {
+      "accepted": true,
+      "expected_output": "71db769f93ae818c5c2bb05ade3d1237f46f69a1e1fc11df0a80251fe7c52712",
+      "advice_sha256": "b7582d661f3653c83a2ea8359e7c79ebc46611fb32ce56eb08dbd245743c8081"
+    },
+    "honest-part-1.bin": {
+      "accepted": true,
+      "expected_output": "88f048049ede2548ba86c77c0f66e68bf60f2a1b150cc45b04d7273d93482539",
+      "advice_sha256": "0b8fa13f65457b902b9b3ad4e7d80e6e83b7cef0761df150d6cebbc8388f2f53"
+    },
+    "honest-part-2.bin": {
+      "accepted": true,
+      "expected_output": "2f4ef3c855e64a4d62208d125924f3576156f295b16735219bc7d6bdb1adf2a9",
+      "advice_sha256": "9010ebf83160be34a0972d0a3ae4f4ca597e980fc8f8959e2ea65f24da5ae8f2"
+    },
+    "honest-part-3.bin": {
+      "accepted": true,
+      "expected_output": "acdf756a7c02647f89c0688faa386fd4c447d3aab46af55dbfb7f403f21e96d0",
+      "advice_sha256": "4c71e6835dc7aa13594679924ce8bd9a6e3b468fcfb5adca1d321ed3aeba8b7b"
+    },
+    "honest-part-4.bin": {
+      "accepted": true,
+      "expected_output": "7b51708babbfaa5a2fec049e12e53246b58d1ddad677a0a8dd72a4873c135227",
+      "advice_sha256": "808d6722e7e2ca691d1537e49bcb1ea38ad792c9d51577bdf5b10cd99ad59557"
+    },
+    "second-row-1-hint-part-0.bin": {
+      "accepted": false,
+      "expected_output": null,
+      "advice_sha256": "f8111e0168f0474fa67ad23d23dc8ea09e012eb08dfaebea029142ef8cae1ddd"
+    },
+    "second-row-3-hint-part-1.bin": {
+      "accepted": false,
+      "expected_output": null,
+      "advice_sha256": "69940cac1278695fcba8fea6150ea9af0b4229bfe20b2e1f8fa6da19c14ebc86"
+    },
+    "second-row-5-hint-part-2.bin": {
+      "accepted": false,
+      "expected_output": null,
+      "advice_sha256": "f439eb8030163328026d4d85ecfd01ecd841b4c924ad398bbeae1f9afa5e1029"
+    },
+    "second-row-7-hint-part-3.bin": {
+      "accepted": false,
+      "expected_output": null,
+      "advice_sha256": "670257f082e6ccad5b9a5b0d7644baeff0a5d5e2d3f45fdb5d171a2aa28a75b2"
+    },
+    "unselected-row8-hint-part0-partial-accept.bin": {
+      "accepted": true,
+      "expected_output": "037308497abd3726ddf69fb3df31c4fd795e86e333f12946aa3fccd532acd988",
+      "advice_sha256": "3ace5820d45b5ebacf596fb6b231aa252313dca5768b92991863894f07f08df8"
+    },
+    "selected-row8-hint-part4-reject.bin": {
+      "accepted": false,
+      "expected_output": null,
+      "advice_sha256": "501fdc403c244eda7f219c517f6eb06b3779609520e47979f6b9541d419100d1"
+    },
+    "unselected-last-w-noncanonical.bin": {
+      "accepted": false,
+      "expected_output": null,
+      "advice_sha256": "0c8e95b993e625723b8a504d0968466752af90b89be61c4d37bf61caccc85143"
+    },
+    "full-unrounded-key-low-bit.bin": {
+      "accepted": false,
+      "expected_output": null,
+      "advice_sha256": "f40abb64fce52c2e0e4ba025d842dc4537fad2fcf205834f3a12ef7128ab025d"
+    },
+    "part-index5.bin": {
+      "accepted": false,
+      "expected_output": null,
+      "advice_sha256": "495db8c25aa8b1e4d20dcc86de97a92af6d6663c2be43df846ffe99e3554b9ba"
+    },
+    "original-corpus-index3-part4-high-SD.bin": {
+      "accepted": true,
+      "expected_output": "3f4ede8e190c829b0449bb02498abd0e719307be95eba9088c5106b98b1288c9",
+      "advice_sha256": "e1754bcfee5ef84e02229e589099c0ac763de414a170a5ea2253ab80720d09f3",
+      "source_record_sha256": "9d5be1c89bcd5c0a7c9a77785e99e02605caf1e6eb1c968b59cb371ce9b92c77",
+      "independent_python_w": true
+    }
+  },
+  "oracle_sha256": "b503b908678f700a748ec33ec975f3290fbc146484bce2897bea9286fe6822d4"
+}

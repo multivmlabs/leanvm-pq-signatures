@@ -1,0 +1,18 @@
+{
+  "aggregate_wire_bytes": 369348,
+  "child_proofs": 6,
+  "compile_root_s": 0.152460542,
+  "deferred_evaluation_s": 0.082735583,
+  "deferred_points_count": 6,
+  "leaf_guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+  "public_input_hex": "14e79461da9b749201566751671ee0dba6b0979051f63e28bdbff918da8083a7",
+  "root_core_proof_bytes": 366080,
+  "root_core_verify_s": 0.078215,
+  "root_guest_hash": "060e083a0243654602cec9027882a63733c30fe659f0d75b7de802405a06f7c1",
+  "signatures": 30,
+  "verification_total_s": 0.313606209,
+  "verification_uses_child_proofs": false,
+  "verification_uses_signatures": false,
+  "verified": true,
+  "zero_knowledge": false
+}

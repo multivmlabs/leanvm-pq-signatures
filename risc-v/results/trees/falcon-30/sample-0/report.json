@@ -1,0 +1,258 @@
+{
+  "action": "prove",
+  "actual_leaves": 3,
+  "all_folded_claims_settled": true,
+  "arity": 2,
+  "arity_0": 2,
+  "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "depth": 2,
+  "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c",
+  "first_circuit": {
+    "committed_words": 10191872,
+    "tables": [
+      {
+        "height_log": 17,
+        "name": "EMUL",
+        "rows": 109190
+      },
+      {
+        "height_log": 16,
+        "name": "EXK",
+        "rows": 35604
+      },
+      {
+        "height_log": 15,
+        "name": "HASH",
+        "rows": 18471
+      },
+      {
+        "height_log": 10,
+        "name": "SPLIT",
+        "rows": 976
+      },
+      {
+        "height_log": 14,
+        "name": "CAST",
+        "rows": 12787
+      },
+      {
+        "height_log": 10,
+        "name": "PUB",
+        "rows": 568
+      }
+    ]
+  },
+  "fixture_s": 0.085465917,
+  "leaf_prove_s": 3.183186374,
+  "leaf_reports": [
+    {
+      "execution": {
+        "committed_words": 68689848,
+        "cycles": 1469642,
+        "padded_rows": {
+          "ALU": 1048576,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 256,
+          "LD": 131072,
+          "LOAD": 16,
+          "MUL": 262144,
+          "MULH": 16,
+          "SD": 131072,
+          "SHIFT": 524288,
+          "STORE": 16
+        },
+        "proven_rows": 2097480,
+        "rows": {
+          "ALU": 728584,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 145,
+          "LD": 129036,
+          "LOAD": 0,
+          "MUL": 184320,
+          "MULH": 11,
+          "SD": 108147,
+          "SHIFT": 319399,
+          "STORE": 0
+        }
+      },
+      "leaf": 0,
+      "proof_bytes": 332906,
+      "proof_sha256": "23b1ba5f52b68b0fe0cd9ad5cdd27f88c373139087beec557a9973d3682404ab",
+      "prove_s": 1.273513666,
+      "signatures": 10,
+      "verify_s": 0.002094042
+    },
+    {
+      "execution": {
+        "committed_words": 68689848,
+        "cycles": 1469186,
+        "padded_rows": {
+          "ALU": 1048576,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 256,
+          "LD": 131072,
+          "LOAD": 16,
+          "MUL": 262144,
+          "MULH": 16,
+          "SD": 131072,
+          "SHIFT": 524288,
+          "STORE": 16
+        },
+        "proven_rows": 2097480,
+        "rows": {
+          "ALU": 728263,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 145,
+          "LD": 129040,
+          "LOAD": 0,
+          "MUL": 184320,
+          "MULH": 11,
+          "SD": 108143,
+          "SHIFT": 319264,
+          "STORE": 0
+        }
+      },
+      "leaf": 1,
+      "proof_bytes": 333738,
+      "proof_sha256": "d2a055403c002843c78d298d963d8fd56f19a9929aa037f6b2ed42eb1710586e",
+      "prove_s": 0.955391292,
+      "signatures": 10,
+      "verify_s": 0.00195775
+    },
+    {
+      "execution": {
+        "committed_words": 68689848,
+        "cycles": 1463339,
+        "padded_rows": {
+          "ALU": 1048576,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 256,
+          "LD": 131072,
+          "LOAD": 16,
+          "MUL": 262144,
+          "MULH": 16,
+          "SD": 131072,
+          "SHIFT": 524288,
+          "STORE": 16
+        },
+        "proven_rows": 2097480,
+        "rows": {
+          "ALU": 724827,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 145,
+          "LD": 128516,
+          "LOAD": 0,
+          "MUL": 184320,
+          "MULH": 11,
+          "SD": 107670,
+          "SHIFT": 317850,
+          "STORE": 0
+        }
+      },
+      "leaf": 2,
+      "proof_bytes": 333514,
+      "proof_sha256": "b5137c4c224338d51dfe145296b94c5f8104b9ad0ad577f74b7910e7456e7875",
+      "prove_s": 0.954281416,
+      "signatures": 10,
+      "verify_s": 0.001976208
+    }
+  ],
+  "leaf_size": 10,
+  "leaf_slots": 4,
+  "log_inverse_rate": 1,
+  "merge_count": 3,
+  "merge_prove_s": 0.4065614169999999,
+  "merge_reports": [
+    {
+      "children": 2,
+      "kind": "first",
+      "level": 0,
+      "node": 0,
+      "proof_bytes": 267007,
+      "proof_sha256": "9cf7a33b2f93961638b2b3b25ee96217fb545f1c63ffc6dbbb24544a1168e97f",
+      "prove_s": 0.141404708
+    },
+    {
+      "children": 2,
+      "kind": "first",
+      "level": 0,
+      "node": 1,
+      "proof_bytes": 267039,
+      "proof_sha256": "33a88572551998c22c31d1d7ab438807b3d520388411219cd096ab93b721fd3e",
+      "prove_s": 0.135977459
+    },
+    {
+      "children": 2,
+      "kind": "node",
+      "level": 1,
+      "node": 2,
+      "proof_bytes": 266783,
+      "proof_sha256": "168e023d0fb7d8ebfb6dfd090d9c546d7812528cbf1142964ed3e51f8de23e7d",
+      "prove_s": 0.12917925
+    }
+  ],
+  "node_circuit": {
+    "committed_words": 10191872,
+    "tables": [
+      {
+        "height_log": 17,
+        "name": "EMUL",
+        "rows": 58417
+      },
+      {
+        "height_log": 16,
+        "name": "EXK",
+        "rows": 37772
+      },
+      {
+        "height_log": 15,
+        "name": "HASH",
+        "rows": 14900
+      },
+      {
+        "height_log": 10,
+        "name": "SPLIT",
+        "rows": 924
+      },
+      {
+        "height_log": 14,
+        "name": "CAST",
+        "rows": 9160
+      },
+      {
+        "height_log": 10,
+        "name": "PUB",
+        "rows": 550
+      }
+    ]
+  },
+  "padding_policy": "Repeat final real leaf proof in canonical padding slots; no extra signatures counted. All merge proofs freshly produced and charged.",
+  "padding_slots": 1,
+  "peak_rss_bytes": 9340747776,
+  "pipeline_elapsed_s": 3.74445125,
+  "prepared_complete_verify_s": [
+    0.001816958,
+    0.001812667,
+    0.001792208
+  ],
+  "program_load_s": 0.001712209,
+  "root_proof_bytes": 266783,
+  "root_proof_sha256": "168e023d0fb7d8ebfb6dfd090d9c546d7812528cbf1142964ed3e51f8de23e7d",
+  "sample": "sample-0",
+  "schema": 1,
+  "scheme": "falcon",
+  "signatures": 30,
+  "statement_sha256": "fb8ef85400e5ee1cd6ca7e62e8fdcd4c0b3ebc5a8bdca2e66569c52dc5220ecd",
+  "status": "accepted",
+  "threads_requested": 8,
+  "total_prove_s": 3.5897477909999997,
+  "tree_setup_s": 0.046053042,
+  "verified": true,
+  "zero_knowledge": false
+}

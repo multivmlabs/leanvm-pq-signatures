@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "verified_public_only": true,
+  "signatures": 10,
+  "actual_leaves": 10,
+  "leaf_slots": 16,
+  "merge_count": 15,
+  "root_proof_sha256": "0b45044e0d812f7af852bfa7484d458b2aa51186ba821fa68460fa8a967d4280",
+  "statement_sha256": "f39064dad7eded1600743e6af8ef5657ff04e480f545b38ebd181939e8063bee",
+  "elf_sha256": "e375033cde726b2e988db2c433bf8d83b8516252c5954c1e43cb6720f3b25eac",
+  "total_prove_s": 120.32697225399998,
+  "root_proof_bytes": 266815,
+  "all_folded_claims_settled": true,
+  "coordinator_sha256": "c117ef5be9437638c5802f109362d4108b822ed3c8d4c97d16da950cae4ab09d",
+  "checked_utc": "2026-11-09T23:35:06.084356+00:00",
+  "sample": 1
+}

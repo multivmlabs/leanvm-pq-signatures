@@ -1,0 +1,68 @@
+{
+  "action": "verify",
+  "arch": "aarch64",
+  "bytecode_prepare_s": 0.004086125,
+  "compile_s": 0.004002083,
+  "guest_hash": "963bdbcb113298651a1c9b45a89ccec6c9ae1bdb6e2e5e24fd0ec194695a87d1",
+  "leanvm_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "leanvm_source_dirty_at_build": "false",
+  "metadata": {
+    "count": 20,
+    "fixture_generation_s": 0.013515582999986007,
+    "parameters": {
+      "a": 8,
+      "k": 16,
+      "n": 32
+    },
+    "public_key_bytes": 1280,
+    "raw_key_bytes": 1280,
+    "raw_signature_bytes": 92160,
+    "signature_bytes": 92160
+  },
+  "min_log_committed": 0,
+  "os": "macos",
+  "process_peak_rss_bytes": 12730368,
+  "proof_bytes": 263600,
+  "proof_encoding": {
+    "merkle_bytes": 211680,
+    "merkle_phases": [
+      {
+        "opened_field_words": 8064,
+        "opened_rows": 224,
+        "sibling_hashes": 2084
+      },
+      {
+        "opened_field_words": 2688,
+        "opened_rows": 56,
+        "sibling_hashes": 566
+      },
+      {
+        "opened_field_words": 1536,
+        "opened_rows": 32,
+        "sibling_hashes": 316
+      },
+      {
+        "opened_field_words": 1104,
+        "opened_rows": 23,
+        "sibling_hashes": 215
+      }
+    ],
+    "scalar_stream_bytes": 51920,
+    "scalar_stream_count": 2163
+  },
+  "public_input_hex": "f6941366b345660ee561e5da62c6d7f7b5d22a017418e8de662b1f2c41e8b795",
+  "schema_version": 1,
+  "scheme": "fors-keccak-research",
+  "statement_pinned": true,
+  "threads_env": null,
+  "verified": true,
+  "verify_cached_s": [
+    0.005288875,
+    0.005114875,
+    0.005229583
+  ],
+  "verify_s": [
+    0.009904417
+  ],
+  "zero_knowledge": false
+}

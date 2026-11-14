@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "started_utc": "2026-11-06T20:53:32.665399+00:00",
+  "backend_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "host_binary_sha256": "1d683e440929570d459dca6747f18b74760fa94ee385d7adb0261129fbba38b5",
+  "approved_leaf_guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+  "counts": [
+    10,
+    30,
+    70,
+    100
+  ],
+  "samples": 3,
+  "leaf_size": 5,
+  "arity": 2,
+  "threads_env": null,
+  "allocator": "unchanged upstream bench::Jemalloc",
+  "sampling": "Three fresh pipelines in separate processes, no proving warmup or cross-sample proof reuse",
+  "proving_work": "All fresh leaves + native child verification/advice + native sumcheck generation + every constrained wrapper STARK",
+  "source_sha256": {
+    "leanISA/reduction/src/lib.rs": "7af229dab703247aae20c4b3783fb173a2c756b41abf673564a96dd801ace580",
+    "leanISA/reduction/src/reduction.rs": "445bd127c7f8de665b4423ba221f04ff08ffa69cdc15b8e8562ffaf89af46ed3",
+    "leanISA/reduction/src/wrapper.rs": "9048cd1159b38d2496293747b5eccab780f3afb03f9b64a427defd5d547f2aef",
+    "leanISA/reduction/src/main.rs": "55ed00d748fcb072b7c45e80dd1e04bdaf51e39c8e8f68f79e102d983ef309be",
+    "leanISA/reduction/src/pipeline.rs": "97e43aff416153cb1638d99c451daebd8025eea1d1ae71fb7bd96bea3846d188",
+    "leanISA/reduction/src/receipt.rs": "be9a933f1dd39fb4e7bbf359b66f1d4e9b996b641deee5fc6cbe0ff8944d3677",
+    "leanISA/reduction/guest/sumcheck.py": "a0b68f631fd9ef3c621cba2ad6570cba99d5ea728b5f08f81e0ccca201755560",
+    "leanISA/reduction/Cargo.toml": "786b8ecbb737497ab5c145ae95090293412f6307f065f75263abee12688133d6",
+    "leanISA/reduction/Cargo.lock": "421fc5edfc34523e851992c547d1f9d038cdae74dbca37388f9ab1c1cea9b311",
+    "leanISA/reduction/run_benchmarks.py": "e5f4946ff610e132995fdbdd2aca7d4eeca1a07a56cb4e6dae26c6f10b1b024b"
+  }
+}

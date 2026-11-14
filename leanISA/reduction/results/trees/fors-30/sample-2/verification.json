@@ -1,0 +1,86 @@
+{
+  "action": "verify",
+  "all_reduced_claims_settled": true,
+  "backend_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "caller_leaf_guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+  "cold_complete_verify_s": 0.6824873330000001,
+  "depth": 3,
+  "families": [
+    {
+      "bytecode_instructions": 8192,
+      "dimensions": 17,
+      "family": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "min_log_committed": 22,
+      "table_words": 131072
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 1,
+      "guest_hash": "9a644995149507104780db24c34f7bf0a2b0fc7631f05faa743d6002becfb3dc",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 2,
+      "guest_hash": "2d8699877c87d010052a00b89adc6e9aa5f28b1e08501703146d5dd1e1e393c2",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 3,
+      "guest_hash": "7bbceba578c4839c75753b07a279adbe2236abf6d8d6ac95c8141ba55db07e27",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    }
+  ],
+  "first_complete_verify_s": 0.008924833,
+  "first_components": {
+    "root_core_s": 0.00593025,
+    "root_pi_s": 3.292e-6,
+    "terminal_evaluation_s": 0.002984375,
+    "terminal_evaluations": 3
+  },
+  "leaf_size": 5,
+  "leaf_slots": 8,
+  "leaf_source_sha256": "c46fc19886ee36392d106b13443440d7daaeaf210f6806dac6836c9b58c91e2c",
+  "original_tree_edges": 14,
+  "padding_slots": 2,
+  "peak_rss_bytes": 284065792,
+  "prepared_complete_verify_median_s": 0.008777167,
+  "prepared_complete_verify_s": [
+    0.008777167,
+    0.008766625,
+    0.00878275
+  ],
+  "program_compile_s": 0.457925583,
+  "public_claim_derivation_s": 0.0000315,
+  "public_sha256": "f581a6bea566ec1ca4691e88655fc6ddfb68d3095ddf64abb587fb8a791fff0f",
+  "real_leaves": 6,
+  "root_core_s": [
+    0.005791792,
+    0.005788291,
+    0.005833875
+  ],
+  "root_proof_bytes": 339784,
+  "root_proof_sha256": "1a3eaeca56b2d6ba2894ae7cf4d299af6ad947024bd51a9bc34538c90ee26f9d",
+  "schema": 1,
+  "signatures": 30,
+  "statement_pinned": true,
+  "table_prepare_s": 0.215636917,
+  "terminal_evaluation_s": [
+    0.002975958,
+    0.002968959,
+    0.002938833
+  ],
+  "terminal_evaluations": 3,
+  "uses_child_proof_files": false,
+  "uses_signature_witnesses": false,
+  "verified": true,
+  "zero_knowledge": false
+}

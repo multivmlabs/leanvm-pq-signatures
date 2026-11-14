@@ -1,0 +1,16 @@
+/.venv/
+/.cache/
+/target/
+/vendor/
+/artifacts/
+/build/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Generated files in nested experiments
+**/target/
+**/.tectonic-cache/
+**/.cache/
+**/.venv/
+**/node_modules/

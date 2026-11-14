@@ -1,0 +1,41 @@
+{
+  "schema_version": 2,
+  "date_utc": "2026-11-04T00:40:48.849675+00:00",
+  "phase": "Final lock-aligned external correctness consumers",
+  "native_cases": 16,
+  "warmup_rows_per_case": 1,
+  "measured_rows_per_case": 3,
+  "all_native_roundtrips_passed": true,
+  "controls": {
+    "positive_passed": true,
+    "negative_cases": 8,
+    "all_rejected": true
+  },
+  "fresh_verifier_only_process_passed": true,
+  "all_shared_upstream_dependency_versions_matched": true,
+  "initial_resolution_evidence": "artifacts/aerie/locks-before",
+  "scope": "Native Aerie only, not a leanVM Aerie verification measurement. Native curves remain original upstream-locked runs; external correctness consumers were rerun after exact shared-version alignment.",
+  "sha256": {
+    "vendor/aerie/Cargo.lock": "c0df53fbe2c90f6fc64f65e8df5dfe9556d3ba794b9e3bcdf9fe2040d4622f9f",
+    "vendor/aerie/Cargo.toml": "1995af7aba6b9d23988a1fa6db7e940fee01cb7dd50229b2f0b646c0e8c2c97b",
+    "vendor/aerie/crates/aerie-bench/benches/falcon.rs": "a1945e44e6bda967036e99d9f39a2ca064d65eb2d70fd63eee8519084f44e4fa",
+    "vendor/aerie/crates/aerie-bench/benches/falcon/args.rs": "875562b96e9d8ca2be2964dfdfe8b799c14c6a05fc20db8b8c6a975b37dc1412",
+    "scripts/aerie_native_bench.py": "5b3207ae047fa1114d81aada8ca57eece424c2947d40bdaa56fee0479193451b",
+    "docs/aerie-native-benchmarks.md": "a90f989b35026e5544a79b8ba90adaec9a74eb65cf37865aa0588133cd22e661",
+    "experiments/aerie-native-controls/Cargo.toml": "3c9c81341858f5dbbf64bbc5a98184d05c2d82b211bc6b0ff4008e01cb936b5d",
+    "experiments/aerie-native-controls/Cargo.lock": "f658651039c12ca1951c655fdaa6eda13968dfe1aa5529a63f39669c8f2795c5",
+    "experiments/aerie-native-controls/src/main.rs": "3f205f5d506d8cb0730c232603602331af85125c44de28f1b4eb8a952d664379",
+    "experiments/aerie-native-verifier/Cargo.toml": "4dc2ade1b434f9ab7b656d5f6fad79acad9a6469886f77d0f7a86428ea230214",
+    "experiments/aerie-native-verifier/Cargo.lock": "26ed5bfc340dcaa1389be4529b29c076349ac8d814d71eb2642ed64ef37d87fb",
+    "experiments/aerie-native-verifier/src/main.rs": "4847de2ecc1a92c03df54055c1732549adb8b6fcd0c46dce4264895b3c985e94",
+    "results/aerie/native/controls.json": "42572921bb8b7584d9c6995b03c7990e9e69dd7303dc8ee6194fae39a81d293b",
+    "results/aerie/native/fresh-verifier.json": "513cc50059a3da8f58179bbe6797d2d7586f7c7aab3bc53ac0c3589acd56453f",
+    "results/aerie/native/dependency-provenance.json": "68a7c3e755c7c13598d07e7803f012b4670a8d862bf1e67db6710518281ccbf0",
+    "results/aerie/native/verifier-dependency-features.txt": "3efda0f008cd4f5b91cbae0a9e48698ffebf54648cc872437ba89d10b0599362",
+    "results/aerie/native/controls-dependency-features.txt": "905d4a96edb6cc590d23d80cc45decc1bfccbcdf42e84e151b423b0346e6d01e",
+    "artifacts/aerie/controls/statement.bin": "f9e0f8d8ef83bf7edee88c391639bf1c83fe25649c9b9cfec4f4b61e8856c018",
+    "artifacts/aerie/controls/aggregate.aerie": "7440a4e4d14009d3ade2425d304b7a875ffde8b6a13aecefdd31ae03e54a56d6",
+    ".cache/aerie-target/release/aerie-native-controls": "2d3e3c770987f4c81241a6f4ee90c5789698a87ee2ed80a3d2fdceaf2f24165f",
+    ".cache/aerie-target/release/aerie-native-verifier": "a63260c4b2fa05e974363ab58f52dc16243c29b0b8b6a5577fd38c1c73e3e5d4"
+  }
+}

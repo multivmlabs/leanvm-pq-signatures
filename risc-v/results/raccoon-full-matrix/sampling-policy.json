@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "status": "user_approved_reduced_repetitions",
+  "recorded_utc": "2026-11-10T11:05:44.660615+00:00",
+  "instruction": "Can we do an estimation for the 100 signature run? since it is still running. No need to spend more time on that benchmark",
+  "scope": "Stop remaining 100-signature proving runs. Preserve every completed result and interrupted attempt; complete article, figures and read-only validation.",
+  "original_planned_complete_tree_pipelines": 24,
+  "required_retained_complete_tree_pipelines": 22,
+  "expected_samples": {
+    "raccoon": {
+      "10": [
+        0,
+        1,
+        2
+      ],
+      "30": [
+        0,
+        1,
+        2
+      ],
+      "70": [
+        0,
+        1,
+        2
+      ],
+      "100": [
+        0,
+        1,
+        2
+      ]
+    },
+    "raccoon-g": {
+      "10": [
+        0,
+        1,
+        2
+      ],
+      "30": [
+        0,
+        1,
+        2
+      ],
+      "70": [
+        0,
+        1,
+        2
+      ],
+      "100": [
+        0
+      ]
+    }
+  },
+  "g100_point_classification": "one fully verified measured pipeline, not a three-pipeline median",
+  "g100_curve_policy": "Display actual single-run result distinctly and disclose sample count. Keep the separate heuristic forecast outside measured data.",
+  "g100_verification_policy": "The one independent public-only receiver still records three prepared verification calls; this does not constitute three producer pipelines.",
+  "accepted_guard_pipeline_counts": {
+    "19_GiB": 17,
+    "20_GiB": 5
+  },
+  "g100_user_stopped_sample": 1,
+  "g100_not_started_sample": 2,
+  "user_stop_archive": "risc-v/results/raccoon-full-matrix/user-stops/20261110T110242Z",
+  "resource_stop_archive": "risc-v/results/raccoon-full-matrix/resource-stops/20261110T041747Z",
+  "separate_forecast": "risc-v/results/raccoon-full-matrix/g100-estimate.json",
+  "no_further_proving_authorized_for_this_matrix": true
+}

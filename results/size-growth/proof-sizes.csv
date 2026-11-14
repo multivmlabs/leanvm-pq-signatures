@@ -1,0 +1,91 @@
+scheme,label,signatures,status,proof_bytes,proof_kib,guest_hash,source_report,reason
+ethfalcon,ethFalcon-512,1,verified,315632,308.234375,69a3514225bcd9b66ac753fc65c2de44dcac18a7dbb60504276a5c95e1470185,results/size-growth-falcon/ethfalcon-1.json,
+ethfalcon,ethFalcon-512,2,verified,328808,321.1015625,d0c19b0e217c55875395a5b66e94058f635c1247656dc6b4d91013266982f656,results/size-growth-falcon/ethfalcon-2.json,
+ethfalcon,ethFalcon-512,3,verified,349992,341.7890625,145ac1b5464dc085ae2aeb08f9dfbb538861b06c4700820e3f76f88587461995,results/size-growth-falcon/ethfalcon-3.json,
+ethfalcon,ethFalcon-512,4,verified,353728,345.4375,56db52dde6da1913e971f8c143a1568ff506c3f48730206cdfcb0cd0d94c63b3,results/size-growth-falcon/ethfalcon-4.json,
+ethfalcon,ethFalcon-512,5,verified,358032,349.640625,49bf48b6103368803d1329f022051971ab8537a4a35d15467b72f2a8a7569296,results/size-growth-falcon/ethfalcon-5.json,
+ethfalcon,ethFalcon-512,6,capacity_failure,,,,results/size-growth-falcon/ethfalcon-6.failed.json,error: prove: WitnessOutOfRange { log_committed: 29 }
+ethfalcon,ethFalcon-512,7,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,8,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,9,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,10,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,11,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,12,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,13,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,14,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,15,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,16,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,17,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,18,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,19,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,20,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,21,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,22,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,23,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,24,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,25,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,26,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,27,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,28,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,29,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethfalcon,ethFalcon-512,30,not_run,,,,,Not run after the witness-size cap was observed at N=6; no proof-size estimate.
+ethdilithium,ethDilithium2,1,verified,349184,341.0,0df53fef38155cc4c119c978ee62404c91bc814ba638c147cd9144229d015eb7,results/size-growth-dilithium/ethdilithium-1.json,
+ethdilithium,ethDilithium2,2,capacity_failure,,,,results/2026-11-03-dilithium/ethdilithium-2.failed.json,error: prove: WitnessOutOfRange { log_committed: 29 }
+ethdilithium,ethDilithium2,3,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,4,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,5,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,6,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,7,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,8,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,9,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,10,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,11,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,12,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,13,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,14,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,15,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,16,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,17,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,18,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,19,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,20,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,21,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,22,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,23,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,24,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,25,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,26,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,27,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,28,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,29,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+ethdilithium,ethDilithium2,30,not_run,,,,,Not run after the witness-size cap was observed at N=2; no proof-size estimate.
+fors,FORS research,1,verified,239992,234.3671875,ab88c7f6ed1c7be82bdb63f879189789bd64aab82e83343958f970280a31870b,results/size-growth-fors/fors-1.json,
+fors,FORS research,2,verified,230832,225.421875,141c050dbfed8e4ca80db506fa9b370682f570ab52ed2c71afe00757f8e62d27,results/size-growth-fors/fors-2.json,
+fors,FORS research,3,verified,242744,237.0546875,f8ca9321f7f90eaac4ff299daa4479ad6232acb86cd05400f6dba3cd7fd5ada7,results/size-growth-fors/fors-3.json,
+fors,FORS research,4,verified,270584,264.2421875,77c3c779dee247dd19bbb2151e55307e57c5a6d2b7a8c4fe0875cc344f1920bb,results/size-growth-fors/fors-4.json,
+fors,FORS research,5,verified,237904,232.328125,9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b,results/size-growth-fors/fors-5.json,
+fors,FORS research,6,verified,241728,236.0625,1c78c9248bb3bbcf6d19dd8433ff018972b0bcc1ccdd1b92be6e1604a82e1dd7,results/size-growth-fors/fors-6.json,
+fors,FORS research,7,verified,248008,242.1953125,e489623ecaa11a7a9ce45e0fcd907cb8174f7877e8aa8756e27f384284056bd5,results/size-growth-fors/fors-7.json,
+fors,FORS research,8,verified,283272,276.6328125,077649a1dee516d997952cfbed7ee5db837805992e33f3cc4b83a0c5fa342a6f,results/size-growth-fors/fors-8.json,
+fors,FORS research,9,verified,246792,241.0078125,71fc18165a96100af416d74d113c90dd714310f5795a7fa619b508b3dd14e558,results/size-growth-fors/fors-9.json,
+fors,FORS research,10,verified,250496,244.625,2872544cb05b4eb4716d31a944ebb541972d2afb0bcc2c9fdbb3b10631b9ff94,results/size-growth-fors/fors-10.json,
+fors,FORS research,11,verified,251848,245.9453125,4e507122b74505e49ae63a0b10478e306965602bdd18380b55a16e633f1dc210,results/size-growth-fors/fors-11.json,
+fors,FORS research,12,verified,254504,248.5390625,533e0a1b995182c7074e45681a93b0bc497e6b8f41241801a78ba9b5a07ae2fe,results/size-growth-fors/fors-12.json,
+fors,FORS research,13,verified,255144,249.1640625,92cd38113bdf84639acdafed9499671986ad4f1e1855e728a92c3620a9fdd9a6,results/size-growth-fors/fors-13.json,
+fors,FORS research,14,verified,258824,252.7578125,273464438096e89d0bebde775cd0755ee164390cf66cc8d678078798ab49aab5,results/size-growth-fors/fors-14.json,
+fors,FORS research,15,verified,274376,267.9453125,0a1ba8b3080bcc366d1300dac5d77b6eae06964e2b11261730a1a10dcf52ee4e,results/size-growth-fors/fors-15.json,
+fors,FORS research,16,verified,295712,288.78125,be7a7bf62f9078d185cfce1c515f91ad1cd0cb501d5c2dcb87a98a4d1d3d2a3f,results/size-growth-fors/fors-16.json,
+fors,FORS research,17,verified,261296,255.171875,a42e9fa49803c0781f4817329c29a18fb5f5d735707faf5fcd7db993140aaf28,results/size-growth-fors/fors-17.json,
+fors,FORS research,18,verified,260880,254.765625,da0d4305b967c75e663a42720ed6e8dc0ca4e83fadc35e8079cbdda71b649aba,results/size-growth-fors/fors-18.json,
+fors,FORS research,19,verified,264240,258.046875,91418fbd0e136887f418612d11bf28e376c7e4db82d1eff8a98d25527479d719,results/size-growth-fors/fors-19.json,
+fors,FORS research,20,verified,263600,257.421875,963bdbcb113298651a1c9b45a89ccec6c9ae1bdb6e2e5e24fd0ec194695a87d1,results/size-growth-fors/fors-20.json,
+fors,FORS research,21,verified,264144,257.953125,54c7b7e90ef23c43ef1b3f6bd25eab8a2b91344297c93feeeb31da6f8ae852f6,results/size-growth-fors/fors-21.json,
+fors,FORS research,22,verified,264848,258.640625,c500eab2b49790b7d4f97c41c8a7cf8f4098867c90d62db269751f9eb9992fb6,results/size-growth-fors/fors-22.json,
+fors,FORS research,23,verified,267920,261.640625,8dc0b39307509b67ea3a00dd9448158357f1e16cbc55f50d1367b72f5854a45b,results/size-growth-fors/fors-23.json,
+fors,FORS research,24,verified,267216,260.953125,efac78cc1033e18daac796b59d41d2d8898fa32bb49c6eef6178be2fd7ce2791,results/size-growth-fors/fors-24.json,
+fors,FORS research,25,verified,268504,262.2109375,bdf7cff55ef04c64939ef90be8f29cd4180c73e47550361f72a7aa95bdf1e381,results/size-growth-fors/fors-25.json,
+fors,FORS research,26,verified,268208,261.921875,1b2cb7e7e519aea976fc6a398567e772d53541fcd667109430d86349836894aa,results/size-growth-fors/fors-26.json,
+fors,FORS research,27,verified,267536,261.265625,ec9572e637295c046d31ccc90b1ec2e3157e6f94ac39329113cbdcef23e9721f,results/size-growth-fors/fors-27.json,
+fors,FORS research,28,verified,272976,266.578125,e9d267174061deb459b5898cc8f335de3a642252a01326b75fbc69f590ba0333,results/size-growth-fors/fors-28.json,
+fors,FORS research,29,verified,286800,280.078125,101a4c61039087624f5fb845c5c566990cc1872222f240357d30283fc6b9e310,results/size-growth-fors/fors-29.json,
+fors,FORS research,30,verified,286312,279.6015625,ebecd8f4c01f7328e583531a31da4ea596135cdbd0cca196df2072131ee47da3,results/size-growth-fors/fors-30.json,

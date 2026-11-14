@@ -1,0 +1,46 @@
+{
+  "all_passed": true,
+  "cases": [
+    {
+      "changed_message_rejected": true,
+      "changed_proof_rejected": true,
+      "native_verified": true,
+      "native_verify_s": 0.007680458,
+      "records": 1,
+      "selected_setup_import_prepare_s": 0.009853333
+    },
+    {
+      "changed_message_rejected": true,
+      "changed_proof_rejected": true,
+      "native_verified": true,
+      "native_verify_s": 0.005361083,
+      "records": 10,
+      "selected_setup_import_prepare_s": 0.000570292
+    },
+    {
+      "changed_message_rejected": true,
+      "changed_proof_rejected": true,
+      "native_verified": true,
+      "native_verify_s": 0.004543708,
+      "records": 30,
+      "selected_setup_import_prepare_s": 0.001034208
+    },
+    {
+      "changed_message_rejected": true,
+      "changed_proof_rejected": true,
+      "native_verified": true,
+      "native_verify_s": 0.004818416,
+      "records": 70,
+      "selected_setup_import_prepare_s": 0.000866458
+    },
+    {
+      "changed_message_rejected": true,
+      "changed_proof_rejected": true,
+      "native_verified": true,
+      "native_verify_s": 0.004545583,
+      "records": 100,
+      "selected_setup_import_prepare_s": 0.000808167
+    }
+  ],
+  "scope": "Selected-schedule constructor interoperability with original native development proofs. Full verifier unchanged; not an outer proof."
+}

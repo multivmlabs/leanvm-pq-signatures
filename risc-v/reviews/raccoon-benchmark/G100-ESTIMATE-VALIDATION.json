@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "forecast_sha256": "6d5e4825c1d70f8ad7b99fff053cef955f24fea71867eb9496dc417592b77e01",
+  "basis_all_three_G70_report_hashes_match": true,
+  "leaf_and_prepare_scaled_by_10_over_7": true,
+  "merge_count_fixed_at_511": true,
+  "formula_independent_of_actual_G100_values": true,
+  "estimated_time_s": {
+    "median": 4697.933134998145,
+    "min": 4686.695522741423,
+    "max": 4825.573414502286
+  },
+  "estimated_receipt_bytes": 273275,
+  "labels_distinguish_estimate_single_actual_and_medians": true,
+  "range_not_confidence_interval": true,
+  "note": "Estimate is calculated after the single actual100 result existed. This audit verifies an input-isolated G70 formula, not a prospective blinded forecast.",
+  "passed": true,
+  "retrospective_labels_checked": {
+    "model_timing": "Calculated after the completed G100 run existed. This is a retrospective model using G70-only inputs, not a blinded prospective forecast."
+  }
+}

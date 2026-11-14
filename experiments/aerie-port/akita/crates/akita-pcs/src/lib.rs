@@ -1,0 +1,82 @@
+//! # Akita PCS
+//!
+//! A high performance and modular implementation of the Akita polynomial commitment scheme.
+//!
+//! Akita is a lattice-based polynomial commitment scheme with transparent setup and
+//! post-quantum security guarantees. It descends from Hachi while carrying the current
+//! Akita crate decomposition work.
+//!
+//! ## Key Features
+//!
+//! - **Post-quantum secure**: Based on lattice hardness assumptions
+//! - **Transparent setup**: No trusted setup required
+//! - **Modular design**: Flexible trait-based architecture
+//! - **Performance optimizations**: Optional parallelization support
+//!
+//! ## Structure
+//!
+//! ### Core Modules
+//! - `akita-error` - Shared protocol errors and checked integer formulas
+//! - `jolt-field` - Shared field traits, concrete fields, and packing
+//! - `akita-serialization` - Serialization abstractions
+//! - `akita-algebra` - Modules, rings, NTTs, and polynomial helpers
+//! - `akita-transcript` - Fiat-Shamir transcript implementations and labels
+//! - `akita-challenges` - Fiat-Shamir challenge sampling helpers
+//! - `akita-sumcheck` - Generic sumcheck proof types, traits, and drivers
+//! - `akita-verifier` - Verifier replay without prover-only polynomial backends
+//! - `akita-prover` - Generic protocol sequencing and opaque backend contracts
+//! - `akita-cpu-backend` - Owning CPU source, commitment, and witness execution
+//! - `akita-pcs` - End-to-end [`AkitaCommitmentScheme`] orchestration plus public re-exports
+//!
+//! Verifier-only consumers should depend directly on `akita-verifier`,
+//! `akita-types`, and `akita-config`. This umbrella crate is convenient for
+//! examples and end-to-end use, but it intentionally re-exports prover-facing
+//! APIs as well.
+//!
+//! ## Feature Flags
+//!
+//! - `parallel` - Enable Rayon parallelization for improved performance
+
+#![warn(missing_docs)]
+#![warn(unreachable_pub)]
+
+mod scheme;
+#[cfg(test)]
+#[path = "../tests/support/mod.rs"]
+mod test_support;
+
+pub use akita_algebra::fft;
+pub use akita_algebra::fft::SmoothFftField;
+pub use akita_config::SetupRequirements;
+pub use akita_error::AkitaError;
+// Specialized field surfaces mirror jolt-field's curated exports.
+#[doc(hidden)]
+pub use akita_cpu_backend::custom_source;
+pub use akita_cpu_backend::{
+    AkitaProverSetup, CommitOutput, CommitmentHandle, CpuBackend, DensePoly, GroupContext,
+    OneHotPoly, SourceHandle,
+};
+pub use akita_params::{BasisMode, OpeningClaimsLayout, PrecommittedGroupProfiles};
+pub use akita_prover::{
+    CommitmentHandleMetadata, ProverBackend, ProverOpeningData, SelectedProverOpeningData,
+};
+pub use akita_serialization::{AkitaDeserialize, AkitaSerialize};
+pub use akita_setup::new_prover_setup;
+pub use akita_types::{OpeningClaims, PolynomialGroupClaims};
+pub use akita_verifier::AkitaVerifier;
+pub use jolt_field::{
+    cfg_chunks, cfg_chunks_mut, cfg_fold_reduce, cfg_into_iter, cfg_iter, cfg_iter_mut, cfg_join,
+};
+pub use jolt_field::{
+    is_registered_prime_offset, pseudo_mersenne_modulus, registered_prime_offset_spec,
+    AdditiveGroup, CanonicalEncoding, Ext2Config, ExtField, Field, Fp128, Fp32, Fp64, FpExt2,
+    FpExt4, FpExt8, Prime128Offset275, Prime128OffsetA7F7, Prime24Offset3, Prime30Offset35,
+    Prime31Offset19, Prime32Offset99, Prime40Offset195, Prime48Offset59, Prime56Offset27,
+    Prime64Offset59, PrimeOffsetSpec, PseudoMersenne, Ring, PRIME_OFFSET_IMPLEMENTED_MAX_BITS,
+    PRIME_OFFSET_MAX, PRIME_OFFSET_SPECS,
+};
+pub use scheme::AkitaCommitmentScheme;
+
+pub use akita_prover::{
+    batched_prove, BackendId, BackendRegistry, FixedFoldRoute, FoldExecutionPolicy,
+};

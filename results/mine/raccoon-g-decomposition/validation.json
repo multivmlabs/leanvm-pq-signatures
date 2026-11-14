@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "renderer": "LaTeX/TikZ through cached Tectonic, pdftoppm180dpi",
+  "pdf_pages": 1,
+  "png_size": [
+    1249,
+    1123
+  ],
+  "visual_review": "Latest complete PNG inspected after common-input and binding-note fixes; no clipped labels, overlaps, hyphenated line breaks or missing tree edges",
+  "content_checks": {
+    "distinct_matrix_rows": 9,
+    "columns": 9,
+    "canonical_parts": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        8,
+        8
+      ]
+    ],
+    "fresh_leaf_proofs": 5,
+    "padded_leaf_slots": 8,
+    "fresh_binary_merges": 7,
+    "padding_labelled": true,
+    "shared_witness_binding_shown": true,
+    "challenge_not_labelled_as_supplied_input": true,
+    "binding_receiver_note_clear": true
+  },
+  "benchmarks_run": false,
+  "files": {
+    "matrix-and-tree.tex": "ceafc5fb66dd7ebb7d49dc8e12039e040dc6d72d83be8243ee8cf62ce2e3326f",
+    "matrix-and-tree.pdf": "ef2544fdcfc29f1f87176d15141d8a1afc0b1af83b884f6c24d8321d5b3c62f1",
+    "matrix-and-tree.png": "7746e6a552e6b16d33872ad85cc22d40a0fa024dd8079a576aae900ce27e58e0"
+  }
+}

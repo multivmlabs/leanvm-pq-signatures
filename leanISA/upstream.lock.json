@@ -1,0 +1,5 @@
+{
+  "leanVM": {"url": "https://github.com/leanEthereum/leanVM.git", "rev": "575df819d9c857f38068cecf7b1640e0ce4bfb29"},
+  "ETHFALCON": {"url": "https://github.com/ZKNoxHQ/ETHFALCON.git", "rev": "43ac863e30281bb7821748178d39967367d54bc2"},
+  "ETHDILITHIUM": {"url": "https://github.com/ZKNoxHQ/ETHDILITHIUM.git", "rev": "f9f4fe1d84e68304b425e054c273c276fe44ba11"}
+}

@@ -1,0 +1,22 @@
+# benchmark_schema	8
+# profiled	false
+# rayon_threads	12
+# simd_backend	small_signed_dot=neon;key_unpack=neon
+# keccak_backend	hybrid
+# rustc	rustc 1.99.0 (b940084d7 2026-09-28)
+# akita_rev	e023b6a46143f7b23199ccecb2684192baf7b640
+# git_revision	49b6c212c209286c536196f53618823ffdf0e899
+# heap_profile	none
+# parameter_set	Falcon-512
+# salt_mode	per-record
+# byte_breakdown_columns	salts_bytes	header_piop_bytes	pcs_bytes
+records	setup_ms	prove_ms	transport_materialize_ms	transport_binding_ms	record_materialize_ms	native_verify_ms	direct_witness_ms	pack_ms	encodability_ms	group_materialization_ms	commit_ms	projection_ms	stage1_ms	stage2_ms	stage3_ms	pcs_prove_ms	output_encode_ms	verify_parallel_ms	verify_decode_ms	verify_hash_to_point_ms	verify_binding_ms	stage_verify_ms	pcs_verify_ms	verify_single_thread_ms	stage_verify_single_thread_ms	pcs_verify_single_thread_ms	verifier_setup_heap_bytes	verify_peak_heap_bytes	verify_single_thread_peak_heap_bytes	commitment_bytes	pcs_proof_bytes	envelope_bytes	commit_groups_ms
+# batch_shape	live=30	padded=32
+30	8.0	72.0	0.0	0.1	0.0	0.2	0.3	0.0	0.0	0.0	2.8	0.6	1.0	2.0	1.5	63.8	0.0	3.4	0.0	0.2	0.0	0.7	2.4	3.8	1.1	2.5	2827417	1289608	1289608	512	56727	61752	s1:0.8;slack:0.6;digits:2.0;budget:1.4
+# batch_shape	live=30	padded=32
+30	7.0	72.3	0.0	0.1	0.0	0.2	0.3	0.0	0.0	0.0	2.9	0.6	0.9	2.2	1.6	64.0	0.0	3.1	0.0	0.2	0.0	0.6	2.3	3.7	1.1	2.4	2590632	1289608	1289608	512	56727	61752	s1:0.9;slack:0.7;digits:1.9;budget:1.0
+# batch_shape	live=30	padded=32
+30	6.8	74.2	0.0	0.1	0.0	0.2	0.2	0.0	0.0	0.0	3.0	0.5	1.0	2.0	1.6	65.7	0.0	3.3	0.0	0.2	0.0	0.7	2.3	3.6	1.1	2.4	2590632	1289608	1289608	512	56727	61752	s1:0.8;slack:0.6;digits:2.2;budget:1.0
+# batch_shape	live=30	padded=32
+30	6.6	70.3	0.0	0.1	0.0	0.2	0.2	0.0	0.0	0.0	3.1	0.5	1.0	1.9	1.5	62.0	0.0	3.1	0.0	0.2	0.0	0.7	2.2	3.7	1.1	2.4	2590632	1289608	1289608	512	56727	61752	s1:1.0;slack:0.5;digits:2.0;budget:1.0
+# honest FN-DSA fixtures: distinct reference-generated keypairs, signatures, and messages; salt_mode=per-record; deterministic benchmark randomness is not production key material

@@ -1,0 +1,195 @@
+{
+  "compile_plan_s": 0.559079667,
+  "depth": 3,
+  "edge_count": 10,
+  "fan_in": 2,
+  "leaf_capacity": 5,
+  "leaf_count": 6,
+  "merge_count": 5,
+  "nodes": [
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+      "leaf": 0,
+      "node": 0,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+      "leaf": 1,
+      "node": 1,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+      "leaf": 2,
+      "node": 2,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+      "leaf": 3,
+      "node": 3,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+      "leaf": 4,
+      "node": 4,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+      "leaf": 5,
+      "node": 5,
+      "signatures": 5
+    },
+    {
+      "children": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "guest_hash": "fa38d390c7c6dd806a673832f05d55356bfcec424c67661396fcdee2da030f9f",
+      "leaf": null,
+      "node": 6,
+      "signatures": 10
+    },
+    {
+      "children": [
+        2,
+        3
+      ],
+      "depth": 1,
+      "guest_hash": "fa38d390c7c6dd806a673832f05d55356bfcec424c67661396fcdee2da030f9f",
+      "leaf": null,
+      "node": 7,
+      "signatures": 10
+    },
+    {
+      "children": [
+        4,
+        5
+      ],
+      "depth": 1,
+      "guest_hash": "fa38d390c7c6dd806a673832f05d55356bfcec424c67661396fcdee2da030f9f",
+      "leaf": null,
+      "node": 8,
+      "signatures": 10
+    },
+    {
+      "children": [
+        6,
+        7
+      ],
+      "depth": 2,
+      "guest_hash": "88def91c064a0c4821143b3a68ddb215fb6782390ea990e011ecac3d0c4eb010",
+      "leaf": null,
+      "node": 9,
+      "signatures": 20
+    },
+    {
+      "children": [
+        9,
+        8
+      ],
+      "depth": 3,
+      "guest_hash": "fda5548b289f786983e0857108e9b8383ab757720d05f4b5fa595f8db6f6b9cf",
+      "leaf": null,
+      "node": 10,
+      "signatures": 30
+    }
+  ],
+  "plan_hash": "af403ed7b87ae6758b41e37993a321f9c5de4bd9dbe4b6f9650769b4ea62bf25",
+  "root_guest_hash": "fda5548b289f786983e0857108e9b8383ab757720d05f4b5fa595f8db6f6b9cf",
+  "schema_version": 1,
+  "scheme": "ethfalcon",
+  "semantic_plan": {
+    "fan_in": 2,
+    "format": "pqbench/tree-v1/all-edges/level-chunks",
+    "leaf_capacity": 5,
+    "leaves": [
+      {
+        "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+        "min_log_committed": 22,
+        "public_input_hex": "b070ad1af02cae9b37cb3a33fd06e457e80047f228ed35140f4997104b2c00b0",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+        "min_log_committed": 22,
+        "public_input_hex": "6f3118b4f88a89d831fdbc189631e82b110d8713b9f2faee7a2e2e56921ee801",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+        "min_log_committed": 22,
+        "public_input_hex": "6ed414aa96cf4104b3063db55126c5149eb606f1b606e70d3778bafecb06065f",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+        "min_log_committed": 22,
+        "public_input_hex": "1fd738428745f74a3f3810af887f60801070c7b238a9bab4be47b1f2d7252055",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+        "min_log_committed": 22,
+        "public_input_hex": "3d45304c4329a3f873889f1428a814c1f2459a3b7c2113733c28a25d02279840",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+        "min_log_committed": 22,
+        "public_input_hex": "d4ff4488531130038df7f1fe77da1741e78ee86d91d01ece254263c72b68c4ae",
+        "signatures": 5
+      }
+    ],
+    "schema_version": 1,
+    "scheme": "ethfalcon",
+    "signatures": 30
+  },
+  "signatures": 30,
+  "source_table": [
+    {
+      "bytecode_instructions": 154980,
+      "bytecode_log": 18,
+      "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    },
+    {
+      "bytecode_instructions": 216752,
+      "bytecode_log": 18,
+      "guest_hash": "88def91c064a0c4821143b3a68ddb215fb6782390ea990e011ecac3d0c4eb010",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    },
+    {
+      "bytecode_instructions": 216752,
+      "bytecode_log": 18,
+      "guest_hash": "fa38d390c7c6dd806a673832f05d55356bfcec424c67661396fcdee2da030f9f",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    },
+    {
+      "bytecode_instructions": 216754,
+      "bytecode_log": 18,
+      "guest_hash": "fda5548b289f786983e0857108e9b8383ab757720d05f4b5fa595f8db6f6b9cf",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    }
+  ]
+}

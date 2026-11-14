@@ -1,0 +1,16 @@
+{
+  "modulus_polynomial": "x^64+x^4+x^3+x+1",
+  "generator": "x",
+  "order": 18446744073709551615,
+  "prime_divisor_power_checks": {
+    "3": 1858076378458151938,
+    "5": 6753221685647269129,
+    "17": 934417933708345563,
+    "257": 6259950186334376129,
+    "641": 7779978215417873058,
+    "65537": 2026190363967203278,
+    "6700417": 69034349764540817
+  },
+  "full_order_power": 1,
+  "conclusion": "Given the upstream field operations, g has order exactly 2^64-1."
+}

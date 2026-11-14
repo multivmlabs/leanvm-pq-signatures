@@ -1,0 +1,171 @@
+{
+  "scope": "Native C and independent Python checks, not direct ACVP execution under the fixed-32-byte pure guest",
+  "fixture_sha256": "b52a160aa81192224cb2e263f54e936977d71b229f7cbfe868d7dd409ef354b2",
+  "acvp_internal_projection_sha256": "033a8b8a5f45d7a9b158b493efa5502a1fa697b00ee66037e11d84d5a30ab93a",
+  "pure_profile_controls": [
+    {
+      "name": "honest",
+      "native": true,
+      "python": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "changed_message",
+      "native": false,
+      "python": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "changed_key",
+      "native": false,
+      "python": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "changed_challenge",
+      "native": false,
+      "python": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "pure_matches_internal_prefixed_message",
+      "native": true,
+      "python": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "pure_is_not_unprefixed_internal",
+      "native": false,
+      "python": false,
+      "expected": false,
+      "passed": true
+    }
+  ],
+  "acvp_internal_controls": [
+    {
+      "tcId": 1,
+      "reason": "no modification",
+      "expected": true,
+      "native": true,
+      "python": true,
+      "passed": true
+    },
+    {
+      "tcId": 2,
+      "reason": "too many hints",
+      "expected": false,
+      "native": false,
+      "python": false,
+      "passed": true
+    },
+    {
+      "tcId": 3,
+      "reason": "too many hints",
+      "expected": false,
+      "native": false,
+      "python": false,
+      "passed": true
+    },
+    {
+      "tcId": 4,
+      "reason": "modify signature",
+      "expected": false,
+      "native": false,
+      "python": false,
+      "passed": true
+    },
+    {
+      "tcId": 5,
+      "reason": "no modification",
+      "expected": true,
+      "native": true,
+      "python": true,
+      "passed": true
+    },
+    {
+      "tcId": 6,
+      "reason": "z too large",
+      "expected": false,
+      "native": false,
+      "python": false,
+      "passed": true
+    },
+    {
+      "tcId": 7,
+      "reason": "modify signature",
+      "expected": false,
+      "native": false,
+      "python": false,
+      "passed": true
+    },
+    {
+      "tcId": 8,
+      "reason": "modify signature",
+      "expected": false,
+      "native": false,
+      "python": false,
+      "passed": true
+    },
+    {
+      "tcId": 9,
+      "reason": "too many hints",
+      "expected": false,
+      "native": false,
+      "python": false,
+      "passed": true
+    },
+    {
+      "tcId": 10,
+      "reason": "z too large",
+      "expected": false,
+      "native": false,
+      "python": false,
+      "passed": true
+    },
+    {
+      "tcId": 11,
+      "reason": "no modification",
+      "expected": true,
+      "native": true,
+      "python": true,
+      "passed": true
+    },
+    {
+      "tcId": 12,
+      "reason": "modify message",
+      "expected": false,
+      "native": false,
+      "python": false,
+      "passed": true
+    },
+    {
+      "tcId": 13,
+      "reason": "z too large",
+      "expected": false,
+      "native": false,
+      "python": false,
+      "passed": true
+    },
+    {
+      "tcId": 14,
+      "reason": "modify message",
+      "expected": false,
+      "native": false,
+      "python": false,
+      "passed": true
+    },
+    {
+      "tcId": 15,
+      "reason": "modify message",
+      "expected": false,
+      "native": false,
+      "python": false,
+      "passed": true
+    }
+  ]
+}

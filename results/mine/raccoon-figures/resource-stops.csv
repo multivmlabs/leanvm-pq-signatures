@@ -1,0 +1,2 @@
+scheme,count,sample,classification,elapsed_s,sampled_rss_stop_target_bytes,new_sampled_rss_stop_target_bytes,measured_failed_peak_rss_bytes,saved_partial_leaves,saved_merges,complete_root_produced,included_in_successful_medians,partial_proof_reuse_allowed,backend_committed_words_cap,archive,archived_files_checked
+raccoon-g,70,2,operational resident-memory stop,627.9170861659986,20401094656,21474836480,,71,0,False,False,False,268435456,risc-v/results/raccoon-full-matrix/resource-stops/20261110T041747Z,77

@@ -1,0 +1,60 @@
+{
+  "action": "verify",
+  "arch": "aarch64",
+  "bytecode_prepare_s": 0.001074041,
+  "compile_s": 0.002228667,
+  "guest_hash": "a31d2442332b7b3fdcd59d9426e2a1e427e094f2d8e3338225551c07d19a16ce",
+  "leanvm_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "leanvm_source_dirty_at_build": "false",
+  "metadata": null,
+  "min_log_committed": 0,
+  "os": "macos",
+  "process_peak_rss_bytes": 12009472,
+  "proof_bytes": 248880,
+  "proof_encoding": {
+    "merkle_bytes": 201544,
+    "merkle_phases": [
+      {
+        "opened_field_words": 9324,
+        "opened_rows": 222,
+        "sibling_hashes": 1660
+      },
+      {
+        "opened_field_words": 2688,
+        "opened_rows": 56,
+        "sibling_hashes": 470
+      },
+      {
+        "opened_field_words": 1536,
+        "opened_rows": 32,
+        "sibling_hashes": 262
+      },
+      {
+        "opened_field_words": 1056,
+        "opened_rows": 22,
+        "sibling_hashes": 170
+      }
+    ],
+    "scalar_stream_bytes": 47336,
+    "scalar_stream_count": 1972
+  },
+  "public_input_hex": "98fd5368f2287c25d9e94530a89e48866b835b1ece81ea16896c8264d468fec8",
+  "schema_version": 1,
+  "scheme": "aerie-fp64mul-feasibility-kernel-v1",
+  "statement_pinned": true,
+  "threads_env": null,
+  "verified": true,
+  "verify_cached_s": [
+    0.005034042,
+    0.004758833,
+    0.004645875
+  ],
+  "verify_s": [
+    0.006528125
+  ],
+  "zero_knowledge": false,
+  "verification_input_contains_witness": false,
+  "public_statement_sha256": "ad2f7749871347a9daaae8b79102c898c82e016c44f2f582fa836a4c30dc61dd",
+  "saved_proof_sha256": "8489233efae86b63845fcfd557853d0de4f1fc38c2aa6938e4e944be36523d02",
+  "verification_process_elapsed_s": 0.04039395800000001
+}

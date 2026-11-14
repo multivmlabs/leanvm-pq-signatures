@@ -1,0 +1,16 @@
+{
+  "parameters": {
+    "n": 32,
+    "k": 1,
+    "a": 8
+  },
+  "attempts": 18,
+  "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+  "root": "3dbecaf9e08c835c566a584f133db22f2e121a0a4fddf10ea15e95d503fe6405",
+  "message_1": "0700000000000000000000000000000000000000000000000000000000000000",
+  "message_2": "1100000000000000000000000000000000000000000000000000000000000000",
+  "same_index": 39,
+  "control_message": "0000000000000000000000000000000000000000000000000000000000000000",
+  "control_index": 226,
+  "note": "Reduced supported parameters demonstrate the relation; default 2^64 work is an exact ideal-hash birthday estimate, not an executed attack."
+}

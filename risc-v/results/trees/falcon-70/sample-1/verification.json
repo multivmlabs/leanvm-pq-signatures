@@ -1,0 +1,32 @@
+{
+  "action": "verify",
+  "actual_leaves": 7,
+  "all_folded_claims_settled": true,
+  "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "cold_complete_verify_s": 0.052666,
+  "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c",
+  "first_complete_verify_s": 0.00262825,
+  "leaf_slots": 8,
+  "peak_rss_bytes": 156794880,
+  "prepared_complete_verify_median_s": 0.001938875,
+  "prepared_complete_verify_s": [
+    0.001938875,
+    0.00187125,
+    0.001976792
+  ],
+  "program_load_s": 0.0018495,
+  "public_claim_derivation_s": 0.000692375,
+  "root_proof_bytes": 267903,
+  "root_proof_sha256": "7704ea17bb2c6dc8cf5b38ba51446eb05511e5397a51544eac3b13c9b3e09b3e",
+  "schema": 1,
+  "scheme": "falcon",
+  "signatures": 70,
+  "statement_pinned": true,
+  "statement_sha256": "2ba5024f2aec8046ef82e8bb717b5a2fcbd3f5174c825ef733523655046fe37f",
+  "threads_requested": 8,
+  "tree_setup_s": 0.04818825,
+  "verification_uses_child_proofs": false,
+  "verification_uses_signatures": false,
+  "verified": true,
+  "zero_knowledge": false
+}

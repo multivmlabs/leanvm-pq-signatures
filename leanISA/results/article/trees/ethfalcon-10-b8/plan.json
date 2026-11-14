@@ -1,0 +1,81 @@
+{
+  "compile_plan_s": 0.233308542,
+  "depth": 1,
+  "edge_count": 2,
+  "fan_in": 8,
+  "leaf_capacity": 5,
+  "leaf_count": 2,
+  "merge_count": 1,
+  "nodes": [
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+      "leaf": 0,
+      "node": 0,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+      "leaf": 1,
+      "node": 1,
+      "signatures": 5
+    },
+    {
+      "children": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "guest_hash": "5e8d2707c78126bb5fe4e51b277a23f49a40fce17843604387f85b705723f92a",
+      "leaf": null,
+      "node": 2,
+      "signatures": 10
+    }
+  ],
+  "plan_hash": "0643674a4369a9bd9efc7456e2ab09d997041b4e551e4644b9d13e89373c49bc",
+  "root_guest_hash": "5e8d2707c78126bb5fe4e51b277a23f49a40fce17843604387f85b705723f92a",
+  "schema_version": 1,
+  "scheme": "ethfalcon",
+  "semantic_plan": {
+    "fan_in": 8,
+    "format": "pqbench/tree-v1/all-edges/level-chunks",
+    "leaf_capacity": 5,
+    "leaves": [
+      {
+        "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+        "min_log_committed": 22,
+        "public_input_hex": "b070ad1af02cae9b37cb3a33fd06e457e80047f228ed35140f4997104b2c00b0",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+        "min_log_committed": 22,
+        "public_input_hex": "6f3118b4f88a89d831fdbc189631e82b110d8713b9f2faee7a2e2e56921ee801",
+        "signatures": 5
+      }
+    ],
+    "schema_version": 1,
+    "scheme": "ethfalcon",
+    "signatures": 10
+  },
+  "signatures": 10,
+  "source_table": [
+    {
+      "bytecode_instructions": 154980,
+      "bytecode_log": 18,
+      "guest_hash": "4b4502f2a1a4231617baba69b86e1e4470cff3c3815c66eb8fdcb6e2c2db8a2e",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    },
+    {
+      "bytecode_instructions": 216752,
+      "bytecode_log": 18,
+      "guest_hash": "5e8d2707c78126bb5fe4e51b277a23f49a40fce17843604387f85b705723f92a",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    }
+  ]
+}

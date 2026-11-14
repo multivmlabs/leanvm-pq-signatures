@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "cases": {
+    "byte-aligned": {
+      "encoded_payload_bytes": 10848,
+      "python_reference_accepts": true,
+      "input_sha256": "c4038425af09b859ad950e7d3eeca2d843ae3f81b80f8aa2f75ddfc82911e335"
+    },
+    "exact-full": {
+      "encoded_payload_bytes": 11524,
+      "python_reference_accepts": true,
+      "input_sha256": "2087a612850938696a466ee019dfe2fc6347bce2040ac4684a5ec744f468c204"
+    },
+    "hint-l2-fail": {
+      "encoded_payload_bytes": 11488,
+      "python_reference_accepts": false,
+      "input_sha256": "06263394b86d121a1fc16caf5f632aa3abfe8bf1f7d7a84285d1f2e6df617a98"
+    },
+    "hint-inf-fail": {
+      "encoded_payload_bytes": 10849,
+      "python_reference_accepts": false,
+      "input_sha256": "c0c14290dc8cabd20ce90a21e441d8b962ca819e5ca7de7d9409aa0fb44f87eb"
+    },
+    "response-inf-fail": {
+      "encoded_payload_bytes": 10853,
+      "python_reference_accepts": false,
+      "input_sha256": "d5bed305a63c75f782659ca2a7696ddee72fb9641eab5378ae6f76841e21539f"
+    }
+  },
+  "excluded_from_benchmarks": true
+}

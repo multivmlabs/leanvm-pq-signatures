@@ -1,0 +1,11 @@
+[package]
+name = "aerie-native-verifier"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[workspace]
+
+[dependencies]
+aerie-verifier = { path = "../../vendor/aerie/crates/aerie-verifier", default-features = false }
+serde_json = "1"

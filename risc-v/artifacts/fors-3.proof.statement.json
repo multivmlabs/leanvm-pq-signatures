@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "scheme": "fors",
+  "count": 3,
+  "elf_sha256": "64480a3bf424f97578f6477a7a4045c2452853a0801f45fc191648eb253e36da",
+  "expected_output": [
+    8233128599152108607,
+    13647269427182002365,
+    7204411767213114224,
+    8120751764874163270
+  ],
+  "public_records": [
+    {
+      "message": "587ec7773dce95516c3dd92662f23d71e55a5bd44db9e14629dfd82a01b1ad73",
+      "root": "efb8dd3c0da59d2599c946f9b77917e6b5e77b503d4836bcd524fe61482d58b4",
+      "seed": "c8474432ebfd23d0c96c7ce1bd34bb0a9de3c5e9afa69d571d7f7c47c0fb6b1f"
+    },
+    {
+      "message": "52834d5bbfeac4a3a52dea6d690685970d3f5fe9c33dbcabf1b216bc6b29838e",
+      "root": "5baa024393e295a99f67c7f8e76cc5f835ee6c4e241d2d0455fa88b35db5cd44",
+      "seed": "e1cd8c72165f8d7dfcc3c3ccff1adb332a1822be7664224dc1cbc74388e2c1d3"
+    },
+    {
+      "message": "84ae1523a4f3e50b78dcadc46b5f1946f853a49addcad932caccff3bb6c87377",
+      "root": "92e0c86ff9b3dc89084c7f3ee5d5330e2aefdba66772cc35d34d2f50d1358582",
+      "seed": "0691124a5c704048b7b11264b4233a59eda03656177e7b4c8c41e0555ce98882"
+    }
+  ]
+}

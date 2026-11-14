@@ -1,0 +1,41 @@
+{
+  "action": "verify",
+  "actual_leaves": 100,
+  "all_folded_claims_settled": true,
+  "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "cold_complete_verify_s": 0.072319376,
+  "controls": {
+    "changed_key_recommitted": true,
+    "changed_message_recommitted": true,
+    "corrupt_root": true,
+    "reordered_leaves": true,
+    "trailing_byte": true,
+    "wrong_leaf_count": true,
+    "wrong_output": true
+  },
+  "elf_sha256": "e375033cde726b2e988db2c433bf8d83b8516252c5954c1e43cb6720f3b25eac",
+  "first_complete_verify_s": 0.003304334,
+  "leaf_slots": 128,
+  "peak_rss_bytes": 96452608,
+  "prepared_complete_verify_median_s": 0.002432833,
+  "prepared_complete_verify_s": [
+    0.002443208,
+    0.002432833,
+    0.002375042
+  ],
+  "program_load_s": 0.004422125,
+  "public_claim_derivation_s": 0.003063417,
+  "root_proof_bytes": 267647,
+  "root_proof_sha256": "cb61b72c21657e9938f5aef7c24d2b63d0415a2d3aa0156b3b2f4d6401085234",
+  "schema": 1,
+  "scheme": "raccoon",
+  "signatures": 100,
+  "statement_pinned": true,
+  "statement_sha256": "64086c829f03c71123557c6dc86c6b5fc30677898fb566163de28c86d6969822",
+  "threads_requested": 8,
+  "tree_setup_s": 0.064592917,
+  "verification_uses_child_proofs": false,
+  "verification_uses_signatures": false,
+  "verified": true,
+  "zero_knowledge": false
+}

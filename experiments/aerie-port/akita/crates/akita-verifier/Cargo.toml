@@ -1,0 +1,83 @@
+[package]
+name = "akita-verifier"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.95"
+license = "Apache-2.0 OR MIT"
+description = "Verifier-facing API surface for the Akita polynomial commitment scheme"
+repository = "https://github.com/LayerZero-Labs/akita"
+readme = "../../README.md"
+
+# `rayon` is consumed through Jolt's conditional-parallel macros, whose
+# expansions reference Rayon at the call site.
+[package.metadata.cargo-machete]
+ignored = ["rayon"]
+
+[dependencies]
+akita-error = { version = "0.1.0", path = "../akita-error" }
+akita-algebra = { version = "0.1.0", path = "../akita-algebra" }
+akita-challenges = { version = "0.1.0", path = "../akita-challenges", default-features = false }
+akita-config = { version = "0.1.0", path = "../akita-config", default-features = false }
+jolt-field = { version = "=0.1.0", git = "https://github.com/a16z/jolt", rev = "c7c2d08d5bb0c7c80501f29f723e595af7fcff3c", default-features = false, features = [
+  "asm",
+  "solinas",
+] }
+jolt-poly = { version = "=0.1.0", git = "https://github.com/a16z/jolt", rev = "c7c2d08d5bb0c7c80501f29f723e595af7fcff3c", default-features = false }
+akita-serialization = { version = "0.1.0", path = "../akita-serialization" }
+akita-sumcheck = { version = "0.1.0", path = "../akita-sumcheck", default-features = false }
+akita-transcript = { version = "0.1.0", path = "../akita-transcript", default-features = false }
+akita-types = { version = "0.1.0", path = "../akita-types", default-features = false }
+akita-params = { version = "0.1.0", path = "../akita-params", default-features = false }
+tracing = "0.1"
+rayon = { version = "1.10", optional = true }
+
+[features]
+default = ["transcript-blake2b"]
+transcript-blake2b = [
+  "akita-challenges/transcript-blake2b",
+  "akita-config/transcript-blake2b",
+  "akita-sumcheck/transcript-blake2b",
+  "akita-transcript/transcript-blake2b",
+  "akita-types/transcript-blake2b",
+  "akita-params/transcript-blake2b",
+]
+transcript-keccak = [
+  "akita-challenges/transcript-keccak",
+  "akita-config/transcript-keccak",
+  "akita-sumcheck/transcript-keccak",
+  "akita-transcript/transcript-keccak",
+  "akita-types/transcript-keccak",
+  "akita-params/transcript-keccak",
+]
+benchmark-support = []
+parallel = [
+  "dep:rayon",
+  "akita-algebra/parallel",
+  "akita-challenges/parallel",
+  "jolt-field/parallel",
+  "akita-sumcheck/parallel",
+  "akita-types/parallel",
+  "akita-params/parallel",
+]
+
+[lints]
+workspace = true
+
+[dev-dependencies]
+akita-config = { version = "0.1.0", path = "../akita-config", default-features = false, features = [
+  "test-support",
+] }
+akita-types = { version = "0.1.0", path = "../akita-types", default-features = false, features = [
+  "test-support",
+] }
+criterion = "0.8"
+
+[[bench]]
+name = "relation_evaluator"
+harness = false
+required-features = ["benchmark-support"]
+
+[[bench]]
+name = "evaluation_trace"
+harness = false
+required-features = ["benchmark-support"]

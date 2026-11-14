@@ -1,0 +1,48 @@
+[package]
+name = "akita-setup"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.95"
+license = "Apache-2.0 OR MIT"
+description = "Config-backed setup construction for the Akita polynomial commitment scheme"
+repository = "https://github.com/LayerZero-Labs/akita"
+readme = "../../README.md"
+
+[features]
+default = ["transcript-blake2b"]
+transcript-blake2b = [
+  "akita-config/transcript-blake2b",
+  "akita-cpu-backend/transcript-blake2b",
+  "akita-types/transcript-blake2b",
+  "akita-params/transcript-blake2b",
+]
+transcript-keccak = [
+  "akita-config/transcript-keccak",
+  "akita-cpu-backend/transcript-keccak",
+  "akita-types/transcript-keccak",
+  "akita-params/transcript-keccak",
+]
+parallel = ["jolt-field/parallel", "akita-cpu-backend/parallel"]
+disk-persistence = ["akita-cpu-backend/disk-persistence"]
+
+[dependencies]
+akita-error = { version = "0.1.0", path = "../akita-error" }
+akita-config = { version = "0.1.0", path = "../akita-config", default-features = false }
+akita-cpu-backend = { version = "0.1.0", path = "../akita-cpu-backend", default-features = false }
+jolt-field = { version = "=0.1.0", git = "https://github.com/a16z/jolt", rev = "c7c2d08d5bb0c7c80501f29f723e595af7fcff3c", default-features = false, features = [
+  "asm",
+  "solinas",
+] }
+akita-serialization = { version = "0.1.0", path = "../akita-serialization" }
+akita-types = { version = "0.1.0", path = "../akita-types", default-features = false }
+akita-params = { version = "0.1.0", path = "../akita-params", default-features = false }
+tracing = "0.1"
+
+[dev-dependencies]
+akita-challenges = { version = "0.1.0", path = "../akita-challenges", default-features = false }
+akita-config = { version = "0.1.0", path = "../akita-config", default-features = false, features = [
+  "test-support",
+] }
+
+[lints]
+workspace = true

@@ -1,0 +1,55 @@
+{
+  "action": "verify",
+  "arch": "aarch64",
+  "bytecode_prepare_s": 0.000989292,
+  "compile_s": 0.002229,
+  "guest_hash": "9ef4b56e3107d76d59a415351177217342dbf69b57ee37c87491744ed6363207",
+  "leanvm_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "leanvm_source_dirty_at_build": "false",
+  "metadata": null,
+  "min_log_committed": 0,
+  "os": "macos",
+  "process_peak_rss_bytes": 11714560,
+  "proof_bytes": 235176,
+  "proof_encoding": {
+    "merkle_bytes": 189688,
+    "merkle_phases": [
+      {
+        "opened_field_words": 12265,
+        "opened_rows": 223,
+        "sibling_hashes": 1197
+      },
+      {
+        "opened_field_words": 2688,
+        "opened_rows": 56,
+        "sibling_hashes": 321
+      },
+      {
+        "opened_field_words": 1536,
+        "opened_rows": 32,
+        "sibling_hashes": 208
+      }
+    ],
+    "scalar_stream_bytes": 45488,
+    "scalar_stream_count": 1895
+  },
+  "public_input_hex": "2a55d1bd7f51376e7c8685355d36ddb478b7bd4e98dc0fd62e6556a2ace92129",
+  "schema_version": 1,
+  "scheme": "aerie-fp64mul-feasibility-kernel-v1",
+  "statement_pinned": true,
+  "threads_env": null,
+  "verified": true,
+  "verify_cached_s": [
+    0.004726375,
+    0.004560667,
+    0.004515375
+  ],
+  "verify_s": [
+    0.006055625
+  ],
+  "zero_knowledge": false,
+  "verification_input_contains_witness": false,
+  "public_statement_sha256": "64aba468a8bc58e3d7837f4ba80f12d18b99e16fcf00a9ef7f52a86ee846e8ed",
+  "saved_proof_sha256": "b8b901fb93d01efac3573ea62816d265732dc740aa86586b6f7c9f221b66de28",
+  "verification_process_elapsed_s": 0.04036341600000001
+}

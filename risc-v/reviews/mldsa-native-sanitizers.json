@@ -1,0 +1,11 @@
+{
+  "scope": "Native C ASan/UBSan verification, not RISC-V or STARK verification",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.0.123.102)\nTarget: arm64-apple-darwin25.3.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin",
+  "source_sha256": "7500dfec56e3af99a05f156cc9d4e9702f6e1d1ad6803dac540ac5da90dcb83b",
+  "positive_controls": 1,
+  "negative_controls": 2422,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "passed": true
+}

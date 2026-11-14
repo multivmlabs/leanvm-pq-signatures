@@ -1,0 +1,5 @@
+{
+  "action": "plan",
+  "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "error": "the run is longer than one proof holds (continuations are not implemented)"
+}

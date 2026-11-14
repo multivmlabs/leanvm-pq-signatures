@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "cases": [
+    {
+      "name": "zero",
+      "forward_evaluations_checked": 512,
+      "roundtrip_coefficients_checked": 512,
+      "product_coefficients_checked": 512
+    },
+    {
+      "name": "unit",
+      "forward_evaluations_checked": 512,
+      "roundtrip_coefficients_checked": 512,
+      "product_coefficients_checked": 512
+    },
+    {
+      "name": "negacyclic-boundary",
+      "forward_evaluations_checked": 512,
+      "roundtrip_coefficients_checked": 512,
+      "product_coefficients_checked": 512
+    },
+    {
+      "name": "largest-residues",
+      "forward_evaluations_checked": 512,
+      "roundtrip_coefficients_checked": 512,
+      "product_coefficients_checked": 512
+    },
+    {
+      "name": "dense",
+      "forward_evaluations_checked": 512,
+      "roundtrip_coefficients_checked": 512,
+      "product_coefficients_checked": 512
+    }
+  ],
+  "library_sha256": "575d0526893956c30dd887c9bdd8455f4e4ef2ed2c3108fb9d6901e85c9b385a",
+  "oracle": "Python arbitrary-precision Horner evaluation and schoolbook negacyclic multiplication",
+  "benchmarks_run": false
+}

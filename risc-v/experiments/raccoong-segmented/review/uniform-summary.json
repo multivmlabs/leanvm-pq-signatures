@@ -1,0 +1,42 @@
+{
+  "scope": "Fixed charged trace normalization; no signature relation, output, domain or cap change",
+  "elf_sha256": "5c48b8f39b14521773493692034fa601a9df89992552870addd68416cc926eac",
+  "source_files": 45,
+  "old_elf_sha256": "a9ab1a596f88a737200f96bd045ed4d8176d3f9bcf8eaa6ad06a85ffd9ebfddc",
+  "old_all500_sd_range": [
+    506140,
+    525147
+  ],
+  "fixed_volatile_stores": 32768,
+  "prospective_all500_sd_range": [
+    538908,
+    557915
+  ],
+  "actual_old_outlier": {
+    "base_sd": 557915,
+    "committed_words": 234357176,
+    "cycles": 6682612,
+    "output_unchanged": true,
+    "padded_sd": 1048576,
+    "padding_function_rows": {
+      "ALU": 98309,
+      "DIV": 0,
+      "EXT": 0,
+      "HASH": 0,
+      "LD": 0,
+      "LOAD": 0,
+      "MUL": 0,
+      "MULH": 0,
+      "SD": 32768,
+      "SHIFT": 0,
+      "STORE": 0
+    },
+    "part": 4,
+    "scope": "Final raw ELF and production measure; no STARK; signature3 part4 old shape outlier",
+    "signature": 3,
+    "volatile_stores": 32768
+  },
+  "correctness_tests_passed": 5,
+  "actual_elf_controls": 35,
+  "new_independent_review": "pending root CPU window for final-ELF replay"
+}

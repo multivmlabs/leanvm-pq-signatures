@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "scope": "Read-only standard main-runtime direct N1 evidence and wrapper/provenance audit. Sixteen independent public-only controls also pass in separate file.",
+  "source_hashes_checked": 350,
+  "runtime_environment": {
+    "MALLOC_CONF": null,
+    "_RJEM_MALLOC_CONF": "dirty_decay_ms:0,muzzy_decay_ms:0",
+    "LEANVM_NUM_THREADS": "8"
+  },
+  "same_guest_as_pilot": true,
+  "same_native_proof_parameters": true,
+  "warmup": 1,
+  "prove_samples_s": [
+    10.782185542,
+    11.524235625,
+    11.64077725
+  ],
+  "median_s": 11.524235625,
+  "proof_bytes": 407166,
+  "plain_proof_sha256": "e3ef32cc59e8c4cd8691dc204b0500934f77242f12824a28fb49b81a5ffeaa6f",
+  "peak_rss_bytes": 19429982208,
+  "rss_guard_bytes": 19327352832,
+  "rss_guard_is_sampled_not_hard_cap": true,
+  "rss_guard_overshoot_bytes": 102629376,
+  "prover_exit_code": 0,
+  "separate_receiver_verified": true,
+  "passed": true
+}

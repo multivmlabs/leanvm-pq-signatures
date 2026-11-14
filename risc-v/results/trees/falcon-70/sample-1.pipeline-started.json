@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "scheme": "falcon",
+  "distinct_signatures": 70,
+  "sample": 1,
+  "command": [
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/.cache/aerie-wrapper-host-target/release/riscv-pq-treebench",
+    "prove",
+    "--scheme",
+    "falcon",
+    "--n",
+    "70",
+    "--leaf-size",
+    "10",
+    "--outdir",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/results/trees/falcon-70",
+    "--sample",
+    "sample-1",
+    "--threads",
+    "8",
+    "--rate",
+    "1"
+  ],
+  "binary_sha256": "2cb5d8a5ba86283e26cd327f78211b293526c2410cdb4fb20d936dbb89e0c668",
+  "statement_sha256": "2ba5024f2aec8046ef82e8bb717b5a2fcbd3f5174c825ef733523655046fe37f",
+  "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c",
+  "runner_sha256": "35fb9b14ee8bad32d2774f9fbd30614ccf44796a72e63298152983f903477152",
+  "started_utc": "2026-11-06T19:54:47.081568+00:00",
+  "sampling": "One complete fresh pipeline in a fresh process; no in-process warmup or proof reuse across samples"
+}

@@ -1,0 +1,308 @@
+{
+  "scope": "Separate process, public-only full Program::verify controls; no STARK generation",
+  "runner_sha256": "afd2c1625c2e21b060a9a2005cb74bf5350a4c1262e9a27f9e12491df1018783",
+  "proof_sha256": {
+    "risc-v/artifacts/mldsa-1.proof": "f4aa5f197bb3767388c898ad7c58e7c113d8503174660fc44adb820a8b5890cd",
+    "risc-v/artifacts/mldsa-2.proof": "539cbb41585ab89164b9a81cd8bf1cca359079854f768f53a0343e417ff912e6",
+    "risc-v/artifacts/mldsa-6.proof": "1c083d96d27c5d5a4125eadf0220932302e9366005b3152dc32a4ce16c6ef7d5"
+  },
+  "passed": true,
+  "controls": [
+    {
+      "count": 1,
+      "case": "honest",
+      "expected_accepts": true,
+      "exit_code": 0,
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "count": 1,
+      "case": "changed-public_key-recomputed-claim",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim",
+      "passed": true
+    },
+    {
+      "count": 1,
+      "case": "changed-message-recomputed-claim",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim",
+      "passed": true
+    },
+    {
+      "count": 1,
+      "case": "added-record-recomputed-count-and-claim",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim",
+      "passed": true
+    },
+    {
+      "count": 1,
+      "case": "cached-output-mismatch",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: trusted program/statement mismatch",
+      "passed": true
+    },
+    {
+      "count": 1,
+      "case": "non-ascii-hex",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: invalid hex",
+      "passed": true
+    },
+    {
+      "count": 1,
+      "case": "corrupt-proof",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the proof does not verify: the opening: hint 0 is invalid",
+      "passed": true
+    },
+    {
+      "count": 1,
+      "case": "truncated-proof",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the bytes are no proof",
+      "passed": true
+    },
+    {
+      "count": 1,
+      "case": "trailing-proof-byte",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the bytes are no proof",
+      "passed": true
+    },
+    {
+      "count": 1,
+      "case": "wrong-program-pin",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: trusted program/statement mismatch",
+      "passed": true
+    },
+    {
+      "count": 1,
+      "case": "wrong-statement-pin",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: intended statement hash mismatch",
+      "passed": true
+    },
+    {
+      "count": 2,
+      "case": "honest",
+      "expected_accepts": true,
+      "exit_code": 0,
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "count": 2,
+      "case": "changed-public_key-recomputed-claim",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim",
+      "passed": true
+    },
+    {
+      "count": 2,
+      "case": "changed-message-recomputed-claim",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim",
+      "passed": true
+    },
+    {
+      "count": 2,
+      "case": "added-record-recomputed-count-and-claim",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim",
+      "passed": true
+    },
+    {
+      "count": 2,
+      "case": "removed-record-recomputed-count-and-claim",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim",
+      "passed": true
+    },
+    {
+      "count": 2,
+      "case": "reordered-records-recomputed-claim",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim",
+      "passed": true
+    },
+    {
+      "count": 2,
+      "case": "cached-output-mismatch",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: trusted program/statement mismatch",
+      "passed": true
+    },
+    {
+      "count": 2,
+      "case": "non-ascii-hex",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: invalid hex",
+      "passed": true
+    },
+    {
+      "count": 2,
+      "case": "corrupt-proof",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the proof does not verify: the opening: hint 0 is invalid",
+      "passed": true
+    },
+    {
+      "count": 2,
+      "case": "truncated-proof",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the bytes are no proof",
+      "passed": true
+    },
+    {
+      "count": 2,
+      "case": "trailing-proof-byte",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the bytes are no proof",
+      "passed": true
+    },
+    {
+      "count": 2,
+      "case": "wrong-program-pin",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: trusted program/statement mismatch",
+      "passed": true
+    },
+    {
+      "count": 2,
+      "case": "wrong-statement-pin",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: intended statement hash mismatch",
+      "passed": true
+    },
+    {
+      "count": 6,
+      "case": "honest",
+      "expected_accepts": true,
+      "exit_code": 0,
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "count": 6,
+      "case": "changed-public_key-recomputed-claim",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim",
+      "passed": true
+    },
+    {
+      "count": 6,
+      "case": "changed-message-recomputed-claim",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim",
+      "passed": true
+    },
+    {
+      "count": 6,
+      "case": "added-record-recomputed-count-and-claim",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim",
+      "passed": true
+    },
+    {
+      "count": 6,
+      "case": "removed-record-recomputed-count-and-claim",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim",
+      "passed": true
+    },
+    {
+      "count": 6,
+      "case": "reordered-records-recomputed-claim",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim",
+      "passed": true
+    },
+    {
+      "count": 6,
+      "case": "cached-output-mismatch",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: trusted program/statement mismatch",
+      "passed": true
+    },
+    {
+      "count": 6,
+      "case": "non-ascii-hex",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: invalid hex",
+      "passed": true
+    },
+    {
+      "count": 6,
+      "case": "corrupt-proof",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the proof does not verify: the opening: hint 0 is invalid",
+      "passed": true
+    },
+    {
+      "count": 6,
+      "case": "truncated-proof",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the bytes are no proof",
+      "passed": true
+    },
+    {
+      "count": 6,
+      "case": "trailing-proof-byte",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: the bytes are no proof",
+      "passed": true
+    },
+    {
+      "count": 6,
+      "case": "wrong-program-pin",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: trusted program/statement mismatch",
+      "passed": true
+    },
+    {
+      "count": 6,
+      "case": "wrong-statement-pin",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "stderr": "error: intended statement hash mismatch",
+      "passed": true
+    }
+  ]
+}

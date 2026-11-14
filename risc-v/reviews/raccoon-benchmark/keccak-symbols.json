@@ -1,0 +1,20 @@
+{
+  "raccoon": [
+    {
+      "name": "pqbench_raccoon_keccak",
+      "address": 268436924,
+      "hex": "0x100005bc",
+      "bytes": 2448,
+      "type": 2
+    }
+  ],
+  "raccoon-g": [
+    {
+      "name": "_RNvNtCsjoN74wGWccR_12leanvm_guest6keccak5f1600",
+      "address": 268444100,
+      "hex": "0x100021c4",
+      "bytes": 2448,
+      "type": 2
+    }
+  ]
+}

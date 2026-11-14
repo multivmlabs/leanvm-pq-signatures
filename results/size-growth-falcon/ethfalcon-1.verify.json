@@ -1,0 +1,112 @@
+{
+  "action": "verify",
+  "arch": "aarch64",
+  "bytecode_prepare_s": 0.071805042,
+  "compile_s": 0.069217458,
+  "guest_hash": "69a3514225bcd9b66ac753fc65c2de44dcac18a7dbb60504276a5c95e1470185",
+  "leanvm_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "leanvm_source_dirty_at_build": "false",
+  "metadata": {
+    "baseline_native_verify_s": 1.3058333333333332e-05,
+    "count": 1,
+    "encoding": "expanded Falcon-512 relation with canonical uint16 key commitment",
+    "fixture_generation_s": 0.07404775000000002,
+    "hash_to_point_block_cap": 40,
+    "message_bytes": 33,
+    "native_C_flags": [
+      "-shared",
+      "-fPIC",
+      "-O3",
+      "-DETHFALCON=1"
+    ],
+    "native_C_implementation": "pinned upstream ETHFALCON C crypto_sign_open; compressed key/signature decoding and Python ctypes call included",
+    "native_C_timing_repeats": 30,
+    "native_C_verify_seconds": 1.3058333333333332e-05,
+    "native_implementation": "independent Python schoolbook verifier; not an optimized native baseline",
+    "native_verify_ns_per_signature": 13058.333333333334,
+    "parameters": {
+      "degree": 512,
+      "message_lengths": [
+        33
+      ],
+      "modulus": 12289,
+      "norm_bound": 34034726
+    },
+    "public_key_bytes": 897,
+    "public_key_codec": "512 canonical uint16 little-endian coefficients",
+    "python_reference_verify_seconds": 0.021613666999999975,
+    "raw_key_bytes": 897,
+    "raw_signature_bytes": 656,
+    "records": [
+      {
+        "claim_hash": "986bb9c436354d9b321318ae48650c0b1f15e7d73067fd3343e988764e3645ea",
+        "kat": 0,
+        "key_hash": "5af591a23c46a470f2812ca21233e8fa01626eb916df66cd03dacfc370cc6d21",
+        "message_hash": "571048a6e517b33411b8d84696a4f7e37e52297b8793d7aca442438d4cc59460",
+        "message_hex": "d81c4d8d734fcbfbeade3d3f8a039faa2a2c9957e835ad55b22e75bf57bb556ac8",
+        "native_C_verify_ns": 13058.333333333334,
+        "public_key_hex": "096ba86cb658a8f445c9a5e4c28374bec879c8655f68526923240918074d0147c03162e4a49200648c652803c6fd7509ae9aa799d6310d0bd42724e0635920186207000767ca5a8546b1755308c304b84fc93b069e265985b398d6b834698287ff829aa820f17a7f4226ab21f601ebd7175226bab256d8888f009032566d6383d68457ea155a94301870d589c678ed304259e9d37b193bc2a7ccbcbec51d69158c44073aec9792630253318bc954dbf50d15028290dc2d309c7b7b02a6823744d463da17749595cb77e6d16d20d1b4c3aad89d320ebe5a672bb96d6cd5c1efec8b811200cbb062e473352540eddef8af9499f8cdd1dc7c6873f0c7a6bcb7097560271f946849b7f373640bb69ca9b518aa380a6eb0a7275ee84e9c221aed88f5bfbaf43a3ede8e6aa42558104faf800e018441930376c6f6e751569971f47adbca5ca00c801988f317a18722a29298925ea154dbc9024e120524a2d41dc0f18fd8d909f6c50977404e201767078ba9a1f9e40a8b2ba9c01b7da3a0b73a4c2a6b4f518bbee3455d0af2204ddc031c805c72ccb647940b1e6794d859aaebcea0deb581d61b9248bd9697b5cb974a8176e8f910469cae0ab4ed92d2aee9f7eb50296daf8057476305c1189d1d9840a0944f0447fb81e511420e67891b98fa6c257034d5a063437d379177ce8d3fa6eaf12e2dbb7eb8e498481612b1929617da5fb45e4cdf893927d8ba842aa861d9c50471c6d0c6df7e2bb26465a0eb6a3a709de792aafaaf922aa95dd5920b72b4b8856c6e632860b10f5cc08450003671af388961872b466400adb815ba81ea794945d19a100622a6ca0d41c4ea620c21dc125119e372418f04402d9fa7180f7bc89afa54f8082244a42f46e5b5abce87b50a7d6febe8d7bbbac92657cbda1db7c25572a4c1d0baea30447a865a2b1036b880037e2f4d26d453e9e913259779e9169b28a62eb809a5c744e04e260e1f2bbda874f1ac674839ddb47b3148c5946de0180148b7973d63c58193b17cd05d16e80cd7928c2a338363a23a81c0608c87505589b9da1c617e7b70786b6754fbb30a5816810b9e126cfcc5aa49326e9d842973874b6359b5db75610ba68a98c7b5e83f125a82522e13b83fb8f864e2a97b73b5d544a7415b6504a13939eab1595d64faf41fab25a864a574de524405e878339877886d2fc07fa0311508252413edfa1158466667aff78386daf7cb4c9b850992f96e20525330599ab601d454688e294c8c3e",
+        "salt_hex": "33b3c07507e4201748494d832b6ee2a6c93bff9b0ee343b550d1f85a3d0de0d704c6d17842951309",
+        "signature_bytes": 656,
+        "signature_hex": "2933b3c07507e4201748494d832b6ee2a6c93bff9b0ee343b550d1f85a3d0de0d704c6d17842951309adc516bc8692a77cdb5370847ce43194bd6f4ed6f7503747c948dcc1f75b54ac99429e98c9f2a7330c5ac0abf359fa8e5c7195f677eb3a65596ce1eb433f32141ca623f1e9eacb0c57b15f4c44311367599831f8d524b062db15a5775aacfe2f86eff21d28bdc0ec5ddceca311943755ddec5df1e8a43cca9187f249a54d9acfa49c6676b0976481ed29eca2446072ec652348f52304531074bae804d61413ec690b24707ec78e19f064947e97358b72a00cfaafddafc760586605c16fadcfedd52f9776a488fb35735395db17b34f1af6daf825721d8c89ea23f5e67df58771fada62c734cd6e398c69c1286d40e33c089b4185cb4546f5adeb633f1bf7b9fe8da20ffc9b871844f4c6d65a9ce70f3d46c0a7e006788c74e70c2b2aca47502d4258090e8e45215fa550ea4b3d51c6cf26d4bd4cc7d1afd72995379e238d511ab3423fd40ef7bd1de26ef7cd09727d74521702544ef6910b05112882ad74b8e25b80596c4cfff39aace525751bcab7118b97ad876a74789962f7e66123841495ecbc97c994b9544b594611effa2917ca3da2208d1fed89044d66fcdaaf7d101a17a9a18b660c49091e389aebd056700e3b335f27b0ff85e3e4d1b611d62d48f6f68dbf736ab12d278ae8cc96542a06666ef44913bf2ab2d13848d20abb380a66de346eb09c3bba477ec0105c645a07d8c879ee7ba552c6bb3203aeb45b3169916d5cdeddf625e7e34c612333fbcf3bcc4eed6821175d8dad306815976e5fcbc4a524b30683b21b8f0adad6d4abb0aed6409a9be4d318a32e9bbe26472bbdf7f6202d2208fee649f92721f6ad01035e1545e251624de61c17e8ca66c31661f7999f96633de97010"
+      }
+    ],
+    "signature_bytes": 656,
+    "signature_bytes_per_signature": [
+      656
+    ],
+    "signature_codec": "expanded s2 witness; canonical coefficients abs<=2047 and norm enforced; raw compressed bytes parsed by host; no total payload limit, matching upstream crypto_sign_open",
+    "signatures": 1,
+    "upstream_kat_sha256": "065be93443f309465facd5643d5ee8a4fb6a4c74d80a0e70f531c5822d5d7780"
+  },
+  "os": "macos",
+  "process_peak_rss_bytes": 132530176,
+  "proof_bytes": 315632,
+  "proof_encoding": {
+    "merkle_bytes": 261696,
+    "merkle_phases": [
+      {
+        "opened_field_words": 8288,
+        "opened_rows": 224,
+        "sibling_hashes": 2782
+      },
+      {
+        "opened_field_words": 2688,
+        "opened_rows": 56,
+        "sibling_hashes": 754
+      },
+      {
+        "opened_field_words": 1536,
+        "opened_rows": 32,
+        "sibling_hashes": 421
+      },
+      {
+        "opened_field_words": 1104,
+        "opened_rows": 23,
+        "sibling_hashes": 291
+      },
+      {
+        "opened_field_words": 864,
+        "opened_rows": 18,
+        "sibling_hashes": 219
+      }
+    ],
+    "scalar_stream_bytes": 53936,
+    "scalar_stream_count": 2247
+  },
+  "public_input_hex": "df8d9d2c2035a0b6f892befdb8b8ef62bc2b110080c2ec681456d43ca38780a4",
+  "schema_version": 1,
+  "scheme": "ethfalcon-512-keccak",
+  "statement_pinned": false,
+  "threads_env": null,
+  "verified": true,
+  "verify_cached_s": [
+    0.005835959,
+    0.005841333,
+    0.005945333
+  ],
+  "verify_s": [
+    0.082261292
+  ],
+  "zero_knowledge": false
+}

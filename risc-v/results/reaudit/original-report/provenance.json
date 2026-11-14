@@ -1,0 +1,265 @@
+{
+  "source_reports": [
+    {
+      "path": "risc-v/results/direct/falcon-1.json",
+      "sha256": "1d4391608c0904b59c4f145b4daa0d07931ec1e655dcd08171314b48a23c6c74",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c"
+    },
+    {
+      "path": "risc-v/results/direct/falcon-16.json",
+      "sha256": "296d362144c2f41d658fdd4d73a2bb79ed4bbf3002afcedf9d124354ef08ba2a",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c"
+    },
+    {
+      "path": "risc-v/results/direct/falcon-2.json",
+      "sha256": "bcf78015ffaf439abb134f3ba9985bab484d8dc98bf459f1484c9dbb9cca938b",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c"
+    },
+    {
+      "path": "risc-v/results/direct/falcon-24.json",
+      "sha256": "bfc805136c483ab4ee9d4b602757e3fb6e269005ed7fcd6ab66b568abfa60932",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c"
+    },
+    {
+      "path": "risc-v/results/direct/falcon-28.json",
+      "sha256": "dfd1acbd59449e9d644dfbe15a92c728be36f9d8b5193e39ef8b11b29fa2c9b2",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c"
+    },
+    {
+      "path": "risc-v/results/direct/falcon-29.json",
+      "sha256": "ee8f7ece2930bdd6a7d031d72826664ad5ea735814b7b07fb6ed4b106ff8bfb8",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c"
+    },
+    {
+      "path": "risc-v/results/direct/falcon-30.json",
+      "sha256": "967bd0cd7636de6041c4e343d88eb88f9ee06d598c1ee34c23393d9c921b9675",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c"
+    },
+    {
+      "path": "risc-v/results/direct/falcon-31.json",
+      "sha256": "752a50ad47465b70d028f73fb38dea90a8f8868e90fa4832de208c16d1e87c93",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c"
+    },
+    {
+      "path": "risc-v/results/direct/falcon-32.json",
+      "sha256": "ff5b883dd86f669f5a22de352322b2842340af897cd868c7cbf791cede0a978a",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c"
+    },
+    {
+      "path": "risc-v/results/direct/falcon-4.json",
+      "sha256": "21d4ca4401d9fe4708566a69e8232c45a59d9e72a05445ea214120ca8724a308",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c"
+    },
+    {
+      "path": "risc-v/results/direct/falcon-7.json",
+      "sha256": "1b5822ffca57fb435b1fc0f94dfa60198405622a518935940870e2f2319f2003",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c"
+    },
+    {
+      "path": "risc-v/results/direct/falcon-8.json",
+      "sha256": "b7ef8f3239c0d3a99fd79027014f661136bbd5cd9d68fccf5f6e3b4c88f3557f",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c"
+    },
+    {
+      "path": "risc-v/results/direct/mldsa-1.json",
+      "sha256": "b0a2d5862afc4a4af5420a5f8a39156ed2e29498ba13a4c927ce04ea6a28b72c",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "73fa19d855adbd0ad6d8368260b5e1b173cc57a854e52624dd1b8e65d95f69d6"
+    },
+    {
+      "path": "risc-v/results/direct/mldsa-2.json",
+      "sha256": "ffe4f8570eeafee24d4f21f479846947d351065662027b9005787e9b32d9a452",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "73fa19d855adbd0ad6d8368260b5e1b173cc57a854e52624dd1b8e65d95f69d6"
+    },
+    {
+      "path": "risc-v/results/direct/mldsa-3.json",
+      "sha256": "b80c80e87bb3b764b59354cb465b40a688d5b7e65785a5f624f55daedbd5a34b",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "73fa19d855adbd0ad6d8368260b5e1b173cc57a854e52624dd1b8e65d95f69d6"
+    },
+    {
+      "path": "risc-v/results/direct/mldsa-4.json",
+      "sha256": "6243c496039a3c937f5ad0cc5daf7f6a171f47ffbbd3f147009ac983cb43ed8f",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "73fa19d855adbd0ad6d8368260b5e1b173cc57a854e52624dd1b8e65d95f69d6"
+    },
+    {
+      "path": "risc-v/results/direct/mldsa-5.json",
+      "sha256": "bb3d9de60f021a11735e5385fcc77cf3fb6a864d2bad7790cc70655ef01a9e95",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "73fa19d855adbd0ad6d8368260b5e1b173cc57a854e52624dd1b8e65d95f69d6"
+    },
+    {
+      "path": "risc-v/results/direct/mldsa-6.json",
+      "sha256": "6cf67343efb010c447df0b2f225e0682c65a608294a46d280f8ce1372bebf62e",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "73fa19d855adbd0ad6d8368260b5e1b173cc57a854e52624dd1b8e65d95f69d6"
+    },
+    {
+      "path": "risc-v/results/direct/fors-1.json",
+      "sha256": "37f1910abc5a02d4495ad0f5a250c0fd249585d836075bd140b5839b593a9f59",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "64480a3bf424f97578f6477a7a4045c2452853a0801f45fc191648eb253e36da"
+    },
+    {
+      "path": "risc-v/results/direct/fors-2.json",
+      "sha256": "490c8878bcad2b51a131bb81811fb67422566a750548392657f6c9f21a1c521b",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "64480a3bf424f97578f6477a7a4045c2452853a0801f45fc191648eb253e36da"
+    },
+    {
+      "path": "risc-v/results/direct/fors-3.json",
+      "sha256": "07aff9714435b0d886173a5816862cec7e85feac275ed900a4733efa80cebdfa",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "64480a3bf424f97578f6477a7a4045c2452853a0801f45fc191648eb253e36da"
+    },
+    {
+      "path": "risc-v/results/direct/fors-4.json",
+      "sha256": "7c6133484c8ec4a9c2ce89e03192064998e486e62675fa9e26bd6a06f6eab1fb",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "64480a3bf424f97578f6477a7a4045c2452853a0801f45fc191648eb253e36da"
+    },
+    {
+      "path": "risc-v/results/direct/fors-5.json",
+      "sha256": "e43e6bd2fa3cd4e50d03208da62fb1f8827b76f6719109565a0c1e32d05758e3",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "64480a3bf424f97578f6477a7a4045c2452853a0801f45fc191648eb253e36da"
+    },
+    {
+      "path": "risc-v/results/direct/fors-6.json",
+      "sha256": "1d27711068fa4f0cc3d77676966ba899440223a08781ea2639758c60642b710a",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "64480a3bf424f97578f6477a7a4045c2452853a0801f45fc191648eb253e36da"
+    },
+    {
+      "path": "risc-v/results/direct/fors-7.json",
+      "sha256": "315eb046acb383adec1f153cb75d963964b0aba262f33abccd0859efb5556ce0",
+      "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+      "threads": 8,
+      "log_inverse_rate": 1,
+      "samples": 3,
+      "warmup": 1,
+      "elf_sha256": "64480a3bf424f97578f6477a7a4045c2452853a0801f45fc191648eb253e36da"
+    }
+  ],
+  "plotted_measurements": 25,
+  "schemes_present": [
+    "falcon",
+    "mldsa",
+    "fors"
+  ],
+  "statistics": "Points are medians; vertical error bars span the recorded minimum to maximum proof/verification times. One process RSS high-water per report.",
+  "capacity_words": 268435456,
+  "missing_or_rejected_measurements": "Not plotted; no extrapolation.",
+  "curve_lines": "Straight line segments connect measured points only.",
+  "rendering": "LaTeX/PGFPlots via Tectonic; PNG previews rasterized from the same PDFs by pdftoppm at180dpi."
+}

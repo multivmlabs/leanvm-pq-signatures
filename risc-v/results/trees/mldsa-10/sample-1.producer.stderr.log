@@ -1,0 +1,12 @@
+mldsa N=10 sample-1: prove leaf 1/5
+mldsa N=10 sample-1: prove leaf 2/5
+mldsa N=10 sample-1: prove leaf 3/5
+mldsa N=10 sample-1: prove leaf 4/5
+mldsa N=10 sample-1: prove leaf 5/5
+mldsa N=10 sample-1: first-level merge 1/4
+mldsa N=10 sample-1: first-level merge 2/4
+mldsa N=10 sample-1: first-level merge 3/4
+mldsa N=10 sample-1: first-level merge 4/4
+mldsa N=10 sample-1: level 1 merge 1/2
+mldsa N=10 sample-1: level 1 merge 2/2
+mldsa N=10 sample-1: level 2 merge 1/1

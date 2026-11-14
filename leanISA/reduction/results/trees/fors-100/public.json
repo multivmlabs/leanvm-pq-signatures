@@ -1,0 +1,410 @@
+{
+  "schema": 1,
+  "backend_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "scheme": "fors",
+  "signatures": 100,
+  "leaf_size": 5,
+  "leaf_source": "# Research Keccak FORS verifier, not SLH-DSA or leanSPHINCS.\n# COUNT, K and A are set by the fixture builder; no signature data is compiled in.\nfrom snark_lib import *\n\nCOUNT = 5\nK = 16\nA = 8\nDS_LEAF = 10717549832351364888980182688012062534\nDS_NODE = 10717549832351364870752428345206656838\nDS_ROOT = 10717549832351365148246227383313649478\nDS_MSG = 10717549832351363598144384841756593990\nDS_BATCH = 10717549832351704845394674473036304198\n\n\ndef canonical(word):\n    low = StackBuf(1)\n    hint_f192_limbs(low, word)\n    high = (word + low[0]) / f192(0, 1, 0)\n    assert_in_k(low[0], high)\n    return\n\n\ndef bits128(word):\n    bits = StackBuf(128)\n    hint_decompose_bits(bits, word, 128)\n    value = 0\n    for j in unroll(0, 64):\n        assert bits[j] * (bits[j] + 1) == 0\n        value = value + bits[j] * const(2 ** j)\n    for j in unroll(64, 128):\n        assert bits[j] * (bits[j] + 1) == 0\n        value = value + bits[j] * const(2 ** (j - 64)) * f192(0, 1, 0)\n    assert value == word\n    return bits\n\n\ndef verify_one(claims, base):\n    header = StackBuf(6)\n    hint_witness(header, \"fors_header\")\n    for j in unroll(0, 6):\n        canonical(header[j])\n        claims[base * GEN ** j] = header[j]\n\n    # Header = public seed || forest public root || 32-byte message.\n    md = StackBuf(2)\n    keccak_cells([DS_MSG, header[0], header[1], header[2], header[3], header[4], header[5]], md)\n    digest_bits = bits128(md[0])\n    roots = StackBuf(3 + 2 * K)\n    roots[0] = DS_ROOT\n    roots[1] = header[0]\n    roots[2] = header[1]\n\n    for tree in unroll(0, K):\n        secret = StackBuf(2)\n        hint_witness(secret, \"fors_secret\")\n        canonical(secret[0])\n        canonical(secret[1])\n        index = 0\n        for bit in unroll(0, A):\n            index = index + digest_bits[tree * A + bit] * const(2 ** bit)\n        node = StackBuf(2)\n        # Address = LE32(tree) || LE32(height) || LE64(index).\n        address = const(tree) + f192(0, 1, 0) * index\n        keccak_cells([DS_LEAF, header[0], header[1], address, secret[0], secret[1]], node)\n\n        for height in unroll(0, A):\n            sibling = StackBuf(2)\n            hint_witness(sibling, \"fors_auth\")\n            canonical(sibling[0])\n            canonical(sibling[1])\n            side = digest_bits[tree * A + height]\n            delta0 = side * (node[0] + sibling[0])\n            delta1 = side * (node[1] + sibling[1])\n            left0 = node[0] + delta0\n            left1 = node[1] + delta1\n            right0 = sibling[0] + delta0\n            right1 = sibling[1] + delta1\n            parent_index = 0\n            for bit in unroll(height + 1, A):\n                parent_index = parent_index + digest_bits[tree * A + bit] * const(2 ** (bit - height - 1))\n            parent_address = const(tree + (height + 1) * 2 ** 32) + f192(0, 1, 0) * parent_index\n            parent = StackBuf(2)\n            keccak_cells([DS_NODE, header[0], header[1], parent_address, left0, left1, right0, right1], parent)\n            node = parent\n        roots[3 + 2 * tree] = node[0]\n        roots[4 + 2 * tree] = node[1]\n\n    # Equality against the claimed public root authenticates the forest.\n    keccak_cells(roots, header[2:4])\n    return\n\n\ndef main():\n    claims = HeapBuf(1 + 6 * COUNT)\n    claims[1] = DS_BATCH\n    for i in mul_range(1, GEN ** COUNT):\n        verify_one(claims, GEN * i ** 6)\n    digest = StackBuf(2)\n    keccak_cells(claims[0:1 + 6 * COUNT], digest)\n    public = GEN ** 0\n    public[1] = digest[0]\n    public[GEN] = digest[1]\n    return\n",
+  "public_records": [
+    {
+      "public_key_hex": "c8474432ebfd23d0c96c7ce1bd34bb0a9de3c5e9afa69d571d7f7c47c0fb6b1fefb8dd3c0da59d2599c946f9b77917e6b5e77b503d4836bcd524fe61482d58b4",
+      "message_hex": "587ec7773dce95516c3dd92662f23d71e55a5bd44db9e14629dfd82a01b1ad73"
+    },
+    {
+      "public_key_hex": "e1cd8c72165f8d7dfcc3c3ccff1adb332a1822be7664224dc1cbc74388e2c1d35baa024393e295a99f67c7f8e76cc5f835ee6c4e241d2d0455fa88b35db5cd44",
+      "message_hex": "52834d5bbfeac4a3a52dea6d690685970d3f5fe9c33dbcabf1b216bc6b29838e"
+    },
+    {
+      "public_key_hex": "0691124a5c704048b7b11264b4233a59eda03656177e7b4c8c41e0555ce9888292e0c86ff9b3dc89084c7f3ee5d5330e2aefdba66772cc35d34d2f50d1358582",
+      "message_hex": "84ae1523a4f3e50b78dcadc46b5f1946f853a49addcad932caccff3bb6c87377"
+    },
+    {
+      "public_key_hex": "c9ee691a4ff3af2d5a49f9f10fd0ecfddf12b273918c648ad40a9eddfceaf8a3ae5c4b16252a0c35db42346a71847694abe9505cdebf90022710c9a4bf302b79",
+      "message_hex": "b90c4e8aa9dd6e5dea3fbd70093a864f9602ea3315d099ebd96de167c07c697a"
+    },
+    {
+      "public_key_hex": "444c01d11ae70a581a2274722fb3b493b5832d0662c774b69e07c69c5c8f7aea9671d523eadfb2d61630564934a13b6f9a4dd525e57dbaf3f06e218445c66bc6",
+      "message_hex": "438df705802d1df7bd1b51ccc1132fea682b78058ab712f0125f3f18c3017777"
+    },
+    {
+      "public_key_hex": "268b4d97179dd729daf4a15a8646a0ac8cb8b157a56525aec4871bd815e8b2ac862cb949d7682c1862fc4b5f5ba4681f28be59bf4dfe460227dfd8b544dfcc9e",
+      "message_hex": "d658cd9e604f2c5f2f7069963089942d810151221081e6859cc9df29817e77ba"
+    },
+    {
+      "public_key_hex": "492aaa1ed51948eb831f97b06a696635209f7b2410976db1525da79685ab334b442381b96a52d35067cb89e108dead54bd8c0b632ad8acb018ccaf6c1116b3c3",
+      "message_hex": "a62c910c98b5e87b9013629953de1c2de4ce1b3a3c2c93e9ba63812dc12d0cd5"
+    },
+    {
+      "public_key_hex": "485c1d76efb81627c9863f6f8ae1c1c2309de225e64a162900cbab188a677c9d99b3173349dc96cbbba61e7722ee1df9abe706822f14798bc8ff60710cb7e31a",
+      "message_hex": "4014df6c8c93e53b9a30162c09d6affeb6cde87da299d0e467197d15619c5f78"
+    },
+    {
+      "public_key_hex": "ad46f12633fb5f54c9b6a1b0e1671c09a8dd6c5511ab817e5512f099bfd3d0368d9f03f3425c24bd6d1b4ef6667b4098cfecfed706909f627f091f87a8fdd810",
+      "message_hex": "a460f25f686b3c64cb39984bfdbfe7dbfaa6d0c7e49d3f21f41973e78db1a7f5"
+    },
+    {
+      "public_key_hex": "d51f926e255db0f0d109a2e51ebb7f75356103b75d4bdce1ba567c47ef2b6c224899f4eb2f7e1f1944c1fd60d4251fa4180f3fe13e640c3fe52b2732540d517a",
+      "message_hex": "6babc1e53a70e48bf3cc3aeacfade72e2b85600b5ddb0cd1a388426f0b5c6635"
+    },
+    {
+      "public_key_hex": "a59702e06a9b6cc1f8dce3f0f31bf3509c1da208b89f7c005a3c8c1acd071496f14d251769966574173e7d10b89325681f143b00b438d1917044409db71e1ebd",
+      "message_hex": "0769cc230a0c69f8afab08efd642b0e7c1b8dffe8e9f9a3ef89c2e778a956120"
+    },
+    {
+      "public_key_hex": "9f4902edbd9c930a53d5098521ff7d5c7a8ac01eaa7a40661bb26e36aaf9a21297f5ff278ea70a0c49ab2c4cc837ea4d3fa70da7bf5369f36a978430bbf7e176",
+      "message_hex": "6c5e57c73719db676a5bf5cc3a311bab7a6a85402de12edaac1fbade588428e6"
+    },
+    {
+      "public_key_hex": "80a0fd9af0a010a520935214c68e23b5e8be121bcb7670086f25ac873b3c64f181380ea1d8a682f5debabd9253a98b3f866fea0f09d90a2ef5a03e8ef8ba3dc4",
+      "message_hex": "d49f50e9ef0308c4604eaaeb9b7af81834ba7ac99446038d1f72ff2235284290"
+    },
+    {
+      "public_key_hex": "46511abb9387f8f661b475e9b0b5aa9be123a79f3e626aa75c56767e7a696929c69e5ca8a7d56ed63f0d1ef13ed1956bf24bf37e3ead8e25c593d24d34438445",
+      "message_hex": "2a3046aa1ba0eaa8f6c10faa75a63e734967dde9900b44126d8331d6105ff63c"
+    },
+    {
+      "public_key_hex": "7d03c17e04f1bd3c3490b78bb8b66a0a1e3d99c6dc2717f32e843bbed61939213ec7d32281d65539d50e3c65728c552b52c51032274522dddc2bdfead2775ad9",
+      "message_hex": "b44c625cd59467ffcb8d1d70b3c5bb45a6aa9d0be02fcf8e32fee649c8315288"
+    },
+    {
+      "public_key_hex": "78aabf10199b21b5edb3aa7423955447edf450c7d3d511ac0e579a349be0734b2870e0af0f3f30eea1cbcc77ef75ee7d0ccd035427ffbc297cd809b8c2e3d139",
+      "message_hex": "5109fefe7cd82cb8f32a86bdc70506fba96dc082e83c0b799bf12b44d9100537"
+    },
+    {
+      "public_key_hex": "484feaf7fe785c38ce0c28139c231df914fa4f97fb790b5489daf8b603225bf93e007a44c7a3c09c912ca831deab0f70e903265bff4e956914541eb3cb81a051",
+      "message_hex": "49946c7fa9272fe05613c31321f0066aa86cf608e23e33ae17831fba57ba6aa3"
+    },
+    {
+      "public_key_hex": "50c36c61f747120ad38aa0c0cbab457d8dc3f03a93d77b877b32446d723f153887059ef0baec20113a8b217b275f782c104cd2b317494b7ce558b186730da4de",
+      "message_hex": "75d630e124949b3ae355a516564defeab37fa08e8a126a59664229c38e80ed80"
+    },
+    {
+      "public_key_hex": "525f7974a26774083b6fb5c1f07e9eed8b589131f439ec491d549e02cd34879835f3b11554e92955fbb83ed63e41309a89af62cdf8c7d564f1facbd120ea5031",
+      "message_hex": "2a411ce09fdde04421ff33398d5c08712ddddfca0c1b070244480c04d8f9df00"
+    },
+    {
+      "public_key_hex": "020f4a9beb959e11f678ada3589a10d43f1409734150b96be27b48fac749b602bbe790c241e71841165864daaa2ac18872e173b8bc99f1d18f0f5cea6f209c03",
+      "message_hex": "5b9a53a38c57f4c705b7c8db91321ecc388a7700f86431a0fa5a8dccacddbe32"
+    },
+    {
+      "public_key_hex": "b15e1ba5b7536647ebfb554567c984f8a691cbec86de708fe941718abe3f0048cc8157b5d6f1afa4682c64daf7c0f6b49471bd0c89b9648dac7dcd3077e4b898",
+      "message_hex": "fa15aceaa11f757e93e4bec8983acab0abec3473c768bc6d7bbd3f3a0a41bf24"
+    },
+    {
+      "public_key_hex": "ba903b09da372089cc4fd6510f5ef53f45180eeb8fe449477918148526a1d1c63b49e69ee506ce4f2d2bd7a5321a4ae519abd795f856eb0ca3300327d12ad2d6",
+      "message_hex": "57cfad943bb674477d7047aab261c7a40afb2d838d8716dafa54468f15f59aa7"
+    },
+    {
+      "public_key_hex": "afc484872c7a0342224a50043a82aadf53c1c8500a753b49c4c5820eb366ccc4d224fa2daa369346e3b6290551618fac652d55e5849c5ffd51a3cf38e51acc4b",
+      "message_hex": "5c1b1a4df345291875b395b526a3d0423e7ea15cc3a7366e41e086e2e812f24b"
+    },
+    {
+      "public_key_hex": "f5624c091a027eac9022f744319ac031e50181360570d767b219d4d420f993d8836de4f70f2066ed5e0461e976303b26ee857f8c74af7ab09093b49e595a6387",
+      "message_hex": "723a9859d82319d03c54170ff59217576efe66bf3a853c0b236d8b9cca854bf1"
+    },
+    {
+      "public_key_hex": "7431511bf95d040bd34f2f38d61e3a700faac9eb3eeec3d545cd3eb26e3df864dee482cf3c97979f74cde774667ab947438c3bfd0c67595167ecd5c33c664bc7",
+      "message_hex": "34b2667ca416b041367e760cd0678e5f723461bff14b347e5e36c0cf45448bfa"
+    },
+    {
+      "public_key_hex": "cda0e9e5712d5ae8629b2bbeaa60279f8b8c1d4ed7453561b4567b40ba996af8d59bb248eb147c2cca8b996926d9cb24a1cf4e62cb0ec744689f30019e4a3adc",
+      "message_hex": "89a99ab8d0c6e580a1c847a2e43435c28cea1ecab2c30ad5d68d0db80077ad14"
+    },
+    {
+      "public_key_hex": "5d48ea6ff0abff9f2f84daad3de4b177c064cf6142dd052648b15bcae1c7d411e64441299ba13835fd001d2e47deb5c72ebbdb07d23be9b97f9953d1fd894859",
+      "message_hex": "886fe4313360e71fbeda4e79f8217f5be0b607241edac9c47d253778bb239850"
+    },
+    {
+      "public_key_hex": "01d940ebf11ef806aaaeda0155fbfe38e9ea8aaa1c4ec4f4760adf77b156cdd839234ca2b53d8a818062ed60db8d1810e3565e230cac9cdbd9ac6979b2ed5cc8",
+      "message_hex": "7ee5a1d531b0ddcabc1454cd6318dd9d9f4a0eb1931433a87d5a2a7bd6f8afac"
+    },
+    {
+      "public_key_hex": "00255fcc9ef4948e8eb22e3ce89c6db68dfb1a1dbc1a43736a64bb6a09e110a92940f6f3b6ca55a5a499eb6800d9a9aada03d177d9780b07525aa99ede029728",
+      "message_hex": "ca8819a28a0e59f18a568e9b5e0a954399c7822e5ea508d63bc0b1a5e9665b40"
+    },
+    {
+      "public_key_hex": "d9838260126f0f4bf728bdb77d942111c434111cf76c0307332ac551ac087f79ff926b6471678f6784b83b8c9ff3e4ebe4d943c0cdede77317111c6aed033cd4",
+      "message_hex": "ba44b1d11a095467b9d2322747436235039cc79d14a03d33dc8866ea30a5eaa3"
+    },
+    {
+      "public_key_hex": "86542ac58dafe093137b2f10b44a5a60ef12f4d95ed612ad1654c74af9e85a43c9a04c4facd312f4c4723ceb160d9f806a84dd68ef2fbb3df72549052e29b4e0",
+      "message_hex": "caa683a7c15b9d34577cfe7a539b9c0913dadaafaf010deff0cddfb36a2fb347"
+    },
+    {
+      "public_key_hex": "c799446f921131ad8e2ac41ddf9e3d1e31efc02256de6ca7ec3dc3eef04446c71605eaa5b9f1b088460c6002f34fe70ecf971b0b978309c5c2d3d49b9f4df575",
+      "message_hex": "060ea00c4d826afa1cb2b83c0343da2e215ddf4f2d1545d6c0b73df7390c64d6"
+    },
+    {
+      "public_key_hex": "079334a2e6054b3e1ae1eec86948913872f2c849e09a1eb0c9d3dc531ab18cd499d44be4831b1b5bcbaeb8249ab8fdea7dce2a6f7f94d89304cd4e85aa2bb547",
+      "message_hex": "c4c79d64fbffd36594b829e02597810a2cc873b43f77357f1ef42ae96978af16"
+    },
+    {
+      "public_key_hex": "1127116608f3b10d1664cd7225c5c64bf7c08cb922410178180d321e2360b0ae43fd55843ac05cd5c86bab1399a774af16ec07e406e71b636b06a633e112516c",
+      "message_hex": "e427a534e45c1d296ecd08cb6ae24d296315dbed1d78ac79ff68ee9e3de77828"
+    },
+    {
+      "public_key_hex": "f79b6fca39a0db7097f94aa0997bb368cf594691f95165dd37cd4650929fee9b81e60d8cdac27ca0bc9f70d7c3932ffd68c49128cbac2680af3da1e69d2744a1",
+      "message_hex": "762dccbd15612be1ef0923d824046679d9cacf1ce7477dbb1f99901c5c1a7a22"
+    },
+    {
+      "public_key_hex": "25f94787b471a9583db1c21a20778c1f52dcd32dff71dfdb129d1365bae349adcbfee7dc1f8e0b364a477a33ed7cbabaacdad0615e10f6ca958d11080566d3ad",
+      "message_hex": "06eb3bf7a7af0b9f7f4a2aef65b2e2ff3405765e5211d2783cd9c4eef1b2ba88"
+    },
+    {
+      "public_key_hex": "f1fe1e792831e4665e27c6e8350017bef9106cc768e9224ba1af675af5d1795e68da93da77258faed557e773d926c1568d580e15ac296f815429ed8d3f9a8a80",
+      "message_hex": "c2119ce31940a1efa249cc9d00f8344181461a8613c4f5ba892fb53a942fc40a"
+    },
+    {
+      "public_key_hex": "3d38b284b7c213517448d3da870c3aaf2b455e6c9ed2f6fcf7e1927f421e3b52223a65e822d57a913872ce14f32de067a40a2a71cc393669f1addb912fa85420",
+      "message_hex": "ba1dc1245ebbf327e43a3c5e5a27444c788078a80a5d5dcec016903aadb1dfe6"
+    },
+    {
+      "public_key_hex": "39240d8bcf3837bb5053781eb8253d5c7810d0b593a84679cb1f0e9ffa606663c4f2f2ed1b4dbd9b612c01f0c8be6a69bfa4670e259fda7492ffedaf24af3998",
+      "message_hex": "d4735c16f3be266634f1188b6cf4aaa5ee304d1ef14e06fe788eb44786bbd40d"
+    },
+    {
+      "public_key_hex": "f3320576141a52b69a9b1ffbb935aab0b6e6f6a2912dcadbe2fa93b656ac01879027684183854d3fb9f2be5dd211ba4beba46e17ff92c423b1419b12b20fdd94",
+      "message_hex": "844861090e3e42c52fe3ad9131c7034cee59b00a9027614ed427d35298a0f4e3"
+    },
+    {
+      "public_key_hex": "2d2d3049bfd4cffa9e9561b62e3ff73e7c65bb0fb0f7b54cd7166dfebaae165cea5953d53be5026532b3789220f0c18feee766e6e749e4b165fa87e2dc76f2c9",
+      "message_hex": "a15c99e21a232c6056ea8e744de50241fc304004d697dde68ab80f1143854621"
+    },
+    {
+      "public_key_hex": "39878d9a93b49f8b9bda3656fbdd26c04682c5eb4c5bba8635f6c5fb5373aefcbafb7d1f71188711b0c90a69a4dee16b8fd06a532bd05bddd816007dc0c74d7e",
+      "message_hex": "2aafa14f214f7b02f393b30d159732faaf60249424cfda4c04161bbf290c986f"
+    },
+    {
+      "public_key_hex": "9ff559d0e4d383b60a8a5b6ed37f847707acc79664d1bae1c713c132f7d77f3a15bd969e1f0eca0465d01b8e95d6bdfcc36fe4841be34afa1ac882461b4b0fd0",
+      "message_hex": "d14e7617cfb9ece1280f4b62c56c68d7606c6ed6887408ce4b9de3bb224bd1f2"
+    },
+    {
+      "public_key_hex": "c6c4f3f71c69f3b7de474a4007b88b6a8e85b182b7a29e19e2a37e03c31d919781d39814ffc80849ee150cfa639afc6d021f0388015180594ef93f146f8f148a",
+      "message_hex": "5bf2e7e5a1daf683a4253d5ce7a64ffe7df2ec313d5025231213d9644b975727"
+    },
+    {
+      "public_key_hex": "7e871e7d8e853d05a5b1314f8f6a2257517e227ecf4192fb360ebd42400aed98060b4e9708dedae1878463cc077b2a48a1f67d1cabac304d2611a09cae46cf9b",
+      "message_hex": "c8df2f9455b56cc778d5420af540bed8bb033b8e5f7434338fdf55261a756c4d"
+    },
+    {
+      "public_key_hex": "5eb83b530469f48721e2d90f65a09f683bf32156581d0cffa27d7e577767dd8d6f7d7807b72c4e485e00b9d170b61537a2088813ddf9e076ef79930fa6b32621",
+      "message_hex": "e0cbaca5e4da3938b37f2bcc2e1cbf74ed3ceca70af8886612a589c5ff196c66"
+    },
+    {
+      "public_key_hex": "857d71288e97faed0bc885f4433b5696af8b24ef6e4320ff188a8c3c93a993a7970da75cd1a016b9c467f73ce56b13de90414cb4342e3388788e1170659c2b9c",
+      "message_hex": "6d304943d670855e397c79be5e827cd71b31f33b89fab7faac8a22a72588002a"
+    },
+    {
+      "public_key_hex": "35bd78ed6c55e5e956d6ac5208193ff7c1fd22ab60bc36f0af3c686b8cf7c78039d6ff9e559e13f9a343e1eb4677c7f0a47872f5fa197b88bf40b93dd98e6611",
+      "message_hex": "0b35b9741e4acaaf959d840ffbd21228737afcfc808eee8cf2c1f49e058b0279"
+    },
+    {
+      "public_key_hex": "a4bba6566bee7bfefcc0799408498d4782fa1047fed44bb7590327c11634251d6ba5faf7d07e5a536e9d25bbdb7872cd14bdc4560a24d1ffa1befc653b1e37e2",
+      "message_hex": "cc721d5f882231201a7c8bbed84ed794baf29c3c2ac68db29dec66d4b5ac041c"
+    },
+    {
+      "public_key_hex": "9937b2d97fa29165632ab2f8f380f3954eda20762bfd31101287efda603a9e73eb147c2a0f345385d00ac56f54ff9153d2713916bdfed5a8ad1447717a948157",
+      "message_hex": "edae682513da0ee331a5cfc897c4665607ce9dcea788919c4bc718a37bf54d0e"
+    },
+    {
+      "public_key_hex": "636dacdfe97864ea08b0f04cb524a240d6d805d2b7b85d4c42ee6f273a7509e8769e60c983c855e3ff57afe5dc2987abddf2e4a30608f06f089fcb8b14601359",
+      "message_hex": "42993e9b551c963da70275622cfd48c3cb99d6754f08c96cc21cfcbf067daf4d"
+    },
+    {
+      "public_key_hex": "4c3721c0c09c22265b70232352419bead4fb58f0bb8da58b01ab3198100597a5592d163789c5beaf681e92f68d75b6ca4bff276dac80b87303dbc0590ff9e41c",
+      "message_hex": "2115049cd77ac26b187005ea92558803674b55a2ce3a7577fba195674b48da39"
+    },
+    {
+      "public_key_hex": "0e2951fd193278196aa89e3549f326d27eb6183eab8bb73f07c0ecd7add1896d5047a8b875a97dfa8766842c7c8a16815b99ea6861f3e763876d51651850352c",
+      "message_hex": "cd966229195dad2f1a3ad365ea37441da0e4083b10510c36ea01f18c1c966113"
+    },
+    {
+      "public_key_hex": "29610cc5e53b64cc40684c1ca616534a5651154141d905a5be3e032d51bfd79fb3384cafbd8aeee65e197a403e12a88c15d5dcd63b02c301235f9d9ce0abec39",
+      "message_hex": "02d79f76cf8b5c1a2b88716ad6bc879278bfd412c42157d5de7e871c9f6ee5de"
+    },
+    {
+      "public_key_hex": "283c878bb257ffcaea29849548f59aea2fb41853c8314cd39c5b82803057692187aae1aa9c9a009c2d71759f64f0069e936b9bf2fc4b55262fece4a7d0325595",
+      "message_hex": "1c9ffd211f7a374d03c8aef73f590b46ac7edca78818a6e29df8169ed0d12296"
+    },
+    {
+      "public_key_hex": "890054653f2eab23facefdef7bba542bca950c3c9c55df61c7686e7aa9f4c1ec99431363f3e5949c014483709ccce27a79026802032b4e6eb50000d1ef24c8b8",
+      "message_hex": "cbbc4b2380c28964e814f9a5af1a0e0e9d029d9b5359cc742af7e96e9b9c862f"
+    },
+    {
+      "public_key_hex": "67fa00efba780958568f0e5d338c7e4d07ec3f9bd29a2be244276c72b15a59a6ce73c9362ffe5ddd59418de79d45a9640b92cd8a12de4944666fe91a9886b1c0",
+      "message_hex": "45202e605b31a27ca882325b99ea367e9045eefa5fdd310830bc89d02ab9ea0e"
+    },
+    {
+      "public_key_hex": "80dd3d6b8916bed0572be20e495eeb0934c5363c06e448440543dc59cfd1dd01c25c4ba25a9a8dd846c3a0a3a4310e3ce09a0a735c25d75bf46a26c2a39821b8",
+      "message_hex": "eb1542903273ee2f1397f8038cb74062bcd5c2a27bbbc0d6f523609cac757d1b"
+    },
+    {
+      "public_key_hex": "ee11b4a8b3d589eb34ba5681f8c4274aa0c27beb54c36ad90824d42ff34b1ad269034fd8f6a6bcedf8676267ba2cd8a81d2499285e95efa599b08e6e67dc0681",
+      "message_hex": "390fff1d534f7929fc7bfae3ce3a34c9ecfd2f360019053aeeb68e83b333d40c"
+    },
+    {
+      "public_key_hex": "6971842877fb0ad24563a0318d1d4dcc54eee89b831d0ef222741ebd88042f9f77cb84e29d45646ad0d1866fdc2aa40b9f10ecc642c6c66a2a9d94305f960dc6",
+      "message_hex": "48d006a4807059e99017f8176f9f761fa6000f0deca9ba7a787f2e9c3ecffc27"
+    },
+    {
+      "public_key_hex": "2d61c7b7ea65096f74b4e02cd12c5475efddcb7a28ad77d92d63a7dee31ff798cd3e3fe0129e9e87673e45aa8fefe44070b2f0a3423e8da3022ea98911c80690",
+      "message_hex": "65d47b17f68b6849e18d9615823ea7d86233a8e802d4b96c0f6c9521abefe966"
+    },
+    {
+      "public_key_hex": "f413976344b08dcaa0b38ba9712da8171274e39b106c18829874086df8d91910ad4e950d7ba56d95f4202473cedc554b518f030b32ad9ee37fcc482aa11b602c",
+      "message_hex": "e706d62542f9a1629635b3a0a2365c49126d4b4916f2aa3ab617deb9e5afd39f"
+    },
+    {
+      "public_key_hex": "8044d1639d5edc535260d82351cf2056e53160867f8d2f9933b3a3bd3fb23759f21e15a36c6c7afef41cd13847e7b7b6438916a24ba5dfaf334c828f6665ccc9",
+      "message_hex": "44b69ff90c1a6b3eba473859688e7dee09f6a5c4398b056ee8e091a8644746ce"
+    },
+    {
+      "public_key_hex": "82fcb978728d1f75ba8623d8dd40bdba4364d9796f9c930f47c43415702bc0c3f98ea3d903800e783e4c867a05a18b7b6be306231a1897e4b8b089e68d0dbfc9",
+      "message_hex": "eaae88576aa260c444b65492aa493aff0e3d6a598cef2e6980e24ab09ea6c60f"
+    },
+    {
+      "public_key_hex": "834c83a48792553dda4612d5758e87f7e9a50f2dd6173660caa42eda33aab41d8c6b32d7bcc1eee949a384e7ad7be4f10a358747586912c41b8a99277df9c421",
+      "message_hex": "cff485debb3aa87ad3a71d772a259ca41e5e9e529eec46e3c63736136954537f"
+    },
+    {
+      "public_key_hex": "c3a4822dbd4bc22454a74ea856456fc67844814d39a1120acc287531053b87e4decd3c67f06ae54d675a5ba3fcb0e48ee217e72f9242964cbc247b57902a8b95",
+      "message_hex": "989880e09ad1c3d6d845ef4a511051da98d607e1fc4e05544010245f98416d01"
+    },
+    {
+      "public_key_hex": "6aef3608fc2d41180baad59e56036b9ff4977294a738186b34d7f4f6304c484b3f4566fe34e1b508b6645f134886f026497f7084bf2b9e18356c76e71222b870",
+      "message_hex": "ccc1b49c8aa2a4faf5d33b8cefbef643ae93e9c461d6753cd2f251c5d38e0282"
+    },
+    {
+      "public_key_hex": "6f5a01bd4b2ecf9cefa249212170ce16cc00cba567b020cc13ce51a6e70989fadbb239959df0527f37a6274de06c8aac6730d2488f2b9a7c7e753112ec014899",
+      "message_hex": "ed711f25bb0788ef90044e1a2a79ac269c8aca14b671089c8326bea711452841"
+    },
+    {
+      "public_key_hex": "43ef30e650c01502cea5bf6be7ab177ee8d95b41298504e0053ede2bd6dd60f12bd7daa44e5d9c6c5cd4e31b7a8e1563f4d4126f6c7110b4bba7db2ed41a68db",
+      "message_hex": "a0c16291a512d7bc7778e3e0ca4e1b5067a884841d473985c454e43f6ba1752c"
+    },
+    {
+      "public_key_hex": "b7f299cdb9938bacf046b88a50795d72dd008bd837d0918231f78a6d20ca5e5d90b727a516ea0f775fa6070a2bf2a44fef596d33b526a5d4ddfe8a7212b0a8f9",
+      "message_hex": "3c9fc2d3d9cd5c4da152b2e24d35725f4c477c586dbbb5b706917aa38e7dda33"
+    },
+    {
+      "public_key_hex": "daa747ec2f6d72778c570e51dd1c2c92a40284530e7fac9441349e1c3b75f1872e655da953e0e10154aa15731e490e82c8833588349688eb67784df5203251a2",
+      "message_hex": "507fa89ef61a031bb59e5790c8428eb360038a20c66d7240371ac616988591bd"
+    },
+    {
+      "public_key_hex": "07554977139db7d48379281cd3ab600ee3682266bd361f4edec32a34fd05889c3067353ee93aacdeffbd30de257f560a7008e7920c316983f6959a2d352f2fb4",
+      "message_hex": "66111cde49f292da865597ba1c930158513e54e131f6b42a3e9a665b317d1b9e"
+    },
+    {
+      "public_key_hex": "8502a8121b62ced513f0794ca74a57450ad5876cb026b67320468f9b459d47ad4fd00631193b80ae9466e3f457197205a7e457ab2e0fa2126ab5603f61e4aa2d",
+      "message_hex": "13c2834327a4f60a028b781803d269313f0a7ddfd1de3869a2652321aadeaaf8"
+    },
+    {
+      "public_key_hex": "58031ddc11e33cdae6463537dbabd1c06746fd584241b24cac1d20fa69ad3e8c83f76bca87bf55403008ebbd041c514443d52ecf50eba3cbe9b0fd182d3e9c16",
+      "message_hex": "ff6bac60509fe09b29b0f2e9557f6375670b8528b1c3109bc455107a9dee1497"
+    },
+    {
+      "public_key_hex": "a3f32a7e951d910cef879fee76e8d853653449483da0589718a0c4951f70bea6ba5fd1944b048fe9980cedc4b8a9cc1461ab1a798322c6224541912d6deff62e",
+      "message_hex": "bcdf64006e3de86b62228f56209a652b0b214cebff31b9b2fd1a40d57f4658fb"
+    },
+    {
+      "public_key_hex": "a8772c3346ddf326c62b59c214c32db066e04752e7dfb08a6ed7cacd0fe0831f3f941823f5985a6dba3f804add98c20d1837b9097474a3a2aa7ce90b84cd0eb6",
+      "message_hex": "7870214fdb68e4291f891d731ffdfefc297e6ce25035d84796ef43b103debd3c"
+    },
+    {
+      "public_key_hex": "5b29bebf06686cb0edb2abc88b921542c5e811186e249097cfeba9fc6c5313714b33a758d35ddae54a7a544e098531ae4aeeedfda83eb5c209fab0ef2ae5aea9",
+      "message_hex": "414631bccaced1688c4ff0b4d7a6249f076129a640ad076f993a2bb3e6b07c9e"
+    },
+    {
+      "public_key_hex": "e06467449981eeb956d8f3887bdedf3b21ea4a2f73454115b78af36112046116f94f6e337bc092ba9031979ee5570b01739cbe044429f038beea337cc044b16d",
+      "message_hex": "6b89a0617c76670fdf6183c1450ba1fb87ef5277bc3e4ef760f02aad0a1164bf"
+    },
+    {
+      "public_key_hex": "c82e3e38a489a26bbd0048a539406914a6c4fadd4526c6ecb20533b43d73a2d953b8d2dbd4ad082c5247ced1d063db28f786e50102ea73f551390a91ebccc3ef",
+      "message_hex": "311e7b2fe2c93272918ec1b3b648af7f2e6ab30ad34854a51b53b2fc42d64ff3"
+    },
+    {
+      "public_key_hex": "bbb4b4c8789659c5b16a83865f886660f5578bd4e448ca7a2266797791de93f0b6f7576433d9949d96bd4250cdb994c0d6a57d5b4ed17d1c7fb9ff8015bfa545",
+      "message_hex": "09c80601b8ce84341c5371c48d4f9be39ec46d60b44f2ec78b02279a590bf0c9"
+    },
+    {
+      "public_key_hex": "4252646ab3d56a6a14136f057ff8466e11a8b68b87ad5dd94f910330cd82c50ae9cb268cbb1cfde6926f746f624ea4ff15b06117fa8c70242801b6c0dbaf256e",
+      "message_hex": "70e53e20ab541101b940a0edf88c1503f8628543cec86cec5821a96668cf67bc"
+    },
+    {
+      "public_key_hex": "3d8e256e35994a59f06086ba129e792e59bf3215d2ebb8b921ed7252cc8957e5bad52f4ddb249592b80de3116f19e21d0bcc1c3e15ff9c4ad20d3946ef1881c4",
+      "message_hex": "e6188ab35089d558cdb252e91118a53fcf98cff7683822de012149337c891b39"
+    },
+    {
+      "public_key_hex": "733a8991d5f06063f1dbb5ceb4dc53f6d965506e137242a8c207b85517024054f0cb542e85e4d0d6498a6d0aa28b627aa22c9730cd31d2bad23b4fdffca92054",
+      "message_hex": "258d67c6b7c2d5602666af40d6c76d0ee54d2c208232148a1acce4800cfe9b01"
+    },
+    {
+      "public_key_hex": "f1634680c88b112a388155cad94275e02a9d86eef773c19f85db97a708135eb6ca6180bd4ed72c7111fc80bfeca114c1d61a9b74abc8ff8e459feb56b96430ea",
+      "message_hex": "487382942e3daf0be6dfed89bc426b71eb9be5e0ccef79b6d242c69b8686f134"
+    },
+    {
+      "public_key_hex": "76c9b453520c9cc02cfae3f2c58869891e5eac41a05a6453d30b5ddcd5b9b9d3876699edb08fbf86ba433f0915aa14287506188e2f42c51eb4cb274c4356a249",
+      "message_hex": "600e2b49359dc9507abe2b6d1c9a741e10db518a64edae4b67125b50fc2eedfa"
+    },
+    {
+      "public_key_hex": "90cb1a55d3b30ee1c2c2074f33882065c236a437dccc5ee33330ce3d022b9b13ccab92ed7095b8ace22c38c6b47e6abda36fbb38aecde5e906c94b65e26d505d",
+      "message_hex": "cdfb4618c5a5c08e2a628faa6c3bc84adc256d8d0e2de4215e2afb390fb01375"
+    },
+    {
+      "public_key_hex": "c9778c1714e5caf9d3482cc87f092956416ccde70c6e26b4ccae5fd6a53c74191224fac75556c669e6d4eb54d00447fb2cbc86a677f0951bb70c73e3add4cc53",
+      "message_hex": "318eb11a5b1d2f3fb3061d8202de764b2451fb7ae7e0b3501c9777762d562f15"
+    },
+    {
+      "public_key_hex": "e39b642bc49024b58c5472087c01751220f54ff3cfdf5072e1fd2a5e3301b8a949d9930fd7bd138248842d5edd0fa12e7c16c3d2c8c08ba165541d0184d57701",
+      "message_hex": "bc88538911cbcffd6dbd35ca4b20ca3f4446974396d77a596b46b76bcab1e971"
+    },
+    {
+      "public_key_hex": "49c3b453ef018870538b45ee65314358cc2b0b413e2939f4ab3a68246dee810bfb5008e30790d38028610675285270b2b02f06a29693a8ed23b329e051a55304",
+      "message_hex": "4655dcdd1f2a9b248196e729c9c9e1e13e6defefd1856484b763e7eed8166192"
+    },
+    {
+      "public_key_hex": "f4a103408b1c02dc7bc937a4e67db21b8f2663123a082dc16b96274edac7e68df5b9852686914b52b3cf5adad601518094aa09a06f6cde75ff3864f36d99af9a",
+      "message_hex": "a96713c5457a91bf96022b3dd9a30c6abee10decde41ae249fdbfa150bb3311c"
+    },
+    {
+      "public_key_hex": "224e1778c6328f6b467996d50b0dac1e4cd538b1fb794c86279e285230bb1c1161a29df7583db2eec6d5297a824eb00b09bcf4822c3b4fe8ce35195998bc411c",
+      "message_hex": "c7fef39d81d8b65315f5ae85aa853c0bb1db7d862c58f2630910fee111ae56a9"
+    },
+    {
+      "public_key_hex": "a2ee1133b2f907e808f0903ad6ec3d574df1fd7478a94499c7f1342e43bf3c0675a3f6af41d85b6a0ecc93dfdb3d37616a78dcb1063dd22094090a79f9d7af14",
+      "message_hex": "36b52e1a608e83f8efd51c3c23b70873861d2cd42d707377d42c1079253ffb34"
+    },
+    {
+      "public_key_hex": "bcd4c411b2b35f77f3b1bf2871407126aaf26c62ab2f9fa38aa8168688d95320e5665664fbda1534d4966c5b1c2172275b06e70c53c1a19c35f403c05fad31f6",
+      "message_hex": "41758e1ccd7c084f2088bb84541da5a295c10566393ab50e8320acba4f24342b"
+    },
+    {
+      "public_key_hex": "383a113c2d3df7d4868ed3caee8493864689cb1b642cf7e2d6d586c8e1bf094c948f51798f612c2383231f35ce797225604aa54f0ca937b57d287e605bde9904",
+      "message_hex": "ae257318de434222794ec4949bd2da25c263597b5c23b4a5ebaa1d3387c7cc15"
+    },
+    {
+      "public_key_hex": "ddfab77692d8d83745c6e7d913ed9a6901136c483243474e2f8fa892f70c73d69e443527202e329feef2f87ce1219010dad0936fb72bf0a84e3fc64c8c63dba6",
+      "message_hex": "ae94309b2d9e02c7b9c526b28313d064665237538b24ddd268e6e0ea63830eb6"
+    },
+    {
+      "public_key_hex": "75edbc72a64006b46cec501573b5a99e821daa9af4945fd6d5b10e6e16a7cfc7544bdbc4842f47212752fbf9d87b7630f2767d502010597ce48b9cac7772099d",
+      "message_hex": "1e1863675555b24b0fde200f75b07570b681aca53cf44bf96c4729e0c3505943"
+    },
+    {
+      "public_key_hex": "3d836a57123c58210ea2f8dd7862c3419d04f8be04af3fca3087064b836082070a9946eec10c962c731bfafc070dd7e7cac8e73d29a1d17e539fc231835f137f",
+      "message_hex": "4620ab9b1ed23d4e4027bd3643fc6aa8b490eee95c140d994530da1c23c65d02"
+    },
+    {
+      "public_key_hex": "5aae7e10f1f2b603705cc49de1875123a797f868997b47519f2b6407c40d30f8eaf6419b26b4b8639878157acc23f0b9316aa91d83eacd8feb81981d5df929cb",
+      "message_hex": "d3c944042daaddfe016c69615551b2186416659d1f8ebda008a3f44fe0022070"
+    },
+    {
+      "public_key_hex": "a7bb023bc2f282cb5829cada841554c3b590d8a9a3c4317a4679f42dfd170f579e8fc9933da7f5614fe08dc35ced9c1bdf8598ed00d78da771ed6bb5af9022c9",
+      "message_hex": "7072f1637f6f13d9b669858d757c733c8523be0cf089f7ff57f9587252e36771"
+    },
+    {
+      "public_key_hex": "796b946cf99882dcf09e8c11f469128accc56561fb4147c8ed735d27f231fe4bc86ff64f6d7539d3bea6f58b2ab41d61f660db4b151fbdd1040ea1c472ae8595",
+      "message_hex": "573b5a4a0b0295f7b9bcfd8db75159c2d81e8e68c0a681bcb04185dd078015b8"
+    }
+  ]
+}

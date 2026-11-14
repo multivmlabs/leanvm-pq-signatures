@@ -1,0 +1,129 @@
+{
+  "action": "prove",
+  "compile_plan_s": 0.003545125,
+  "depth": 0,
+  "edge_count": 0,
+  "fan_in": 4,
+  "leaf_capacity": 16,
+  "leaf_count": 1,
+  "leaf_reports": [
+    {
+      "committed_cells": 2306048,
+      "cycles": 75132,
+      "guest_hash": "2872544cb05b4eb4716d31a944ebb541972d2afb0bcc2c9fdbb3b10631b9ff94",
+      "input_prepare_s": 0.000199041,
+      "leaf": 0,
+      "log_committed": 22,
+      "log_memory_cells": 17,
+      "memory_cells": 93182,
+      "min_log_committed": 22,
+      "opcode_rows": [
+        20578,
+        19453,
+        14421,
+        10299,
+        8873,
+        1508
+      ],
+      "proof_bytes": 250496,
+      "proof_stream_scalars": 2072,
+      "prove_s": 0.06631425,
+      "public_input_hex": "09e1f40ac9974e8d2a47273033cd4125568f21f7e326e8cf65dd55a2e373c2cd",
+      "rate": 1,
+      "reused": false,
+      "self_verify_s": 0.008647625,
+      "signatures": 10
+    }
+  ],
+  "leaf_reuse_count": 0,
+  "merge_count": 0,
+  "merge_passes": [
+    {
+      "elapsed_s": 1.35e-05,
+      "nodes": [],
+      "pass": 0
+    }
+  ],
+  "merge_reuse_count": 0,
+  "nodes": [
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "2872544cb05b4eb4716d31a944ebb541972d2afb0bcc2c9fdbb3b10631b9ff94",
+      "leaf": 0,
+      "node": 0,
+      "signatures": 10
+    }
+  ],
+  "pipeline_elapsed_s": 0.093882792,
+  "plan_hash": "4aae413c0af5f653ee0398e6dc92db4ca75da22b02c6bb0d7c450b6f0b57fdf8",
+  "process_peak_rss_bytes": 195690496,
+  "rate": 1,
+  "repeat": 1,
+  "repeat_scope": "all merge nodes; leaves prepared once, cache reuse explicitly reported",
+  "root_guest_hash": "2872544cb05b4eb4716d31a944ebb541972d2afb0bcc2c9fdbb3b10631b9ff94",
+  "schema_version": 1,
+  "scheme": "fors",
+  "semantic_plan": {
+    "fan_in": 4,
+    "format": "pqbench/tree-v1/all-edges/level-chunks",
+    "leaf_capacity": 16,
+    "leaves": [
+      {
+        "guest_hash": "2872544cb05b4eb4716d31a944ebb541972d2afb0bcc2c9fdbb3b10631b9ff94",
+        "min_log_committed": 22,
+        "public_input_hex": "09e1f40ac9974e8d2a47273033cd4125568f21f7e326e8cf65dd55a2e373c2cd",
+        "signatures": 10
+      }
+    ],
+    "schema_version": 1,
+    "scheme": "fors",
+    "signatures": 10
+  },
+  "signatures": 10,
+  "source_table": [
+    {
+      "bytecode_instructions": 5599,
+      "bytecode_log": 13,
+      "guest_hash": "2872544cb05b4eb4716d31a944ebb541972d2afb0bcc2c9fdbb3b10631b9ff94",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 8192
+    }
+  ],
+  "statement_pinned": true,
+  "verification": {
+    "aggregate_wire_bytes": 250572,
+    "compile_plan_s": 0.003545125,
+    "deferred_bytecode_prepare_s": 1.25e-07,
+    "deferred_edge_count": 0,
+    "deferred_evaluation_s": [
+      1.66e-07
+    ],
+    "deferred_program_count": 0,
+    "plan_hash": "4aae413c0af5f653ee0398e6dc92db4ca75da22b02c6bb0d7c450b6f0b57fdf8",
+    "public_input_hex": "09e1f40ac9974e8d2a47273033cd4125568f21f7e326e8cf65dd55a2e373c2cd",
+    "root_bytecode_prepare_s": 0.003624,
+    "root_core_proof_bytes": 250496,
+    "root_core_verify_cached_s": [
+      0.004822708
+    ],
+    "root_core_verify_cold_s": [
+      0.008551125
+    ],
+    "root_guest_hash": "2872544cb05b4eb4716d31a944ebb541972d2afb0bcc2c9fdbb3b10631b9ff94",
+    "statement_pinned": true,
+    "verification_operation_total_s": 0.017011625,
+    "verification_uses_child_proofs": false,
+    "verification_uses_signatures": false,
+    "verified": true,
+    "zero_knowledge": false
+  },
+  "warmup": 0,
+  "zero_knowledge": false,
+  "article_scheme": "fors",
+  "article_count": 10,
+  "article_fan_in": 4,
+  "article_leaf_capacity": 16,
+  "experiment_process_elapsed_s": 0.14986129099997925,
+  "measurement_scope": "complete fresh pipeline"
+}

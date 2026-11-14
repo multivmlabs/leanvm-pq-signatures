@@ -1,0 +1,99 @@
+{
+  "action": "prove",
+  "arch": "aarch64",
+  "bytecode_instructions": 154882,
+  "committed_cells": 148157440,
+  "compile_s": 0.066842833,
+  "cycles": 4826437,
+  "execute_s": 0.22807025,
+  "guest_hash": "22cf7c23829a4e74b24d21a833f302fc17a1f6dc09b45b6f9b6096097cdf0441",
+  "leanvm_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "leanvm_source_dirty_at_build": "false",
+  "log_inv_rate": 1,
+  "log_memory_cells": 23,
+  "memory_cells": 4800433,
+  "metadata": {
+    "count": 3,
+    "fixture_generation_s": 0.22758075000000133,
+    "message_bytes": 96,
+    "public_key_bytes": 2691,
+    "raw_key_bytes": 2691,
+    "raw_signature_bytes": 1960,
+    "signature_bytes": 1960
+  },
+  "min_log_committed": 0,
+  "opcode_rows": [
+    392315,
+    2486142,
+    630108,
+    1091539,
+    226177,
+    156
+  ],
+  "os": "macos",
+  "process_peak_rss_bytes": 8015233024,
+  "proof_bytes": 351208,
+  "proof_bytes_samples": [
+    351208,
+    351208,
+    351208
+  ],
+  "proof_encoding": {
+    "merkle_bytes": 294536,
+    "merkle_phases": [
+      {
+        "opened_field_words": 8100,
+        "opened_rows": 225,
+        "sibling_hashes": 3230
+      },
+      {
+        "opened_field_words": 2688,
+        "opened_rows": 56,
+        "sibling_hashes": 868
+      },
+      {
+        "opened_field_words": 1536,
+        "opened_rows": 32,
+        "sibling_hashes": 487
+      },
+      {
+        "opened_field_words": 1104,
+        "opened_rows": 23,
+        "sibling_hashes": 339
+      },
+      {
+        "opened_field_words": 864,
+        "opened_rows": 18,
+        "sibling_hashes": 252
+      },
+      {
+        "opened_field_words": 672,
+        "opened_rows": 14,
+        "sibling_hashes": 192
+      }
+    ],
+    "scalar_stream_bytes": 56672,
+    "scalar_stream_count": 2361
+  },
+  "prove_s": [
+    2.98577825,
+    4.00996775,
+    3.51341875
+  ],
+  "public_input_hex": "a9f6fb087e304e4cfc0c6e8f4a3b96c88d0661c2645796ed12eee20aa7ceb315",
+  "schema_version": 1,
+  "scheme": "ethfalcon-512-keccak",
+  "statement_pinned": false,
+  "threads_env": null,
+  "verified": true,
+  "verify_s": [
+    0.095832625,
+    0.09755325,
+    0.11197475
+  ],
+  "warmup_passes": 1,
+  "zero_knowledge": false,
+  "input_sha256": "f0d4cad0799cd5a7b5bb67c93a4a0e97b05fc0952a3e4299d5150f4c5d7cb533",
+  "experiment_process_elapsed_s": 15.509189208000002,
+  "article_scheme": "ethfalcon"
+}

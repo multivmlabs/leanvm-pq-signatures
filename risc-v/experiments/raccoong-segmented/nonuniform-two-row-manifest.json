@@ -1,0 +1,18 @@
+{
+  "scope": "Valid two-row candidate before fixed trace normalization; one of500 corpusparts had a different SDheight",
+  "elf_sha256": "a9ab1a596f88a737200f96bd045ed4d8176d3f9bcf8eaa6ad06a85ffd9ebfddc",
+  "build_manifest_sha256": "4d5dcc0295e16687dbfafc6bb82438629d0feda6efc3677fd1490a49547d59f5",
+  "source_archive_sha256": "93cad2b0f0c415c6eda1600304e012b8913b54299f29a618a273f1a12cb4f57c",
+  "all500_plan_sha256": "d51a3c02adafc5177e31b2d314860b5fa67a4ea96ff50cd7904ffca15959c628",
+  "all500_plan": "risc-v/results/raccoong-segmented-trees/count-1/plan.json",
+  "old_sd_range": [
+    506140,
+    525147
+  ],
+  "padding_stores": 32768,
+  "prospective_sd_range": [
+    538908,
+    557915
+  ],
+  "all500_alumax": 3714013
+}

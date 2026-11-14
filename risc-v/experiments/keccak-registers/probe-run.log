@@ -1,0 +1,19 @@
+{"committed_words":38892864,"count":1,"cycles":792220,"padded_rows":{"ALU":1048576,"DIV":16,"EXT":8,"HASH":8,"LD":32768,"LOAD":128,"MUL":16,"MULH":256,"SD":32768,"SHIFT":262144,"STORE":16},"rows":{"ALU":541042,"DIV":0,"EXT":0,"HASH":3,"LD":20214,"LOAD":80,"MUL":0,"MULH":148,"SD":18567,"SHIFT":212150,"STORE":16},"status":"fits"}
+{"committed_words":76714240,"count":2,"cycles":1584215,"padded_rows":{"ALU":2097152,"DIV":16,"EXT":8,"HASH":8,"LD":65536,"LOAD":256,"MUL":16,"MULH":512,"SD":65536,"SHIFT":524288,"STORE":32},"rows":{"ALU":1081968,"DIV":0,"EXT":0,"HASH":4,"LD":40387,"LOAD":160,"MUL":0,"MULH":295,"SD":37076,"SHIFT":424293,"STORE":32},"status":"fits"}
+{"committed_words":91395168,"count":3,"cycles":2376249,"padded_rows":{"ALU":2097152,"DIV":16,"EXT":8,"HASH":8,"LD":65536,"LOAD":256,"MUL":16,"MULH":512,"SD":65536,"SHIFT":1048576,"STORE":64},"rows":{"ALU":1622914,"DIV":0,"EXT":0,"HASH":6,"LD":60565,"LOAD":240,"MUL":0,"MULH":442,"SD":55598,"SHIFT":636436,"STORE":48},"status":"fits"}
+{"committed_words":152356960,"count":4,"cycles":3168244,"padded_rows":{"ALU":4194304,"DIV":16,"EXT":8,"HASH":8,"LD":131072,"LOAD":512,"MUL":16,"MULH":1024,"SD":131072,"SHIFT":1048576,"STORE":64},"rows":{"ALU":2163840,"DIV":0,"EXT":0,"HASH":7,"LD":80738,"LOAD":320,"MUL":0,"MULH":589,"SD":74107,"SHIFT":848579,"STORE":64},"status":"fits"}
+{"committed_words":181721176,"count":5,"cycles":3960278,"padded_rows":{"ALU":4194304,"DIV":16,"EXT":8,"HASH":16,"LD":131072,"LOAD":512,"MUL":16,"MULH":1024,"SD":131072,"SHIFT":2097152,"STORE":128},"rows":{"ALU":2704786,"DIV":0,"EXT":0,"HASH":9,"LD":100916,"LOAD":400,"MUL":0,"MULH":736,"SD":92629,"SHIFT":1060722,"STORE":80},"status":"fits"}
+{"committed_words":181721176,"count":6,"cycles":4752273,"padded_rows":{"ALU":4194304,"DIV":16,"EXT":8,"HASH":16,"LD":131072,"LOAD":512,"MUL":16,"MULH":1024,"SD":131072,"SHIFT":2097152,"STORE":128},"rows":{"ALU":3245712,"DIV":0,"EXT":0,"HASH":10,"LD":121089,"LOAD":480,"MUL":0,"MULH":883,"SD":111138,"SHIFT":1272865,"STORE":96},"status":"fits"}
+{"committed_words":184238168,"count":7,"cycles":5544307,"padded_rows":{"ALU":4194304,"DIV":16,"EXT":8,"HASH":16,"LD":262144,"LOAD":1024,"MUL":16,"MULH":2048,"SD":131072,"SHIFT":2097152,"STORE":128},"rows":{"ALU":3786658,"DIV":0,"EXT":0,"HASH":12,"LD":141267,"LOAD":560,"MUL":0,"MULH":1030,"SD":129660,"SHIFT":1485008,"STORE":112},"status":"fits"}
+{"count":8,"error":"TooLong","status":"rejected"}
+{"count":9,"error":"TooLong","status":"rejected"}
+{"count":10,"error":"TooLong","status":"rejected"}
+{"count":11,"error":"TooLong","status":"rejected"}
+{"count":12,"error":"TooLong","status":"rejected"}
+{"count":13,"error":"TooLong","status":"rejected"}
+{"count":14,"error":"TooLong","status":"rejected"}
+{"count":15,"error":"TooLong","status":"rejected"}
+{"count":16,"error":"TooLong","status":"rejected"}
+{"count":20,"error":"TooLong","status":"rejected"}
+{"count":24,"error":"TooLong","status":"rejected"}
+state checks:1730,negative checks:162

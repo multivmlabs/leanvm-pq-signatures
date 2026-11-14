@@ -1,0 +1,253 @@
+{
+  "schema": 1,
+  "status": "all_22_user_required_saved_pipelines_pass",
+  "sampling_policy_sha256": "4d532d3bcdbbe9d1d9480e30eb9bc5f18f9b22f7b98c243272a64f608bc1b192",
+  "accepted_roots": [
+    {
+      "scheme": "raccoon",
+      "count": 10,
+      "sample": 0,
+      "public_root_digest_blake2s": "c14377acdc358649b9952c66ba4e7aaf1a5c319dd735d646d7f4786ad79a0291",
+      "root_proof_sha256": "0b45044e0d812f7af852bfa7484d458b2aa51186ba821fa68460fa8a967d4280",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-N10-sample0-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon",
+      "count": 10,
+      "sample": 1,
+      "public_root_digest_blake2s": "c14377acdc358649b9952c66ba4e7aaf1a5c319dd735d646d7f4786ad79a0291",
+      "root_proof_sha256": "0b45044e0d812f7af852bfa7484d458b2aa51186ba821fa68460fa8a967d4280",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-N10-sample1-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon",
+      "count": 10,
+      "sample": 2,
+      "public_root_digest_blake2s": "c14377acdc358649b9952c66ba4e7aaf1a5c319dd735d646d7f4786ad79a0291",
+      "root_proof_sha256": "0b45044e0d812f7af852bfa7484d458b2aa51186ba821fa68460fa8a967d4280",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-N10-sample2-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon",
+      "count": 30,
+      "sample": 0,
+      "public_root_digest_blake2s": "e793e8b12bf61e25129635018c250fc865a2797fb29e74b025f1691d5188b111",
+      "root_proof_sha256": "46abfe825a509bee06bc9371c657e0ef41723f21f78e7787a0248201f3c4a061",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-N30-sample0-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon",
+      "count": 30,
+      "sample": 1,
+      "public_root_digest_blake2s": "e793e8b12bf61e25129635018c250fc865a2797fb29e74b025f1691d5188b111",
+      "root_proof_sha256": "46abfe825a509bee06bc9371c657e0ef41723f21f78e7787a0248201f3c4a061",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-N30-sample1-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon",
+      "count": 30,
+      "sample": 2,
+      "public_root_digest_blake2s": "e793e8b12bf61e25129635018c250fc865a2797fb29e74b025f1691d5188b111",
+      "root_proof_sha256": "46abfe825a509bee06bc9371c657e0ef41723f21f78e7787a0248201f3c4a061",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-N30-sample2-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon",
+      "count": 70,
+      "sample": 0,
+      "public_root_digest_blake2s": "0b30301b8303140b0816dcbcb4b735d783a96b9d2979a23bd85ecf893479dfb7",
+      "root_proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-N70-sample0-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon",
+      "count": 70,
+      "sample": 1,
+      "public_root_digest_blake2s": "0b30301b8303140b0816dcbcb4b735d783a96b9d2979a23bd85ecf893479dfb7",
+      "root_proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-N70-sample1-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon",
+      "count": 70,
+      "sample": 2,
+      "public_root_digest_blake2s": "0b30301b8303140b0816dcbcb4b735d783a96b9d2979a23bd85ecf893479dfb7",
+      "root_proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-N70-sample2-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon",
+      "count": 100,
+      "sample": 0,
+      "public_root_digest_blake2s": "b9ccd0f4c0eb25559c6aee399f26302768d81fa4813d6e6aae0e8ccd6cf91dcf",
+      "root_proof_sha256": "cb61b72c21657e9938f5aef7c24d2b63d0415a2d3aa0156b3b2f4d6401085234",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-N100-sample0-final-evidence.json",
+      "guard_gib": 20
+    },
+    {
+      "scheme": "raccoon",
+      "count": 100,
+      "sample": 1,
+      "public_root_digest_blake2s": "b9ccd0f4c0eb25559c6aee399f26302768d81fa4813d6e6aae0e8ccd6cf91dcf",
+      "root_proof_sha256": "cb61b72c21657e9938f5aef7c24d2b63d0415a2d3aa0156b3b2f4d6401085234",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-N100-sample1-final-evidence.json",
+      "guard_gib": 20
+    },
+    {
+      "scheme": "raccoon",
+      "count": 100,
+      "sample": 2,
+      "public_root_digest_blake2s": "b9ccd0f4c0eb25559c6aee399f26302768d81fa4813d6e6aae0e8ccd6cf91dcf",
+      "root_proof_sha256": "cb61b72c21657e9938f5aef7c24d2b63d0415a2d3aa0156b3b2f4d6401085234",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-N100-sample2-final-evidence.json",
+      "guard_gib": 20
+    },
+    {
+      "scheme": "raccoon-g",
+      "count": 10,
+      "sample": 0,
+      "public_root_digest_blake2s": "210394f1a971b16994e6662c07df7d844980eee2b62d2833c4026cd0e6055a3b",
+      "root_proof_sha256": "1c54cf9c77227d9ed215c14fa1d38c7d6d90a356e76deb7267fdb7122acac783",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-g-N10-sample0-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon-g",
+      "count": 10,
+      "sample": 1,
+      "public_root_digest_blake2s": "210394f1a971b16994e6662c07df7d844980eee2b62d2833c4026cd0e6055a3b",
+      "root_proof_sha256": "1c54cf9c77227d9ed215c14fa1d38c7d6d90a356e76deb7267fdb7122acac783",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-g-N10-sample1-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon-g",
+      "count": 10,
+      "sample": 2,
+      "public_root_digest_blake2s": "210394f1a971b16994e6662c07df7d844980eee2b62d2833c4026cd0e6055a3b",
+      "root_proof_sha256": "1c54cf9c77227d9ed215c14fa1d38c7d6d90a356e76deb7267fdb7122acac783",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-g-N10-sample2-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon-g",
+      "count": 30,
+      "sample": 0,
+      "public_root_digest_blake2s": "9edee8ffa38bc364de1364096eb7c1cf19abbc50250e96f9708f05ccbcc728d1",
+      "root_proof_sha256": "bd6a59fc570c3c6363dff74f5c57667d99f83a3e98274b5b4b4f19b3cb907848",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-g-N30-sample0-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon-g",
+      "count": 30,
+      "sample": 1,
+      "public_root_digest_blake2s": "9edee8ffa38bc364de1364096eb7c1cf19abbc50250e96f9708f05ccbcc728d1",
+      "root_proof_sha256": "bd6a59fc570c3c6363dff74f5c57667d99f83a3e98274b5b4b4f19b3cb907848",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-g-N30-sample1-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon-g",
+      "count": 30,
+      "sample": 2,
+      "public_root_digest_blake2s": "9edee8ffa38bc364de1364096eb7c1cf19abbc50250e96f9708f05ccbcc728d1",
+      "root_proof_sha256": "bd6a59fc570c3c6363dff74f5c57667d99f83a3e98274b5b4b4f19b3cb907848",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-g-N30-sample2-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon-g",
+      "count": 70,
+      "sample": 0,
+      "public_root_digest_blake2s": "dd65d0a99e4fc59cd940a1582815a95fd411636ebd375a913f62e2e96c8d36b6",
+      "root_proof_sha256": "0df8700d0bfd0b98aeb39fa5ecf4b45e4de605654672af49d2c335bc7d16d06d",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-g-N70-sample0-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon-g",
+      "count": 70,
+      "sample": 1,
+      "public_root_digest_blake2s": "dd65d0a99e4fc59cd940a1582815a95fd411636ebd375a913f62e2e96c8d36b6",
+      "root_proof_sha256": "0df8700d0bfd0b98aeb39fa5ecf4b45e4de605654672af49d2c335bc7d16d06d",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-g-N70-sample1-final-evidence.json",
+      "guard_gib": 19
+    },
+    {
+      "scheme": "raccoon-g",
+      "count": 70,
+      "sample": 2,
+      "public_root_digest_blake2s": "dd65d0a99e4fc59cd940a1582815a95fd411636ebd375a913f62e2e96c8d36b6",
+      "root_proof_sha256": "0df8700d0bfd0b98aeb39fa5ecf4b45e4de605654672af49d2c335bc7d16d06d",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-g-N70-sample2-final-evidence.json",
+      "guard_gib": 20
+    },
+    {
+      "scheme": "raccoon-g",
+      "count": 100,
+      "sample": 0,
+      "public_root_digest_blake2s": "d24b69e12af122b59fcbe6773909ada2412090e4ea1e84c2d42f2dd2eeb05ec0",
+      "root_proof_sha256": "154ddebe2fec978e9a42e940c2c9c126a286342484c5924d9e04b66e27eab9eb",
+      "evidence": "risc-v/reviews/raccoon-benchmark/matrix/raccoon-g-N100-sample0-final-evidence.json",
+      "guard_gib": 20
+    }
+  ],
+  "accepted_guard_counts": {
+    "19": 17,
+    "20": 5
+  },
+  "cohort_freezes": [
+    {
+      "cohort": "standard",
+      "source_hashes_checked": 350,
+      "environment_sha256": "6baa22bed3780033ee968e1447123ad212d551ff2eac36b72ef03b673bfdc365"
+    },
+    {
+      "cohort": "G",
+      "source_hashes_checked": 303,
+      "environment_sha256": "ee4df64977b1d517cc0f9c9c0029ee1ae176d4005616e16b9e0dace8248d80a6"
+    }
+  ],
+  "vendor_revisions_clean": {
+    "vendor/leanVM-riscv": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+    "vendor/raccoon": "e789b4b72a2b7e8a2205df49c487736985fc8417",
+    "risc-v/raccoon-g/sources/lattice-hd-wallets": "461a5ed9b6d57e3bf8c381be3bb79325ab21d906"
+  },
+  "coordinator_unchanged_sha256": "c117ef5be9437638c5802f109362d4108b822ed3c8d4c97d16da950cae4ab09d",
+  "old_archive_files_checked": 1277,
+  "stop_archives": [
+    {
+      "path": "risc-v/results/raccoon-full-matrix/resource-stops/20261110T041747Z",
+      "files_checked": 77,
+      "manifest_sha256": "ea9eefd0120e7bb2e0da126b546170aa01a8aef72daa44e72729ffeb5e4e497c",
+      "passed": true
+    },
+    {
+      "path": "risc-v/results/raccoon-full-matrix/user-stops/20261110T110242Z",
+      "files_checked": 12,
+      "manifest_sha256": "52e50e16a0d4bcc2c13ac4f1633a429cbe8203e6580e0c66ebb5c539893ccd6c",
+      "passed": true
+    }
+  ],
+  "prior_17_complete_roots_and_markers_unchanged": true,
+  "all_public_lists_match_canonical_corpus_prefix": {
+    "raccoon": 100,
+    "raccoon-g": 100
+  },
+  "g100_fresh_producer_samples": 1,
+  "g100_never_label_as_three_run_median": true,
+  "no_further_proving_run": true,
+  "measured_summary_matches_actual_reports": true,
+  "description": "Read-only final file/provenance/accounting audit. All real leaves and merges are freshly called in the reviewed producer; deterministic plain-proof equality is permitted. Complete native receiver checks and independent N100 mutations are recorded separately. This is not a formal whole-backend security proof.",
+  "passed": true
+}

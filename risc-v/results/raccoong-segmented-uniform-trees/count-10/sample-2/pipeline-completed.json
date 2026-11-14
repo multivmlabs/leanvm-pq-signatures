@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "verified_public_only": true,
+  "binary_sha256": "74b2b0125f7e04d6cb390eecb1582c3f5a18fcd5b9da4d419e4eba2b24c766a8",
+  "elf_sha256": "5c48b8f39b14521773493692034fa601a9df89992552870addd68416cc926eac",
+  "statement_sha256": "a3b7afaf579f2e7658eddf208b1b36e8b1960a0f61d6b95417afcc3e7aec72f2",
+  "root_proof_sha256": "1c54cf9c77227d9ed215c14fa1d38c7d6d90a356e76deb7267fdb7122acac783",
+  "signatures": 10,
+  "sample": 2,
+  "receiver_inputs": [
+    "statement.json",
+    "root.proof"
+  ],
+  "all_folded_claims_settled": true,
+  "parts_per_signature": 5
+}

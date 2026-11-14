@@ -1,0 +1,329 @@
+{
+  "action": "prove",
+  "all_reduced_claims_settled": true,
+  "backend_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "depth": 3,
+  "families": [
+    {
+      "bytecode_instructions": 8192,
+      "dimensions": 17,
+      "family": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "min_log_committed": 22,
+      "table_words": 131072
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 1,
+      "guest_hash": "9a644995149507104780db24c34f7bf0a2b0fc7631f05faa743d6002becfb3dc",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 2,
+      "guest_hash": "2d8699877c87d010052a00b89adc6e9aa5f28b1e08501703146d5dd1e1e393c2",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 3,
+      "guest_hash": "7bbceba578c4839c75753b07a279adbe2236abf6d8d6ac95c8141ba55db07e27",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    }
+  ],
+  "full_verify_s": 0.008637334,
+  "leaf_prove_s": 0.31073137500000003,
+  "leaf_reports": [
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 0,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 270112,
+      "proof_sha256": "52e88acb9e51809fc88c5515456bacd3d466d118c2084fefd5beba0bcb08b521",
+      "prove_s": 0.059990792,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 1,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 269152,
+      "proof_sha256": "5c7a4130f504374a14be28862cf58c51e526d416372c5ab1dd7eddd734921934",
+      "prove_s": 0.0498175,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 2,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 268224,
+      "proof_sha256": "865ae5360b567a5c67e1db7055683ff8cc51ffad9a67cd9baf061f0f4f7919e9",
+      "prove_s": 0.04814775,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 3,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 269024,
+      "proof_sha256": "8bde7d67a982d52953230bd860c2ee16d7f974322868b3c389115fea54e8e0f0",
+      "prove_s": 0.04973325,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 4,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 268456,
+      "proof_sha256": "e71cbf861a1136ec7c1e9da4c0b073351d7a8e093d57b98c3931acb0a97bdabf",
+      "prove_s": 0.04931575,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 5,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 267968,
+      "proof_sha256": "4d3173156c45ce622d856dc363c3e3878ae4fec42438c3926c7633148acc9b9a",
+      "prove_s": 0.053726333,
+      "signatures": 5
+    }
+  ],
+  "leaf_size": 5,
+  "leaf_slots": 8,
+  "leaf_source_sha256": "c46fc19886ee36392d106b13443440d7daaeaf210f6806dac6836c9b58c91e2c",
+  "merge_count": 7,
+  "merge_prove_s": 2.1439100410000003,
+  "merge_reports": [
+    {
+      "committed_words": 16482304,
+      "cycles": 535769,
+      "level": 1,
+      "native_reduction_prove_s": 0.001761083,
+      "node": 0,
+      "opcode_rows": [
+        160964,
+        214512,
+        28463,
+        91798,
+        29194,
+        10838
+      ],
+      "prepare_s": 0.019888375,
+      "proof_bytes": 339208,
+      "proof_sha256": "5356da11127a0159d47fab292e79a37c6e2efcce6fb9b212cd4819c93af3e5c4",
+      "terminal_families": 1,
+      "total_prove_s": 0.252631125,
+      "wrapper_stark_prove_s": 0.23274275
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535799,
+      "level": 1,
+      "native_reduction_prove_s": 0.001755042,
+      "node": 1,
+      "opcode_rows": [
+        160964,
+        214512,
+        28489,
+        91802,
+        29220,
+        10812
+      ],
+      "prepare_s": 0.019886042,
+      "proof_bytes": 339784,
+      "proof_sha256": "2972d6c65172cd4b2b19ba25455c4becee18b87aa2ab89c1aeb15489d0007f3e",
+      "terminal_families": 1,
+      "total_prove_s": 0.211980542,
+      "wrapper_stark_prove_s": 0.1920945
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535771,
+      "level": 1,
+      "native_reduction_prove_s": 0.001778166,
+      "node": 2,
+      "opcode_rows": [
+        160964,
+        214512,
+        28471,
+        91792,
+        29202,
+        10830
+      ],
+      "prepare_s": 0.019887917,
+      "proof_bytes": 338216,
+      "proof_sha256": "fe171b728dbbbf3d583bbcee6ab8c28e783ea8e2c66129e416abae201a9ccd2f",
+      "terminal_families": 1,
+      "total_prove_s": 0.212046375,
+      "wrapper_stark_prove_s": 0.192158458
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535768,
+      "level": 1,
+      "native_reduction_prove_s": 0.001724291,
+      "node": 3,
+      "opcode_rows": [
+        160964,
+        214512,
+        28472,
+        91788,
+        29203,
+        10829
+      ],
+      "prepare_s": 0.019816,
+      "proof_bytes": 340008,
+      "proof_sha256": "8eb11cdf4435658a99805e8f446a5a112b7550e2a4ea8f904d3535db5921f8d9",
+      "terminal_families": 1,
+      "total_prove_s": 0.216136084,
+      "wrapper_stark_prove_s": 0.196320084
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 582309,
+      "level": 2,
+      "native_reduction_prove_s": 0.047680541,
+      "node": 4,
+      "opcode_rows": [
+        173756,
+        229529,
+        32192,
+        102499,
+        31403,
+        12930
+      ],
+      "prepare_s": 0.2044145,
+      "proof_bytes": 339944,
+      "proof_sha256": "7819396c49e4689e3f81e57a35acaa1116bfaed50d7f22e9ac451717175f8a63",
+      "terminal_families": 2,
+      "total_prove_s": 0.399735083,
+      "wrapper_stark_prove_s": 0.195320583
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 582327,
+      "level": 2,
+      "native_reduction_prove_s": 0.047020374999999996,
+      "node": 5,
+      "opcode_rows": [
+        173756,
+        229529,
+        32202,
+        102507,
+        31413,
+        12920
+      ],
+      "prepare_s": 0.203029375,
+      "proof_bytes": 339976,
+      "proof_sha256": "270973febee2257221dd6ba4ae6271748823b5d9eec62089461f4aec550473f3",
+      "terminal_families": 2,
+      "total_prove_s": 0.405971083,
+      "wrapper_stark_prove_s": 0.202941708
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 585400,
+      "level": 3,
+      "native_reduction_prove_s": 0.094235501,
+      "node": 6,
+      "opcode_rows": [
+        174725,
+        230446,
+        32536,
+        102998,
+        31727,
+        12968
+      ],
+      "prepare_s": 0.249735583,
+      "proof_bytes": 337992,
+      "proof_sha256": "db20d4cdf882c657f7cafc021f5009b81299886cfa5f403b98ae7fba280cb8d8",
+      "terminal_families": 3,
+      "total_prove_s": 0.445409749,
+      "wrapper_stark_prove_s": 0.195674166
+    }
+  ],
+  "native_reduction_prove_s": 0.195954999,
+  "original_tree_edges": 14,
+  "padding_slots": 2,
+  "peak_rss_bytes": 1376010240,
+  "pipeline_elapsed_s": 3.723250833,
+  "program_compile_s": 0.447659083,
+  "public_claim_derivation_s": 0.000031416,
+  "public_sha256": "f581a6bea566ec1ca4691e88655fc6ddfb68d3095ddf64abb587fb8a791fff0f",
+  "real_leaves": 6,
+  "root_auxiliary_bytes": 1792,
+  "root_core_bytes": 337992,
+  "root_proof_bytes": 339784,
+  "root_proof_sha256": "1a3eaeca56b2d6ba2894ae7cf4d299af6ad947024bd51a9bc34538c90ee26f9d",
+  "schema": 1,
+  "scheme": "fors",
+  "signatures": 30,
+  "status": "accepted",
+  "terminal_evaluations": 3,
+  "threads_env": null,
+  "total_prove_s": 2.4546414160000003,
+  "verification_components": {
+    "root_core_s": 0.005731584,
+    "root_pi_s": 2.834e-6,
+    "terminal_evaluation_s": 0.002896083,
+    "terminal_evaluations": 3
+  },
+  "verified": true,
+  "wrapper_stark_prove_s": 1.4072522490000001,
+  "zero_knowledge": false
+}

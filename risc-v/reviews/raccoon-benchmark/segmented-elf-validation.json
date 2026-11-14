@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "description": "Independent raw-advice interpreter controls, no Program::measure, Prover or proof production. Expected D/public outputs use Python hashlib with saved independent authors Python W.",
+  "elf_sha256": "a9ab1a596f88a737200f96bd045ed4d8176d3f9bcf8eaa6ad06a85ffd9ebfddc",
+  "manifest_sha256": "4d5dcc0295e16687dbfafc6bb82438629d0feda6efc3677fd1490a49547d59f5",
+  "source_hashes_checked": 44,
+  "harness_sha256": "7c33f84f866727a0d38eda6279bb39ca7addaaaaaf14e758948a66eb86c3f794",
+  "harness_source_sha256": "d79ab469a893ec8fb33954cb38d55adb2d0844058eab5070ca91e544b6fd2ac6",
+  "controls": [
+    {
+      "case": "honest-part-0.bin",
+      "expected_accept": true,
+      "actual": "71db769f93ae818c5c2bb05ade3d1237f46f69a1e1fc11df0a80251fe7c52712",
+      "passed": true,
+      "advice_sha256": "b7582d661f3653c83a2ea8359e7c79ebc46611fb32ce56eb08dbd245743c8081"
+    },
+    {
+      "case": "honest-part-1.bin",
+      "expected_accept": true,
+      "actual": "88f048049ede2548ba86c77c0f66e68bf60f2a1b150cc45b04d7273d93482539",
+      "passed": true,
+      "advice_sha256": "0b8fa13f65457b902b9b3ad4e7d80e6e83b7cef0761df150d6cebbc8388f2f53"
+    },
+    {
+      "case": "honest-part-2.bin",
+      "expected_accept": true,
+      "actual": "2f4ef3c855e64a4d62208d125924f3576156f295b16735219bc7d6bdb1adf2a9",
+      "passed": true,
+      "advice_sha256": "9010ebf83160be34a0972d0a3ae4f4ca597e980fc8f8959e2ea65f24da5ae8f2"
+    },
+    {
+      "case": "honest-part-3.bin",
+      "expected_accept": true,
+      "actual": "acdf756a7c02647f89c0688faa386fd4c447d3aab46af55dbfb7f403f21e96d0",
+      "passed": true,
+      "advice_sha256": "4c71e6835dc7aa13594679924ce8bd9a6e3b468fcfb5adca1d321ed3aeba8b7b"
+    },
+    {
+      "case": "honest-part-4.bin",
+      "expected_accept": true,
+      "actual": "7b51708babbfaa5a2fec049e12e53246b58d1ddad677a0a8dd72a4873c135227",
+      "passed": true,
+      "advice_sha256": "808d6722e7e2ca691d1537e49bcb1ea38ad792c9d51577bdf5b10cd99ad59557"
+    },
+    {
+      "case": "second-row-1-hint-part-0.bin",
+      "expected_accept": false,
+      "actual": "TRAP:Illegal { pc: 268443584 }",
+      "passed": true,
+      "advice_sha256": "f8111e0168f0474fa67ad23d23dc8ea09e012eb08dfaebea029142ef8cae1ddd"
+    },
+    {
+      "case": "second-row-3-hint-part-1.bin",
+      "expected_accept": false,
+      "actual": "TRAP:Illegal { pc: 268443584 }",
+      "passed": true,
+      "advice_sha256": "69940cac1278695fcba8fea6150ea9af0b4229bfe20b2e1f8fa6da19c14ebc86"
+    },
+    {
+      "case": "second-row-5-hint-part-2.bin",
+      "expected_accept": false,
+      "actual": "TRAP:Illegal { pc: 268443584 }",
+      "passed": true,
+      "advice_sha256": "f439eb8030163328026d4d85ecfd01ecd841b4c924ad398bbeae1f9afa5e1029"
+    },
+    {
+      "case": "second-row-7-hint-part-3.bin",
+      "expected_accept": false,
+      "actual": "TRAP:Illegal { pc: 268443584 }",
+      "passed": true,
+      "advice_sha256": "670257f082e6ccad5b9a5b0d7644baeff0a5d5e2d3f45fdb5d171a2aa28a75b2"
+    },
+    {
+      "case": "unselected-row8-hint-part0-partial-accept.bin",
+      "expected_accept": true,
+      "actual": "037308497abd3726ddf69fb3df31c4fd795e86e333f12946aa3fccd532acd988",
+      "passed": true,
+      "advice_sha256": "3ace5820d45b5ebacf596fb6b231aa252313dca5768b92991863894f07f08df8"
+    },
+    {
+      "case": "selected-row8-hint-part4-reject.bin",
+      "expected_accept": false,
+      "actual": "TRAP:Illegal { pc: 268443584 }",
+      "passed": true,
+      "advice_sha256": "501fdc403c244eda7f219c517f6eb06b3779609520e47979f6b9541d419100d1"
+    },
+    {
+      "case": "unselected-last-w-noncanonical.bin",
+      "expected_accept": false,
+      "actual": "TRAP:Illegal { pc: 268443584 }",
+      "passed": true,
+      "advice_sha256": "0c8e95b993e625723b8a504d0968466752af90b89be61c4d37bf61caccc85143"
+    },
+    {
+      "case": "full-unrounded-key-low-bit.bin",
+      "expected_accept": false,
+      "actual": "TRAP:Illegal { pc: 268443584 }",
+      "passed": true,
+      "advice_sha256": "f40abb64fce52c2e0e4ba025d842dc4537fad2fcf205834f3a12ef7128ab025d"
+    },
+    {
+      "case": "part-index5.bin",
+      "expected_accept": false,
+      "actual": "TRAP:Illegal { pc: 268443584 }",
+      "passed": true,
+      "advice_sha256": "495db8c25aa8b1e4d20dcc86de97a92af6d6663c2be43df846ffe99e3554b9ba"
+    }
+  ],
+  "passed": true
+}

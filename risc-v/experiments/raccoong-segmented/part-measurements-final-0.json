@@ -1,0 +1,213 @@
+{
+  "binding": [
+    5685533324796057404,
+    6104214348503166595,
+    10411340119252654441,
+    6699788451302399084,
+    46511677489328631,
+    15310662865115989757,
+    2702160043592127143,
+    4402382970637395132
+  ],
+  "index": 0,
+  "prepare_s": 0.001662833,
+  "rows": [
+    {
+      "measurement": {
+        "accepted": true,
+        "base_rows": {
+          "ALU": 3636152,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 1051,
+          "LD": 613578,
+          "LOAD": 99833,
+          "MUL": 75616,
+          "MULH": 57631,
+          "SD": 513557,
+          "SHIFT": 1409335,
+          "STORE": 353
+        },
+        "committed_words": 226492856,
+        "cycles": 6407106,
+        "padded_rows": {
+          "ALU": 4194304,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 2048,
+          "LD": 1048576,
+          "LOAD": 131072,
+          "MUL": 131072,
+          "MULH": 65536,
+          "SD": 524288,
+          "SHIFT": 2097152,
+          "STORE": 512
+        }
+      },
+      "part": 0,
+      "raw_output_matches": true,
+      "rows": [
+        0,
+        1
+      ]
+    },
+    {
+      "measurement": {
+        "accepted": true,
+        "base_rows": {
+          "ALU": 3659290,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 1051,
+          "LD": 617872,
+          "LOAD": 99975,
+          "MUL": 75616,
+          "MULH": 57631,
+          "SD": 517048,
+          "SHIFT": 1421970,
+          "STORE": 353
+        },
+        "committed_words": 226492856,
+        "cycles": 6450806,
+        "padded_rows": {
+          "ALU": 4194304,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 2048,
+          "LD": 1048576,
+          "LOAD": 131072,
+          "MUL": 131072,
+          "MULH": 65536,
+          "SD": 524288,
+          "SHIFT": 2097152,
+          "STORE": 512
+        }
+      },
+      "part": 1,
+      "raw_output_matches": true,
+      "rows": [
+        2,
+        3
+      ]
+    },
+    {
+      "measurement": {
+        "accepted": true,
+        "base_rows": {
+          "ALU": 3611440,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 1051,
+          "LD": 609258,
+          "LOAD": 99732,
+          "MUL": 75616,
+          "MULH": 57631,
+          "SD": 509923,
+          "SHIFT": 1396949,
+          "STORE": 353
+        },
+        "committed_words": 226492856,
+        "cycles": 6361953,
+        "padded_rows": {
+          "ALU": 4194304,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 2048,
+          "LD": 1048576,
+          "LOAD": 131072,
+          "MUL": 131072,
+          "MULH": 65536,
+          "SD": 524288,
+          "SHIFT": 2097152,
+          "STORE": 512
+        }
+      },
+      "part": 2,
+      "raw_output_matches": true,
+      "rows": [
+        4,
+        5
+      ]
+    },
+    {
+      "measurement": {
+        "accepted": true,
+        "base_rows": {
+          "ALU": 3653536,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 1051,
+          "LD": 616706,
+          "LOAD": 99921,
+          "MUL": 75616,
+          "MULH": 57631,
+          "SD": 516145,
+          "SHIFT": 1418419,
+          "STORE": 353
+        },
+        "committed_words": 226492856,
+        "cycles": 6439378,
+        "padded_rows": {
+          "ALU": 4194304,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 2048,
+          "LD": 1048576,
+          "LOAD": 131072,
+          "MUL": 131072,
+          "MULH": 65536,
+          "SD": 524288,
+          "SHIFT": 2097152,
+          "STORE": 512
+        }
+      },
+      "part": 3,
+      "raw_output_matches": true,
+      "rows": [
+        6,
+        7
+      ]
+    },
+    {
+      "measurement": {
+        "accepted": true,
+        "base_rows": {
+          "ALU": 3618197,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 1051,
+          "LD": 610294,
+          "LOAD": 99732,
+          "MUL": 75616,
+          "MULH": 57631,
+          "SD": 510865,
+          "SHIFT": 1399731,
+          "STORE": 353
+        },
+        "committed_words": 226492856,
+        "cycles": 6373470,
+        "padded_rows": {
+          "ALU": 4194304,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 2048,
+          "LD": 1048576,
+          "LOAD": 131072,
+          "MUL": 131072,
+          "MULH": 65536,
+          "SD": 524288,
+          "SHIFT": 2097152,
+          "STORE": 512
+        }
+      },
+      "part": 4,
+      "raw_output_matches": true,
+      "rows": [
+        8,
+        8
+      ]
+    }
+  ],
+  "schema": 1,
+  "scope": "One real original signature decomposed into five linked two-row claims, with row eight repeated and charged; no STARK produced"
+}

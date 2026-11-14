@@ -1,0 +1,93 @@
+{
+  "action": "prove",
+  "arch": "aarch64",
+  "bytecode_instructions": 5534,
+  "committed_cells": 1157120,
+  "compile_s": 0.003493833,
+  "cycles": 37577,
+  "execute_s": 0.001472375,
+  "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+  "leanvm_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "leanvm_source_dirty_at_build": "false",
+  "log_inv_rate": 1,
+  "log_memory_cells": 16,
+  "memory_cells": 46609,
+  "metadata": {
+    "count": 5,
+    "fixture_generation_s": 0.0035411249999981464,
+    "parameters": {
+      "a": 8,
+      "k": 16,
+      "n": 32
+    },
+    "public_key_bytes": 320,
+    "raw_key_bytes": 320,
+    "raw_signature_bytes": 23040,
+    "signature_bytes": 23040
+  },
+  "min_log_committed": 0,
+  "opcode_rows": [
+    10286,
+    9729,
+    7216,
+    5154,
+    4438,
+    754
+  ],
+  "os": "macos",
+  "process_peak_rss_bytes": 122912768,
+  "proof_bytes": 237904,
+  "proof_bytes_samples": [
+    237904,
+    237904,
+    237904
+  ],
+  "proof_encoding": {
+    "merkle_bytes": 190064,
+    "merkle_phases": [
+      {
+        "opened_field_words": 8028,
+        "opened_rows": 223,
+        "sibling_hashes": 1632
+      },
+      {
+        "opened_field_words": 2688,
+        "opened_rows": 56,
+        "sibling_hashes": 468
+      },
+      {
+        "opened_field_words": 1536,
+        "opened_rows": 32,
+        "sibling_hashes": 261
+      },
+      {
+        "opened_field_words": 1056,
+        "opened_rows": 22,
+        "sibling_hashes": 166
+      }
+    ],
+    "scalar_stream_bytes": 47840,
+    "scalar_stream_count": 1993
+  },
+  "prove_s": [
+    0.046114917,
+    0.042354708,
+    0.042827041
+  ],
+  "public_input_hex": "193f79b6a405cef6174195b643a311e92852d141fec708ede87b9b7ac948ea67",
+  "schema_version": 1,
+  "scheme": "fors-keccak-research",
+  "statement_pinned": false,
+  "threads_env": null,
+  "verified": true,
+  "verify_s": [
+    0.008678209,
+    0.008523875,
+    0.008612417
+  ],
+  "warmup_passes": 1,
+  "zero_knowledge": false,
+  "input_sha256": "3fa58a8a45693ce3f1cbf521923afe8a0bbf4fc2c05687259979e1719a754d0d",
+  "experiment_process_elapsed_s": 0.2553353750000156,
+  "article_scheme": "fors"
+}

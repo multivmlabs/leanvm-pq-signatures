@@ -1,0 +1,16 @@
+[package]
+name = "raccoon-independent-review-controls"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[workspace]
+
+[dependencies]
+raccoon-riscv-host = { path = "../../host" }
+raccoon-riscv-guest = { path = "../../guest" }
+leanvm = { path = "../../../../vendor/leanVM-riscv/crates/leanvm_core" }
+
+[profile.release]
+opt-level = 3
+

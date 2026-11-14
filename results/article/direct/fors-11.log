@@ -1,0 +1,90 @@
+{
+  "action": "prove",
+  "arch": "aarch64",
+  "bytecode_instructions": 5610,
+  "committed_cells": 2306048,
+  "compile_s": 0.003489958,
+  "cycles": 82641,
+  "execute_s": 0.002716125,
+  "guest_hash": "4e507122b74505e49ae63a0b10478e306965602bdd18380b55a16e633f1dc210",
+  "leanvm_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "leanvm_source_dirty_at_build": "false",
+  "log_inv_rate": 1,
+  "log_memory_cells": 17,
+  "memory_cells": 102485,
+  "metadata": {
+    "count": 11,
+    "fixture_generation_s": 0.00755541700002027,
+    "parameters": {
+      "a": 8,
+      "k": 16,
+      "n": 32
+    },
+    "public_key_bytes": 704,
+    "raw_key_bytes": 704,
+    "raw_signature_bytes": 50688,
+    "signature_bytes": 50688
+  },
+  "min_log_committed": 0,
+  "opcode_rows": [
+    22635,
+    21398,
+    15862,
+    11328,
+    9760,
+    1658
+  ],
+  "os": "macos",
+  "process_peak_rss_bytes": 204177408,
+  "proof_bytes": 251848,
+  "proof_bytes_samples": [
+    251848,
+    251848,
+    251848
+  ],
+  "proof_encoding": {
+    "merkle_bytes": 202112,
+    "merkle_phases": [
+      {
+        "opened_field_words": 8064,
+        "opened_rows": 224,
+        "sibling_hashes": 1850
+      },
+      {
+        "opened_field_words": 2688,
+        "opened_rows": 56,
+        "sibling_hashes": 532
+      },
+      {
+        "opened_field_words": 1536,
+        "opened_rows": 32,
+        "sibling_hashes": 301
+      },
+      {
+        "opened_field_words": 1104,
+        "opened_rows": 23,
+        "sibling_hashes": 199
+      }
+    ],
+    "scalar_stream_bytes": 49736,
+    "scalar_stream_count": 2072
+  },
+  "prove_s": [
+    0.060326375,
+    0.058454125,
+    0.0587865
+  ],
+  "public_input_hex": "b8dc3aeaf0175f60a9e9bf8173a77118cf2a2f9d9955bdc79d1a2cfa9f6b678a",
+  "schema_version": 1,
+  "scheme": "fors-keccak-research",
+  "statement_pinned": false,
+  "threads_env": null,
+  "verified": true,
+  "verify_s": [
+    0.008604916,
+    0.008707334,
+    0.008672083
+  ],
+  "warmup_passes": 1,
+  "zero_knowledge": false
+}

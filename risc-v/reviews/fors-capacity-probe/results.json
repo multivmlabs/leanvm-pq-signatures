@@ -1,0 +1,822 @@
+[
+  {
+    "circuit_costs": [
+      {
+        "lower_bound_words": 16777216,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "ALU"
+      },
+      {
+        "lower_bound_words": 2048,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "LOAD"
+      },
+      {
+        "lower_bound_words": 256,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "STORE"
+      },
+      {
+        "lower_bound_words": 524288,
+        "part": "Class",
+        "stride_words": 4,
+        "table": "LD"
+      },
+      {
+        "lower_bound_words": 524288,
+        "part": "Class",
+        "stride_words": 4,
+        "table": "SD"
+      },
+      {
+        "lower_bound_words": 4194304,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "SHIFT"
+      },
+      {
+        "lower_bound_words": 1024,
+        "part": "Class",
+        "stride_words": 64,
+        "table": "MUL"
+      },
+      {
+        "lower_bound_words": 32768,
+        "part": "Class",
+        "stride_words": 128,
+        "table": "MULH"
+      },
+      {
+        "lower_bound_words": 2048,
+        "part": "Class",
+        "stride_words": 128,
+        "table": "DIV"
+      },
+      {
+        "lower_bound_words": 2048,
+        "part": "Class",
+        "stride_words": 256,
+        "table": "HASH"
+      },
+      {
+        "lower_bound_words": 8388608,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "ALU"
+      },
+      {
+        "lower_bound_words": 1024,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "LOAD"
+      },
+      {
+        "lower_bound_words": 128,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "STORE"
+      },
+      {
+        "lower_bound_words": 1048576,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "LD"
+      },
+      {
+        "lower_bound_words": 1048576,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "SD"
+      },
+      {
+        "lower_bound_words": 2097152,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "SHIFT"
+      },
+      {
+        "lower_bound_words": 128,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "MUL"
+      },
+      {
+        "lower_bound_words": 2048,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "MULH"
+      },
+      {
+        "lower_bound_words": 128,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "DIV"
+      },
+      {
+        "lower_bound_words": 256,
+        "part": "Clock",
+        "stride_words": 32,
+        "table": "HASH"
+      },
+      {
+        "lower_bound_words": 512,
+        "part": "Clock",
+        "stride_words": 64,
+        "table": "EXT"
+      }
+    ],
+    "class_rows": {
+      "ALU": 540292,
+      "DIV": 0,
+      "EXT": 0,
+      "HASH": 3,
+      "LD": 84414,
+      "LOAD": 80,
+      "MUL": 0,
+      "MULH": 148,
+      "SD": 79317,
+      "SHIFT": 212150,
+      "STORE": 16
+    },
+    "count": 1,
+    "cycles": 916420,
+    "independent_padded_heights": {
+      "ALU": 1048576,
+      "DIV": 16,
+      "EXT": 8,
+      "HASH": 8,
+      "LD": 131072,
+      "LOAD": 128,
+      "MUL": 16,
+      "MULH": 256,
+      "SD": 131072,
+      "SHIFT": 262144,
+      "STORE": 16
+    },
+    "keccak_permutations": 150,
+    "measure_result": "Ok(42128704)",
+    "output_matches": true,
+    "packed_witness_lower_bound_words": 34647424,
+    "permutation_cycles": 862350,
+    "scope": "Full unchanged ELF reference-interpreter execution, including past the prover size guard; packed witnesses only are a conservative lower bound, not a proof or exact layout."
+  },
+  {
+    "circuit_costs": [
+      {
+        "lower_bound_words": 67108864,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "ALU"
+      },
+      {
+        "lower_bound_words": 16384,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "LOAD"
+      },
+      {
+        "lower_bound_words": 2048,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "STORE"
+      },
+      {
+        "lower_bound_words": 4194304,
+        "part": "Class",
+        "stride_words": 4,
+        "table": "LD"
+      },
+      {
+        "lower_bound_words": 4194304,
+        "part": "Class",
+        "stride_words": 4,
+        "table": "SD"
+      },
+      {
+        "lower_bound_words": 33554432,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "SHIFT"
+      },
+      {
+        "lower_bound_words": 1024,
+        "part": "Class",
+        "stride_words": 64,
+        "table": "MUL"
+      },
+      {
+        "lower_bound_words": 262144,
+        "part": "Class",
+        "stride_words": 128,
+        "table": "MULH"
+      },
+      {
+        "lower_bound_words": 2048,
+        "part": "Class",
+        "stride_words": 128,
+        "table": "DIV"
+      },
+      {
+        "lower_bound_words": 4096,
+        "part": "Class",
+        "stride_words": 256,
+        "table": "HASH"
+      },
+      {
+        "lower_bound_words": 33554432,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "ALU"
+      },
+      {
+        "lower_bound_words": 8192,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "LOAD"
+      },
+      {
+        "lower_bound_words": 1024,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "STORE"
+      },
+      {
+        "lower_bound_words": 8388608,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "LD"
+      },
+      {
+        "lower_bound_words": 8388608,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "SD"
+      },
+      {
+        "lower_bound_words": 16777216,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "SHIFT"
+      },
+      {
+        "lower_bound_words": 128,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "MUL"
+      },
+      {
+        "lower_bound_words": 16384,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "MULH"
+      },
+      {
+        "lower_bound_words": 128,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "DIV"
+      },
+      {
+        "lower_bound_words": 512,
+        "part": "Clock",
+        "stride_words": 32,
+        "table": "HASH"
+      },
+      {
+        "lower_bound_words": 512,
+        "part": "Clock",
+        "stride_words": 64,
+        "table": "EXT"
+      }
+    ],
+    "class_rows": {
+      "ALU": 3781408,
+      "DIV": 0,
+      "EXT": 0,
+      "HASH": 12,
+      "LD": 590667,
+      "LOAD": 560,
+      "MUL": 0,
+      "MULH": 1030,
+      "SD": 554910,
+      "SHIFT": 1485008,
+      "STORE": 112
+    },
+    "count": 7,
+    "cycles": 6413707,
+    "independent_padded_heights": {
+      "ALU": 4194304,
+      "DIV": 16,
+      "EXT": 8,
+      "HASH": 16,
+      "LD": 1048576,
+      "LOAD": 1024,
+      "MUL": 16,
+      "MULH": 2048,
+      "SD": 1048576,
+      "SHIFT": 2097152,
+      "STORE": 128
+    },
+    "keccak_permutations": 1050,
+    "measure_result": "Ok(212148312)",
+    "output_matches": true,
+    "packed_witness_lower_bound_words": 176475392,
+    "permutation_cycles": 6036450,
+    "scope": "Full unchanged ELF reference-interpreter execution, including past the prover size guard; packed witnesses only are a conservative lower bound, not a proof or exact layout."
+  },
+  {
+    "circuit_costs": [
+      {
+        "lower_bound_words": 134217728,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "ALU"
+      },
+      {
+        "lower_bound_words": 16384,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "LOAD"
+      },
+      {
+        "lower_bound_words": 2048,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "STORE"
+      },
+      {
+        "lower_bound_words": 4194304,
+        "part": "Class",
+        "stride_words": 4,
+        "table": "LD"
+      },
+      {
+        "lower_bound_words": 4194304,
+        "part": "Class",
+        "stride_words": 4,
+        "table": "SD"
+      },
+      {
+        "lower_bound_words": 33554432,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "SHIFT"
+      },
+      {
+        "lower_bound_words": 1024,
+        "part": "Class",
+        "stride_words": 64,
+        "table": "MUL"
+      },
+      {
+        "lower_bound_words": 262144,
+        "part": "Class",
+        "stride_words": 128,
+        "table": "MULH"
+      },
+      {
+        "lower_bound_words": 2048,
+        "part": "Class",
+        "stride_words": 128,
+        "table": "DIV"
+      },
+      {
+        "lower_bound_words": 4096,
+        "part": "Class",
+        "stride_words": 256,
+        "table": "HASH"
+      },
+      {
+        "lower_bound_words": 67108864,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "ALU"
+      },
+      {
+        "lower_bound_words": 8192,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "LOAD"
+      },
+      {
+        "lower_bound_words": 1024,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "STORE"
+      },
+      {
+        "lower_bound_words": 8388608,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "LD"
+      },
+      {
+        "lower_bound_words": 8388608,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "SD"
+      },
+      {
+        "lower_bound_words": 16777216,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "SHIFT"
+      },
+      {
+        "lower_bound_words": 128,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "MUL"
+      },
+      {
+        "lower_bound_words": 16384,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "MULH"
+      },
+      {
+        "lower_bound_words": 128,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "DIV"
+      },
+      {
+        "lower_bound_words": 512,
+        "part": "Clock",
+        "stride_words": 32,
+        "table": "HASH"
+      },
+      {
+        "lower_bound_words": 512,
+        "part": "Clock",
+        "stride_words": 64,
+        "table": "EXT"
+      }
+    ],
+    "class_rows": {
+      "ALU": 4321584,
+      "DIV": 0,
+      "EXT": 0,
+      "HASH": 13,
+      "LD": 675040,
+      "LOAD": 640,
+      "MUL": 0,
+      "MULH": 1177,
+      "SD": 634169,
+      "SHIFT": 1697151,
+      "STORE": 128
+    },
+    "count": 8,
+    "cycles": 7329902,
+    "independent_padded_heights": {
+      "ALU": 8388608,
+      "DIV": 16,
+      "EXT": 8,
+      "HASH": 16,
+      "LD": 1048576,
+      "LOAD": 1024,
+      "MUL": 16,
+      "MULH": 2048,
+      "SD": 1048576,
+      "SHIFT": 2097152,
+      "STORE": 128
+    },
+    "keccak_permutations": 1200,
+    "measure_result": "Err(TooLong)",
+    "output_matches": true,
+    "packed_witness_lower_bound_words": 277138688,
+    "permutation_cycles": 6898800,
+    "scope": "Full unchanged ELF reference-interpreter execution, including past the prover size guard; packed witnesses only are a conservative lower bound, not a proof or exact layout."
+  },
+  {
+    "circuit_costs": [
+      {
+        "lower_bound_words": 134217728,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "ALU"
+      },
+      {
+        "lower_bound_words": 16384,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "LOAD"
+      },
+      {
+        "lower_bound_words": 4096,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "STORE"
+      },
+      {
+        "lower_bound_words": 4194304,
+        "part": "Class",
+        "stride_words": 4,
+        "table": "LD"
+      },
+      {
+        "lower_bound_words": 4194304,
+        "part": "Class",
+        "stride_words": 4,
+        "table": "SD"
+      },
+      {
+        "lower_bound_words": 33554432,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "SHIFT"
+      },
+      {
+        "lower_bound_words": 1024,
+        "part": "Class",
+        "stride_words": 64,
+        "table": "MUL"
+      },
+      {
+        "lower_bound_words": 262144,
+        "part": "Class",
+        "stride_words": 128,
+        "table": "MULH"
+      },
+      {
+        "lower_bound_words": 2048,
+        "part": "Class",
+        "stride_words": 128,
+        "table": "DIV"
+      },
+      {
+        "lower_bound_words": 4096,
+        "part": "Class",
+        "stride_words": 256,
+        "table": "HASH"
+      },
+      {
+        "lower_bound_words": 67108864,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "ALU"
+      },
+      {
+        "lower_bound_words": 8192,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "LOAD"
+      },
+      {
+        "lower_bound_words": 2048,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "STORE"
+      },
+      {
+        "lower_bound_words": 8388608,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "LD"
+      },
+      {
+        "lower_bound_words": 8388608,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "SD"
+      },
+      {
+        "lower_bound_words": 16777216,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "SHIFT"
+      },
+      {
+        "lower_bound_words": 128,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "MUL"
+      },
+      {
+        "lower_bound_words": 16384,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "MULH"
+      },
+      {
+        "lower_bound_words": 128,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "DIV"
+      },
+      {
+        "lower_bound_words": 512,
+        "part": "Clock",
+        "stride_words": 32,
+        "table": "HASH"
+      },
+      {
+        "lower_bound_words": 512,
+        "part": "Clock",
+        "stride_words": 64,
+        "table": "EXT"
+      }
+    ],
+    "class_rows": {
+      "ALU": 4861780,
+      "DIV": 0,
+      "EXT": 0,
+      "HASH": 15,
+      "LD": 759418,
+      "LOAD": 720,
+      "MUL": 0,
+      "MULH": 1324,
+      "SD": 713441,
+      "SHIFT": 1909294,
+      "STORE": 144
+    },
+    "count": 9,
+    "cycles": 8246136,
+    "independent_padded_heights": {
+      "ALU": 8388608,
+      "DIV": 16,
+      "EXT": 8,
+      "HASH": 16,
+      "LD": 1048576,
+      "LOAD": 1024,
+      "MUL": 16,
+      "MULH": 2048,
+      "SD": 1048576,
+      "SHIFT": 2097152,
+      "STORE": 256
+    },
+    "keccak_permutations": 1350,
+    "measure_result": "Err(TooLong)",
+    "output_matches": true,
+    "packed_witness_lower_bound_words": 277141760,
+    "permutation_cycles": 7761150,
+    "scope": "Full unchanged ELF reference-interpreter execution, including past the prover size guard; packed witnesses only are a conservative lower bound, not a proof or exact layout."
+  },
+  {
+    "circuit_costs": [
+      {
+        "lower_bound_words": 268435456,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "ALU"
+      },
+      {
+        "lower_bound_words": 32768,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "LOAD"
+      },
+      {
+        "lower_bound_words": 4096,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "STORE"
+      },
+      {
+        "lower_bound_words": 8388608,
+        "part": "Class",
+        "stride_words": 4,
+        "table": "LD"
+      },
+      {
+        "lower_bound_words": 8388608,
+        "part": "Class",
+        "stride_words": 4,
+        "table": "SD"
+      },
+      {
+        "lower_bound_words": 67108864,
+        "part": "Class",
+        "stride_words": 16,
+        "table": "SHIFT"
+      },
+      {
+        "lower_bound_words": 1024,
+        "part": "Class",
+        "stride_words": 64,
+        "table": "MUL"
+      },
+      {
+        "lower_bound_words": 524288,
+        "part": "Class",
+        "stride_words": 128,
+        "table": "MULH"
+      },
+      {
+        "lower_bound_words": 2048,
+        "part": "Class",
+        "stride_words": 128,
+        "table": "DIV"
+      },
+      {
+        "lower_bound_words": 8192,
+        "part": "Class",
+        "stride_words": 256,
+        "table": "HASH"
+      },
+      {
+        "lower_bound_words": 134217728,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "ALU"
+      },
+      {
+        "lower_bound_words": 16384,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "LOAD"
+      },
+      {
+        "lower_bound_words": 2048,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "STORE"
+      },
+      {
+        "lower_bound_words": 16777216,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "LD"
+      },
+      {
+        "lower_bound_words": 16777216,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "SD"
+      },
+      {
+        "lower_bound_words": 33554432,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "SHIFT"
+      },
+      {
+        "lower_bound_words": 128,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "MUL"
+      },
+      {
+        "lower_bound_words": 32768,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "MULH"
+      },
+      {
+        "lower_bound_words": 128,
+        "part": "Clock",
+        "stride_words": 8,
+        "table": "DIV"
+      },
+      {
+        "lower_bound_words": 1024,
+        "part": "Clock",
+        "stride_words": 32,
+        "table": "HASH"
+      },
+      {
+        "lower_bound_words": 512,
+        "part": "Clock",
+        "stride_words": 64,
+        "table": "EXT"
+      }
+    ],
+    "class_rows": {
+      "ALU": 8643072,
+      "DIV": 0,
+      "EXT": 0,
+      "HASH": 25,
+      "LD": 1350044,
+      "LOAD": 1280,
+      "MUL": 0,
+      "MULH": 2353,
+      "SD": 1268293,
+      "SHIFT": 3394295,
+      "STORE": 256
+    },
+    "count": 16,
+    "cycles": 14659618,
+    "independent_padded_heights": {
+      "ALU": 16777216,
+      "DIV": 16,
+      "EXT": 8,
+      "HASH": 32,
+      "LD": 2097152,
+      "LOAD": 2048,
+      "MUL": 16,
+      "MULH": 4096,
+      "SD": 2097152,
+      "SHIFT": 4194304,
+      "STORE": 256
+    },
+    "keccak_permutations": 2400,
+    "measure_result": "Err(TooLong)",
+    "output_matches": true,
+    "packed_witness_lower_bound_words": 554273536,
+    "permutation_cycles": 13797600,
+    "scope": "Full unchanged ELF reference-interpreter execution, including past the prover size guard; packed witnesses only are a conservative lower bound, not a proof or exact layout."
+  }
+]

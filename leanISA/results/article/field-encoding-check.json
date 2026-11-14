@@ -1,0 +1,30 @@
+{
+  "field_polynomial": "x^64+x^4+x^3+x+1",
+  "generator": 2,
+  "multiplicative_order": 18446744073709551615,
+  "prime_factors": [
+    3,
+    5,
+    17,
+    257,
+    641,
+    65537,
+    6700417
+  ],
+  "proper_factor_power_values": {
+    "3": 1858076378458151938,
+    "5": 6753221685647269129,
+    "17": 934417933708345563,
+    "257": 6259950186334376129,
+    "641": 7779978215417873058,
+    "65537": 2026190363967203278,
+    "6700417": 69034349764540817
+  },
+  "full_order_power_value": 1,
+  "largest_mldsa_residue_product": 70231372333056,
+  "largest_mldsa_residue_product_below_order": true,
+  "scope": "exact host-field arithmetic check; no STARK proof or backend soundness claim",
+  "prime_factors_checked_by_trial_division": true,
+  "q_squared_below_order": true,
+  "falcon_max_norm_plus_complement_below_order": true
+}

@@ -1,0 +1,11 @@
+# benchmark_schema	8
+# profiled	false
+# rayon_threads	12
+# simd_backend	small_signed_dot=neon;key_unpack=neon
+# keccak_backend	hybrid
+# rustc	rustc 1.99.0 (b940084d7 2026-09-28)
+# akita_rev	e023b6a46143f7b23199ccecb2684192baf7b640
+# git_revision	49b6c212c209286c536196f53618823ffdf0e899
+# heap_profile	none
+# parameter_set	Falcon-512
+# salt_mode	per-record

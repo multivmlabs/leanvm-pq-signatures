@@ -1,0 +1,31 @@
+{
+  "action": "execute",
+  "arch": "aarch64",
+  "bytecode_instructions": 217,
+  "compile_s": 0.000941209,
+  "cycles": 217,
+  "execute_s": 0.00052975,
+  "guest_hash": "c5482b6ee5e757dd86a8cbe468f1789da6a4dfb204cf687d3e080ec229bc0322",
+  "leanvm_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "leanvm_source_dirty_at_build": "false",
+  "log_inv_rate": 1,
+  "memory_cells": 718,
+  "metadata": null,
+  "min_log_committed": 0,
+  "opcode_rows": [
+    49,
+    58,
+    43,
+    42,
+    22,
+    3
+  ],
+  "os": "macos",
+  "process_peak_rss_bytes": 10600448,
+  "public_input_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+  "schema_version": 1,
+  "scheme": "leanisa-reduction-primitive",
+  "statement_pinned": false,
+  "threads_env": null,
+  "zero_knowledge": false
+}

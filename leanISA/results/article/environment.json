@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-03",
+  "hardware": {
+    "date": "2026-11-03",
+    "cpu": "Apple M4 Pro",
+    "logical_cpus": 12,
+    "physical_memory_bytes": 25769803776,
+    "physical_memory_gib": 24,
+    "os": "macOS 26.3",
+    "os_build": "25D125",
+    "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)",
+    "allocator": "upstream bench::Jemalloc",
+    "rustflags": [
+      "-C",
+      "target-cpu=native"
+    ],
+    "leanvm_num_threads": null,
+    "log_inv_rate": 1,
+    "custom_warmup_passes": 1,
+    "custom_measured_passes": 3,
+    "note": "One prover workload at a time; no CPU frequency, temperature or background OS control. See per-run environment.json for exact dependency pins."
+  },
+  "upstream": {
+    "leanVM": {
+      "url": "https://github.com/leanEthereum/leanVM.git",
+      "rev": "575df819d9c857f38068cecf7b1640e0ce4bfb29"
+    },
+    "ETHFALCON": {
+      "url": "https://github.com/ZKNoxHQ/ETHFALCON.git",
+      "rev": "43ac863e30281bb7821748178d39967367d54bc2"
+    },
+    "ETHDILITHIUM": {
+      "url": "https://github.com/ZKNoxHQ/ETHDILITHIUM.git",
+      "rev": "f9f4fe1d84e68304b425e054c273c276fe44ba11"
+    }
+  },
+  "compiler": "Apple clang version 21.0.0 (clang-2100.0.123.102)",
+  "project_git_state": "uncommitted workspace project",
+  "source_sha256": {
+    "guests/aggregate_falcon.py": "d49abd5e71567ead71561c2be1aff0818a35e2e81b8934b71378929e2f9b8e5e",
+    "guests/ethdilithium.py": "c44a979bcdace7789e01e223eef52664d5aca27a805413644e8a63c646fe536a",
+    "guests/ethfalcon.py": "a2f12cd79d591cfb486c4bb793d6258fa7299bb81328a90a9168f1bf126b2440",
+    "guests/fors.py": "93c774d165ceb79e036bc513dad2da563e86122968bb9d77bb8d4c3262892e49",
+    "guests/mldsa.py": "d6b8fade613675c3c97d3cb6d1635c612657866957a79a51ff7af9ed182be372",
+    "python/pqbench/__init__.py": "2f2c3162f97e7000d9257987c18cab353790fe8ce6b9dfc10283f21fecd08b5b",
+    "python/pqbench/__main__.py": "ebdf0a2579ebae6a97700cd43eb28a52001086d15ae086db6757fbb633ad67aa",
+    "python/pqbench/article_inputs.py": "740664c99d6ad4199a4eda7185a22a66c9b57a4db18fcdb706427071e3e40daa",
+    "python/pqbench/dilithium.py": "1644f8a75e62ce6c25c47ec42f212d222fbbf2b4e21c785b83611249ee82f003",
+    "python/pqbench/falcon.py": "0ed4fd1b4946907adc4a7f947a50531908a0c01486ec302d1b71686d9c563161",
+    "python/pqbench/falcon_aggregate_inputs.py": "befd79aace85a10ef5861fc47bf5f4f01dc1af392c4927b14dfda000085b034e",
+    "python/pqbench/falcon_standard.py": "d750f90725e1d8bf94de2e1786e55b083df8096d79faff4b518632d6ba877494",
+    "python/pqbench/fors.py": "3cd91fb7bc7564ccf392d6599e739d16e00239f820b91535c8896c64499b8fc3",
+    "python/pqbench/mldsa.py": "756526659fcd99e0446ee913277f75ef47cf6f94513dd6cbe54f6356327d2639",
+    "python/pqbench/shake.py": "281a6b614cc681ebcec389364b5e75fdb399565e508672b27c702741122d4e35",
+    "scripts/article_bench.py": "c3912f013445611e7fc04a20ff9170e14da3389a525d239745cfa022ca5344c7",
+    "scripts/article_figures.py": "73718c6f1784e020774fa732345f21a9f4fdaed68a54524c0aa85b9a6ebf28d4",
+    "scripts/baseline.py": "9c74b2050763144343421e4c053c07473de0daa68dd5a5a10d10b97e362d0a54",
+    "scripts/bootstrap.py": "38e0c37669868fa1c5f9a53d3196a33fd8e53f5ebf2faf69c1f7092e67df2c49",
+    "scripts/extract_recursion_support.py": "f53f6d3e7f5bece8a2a04eb59ff654d02d8b7b200b526c7dd5d24e691e5c8055",
+    "scripts/size_growth_report.py": "1b902eb38ce7913e76972e56344a68aee8e4059c66edabcb2d027f295f72de58",
+    "scripts/verify_saved.py": "57c497d80e8f4375954045f31e9fe71c2d74261f6d8a9d7875373f87b54e0557",
+    "src/bin/aggregate-falcon.rs": "8d05546095ab48c6ee97efafa119d22c20a8b0e88d996b14c9695abde9e8730b",
+    "src/bin/aggregate-tree.rs": "8b0409d77320959a26fc3131b45a5cc22a4bfa4aed974618b77c1b4446918913",
+    "src/main.rs": "b7861ecd681dbe7f10a5ca858d67118614d9811dd5e04d6601a403f661922182",
+    "src/recursion_guest.rs": "19100f854376af89e54b96860313833cc0beb3b9b51dce0a85068f3bf5e5a191",
+    "src/recursion_support.rs": "41e2b826d0fe4a73306aff2849f34727e915b6f1034be611699622ef5b8a8512",
+    "src/tree_guest.rs": "ec514c6b37205edfac9051d0326140e2ce7e1f850bc2a8dacc52a76934d2ed80",
+    "tests/test_article_inputs.py": "d217da263645ae3b66d891114f548199382bf09633f4e4f76ad3a05c9953025e",
+    "tests/test_dilithium.py": "63e743ce3ad9887dbab8f5af5b06a36618aa8d19513d266b3ca8b2b733e03c7e",
+    "tests/test_falcon.py": "864cda8fea20bfe520846872165452283bbd25263eb253daac199bf4e8994ecc",
+    "tests/test_falcon_aggregate_inputs.py": "a8cbf79ead97073c788fb9785d6c600f8c2377009d0bdf0525f8aac81226dad6",
+    "tests/test_falcon_standard.py": "7b1405a91ac4b814e101c23b5feec5552ad6cf04899f2b0815d552924e8ca8ea",
+    "tests/test_fors.py": "31998bbf37969688d074e3c698182578a3522376fea7afaaeb21a14c1c442aee",
+    "tests/test_mldsa.py": "f7664972e87af4c448d4e16e5a1609b592c75cf5af21a93d61da8733f8151309",
+    "tests/test_recursive_envelope.py": "f84ecac5256a2bfe0a72f475967c0b38beefa12ba80651f386a1037f005b8a33",
+    "tests/test_tree_envelope.py": "16c12870e8505be0775e67c2eed3d76784e92f5979258b20fc738010d560b6d0"
+  }
+}

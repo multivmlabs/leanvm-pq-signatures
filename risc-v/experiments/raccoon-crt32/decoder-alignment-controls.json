@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "parser_cases": 3305,
+  "parser_accepts": 1998,
+  "parser_rejects": 1307,
+  "decoded_values_match": true,
+  "parser_corpus_sha256": "564289ac242140adce0a1e26fdf5de65b8a55e0b7c0ce7118a30c3a5c781ae93",
+  "alignment_read_write_cases": 1024,
+  "guard_bytes_unchanged": true,
+  "scope": "Native correctness differentials only; no STARK or proof benchmark"
+}

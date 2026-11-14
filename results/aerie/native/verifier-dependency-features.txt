@@ -1,0 +1,445 @@
+aerie-native-verifier v0.1.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/experiments/aerie-native-verifier)
+├── aerie-verifier v0.2.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/vendor/aerie/crates/aerie-verifier)
+│   └── aerie-falcon v0.2.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/vendor/aerie/crates/aerie-falcon)
+│       ├── aerie-falcon-native v0.2.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/vendor/aerie/crates/aerie-falcon-native)
+│       │   ├── aerie-keccak feature "default"
+│       │   │   └── aerie-keccak v0.2.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/vendor/aerie/crates/aerie-keccak)
+│       │   │       ├── hybrid-array feature "default"
+│       │   │       │   └── hybrid-array v0.4.15
+│       │   │       │       ├── typenum feature "const-generics"
+│       │   │       │       │   └── typenum v1.20.1
+│       │   │       │       └── typenum feature "default"
+│       │   │       │           └── typenum v1.20.1
+│       │   │       ├── keccak feature "default"
+│       │   │       │   └── keccak v0.2.2
+│       │   │       │       ├── hybrid-array feature "default" (*)
+│       │   │       │       ├── cfg-if feature "default"
+│       │   │       │       │   └── cfg-if v1.0.4
+│       │   │       │       └── cpufeatures feature "default"
+│       │   │       │           └── cpufeatures v0.3.0
+│       │   │       │               └── libc v0.2.190
+│       │   │       └── keccak feature "parallel"
+│       │   │           └── keccak v0.2.2 (*)
+│       │   ├── hybrid-array feature "default" (*)
+│       │   └── shake feature "default"
+│       │       ├── shake v0.1.0
+│       │       │   ├── digest v0.11.3
+│       │       │   │   ├── block-buffer feature "default"
+│       │       │   │   │   └── block-buffer v0.12.1
+│       │       │   │   │       └── hybrid-array feature "default" (*)
+│       │       │   │   ├── const-oid feature "default"
+│       │       │   │   │   └── const-oid v0.10.2
+│       │       │   │   ├── crypto-common feature "default"
+│       │       │   │   │   └── crypto-common v0.2.2
+│       │       │   │   │       └── hybrid-array feature "default" (*)
+│       │       │   │   └── ctutils feature "default"
+│       │       │   │       └── ctutils v0.4.2
+│       │       │   │           └── cmov feature "default"
+│       │       │   │               └── cmov v0.5.4
+│       │       │   ├── keccak feature "default" (*)
+│       │       │   └── sponge-cursor feature "default"
+│       │       │       └── sponge-cursor v0.1.0
+│       │       └── shake feature "alloc"
+│       │           ├── shake v0.1.0 (*)
+│       │           └── digest feature "alloc"
+│       │               └── digest v0.11.3 (*)
+│       ├── aerie-falcon-statement v0.2.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/vendor/aerie/crates/aerie-falcon-statement)
+│       │   ├── aerie-falcon-native v0.2.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/vendor/aerie/crates/aerie-falcon-native) (*)
+│       │   └── tracing feature "default"
+│       │       ├── tracing v0.1.44
+│       │       │   ├── tracing-core v0.1.36
+│       │       │   │   └── once_cell feature "default"
+│       │       │   │       ├── once_cell v1.21.4
+│       │       │   │       └── once_cell feature "std"
+│       │       │   │           ├── once_cell v1.21.4
+│       │       │   │           └── once_cell feature "alloc"
+│       │       │   │               ├── once_cell v1.21.4
+│       │       │   │               └── once_cell feature "race"
+│       │       │   │                   └── once_cell v1.21.4
+│       │       │   ├── pin-project-lite feature "default"
+│       │       │   │   └── pin-project-lite v0.2.17
+│       │       │   └── tracing-attributes feature "default"
+│       │       │       └── tracing-attributes v0.1.31 (proc-macro)
+│       │       │           ├── proc-macro2 feature "default"
+│       │       │           │   ├── proc-macro2 v1.0.106
+│       │       │           │   │   └── unicode-ident feature "default"
+│       │       │           │   │       └── unicode-ident v1.0.24
+│       │       │           │   └── proc-macro2 feature "proc-macro"
+│       │       │           │       └── proc-macro2 v1.0.106 (*)
+│       │       │           ├── quote feature "default"
+│       │       │           │   ├── quote v1.0.46
+│       │       │           │   │   └── proc-macro2 v1.0.106 (*)
+│       │       │           │   └── quote feature "proc-macro"
+│       │       │           │       ├── quote v1.0.46 (*)
+│       │       │           │       └── proc-macro2 feature "proc-macro" (*)
+│       │       │           ├── syn feature "clone-impls"
+│       │       │           │   └── syn v2.0.118
+│       │       │           │       ├── proc-macro2 v1.0.106 (*)
+│       │       │           │       ├── quote v1.0.46 (*)
+│       │       │           │       └── unicode-ident feature "default" (*)
+│       │       │           ├── syn feature "extra-traits"
+│       │       │           │   └── syn v2.0.118 (*)
+│       │       │           ├── syn feature "full"
+│       │       │           │   └── syn v2.0.118 (*)
+│       │       │           ├── syn feature "parsing"
+│       │       │           │   └── syn v2.0.118 (*)
+│       │       │           ├── syn feature "printing"
+│       │       │           │   └── syn v2.0.118 (*)
+│       │       │           ├── syn feature "proc-macro"
+│       │       │           │   ├── syn v2.0.118 (*)
+│       │       │           │   ├── proc-macro2 feature "proc-macro" (*)
+│       │       │           │   └── quote feature "proc-macro" (*)
+│       │       │           └── syn feature "visit-mut"
+│       │       │               └── syn v2.0.118 (*)
+│       │       ├── tracing feature "attributes"
+│       │       │   ├── tracing v0.1.44 (*)
+│       │       │   └── tracing feature "tracing-attributes"
+│       │       │       └── tracing v0.1.44 (*)
+│       │       └── tracing feature "std"
+│       │           ├── tracing v0.1.44 (*)
+│       │           └── tracing-core feature "std"
+│       │               ├── tracing-core v0.1.36 (*)
+│       │               └── tracing-core feature "once_cell"
+│       │                   └── tracing-core v0.1.36 (*)
+│       ├── aerie-keccak feature "default" (*)
+│       ├── tracing feature "default" (*)
+│       ├── aerie-pcs-config feature "default"
+│       │   ├── aerie-pcs-config v0.2.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/vendor/aerie/crates/aerie-pcs-config)
+│       │   │   ├── akita-challenges feature "default"
+│       │   │   │   ├── akita-challenges v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4)
+│       │   │   │   │   ├── akita-transcript v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4)
+│       │   │   │   │   │   ├── akita-error feature "default"
+│       │   │   │   │   │   │   └── akita-error v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4)
+│       │   │   │   │   │   │       └── thiserror feature "default"
+│       │   │   │   │   │   │           ├── thiserror v2.0.21
+│       │   │   │   │   │   │           │   └── thiserror-impl feature "default"
+│       │   │   │   │   │   │           │       └── thiserror-impl v2.0.21 (proc-macro)
+│       │   │   │   │   │   │           │           ├── proc-macro2 feature "default" (*)
+│       │   │   │   │   │   │           │           ├── quote feature "default" (*)
+│       │   │   │   │   │   │           │           └── syn feature "default"
+│       │   │   │   │   │   │           │               ├── syn v3.0.6
+│       │   │   │   │   │   │           │               │   ├── proc-macro2 v1.0.106 (*)
+│       │   │   │   │   │   │           │               │   ├── quote v1.0.46 (*)
+│       │   │   │   │   │   │           │               │   └── unicode-ident feature "default" (*)
+│       │   │   │   │   │   │           │               ├── syn feature "clone-impls"
+│       │   │   │   │   │   │           │               │   └── syn v3.0.6 (*)
+│       │   │   │   │   │   │           │               ├── syn feature "derive"
+│       │   │   │   │   │   │           │               │   └── syn v3.0.6 (*)
+│       │   │   │   │   │   │           │               ├── syn feature "parsing"
+│       │   │   │   │   │   │           │               │   └── syn v3.0.6 (*)
+│       │   │   │   │   │   │           │               ├── syn feature "printing"
+│       │   │   │   │   │   │           │               │   └── syn v3.0.6 (*)
+│       │   │   │   │   │   │           │               └── syn feature "proc-macro"
+│       │   │   │   │   │   │           │                   ├── syn v3.0.6 (*)
+│       │   │   │   │   │   │           │                   ├── proc-macro2 feature "proc-macro" (*)
+│       │   │   │   │   │   │           │                   └── quote feature "proc-macro" (*)
+│       │   │   │   │   │   │           └── thiserror feature "std"
+│       │   │   │   │   │   │               └── thiserror v2.0.21 (*)
+│       │   │   │   │   │   ├── jolt-field feature "asm"
+│       │   │   │   │   │   │   └── jolt-field v0.1.0 (https://github.com/a16z/jolt?rev=c7c2d08d5bb0c7c80501f29f723e595af7fcff3c#c7c2d08d)
+│       │   │   │   │   │   │       ├── num-traits v0.2.19
+│       │   │   │   │   │   │       │   [build-dependencies]
+│       │   │   │   │   │   │       │   └── autocfg feature "default"
+│       │   │   │   │   │   │       │       └── autocfg v1.5.1
+│       │   │   │   │   │   │       ├── rand_core v0.6.4
+│       │   │   │   │   │   │       │   └── getrandom feature "default"
+│       │   │   │   │   │   │       │       └── getrandom v0.2.17
+│       │   │   │   │   │   │       │           ├── libc v0.2.190
+│       │   │   │   │   │   │       │           └── cfg-if feature "default" (*)
+│       │   │   │   │   │   │       ├── thiserror feature "default" (*)
+│       │   │   │   │   │   │       ├── serde feature "derive"
+│       │   │   │   │   │   │       │   ├── serde v1.0.229
+│       │   │   │   │   │   │       │   │   ├── serde_core feature "result"
+│       │   │   │   │   │   │       │   │   │   └── serde_core v1.0.229
+│       │   │   │   │   │   │       │   │   └── serde_derive feature "default"
+│       │   │   │   │   │   │       │   │       └── serde_derive v1.0.229 (proc-macro)
+│       │   │   │   │   │   │       │   │           ├── proc-macro2 feature "proc-macro" (*)
+│       │   │   │   │   │   │       │   │           ├── quote feature "proc-macro" (*)
+│       │   │   │   │   │   │       │   │           ├── syn feature "clone-impls" (*)
+│       │   │   │   │   │   │       │   │           ├── syn feature "derive" (*)
+│       │   │   │   │   │   │       │   │           ├── syn feature "parsing" (*)
+│       │   │   │   │   │   │       │   │           ├── syn feature "printing" (*)
+│       │   │   │   │   │   │       │   │           └── syn feature "proc-macro" (*)
+│       │   │   │   │   │   │       │   └── serde feature "serde_derive"
+│       │   │   │   │   │   │       │       └── serde v1.0.229 (*)
+│       │   │   │   │   │   │       └── serde feature "rc"
+│       │   │   │   │   │   │           ├── serde v1.0.229 (*)
+│       │   │   │   │   │   │           └── serde_core feature "rc"
+│       │   │   │   │   │   │               └── serde_core v1.0.229
+│       │   │   │   │   │   │       [build-dependencies]
+│       │   │   │   │   │   │       └── cc feature "default"
+│       │   │   │   │   │   │           └── cc v1.4.4
+│       │   │   │   │   │   │               ├── find-msvc-tools feature "default"
+│       │   │   │   │   │   │               │   └── find-msvc-tools v0.1.11
+│       │   │   │   │   │   │               └── shlex feature "default"
+│       │   │   │   │   │   │                   ├── shlex v2.0.1
+│       │   │   │   │   │   │                   └── shlex feature "std"
+│       │   │   │   │   │   │                       └── shlex v2.0.1
+│       │   │   │   │   │   ├── jolt-field feature "solinas"
+│       │   │   │   │   │   │   └── jolt-field v0.1.0 (https://github.com/a16z/jolt?rev=c7c2d08d5bb0c7c80501f29f723e595af7fcff3c#c7c2d08d) (*)
+│       │   │   │   │   │   └── spongefish feature "yolocrypto"
+│       │   │   │   │   │       └── spongefish v0.7.4 (https://github.com/arkworks-rs/spongefish?rev=ef9741346a150039427d9e0c02d6b2d73e93ec81#ef974134)
+│       │   │   │   │   │           ├── digest feature "default"
+│       │   │   │   │   │           │   ├── digest v0.11.3 (*)
+│       │   │   │   │   │           │   └── digest feature "block-api"
+│       │   │   │   │   │           │       └── digest v0.11.3 (*)
+│       │   │   │   │   │           ├── blake2 feature "default"
+│       │   │   │   │   │           │   ├── blake2 v0.11.0
+│       │   │   │   │   │           │   │   ├── digest feature "default" (*)
+│       │   │   │   │   │           │   │   └── digest feature "mac"
+│       │   │   │   │   │           │   │       └── digest v0.11.3 (*)
+│       │   │   │   │   │           │   └── blake2 feature "alloc"
+│       │   │   │   │   │           │       ├── blake2 v0.11.0 (*)
+│       │   │   │   │   │           │       └── digest feature "alloc" (*)
+│       │   │   │   │   │           ├── rand feature "default"
+│       │   │   │   │   │           │   ├── rand v0.8.6
+│       │   │   │   │   │           │   │   ├── libc v0.2.190
+│       │   │   │   │   │           │   │   ├── rand_chacha v0.3.1
+│       │   │   │   │   │           │   │   │   ├── rand_core feature "default"
+│       │   │   │   │   │           │   │   │   │   └── rand_core v0.6.4 (*)
+│       │   │   │   │   │           │   │   │   └── ppv-lite86 feature "simd"
+│       │   │   │   │   │           │   │   │       └── ppv-lite86 v0.2.21
+│       │   │   │   │   │           │   │   │           ├── zerocopy feature "default"
+│       │   │   │   │   │           │   │   │           │   └── zerocopy v0.8.52
+│       │   │   │   │   │           │   │   │           └── zerocopy feature "simd"
+│       │   │   │   │   │           │   │   │               └── zerocopy v0.8.52
+│       │   │   │   │   │           │   │   └── rand_core feature "default" (*)
+│       │   │   │   │   │           │   ├── rand feature "std"
+│       │   │   │   │   │           │   │   ├── rand v0.8.6 (*)
+│       │   │   │   │   │           │   │   ├── rand_core feature "std"
+│       │   │   │   │   │           │   │   │   ├── rand_core v0.6.4 (*)
+│       │   │   │   │   │           │   │   │   ├── rand_core feature "alloc"
+│       │   │   │   │   │           │   │   │   │   └── rand_core v0.6.4 (*)
+│       │   │   │   │   │           │   │   │   ├── rand_core feature "getrandom"
+│       │   │   │   │   │           │   │   │   │   └── rand_core v0.6.4 (*)
+│       │   │   │   │   │           │   │   │   └── getrandom feature "std"
+│       │   │   │   │   │           │   │   │       └── getrandom v0.2.17 (*)
+│       │   │   │   │   │           │   │   ├── rand feature "alloc"
+│       │   │   │   │   │           │   │   │   ├── rand v0.8.6 (*)
+│       │   │   │   │   │           │   │   │   └── rand_core feature "alloc" (*)
+│       │   │   │   │   │           │   │   ├── rand feature "getrandom"
+│       │   │   │   │   │           │   │   │   ├── rand v0.8.6 (*)
+│       │   │   │   │   │           │   │   │   └── rand_core feature "getrandom" (*)
+│       │   │   │   │   │           │   │   ├── rand feature "libc"
+│       │   │   │   │   │           │   │   │   └── rand v0.8.6 (*)
+│       │   │   │   │   │           │   │   ├── rand feature "rand_chacha"
+│       │   │   │   │   │           │   │   │   └── rand v0.8.6 (*)
+│       │   │   │   │   │           │   │   └── rand_chacha feature "std"
+│       │   │   │   │   │           │   │       ├── rand_chacha v0.3.1 (*)
+│       │   │   │   │   │           │   │       └── ppv-lite86 feature "std"
+│       │   │   │   │   │           │   │           └── ppv-lite86 v0.2.21 (*)
+│       │   │   │   │   │           │   └── rand feature "std_rng"
+│       │   │   │   │   │           │       ├── rand v0.8.6 (*)
+│       │   │   │   │   │           │       └── rand feature "rand_chacha" (*)
+│       │   │   │   │   │           ├── rand feature "getrandom" (*)
+│       │   │   │   │   │           └── sha3 feature "default"
+│       │   │   │   │   │               ├── sha3 v0.11.0
+│       │   │   │   │   │               │   ├── keccak feature "default" (*)
+│       │   │   │   │   │               │   └── digest feature "default" (*)
+│       │   │   │   │   │               ├── sha3 feature "alloc"
+│       │   │   │   │   │               │   ├── sha3 v0.11.0 (*)
+│       │   │   │   │   │               │   └── digest feature "alloc" (*)
+│       │   │   │   │   │               └── sha3 feature "oid"
+│       │   │   │   │   │                   ├── sha3 v0.11.0 (*)
+│       │   │   │   │   │                   └── digest feature "oid"
+│       │   │   │   │   │                       └── digest v0.11.3 (*)
+│       │   │   │   │   ├── akita-error feature "default" (*)
+│       │   │   │   │   ├── jolt-field feature "asm" (*)
+│       │   │   │   │   ├── jolt-field feature "solinas" (*)
+│       │   │   │   │   ├── serde feature "default"
+│       │   │   │   │   │   ├── serde v1.0.229 (*)
+│       │   │   │   │   │   └── serde feature "std"
+│       │   │   │   │   │       ├── serde v1.0.229 (*)
+│       │   │   │   │   │       └── serde_core feature "std"
+│       │   │   │   │   │           └── serde_core v1.0.229
+│       │   │   │   │   ├── serde feature "derive" (*)
+│       │   │   │   │   ├── keccak feature "asm"
+│       │   │   │   │   │   └── keccak v0.1.6
+│       │   │   │   │   │       └── cpufeatures feature "default"
+│       │   │   │   │   │           └── cpufeatures v0.2.17
+│       │   │   │   │   │               └── libc v0.2.190
+│       │   │   │   │   ├── keccak feature "default"
+│       │   │   │   │   │   └── keccak v0.1.6 (*)
+│       │   │   │   │   ├── smallvec feature "const_generics"
+│       │   │   │   │   │   └── smallvec v1.15.2
+│       │   │   │   │   └── smallvec feature "default"
+│       │   │   │   │       └── smallvec v1.15.2
+│       │   │   │   └── akita-challenges feature "transcript-blake2b"
+│       │   │   │       ├── akita-challenges v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │   │       └── akita-transcript feature "transcript-blake2b"
+│       │   │   │           ├── akita-transcript v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │   │           ├── akita-transcript feature "spongefish"
+│       │   │   │           │   └── akita-transcript v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │   │           ├── spongefish feature "blake2"
+│       │   │   │           │   └── spongefish v0.7.4 (https://github.com/arkworks-rs/spongefish?rev=ef9741346a150039427d9e0c02d6b2d73e93ec81#ef974134) (*)
+│       │   │   │           └── spongefish feature "sha3"
+│       │   │   │               └── spongefish v0.7.4 (https://github.com/arkworks-rs/spongefish?rev=ef9741346a150039427d9e0c02d6b2d73e93ec81#ef974134) (*)
+│       │   │   ├── akita-error feature "default" (*)
+│       │   │   ├── akita-config feature "dev-protocol"
+│       │   │   │   ├── akita-config v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4)
+│       │   │   │   │   ├── akita-challenges v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │   │   │   ├── akita-params v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4)
+│       │   │   │   │   │   ├── akita-challenges v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │   │   │   │   ├── akita-sumcheck v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4)
+│       │   │   │   │   │   │   ├── akita-transcript v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │   │   │   │   │   ├── jolt-poly v0.1.0 (https://github.com/a16z/jolt?rev=c7c2d08d5bb0c7c80501f29f723e595af7fcff3c#c7c2d08d)
+│       │   │   │   │   │   │   │   ├── jolt-field v0.1.0 (https://github.com/a16z/jolt?rev=c7c2d08d5bb0c7c80501f29f723e595af7fcff3c#c7c2d08d) (*)
+│       │   │   │   │   │   │   │   ├── num-traits v0.2.19 (*)
+│       │   │   │   │   │   │   │   ├── rand_core v0.6.4 (*)
+│       │   │   │   │   │   │   │   ├── tracing feature "attributes" (*)
+│       │   │   │   │   │   │   │   ├── thiserror feature "default" (*)
+│       │   │   │   │   │   │   │   ├── serde feature "alloc"
+│       │   │   │   │   │   │   │   │   ├── serde v1.0.229 (*)
+│       │   │   │   │   │   │   │   │   └── serde_core feature "alloc"
+│       │   │   │   │   │   │   │   │       └── serde_core v1.0.229
+│       │   │   │   │   │   │   │   ├── serde feature "derive" (*)
+│       │   │   │   │   │   │   │   ├── serde feature "rc" (*)
+│       │   │   │   │   │   │   │   └── jolt-utils feature "default"
+│       │   │   │   │   │   │   │       └── jolt-utils v0.1.0 (https://github.com/a16z/jolt?rev=c7c2d08d5bb0c7c80501f29f723e595af7fcff3c#c7c2d08d)
+│       │   │   │   │   │   │   │           └── num-traits v0.2.19 (*)
+│       │   │   │   │   │   │   ├── akita-error feature "default" (*)
+│       │   │   │   │   │   │   ├── jolt-field feature "asm" (*)
+│       │   │   │   │   │   │   ├── jolt-field feature "solinas" (*)
+│       │   │   │   │   │   │   ├── akita-algebra feature "default"
+│       │   │   │   │   │   │   │   └── akita-algebra v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4)
+│       │   │   │   │   │   │   │       ├── jolt-poly v0.1.0 (https://github.com/a16z/jolt?rev=c7c2d08d5bb0c7c80501f29f723e595af7fcff3c#c7c2d08d) (*)
+│       │   │   │   │   │   │   │       ├── tracing feature "default" (*)
+│       │   │   │   │   │   │   │       ├── akita-error feature "default" (*)
+│       │   │   │   │   │   │   │       ├── jolt-field feature "asm" (*)
+│       │   │   │   │   │   │   │       ├── jolt-field feature "solinas" (*)
+│       │   │   │   │   │   │   │       ├── rand_core feature "default" (*)
+│       │   │   │   │   │   │   │       ├── rand_core feature "getrandom" (*)
+│       │   │   │   │   │   │   │       └── akita-serialization feature "default"
+│       │   │   │   │   │   │   │           └── akita-serialization v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4)
+│       │   │   │   │   │   │   │               ├── jolt-poly v0.1.0 (https://github.com/a16z/jolt?rev=c7c2d08d5bb0c7c80501f29f723e595af7fcff3c#c7c2d08d) (*)
+│       │   │   │   │   │   │   │               ├── thiserror feature "default" (*)
+│       │   │   │   │   │   │   │               ├── jolt-field feature "asm" (*)
+│       │   │   │   │   │   │   │               └── jolt-field feature "solinas" (*)
+│       │   │   │   │   │   │   └── akita-serialization feature "default" (*)
+│       │   │   │   │   │   ├── akita-transcript v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │   │   │   │   ├── akita-error feature "default" (*)
+│       │   │   │   │   │   ├── jolt-field feature "asm" (*)
+│       │   │   │   │   │   ├── jolt-field feature "solinas" (*)
+│       │   │   │   │   │   ├── serde feature "default" (*)
+│       │   │   │   │   │   ├── serde feature "derive" (*)
+│       │   │   │   │   │   ├── blake2 feature "default" (*)
+│       │   │   │   │   │   ├── akita-algebra feature "default" (*)
+│       │   │   │   │   │   ├── akita-serialization feature "default" (*)
+│       │   │   │   │   │   └── sha3 feature "default"
+│       │   │   │   │   │       ├── sha3 v0.12.0
+│       │   │   │   │   │       │   ├── digest v0.11.3 (*)
+│       │   │   │   │   │       │   ├── keccak feature "default" (*)
+│       │   │   │   │   │       │   └── sponge-cursor feature "default" (*)
+│       │   │   │   │   │       ├── sha3 feature "alloc"
+│       │   │   │   │   │       │   ├── sha3 v0.12.0 (*)
+│       │   │   │   │   │       │   └── digest feature "alloc" (*)
+│       │   │   │   │   │       └── sha3 feature "oid"
+│       │   │   │   │   │           ├── sha3 v0.12.0 (*)
+│       │   │   │   │   │           └── digest feature "oid" (*)
+│       │   │   │   │   ├── akita-schedules v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4)
+│       │   │   │   │   │   ├── akita-challenges v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │   │   │   │   ├── akita-params v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │   │   │   │   ├── akita-error feature "default" (*)
+│       │   │   │   │   │   ├── serde feature "default" (*)
+│       │   │   │   │   │   ├── serde feature "derive" (*)
+│       │   │   │   │   │   ├── serde_json feature "default"
+│       │   │   │   │   │   │   ├── serde_json v1.0.154
+│       │   │   │   │   │   │   │   ├── memchr v2.8.3
+│       │   │   │   │   │   │   │   ├── serde_core v1.0.229
+│       │   │   │   │   │   │   │   ├── itoa feature "default"
+│       │   │   │   │   │   │   │   │   └── itoa v1.0.18
+│       │   │   │   │   │   │   │   └── zmij feature "default"
+│       │   │   │   │   │   │   │       └── zmij v1.0.23
+│       │   │   │   │   │   │   └── serde_json feature "std"
+│       │   │   │   │   │   │       ├── serde_json v1.0.154 (*)
+│       │   │   │   │   │   │       ├── serde_core feature "std" (*)
+│       │   │   │   │   │   │       └── memchr feature "std"
+│       │   │   │   │   │   │           ├── memchr v2.8.3
+│       │   │   │   │   │   │           └── memchr feature "alloc"
+│       │   │   │   │   │   │               └── memchr v2.8.3
+│       │   │   │   │   │   └── serde_json feature "raw_value"
+│       │   │   │   │   │       └── serde_json v1.0.154 (*)
+│       │   │   │   │   ├── akita-transcript v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │   │   │   ├── akita-types v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4)
+│       │   │   │   │   │   ├── akita-challenges v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │   │   │   │   ├── akita-params v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │   │   │   │   ├── akita-sumcheck v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │   │   │   │   ├── akita-transcript v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │   │   │   │   ├── jolt-poly v0.1.0 (https://github.com/a16z/jolt?rev=c7c2d08d5bb0c7c80501f29f723e595af7fcff3c#c7c2d08d) (*)
+│       │   │   │   │   │   ├── shake feature "default" (*)
+│       │   │   │   │   │   ├── tracing feature "default" (*)
+│       │   │   │   │   │   ├── akita-error feature "default" (*)
+│       │   │   │   │   │   ├── jolt-field feature "asm" (*)
+│       │   │   │   │   │   ├── jolt-field feature "solinas" (*)
+│       │   │   │   │   │   ├── rand_core feature "default" (*)
+│       │   │   │   │   │   ├── akita-algebra feature "default" (*)
+│       │   │   │   │   │   └── akita-serialization feature "default" (*)
+│       │   │   │   │   ├── akita-error feature "default" (*)
+│       │   │   │   │   ├── jolt-field feature "asm" (*)
+│       │   │   │   │   ├── jolt-field feature "solinas" (*)
+│       │   │   │   │   └── akita-serialization feature "default" (*)
+│       │   │   │   └── akita-params feature "dev-protocol"
+│       │   │   │       └── akita-params v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │   └── akita-params feature "default"
+│       │   │       ├── akita-params v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │       └── akita-params feature "transcript-blake2b"
+│       │   │           ├── akita-params v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │           ├── akita-challenges feature "transcript-blake2b" (*)
+│       │   │           ├── akita-transcript feature "transcript-blake2b" (*)
+│       │   │           └── akita-sumcheck feature "transcript-blake2b"
+│       │   │               ├── akita-sumcheck v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   │               └── akita-transcript feature "transcript-blake2b" (*)
+│       │   └── aerie-pcs-config feature "schedules-fp64-aerie"
+│       │       └── aerie-pcs-config v0.2.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/vendor/aerie/crates/aerie-pcs-config) (*)
+│       ├── akita-error feature "default" (*)
+│       ├── akita-transcript feature "transcript-blake2b" (*)
+│       ├── jolt-field feature "solinas" (*)
+│       ├── spongefish feature "blake2" (*)
+│       ├── spongefish feature "sha3" (*)
+│       ├── akita-config feature "dev-protocol" (*)
+│       ├── akita-params feature "default" (*)
+│       ├── akita-serialization feature "default" (*)
+│       ├── akita-sumcheck feature "default"
+│       │   ├── akita-sumcheck v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   └── akita-sumcheck feature "transcript-blake2b" (*)
+│       ├── akita-types feature "default"
+│       │   ├── akita-types v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │   └── akita-types feature "transcript-blake2b"
+│       │       ├── akita-types v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│       │       ├── akita-challenges feature "transcript-blake2b" (*)
+│       │       ├── akita-transcript feature "transcript-blake2b" (*)
+│       │       ├── akita-params feature "transcript-blake2b" (*)
+│       │       └── akita-sumcheck feature "transcript-blake2b" (*)
+│       ├── aerie-simd feature "default"
+│       │   └── aerie-simd v0.2.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/vendor/aerie/crates/aerie-simd)
+│       └── akita-verifier feature "transcript-blake2b"
+│           ├── akita-verifier v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4)
+│           │   ├── akita-challenges v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│           │   ├── akita-config v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│           │   ├── akita-params v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│           │   ├── akita-sumcheck v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│           │   ├── akita-transcript v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│           │   ├── akita-types v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│           │   ├── jolt-poly v0.1.0 (https://github.com/a16z/jolt?rev=c7c2d08d5bb0c7c80501f29f723e595af7fcff3c#c7c2d08d) (*)
+│           │   ├── tracing feature "default" (*)
+│           │   ├── akita-error feature "default" (*)
+│           │   ├── jolt-field feature "asm" (*)
+│           │   ├── jolt-field feature "solinas" (*)
+│           │   ├── akita-algebra feature "default" (*)
+│           │   └── akita-serialization feature "default" (*)
+│           ├── akita-challenges feature "transcript-blake2b" (*)
+│           ├── akita-transcript feature "transcript-blake2b" (*)
+│           ├── akita-config feature "transcript-blake2b"
+│           │   ├── akita-config v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│           │   ├── akita-challenges feature "transcript-blake2b" (*)
+│           │   ├── akita-transcript feature "transcript-blake2b" (*)
+│           │   ├── akita-params feature "transcript-blake2b" (*)
+│           │   ├── akita-schedules feature "transcript-blake2b"
+│           │   │   ├── akita-schedules v0.1.0 (https://github.com/LayerZero-Labs/akita.git?rev=e023b6a46143f7b23199ccecb2684192baf7b640#e023b6a4) (*)
+│           │   │   ├── akita-challenges feature "transcript-blake2b" (*)
+│           │   │   └── akita-params feature "transcript-blake2b" (*)
+│           │   └── akita-types feature "transcript-blake2b" (*)
+│           ├── akita-params feature "transcript-blake2b" (*)
+│           ├── akita-sumcheck feature "transcript-blake2b" (*)
+│           └── akita-types feature "transcript-blake2b" (*)
+└── serde_json feature "default" (*)

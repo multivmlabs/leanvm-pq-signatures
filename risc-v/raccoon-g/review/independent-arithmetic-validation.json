@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "scope": "Independent correctness oracles, not a parameter security estimate",
+  "hashlib_streaming_shake_cases": 28,
+  "all_matrix_polynomials_checked": 81,
+  "all_matrix_residues_checked": 20736,
+  "full_challenge_coefficients_checked": 256,
+  "ntt_cases": 5,
+  "forward_coordinates_checked": 1280,
+  "schoolbook_product_coefficients_checked": 1280,
+  "integer_threshold": "25650475979193785709999263840",
+  "dump_sha256": "934e1fa4e3d0dd05f7e68f2b300bd91e6d863fde758761ab9697fdde8724c86e",
+  "benchmarks_run": false,
+  "prover_invoked": false
+}

@@ -1,0 +1,376 @@
+{
+  "runner_sha256": "afd2c1625c2e21b060a9a2005cb74bf5350a4c1262e9a27f9e12491df1018783",
+  "elf_sha256": "64480a3bf424f97578f6477a7a4045c2452853a0801f45fc191648eb253e36da",
+  "passed": true,
+  "controls": [
+    {
+      "count": 1,
+      "case": "honest",
+      "expected_accept": true,
+      "returncode": 0,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "count": 1,
+      "case": "changed-seed",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "count": 1,
+      "case": "changed-root",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "count": 1,
+      "case": "changed-message",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "count": 1,
+      "case": "wrong-count",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "count": 1,
+      "case": "wrong-cached-output",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "count": 1,
+      "case": "malformed-public-encoding-6",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: invalid hex"
+    },
+    {
+      "count": 1,
+      "case": "malformed-public-encoding-7",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: invalid FORS public record"
+    },
+    {
+      "count": 1,
+      "case": "malformed-public-encoding-8",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: invalid FORS public record"
+    },
+    {
+      "count": 1,
+      "case": "malformed-public-encoding-9",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: invalid hex"
+    },
+    {
+      "count": 1,
+      "case": "corrupted-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the opening: hint 0 is invalid"
+    },
+    {
+      "count": 1,
+      "case": "truncated-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "count": 1,
+      "case": "trailing-proof-byte",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "count": 1,
+      "case": "wrong-ELF-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "count": 2,
+      "case": "honest",
+      "expected_accept": true,
+      "returncode": 0,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "count": 2,
+      "case": "changed-seed",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "count": 2,
+      "case": "changed-root",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "count": 2,
+      "case": "changed-message",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "count": 2,
+      "case": "reordered-claims",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "count": 2,
+      "case": "substituted-duplicate-claim",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "count": 2,
+      "case": "wrong-count",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "count": 2,
+      "case": "wrong-cached-output",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "count": 2,
+      "case": "malformed-public-encoding-8",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: invalid hex"
+    },
+    {
+      "count": 2,
+      "case": "malformed-public-encoding-9",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: invalid FORS public record"
+    },
+    {
+      "count": 2,
+      "case": "malformed-public-encoding-10",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: invalid FORS public record"
+    },
+    {
+      "count": 2,
+      "case": "malformed-public-encoding-11",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: invalid hex"
+    },
+    {
+      "count": 2,
+      "case": "corrupted-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the opening: hint 0 is invalid"
+    },
+    {
+      "count": 2,
+      "case": "truncated-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "count": 2,
+      "case": "trailing-proof-byte",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "count": 2,
+      "case": "wrong-ELF-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "count": 7,
+      "case": "honest",
+      "expected_accept": true,
+      "returncode": 0,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "count": 7,
+      "case": "changed-seed",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "count": 7,
+      "case": "changed-root",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "count": 7,
+      "case": "changed-message",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "count": 7,
+      "case": "reordered-claims",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "count": 7,
+      "case": "substituted-duplicate-claim",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "count": 7,
+      "case": "wrong-count",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "count": 7,
+      "case": "wrong-cached-output",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "count": 7,
+      "case": "malformed-public-encoding-8",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: invalid hex"
+    },
+    {
+      "count": 7,
+      "case": "malformed-public-encoding-9",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: invalid FORS public record"
+    },
+    {
+      "count": 7,
+      "case": "malformed-public-encoding-10",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: invalid FORS public record"
+    },
+    {
+      "count": 7,
+      "case": "malformed-public-encoding-11",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: invalid hex"
+    },
+    {
+      "count": 7,
+      "case": "corrupted-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the opening: hint 0 is invalid"
+    },
+    {
+      "count": 7,
+      "case": "truncated-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "count": 7,
+      "case": "trailing-proof-byte",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "count": 7,
+      "case": "wrong-ELF-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    }
+  ],
+  "scope": "Only intended public seed/root/message records and one saved proof are copied into each isolated directory. Changed claims use an independently recomputed Python BLAKE2s output and a fresh trusted statement pin, so they exercise real proof binding rather than a stale cached-output check."
+}

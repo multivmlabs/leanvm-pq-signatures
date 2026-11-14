@@ -1,0 +1,197 @@
+{
+  "schema": 1,
+  "scheme": "mldsa",
+  "signatures": 100,
+  "runner_sha256": "2cb5d8a5ba86283e26cd327f78211b293526c2410cdb4fb20d936dbb89e0c668",
+  "source_statement_sha256": "adc57f735c71b740c95c7f53a1492b81f3ac6c69d7fb6c67b64df4281c2c2b72",
+  "root_proof_sha256": "5c750d109204901c8d912062ed52f0ea557084f25fc5ea0447c2c6a877d864c4",
+  "independent_leaf_digest_check": true,
+  "independent_root_digest_check": true,
+  "distinct_public_keys": 100,
+  "description": "No proving. Every receiver process runs in isolation with public records and one root proof only. Recommitted claim mutations use fresh trusted statement pins.",
+  "passed": true,
+  "controls": [
+    {
+      "case": "honest",
+      "expected_accept": true,
+      "returncode": 0,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "case": "changed-public_key-recommitted",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Outputs"
+    },
+    {
+      "case": "changed-message-recommitted",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Outputs"
+    },
+    {
+      "case": "reordered-records-recommitted",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Outputs"
+    },
+    {
+      "case": "reordered-leaves-recommitted",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Outputs"
+    },
+    {
+      "case": "wrong-signature-count",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted tree configuration\""
+    },
+    {
+      "case": "wrong-cached-leaf-output",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"cached leaf output differs from intended public records\""
+    },
+    {
+      "case": "wrong-padding-slots",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted tree configuration\""
+    },
+    {
+      "case": "wrong-node-arity",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted tree configuration\""
+    },
+    {
+      "case": "wrong-first-arity",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted tree configuration\""
+    },
+    {
+      "case": "wrong-backend-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted tree configuration\""
+    },
+    {
+      "case": "wrong-statement-elf",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"caller-trusted ELF digest mismatch\""
+    },
+    {
+      "case": "wrong-tree-rate",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Rate { expected: Rate(2), got: Rate(1) }"
+    },
+    {
+      "case": "zero-height",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted table heights\""
+    },
+    {
+      "case": "non-power-two-height",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted table heights\""
+    },
+    {
+      "case": "too-large-height",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted table heights\""
+    },
+    {
+      "case": "missing-height",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted table heights\""
+    },
+    {
+      "case": "wrong-statement-schema",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted tree configuration\""
+    },
+    {
+      "case": "unknown-statement-field",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Error(\"unknown field `unrecognized`, expected one of `schema`, `backend_revision`, `scheme`, `signatures`, `elf_sha256`, `leaf_size`, `actual_leaves`, `leaf_slots`, `arity_0`, `arity`, `log_inverse_rate`, `table_rows`, `expected_leaf_outputs`, `public_records`\", line: 1, column: 277123)"
+    },
+    {
+      "case": "wrong-trusted-elf",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"caller-trusted ELF digest mismatch\""
+    },
+    {
+      "case": "wrong-trusted-statement",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"caller-trusted statement digest mismatch\""
+    },
+    {
+      "case": "corrupt-magic",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Malformed"
+    },
+    {
+      "case": "corrupt-version",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: UnsupportedVersion { found: 18, expected: 19 }"
+    },
+    {
+      "case": "corrupt-proof-middle",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Root(VerifyError(Recursion(Open(Transcript(InvalidHint { index: 0 })))))"
+    },
+    {
+      "case": "truncated-root",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Malformed"
+    },
+    {
+      "case": "trailing-root-byte",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Malformed"
+    }
+  ]
+}

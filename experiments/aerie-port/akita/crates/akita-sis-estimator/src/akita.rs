@@ -1,0 +1,271 @@
+//! Map Akita ring table coordinates to scalar SIS parameters.
+
+use num_bigint::BigUint;
+
+use crate::{
+    error::{EstimatorError, Result},
+    params::{akita_q128, akita_q32, akita_q64, Bound, SisNorm, SisParameters},
+};
+
+/// Supported Akita exact modulus profiles for golden and table generation.
+#[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub enum AkitaModulusProfileId {
+    /// `2^32 - 99`.
+    Q32Offset99,
+    /// `2^64 - 59`.
+    Q64Offset59,
+    /// LaBinius commitment prime `2^25 + 14561 = 1 + 23328 * 1439`.
+    ///
+    /// This profile is available to the offline estimator. It is deliberately
+    /// absent from Akita's native power-of-two runtime dispatch: the binary
+    /// protocol uses non-native cyclotomic degrees.
+    #[cfg(feature = "labinius-sis")]
+    Q25Plus14561,
+    /// `2^128 - (2^32 - 22537)`.
+    Q128OffsetA7F7,
+    /// `2^128 - 275`. Owns no generated rows; see
+    /// [`akita_params::sis::SisModulusProfileId::Q128Offset275`].
+    Q128Offset275,
+}
+
+impl AkitaModulusProfileId {
+    /// Parse a profile label such as `"q32"`.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error when the label is unknown.
+    pub fn parse(label: &str) -> Result<Self> {
+        match label {
+            "q32" | "Q32Offset99" => Ok(Self::Q32Offset99),
+            "q64" | "Q64Offset59" => Ok(Self::Q64Offset59),
+            #[cfg(feature = "labinius-sis")]
+            "q25-labinius" | "Q25Plus14561" => Ok(Self::Q25Plus14561),
+            "q128" | "Q128OffsetA7F7" => Ok(Self::Q128OffsetA7F7),
+            "q128_offset275" | "Q128Offset275" => Ok(Self::Q128Offset275),
+            _ => Err(EstimatorError::InvalidParameter {
+                field: "modulus_profile",
+                reason: format!("unknown Akita modulus profile {label:?}"),
+            }),
+        }
+    }
+
+    /// Return the exact modulus for this profile.
+    #[must_use]
+    pub fn modulus(self) -> BigUint {
+        match self {
+            Self::Q32Offset99 => akita_q32(),
+            Self::Q64Offset59 => akita_q64(),
+            #[cfg(feature = "labinius-sis")]
+            Self::Q25Plus14561 => BigUint::from(33_568_993u32),
+            Self::Q128OffsetA7F7 => akita_q128(),
+            Self::Q128Offset275 => {
+                BigUint::from(akita_params::sis::SisModulusProfileId::Q128Offset275.modulus())
+            }
+        }
+    }
+
+    /// Return the stable lowercase table label for this profile.
+    #[must_use]
+    pub const fn label(self) -> &'static str {
+        match self {
+            Self::Q32Offset99 => "q32",
+            Self::Q64Offset59 => "q64",
+            #[cfg(feature = "labinius-sis")]
+            Self::Q25Plus14561 => "q25-labinius",
+            Self::Q128OffsetA7F7 => "q128",
+            Self::Q128Offset275 => "q128_offset275",
+        }
+    }
+}
+
+impl From<akita_params::sis::SisModulusProfileId> for AkitaModulusProfileId {
+    fn from(profile: akita_params::sis::SisModulusProfileId) -> Self {
+        match profile {
+            akita_params::sis::SisModulusProfileId::Q32Offset99 => Self::Q32Offset99,
+            akita_params::sis::SisModulusProfileId::Q64Offset59 => Self::Q64Offset59,
+            akita_params::sis::SisModulusProfileId::Q128OffsetA7F7 => Self::Q128OffsetA7F7,
+            akita_params::sis::SisModulusProfileId::Q128Offset275 => Self::Q128Offset275,
+        }
+    }
+}
+
+/// Build scalar SIS parameters from Akita ring coordinates.
+///
+/// Uses the same mapping as `scripts/sis_golden/infinity_core.py`:
+/// `n = rank * d`, `m = width * d`, and `length_bound = coeff_linf_bound`.
+///
+/// # Errors
+///
+/// Returns validation errors when any dimension is zero.
+pub fn scalar_sis_from_ring(
+    family: AkitaModulusProfileId,
+    ring_dimension: u32,
+    rank: u32,
+    width: u32,
+    coeff_linf_bound: u64,
+) -> Result<SisParameters> {
+    scalar_sis_from_ring_wide(
+        family,
+        ring_dimension,
+        rank,
+        u64::from(width),
+        coeff_linf_bound,
+    )
+}
+
+/// Build scalar SIS parameters from Akita ring coordinates with a wide width.
+///
+/// Uses the same mapping as [`scalar_sis_from_ring`], but accepts planner-scale
+/// ring widths whose scalar column count exceeds `u32::MAX`.
+///
+/// # Errors
+///
+/// Returns validation errors when any dimension is zero or the scalar row count
+/// overflows `u32`.
+pub fn scalar_sis_from_ring_wide(
+    family: AkitaModulusProfileId,
+    ring_dimension: u32,
+    rank: u32,
+    width: u64,
+    coeff_linf_bound: u64,
+) -> Result<SisParameters> {
+    if ring_dimension == 0 || rank == 0 || width == 0 || coeff_linf_bound == 0 {
+        return Err(EstimatorError::InvalidParameter {
+            field: "ring",
+            reason: "ring dimension, rank, width, and coeff_linf_bound must be positive"
+                .to_string(),
+        });
+    }
+    let n = rank
+        .checked_mul(ring_dimension)
+        .ok_or(EstimatorError::InvalidParameter {
+            field: "n",
+            reason: "rank * ring_dimension overflowed u32".to_string(),
+        })?;
+    let m =
+        width
+            .checked_mul(u64::from(ring_dimension))
+            .ok_or(EstimatorError::InvalidParameter {
+                field: "m",
+                reason: "width * ring_dimension overflowed u64".to_string(),
+            })?;
+    SisParameters::try_new(
+        n,
+        family.modulus(),
+        Some(m),
+        Bound::from_u64(coeff_linf_bound),
+        SisNorm::Infinity,
+    )
+}
+
+/// Build Euclidean scalar SIS parameters from Akita ring coordinates.
+///
+/// This is the mapping used by the L2 table:
+/// `n = rank * d`, `m = width * d`, and
+/// `length_bound = sqrt(collision_l2_sq)`.
+///
+/// `collision_l2_sq` bounds the complete scalar collision vector across all
+/// `width` input ring rows. Multiplying it by `width` here would count those
+/// rows twice.
+///
+/// # Errors
+///
+/// Returns validation errors when any dimension is zero or a scalar dimension
+/// overflows.
+pub fn scalar_sis_from_ring_euclidean(
+    family: AkitaModulusProfileId,
+    ring_dimension: u32,
+    rank: u32,
+    width: u64,
+    collision_l2_sq: u128,
+) -> Result<SisParameters> {
+    if ring_dimension == 0 || rank == 0 || width == 0 || collision_l2_sq == 0 {
+        return Err(EstimatorError::InvalidParameter {
+            field: "ring",
+            reason: "ring dimension, rank, width, and collision_l2_sq must be positive".to_string(),
+        });
+    }
+    let n = rank
+        .checked_mul(ring_dimension)
+        .ok_or(EstimatorError::InvalidParameter {
+            field: "n",
+            reason: "rank * ring_dimension overflowed u32".to_string(),
+        })?;
+    let m =
+        width
+            .checked_mul(u64::from(ring_dimension))
+            .ok_or(EstimatorError::InvalidParameter {
+                field: "m",
+                reason: "width * ring_dimension overflowed u64".to_string(),
+            })?;
+    SisParameters::try_new(
+        n,
+        family.modulus(),
+        Some(m),
+        Bound::sqrt_integer(BigUint::from(collision_l2_sq)),
+        SisNorm::Euclidean,
+    )
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[cfg(feature = "labinius-sis")]
+    #[test]
+    fn commitment_prime_has_an_exact_feature_gated_identity() {
+        let profile = AkitaModulusProfileId::Q25Plus14561;
+        assert_eq!(profile.label(), "q25-labinius");
+        assert_eq!(profile.modulus(), BigUint::from(33_568_993u32));
+        assert_eq!(
+            AkitaModulusProfileId::parse(profile.label()).unwrap(),
+            profile
+        );
+    }
+
+    #[cfg(not(feature = "labinius-sis"))]
+    #[test]
+    fn commitment_prime_is_absent_without_the_feature() {
+        assert!(AkitaModulusProfileId::parse("q25-labinius").is_err());
+    }
+
+    #[test]
+    fn scalar_mapping_matches_golden_convention() {
+        let params =
+            scalar_sis_from_ring(AkitaModulusProfileId::Q32Offset99, 32, 1, 2, 15).unwrap();
+        assert_eq!(params.n, 32);
+        assert_eq!(params.m, Some(64));
+        assert_eq!(params.length_bound, Bound::from_u64(15));
+    }
+
+    #[test]
+    fn euclidean_scalar_mapping_uses_exact_l2_bound() {
+        let params =
+            scalar_sis_from_ring_euclidean(AkitaModulusProfileId::Q32Offset99, 32, 1, 2, 128)
+                .unwrap();
+        assert_eq!(params.n, 32);
+        assert_eq!(params.m, Some(64));
+        assert_eq!(
+            params.length_bound,
+            Bound::sqrt_integer(BigUint::from(128u32))
+        );
+        assert_eq!(params.norm, SisNorm::Euclidean);
+    }
+
+    #[test]
+    fn euclidean_length_bound_is_independent_of_matrix_width() {
+        let narrow =
+            scalar_sis_from_ring_euclidean(AkitaModulusProfileId::Q64Offset59, 64, 2, 3, 1 << 40)
+                .unwrap();
+        let wide = scalar_sis_from_ring_euclidean(
+            AkitaModulusProfileId::Q64Offset59,
+            64,
+            2,
+            3_000,
+            1 << 40,
+        )
+        .unwrap();
+        assert_eq!(narrow.length_bound, wide.length_bound);
+        assert_ne!(narrow.m, wide.m);
+    }
+}

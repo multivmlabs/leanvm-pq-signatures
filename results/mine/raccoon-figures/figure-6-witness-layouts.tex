@@ -1,0 +1,25 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{pgfplots}
+\usetikzlibrary{patterns}
+\pgfplotsset{compat=1.18}
+\definecolor{raccoonpurple}{HTML}{CC79A7}
+\definecolor{raccoonggold}{HTML}{E69F00}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[width=15.7cm,height=6cm,ybar,bar width=25pt,ymin=0,
+ylabel={Committed witness words (millions)},
+xtick={0,1,2,3},xticklabels={{Raccoon whole\\original port},{Raccoon whole\\selected port},{G whole\\original port},{G two-row part\\selected port}},x tick label style={font=\small,align=center},
+xmin=-0.6,xmax=3.6,grid=major,grid style={gray!15},scaled y ticks=false,
+tick label style={font=\small},label style={font=\small}]
+\addplot+[bar shift=0pt,draw=raccoonpurple,fill=raccoonpurple!65,pattern=north east lines,pattern color=raccoonpurple] coordinates {(0,419.337656000)};
+\addplot+[bar shift=0pt,draw=raccoonpurple,fill=raccoonpurple!65] coordinates {(1,247.895480000)};
+\addplot+[bar shift=0pt,draw=raccoonggold,fill=raccoonggold!65,pattern=north east lines,pattern color=raccoonggold] coordinates {(2,839.237560000)};
+\addplot+[bar shift=0pt,draw=raccoonggold,fill=raccoonggold!65] coordinates {(3,234.357176000)};
+\addplot[sharp plot,gray,dashed,no marks,forget plot] coordinates {(-0.6,268.435456) (3.6,268.435456)};
+\node[font=\scriptsize,anchor=south east] at (axis cs:3.5,268.435456) {$2^{28}$ production cap};
+\end{axis}
+\node[font=\scriptsize,align=center,anchor=north] at (7.85cm,-1.45cm)
+{Hatched bars: uncapped layout diagnostics, rejected by production. Solid bars: actual verified proof layouts.\\
+The G partial leaf checks two rows; a complete signature requires five linked leaves.};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,10 @@
+[package]
+name = "fors"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+leanvm_guest = { path = "../../../vendor/leanVM-riscv/sdk" }
+
+[workspace]

@@ -1,0 +1,20 @@
+{
+  "scope": "Official upstream protocol changes between PR #490 and the pinned experimental revision",
+  "falcon_28_words": {
+    "pr490": 163009336,
+    "after_register_packing": 153571464,
+    "after_linear_control_flow": 145182856
+  },
+  "commits": [
+    {
+      "sha": "9ae69db5b35526f4b56736900918a931c937d4f7",
+      "url": "https://github.com/leanEthereum/leanVM/commit/9ae69db5b35526f4b56736900918a931c937d4f7",
+      "title": "leanvm_core, python-verifier, doc: pack a row's register numbers into one committed word (#491)"
+    },
+    {
+      "sha": "bf115c30d7cf9f7afc0a6894a327da81177db7b2",
+      "url": "https://github.com/leanEthereum/leanVM/commit/bf115c30d7cf9f7afc0a6894a327da81177db7b2",
+      "title": "leanvm_core, python-verifier, doc: linear control flow, every circuit table settled at the bus point (#492)"
+    }
+  ]
+}

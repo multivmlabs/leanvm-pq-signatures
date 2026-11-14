@@ -1,0 +1,790 @@
+{
+  "description": "Only trusted public records and one proof copied to isolated temporary directory; changed claims use independently recomputed digest and a fresh trusted statement pin.",
+  "runner_sha256": "afd2c1625c2e21b060a9a2005cb74bf5350a4c1262e9a27f9e12491df1018783",
+  "passed": true,
+  "controls": [
+    {
+      "scheme": "falcon",
+      "count": 1,
+      "case": "honest",
+      "expected_accept": true,
+      "returncode": 0,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "scheme": "falcon",
+      "count": 1,
+      "case": "changed-message",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "falcon",
+      "count": 1,
+      "case": "changed-public_key",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "falcon",
+      "count": 1,
+      "case": "wrong-count",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "falcon",
+      "count": 1,
+      "case": "wrong-cached-output",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "falcon",
+      "count": 1,
+      "case": "corrupt-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the opening: hint 0 is invalid"
+    },
+    {
+      "scheme": "falcon",
+      "count": 1,
+      "case": "truncated-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "falcon",
+      "count": 1,
+      "case": "trailing-proof-bytes",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "falcon",
+      "count": 1,
+      "case": "wrong-program-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "falcon",
+      "count": 2,
+      "case": "honest",
+      "expected_accept": true,
+      "returncode": 0,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "scheme": "falcon",
+      "count": 2,
+      "case": "changed-message",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "falcon",
+      "count": 2,
+      "case": "changed-public_key",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "falcon",
+      "count": 2,
+      "case": "wrong-count",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "falcon",
+      "count": 2,
+      "case": "wrong-cached-output",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "falcon",
+      "count": 2,
+      "case": "corrupt-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the opening: hint 0 is invalid"
+    },
+    {
+      "scheme": "falcon",
+      "count": 2,
+      "case": "truncated-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "falcon",
+      "count": 2,
+      "case": "trailing-proof-bytes",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "falcon",
+      "count": 2,
+      "case": "wrong-program-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "falcon",
+      "count": 2,
+      "case": "reordered-claims",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "falcon",
+      "count": 32,
+      "case": "honest",
+      "expected_accept": true,
+      "returncode": 0,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "scheme": "falcon",
+      "count": 32,
+      "case": "changed-message",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "falcon",
+      "count": 32,
+      "case": "changed-public_key",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "falcon",
+      "count": 32,
+      "case": "wrong-count",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "falcon",
+      "count": 32,
+      "case": "wrong-cached-output",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "falcon",
+      "count": 32,
+      "case": "corrupt-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the opening: hint 0 is invalid"
+    },
+    {
+      "scheme": "falcon",
+      "count": 32,
+      "case": "truncated-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "falcon",
+      "count": 32,
+      "case": "trailing-proof-bytes",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "falcon",
+      "count": 32,
+      "case": "wrong-program-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "falcon",
+      "count": 32,
+      "case": "reordered-claims",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 1,
+      "case": "honest",
+      "expected_accept": true,
+      "returncode": 0,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "scheme": "mldsa",
+      "count": 1,
+      "case": "changed-message",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 1,
+      "case": "changed-public_key",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 1,
+      "case": "wrong-count",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 1,
+      "case": "wrong-cached-output",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 1,
+      "case": "corrupt-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the opening: hint 0 is invalid"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 1,
+      "case": "truncated-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 1,
+      "case": "trailing-proof-bytes",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 1,
+      "case": "wrong-program-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 2,
+      "case": "honest",
+      "expected_accept": true,
+      "returncode": 0,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "scheme": "mldsa",
+      "count": 2,
+      "case": "changed-message",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 2,
+      "case": "changed-public_key",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 2,
+      "case": "wrong-count",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 2,
+      "case": "wrong-cached-output",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 2,
+      "case": "corrupt-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the opening: hint 0 is invalid"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 2,
+      "case": "truncated-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 2,
+      "case": "trailing-proof-bytes",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 2,
+      "case": "wrong-program-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 2,
+      "case": "reordered-claims",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 6,
+      "case": "honest",
+      "expected_accept": true,
+      "returncode": 0,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "scheme": "mldsa",
+      "count": 6,
+      "case": "changed-message",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 6,
+      "case": "changed-public_key",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 6,
+      "case": "wrong-count",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 6,
+      "case": "wrong-cached-output",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 6,
+      "case": "corrupt-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the opening: hint 0 is invalid"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 6,
+      "case": "truncated-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 6,
+      "case": "trailing-proof-bytes",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 6,
+      "case": "wrong-program-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "mldsa",
+      "count": 6,
+      "case": "reordered-claims",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "fors",
+      "count": 1,
+      "case": "honest",
+      "expected_accept": true,
+      "returncode": 0,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "scheme": "fors",
+      "count": 1,
+      "case": "changed-message",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "fors",
+      "count": 1,
+      "case": "changed-seed",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "fors",
+      "count": 1,
+      "case": "wrong-count",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "fors",
+      "count": 1,
+      "case": "wrong-cached-output",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "fors",
+      "count": 1,
+      "case": "corrupt-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the opening: hint 0 is invalid"
+    },
+    {
+      "scheme": "fors",
+      "count": 1,
+      "case": "truncated-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "fors",
+      "count": 1,
+      "case": "trailing-proof-bytes",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "fors",
+      "count": 1,
+      "case": "wrong-program-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "fors",
+      "count": 2,
+      "case": "honest",
+      "expected_accept": true,
+      "returncode": 0,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "scheme": "fors",
+      "count": 2,
+      "case": "changed-message",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "fors",
+      "count": 2,
+      "case": "changed-seed",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "fors",
+      "count": 2,
+      "case": "wrong-count",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "fors",
+      "count": 2,
+      "case": "wrong-cached-output",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "fors",
+      "count": 2,
+      "case": "corrupt-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the opening: hint 0 is invalid"
+    },
+    {
+      "scheme": "fors",
+      "count": 2,
+      "case": "truncated-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "fors",
+      "count": 2,
+      "case": "trailing-proof-bytes",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "fors",
+      "count": 2,
+      "case": "wrong-program-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "fors",
+      "count": 2,
+      "case": "reordered-claims",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "fors",
+      "count": 7,
+      "case": "honest",
+      "expected_accept": true,
+      "returncode": 0,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "scheme": "fors",
+      "count": 7,
+      "case": "changed-message",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "fors",
+      "count": 7,
+      "case": "changed-seed",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    },
+    {
+      "scheme": "fors",
+      "count": 7,
+      "case": "wrong-count",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "fors",
+      "count": 7,
+      "case": "wrong-cached-output",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "fors",
+      "count": 7,
+      "case": "corrupt-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the opening: hint 0 is invalid"
+    },
+    {
+      "scheme": "fors",
+      "count": 7,
+      "case": "truncated-proof",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "fors",
+      "count": 7,
+      "case": "trailing-proof-bytes",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof"
+    },
+    {
+      "scheme": "fors",
+      "count": 7,
+      "case": "wrong-program-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch"
+    },
+    {
+      "scheme": "fors",
+      "count": 7,
+      "case": "reordered-claims",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim"
+    }
+  ]
+}

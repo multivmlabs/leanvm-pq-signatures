@@ -1,0 +1,464 @@
+use super::*;
+
+#[test]
+fn profile_commit_group_returns_exact_frozen_layout() {
+    const NV: usize = 16;
+    const GROUP_SIZE: usize = 1;
+
+    let scheme = workspace_scheme::<OneHotCfg>().expect("workspace schedule artifact");
+    let key = akita_params::PolynomialGroupLayout::new(NV, GROUP_SIZE);
+    let profile = catalog_profile(&scheme, key);
+    let total_field = (profile.blocks.live_blocks * profile.blocks.positions_per_block)
+        .checked_mul(ONEHOT_D)
+        .expect("total field size overflow");
+    assert_eq!(total_field % onehot_source_chunk_size::<OneHotCfg>(), 0);
+    let polys = [debug_make_onehot_poly(NV, ONEHOT_D, 0x0bee_fcaf_9a77_0001)];
+
+    let setup = scheme.setup_prover(NV, GROUP_SIZE).expect("setup");
+    let stack = CpuBackend::new(setup.expanded.clone()).expect("backend");
+    let akita_cpu_backend::CommitOutput {
+        committed_group: commitment,
+        private_handle: _hint,
+    } = stack
+        .commit(
+            scheme.schedules(),
+            &stack.import_source(polys.to_vec()).expect("source"),
+            akita_cpu_backend::GroupContext::scheduler_without_precommitted_groups(),
+        )
+        .expect("precommit");
+    let frozen_layout = commitment.profile;
+
+    assert_eq!(frozen_layout.group, key);
+    assert_eq!(
+        frozen_layout.blocks.positions_per_block,
+        profile.blocks.positions_per_block
+    );
+    assert_eq!(frozen_layout.blocks.live_blocks, profile.blocks.live_blocks);
+    assert_eq!(
+        frozen_layout.outer.digits.log_basis,
+        OneHotCfg::opening_basis_range().0
+    );
+    assert_eq!(
+        frozen_layout.inner.matrix.output_rank(),
+        profile.inner.matrix.output_rank()
+    );
+    assert_eq!(
+        frozen_layout.outer.matrix.output_rank(),
+        profile.outer.matrix.output_rank()
+    );
+    assert_eq!(
+        commitment.rows().count(),
+        frozen_layout.outer.matrix.output_rank()
+    );
+}
+
+fn multi_group_root_params(schedule: &akita_params::FoldSchedule) -> &CommittedGroupParams {
+    &schedule.root.params
+}
+
+fn with_precommit_stack<R>(
+    scheme: &OneHotScheme,
+    max_num_vars: usize,
+    max_num_polys: usize,
+    run: impl FnOnce(&akita_cpu_backend::AkitaProverSetup<OneHotF>, &CpuBackend<OneHotF, OneHotF>) -> R,
+) -> R {
+    let setup = scheme
+        .setup_prover(max_num_vars, max_num_polys)
+        .expect("setup");
+    let stack = CpuBackend::new(setup.expanded.clone()).expect("backend");
+    run(&setup, &stack)
+}
+
+#[test]
+fn profile_commit_group_allows_independent_groups() {
+    const NV: usize = 16;
+    const PRE_A_SIZE: usize = 1;
+    const PRE_B_SIZE: usize = 2;
+    // Precommitted groups are committed independently, so setup only needs to
+    // cover the largest standalone group rather than the sum of all groups.
+    const SETUP_CAPACITY_SIZE: usize = PRE_B_SIZE;
+
+    let scheme = workspace_scheme::<OneHotCfg>().expect("workspace schedule artifact");
+    let pre_a_key = akita_params::PolynomialGroupLayout::new(NV, PRE_A_SIZE);
+    let pre_b_key = akita_params::PolynomialGroupLayout::new(NV, PRE_B_SIZE);
+    let pre_a_profile = catalog_profile(&scheme, pre_a_key);
+    let pre_b_profile = catalog_profile(&scheme, pre_b_key);
+    let pre_a_polys = [debug_make_onehot_poly(NV, ONEHOT_D, 0x0bee_fcaf_9a77_1001)];
+    let pre_b_polys = [
+        debug_make_onehot_poly(NV, ONEHOT_D, 0x0bee_fcaf_9a77_2001),
+        debug_make_onehot_poly(NV, ONEHOT_D, 0x0bee_fcaf_9a77_2002),
+    ];
+
+    with_precommit_stack(&scheme, NV, SETUP_CAPACITY_SIZE, |_setup, stack| {
+        let akita_cpu_backend::CommitOutput {
+            committed_group: pre_a_commitment,
+            private_handle: _pre_a_hint,
+        } = stack
+            .commit(
+                scheme.schedules(),
+                &stack.import_source(pre_a_polys.to_vec()).expect("source"),
+                akita_cpu_backend::GroupContext::scheduler_without_precommitted_groups(),
+            )
+            .expect("precommit A");
+        let akita_cpu_backend::CommitOutput {
+            committed_group: pre_b_commitment,
+            private_handle: _pre_b_hint,
+        } = stack
+            .commit(
+                scheme.schedules(),
+                &stack.import_source(pre_b_polys.to_vec()).expect("source"),
+                akita_cpu_backend::GroupContext::scheduler_without_precommitted_groups(),
+            )
+            .expect("precommit B");
+        let pre_a_frozen = pre_a_commitment.profile;
+        let pre_b_frozen = pre_b_commitment.profile;
+
+        assert_eq!(pre_a_frozen.group, pre_a_key);
+        assert_eq!(pre_b_frozen.group, pre_b_key);
+        assert_eq!(
+            pre_a_commitment.rows().count(),
+            pre_a_frozen.outer.matrix.output_rank()
+        );
+        assert_eq!(
+            pre_b_commitment.rows().count(),
+            pre_b_frozen.outer.matrix.output_rank()
+        );
+        assert_ne!(pre_a_frozen.group, pre_b_frozen.group);
+        assert_eq!(pre_a_frozen, pre_a_profile);
+        assert_eq!(pre_b_frozen, pre_b_profile);
+    });
+}
+
+#[test]
+fn group_batch_schedule_preserves_precommitted_order() {
+    const PRE_NV: usize = 14;
+    const FINAL_NV: usize = 20;
+    const PRE_A_SIZE: usize = 1;
+    const PRE_B_SIZE: usize = 1;
+    const PRE_C_SIZE: usize = 1;
+    const MAIN_SIZE: usize = 4;
+
+    let scheme = workspace_scheme::<OneHotCfg>().expect("workspace schedule artifact");
+    let pre_a_key = akita_params::PolynomialGroupLayout::new(PRE_NV, PRE_A_SIZE);
+    let pre_b_key = akita_params::PolynomialGroupLayout::new(PRE_NV, PRE_B_SIZE);
+    let pre_c_key = akita_params::PolynomialGroupLayout::new(PRE_NV, PRE_C_SIZE);
+    let pre_a_frozen = catalog_profile(&scheme, pre_a_key);
+    let pre_b_frozen = catalog_profile(&scheme, pre_b_key);
+    let pre_c_frozen = catalog_profile(&scheme, pre_c_key);
+    let multi_group_key = akita_params::ScheduleLookupKey {
+        final_group: akita_params::PolynomialGroupLayout::new(FINAL_NV, MAIN_SIZE),
+        precommitteds: vec![pre_a_frozen, pre_b_frozen, pre_c_frozen],
+    };
+
+    let schedule = scheme
+        .schedules()
+        .resolve_key(&multi_group_key)
+        .expect("multi-group runtime schedule")
+        .schedule()
+        .clone();
+    let root = multi_group_root_params(&schedule);
+    let main_params = schedule.root.params.clone();
+
+    assert_eq!(multi_group_key.precommitteds.len(), 3);
+    assert_eq!(
+        multi_group_key
+            .num_polynomials()
+            .expect("multi-group polynomial count"),
+        PRE_A_SIZE + PRE_B_SIZE + PRE_C_SIZE + MAIN_SIZE
+    );
+    assert_eq!(main_params, *root);
+    assert_eq!(schedule.root.params.precommitted_groups().len(), 3);
+    assert_eq!(
+        schedule.root.params.precommitted_groups()[0].profile,
+        pre_a_frozen
+    );
+    assert_eq!(
+        schedule.root.params.precommitted_groups()[1].profile,
+        pre_b_frozen
+    );
+    assert_eq!(
+        schedule.root.params.precommitted_groups()[2].profile,
+        pre_c_frozen
+    );
+}
+
+#[test]
+fn group_batch_commits_independent_arity_precommitted_groups() {
+    const PRE_NV: usize = 14;
+    const FINAL_NV: usize = 20;
+    const GROUP_SIZE: usize = 1;
+    const FINAL_SIZE: usize = 4;
+    const SETUP_CAPACITY_SIZE: usize = FINAL_SIZE + 2 * GROUP_SIZE;
+
+    let scheme = workspace_scheme::<OneHotCfg>().expect("workspace schedule artifact");
+    let pre_a_key = akita_params::PolynomialGroupLayout::new(PRE_NV, GROUP_SIZE);
+    let pre_b_key = akita_params::PolynomialGroupLayout::new(PRE_NV, GROUP_SIZE);
+    let pre_a_frozen = catalog_profile(&scheme, pre_a_key);
+    let pre_b_frozen = catalog_profile(&scheme, pre_b_key);
+    let pre_a_polys = [debug_make_onehot_poly(
+        PRE_NV,
+        ONEHOT_D,
+        0x0bee_fcaf_9a77_5001,
+    )];
+    let pre_b_polys = [debug_make_onehot_poly(
+        PRE_NV,
+        ONEHOT_D,
+        0x0bee_fcaf_9a77_6001,
+    )];
+
+    let setup = scheme
+        .setup_prover(FINAL_NV, SETUP_CAPACITY_SIZE)
+        .expect("protocol setup");
+    let stack = CpuBackend::new(setup.expanded.clone()).expect("backend");
+    let akita_cpu_backend::CommitOutput {
+        committed_group: pre_a_commitment,
+        private_handle: _pre_a_hint,
+    } = stack
+        .commit(
+            scheme.schedules(),
+            &stack.import_source(pre_a_polys.to_vec()).expect("source"),
+            akita_cpu_backend::GroupContext::scheduler_without_precommitted_groups(),
+        )
+        .expect("precommit A");
+    let akita_cpu_backend::CommitOutput {
+        committed_group: pre_b_commitment,
+        private_handle: _pre_b_hint,
+    } = stack
+        .commit(
+            scheme.schedules(),
+            &stack.import_source(pre_b_polys.to_vec()).expect("source"),
+            akita_cpu_backend::GroupContext::scheduler_without_precommitted_groups(),
+        )
+        .expect("precommit B");
+    let multi_group_key = akita_params::ScheduleLookupKey {
+        final_group: akita_params::PolynomialGroupLayout::new(FINAL_NV, FINAL_SIZE),
+        precommitteds: vec![pre_a_frozen, pre_b_frozen],
+    };
+    assert!(multi_group_key
+        .fits_setup_capacity(FINAL_NV, SETUP_CAPACITY_SIZE)
+        .expect("setup capacity"));
+
+    let multi_group_schedule = scheme
+        .schedules()
+        .resolve_key(&multi_group_key)
+        .expect("multi-group runtime schedule")
+        .schedule()
+        .clone();
+    let main_params = multi_group_root_params(&multi_group_schedule);
+    let final_polys = [
+        debug_make_onehot_poly(FINAL_NV, main_params.d_a(), 0x0bee_fcaf_9a77_7001),
+        debug_make_onehot_poly(FINAL_NV, main_params.d_a(), 0x0bee_fcaf_9a77_7002),
+        debug_make_onehot_poly(FINAL_NV, main_params.d_a(), 0x0bee_fcaf_9a77_7003),
+        debug_make_onehot_poly(FINAL_NV, main_params.d_a(), 0x0bee_fcaf_9a77_7004),
+    ];
+    let precommitteds = akita_params::PrecommittedGroupProfiles::from_profiles(vec![
+        pre_a_commitment.profile,
+        pre_b_commitment.profile,
+    ])
+    .expect("nonempty precommitted groups");
+    let akita_cpu_backend::CommitOutput {
+        committed_group: final_commitment,
+        private_handle: final_hint,
+    } = stack
+        .commit(
+            scheme.schedules(),
+            &stack.import_source(final_polys.to_vec()).expect("source"),
+            akita_cpu_backend::GroupContext::scheduler_with_precommitted_groups(&precommitteds),
+        )
+        .expect("final multi-group commitment");
+    let explicit_output = stack
+        .commit(
+            scheme.schedules(),
+            &stack.import_source(final_polys.to_vec()).expect("source"),
+            akita_cpu_backend::GroupContext::explicit(&main_params.own_group().profile),
+        )
+        .expect("explicit final multi-group commitment");
+
+    assert_eq!(explicit_output.committed_group, final_commitment);
+    assert_eq!(
+        explicit_output.private_handle.metadata(),
+        final_hint.metadata()
+    );
+
+    assert_eq!(
+        pre_a_commitment.rows().count(),
+        pre_a_frozen.outer.matrix.output_rank()
+    );
+    assert_eq!(
+        pre_b_commitment.rows().count(),
+        pre_b_frozen.outer.matrix.output_rank()
+    );
+    assert_eq!(
+        final_commitment.rows().count(),
+        main_params.outer().matrix.output_rank()
+    );
+    assert_eq!(final_hint.metadata().num_polynomials(), FINAL_SIZE);
+    assert_eq!(
+        akita_cpu_backend::RootPolyMeta::num_vars(&final_polys[0]),
+        FINAL_NV,
+        "final one-hot group should retain its native variable domain"
+    );
+    assert_eq!(
+        multi_group_schedule.root.params.precommitted_groups().len(),
+        2
+    );
+    assert_eq!(
+        multi_group_schedule.root.params.precommitted_groups()[0].profile,
+        pre_a_frozen
+    );
+    assert_eq!(
+        multi_group_schedule.root.params.precommitted_groups()[1].profile,
+        pre_b_frozen
+    );
+}
+
+#[test]
+fn commit_group_returns_frozen_exact_layout() {
+    const NV: usize = 16;
+    const GROUP_SIZE: usize = 1;
+
+    let scheme = workspace_scheme::<OneHotCfg>().expect("workspace schedule artifact");
+    let key = akita_params::PolynomialGroupLayout::new(NV, GROUP_SIZE);
+    let profile = catalog_profile(&scheme, key);
+    let total_field = (profile.blocks.live_blocks * profile.blocks.positions_per_block)
+        .checked_mul(ONEHOT_D)
+        .expect("total field size overflow");
+    assert_eq!(total_field % onehot_source_chunk_size::<OneHotCfg>(), 0);
+    let polys = [debug_make_onehot_poly(NV, ONEHOT_D, 0x0bee_fcaf_9a77_0001)];
+
+    let setup = scheme.setup_prover(NV, GROUP_SIZE).expect("setup");
+    let stack = CpuBackend::new(setup.expanded.clone()).expect("backend");
+    let akita_cpu_backend::CommitOutput {
+        committed_group: commitment,
+        private_handle: _hint,
+    } = stack
+        .commit(
+            scheme.schedules(),
+            &stack.import_source(polys.to_vec()).expect("source"),
+            akita_cpu_backend::GroupContext::scheduler_without_precommitted_groups(),
+        )
+        .expect("commit group");
+    let frozen_layout = commitment.profile;
+
+    assert_eq!(frozen_layout.group, key);
+    assert_eq!(
+        frozen_layout.blocks.positions_per_block,
+        profile.blocks.positions_per_block
+    );
+    assert_eq!(frozen_layout.blocks.live_blocks, profile.blocks.live_blocks);
+    assert_eq!(
+        frozen_layout.outer.digits.log_basis,
+        profile.outer.digits.log_basis
+    );
+    assert_eq!(
+        frozen_layout.inner.matrix.output_rank(),
+        profile.inner.matrix.output_rank()
+    );
+    assert_eq!(
+        frozen_layout.outer.matrix.output_rank(),
+        profile.outer.matrix.output_rank()
+    );
+    assert_eq!(
+        commitment.rows().count(),
+        frozen_layout.outer.matrix.output_rank()
+    );
+}
+
+mod multi_group;
+#[test]
+fn batched_onehot_roundtrip_matches_public_shape_context() {
+    // NV chosen large enough that the runtime schedule yields at least two
+    // fold steps so the proof is fold-rooted (not terminal-rooted). Under
+    // the post-soundness-fix proof shape, a single-fold schedule emits a
+    // `Terminal` root with no recursive suffix, which this test does not
+    // exercise.
+    const NV: usize = 20;
+    const BATCH_SIZE: usize = 2;
+
+    let scheme = workspace_scheme::<OneHotCfg>().expect("workspace schedule artifact");
+    let layout = catalog_root_layout(&scheme, NV, BATCH_SIZE);
+    let total_field = (layout.blocks().live_blocks * layout.blocks().positions_per_block)
+        .checked_mul(ONEHOT_D)
+        .expect("total field size overflow");
+    let onehot_k = onehot_source_chunk_size::<OneHotCfg>();
+    let total_chunks = total_field / onehot_k;
+    assert_eq!(total_chunks * onehot_k, total_field);
+
+    let polys: Vec<OneHotPoly<OneHotF, u8>> = (0..BATCH_SIZE)
+        .map(|poly_idx| {
+            debug_make_onehot_poly(NV, layout.d_a(), 0x0bee_fcaf_e000_1500 + poly_idx as u64)
+        })
+        .collect();
+
+    let point = debug_random_point(NV);
+    let openings: Vec<OneHotF> = polys
+        .iter()
+        .map(|poly| {
+            opening_from_poly(
+                poly,
+                &point,
+                layout.d_a(),
+                layout.blocks().positions_per_block,
+                layout.blocks().live_blocks,
+            )
+        })
+        .collect();
+
+    let setup = scheme.setup_prover(NV, BATCH_SIZE).unwrap();
+    let stack =
+        CpuBackend::with_ring_switch_cache_limit(setup.expanded.clone(), usize::MAX).unwrap();
+    let verifier_setup = scheme.setup_verifier(&setup).expect("verifier setup");
+    let akita_cpu_backend::CommitOutput {
+        committed_group: commitment,
+        private_handle: hint,
+    } = stack
+        .commit(
+            scheme.schedules(),
+            &stack.import_source(polys.to_vec()).expect("source"),
+            akita_cpu_backend::GroupContext::scheduler_without_precommitted_groups(),
+        )
+        .expect("batched onehot commit");
+    let commitments = [commitment];
+    let prover_group =
+        PolynomialGroupClaims::new(point.clone(), openings.clone(), commitments[0].clone())
+            .expect("valid one-hot prover group");
+    let proof = scheme
+        .batched_prove(
+            &setup,
+            selected_prover_data::<OneHotCfg, _>(
+                &scheme,
+                OpeningClaims::from_groups(vec![prover_group])
+                    .expect("valid one-hot prover claims"),
+                vec![hint],
+            )
+            .expect("valid one-hot prover opening data"),
+            &stack,
+            b"test/batched-onehot-shape",
+            BasisMode::Lagrange,
+        )
+        .expect("batched onehot prove");
+    scheme
+        .verifier(verifier_setup.clone())
+        .and_then(|verifier| {
+            verifier.batched_verify(
+                &proof,
+                b"test/batched-onehot-shape",
+                selected_statement::<OneHotCfg>(
+                    &scheme,
+                    OpeningClaims::from_groups(vec![PolynomialGroupClaims::new(
+                        point,
+                        openings,
+                        &commitments[0],
+                    )
+                    .expect("valid one-hot verifier group")])
+                    .expect("valid one-hot verifier claims"),
+                )
+                .expect("valid one-hot verifier statement"),
+                BasisMode::Lagrange,
+            )
+        })
+        .expect("batched onehot verify");
+}
+
+#[path = "onehot/selective_l2.rs"]
+mod selective_l2;

@@ -1,0 +1,35 @@
+{
+  "action": "verify",
+  "aggregate_wire_bytes": 355228,
+  "compile_plan_s": 0.563987042,
+  "deferred_bytecode_prepare_s": 0.236487625,
+  "deferred_edge_count": 26,
+  "deferred_evaluation_s": [
+    0.0356875,
+    0.0352225,
+    0.035042292
+  ],
+  "deferred_program_count": 3,
+  "plan_hash": "363c4129b64f4d4227e30e0ff1d41d6f6d7f1a6c9442e2f1dcead999ca4df291",
+  "process_peak_rss_bytes": 207552512,
+  "public_input_hex": "4f637003917511fd407c6f90dfcdb6e850227595ef571eab27808c43f0ad77a0",
+  "root_bytecode_prepare_s": 0.07768725,
+  "root_core_proof_bytes": 341160,
+  "root_core_verify_cached_s": [
+    0.006386958,
+    0.006228875,
+    0.006192166
+  ],
+  "root_core_verify_cold_s": [
+    0.083997625,
+    0.083705666,
+    0.083722416
+  ],
+  "root_guest_hash": "0fcd0a6269f839471a93ffc215a7f6e79478ae66ef691dfdc61babed79fe5c24",
+  "statement_pinned": true,
+  "verification_operation_total_s": 0.8169925,
+  "verification_uses_child_proofs": false,
+  "verification_uses_signatures": false,
+  "verified": true,
+  "zero_knowledge": false
+}

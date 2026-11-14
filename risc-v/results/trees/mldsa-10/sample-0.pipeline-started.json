@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "scheme": "mldsa",
+  "distinct_signatures": 10,
+  "sample": 0,
+  "command": [
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/.cache/aerie-wrapper-host-target/release/riscv-pq-treebench",
+    "prove",
+    "--scheme",
+    "mldsa",
+    "--n",
+    "10",
+    "--leaf-size",
+    "2",
+    "--outdir",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/results/trees/mldsa-10",
+    "--sample",
+    "sample-0",
+    "--threads",
+    "8",
+    "--rate",
+    "1"
+  ],
+  "binary_sha256": "2cb5d8a5ba86283e26cd327f78211b293526c2410cdb4fb20d936dbb89e0c668",
+  "statement_sha256": "3f66683d2edf56e71b52ed1f99c1a91a9172558f17b643d89117874832275b1b",
+  "elf_sha256": "73fa19d855adbd0ad6d8368260b5e1b173cc57a854e52624dd1b8e65d95f69d6",
+  "runner_sha256": "35fb9b14ee8bad32d2774f9fbd30614ccf44796a72e63298152983f903477152",
+  "started_utc": "2026-11-06T19:55:44.143223+00:00",
+  "sampling": "One complete fresh pipeline in a fresh process; no in-process warmup or proof reuse across samples"
+}

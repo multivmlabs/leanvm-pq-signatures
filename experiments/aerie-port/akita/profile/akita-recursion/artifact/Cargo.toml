@@ -1,0 +1,53 @@
+[package]
+name = "akita-recursion-artifact"
+version = "0.1.0"
+edition = "2021"
+description = "Produce an Akita verifier-input blob for the Jolt recursion guest."
+license = "Apache-2.0 OR MIT"
+publish = false
+
+[[bin]]
+name = "akita-recursion-artifact"
+path = "src/main.rs"
+
+[dependencies]
+akita-error = { path = "../../../crates/akita-error" }
+akita-recursion-glue = { path = "../glue" }
+akita-serialization = { path = "../../../crates/akita-serialization" }
+akita-config = { path = "../../../crates/akita-config", default-features = false, features = [
+] }
+jolt-field = { version = "=0.1.0", git = "https://github.com/a16z/jolt", rev = "c7c2d08d5bb0c7c80501f29f723e595af7fcff3c", default-features = false, features = [
+  "asm",
+  "solinas",
+] }
+akita-pcs = { path = "../../../crates/akita-pcs", default-features = false, features = [
+  "parallel",
+] }
+akita-prover = { path = "../../../crates/akita-prover", default-features = false }
+akita-cpu-backend = { path = "../../../crates/akita-cpu-backend" }
+akita-types = { path = "../../../crates/akita-types" }
+akita-params = { path = "../../../crates/akita-params" }
+akita-verifier = { path = "../../../crates/akita-verifier" }
+
+clap = { version = "4", features = ["derive"] }
+rand = "0.8"
+rayon = { version = "1.10", optional = true }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[features]
+default = ["parallel"]
+parallel = [
+  "dep:rayon",
+  "akita-pcs/parallel",
+  "jolt-field/parallel",
+  "akita-cpu-backend/parallel",
+]
+dev-protocol = ["akita-params/dev-protocol"]
+
+[lints.rust]
+missing_docs = "warn"
+
+[lints.clippy]
+missing_errors_doc = "warn"
+missing_panics_doc = "warn"

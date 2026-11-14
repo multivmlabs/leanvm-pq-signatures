@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "scope": "Read-only completed17 root/marker identities captured before operational restart; childfile comprehensive final audit remains pending",
+  "roots": [
+    {
+      "scheme": "standard",
+      "path": "risc-v/results/raccoon-runtime-study/raccoon/trees/count-10/sample-0/pipeline-completed.json",
+      "root_sha256": "0b45044e0d812f7af852bfa7484d458b2aa51186ba821fa68460fa8a967d4280",
+      "marker_sha256": "e68389c52054d24d5f2b914bddd658ba278c70d4f06abe8d62abd082b603d8af"
+    },
+    {
+      "scheme": "standard",
+      "path": "risc-v/results/raccoon-runtime-study/raccoon/trees/count-10/sample-1/pipeline-completed.json",
+      "root_sha256": "0b45044e0d812f7af852bfa7484d458b2aa51186ba821fa68460fa8a967d4280",
+      "marker_sha256": "417c3e81c49004a3728fe239e213e5aeb25ed2cd75c996758bae54a3689b586e"
+    },
+    {
+      "scheme": "standard",
+      "path": "risc-v/results/raccoon-runtime-study/raccoon/trees/count-10/sample-2/pipeline-completed.json",
+      "root_sha256": "0b45044e0d812f7af852bfa7484d458b2aa51186ba821fa68460fa8a967d4280",
+      "marker_sha256": "9cda90231ea804d1a5591eadc4efeb21e28e5ee5abb5d034635abdbb08498134"
+    },
+    {
+      "scheme": "standard",
+      "path": "risc-v/results/raccoon-runtime-study/raccoon/trees/count-30/sample-0/pipeline-completed.json",
+      "root_sha256": "46abfe825a509bee06bc9371c657e0ef41723f21f78e7787a0248201f3c4a061",
+      "marker_sha256": "39b39c487ac263b96384537f144ee7b0fc15242d56245a36348bf613fe18e420"
+    },
+    {
+      "scheme": "standard",
+      "path": "risc-v/results/raccoon-runtime-study/raccoon/trees/count-30/sample-1/pipeline-completed.json",
+      "root_sha256": "46abfe825a509bee06bc9371c657e0ef41723f21f78e7787a0248201f3c4a061",
+      "marker_sha256": "3c0e3cf40f507cede51f08a66e7b33e593057fef2f32b29ca31ccb0c4c60360b"
+    },
+    {
+      "scheme": "standard",
+      "path": "risc-v/results/raccoon-runtime-study/raccoon/trees/count-30/sample-2/pipeline-completed.json",
+      "root_sha256": "46abfe825a509bee06bc9371c657e0ef41723f21f78e7787a0248201f3c4a061",
+      "marker_sha256": "ccb7ac64a0cb5e5317f3fa90e246b5943cc8b50946a7a03ac77b164b04ddb890"
+    },
+    {
+      "scheme": "standard",
+      "path": "risc-v/results/raccoon-runtime-study/raccoon/trees/count-70/sample-0/pipeline-completed.json",
+      "root_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f",
+      "marker_sha256": "7fdca9b57e08dbe83df9381a986b2dda3a6fb3f7824cc922c66742e34b59a564"
+    },
+    {
+      "scheme": "standard",
+      "path": "risc-v/results/raccoon-runtime-study/raccoon/trees/count-70/sample-1/pipeline-completed.json",
+      "root_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f",
+      "marker_sha256": "99229f54c072562e3d93b9419aabb09a97e84542d781050eb6c819b0e989bb60"
+    },
+    {
+      "scheme": "standard",
+      "path": "risc-v/results/raccoon-runtime-study/raccoon/trees/count-70/sample-2/pipeline-completed.json",
+      "root_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f",
+      "marker_sha256": "83dcb0e7f02e9c7f23e7fb705d3879ca121efd96f329f12d499b997e0ade88e5"
+    },
+    {
+      "scheme": "G",
+      "path": "risc-v/results/raccoong-segmented-uniform-trees/count-10/sample-0/pipeline-completed.json",
+      "root_sha256": "1c54cf9c77227d9ed215c14fa1d38c7d6d90a356e76deb7267fdb7122acac783",
+      "marker_sha256": "3bd3060faacf09517a039ee324aa9098de09c375c91b2217dcc36ce0257fb8ca"
+    },
+    {
+      "scheme": "G",
+      "path": "risc-v/results/raccoong-segmented-uniform-trees/count-10/sample-1/pipeline-completed.json",
+      "root_sha256": "1c54cf9c77227d9ed215c14fa1d38c7d6d90a356e76deb7267fdb7122acac783",
+      "marker_sha256": "b60a26f749749fb121d8604447035121a230d194d23631ee0b60e7cba5124fb1"
+    },
+    {
+      "scheme": "G",
+      "path": "risc-v/results/raccoong-segmented-uniform-trees/count-10/sample-2/pipeline-completed.json",
+      "root_sha256": "1c54cf9c77227d9ed215c14fa1d38c7d6d90a356e76deb7267fdb7122acac783",
+      "marker_sha256": "206d00833476d526974689765d8913360982d08480d698386ba55d0474c1bedd"
+    },
+    {
+      "scheme": "G",
+      "path": "risc-v/results/raccoong-segmented-uniform-trees/count-30/sample-0/pipeline-completed.json",
+      "root_sha256": "bd6a59fc570c3c6363dff74f5c57667d99f83a3e98274b5b4b4f19b3cb907848",
+      "marker_sha256": "f110864a4b24d77448a7e5e4c8482b9fe0d128a862b2036f3a7f01bab34d38e0"
+    },
+    {
+      "scheme": "G",
+      "path": "risc-v/results/raccoong-segmented-uniform-trees/count-30/sample-1/pipeline-completed.json",
+      "root_sha256": "bd6a59fc570c3c6363dff74f5c57667d99f83a3e98274b5b4b4f19b3cb907848",
+      "marker_sha256": "236b99db9138fdb24d43b6a1bf49fc1f7143aa22ea88e5d7e2972a781a6b4eda"
+    },
+    {
+      "scheme": "G",
+      "path": "risc-v/results/raccoong-segmented-uniform-trees/count-30/sample-2/pipeline-completed.json",
+      "root_sha256": "bd6a59fc570c3c6363dff74f5c57667d99f83a3e98274b5b4b4f19b3cb907848",
+      "marker_sha256": "5266818239ab1cbda34cf2cb923fa088e90ba5ec3f64645cad56723f8a7f026f"
+    },
+    {
+      "scheme": "G",
+      "path": "risc-v/results/raccoong-segmented-uniform-trees/count-70/sample-0/pipeline-completed.json",
+      "root_sha256": "0df8700d0bfd0b98aeb39fa5ecf4b45e4de605654672af49d2c335bc7d16d06d",
+      "marker_sha256": "5dc7920eb09712d3c10eda87959dbe39eece3c78d104359bd28163fb6750fdf0"
+    },
+    {
+      "scheme": "G",
+      "path": "risc-v/results/raccoong-segmented-uniform-trees/count-70/sample-1/pipeline-completed.json",
+      "root_sha256": "0df8700d0bfd0b98aeb39fa5ecf4b45e4de605654672af49d2c335bc7d16d06d",
+      "marker_sha256": "dc60ddd87ce3bc5c41ba4156903928356e61679360704aa12902e20f849d19df"
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,11 @@
+[package]
+name = "mldsa-security-harness"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+mldsa-riscv-host = { path = "../../mldsa/host" }
+leanvm = { path = "../../../vendor/leanVM-riscv/crates/leanvm_core" }
+
+[workspace]

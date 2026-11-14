@@ -1,0 +1,90 @@
+{
+  "action": "prove",
+  "advice_words": 943,
+  "arch": "aarch64",
+  "count": 2,
+  "elf_sha256": "73fa19d855adbd0ad6d8368260b5e1b173cc57a854e52624dd1b8e65d95f69d6",
+  "execution": {
+    "committed_words": 102399592,
+    "cycles": 2142891,
+    "padded_rows": {
+      "ALU": 2097152,
+      "DIV": 16,
+      "EXT": 8,
+      "HASH": 64,
+      "LD": 131072,
+      "LOAD": 262144,
+      "MUL": 131072,
+      "MULH": 16,
+      "SD": 131072,
+      "SHIFT": 524288,
+      "STORE": 262144
+    },
+    "proven_rows": 3539048,
+    "rows": {
+      "ALU": 1071547,
+      "DIV": 0,
+      "EXT": 0,
+      "HASH": 43,
+      "LD": 112670,
+      "LOAD": 152603,
+      "MUL": 120959,
+      "MULH": 0,
+      "SD": 100426,
+      "SHIFT": 452576,
+      "STORE": 132067
+    }
+  },
+  "fixture_s": 0.000933917,
+  "leanvm_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "log_inverse_rate": 1,
+  "measure_s": 0.019646375,
+  "os": "macos",
+  "peak_rss_bytes": 13597868032,
+  "program_load_s": 0.001823625,
+  "proof_bytes": 363234,
+  "proof_bytes_samples": [
+    363234,
+    363234,
+    363234
+  ],
+  "prove_median_s": 1.36246425,
+  "prove_s": [
+    1.36246425,
+    1.350541875,
+    1.374169041
+  ],
+  "schema": 1,
+  "scheme": "mldsa",
+  "statement_sha256": "231761f652e50958c361cb861ad438312077fb94668bce97899fb78447195943",
+  "status": "accepted",
+  "threads": 8,
+  "verified": true,
+  "verify_median_s": 0.002053667,
+  "verify_s": [
+    0.002053667,
+    0.0020275,
+    0.002082708
+  ],
+  "warmup": 1,
+  "zero_knowledge": false,
+  "host_binary_sha256": "bde45361a674e253aed008cfdf9276a9bd5555f6273f636c51d3515a4fd920ae",
+  "command": [
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/.cache/aerie-wrapper-host-target/release/riscv-pqbench",
+    "prove",
+    "--scheme",
+    "mldsa",
+    "--n",
+    "2",
+    "--out",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/results/direct/mldsa-2.json",
+    "--proof",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/artifacts/mldsa-2.proof",
+    "--threads",
+    "8",
+    "--repeat",
+    "3",
+    "--warmup",
+    "1"
+  ]
+}

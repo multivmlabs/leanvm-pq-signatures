@@ -1,0 +1,450 @@
+{
+  "action": "prove",
+  "actual_leaves": 7,
+  "all_folded_claims_settled": true,
+  "arity": 2,
+  "arity_0": 2,
+  "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "depth": 3,
+  "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c",
+  "first_circuit": {
+    "committed_words": 10191872,
+    "tables": [
+      {
+        "height_log": 17,
+        "name": "EMUL",
+        "rows": 109190
+      },
+      {
+        "height_log": 16,
+        "name": "EXK",
+        "rows": 35604
+      },
+      {
+        "height_log": 15,
+        "name": "HASH",
+        "rows": 18471
+      },
+      {
+        "height_log": 10,
+        "name": "SPLIT",
+        "rows": 976
+      },
+      {
+        "height_log": 14,
+        "name": "CAST",
+        "rows": 12787
+      },
+      {
+        "height_log": 10,
+        "name": "PUB",
+        "rows": 568
+      }
+    ]
+  },
+  "fixture_s": 0.085654667,
+  "leaf_prove_s": 7.261891498,
+  "leaf_reports": [
+    {
+      "execution": {
+        "committed_words": 68689848,
+        "cycles": 1469642,
+        "padded_rows": {
+          "ALU": 1048576,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 256,
+          "LD": 131072,
+          "LOAD": 16,
+          "MUL": 262144,
+          "MULH": 16,
+          "SD": 131072,
+          "SHIFT": 524288,
+          "STORE": 16
+        },
+        "proven_rows": 2097480,
+        "rows": {
+          "ALU": 728584,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 145,
+          "LD": 129036,
+          "LOAD": 0,
+          "MUL": 184320,
+          "MULH": 11,
+          "SD": 108147,
+          "SHIFT": 319399,
+          "STORE": 0
+        }
+      },
+      "leaf": 0,
+      "proof_bytes": 332906,
+      "proof_sha256": "23b1ba5f52b68b0fe0cd9ad5cdd27f88c373139087beec557a9973d3682404ab",
+      "prove_s": 1.255100791,
+      "signatures": 10,
+      "verify_s": 0.002165292
+    },
+    {
+      "execution": {
+        "committed_words": 68689848,
+        "cycles": 1469186,
+        "padded_rows": {
+          "ALU": 1048576,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 256,
+          "LD": 131072,
+          "LOAD": 16,
+          "MUL": 262144,
+          "MULH": 16,
+          "SD": 131072,
+          "SHIFT": 524288,
+          "STORE": 16
+        },
+        "proven_rows": 2097480,
+        "rows": {
+          "ALU": 728263,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 145,
+          "LD": 129040,
+          "LOAD": 0,
+          "MUL": 184320,
+          "MULH": 11,
+          "SD": 108143,
+          "SHIFT": 319264,
+          "STORE": 0
+        }
+      },
+      "leaf": 1,
+      "proof_bytes": 333738,
+      "proof_sha256": "d2a055403c002843c78d298d963d8fd56f19a9929aa037f6b2ed42eb1710586e",
+      "prove_s": 0.991942208,
+      "signatures": 10,
+      "verify_s": 0.002107125
+    },
+    {
+      "execution": {
+        "committed_words": 68689848,
+        "cycles": 1463339,
+        "padded_rows": {
+          "ALU": 1048576,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 256,
+          "LD": 131072,
+          "LOAD": 16,
+          "MUL": 262144,
+          "MULH": 16,
+          "SD": 131072,
+          "SHIFT": 524288,
+          "STORE": 16
+        },
+        "proven_rows": 2097480,
+        "rows": {
+          "ALU": 724827,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 145,
+          "LD": 128516,
+          "LOAD": 0,
+          "MUL": 184320,
+          "MULH": 11,
+          "SD": 107670,
+          "SHIFT": 317850,
+          "STORE": 0
+        }
+      },
+      "leaf": 2,
+      "proof_bytes": 333514,
+      "proof_sha256": "b5137c4c224338d51dfe145296b94c5f8104b9ad0ad577f74b7910e7456e7875",
+      "prove_s": 1.005689875,
+      "signatures": 10,
+      "verify_s": 0.002132833
+    },
+    {
+      "execution": {
+        "committed_words": 68689848,
+        "cycles": 1481074,
+        "padded_rows": {
+          "ALU": 1048576,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 256,
+          "LD": 131072,
+          "LOAD": 16,
+          "MUL": 262144,
+          "MULH": 16,
+          "SD": 131072,
+          "SHIFT": 524288,
+          "STORE": 16
+        },
+        "proven_rows": 2097480,
+        "rows": {
+          "ALU": 735374,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 145,
+          "LD": 130068,
+          "LOAD": 0,
+          "MUL": 184320,
+          "MULH": 11,
+          "SD": 109087,
+          "SHIFT": 322069,
+          "STORE": 0
+        }
+      },
+      "leaf": 3,
+      "proof_bytes": 332490,
+      "proof_sha256": "cf3204ff76e971a83ab64672023e4f705ec19e1e7e2825d6ce77b8bc4d42cdc5",
+      "prove_s": 0.995435458,
+      "signatures": 10,
+      "verify_s": 0.002243083
+    },
+    {
+      "execution": {
+        "committed_words": 68689848,
+        "cycles": 1475545,
+        "padded_rows": {
+          "ALU": 1048576,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 256,
+          "LD": 131072,
+          "LOAD": 16,
+          "MUL": 262144,
+          "MULH": 16,
+          "SD": 131072,
+          "SHIFT": 524288,
+          "STORE": 16
+        },
+        "proven_rows": 2097480,
+        "rows": {
+          "ALU": 732002,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 145,
+          "LD": 129556,
+          "LOAD": 0,
+          "MUL": 184320,
+          "MULH": 11,
+          "SD": 108615,
+          "SHIFT": 320896,
+          "STORE": 0
+        }
+      },
+      "leaf": 4,
+      "proof_bytes": 333226,
+      "proof_sha256": "2bbb7e6e03b8129d0a8f033eacebdb182a48a4cfc1824a50fd69f1b5e6e51d0d",
+      "prove_s": 1.004485041,
+      "signatures": 10,
+      "verify_s": 0.002205959
+    },
+    {
+      "execution": {
+        "committed_words": 68689848,
+        "cycles": 1463792,
+        "padded_rows": {
+          "ALU": 1048576,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 256,
+          "LD": 131072,
+          "LOAD": 16,
+          "MUL": 262144,
+          "MULH": 16,
+          "SD": 131072,
+          "SHIFT": 524288,
+          "STORE": 16
+        },
+        "proven_rows": 2097480,
+        "rows": {
+          "ALU": 724953,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 145,
+          "LD": 128521,
+          "LOAD": 0,
+          "MUL": 184320,
+          "MULH": 11,
+          "SD": 107666,
+          "SHIFT": 318176,
+          "STORE": 0
+        }
+      },
+      "leaf": 5,
+      "proof_bytes": 334282,
+      "proof_sha256": "7c2793f42f0ad72886f15dcf57f8dd6118ddc55e046e712be5fe093d9d9bc9cb",
+      "prove_s": 1.004313333,
+      "signatures": 10,
+      "verify_s": 0.002299959
+    },
+    {
+      "execution": {
+        "committed_words": 68689848,
+        "cycles": 1486464,
+        "padded_rows": {
+          "ALU": 1048576,
+          "DIV": 16,
+          "EXT": 8,
+          "HASH": 256,
+          "LD": 131072,
+          "LOAD": 16,
+          "MUL": 262144,
+          "MULH": 16,
+          "SD": 131072,
+          "SHIFT": 524288,
+          "STORE": 16
+        },
+        "proven_rows": 2097480,
+        "rows": {
+          "ALU": 738359,
+          "DIV": 0,
+          "EXT": 0,
+          "HASH": 145,
+          "LD": 130591,
+          "LOAD": 0,
+          "MUL": 184320,
+          "MULH": 11,
+          "SD": 109563,
+          "SHIFT": 323475,
+          "STORE": 0
+        }
+      },
+      "leaf": 6,
+      "proof_bytes": 333386,
+      "proof_sha256": "0157120d6007cbc9b212b0d33013a61ff200553f134d138012dbcb1e9cf1b6c5",
+      "prove_s": 1.004924792,
+      "signatures": 10,
+      "verify_s": 0.002126042
+    }
+  ],
+  "leaf_size": 10,
+  "leaf_slots": 8,
+  "log_inverse_rate": 1,
+  "merge_count": 7,
+  "merge_prove_s": 1.0144030419999999,
+  "merge_reports": [
+    {
+      "children": 2,
+      "kind": "first",
+      "level": 0,
+      "node": 0,
+      "proof_bytes": 267007,
+      "proof_sha256": "9cf7a33b2f93961638b2b3b25ee96217fb545f1c63ffc6dbbb24544a1168e97f",
+      "prove_s": 0.158696916
+    },
+    {
+      "children": 2,
+      "kind": "first",
+      "level": 0,
+      "node": 1,
+      "proof_bytes": 267263,
+      "proof_sha256": "5f326b4e848c5387bc919f5e6139b4f10f2228f4927ae0ab286da8872cd4ba13",
+      "prove_s": 0.143573584
+    },
+    {
+      "children": 2,
+      "kind": "first",
+      "level": 0,
+      "node": 2,
+      "proof_bytes": 266975,
+      "proof_sha256": "b8c6914519d2e8db0e0c429d1b757a699b56e7ff28e27bde9a504e92f314099f",
+      "prove_s": 0.13846775
+    },
+    {
+      "children": 2,
+      "kind": "first",
+      "level": 0,
+      "node": 3,
+      "proof_bytes": 266303,
+      "proof_sha256": "53f59fd65e0c1434db2ec66023927d24429117edb03a34d0c5f3ee1f1b2e8b0f",
+      "prove_s": 0.14112875
+    },
+    {
+      "children": 2,
+      "kind": "node",
+      "level": 1,
+      "node": 4,
+      "proof_bytes": 267295,
+      "proof_sha256": "1766da9e17efcf955b63ab650c0fb4354eb0c88bdd6dad85429edf8f0612a485",
+      "prove_s": 0.160838458
+    },
+    {
+      "children": 2,
+      "kind": "node",
+      "level": 1,
+      "node": 5,
+      "proof_bytes": 266815,
+      "proof_sha256": "af1d04fe41d73862f14dcaa1509fb3c43683c5f6e902dd968e2ffcee14c5f71c",
+      "prove_s": 0.135537375
+    },
+    {
+      "children": 2,
+      "kind": "node",
+      "level": 2,
+      "node": 6,
+      "proof_bytes": 267903,
+      "proof_sha256": "7704ea17bb2c6dc8cf5b38ba51446eb05511e5397a51544eac3b13c9b3e09b3e",
+      "prove_s": 0.136160209
+    }
+  ],
+  "node_circuit": {
+    "committed_words": 10191872,
+    "tables": [
+      {
+        "height_log": 17,
+        "name": "EMUL",
+        "rows": 58417
+      },
+      {
+        "height_log": 16,
+        "name": "EXK",
+        "rows": 37772
+      },
+      {
+        "height_log": 15,
+        "name": "HASH",
+        "rows": 14900
+      },
+      {
+        "height_log": 10,
+        "name": "SPLIT",
+        "rows": 924
+      },
+      {
+        "height_log": 14,
+        "name": "CAST",
+        "rows": 9160
+      },
+      {
+        "height_log": 10,
+        "name": "PUB",
+        "rows": 550
+      }
+    ]
+  },
+  "padding_policy": "Repeat final real leaf proof in canonical padding slots; no extra signatures counted. All merge proofs freshly produced and charged.",
+  "padding_slots": 1,
+  "peak_rss_bytes": 9349169152,
+  "pipeline_elapsed_s": 8.452526709,
+  "prepared_complete_verify_s": [
+    0.001860417,
+    0.00184025,
+    0.001854666
+  ],
+  "program_load_s": 0.001860583,
+  "root_proof_bytes": 267903,
+  "root_proof_sha256": "7704ea17bb2c6dc8cf5b38ba51446eb05511e5397a51544eac3b13c9b3e09b3e",
+  "sample": "sample-2",
+  "schema": 1,
+  "scheme": "falcon",
+  "signatures": 70,
+  "statement_sha256": "2ba5024f2aec8046ef82e8bb717b5a2fcbd3f5174c825ef733523655046fe37f",
+  "status": "accepted",
+  "threads_requested": 8,
+  "total_prove_s": 8.27629454,
+  "tree_setup_s": 0.047400334,
+  "verified": true,
+  "zero_knowledge": false
+}

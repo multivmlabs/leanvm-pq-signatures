@@ -1,0 +1,693 @@
+//! Setup-capacity E2E tests: exercise production `fp128` D64 presets under three
+//! setup-vs-use size relationships.
+//!
+//! For each preset we run commit/prove/verify (or batched variants) with:
+//!
+//! 1. **Same size.** `setup_prover` is called with the same `max_num_vars`
+//!    and `max_num_batched_polys` used by commit/prove/verify. These must
+//!    succeed.
+//! 2. **Small setup.** `setup_prover` is called with a *smaller* parameter
+//!    than commit/prove/verify. These must fail (panic). We cover the
+//!    `max_num_vars` axis and the `max_num_batched_polys` axis separately.
+//! 3. **Large setup.** `setup_prover` is called with a *larger* parameter
+//!    than commit/prove/verify. These must succeed — the setup capacity is
+//!    an upper bound, not a tight match.
+//!
+//! Every preset listed in `presets.rs` for the production D64 merge gate gets its
+//! own module with the five tests.
+
+#![allow(missing_docs)]
+
+mod common;
+
+use akita_config::proof_optimized::fp128;
+use akita_config::CommitmentConfig;
+use akita_cpu_backend::CpuBackend;
+use akita_cpu_backend::DensePoly;
+use akita_cpu_backend::OneHotPoly;
+use akita_params::{BasisMode, SetupMatrixCapacity};
+use common::{
+    dense_field_evals, init_rayon_pool, load_workspace_scheme, opening_from_poly_for_layout,
+    prove_input, random_point, run_on_large_stack, verify_input, F,
+};
+use jolt_field::{CanonicalEncoding, One, Zero};
+use rand::rngs::StdRng;
+use rand::{Rng, SeedableRng};
+use std::panic::{catch_unwind, AssertUnwindSafe};
+
+// ---------------------------------------------------------------------------
+// Shared test sizes
+// ---------------------------------------------------------------------------
+
+/// Number of variables for the polynomial we actually commit/prove/verify.
+///
+/// This is chosen to ensure these tests exercise a folded schedule (not the
+/// small supported folded path) while keeping CI runtime reasonable.
+const POLY_NV: usize = 16;
+/// How many polynomials we actually commit in the "same size" tests.
+const USE_BATCH: usize = 1;
+
+/// Run `f` on a large-stack worker thread and re-raise its panic payload
+/// unchanged, so that `#[should_panic(expected = "...")]` can match the
+/// original inner message instead of the generic `"test thread panicked"`
+/// string that bare [`run_on_large_stack`] would surface.
+fn run_on_large_stack_propagate<R: Send + 'static>(f: impl FnOnce() -> R + Send + 'static) -> R {
+    let handle = std::thread::Builder::new()
+        .stack_size(common::STACK_SIZE)
+        .spawn(move || catch_unwind(AssertUnwindSafe(f)))
+        .expect("failed to spawn thread");
+    match handle
+        .join()
+        .expect("worker thread finished without a result")
+    {
+        Ok(value) => value,
+        Err(payload) => std::panic::resume_unwind(payload),
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Generic helpers
+// ---------------------------------------------------------------------------
+
+fn onehot_lagrange_opening(indices: &[Option<usize>], onehot_k: usize, point: &[F]) -> F {
+    assert_eq!(indices.len() * onehot_k, 1usize << point.len());
+    indices
+        .iter()
+        .enumerate()
+        .filter_map(|(chunk_idx, hot_idx)| hot_idx.map(|hot_idx| chunk_idx * onehot_k + hot_idx))
+        .fold(F::zero(), |acc, field_pos| {
+            acc + point
+                .iter()
+                .enumerate()
+                .fold(F::one(), |weight, (bit, &r)| {
+                    if ((field_pos >> bit) & 1) == 1 {
+                        weight * r
+                    } else {
+                        weight * (F::one() - r)
+                    }
+                })
+        })
+}
+
+/// Run a single-polynomial commit/prove/verify round-trip with the requested
+/// setup capacity (`setup_nv`, `setup_polys`) against a polynomial with
+/// `poly_nv` variables.  `commit_batch` is the number of polynomial slots we
+/// use at commit time (always `1` for the single-poly path, kept explicit so
+/// the batch-capacity axis can reuse the same builder).
+fn run_dense_e2e<Cfg, const D: usize>(setup_nv: usize, setup_polys: usize, poly_nv: usize)
+where
+    Cfg: CommitmentConfig<Field = F, ExtField = F>,
+    Cfg: 'static,
+{
+    let scheme = load_workspace_scheme::<Cfg>().expect("workspace schedule artifact");
+    assert_eq!(256, D);
+    assert!(poly_nv >= D.trailing_zeros() as usize);
+
+    let opening_layout =
+        akita_params::OpeningClaimsLayout::new(poly_nv, 1).expect("singleton opening batch");
+    let row = scheme
+        .schedules()
+        .resolve_key(&akita_params::ScheduleLookupKey::single(
+            akita_params::PolynomialGroupLayout::new(poly_nv, 1),
+        ))
+        .expect("schedule");
+    let layout = row.schedule().root.params.clone();
+    let schedule = row.schedule().clone();
+    let evals = dense_field_evals(poly_nv, 0xdead_beef_0000 + poly_nv as u64);
+    let poly = DensePoly::<F>::from_field_evals(poly_nv, &evals).expect("dense poly");
+
+    let pt = random_point(poly_nv, 0xcafe_0000 + poly_nv as u64);
+    let expected_opening = opening_from_poly_for_layout(
+        &poly,
+        &pt,
+        &layout.final_group_scalar().expect("scalar final group"),
+        BasisMode::Lagrange,
+    );
+
+    let setup = scheme.setup_prover(setup_nv, setup_polys).unwrap();
+    let stack = CpuBackend::new(setup.expanded.clone()).expect("backend");
+    let verifier_setup_source = scheme
+        .setup_prover(setup_nv + 1, setup_polys + 1)
+        .expect("larger verifier materialization");
+    assert_eq!(
+        setup.expanded.descriptor().setup_seed,
+        verifier_setup_source.expanded.descriptor().setup_seed
+    );
+    assert!(
+        verifier_setup_source
+            .expanded
+            .shared_matrix()
+            .num_field_elements()
+            >= setup.expanded.shared_matrix().num_field_elements()
+    );
+    let verifier_setup = scheme
+        .setup_verifier_for_schedule(&verifier_setup_source, &schedule, &opening_layout)
+        .expect("schedule-scoped verifier setup from a larger covering public prefix");
+    let verifier_capacity =
+        akita_params::verifier_setup_matrix_capacity_for_schedule(&schedule, &opening_layout)
+            .expect("verifier capacity");
+    assert_eq!(
+        verifier_setup
+            .expanded()
+            .shared_matrix()
+            .num_field_elements(),
+        verifier_capacity.num_field_elements
+    );
+    if setup.expanded.shared_matrix().num_field_elements() >= verifier_capacity.num_field_elements {
+        let undersized = setup
+            .to_verifier_setup(SetupMatrixCapacity {
+                num_field_elements: verifier_capacity.num_field_elements - 1,
+            })
+            .expect("construct undersized verifier fixture");
+        assert!(
+            !akita_config::verifier_schedule_fits_setup(
+                undersized.expanded().as_ref(),
+                &schedule,
+                &opening_layout,
+            )
+            .expect("fit check"),
+            "one-field-short verifier setup must not fit"
+        );
+    }
+
+    let akita_cpu_backend::CommitOutput {
+        committed_group: commitment,
+        private_handle: hint,
+    } = stack
+        .commit(
+            scheme.schedules(),
+            &stack.import_source(vec![poly.clone()]).expect("source"),
+            akita_cpu_backend::GroupContext::scheduler_without_precommitted_groups(),
+        )
+        .expect("commit");
+
+    let commitments = [commitment];
+    let openings = [expected_opening];
+    let opening_groups = [&openings[..]];
+    let hints = vec![hint];
+
+    let session = b"setup-tests/dense";
+    let proof = scheme
+        .batched_prove(
+            &setup,
+            prove_input::<Cfg>(
+                &pt[..],
+                &openings,
+                &commitments[0],
+                hints.into_iter().next().unwrap(),
+                scheme.schedules(),
+            ),
+            &stack,
+            session,
+            BasisMode::Lagrange,
+        )
+        .expect("prove");
+    scheme
+        .verifier(verifier_setup.clone())
+        .and_then(|verifier| {
+            verifier.batched_verify(
+                &proof,
+                session,
+                verify_input::<Cfg>(
+                    &pt[..],
+                    opening_groups[0],
+                    &commitments[0],
+                    scheme.schedules(),
+                ),
+                BasisMode::Lagrange,
+            )
+        })
+        .expect("verify");
+}
+
+/// Onehot variant of [`run_dense_e2e`]. `K` is the onehot chunk size selected
+/// by the config; standard one-hot presets use `K = 256`.
+fn run_onehot_e2e<Cfg, const D: usize>(setup_nv: usize, setup_polys: usize, poly_nv: usize)
+where
+    Cfg: CommitmentConfig<Field = F, ExtField = F>,
+    Cfg: 'static,
+{
+    let scheme = load_workspace_scheme::<Cfg>().expect("workspace schedule artifact");
+    assert_eq!(256, D);
+
+    let opening_layout =
+        akita_params::OpeningClaimsLayout::new(poly_nv, 1).expect("singleton opening batch");
+    let row = scheme
+        .schedules()
+        .resolve_key(&akita_params::ScheduleLookupKey::single(
+            akita_params::PolynomialGroupLayout::new(poly_nv, 1),
+        ))
+        .expect("schedule");
+    let layout = row.schedule().root.params.clone();
+    let schedule = row.schedule().clone();
+    let root_d = layout.d_a();
+    let k = akita_config::unit_onehot_source_chunk_size::<Cfg>()
+        .expect("one-hot setup test requires a unit-one-hot config");
+    let total_ring = layout.blocks().live_blocks * layout.blocks().positions_per_block;
+    assert_eq!(
+        total_ring * root_d,
+        1usize << poly_nv,
+        "onehot layout mismatch at nv={poly_nv}"
+    );
+    let total_chunks = total_ring * root_d / k;
+
+    let mut rng = StdRng::seed_from_u64(0xdead_beef_0001 + poly_nv as u64);
+    let indices: Vec<Option<usize>> = (0..total_chunks)
+        .map(|_| Some(rng.gen_range(0..k)))
+        .collect();
+    let poly = OneHotPoly::<F, usize>::new(k, indices.clone()).expect("onehot poly");
+
+    let pt = random_point(poly_nv, 0xcafe_0001 + poly_nv as u64);
+    let expected_opening = onehot_lagrange_opening(&indices, k, &pt);
+
+    let setup = scheme.setup_prover(setup_nv, setup_polys).unwrap();
+    let stack = CpuBackend::new(setup.expanded.clone()).expect("backend");
+    let verifier_setup_source = scheme
+        .setup_prover(setup_nv + 1, setup_polys + 1)
+        .expect("larger verifier materialization");
+    assert_eq!(
+        setup.expanded.descriptor().setup_seed,
+        verifier_setup_source.expanded.descriptor().setup_seed
+    );
+    assert!(
+        verifier_setup_source
+            .expanded
+            .shared_matrix()
+            .num_field_elements()
+            >= setup.expanded.shared_matrix().num_field_elements()
+    );
+    let verifier_setup = scheme
+        .setup_verifier_for_schedule(&verifier_setup_source, &schedule, &opening_layout)
+        .expect("schedule-scoped verifier setup from a larger covering public prefix");
+    let verifier_capacity =
+        akita_params::verifier_setup_matrix_capacity_for_schedule(&schedule, &opening_layout)
+            .expect("verifier capacity");
+    assert_eq!(
+        verifier_setup
+            .expanded()
+            .shared_matrix()
+            .num_field_elements(),
+        verifier_capacity.num_field_elements
+    );
+
+    let akita_cpu_backend::CommitOutput {
+        committed_group: commitment,
+        private_handle: hint,
+    } = stack
+        .commit(
+            scheme.schedules(),
+            &stack.import_source(vec![poly.clone()]).expect("source"),
+            akita_cpu_backend::GroupContext::scheduler_without_precommitted_groups(),
+        )
+        .expect("commit");
+
+    let commitments = [commitment];
+    let openings = [expected_opening];
+    let opening_groups = [&openings[..]];
+    let hints = vec![hint];
+
+    let session = b"setup-tests/onehot";
+    let proof = scheme
+        .batched_prove(
+            &setup,
+            prove_input::<Cfg>(
+                &pt[..],
+                &openings,
+                &commitments[0],
+                hints.into_iter().next().unwrap(),
+                scheme.schedules(),
+            ),
+            &stack,
+            session,
+            BasisMode::Lagrange,
+        )
+        .expect("prove");
+    scheme
+        .verifier(verifier_setup.clone())
+        .and_then(|verifier| {
+            verifier.batched_verify(
+                &proof,
+                session,
+                verify_input::<Cfg>(
+                    &pt[..],
+                    opening_groups[0],
+                    &commitments[0],
+                    scheme.schedules(),
+                ),
+                BasisMode::Lagrange,
+            )
+        })
+        .expect("verify");
+
+    assert!(
+        !proof.is_empty(),
+        "native proof must contain protocol messages"
+    );
+    let mut tampered = proof.clone();
+    *tampered.last_mut().expect("nonempty proof") ^= 1;
+    scheme
+        .verifier(verifier_setup.clone())
+        .and_then(|verifier| {
+            verifier.batched_verify(
+                &tampered,
+                session,
+                verify_input::<Cfg>(
+                    &pt[..],
+                    opening_groups[0],
+                    &commitments[0],
+                    scheme.schedules(),
+                ),
+                BasisMode::Lagrange,
+            )
+        })
+        .expect_err("tampering the terminal response must be rejected");
+
+    let mut wrong_binding = proof.clone();
+    let binding_probe = wrong_binding.len() / 2;
+    wrong_binding[binding_probe] ^= 1;
+    scheme
+        .verifier(verifier_setup.clone())
+        .and_then(|verifier| {
+            verifier.batched_verify(
+                &wrong_binding,
+                session,
+                verify_input::<Cfg>(
+                    &pt[..],
+                    opening_groups[0],
+                    &commitments[0],
+                    scheme.schedules(),
+                ),
+                BasisMode::Lagrange,
+            )
+        })
+        .expect_err("schedule/proof binding mismatch must reject without panic");
+}
+
+/// Batched dense round-trip: commit `commit_batch` dense polynomials of
+/// `poly_nv` variables into a single grouped commitment, then run
+/// `batched_prove`/`batched_verify` at one shared opening point.
+fn run_dense_batched_e2e<Cfg, const D: usize>(
+    setup_nv: usize,
+    setup_polys: usize,
+    poly_nv: usize,
+    commit_batch: usize,
+) where
+    Cfg: CommitmentConfig<Field = F, ExtField = F>,
+    Cfg: 'static,
+{
+    let scheme = load_workspace_scheme::<Cfg>().expect("workspace schedule artifact");
+    assert_eq!(256, D);
+    assert!(commit_batch >= 1);
+
+    let layout = scheme
+        .schedules()
+        .resolve_key(&akita_params::ScheduleLookupKey::single(
+            akita_params::PolynomialGroupLayout::new(poly_nv, commit_batch),
+        ))
+        .expect("batched layout")
+        .schedule()
+        .root
+        .params
+        .clone();
+    let polys: Vec<DensePoly<F>> = (0..commit_batch)
+        .map(|idx| {
+            let mut rng = StdRng::seed_from_u64(0xbeef_cafe_0000 + idx as u64);
+            let evals: Vec<F> = (0..1usize << poly_nv)
+                .map(|_| F::from_u128_reduced(rng.gen::<u128>()))
+                .collect();
+            DensePoly::<F>::from_field_evals(poly_nv, &evals).expect("dense poly")
+        })
+        .collect();
+
+    let pt = random_point(poly_nv, 0xbabe_0000 + poly_nv as u64);
+    let openings: Vec<F> = polys
+        .iter()
+        .map(|poly| {
+            opening_from_poly_for_layout(
+                poly,
+                &pt,
+                &layout.final_group_scalar().expect("scalar final group"),
+                BasisMode::Lagrange,
+            )
+        })
+        .collect();
+
+    let setup = scheme.setup_prover(setup_nv, setup_polys).unwrap();
+    let stack = CpuBackend::new(setup.expanded.clone()).expect("backend");
+    let verifier_setup = scheme.setup_verifier(&setup).expect("verifier setup");
+
+    let akita_cpu_backend::CommitOutput {
+        committed_group: commitment,
+        private_handle: hint,
+    } = stack
+        .commit(
+            scheme.schedules(),
+            &stack.import_source(polys.to_vec()).expect("source"),
+            akita_cpu_backend::GroupContext::scheduler_without_precommitted_groups(),
+        )
+        .expect("batched commit");
+    let commitments = [commitment];
+    let hints = vec![hint];
+    let opening_groups = [&openings[..]];
+
+    let session = b"setup-tests/batched-dense";
+    let proof = scheme
+        .batched_prove(
+            &setup,
+            prove_input::<Cfg>(
+                &pt[..],
+                &openings,
+                &commitments[0],
+                hints.into_iter().next().unwrap(),
+                scheme.schedules(),
+            ),
+            &stack,
+            session,
+            BasisMode::Lagrange,
+        )
+        .expect("batched prove");
+    scheme
+        .verifier(verifier_setup.clone())
+        .and_then(|verifier| {
+            verifier.batched_verify(
+                &proof,
+                session,
+                verify_input::<Cfg>(
+                    &pt[..],
+                    opening_groups[0],
+                    &commitments[0],
+                    scheme.schedules(),
+                ),
+                BasisMode::Lagrange,
+            )
+        })
+        .expect("batched verify");
+}
+
+/// Batched onehot round-trip.
+///
+/// The construction dimension is metadata rather than storage authority, but
+/// it must still match the root layout so setup-capacity failures are tested
+/// with a polynomial of exactly `poly_nv` variables.
+fn run_onehot_batched_e2e<Cfg, const D: usize>(
+    setup_nv: usize,
+    setup_polys: usize,
+    poly_nv: usize,
+    commit_batch: usize,
+) where
+    Cfg: CommitmentConfig<Field = F, ExtField = F>,
+    Cfg: 'static,
+{
+    let scheme = load_workspace_scheme::<Cfg>().expect("workspace schedule artifact");
+    assert_eq!(256, D);
+    assert!(commit_batch >= 1);
+
+    let layout = scheme
+        .schedules()
+        .resolve_key(&akita_params::ScheduleLookupKey::single(
+            akita_params::PolynomialGroupLayout::new(poly_nv, commit_batch),
+        ))
+        .expect("batched layout")
+        .schedule()
+        .root
+        .params
+        .clone();
+    let root_d = layout.d_a();
+    let k = akita_config::unit_onehot_source_chunk_size::<Cfg>()
+        .expect("one-hot setup test requires a unit-one-hot config");
+    let total_ring = layout.blocks().live_blocks * layout.blocks().positions_per_block;
+    assert_eq!(total_ring * root_d, 1usize << poly_nv);
+    let total_chunks = total_ring * root_d / k;
+
+    let (polys, onehot_indices): (Vec<_>, Vec<_>) = (0..commit_batch)
+        .map(|idx| {
+            let mut rng = StdRng::seed_from_u64(0xbabe_f00d_0000 + idx as u64);
+            let indices: Vec<Option<usize>> = (0..total_chunks)
+                .map(|_| Some(rng.gen_range(0..k)))
+                .collect();
+            let poly = OneHotPoly::<F, usize>::new(k, indices.clone()).expect("onehot poly");
+            (poly, indices)
+        })
+        .unzip();
+
+    let pt = random_point(poly_nv, 0xbabe_0001 + poly_nv as u64);
+    let openings: Vec<F> = polys
+        .iter()
+        .zip(onehot_indices.iter())
+        .map(|(_, indices)| onehot_lagrange_opening(indices, k, &pt))
+        .collect();
+
+    let setup = scheme.setup_prover(setup_nv, setup_polys).unwrap();
+    let stack = CpuBackend::new(setup.expanded.clone()).expect("backend");
+    let verifier_setup = scheme.setup_verifier(&setup).expect("verifier setup");
+
+    let akita_cpu_backend::CommitOutput {
+        committed_group: commitment,
+        private_handle: hint,
+    } = stack
+        .commit(
+            scheme.schedules(),
+            &stack.import_source(polys.to_vec()).expect("source"),
+            akita_cpu_backend::GroupContext::scheduler_without_precommitted_groups(),
+        )
+        .expect("batched onehot commit");
+    let commitments = [commitment];
+    let hints = vec![hint];
+    let opening_groups = [&openings[..]];
+
+    let session = b"setup-tests/batched-onehot";
+    let proof = scheme
+        .batched_prove(
+            &setup,
+            prove_input::<Cfg>(
+                &pt[..],
+                &openings,
+                &commitments[0],
+                hints.into_iter().next().unwrap(),
+                scheme.schedules(),
+            ),
+            &stack,
+            session,
+            BasisMode::Lagrange,
+        )
+        .expect("batched onehot prove");
+    scheme
+        .verifier(verifier_setup.clone())
+        .and_then(|verifier| {
+            verifier.batched_verify(
+                &proof,
+                session,
+                verify_input::<Cfg>(
+                    &pt[..],
+                    opening_groups[0],
+                    &commitments[0],
+                    scheme.schedules(),
+                ),
+                BasisMode::Lagrange,
+            )
+        })
+        .expect("batched onehot verify");
+}
+
+// ---------------------------------------------------------------------------
+// Preset modules
+// ---------------------------------------------------------------------------
+
+// Each module defines the five tests for one preset. The bodies are identical
+// up to `type Cfg` / `const D`, so the bulk of the work is in the shared
+// helpers above.
+
+macro_rules! preset_module {
+    (
+        $mod_name:ident,
+        $cfg:ty,
+        $d:expr,
+        $runner:ident,
+        $batched_runner:ident $(,)?
+    ) => {
+        mod $mod_name {
+            use super::*;
+
+            type Cfg = $cfg;
+            const D: usize = $d;
+
+            // --- Group 1: setup size matches use size -----------------------
+
+            #[test]
+            fn same_size_passes() {
+                init_rayon_pool();
+                run_on_large_stack(|| {
+                    $runner::<Cfg, D>(POLY_NV, USE_BATCH, POLY_NV);
+                });
+            }
+
+            // --- Group 2: smaller setup than what commit/prove/verify use ---
+
+            /// Setup is sized for `alpha` variables (so `outer_vars = 0` and the
+            /// shared matrix has its smallest possible stride), but we then try
+            /// to commit a polynomial at `POLY_NV` variables. The commit path
+            /// explicitly rejects this with `AkitaError::InvalidInput("commit
+            /// received a polynomial with N variables but setup supports at
+            /// most M")`, which our `.expect("commit")` in the runner turns
+            /// into a panic.
+            #[test]
+            #[should_panic(
+                expected = "commit received a polynomial with 16 variables but setup supports at most 15"
+            )]
+            fn small_setup_nv_panics() {
+                init_rayon_pool();
+                run_on_large_stack_propagate(|| {
+                    $runner::<Cfg, D>(POLY_NV - 1, USE_BATCH, POLY_NV);
+                });
+            }
+
+            /// Setup is sized for `max_num_batched_polys = 1`, but we then try
+            /// to commit a two-polynomial multi-group batch. The commit path
+            /// explicitly rejects this with `AkitaError::InvalidInput("commit
+            /// received N polynomials but setup supports at most M")`, which
+            /// our `.expect("batched … commit")` turns into a panic.
+            #[test]
+            #[should_panic(expected = "commit received 2 polynomials but setup supports at most 1")]
+            fn small_setup_batch_panics() {
+                init_rayon_pool();
+                run_on_large_stack_propagate(|| {
+                    $batched_runner::<Cfg, D>(POLY_NV, 1, POLY_NV, 2);
+                });
+            }
+
+            // --- Group 3: larger setup than what commit/prove/verify use ----
+
+            #[test]
+            fn large_setup_nv_passes() {
+                init_rayon_pool();
+                run_on_large_stack(|| {
+                    $runner::<Cfg, D>(POLY_NV + 2, USE_BATCH, POLY_NV);
+                });
+            }
+
+            #[test]
+            fn large_setup_batch_passes() {
+                init_rayon_pool();
+                run_on_large_stack(|| {
+                    // Setup for 4 polys but only commit 2.
+                    $batched_runner::<Cfg, D>(POLY_NV, 4, POLY_NV, 2);
+                });
+            }
+        }
+    };
+}
+
+preset_module!(
+    adaptive_dense,
+    fp128::Dense,
+    256,
+    run_dense_e2e,
+    run_dense_batched_e2e
+);
+preset_module!(
+    adaptive_onehot,
+    fp128::OneHot,
+    256,
+    run_onehot_e2e,
+    run_onehot_batched_e2e
+);

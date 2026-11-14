@@ -1,0 +1,11 @@
+{
+  "classification": "DEFECT: empty-message completeness failure",
+  "location_before_fix": "guests/ethfalcon.py:35",
+  "witness": "salt=bytes(range(40)), message=b'', s2=[127]*512, h=c*(1-X)/254. The pinned C verifier and Python verifier accept, while guest compilation panics in hash_bytes_40_0 because its StackBuf(0) supplies no cells to keccak_cells.",
+  "control": "The same synthetic-key construction with the nonempty KAT 0 message executes successfully.",
+  "security_bridge": "Valid empty-message signatures could not be proved. No invalid-signature acceptance follows.",
+  "fix": "For compile-time length zero, hash a literal zero cell with len=0. The compiler folds this arm away for every nonempty message length.",
+  "nonempty_guest_hash_before_fix": "69a3514225bcd9b66ac753fc65c2de44dcac18a7dbb60504276a5c95e1470185",
+  "reproduction": ".venv/bin/python -m unittest discover -s tests -p test_falcon.py -v; test_empty_message_matches_upstream",
+  "novelty": "Local guest port defect, not an upstream vulnerability."
+}

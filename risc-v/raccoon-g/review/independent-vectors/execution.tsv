@@ -1,0 +1,12 @@
+first-one.bin	native=true	output=ff6683593e9285f46a2e4af1918c8401e9beabfde3fa7f15c2898509292fbd77	expected=ff6683593e9285f46a2e4af1918c8401e9beabfde3fa7f15c2898509292fbd77
+honest-two.bin	native=true	output=ae53fcfa7e7790cc503bc983a4b4c544b7646aea4ee112c475fa01baeaad8505	expected=ae53fcfa7e7790cc503bc983a4b4c544b7646aea4ee112c475fa01baeaad8505
+reversed-two.bin	native=true	output=9a2d01a9871f29d413e1ccfe04294c43abf4e353d0e98a10b7808ccaa23775ff	expected=9a2d01a9871f29d413e1ccfe04294c43abf4e353d0e98a10b7808ccaa23775ff
+second-challenge.bin	native=false	output=TRAP:Illegal { pc: 268443872 }	expected=ae53fcfa7e7790cc503bc983a4b4c544b7646aea4ee112c475fa01baeaad8505
+second-final-hint-residue-2048.bin	native=false	output=TRAP:Illegal { pc: 268443872 }	expected=ae53fcfa7e7790cc503bc983a4b4c544b7646aea4ee112c475fa01baeaad8505
+second-final-hint.bin	native=false	output=TRAP:Illegal { pc: 268443872 }	expected=ae53fcfa7e7790cc503bc983a4b4c544b7646aea4ee112c475fa01baeaad8505
+second-final-message-byte.bin	native=false	output=TRAP:Illegal { pc: 268443872 }	expected=4b35843340c2fc931a9b3687ae87d3174c8b5aa9a092b516c2688775570215ad
+second-final-public-low-bit.bin	native=false	output=TRAP:Illegal { pc: 268443872 }	expected=3d2ce2e0e714a53ec31c5c100f9d1e17699149f5592e3347f82f7ec59724b673
+second-final-public-residue-q.bin	native=false	output=TRAP:Illegal { pc: 268443872 }	expected=d006d03fa763b8d9d364fd7c8bdfb87eaeb56678101330ac8e4d01c1630be907
+second-final-response-residue-q.bin	native=false	output=TRAP:Illegal { pc: 268443872 }	expected=ae53fcfa7e7790cc503bc983a4b4c544b7646aea4ee112c475fa01baeaad8505
+second-one.bin	native=true	output=626c799ce188ad32e68cf97af30c5b1a25522055e382846267c160289b01d2be	expected=626c799ce188ad32e68cf97af30c5b1a25522055e382846267c160289b01d2be
+swapped-signature-witnesses.bin	native=false	output=TRAP:Illegal { pc: 268443872 }	expected=ae53fcfa7e7790cc503bc983a4b4c544b7646aea4ee112c475fa01baeaad8505

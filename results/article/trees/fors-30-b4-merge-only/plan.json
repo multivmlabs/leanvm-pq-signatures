@@ -1,0 +1,175 @@
+{
+  "compile_plan_s": 0.480906541,
+  "depth": 2,
+  "edge_count": 8,
+  "fan_in": 4,
+  "leaf_capacity": 5,
+  "leaf_count": 6,
+  "merge_count": 3,
+  "nodes": [
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 0,
+      "node": 0,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 1,
+      "node": 1,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 2,
+      "node": 2,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 3,
+      "node": 3,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 4,
+      "node": 4,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 5,
+      "node": 5,
+      "signatures": 5
+    },
+    {
+      "children": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "depth": 1,
+      "guest_hash": "16cf55768c929669a1423d90a3c594db7e57413de9cfc450afc150e4ca661a36",
+      "leaf": null,
+      "node": 6,
+      "signatures": 20
+    },
+    {
+      "children": [
+        4,
+        5
+      ],
+      "depth": 1,
+      "guest_hash": "4fd51004e8ceb7bd2d0933b1a1637be9bc77aff4405918815cfa55ec22e77a0d",
+      "leaf": null,
+      "node": 7,
+      "signatures": 10
+    },
+    {
+      "children": [
+        6,
+        7
+      ],
+      "depth": 2,
+      "guest_hash": "ad51f0ff99b10e02c82b470bad7845855efc80a76a52ba40eb9baecb7da037ce",
+      "leaf": null,
+      "node": 8,
+      "signatures": 30
+    }
+  ],
+  "plan_hash": "99924a15f813485cef6eea1a5f7aece5f3649c3dde894ebe7e95839f08dc3946",
+  "root_guest_hash": "ad51f0ff99b10e02c82b470bad7845855efc80a76a52ba40eb9baecb7da037ce",
+  "schema_version": 1,
+  "scheme": "fors",
+  "semantic_plan": {
+    "fan_in": 4,
+    "format": "pqbench/tree-v1/all-edges/level-chunks",
+    "leaf_capacity": 5,
+    "leaves": [
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "193f79b6a405cef6174195b643a311e92852d141fec708ede87b9b7ac948ea67",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "2cd786cf79f91f146e1bb2caf7615f04f0ccb2911977539325ec01f221331e9b",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "787729e16af318ef4a536443a2b63f7e0a90fa68b93e8c0ea9ddc0280a26fb7e",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "f50ef804a493e17d9e788505fd4b20f43a33bec48dba5bac2331437f82669e84",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "4398834f053652c5216a6e1fec9f91dacb20adf350f21a0d3b5db2f3d4a0fe7d",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "dd25c8cb585af0d5c4d23838e738116229516e74533cc4ba1951b791eb8c4c34",
+        "signatures": 5
+      }
+    ],
+    "schema_version": 1,
+    "scheme": "fors",
+    "signatures": 30
+  },
+  "signatures": 30,
+  "source_table": [
+    {
+      "bytecode_instructions": 217056,
+      "bytecode_log": 18,
+      "guest_hash": "16cf55768c929669a1423d90a3c594db7e57413de9cfc450afc150e4ca661a36",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    },
+    {
+      "bytecode_instructions": 216610,
+      "bytecode_log": 18,
+      "guest_hash": "4fd51004e8ceb7bd2d0933b1a1637be9bc77aff4405918815cfa55ec22e77a0d",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    },
+    {
+      "bytecode_instructions": 5534,
+      "bytecode_log": 13,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 8192
+    },
+    {
+      "bytecode_instructions": 216754,
+      "bytecode_log": 18,
+      "guest_hash": "ad51f0ff99b10e02c82b470bad7845855efc80a76a52ba40eb9baecb7da037ce",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    }
+  ]
+}

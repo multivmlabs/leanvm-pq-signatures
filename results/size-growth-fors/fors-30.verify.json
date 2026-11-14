@@ -1,0 +1,75 @@
+{
+  "action": "verify",
+  "arch": "aarch64",
+  "bytecode_prepare_s": 0.003694125,
+  "compile_s": 0.003625917,
+  "guest_hash": "ebecd8f4c01f7328e583531a31da4ea596135cdbd0cca196df2072131ee47da3",
+  "leanvm_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "leanvm_source_dirty_at_build": "false",
+  "metadata": {
+    "baseline_native_verify_s": 0.014746499999997551,
+    "count": 30,
+    "fixture_generation_s": 1.1503193749999987,
+    "fixture_start": 0,
+    "native_implementation": "Python reference FORS verifier using PyCryptodome Keccak; not an optimized native baseline",
+    "native_verify_seconds": 0.014746499999997551,
+    "parameters": {
+      "a": 8,
+      "k": 16,
+      "n": 32
+    },
+    "public_key_bytes": 1920,
+    "public_key_bytes_per_signature": 64,
+    "raw_key_bytes": 1920,
+    "raw_signature_bytes": 138240,
+    "scheme": "fors-keccak-research",
+    "security_note": "Unreviewed few-time FORS variant; not FIPS 205 or leanSPHINCS; benchmark keys are deterministic and distinct.",
+    "signature_bytes": 138240,
+    "signature_bytes_per_signature": 4608
+  },
+  "os": "macos",
+  "process_peak_rss_bytes": 13139968,
+  "proof_bytes": 286312,
+  "proof_encoding": {
+    "merkle_bytes": 233816,
+    "merkle_phases": [
+      {
+        "opened_field_words": 10704,
+        "opened_rows": 223,
+        "sibling_hashes": 2086
+      },
+      {
+        "opened_field_words": 2688,
+        "opened_rows": 56,
+        "sibling_hashes": 589
+      },
+      {
+        "opened_field_words": 1536,
+        "opened_rows": 32,
+        "sibling_hashes": 320
+      },
+      {
+        "opened_field_words": 1104,
+        "opened_rows": 23,
+        "sibling_hashes": 218
+      }
+    ],
+    "scalar_stream_bytes": 52496,
+    "scalar_stream_count": 2187
+  },
+  "public_input_hex": "d778a4c2760681a658c795e6573ad804cb33775757206ac0b0d9f6f1b206f0c7",
+  "schema_version": 1,
+  "scheme": "fors-keccak-research",
+  "statement_pinned": false,
+  "threads_env": null,
+  "verified": true,
+  "verify_cached_s": [
+    0.005102125,
+    0.005002083,
+    0.005030166
+  ],
+  "verify_s": [
+    0.008221791
+  ],
+  "zero_knowledge": false
+}

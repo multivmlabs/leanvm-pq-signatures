@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "generated_on": "2026-11-06",
+  "status": "comparison_computed_from_existing_measurements_no_new_proofs",
+  "fixed_proof_bytes_model": 348160,
+  "fan_in": 4,
+  "native_time_formula": "N * median(per-signature native verification ns) / 1e6",
+  "size_break_even_formula": "floor(C / (s-a)) + 1",
+  "rows": [
+    {
+      "scheme": "ethfalcon",
+      "label": "ethFalcon-512",
+      "original_signature_bytes_for_size_model": 666,
+      "leaf_capacity": 5,
+      "auxiliary_bytes_per_signature_model": 143.46666666666667,
+      "projected_size_break_even_count": 667,
+      "native_verification_ns_per_call_median_measured": 13651.459,
+      "native_verification_ms_at_break_even_projected": 9.105523153,
+      "native_verification_ms_at_break_even_projected_samples": [
+        8.988714111,
+        9.182727736,
+        9.105523153
+      ],
+      "native_implementation": "pinned C verifier, preallocated output; includes ctypes calls",
+      "stark_reference_count_measured": 100,
+      "stark_verification_ms_at_100_measured": 905.3309159999999,
+      "stark_verification_at_projected_break_even_count_measured": false
+    },
+    {
+      "scheme": "falcon",
+      "label": "Falcon-512",
+      "original_signature_bytes_for_size_model": 666,
+      "leaf_capacity": 5,
+      "auxiliary_bytes_per_signature_model": 143.46666666666667,
+      "projected_size_break_even_count": 667,
+      "native_verification_ns_per_call_median_measured": 9561.625,
+      "native_verification_ms_at_break_even_projected": 6.377603875,
+      "native_verification_ms_at_break_even_projected_samples": [
+        6.400559346999999,
+        6.1121939030000005,
+        6.377603875
+      ],
+      "native_implementation": "pinned C verifier, preallocated output; includes ctypes calls",
+      "stark_reference_count_measured": 100,
+      "stark_verification_ms_at_100_measured": 919.419583,
+      "stark_verification_at_projected_break_even_count_measured": false
+    },
+    {
+      "scheme": "ethdilithium",
+      "label": "ethDilithium",
+      "original_signature_bytes_for_size_model": 2420,
+      "leaf_capacity": 1,
+      "auxiliary_bytes_per_signature_model": 717.3333333333334,
+      "projected_size_break_even_count": 205,
+      "native_verification_ns_per_call_median_measured": 99062.542,
+      "native_verification_ms_at_break_even_projected": 20.30782111,
+      "native_verification_ms_at_break_even_projected_samples": [
+        20.30782111,
+        21.517594375,
+        20.284818265000002
+      ],
+      "native_implementation": "pinned C verifier; includes ctypes calls",
+      "stark_reference_count_measured": 100,
+      "stark_verification_ms_at_100_measured": 1570.493293,
+      "stark_verification_at_projected_break_even_count_measured": false
+    },
+    {
+      "scheme": "mldsa",
+      "label": "ML-DSA-44",
+      "original_signature_bytes_for_size_model": 2420,
+      "leaf_capacity": 1,
+      "auxiliary_bytes_per_signature_model": 717.3333333333334,
+      "projected_size_break_even_count": 205,
+      "native_verification_ns_per_call_median_measured": 37022.833,
+      "native_verification_ms_at_break_even_projected": 7.589680765,
+      "native_verification_ms_at_break_even_projected_samples": [
+        7.399304235000001,
+        7.589680765,
+        7.64040125
+      ],
+      "native_implementation": "pinned C verifier; includes ctypes calls",
+      "stark_reference_count_measured": 100,
+      "stark_verification_ms_at_100_measured": 1554.509208,
+      "stark_verification_at_projected_break_even_count_measured": false
+    },
+    {
+      "scheme": "fors",
+      "label": "Research FORS (Python)",
+      "original_signature_bytes_for_size_model": 4608,
+      "leaf_capacity": 5,
+      "auxiliary_bytes_per_signature_model": 119.46666666666667,
+      "projected_size_break_even_count": 78,
+      "native_verification_ns_per_call_median_measured": 503738.541,
+      "native_verification_ms_at_break_even_projected": 39.291606198,
+      "native_verification_ms_at_break_even_projected_samples": [
+        39.658306974,
+        38.920631802,
+        39.291606198
+      ],
+      "native_implementation": "Python reference with PyCryptodome Keccak; not native C",
+      "stark_reference_count_measured": 100,
+      "stark_verification_ms_at_100_measured": 749.4467080000001,
+      "stark_verification_at_projected_break_even_count_measured": false
+    }
+  ],
+  "source_sha256": {
+    "results/article/native.json": "b880a28d8d18a167167e698b00260bdb0ac515e73ceb7d0f957a5ba64d8eccbf",
+    "results/article/figures/main-tree-summary.csv": "9d7eca185d48b0d1988f7b5fb510a905388175addbb67d038d0f2fbcce7aeebf"
+  },
+  "limitations": [
+    "The STARK reference covers 100 signatures. STARK times at the projected break-even counts are unmeasured; these are not same-count STARK measurements.",
+    "Native totals are linear projections from three samples of 1000 calls on one saved record per scheme, not timings of distinct-key batches at the projected counts.",
+    "FORS is a Python/PyCryptodome research reference, not optimized native C or a complete SPHINCS/SLH-DSA signature scheme.",
+    "Falcon size projections use 666-byte padded signatures; native C timings use the existing compressed benchmark fixtures.",
+    "STARK verification includes program/table preparation, all auxiliary checks and final STARK verification. Public-claim derivation and file I/O are excluded."
+  ]
+}

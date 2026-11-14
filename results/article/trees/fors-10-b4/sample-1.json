@@ -1,0 +1,220 @@
+{
+  "action": "prove",
+  "compile_plan_s": 0.163907167,
+  "depth": 1,
+  "edge_count": 2,
+  "fan_in": 4,
+  "leaf_capacity": 5,
+  "leaf_count": 2,
+  "leaf_reports": [
+    {
+      "committed_cells": 2992128,
+      "cycles": 37577,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "input_prepare_s": 0.00014775,
+      "leaf": 0,
+      "log_committed": 22,
+      "log_memory_cells": 19,
+      "memory_cells": 46609,
+      "min_log_committed": 22,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 270112,
+      "proof_stream_scalars": 2045,
+      "prove_s": 0.059876,
+      "public_input_hex": "193f79b6a405cef6174195b643a311e92852d141fec708ede87b9b7ac948ea67",
+      "rate": 1,
+      "reused": false,
+      "self_verify_s": 0.008837417,
+      "signatures": 5
+    },
+    {
+      "committed_cells": 2992128,
+      "cycles": 37577,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "input_prepare_s": 0.000135667,
+      "leaf": 1,
+      "log_committed": 22,
+      "log_memory_cells": 19,
+      "memory_cells": 46609,
+      "min_log_committed": 22,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 269152,
+      "proof_stream_scalars": 2045,
+      "prove_s": 0.051394958,
+      "public_input_hex": "2cd786cf79f91f146e1bb2caf7615f04f0ccb2911977539325ec01f221331e9b",
+      "rate": 1,
+      "reused": false,
+      "self_verify_s": 0.008594042,
+      "signatures": 5
+    }
+  ],
+  "leaf_reuse_count": 0,
+  "merge_count": 1,
+  "merge_passes": [
+    {
+      "elapsed_s": 0.329627042,
+      "nodes": [
+        {
+          "children": [
+            0,
+            1
+          ],
+          "committed_cells": 16482304,
+          "cycles": 534122,
+          "depth": 1,
+          "guest_hash": "ee3a4ae0c16b839f71b4e83d7d63d08b709f5048343d1d8114e1eaf3506bc70c",
+          "log_committed": 24,
+          "log_memory_cells": 20,
+          "memory_cells": 871632,
+          "min_log_committed": 22,
+          "node": 2,
+          "opcode_rows": [
+            160589,
+            214035,
+            28189,
+            91442,
+            29054,
+            10813
+          ],
+          "prepare_s": 0.019523667,
+          "proof_bytes": 339400,
+          "proof_stream_scalars": 2295,
+          "prove_s": 0.226361959,
+          "public_input_hex": "ae8b74d1c26cc992fc35bce8cbdf422fa33b3a96e9713522ada755dd224ddaf6",
+          "rate": 1,
+          "self_verify_s": 0.082878625,
+          "signatures": 10
+        }
+      ],
+      "pass": 0
+    }
+  ],
+  "merge_reuse_count": 0,
+  "nodes": [
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 0,
+      "node": 0,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 1,
+      "node": 1,
+      "signatures": 5
+    },
+    {
+      "children": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "guest_hash": "ee3a4ae0c16b839f71b4e83d7d63d08b709f5048343d1d8114e1eaf3506bc70c",
+      "leaf": null,
+      "node": 2,
+      "signatures": 10
+    }
+  ],
+  "pipeline_elapsed_s": 0.629630375,
+  "plan_hash": "98c5b877235ea9cf247ccddec1d7c543a5ee46d338bf852db9abbf46f828d70e",
+  "process_peak_rss_bytes": 1220116480,
+  "rate": 1,
+  "repeat": 1,
+  "repeat_scope": "all merge nodes; leaves prepared once, cache reuse explicitly reported",
+  "root_guest_hash": "ee3a4ae0c16b839f71b4e83d7d63d08b709f5048343d1d8114e1eaf3506bc70c",
+  "schema_version": 1,
+  "scheme": "fors",
+  "semantic_plan": {
+    "fan_in": 4,
+    "format": "pqbench/tree-v1/all-edges/level-chunks",
+    "leaf_capacity": 5,
+    "leaves": [
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "193f79b6a405cef6174195b643a311e92852d141fec708ede87b9b7ac948ea67",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "2cd786cf79f91f146e1bb2caf7615f04f0ccb2911977539325ec01f221331e9b",
+        "signatures": 5
+      }
+    ],
+    "schema_version": 1,
+    "scheme": "fors",
+    "signatures": 10
+  },
+  "signatures": 10,
+  "source_table": [
+    {
+      "bytecode_instructions": 5534,
+      "bytecode_log": 13,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 8192
+    },
+    {
+      "bytecode_instructions": 216610,
+      "bytecode_log": 18,
+      "guest_hash": "ee3a4ae0c16b839f71b4e83d7d63d08b709f5048343d1d8114e1eaf3506bc70c",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    }
+  ],
+  "statement_pinned": true,
+  "verification": {
+    "aggregate_wire_bytes": 340316,
+    "compile_plan_s": 0.163907167,
+    "deferred_bytecode_prepare_s": 0.003659166,
+    "deferred_edge_count": 2,
+    "deferred_evaluation_s": [
+      0.000643209
+    ],
+    "deferred_program_count": 1,
+    "plan_hash": "98c5b877235ea9cf247ccddec1d7c543a5ee46d338bf852db9abbf46f828d70e",
+    "public_input_hex": "ae8b74d1c26cc992fc35bce8cbdf422fa33b3a96e9713522ada755dd224ddaf6",
+    "root_bytecode_prepare_s": 0.075590959,
+    "root_core_proof_bytes": 339400,
+    "root_core_verify_cached_s": [
+      0.006217833
+    ],
+    "root_core_verify_cold_s": [
+      0.081715875
+    ],
+    "root_guest_hash": "ee3a4ae0c16b839f71b4e83d7d63d08b709f5048343d1d8114e1eaf3506bc70c",
+    "statement_pinned": true,
+    "verification_operation_total_s": 0.167850958,
+    "verification_uses_child_proofs": false,
+    "verification_uses_signatures": false,
+    "verified": true,
+    "zero_knowledge": false
+  },
+  "warmup": 0,
+  "zero_knowledge": false,
+  "article_scheme": "fors",
+  "article_count": 10,
+  "article_fan_in": 4,
+  "article_leaf_capacity": 5,
+  "experiment_process_elapsed_s": 0.8460178330005874,
+  "measurement_scope": "complete fresh pipeline"
+}

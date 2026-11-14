@@ -1,0 +1,19 @@
+{
+  "action": "verify",
+  "arch": "aarch64",
+  "count": 32,
+  "leanvm_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "log_inverse_rate": 1,
+  "os": "macos",
+  "peak_rss_bytes": 16941056,
+  "proof_bytes": 403758,
+  "schema": 1,
+  "scheme": "falcon",
+  "threads": 8,
+  "verified": true,
+  "verify_median_s": 0.0052285,
+  "verify_s": [
+    0.0052285
+  ],
+  "zero_knowledge": false
+}

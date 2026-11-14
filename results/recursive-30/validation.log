@@ -1,0 +1,61 @@
+cargo build --release --locked
+   Compiling pq-leanbench v0.1.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288)
+    Finished `release` profile [optimized] target(s) in 6.86s
+cargo test --release --locked --bin aggregate-falcon
+   Compiling pq-leanbench v0.1.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288)
+    Finished `release` profile [optimized] target(s) in 5.29s
+     Running unittests src/bin/aggregate-falcon.rs (target/release/deps/aggregate_falcon-a44734def39a60a3)
+
+running 3 tests
+test recursion_guest::tests::deferred_evaluation_is_required_for_root_authorization ... ignored, requires the generated ETHFALCON leaf program and proves two bounded negative-control fixtures
+test recursion_guest::tests::statement_keeps_top_limbs_and_odd_field_padding ... ok
+test recursion_guest::tests::native_statement_encoding_matches_the_actual_guest_packing ... ok
+
+test result: ok. 2 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+.venv/bin/python -m unittest discover -s tests -v
+test_changed_challenge_rejection (test_dilithium.EthDilithiumTests) ... ok
+test_changed_hint (test_dilithium.EthDilithiumTests) ... ok
+test_changed_message_even_when_public_commitment_matches (test_dilithium.EthDilithiumTests) ... ok
+test_count_positive (test_dilithium.EthDilithiumTests) ... ok
+test_invalid_modular_witness (test_dilithium.EthDilithiumTests) ... ok
+test_nonboolean_multiplication_bit (test_dilithium.EthDilithiumTests) ... ok
+test_norm_and_rounding_boundaries (test_dilithium.EthDilithiumTests) ... ok
+test_replay_rebuilds_original_witness (test_dilithium.EthDilithiumTests) ... ok
+test_replay_rejects_invalid_compact_signature (test_dilithium.EthDilithiumTests) ... ok
+test_valid_signature (test_dilithium.EthDilithiumTests) ... ok
+test_z_out_of_range (test_dilithium.EthDilithiumTests) ... ok
+test_changed_message_and_key_with_recomputed_public_statement (test_falcon.FalconGuestTests) ... ok
+test_empty_message_matches_upstream (test_falcon.FalconGuestTests) ... ok
+test_fully_recomputed_coefficient_limit (test_falcon.FalconGuestTests) ... ok
+test_fully_recomputed_zero_signature_fails_norm_check (test_falcon.FalconGuestTests) ... ok
+test_quotient_remainder_and_ranges (test_falcon.FalconGuestTests) ... ok
+test_reference_compressed_payload_sizes (test_falcon.FalconGuestTests) ... ok
+test_rejected_hash_candidate_cannot_be_accepted (test_falcon.FalconGuestTests) ... ok
+test_valid_batches (test_falcon.FalconGuestTests) ... ok
+test_invalid_count_and_key_encoding (test_falcon.FalconNativeTests) ... ok
+test_mutated_signature_and_message_rejected (test_falcon.FalconNativeTests) ... ok
+test_signature_decoder_rejects_trailing_zero_bytes (test_falcon.FalconNativeTests) ... ok
+test_upstream_c_verifier_and_mutated_signed_message (test_falcon.FalconNativeTests) ... ok
+test_upstream_keccak_vectors (test_falcon.FalconNativeTests) ... ok
+test_distinct_real_inputs_are_reproducible (test_falcon_aggregate_inputs.FalconAggregateInputTests) ... ok
+test_native_message_mutation_and_recomputed_claim (test_falcon_aggregate_inputs.FalconAggregateInputTests) ... ok
+test_order_is_bound (test_falcon_aggregate_inputs.FalconAggregateInputTests) ... ok
+test_same_source_independent_witness_and_claim (test_falcon_aggregate_inputs.FalconAggregateInputTests) ... ok
+test_all_negative_witnesses (test_fors.ForsIntegrationTests) ... ok
+test_guest_source_is_independent_of_signature_data (test_fors.ForsIntegrationTests) ... ok
+test_valid_single_and_three_record_batches (test_fors.ForsIntegrationTests) ... ok
+test_witness_free_verification_and_corrupted_proof_or_statement (test_fors.ForsIntegrationTests) ... ok
+test_forest_paths_and_message_binding (test_fors.NativeForsTests) ... ok
+test_parameter_bounds (test_fors.NativeForsTests) ... ok
+test_claim_changes_reject_after_public_input_recomputation (test_recursive_envelope.RecursiveEnvelopeTests) ... ok
+test_duplicate_claim_and_shortened_manifest_reject (test_recursive_envelope.RecursiveEnvelopeTests) ... ok
+test_expected_program_identity_and_transport (test_recursive_envelope.RecursiveEnvelopeTests) ... ok
+test_full_192_bit_deferred_point_is_bound (test_recursive_envelope.RecursiveEnvelopeTests) ... ok
+test_pi_metadata_is_not_trusted (test_recursive_envelope.RecursiveEnvelopeTests) ... ok
+test_public_root_without_child_proofs_or_signature_witnesses (test_recursive_envelope.RecursiveEnvelopeTests) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 18.471s
+
+OK

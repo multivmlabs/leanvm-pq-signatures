@@ -1,0 +1,1090 @@
+{
+  "schema": 1,
+  "scope": "Actual DSL execution with explicit trusted-table terminal evaluation; no STARK production",
+  "backend_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "guest_source_sha256": "a0b68f631fd9ef3c621cba2ad6570cba99d5ea728b5f08f81e0ccca201755560",
+  "oracle_vectors_sha256": "b630658ace33c16b5e56d9a0e6f57e69ca591319a7e049bfe651a8ef809eb39d",
+  "binary_sha256": "46f0734990a921d1a9f8c6f1b3fc66b61d815640f7e25ad407697e2937c9f6d9",
+  "positive_controls": 24,
+  "negative_controls": 69,
+  "all_passed": true,
+  "cases": [
+    {
+      "case": "n1-m1-honest",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "bf053246fe8c64449b69dd2f08d4b7b591bf5482630b8213668f99a19dfa4a14",
+      "stderr": "",
+      "guest_hash": "3c9aafe2482fda5c882b438d554c848a27073818edc27ef20c99ceaa7258aa73",
+      "cycles": 184,
+      "opcode_rows": [
+        35,
+        46,
+        43,
+        38,
+        19,
+        3
+      ]
+    },
+    {
+      "case": "n1-m1-codec",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "2ed223e5eca810f413ec877c445f9582bd447895ff99435a968288717acc59fe",
+      "stderr": "",
+      "guest_hash": "dfe7dc5d916defca852a0ea980196a58c6e7b84ac8e1653528d54eabfefd35d5",
+      "cycles": 263,
+      "opcode_rows": [
+        54,
+        65,
+        61,
+        50,
+        28,
+        5
+      ]
+    },
+    {
+      "case": "n1-m1-round-c0-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "bf053246fe8c64449b69dd2f08d4b7b591bf5482630b8213668f99a19dfa4a14",
+      "stderr": "error: execution: ExecError { pc: 81, site: \"red_reduce_claims__L1_L1 (line 142)\", fault: Conflict { cell: 47, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 8091650572200003958, c1: 400764553723183552, c2: 17925714224762597623 }, hint: None } }"
+    },
+    {
+      "case": "n1-m1-round-c2-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "bf053246fe8c64449b69dd2f08d4b7b591bf5482630b8213668f99a19dfa4a14",
+      "stderr": "error: execution: ExecError { pc: 81, site: \"red_reduce_claims__L1_L1 (line 142)\", fault: Conflict { cell: 47, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 11659851483691137111, c1: 15592141043497023971, c2: 15502936776888342991 }, hint: None } }"
+    },
+    {
+      "case": "n1-m1-terminal-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "bf053246fe8c64449b69dd2f08d4b7b591bf5482630b8213668f99a19dfa4a14",
+      "stderr": "error: execution: ExecError { pc: 81, site: \"red_reduce_claims__L1_L1 (line 142)\", fault: Conflict { cell: 47, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 631278576731298705, c1: 56376592642138072, c2: 4450955981016922455 }, hint: None } }"
+    },
+    {
+      "case": "n1-m1-input-point-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "bf053246fe8c64449b69dd2f08d4b7b591bf5482630b8213668f99a19dfa4a14",
+      "stderr": "error: execution: ExecError { pc: 81, site: \"red_reduce_claims__L1_L1 (line 142)\", fault: Conflict { cell: 47, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 701579258971002972, c1: 14754813081393916032, c2: 12586516179172699199 }, hint: None } }"
+    },
+    {
+      "case": "n1-m1-input-value-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "bf053246fe8c64449b69dd2f08d4b7b591bf5482630b8213668f99a19dfa4a14",
+      "stderr": "error: execution: ExecError { pc: 81, site: \"red_reduce_claims__L1_L1 (line 142)\", fault: Conflict { cell: 47, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 9900146207568507071, c1: 17751668189409226128, c2: 8249615782390568558 }, hint: None } }"
+    },
+    {
+      "case": "n1-m2-honest",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "9f16f65521c4eabb5a8187c192609da4551d9e793e4e038bbd9c055cb6fb08c8",
+      "stderr": "",
+      "guest_hash": "c5482b6ee5e757dd86a8cbe468f1789da6a4dfb204cf687d3e080ec229bc0322",
+      "cycles": 217,
+      "opcode_rows": [
+        49,
+        58,
+        43,
+        42,
+        22,
+        3
+      ]
+    },
+    {
+      "case": "n1-m2-codec",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "b3841b6d660fdc950924a4de01d26a3c6ec7c20d804920db17d82b7d14952cc3",
+      "stderr": "",
+      "guest_hash": "45f5b87f0847c0940c6894bd31508bf5f3eec2a32e9f7a5923777345c70e6e28",
+      "cycles": 320,
+      "opcode_rows": [
+        78,
+        86,
+        61,
+        56,
+        34,
+        5
+      ]
+    },
+    {
+      "case": "n1-m2-round-c0-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "9f16f65521c4eabb5a8187c192609da4551d9e793e4e038bbd9c055cb6fb08c8",
+      "stderr": "error: execution: ExecError { pc: 90, site: \"red_reduce_claims__L1_L2 (line 142)\", fault: Conflict { cell: 49, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 8542944760598127922, c1: 15915506185978433978, c2: 494642504396113073 }, hint: None } }"
+    },
+    {
+      "case": "n1-m2-round-c2-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "9f16f65521c4eabb5a8187c192609da4551d9e793e4e038bbd9c055cb6fb08c8",
+      "stderr": "error: execution: ExecError { pc: 90, site: \"red_reduce_claims__L1_L2 (line 142)\", fault: Conflict { cell: 49, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 15033738674336849482, c1: 17518072678447648055, c2: 12404627940238013916 }, hint: None } }"
+    },
+    {
+      "case": "n1-m2-terminal-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "9f16f65521c4eabb5a8187c192609da4551d9e793e4e038bbd9c055cb6fb08c8",
+      "stderr": "error: execution: ExecError { pc: 90, site: \"red_reduce_claims__L1_L2 (line 142)\", fault: Conflict { cell: 49, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 8660794056263961265, c1: 17601731107101449241, c2: 8791056414875639269 }, hint: None } }"
+    },
+    {
+      "case": "n1-m2-input-point-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "9f16f65521c4eabb5a8187c192609da4551d9e793e4e038bbd9c055cb6fb08c8",
+      "stderr": "error: execution: ExecError { pc: 90, site: \"red_reduce_claims__L1_L2 (line 142)\", fault: Conflict { cell: 49, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 8482996332643338915, c1: 13531355750889965150, c2: 17850112430265622826 }, hint: None } }"
+    },
+    {
+      "case": "n1-m2-input-value-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "9f16f65521c4eabb5a8187c192609da4551d9e793e4e038bbd9c055cb6fb08c8",
+      "stderr": "error: execution: ExecError { pc: 90, site: \"red_reduce_claims__L1_L2 (line 142)\", fault: Conflict { cell: 49, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 4761702671058267069, c1: 7342992799957276287, c2: 10989876681251546123 }, hint: None } }"
+    },
+    {
+      "case": "n1-m3-honest",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "2318fc56df0717e585b14020f3aa0f2952223bcac25a534c54f18fce3b69e0aa",
+      "stderr": "",
+      "guest_hash": "f36ce0ada561a14971b2b2a5b38369afc1f66d0f0665e6e57f0db9f731d463f8",
+      "cycles": 245,
+      "opcode_rows": [
+        62,
+        66,
+        43,
+        46,
+        25,
+        3
+      ]
+    },
+    {
+      "case": "n1-m3-codec",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "071b6db99e239db49536a0b16a994ab919311b051fd16001ebb9ffa38c2f4511",
+      "stderr": "",
+      "guest_hash": "01962652bdee58c9a1254d4f1f583db3b655ed092f7baa68d7a8ead21e1d3654",
+      "cycles": 367,
+      "opcode_rows": [
+        100,
+        99,
+        61,
+        62,
+        40,
+        5
+      ]
+    },
+    {
+      "case": "n1-m3-round-c0-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "2318fc56df0717e585b14020f3aa0f2952223bcac25a534c54f18fce3b69e0aa",
+      "stderr": "error: execution: ExecError { pc: 99, site: \"red_reduce_claims__L1_L3 (line 142)\", fault: Conflict { cell: 51, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 5250716497500068834, c1: 16516601765192128018, c2: 3662482898348715572 }, hint: None } }"
+    },
+    {
+      "case": "n1-m3-round-c2-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "2318fc56df0717e585b14020f3aa0f2952223bcac25a534c54f18fce3b69e0aa",
+      "stderr": "error: execution: ExecError { pc: 99, site: \"red_reduce_claims__L1_L3 (line 142)\", fault: Conflict { cell: 51, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 5865593163759291727, c1: 7904632551690073490, c2: 9529879456960954782 }, hint: None } }"
+    },
+    {
+      "case": "n1-m3-terminal-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "2318fc56df0717e585b14020f3aa0f2952223bcac25a534c54f18fce3b69e0aa",
+      "stderr": "error: execution: ExecError { pc: 99, site: \"red_reduce_claims__L1_L3 (line 142)\", fault: Conflict { cell: 51, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 15202798334162427572, c1: 10465447713936514772, c2: 13774116915790616609 }, hint: None } }"
+    },
+    {
+      "case": "n1-m3-input-point-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "2318fc56df0717e585b14020f3aa0f2952223bcac25a534c54f18fce3b69e0aa",
+      "stderr": "error: execution: ExecError { pc: 99, site: \"red_reduce_claims__L1_L3 (line 142)\", fault: Conflict { cell: 51, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 6695729178412513197, c1: 10192390639768922918, c2: 10300882731547619171 }, hint: None } }"
+    },
+    {
+      "case": "n1-m3-input-value-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "2318fc56df0717e585b14020f3aa0f2952223bcac25a534c54f18fce3b69e0aa",
+      "stderr": "error: execution: ExecError { pc: 99, site: \"red_reduce_claims__L1_L3 (line 142)\", fault: Conflict { cell: 51, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 6296446940526065612, c1: 9399658735269754438, c2: 5407180547698772782 }, hint: None } }"
+    },
+    {
+      "case": "n2-m1-honest",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "234164989da2d201d135a5f15651d6d9bd8d37bed16f071b39b58e9121bcee3a",
+      "stderr": "",
+      "guest_hash": "13f3c147c7fdd7af3854a348851445d02fc2c61c28e9ac7bdafaa79557f1e5da",
+      "cycles": 287,
+      "opcode_rows": [
+        62,
+        82,
+        59,
+        52,
+        28,
+        4
+      ]
+    },
+    {
+      "case": "n2-m1-codec",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "e0e2f8ed5096bb14af4ad4010c56edb5eef17f2aefb4bd465fb65801ca6d8dc5",
+      "stderr": "",
+      "guest_hash": "ca2aff5f8b48049e263a290990b6752a5382bb42b40f74f95f5f6e09c51cdcd1",
+      "cycles": 391,
+      "opcode_rows": [
+        92,
+        110,
+        78,
+        65,
+        40,
+        6
+      ]
+    },
+    {
+      "case": "n2-m1-round-c0-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "234164989da2d201d135a5f15651d6d9bd8d37bed16f071b39b58e9121bcee3a",
+      "stderr": "error: execution: ExecError { pc: 120, site: \"red_reduce_claims__L2_L1 (line 142)\", fault: Conflict { cell: 61, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 12259083219371439102, c1: 17011304527583243122, c2: 10955086767769412613 }, hint: None } }"
+    },
+    {
+      "case": "n2-m1-round-c2-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "234164989da2d201d135a5f15651d6d9bd8d37bed16f071b39b58e9121bcee3a",
+      "stderr": "error: execution: ExecError { pc: 120, site: \"red_reduce_claims__L2_L1 (line 142)\", fault: Conflict { cell: 61, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 4228330494036982750, c1: 17172821890814927457, c2: 8593552505962686963 }, hint: None } }"
+    },
+    {
+      "case": "n2-m1-terminal-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "234164989da2d201d135a5f15651d6d9bd8d37bed16f071b39b58e9121bcee3a",
+      "stderr": "error: execution: ExecError { pc: 120, site: \"red_reduce_claims__L2_L1 (line 142)\", fault: Conflict { cell: 61, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 2081286096500950116, c1: 11200917474481449592, c2: 16747457239103717598 }, hint: None } }"
+    },
+    {
+      "case": "n2-m1-input-point-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "234164989da2d201d135a5f15651d6d9bd8d37bed16f071b39b58e9121bcee3a",
+      "stderr": "error: execution: ExecError { pc: 120, site: \"red_reduce_claims__L2_L1 (line 142)\", fault: Conflict { cell: 61, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 9922510631400863089, c1: 8838854584882372109, c2: 17939808774035899274 }, hint: None } }"
+    },
+    {
+      "case": "n2-m1-input-value-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "234164989da2d201d135a5f15651d6d9bd8d37bed16f071b39b58e9121bcee3a",
+      "stderr": "error: execution: ExecError { pc: 120, site: \"red_reduce_claims__L2_L1 (line 142)\", fault: Conflict { cell: 61, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 12768231856029118256, c1: 6188958903750939795, c2: 17889581457164392086 }, hint: None } }"
+    },
+    {
+      "case": "n2-m1-round-order",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "234164989da2d201d135a5f15651d6d9bd8d37bed16f071b39b58e9121bcee3a",
+      "stderr": "error: execution: ExecError { pc: 120, site: \"red_reduce_claims__L2_L1 (line 142)\", fault: Conflict { cell: 61, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 13252830166572810239, c1: 8531245531024457276, c2: 14535504999908765584 }, hint: None } }"
+    },
+    {
+      "case": "n2-m2-honest",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "9b32291a30846b8e278774238aa93a3177b895e21d0fc702dd7607bdfcbf7abc",
+      "stderr": "",
+      "guest_hash": "0f0fd299f32ba3044376a1ee6572c509b359eacfb0588bb933da40ff8fb592e1",
+      "cycles": 320,
+      "opcode_rows": [
+        77,
+        91,
+        59,
+        58,
+        31,
+        4
+      ]
+    },
+    {
+      "case": "n2-m2-codec",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "6c93963fadc043a99bc4927d13feafc0ec09794bf773ae775a52e77eb5401e9b",
+      "stderr": "",
+      "guest_hash": "a2f2df135e952c7aeb5a01b46ef9cf7d3d69a63136a0bb87b56598deecc53aa0",
+      "cycles": 444,
+      "opcode_rows": [
+        116,
+        124,
+        78,
+        74,
+        46,
+        6
+      ]
+    },
+    {
+      "case": "n2-m2-round-c0-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "9b32291a30846b8e278774238aa93a3177b895e21d0fc702dd7607bdfcbf7abc",
+      "stderr": "error: execution: ExecError { pc: 133, site: \"red_reduce_claims__L2_L2 (line 142)\", fault: Conflict { cell: 64, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 166164780019856994, c1: 13627113867919059120, c2: 7047316572020756756 }, hint: None } }"
+    },
+    {
+      "case": "n2-m2-round-c2-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "9b32291a30846b8e278774238aa93a3177b895e21d0fc702dd7607bdfcbf7abc",
+      "stderr": "error: execution: ExecError { pc: 133, site: \"red_reduce_claims__L2_L2 (line 142)\", fault: Conflict { cell: 64, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 5986277562989797262, c1: 4373565722654999297, c2: 1366375170477897468 }, hint: None } }"
+    },
+    {
+      "case": "n2-m2-terminal-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "9b32291a30846b8e278774238aa93a3177b895e21d0fc702dd7607bdfcbf7abc",
+      "stderr": "error: execution: ExecError { pc: 133, site: \"red_reduce_claims__L2_L2 (line 142)\", fault: Conflict { cell: 64, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 6354534090053361660, c1: 8322998984056780991, c2: 198207629448269487 }, hint: None } }"
+    },
+    {
+      "case": "n2-m2-input-point-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "9b32291a30846b8e278774238aa93a3177b895e21d0fc702dd7607bdfcbf7abc",
+      "stderr": "error: execution: ExecError { pc: 133, site: \"red_reduce_claims__L2_L2 (line 142)\", fault: Conflict { cell: 64, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 11246208264798147048, c1: 3756217893034245061, c2: 14100663124630774001 }, hint: None } }"
+    },
+    {
+      "case": "n2-m2-input-value-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "9b32291a30846b8e278774238aa93a3177b895e21d0fc702dd7607bdfcbf7abc",
+      "stderr": "error: execution: ExecError { pc: 133, site: \"red_reduce_claims__L2_L2 (line 142)\", fault: Conflict { cell: 64, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 6431372468509704857, c1: 5503209465294943187, c2: 8849573191489609730 }, hint: None } }"
+    },
+    {
+      "case": "n2-m2-round-order",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "9b32291a30846b8e278774238aa93a3177b895e21d0fc702dd7607bdfcbf7abc",
+      "stderr": "error: execution: ExecError { pc: 133, site: \"red_reduce_claims__L2_L2 (line 142)\", fault: Conflict { cell: 64, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 8714572309687787470, c1: 7054152498998919608, c2: 10141097203670014893 }, hint: None } }"
+    },
+    {
+      "case": "n2-m3-honest",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "4f999a571d2163c59201bf0980ac927bda0496488a6a09e019b9d03de4cc8aeb",
+      "stderr": "",
+      "guest_hash": "839645b6d86416581f6ba2edd7b97c070771d3cb469c623944f421c5b8287145",
+      "cycles": 380,
+      "opcode_rows": [
+        104,
+        111,
+        59,
+        64,
+        37,
+        5
+      ]
+    },
+    {
+      "case": "n2-m3-codec",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "57935553db684fb463a25919b3b9e2422d9327ea387379f8d03d7932fd5701ae",
+      "stderr": "",
+      "guest_hash": "7f8d43b158d35dd6bf558ec1cce0464ee6405dc504176790167fb6a1e3bc2d5c",
+      "cycles": 551,
+      "opcode_rows": [
+        164,
+        160,
+        78,
+        83,
+        58,
+        8
+      ]
+    },
+    {
+      "case": "n2-m3-round-c0-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "4f999a571d2163c59201bf0980ac927bda0496488a6a09e019b9d03de4cc8aeb",
+      "stderr": "error: execution: ExecError { pc: 146, site: \"red_reduce_claims__L2_L3 (line 142)\", fault: Conflict { cell: 67, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 7105760678122547390, c1: 16577450214907084673, c2: 15708007404655405063 }, hint: None } }"
+    },
+    {
+      "case": "n2-m3-round-c2-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "4f999a571d2163c59201bf0980ac927bda0496488a6a09e019b9d03de4cc8aeb",
+      "stderr": "error: execution: ExecError { pc: 146, site: \"red_reduce_claims__L2_L3 (line 142)\", fault: Conflict { cell: 67, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 6411840008914172348, c1: 18091806859685244021, c2: 716907765561486103 }, hint: None } }"
+    },
+    {
+      "case": "n2-m3-terminal-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "4f999a571d2163c59201bf0980ac927bda0496488a6a09e019b9d03de4cc8aeb",
+      "stderr": "error: execution: ExecError { pc: 146, site: \"red_reduce_claims__L2_L3 (line 142)\", fault: Conflict { cell: 67, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 13620428886691750555, c1: 13436378977345491389, c2: 13534752592238880988 }, hint: None } }"
+    },
+    {
+      "case": "n2-m3-input-point-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "4f999a571d2163c59201bf0980ac927bda0496488a6a09e019b9d03de4cc8aeb",
+      "stderr": "error: execution: ExecError { pc: 146, site: \"red_reduce_claims__L2_L3 (line 142)\", fault: Conflict { cell: 67, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 3945183599482238091, c1: 4967505866192977667, c2: 17294962093740792626 }, hint: None } }"
+    },
+    {
+      "case": "n2-m3-input-value-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "4f999a571d2163c59201bf0980ac927bda0496488a6a09e019b9d03de4cc8aeb",
+      "stderr": "error: execution: ExecError { pc: 146, site: \"red_reduce_claims__L2_L3 (line 142)\", fault: Conflict { cell: 67, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 2263560356973209709, c1: 6915365168417282649, c2: 9181245773228865641 }, hint: None } }"
+    },
+    {
+      "case": "n2-m3-round-order",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "4f999a571d2163c59201bf0980ac927bda0496488a6a09e019b9d03de4cc8aeb",
+      "stderr": "error: execution: ExecError { pc: 146, site: \"red_reduce_claims__L2_L3 (line 142)\", fault: Conflict { cell: 67, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 13642636600190920801, c1: 8957774195289377407, c2: 11033384378540800485 }, hint: None } }"
+    },
+    {
+      "case": "n3-m1-honest",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "74fd70a92b0af4d3607b29f4b02ab288bcdcbe71db68c457ed06e21d0a6a44c1",
+      "stderr": "",
+      "guest_hash": "d8ac0955f8ce60cda434406424bd0087f13d657a80d0fd745ed38227fae0afd6",
+      "cycles": 378,
+      "opcode_rows": [
+        81,
+        115,
+        77,
+        66,
+        34,
+        5
+      ]
+    },
+    {
+      "case": "n3-m1-codec",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "540540dd942aa83471718344b27e8fcf391359dbcf97c3bdf0de10113ce151ef",
+      "stderr": "",
+      "guest_hash": "1b0f25400a8ee1bd5b30fd1add76fab379e08a5226162930bdd2fad6f9aed2a4",
+      "cycles": 485,
+      "opcode_rows": [
+        112,
+        143,
+        97,
+        80,
+        46,
+        7
+      ]
+    },
+    {
+      "case": "n3-m1-round-c0-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "74fd70a92b0af4d3607b29f4b02ab288bcdcbe71db68c457ed06e21d0a6a44c1",
+      "stderr": "error: execution: ExecError { pc: 169, site: \"red_reduce_claims__L3_L1 (line 142)\", fault: Conflict { cell: 85, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 8480171664568959206, c1: 2303785121099804770, c2: 409517574281415058 }, hint: None } }"
+    },
+    {
+      "case": "n3-m1-round-c2-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "74fd70a92b0af4d3607b29f4b02ab288bcdcbe71db68c457ed06e21d0a6a44c1",
+      "stderr": "error: execution: ExecError { pc: 169, site: \"red_reduce_claims__L3_L1 (line 142)\", fault: Conflict { cell: 85, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 14353480696109880378, c1: 16138448704756316004, c2: 14606514077366102590 }, hint: None } }"
+    },
+    {
+      "case": "n3-m1-terminal-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "74fd70a92b0af4d3607b29f4b02ab288bcdcbe71db68c457ed06e21d0a6a44c1",
+      "stderr": "error: execution: ExecError { pc: 169, site: \"red_reduce_claims__L3_L1 (line 142)\", fault: Conflict { cell: 85, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 8541968746942218866, c1: 396240648072608233, c2: 17375228717486450831 }, hint: None } }"
+    },
+    {
+      "case": "n3-m1-input-point-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "74fd70a92b0af4d3607b29f4b02ab288bcdcbe71db68c457ed06e21d0a6a44c1",
+      "stderr": "error: execution: ExecError { pc: 169, site: \"red_reduce_claims__L3_L1 (line 142)\", fault: Conflict { cell: 85, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 530363832840778486, c1: 10919633478927750618, c2: 18122828444854579916 }, hint: None } }"
+    },
+    {
+      "case": "n3-m1-input-value-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "74fd70a92b0af4d3607b29f4b02ab288bcdcbe71db68c457ed06e21d0a6a44c1",
+      "stderr": "error: execution: ExecError { pc: 169, site: \"red_reduce_claims__L3_L1 (line 142)\", fault: Conflict { cell: 85, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 1791145718259659410, c1: 12574911693331472790, c2: 9468134731132075317 }, hint: None } }"
+    },
+    {
+      "case": "n3-m1-round-order",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "74fd70a92b0af4d3607b29f4b02ab288bcdcbe71db68c457ed06e21d0a6a44c1",
+      "stderr": "error: execution: ExecError { pc: 169, site: \"red_reduce_claims__L3_L1 (line 142)\", fault: Conflict { cell: 85, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 8528112288282775284, c1: 11070708789565323204, c2: 7410856363608530168 }, hint: None } }"
+    },
+    {
+      "case": "n3-m2-honest",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "da49dc61b9617727896edfe93f521366d2938fc94dff0b406aebe94d16bbf9fb",
+      "stderr": "",
+      "guest_hash": "548eadbe4bce49841c62fb9748d5734614db561afe920cb5debb88c36d791d94",
+      "cycles": 438,
+      "opcode_rows": [
+        109,
+        132,
+        77,
+        74,
+        40,
+        6
+      ]
+    },
+    {
+      "case": "n3-m2-codec",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "c25947e3de21621a991c2c0fae34c0e003a6556255e7174afc2cae37b0b6e701",
+      "stderr": "",
+      "guest_hash": "47128afee946deddc3ff6c25bbaa04282278feaae819baff721fd9b1331969c1",
+      "cycles": 588,
+      "opcode_rows": [
+        160,
+        172,
+        97,
+        92,
+        58,
+        9
+      ]
+    },
+    {
+      "case": "n3-m2-round-c0-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "da49dc61b9617727896edfe93f521366d2938fc94dff0b406aebe94d16bbf9fb",
+      "stderr": "error: execution: ExecError { pc: 186, site: \"red_reduce_claims__L3_L2 (line 142)\", fault: Conflict { cell: 89, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 9698786792753095849, c1: 242083830953961660, c2: 10611751467153493069 }, hint: None } }"
+    },
+    {
+      "case": "n3-m2-round-c2-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "da49dc61b9617727896edfe93f521366d2938fc94dff0b406aebe94d16bbf9fb",
+      "stderr": "error: execution: ExecError { pc: 186, site: \"red_reduce_claims__L3_L2 (line 142)\", fault: Conflict { cell: 89, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 10878000655374438677, c1: 7988619339180091213, c2: 12655109986976641967 }, hint: None } }"
+    },
+    {
+      "case": "n3-m2-terminal-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "da49dc61b9617727896edfe93f521366d2938fc94dff0b406aebe94d16bbf9fb",
+      "stderr": "error: execution: ExecError { pc: 186, site: \"red_reduce_claims__L3_L2 (line 142)\", fault: Conflict { cell: 89, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 13087427553073278566, c1: 6319679836930105302, c2: 11416897778325559470 }, hint: None } }"
+    },
+    {
+      "case": "n3-m2-input-point-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "da49dc61b9617727896edfe93f521366d2938fc94dff0b406aebe94d16bbf9fb",
+      "stderr": "error: execution: ExecError { pc: 186, site: \"red_reduce_claims__L3_L2 (line 142)\", fault: Conflict { cell: 89, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 1478339018830426518, c1: 16722709337698799636, c2: 249035826448296958 }, hint: None } }"
+    },
+    {
+      "case": "n3-m2-input-value-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "da49dc61b9617727896edfe93f521366d2938fc94dff0b406aebe94d16bbf9fb",
+      "stderr": "error: execution: ExecError { pc: 186, site: \"red_reduce_claims__L3_L2 (line 142)\", fault: Conflict { cell: 89, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 6765545688341598508, c1: 5548846139714462881, c2: 16924144541690217323 }, hint: None } }"
+    },
+    {
+      "case": "n3-m2-round-order",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "da49dc61b9617727896edfe93f521366d2938fc94dff0b406aebe94d16bbf9fb",
+      "stderr": "error: execution: ExecError { pc: 186, site: \"red_reduce_claims__L3_L2 (line 142)\", fault: Conflict { cell: 89, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 9397666810404059849, c1: 1732113072240754215, c2: 3821043455048371766 }, hint: None } }"
+    },
+    {
+      "case": "n3-m3-honest",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "dd4bde6041b8e2d960d9f93a338065999e3bb4115bd351bf563f9ef014cd4fed",
+      "stderr": "",
+      "guest_hash": "ebdbc94a8c2e9605d85d268af5c182789f47ba11fbf292a568834e961e93f3b4",
+      "cycles": 498,
+      "opcode_rows": [
+        136,
+        151,
+        77,
+        82,
+        46,
+        6
+      ]
+    },
+    {
+      "case": "n3-m3-codec",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "d885db59133998098c1a352d5c0fef356a98ac429f6288d0cfba3c3f507cbf6c",
+      "stderr": "",
+      "guest_hash": "889599b6ca195c275242db20a39d330178c7ea8266f77e1c7a29b1a97b41748a",
+      "cycles": 691,
+      "opcode_rows": [
+        206,
+        205,
+        97,
+        104,
+        70,
+        9
+      ]
+    },
+    {
+      "case": "n3-m3-round-c0-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "dd4bde6041b8e2d960d9f93a338065999e3bb4115bd351bf563f9ef014cd4fed",
+      "stderr": "error: execution: ExecError { pc: 203, site: \"red_reduce_claims__L3_L3 (line 142)\", fault: Conflict { cell: 93, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 14641369037149805447, c1: 7822097614176968878, c2: 6093778995683356917 }, hint: None } }"
+    },
+    {
+      "case": "n3-m3-round-c2-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "dd4bde6041b8e2d960d9f93a338065999e3bb4115bd351bf563f9ef014cd4fed",
+      "stderr": "error: execution: ExecError { pc: 203, site: \"red_reduce_claims__L3_L3 (line 142)\", fault: Conflict { cell: 93, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 16832589153825244424, c1: 9169580779491263933, c2: 15385901411623633425 }, hint: None } }"
+    },
+    {
+      "case": "n3-m3-terminal-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "dd4bde6041b8e2d960d9f93a338065999e3bb4115bd351bf563f9ef014cd4fed",
+      "stderr": "error: execution: ExecError { pc: 203, site: \"red_reduce_claims__L3_L3 (line 142)\", fault: Conflict { cell: 93, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 1843972539569805112, c1: 6818427763700634013, c2: 11101925304699285975 }, hint: None } }"
+    },
+    {
+      "case": "n3-m3-input-point-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "dd4bde6041b8e2d960d9f93a338065999e3bb4115bd351bf563f9ef014cd4fed",
+      "stderr": "error: execution: ExecError { pc: 203, site: \"red_reduce_claims__L3_L3 (line 142)\", fault: Conflict { cell: 93, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 7160187962752862232, c1: 4994238551429288900, c2: 5088210916845176440 }, hint: None } }"
+    },
+    {
+      "case": "n3-m3-input-value-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "dd4bde6041b8e2d960d9f93a338065999e3bb4115bd351bf563f9ef014cd4fed",
+      "stderr": "error: execution: ExecError { pc: 203, site: \"red_reduce_claims__L3_L3 (line 142)\", fault: Conflict { cell: 93, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 10089354985935340396, c1: 16325764437032156131, c2: 16773173028925853482 }, hint: None } }"
+    },
+    {
+      "case": "n3-m3-round-order",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "dd4bde6041b8e2d960d9f93a338065999e3bb4115bd351bf563f9ef014cd4fed",
+      "stderr": "error: execution: ExecError { pc: 203, site: \"red_reduce_claims__L3_L3 (line 142)\", fault: Conflict { cell: 93, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 2608931759481242733, c1: 17974461906662088298, c2: 11231532926621017270 }, hint: None } }"
+    },
+    {
+      "case": "n4-m1-honest",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "2c78d7d8c324fd24dfcbc863526e7e368d322b2db70fe338576975fef9b4c48a",
+      "stderr": "",
+      "guest_hash": "d436298bd2bdc903d26291642eb7f6d8545d5207f0bf9e2fb071eadef7657991",
+      "cycles": 506,
+      "opcode_rows": [
+        113,
+        165,
+        99,
+        80,
+        43,
+        6
+      ]
+    },
+    {
+      "case": "n4-m1-codec",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "70ceaaa2624164783b2568ec9768f373c3fe27b5a3e54dbf9639ace8626f587a",
+      "stderr": "",
+      "guest_hash": "93a03e94c65bbf8edac3ec071d001ccc2e73576b796c753ddf5156830107c1a3",
+      "cycles": 633,
+      "opcode_rows": [
+        154,
+        198,
+        120,
+        95,
+        58,
+        8
+      ]
+    },
+    {
+      "case": "n4-m1-round-c0-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "2c78d7d8c324fd24dfcbc863526e7e368d322b2db70fe338576975fef9b4c48a",
+      "stderr": "error: execution: ExecError { pc: 238, site: \"red_reduce_claims__L4_L1 (line 142)\", fault: Conflict { cell: 129, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 9234908961328815940, c1: 7792160699812685620, c2: 15659615042137601741 }, hint: None } }"
+    },
+    {
+      "case": "n4-m1-round-c2-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "2c78d7d8c324fd24dfcbc863526e7e368d322b2db70fe338576975fef9b4c48a",
+      "stderr": "error: execution: ExecError { pc: 238, site: \"red_reduce_claims__L4_L1 (line 142)\", fault: Conflict { cell: 129, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 11551367049220690900, c1: 18114014823466650121, c2: 14312646696107928481 }, hint: None } }"
+    },
+    {
+      "case": "n4-m1-terminal-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "2c78d7d8c324fd24dfcbc863526e7e368d322b2db70fe338576975fef9b4c48a",
+      "stderr": "error: execution: ExecError { pc: 238, site: \"red_reduce_claims__L4_L1 (line 142)\", fault: Conflict { cell: 129, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 5305553382364087874, c1: 3298038468774705806, c2: 18439301000133519162 }, hint: None } }"
+    },
+    {
+      "case": "n4-m1-input-point-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "2c78d7d8c324fd24dfcbc863526e7e368d322b2db70fe338576975fef9b4c48a",
+      "stderr": "error: execution: ExecError { pc: 238, site: \"red_reduce_claims__L4_L1 (line 142)\", fault: Conflict { cell: 129, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 12258695655672464333, c1: 9736163104406570372, c2: 17040298818646878654 }, hint: None } }"
+    },
+    {
+      "case": "n4-m1-input-value-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "2c78d7d8c324fd24dfcbc863526e7e368d322b2db70fe338576975fef9b4c48a",
+      "stderr": "error: execution: ExecError { pc: 238, site: \"red_reduce_claims__L4_L1 (line 142)\", fault: Conflict { cell: 129, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 773366747353216004, c1: 11796790901995776982, c2: 15578073096565441373 }, hint: None } }"
+    },
+    {
+      "case": "n4-m1-round-order",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "2c78d7d8c324fd24dfcbc863526e7e368d322b2db70fe338576975fef9b4c48a",
+      "stderr": "error: execution: ExecError { pc: 238, site: \"red_reduce_claims__L4_L1 (line 142)\", fault: Conflict { cell: 129, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 10010427363621931157, c1: 15238212429176776475, c2: 4569993777767285779 }, hint: None } }"
+    },
+    {
+      "case": "n4-m2-honest",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "37be1f339b9e0f942bf91205c404a27183c0236afa0d0ed853f391e59bcd8785",
+      "stderr": "",
+      "guest_hash": "1c615b82b63126e7a53cd3ba9f3e46ab838ac708ee8fb4765891a1dd82797358",
+      "cycles": 576,
+      "opcode_rows": [
+        144,
+        187,
+        99,
+        90,
+        49,
+        7
+      ]
+    },
+    {
+      "case": "n4-m2-codec",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "b2e7c8f913aa8f54354eb899c7d0e0efbc725a08ac096b3181d3e8ab90079647",
+      "stderr": "",
+      "guest_hash": "d6d8a0b779063ed6d6efae0e0d6ecb8a510da64744007a656432cabd815e39e7",
+      "cycles": 752,
+      "opcode_rows": [
+        206,
+        236,
+        120,
+        110,
+        70,
+        10
+      ]
+    },
+    {
+      "case": "n4-m2-round-c0-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "37be1f339b9e0f942bf91205c404a27183c0236afa0d0ed853f391e59bcd8785",
+      "stderr": "error: execution: ExecError { pc: 259, site: \"red_reduce_claims__L4_L2 (line 142)\", fault: Conflict { cell: 134, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 6926115070259012127, c1: 13743580620291523233, c2: 6120285681455250082 }, hint: None } }"
+    },
+    {
+      "case": "n4-m2-round-c2-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "37be1f339b9e0f942bf91205c404a27183c0236afa0d0ed853f391e59bcd8785",
+      "stderr": "error: execution: ExecError { pc: 259, site: \"red_reduce_claims__L4_L2 (line 142)\", fault: Conflict { cell: 134, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 17622390196341313431, c1: 7346588286412849999, c2: 1673717156391762240 }, hint: None } }"
+    },
+    {
+      "case": "n4-m2-terminal-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "37be1f339b9e0f942bf91205c404a27183c0236afa0d0ed853f391e59bcd8785",
+      "stderr": "error: execution: ExecError { pc: 259, site: \"red_reduce_claims__L4_L2 (line 142)\", fault: Conflict { cell: 134, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 18364086700153700281, c1: 16817855116521249419, c2: 14995222720030292924 }, hint: None } }"
+    },
+    {
+      "case": "n4-m2-input-point-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "37be1f339b9e0f942bf91205c404a27183c0236afa0d0ed853f391e59bcd8785",
+      "stderr": "error: execution: ExecError { pc: 259, site: \"red_reduce_claims__L4_L2 (line 142)\", fault: Conflict { cell: 134, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 1145901593155421325, c1: 15064616225724300036, c2: 15092101888013361879 }, hint: None } }"
+    },
+    {
+      "case": "n4-m2-input-value-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "37be1f339b9e0f942bf91205c404a27183c0236afa0d0ed853f391e59bcd8785",
+      "stderr": "error: execution: ExecError { pc: 259, site: \"red_reduce_claims__L4_L2 (line 142)\", fault: Conflict { cell: 134, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 4514532989119301380, c1: 5340704330572323449, c2: 11719657475400697580 }, hint: None } }"
+    },
+    {
+      "case": "n4-m2-round-order",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "37be1f339b9e0f942bf91205c404a27183c0236afa0d0ed853f391e59bcd8785",
+      "stderr": "error: execution: ExecError { pc: 259, site: \"red_reduce_claims__L4_L2 (line 142)\", fault: Conflict { cell: 134, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 11527858427576953502, c1: 13218441651254756495, c2: 1668437894982748010 }, hint: None } }"
+    },
+    {
+      "case": "n4-m3-honest",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "ae1424f1e440e63ef37d467b4819726e0fb0d4ac29c8bdc3aa1b612d2ad5cbbf",
+      "stderr": "",
+      "guest_hash": "2380fd35ede4ef32f9d6910b814856f0d99c0ecf2e034fecda9dbb2a9a9e52fb",
+      "cycles": 663,
+      "opcode_rows": [
+        185,
+        213,
+        99,
+        100,
+        58,
+        8
+      ]
+    },
+    {
+      "case": "n4-m3-codec",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "exit_code": 0,
+      "source_sha256": "55f5cfbfb4cc2e50dae7d3f4bc9f821338b17c185bc49452382b7e0b2fc56896",
+      "stderr": "",
+      "guest_hash": "76a8d3b3446bdff1c5bf222a61a05d0eae3faef4efdfdc7699d52a5b229f2276",
+      "cycles": 905,
+      "opcode_rows": [
+        278,
+        282,
+        120,
+        125,
+        88,
+        12
+      ]
+    },
+    {
+      "case": "n4-m3-round-c0-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "ae1424f1e440e63ef37d467b4819726e0fb0d4ac29c8bdc3aa1b612d2ad5cbbf",
+      "stderr": "error: execution: ExecError { pc: 280, site: \"red_reduce_claims__L4_L3 (line 142)\", fault: Conflict { cell: 139, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 11935030930621382290, c1: 928806906924210701, c2: 13116279334004765981 }, hint: None } }"
+    },
+    {
+      "case": "n4-m3-round-c2-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "ae1424f1e440e63ef37d467b4819726e0fb0d4ac29c8bdc3aa1b612d2ad5cbbf",
+      "stderr": "error: execution: ExecError { pc: 280, site: \"red_reduce_claims__L4_L3 (line 142)\", fault: Conflict { cell: 139, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 15436557158882762937, c1: 16743818835630224734, c2: 13321994401504179873 }, hint: None } }"
+    },
+    {
+      "case": "n4-m3-terminal-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "ae1424f1e440e63ef37d467b4819726e0fb0d4ac29c8bdc3aa1b612d2ad5cbbf",
+      "stderr": "error: execution: ExecError { pc: 280, site: \"red_reduce_claims__L4_L3 (line 142)\", fault: Conflict { cell: 139, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 17296781929167308994, c1: 18385398226365265529, c2: 8014334914811046059 }, hint: None } }"
+    },
+    {
+      "case": "n4-m3-input-point-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "ae1424f1e440e63ef37d467b4819726e0fb0d4ac29c8bdc3aa1b612d2ad5cbbf",
+      "stderr": "error: execution: ExecError { pc: 280, site: \"red_reduce_claims__L4_L3 (line 142)\", fault: Conflict { cell: 139, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 16785702917763559294, c1: 4744176027144613115, c2: 5896431857702535670 }, hint: None } }"
+    },
+    {
+      "case": "n4-m3-input-value-top",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "ae1424f1e440e63ef37d467b4819726e0fb0d4ac29c8bdc3aa1b612d2ad5cbbf",
+      "stderr": "error: execution: ExecError { pc: 280, site: \"red_reduce_claims__L4_L3 (line 142)\", fault: Conflict { cell: 139, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 7900921834391942283, c1: 17130525931396970605, c2: 2149102259875082764 }, hint: None } }"
+    },
+    {
+      "case": "n4-m3-round-order",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "exit_code": 1,
+      "source_sha256": "ae1424f1e440e63ef37d467b4819726e0fb0d4ac29c8bdc3aa1b612d2ad5cbbf",
+      "stderr": "error: execution: ExecError { pc: 280, site: \"red_reduce_claims__L4_L3 (line 142)\", fault: Conflict { cell: 139, had: F192 { c0: 0, c1: 0, c2: 0 }, new: F192 { c0: 4683897921966431432, c1: 15932535582424712529, c2: 11936846080104146610 }, hint: None } }"
+    }
+  ]
+}

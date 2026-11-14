@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "backend_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "scheme": "fors",
+  "signatures": 10,
+  "leaf_size": 5,
+  "leaf_source": "# Research Keccak FORS verifier, not SLH-DSA or leanSPHINCS.\n# COUNT, K and A are set by the fixture builder; no signature data is compiled in.\nfrom snark_lib import *\n\nCOUNT = 5\nK = 16\nA = 8\nDS_LEAF = 10717549832351364888980182688012062534\nDS_NODE = 10717549832351364870752428345206656838\nDS_ROOT = 10717549832351365148246227383313649478\nDS_MSG = 10717549832351363598144384841756593990\nDS_BATCH = 10717549832351704845394674473036304198\n\n\ndef canonical(word):\n    low = StackBuf(1)\n    hint_f192_limbs(low, word)\n    high = (word + low[0]) / f192(0, 1, 0)\n    assert_in_k(low[0], high)\n    return\n\n\ndef bits128(word):\n    bits = StackBuf(128)\n    hint_decompose_bits(bits, word, 128)\n    value = 0\n    for j in unroll(0, 64):\n        assert bits[j] * (bits[j] + 1) == 0\n        value = value + bits[j] * const(2 ** j)\n    for j in unroll(64, 128):\n        assert bits[j] * (bits[j] + 1) == 0\n        value = value + bits[j] * const(2 ** (j - 64)) * f192(0, 1, 0)\n    assert value == word\n    return bits\n\n\ndef verify_one(claims, base):\n    header = StackBuf(6)\n    hint_witness(header, \"fors_header\")\n    for j in unroll(0, 6):\n        canonical(header[j])\n        claims[base * GEN ** j] = header[j]\n\n    # Header = public seed || forest public root || 32-byte message.\n    md = StackBuf(2)\n    keccak_cells([DS_MSG, header[0], header[1], header[2], header[3], header[4], header[5]], md)\n    digest_bits = bits128(md[0])\n    roots = StackBuf(3 + 2 * K)\n    roots[0] = DS_ROOT\n    roots[1] = header[0]\n    roots[2] = header[1]\n\n    for tree in unroll(0, K):\n        secret = StackBuf(2)\n        hint_witness(secret, \"fors_secret\")\n        canonical(secret[0])\n        canonical(secret[1])\n        index = 0\n        for bit in unroll(0, A):\n            index = index + digest_bits[tree * A + bit] * const(2 ** bit)\n        node = StackBuf(2)\n        # Address = LE32(tree) || LE32(height) || LE64(index).\n        address = const(tree) + f192(0, 1, 0) * index\n        keccak_cells([DS_LEAF, header[0], header[1], address, secret[0], secret[1]], node)\n\n        for height in unroll(0, A):\n            sibling = StackBuf(2)\n            hint_witness(sibling, \"fors_auth\")\n            canonical(sibling[0])\n            canonical(sibling[1])\n            side = digest_bits[tree * A + height]\n            delta0 = side * (node[0] + sibling[0])\n            delta1 = side * (node[1] + sibling[1])\n            left0 = node[0] + delta0\n            left1 = node[1] + delta1\n            right0 = sibling[0] + delta0\n            right1 = sibling[1] + delta1\n            parent_index = 0\n            for bit in unroll(height + 1, A):\n                parent_index = parent_index + digest_bits[tree * A + bit] * const(2 ** (bit - height - 1))\n            parent_address = const(tree + (height + 1) * 2 ** 32) + f192(0, 1, 0) * parent_index\n            parent = StackBuf(2)\n            keccak_cells([DS_NODE, header[0], header[1], parent_address, left0, left1, right0, right1], parent)\n            node = parent\n        roots[3 + 2 * tree] = node[0]\n        roots[4 + 2 * tree] = node[1]\n\n    # Equality against the claimed public root authenticates the forest.\n    keccak_cells(roots, header[2:4])\n    return\n\n\ndef main():\n    claims = HeapBuf(1 + 6 * COUNT)\n    claims[1] = DS_BATCH\n    for i in mul_range(1, GEN ** COUNT):\n        verify_one(claims, GEN * i ** 6)\n    digest = StackBuf(2)\n    keccak_cells(claims[0:1 + 6 * COUNT], digest)\n    public = GEN ** 0\n    public[1] = digest[0]\n    public[GEN] = digest[1]\n    return\n",
+  "public_records": [
+    {
+      "public_key_hex": "c8474432ebfd23d0c96c7ce1bd34bb0a9de3c5e9afa69d571d7f7c47c0fb6b1fefb8dd3c0da59d2599c946f9b77917e6b5e77b503d4836bcd524fe61482d58b4",
+      "message_hex": "587ec7773dce95516c3dd92662f23d71e55a5bd44db9e14629dfd82a01b1ad73"
+    },
+    {
+      "public_key_hex": "e1cd8c72165f8d7dfcc3c3ccff1adb332a1822be7664224dc1cbc74388e2c1d35baa024393e295a99f67c7f8e76cc5f835ee6c4e241d2d0455fa88b35db5cd44",
+      "message_hex": "52834d5bbfeac4a3a52dea6d690685970d3f5fe9c33dbcabf1b216bc6b29838e"
+    },
+    {
+      "public_key_hex": "0691124a5c704048b7b11264b4233a59eda03656177e7b4c8c41e0555ce9888292e0c86ff9b3dc89084c7f3ee5d5330e2aefdba66772cc35d34d2f50d1358582",
+      "message_hex": "84ae1523a4f3e50b78dcadc46b5f1946f853a49addcad932caccff3bb6c87377"
+    },
+    {
+      "public_key_hex": "c9ee691a4ff3af2d5a49f9f10fd0ecfddf12b273918c648ad40a9eddfceaf8a3ae5c4b16252a0c35db42346a71847694abe9505cdebf90022710c9a4bf302b79",
+      "message_hex": "b90c4e8aa9dd6e5dea3fbd70093a864f9602ea3315d099ebd96de167c07c697a"
+    },
+    {
+      "public_key_hex": "444c01d11ae70a581a2274722fb3b493b5832d0662c774b69e07c69c5c8f7aea9671d523eadfb2d61630564934a13b6f9a4dd525e57dbaf3f06e218445c66bc6",
+      "message_hex": "438df705802d1df7bd1b51ccc1132fea682b78058ab712f0125f3f18c3017777"
+    },
+    {
+      "public_key_hex": "268b4d97179dd729daf4a15a8646a0ac8cb8b157a56525aec4871bd815e8b2ac862cb949d7682c1862fc4b5f5ba4681f28be59bf4dfe460227dfd8b544dfcc9e",
+      "message_hex": "d658cd9e604f2c5f2f7069963089942d810151221081e6859cc9df29817e77ba"
+    },
+    {
+      "public_key_hex": "492aaa1ed51948eb831f97b06a696635209f7b2410976db1525da79685ab334b442381b96a52d35067cb89e108dead54bd8c0b632ad8acb018ccaf6c1116b3c3",
+      "message_hex": "a62c910c98b5e87b9013629953de1c2de4ce1b3a3c2c93e9ba63812dc12d0cd5"
+    },
+    {
+      "public_key_hex": "485c1d76efb81627c9863f6f8ae1c1c2309de225e64a162900cbab188a677c9d99b3173349dc96cbbba61e7722ee1df9abe706822f14798bc8ff60710cb7e31a",
+      "message_hex": "4014df6c8c93e53b9a30162c09d6affeb6cde87da299d0e467197d15619c5f78"
+    },
+    {
+      "public_key_hex": "ad46f12633fb5f54c9b6a1b0e1671c09a8dd6c5511ab817e5512f099bfd3d0368d9f03f3425c24bd6d1b4ef6667b4098cfecfed706909f627f091f87a8fdd810",
+      "message_hex": "a460f25f686b3c64cb39984bfdbfe7dbfaa6d0c7e49d3f21f41973e78db1a7f5"
+    },
+    {
+      "public_key_hex": "d51f926e255db0f0d109a2e51ebb7f75356103b75d4bdce1ba567c47ef2b6c224899f4eb2f7e1f1944c1fd60d4251fa4180f3fe13e640c3fe52b2732540d517a",
+      "message_hex": "6babc1e53a70e48bf3cc3aeacfade72e2b85600b5ddb0cd1a388426f0b5c6635"
+    }
+  ]
+}

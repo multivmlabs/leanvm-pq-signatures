@@ -1,0 +1,150 @@
+{
+  "compile_plan_s": 0.4954875,
+  "depth": 2,
+  "edge_count": 6,
+  "fan_in": 4,
+  "leaf_capacity": 16,
+  "leaf_count": 5,
+  "merge_count": 2,
+  "nodes": [
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "be7a7bf62f9078d185cfce1c515f91ad1cd0cb501d5c2dcb87a98a4d1d3d2a3f",
+      "leaf": 0,
+      "node": 0,
+      "signatures": 16
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "be7a7bf62f9078d185cfce1c515f91ad1cd0cb501d5c2dcb87a98a4d1d3d2a3f",
+      "leaf": 1,
+      "node": 1,
+      "signatures": 16
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "be7a7bf62f9078d185cfce1c515f91ad1cd0cb501d5c2dcb87a98a4d1d3d2a3f",
+      "leaf": 2,
+      "node": 2,
+      "signatures": 16
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "be7a7bf62f9078d185cfce1c515f91ad1cd0cb501d5c2dcb87a98a4d1d3d2a3f",
+      "leaf": 3,
+      "node": 3,
+      "signatures": 16
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "1c78c9248bb3bbcf6d19dd8433ff018972b0bcc1ccdd1b92be6e1604a82e1dd7",
+      "leaf": 4,
+      "node": 4,
+      "signatures": 6
+    },
+    {
+      "children": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "depth": 1,
+      "guest_hash": "e8c9864a2ca75934752b51c5b984eff344644009d2fdc1ba84e4f07f2c67a431",
+      "leaf": null,
+      "node": 5,
+      "signatures": 64
+    },
+    {
+      "children": [
+        5,
+        4
+      ],
+      "depth": 2,
+      "guest_hash": "c89af0d2aca55c5969b5794172ee4134bfeef9aea98762da6c0267147415cbb8",
+      "leaf": null,
+      "node": 6,
+      "signatures": 70
+    }
+  ],
+  "plan_hash": "baf2284d5d346463108dd8cd81a405cbf87bacf45833b1ded04b6e6bd2d5be24",
+  "root_guest_hash": "c89af0d2aca55c5969b5794172ee4134bfeef9aea98762da6c0267147415cbb8",
+  "schema_version": 1,
+  "scheme": "fors",
+  "semantic_plan": {
+    "fan_in": 4,
+    "format": "pqbench/tree-v1/all-edges/level-chunks",
+    "leaf_capacity": 16,
+    "leaves": [
+      {
+        "guest_hash": "be7a7bf62f9078d185cfce1c515f91ad1cd0cb501d5c2dcb87a98a4d1d3d2a3f",
+        "min_log_committed": 22,
+        "public_input_hex": "5002680d2dbe3cd417e079a37c9d3843d856abd7b989dc05ed30c7b4f876994a",
+        "signatures": 16
+      },
+      {
+        "guest_hash": "be7a7bf62f9078d185cfce1c515f91ad1cd0cb501d5c2dcb87a98a4d1d3d2a3f",
+        "min_log_committed": 22,
+        "public_input_hex": "f96fdd25b381d14b35488391184a32cd990a046726d648028d30d1b6c9cc7e00",
+        "signatures": 16
+      },
+      {
+        "guest_hash": "be7a7bf62f9078d185cfce1c515f91ad1cd0cb501d5c2dcb87a98a4d1d3d2a3f",
+        "min_log_committed": 22,
+        "public_input_hex": "5134027576d39e54f4b86ec69848f49cb7fc10850d8c9a6cf67d6bece6c0d3f8",
+        "signatures": 16
+      },
+      {
+        "guest_hash": "be7a7bf62f9078d185cfce1c515f91ad1cd0cb501d5c2dcb87a98a4d1d3d2a3f",
+        "min_log_committed": 22,
+        "public_input_hex": "15597ea25aa5135cba94725c9184eaa179ffcda813d2b04e726c49d7b7818df5",
+        "signatures": 16
+      },
+      {
+        "guest_hash": "1c78c9248bb3bbcf6d19dd8433ff018972b0bcc1ccdd1b92be6e1604a82e1dd7",
+        "min_log_committed": 22,
+        "public_input_hex": "9a5d3e388af69d7dd8c900b1ee2dfa956264206bae4c1c06a58c45bae7f5fbcb",
+        "signatures": 6
+      }
+    ],
+    "schema_version": 1,
+    "scheme": "fors",
+    "signatures": 70
+  },
+  "signatures": 70,
+  "source_table": [
+    {
+      "bytecode_instructions": 5546,
+      "bytecode_log": 13,
+      "guest_hash": "1c78c9248bb3bbcf6d19dd8433ff018972b0bcc1ccdd1b92be6e1604a82e1dd7",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 8192
+    },
+    {
+      "bytecode_instructions": 5680,
+      "bytecode_log": 13,
+      "guest_hash": "be7a7bf62f9078d185cfce1c515f91ad1cd0cb501d5c2dcb87a98a4d1d3d2a3f",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 8192
+    },
+    {
+      "bytecode_instructions": 432831,
+      "bytecode_log": 19,
+      "guest_hash": "c89af0d2aca55c5969b5794172ee4134bfeef9aea98762da6c0267147415cbb8",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 524288
+    },
+    {
+      "bytecode_instructions": 217056,
+      "bytecode_log": 18,
+      "guest_hash": "e8c9864a2ca75934752b51c5b984eff344644009d2fdc1ba84e4f07f2c67a431",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    }
+  ]
+}

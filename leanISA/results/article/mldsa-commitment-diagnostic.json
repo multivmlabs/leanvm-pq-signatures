@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "generated_on": "2026-11-06",
+  "kind": "diagnostic_profile_only_not_a_replacement_for_figure_timings",
+  "keys": 10,
+  "key_identities_initially_cached": false,
+  "coefficient_cache_initially_cleared": true,
+  "coefficients_per_key": 5120,
+  "expanded_key_commitment_encoding_bytes": 81984,
+  "coefficient_conversion_fraction_of_profiled_key_identity": 0.8968792950081933,
+  "compact_key_expansion_fraction_of_profiled_key_identity": 0.05991516723677162,
+  "functions": [
+    {
+      "file": "python/pqbench/mldsa.py",
+      "line": 209,
+      "function": "key_identity",
+      "calls": 10,
+      "self_s_profiled": 0.0014575,
+      "cumulative_s_profiled": 0.41231004000000004
+    },
+    {
+      "file": "python/pqbench/dilithium.py",
+      "line": 79,
+      "function": "ec",
+      "calls": 51200,
+      "self_s_profiled": 0.016302741000000003,
+      "cumulative_s_profiled": 0.369792338
+    },
+    {
+      "file": "python/pqbench/dilithium.py",
+      "line": 58,
+      "function": "gpow",
+      "calls": 51055,
+      "self_s_profiled": 0.019035514,
+      "cumulative_s_profiled": 0.35348959700000004
+    },
+    {
+      "file": "python/pqbench/dilithium.py",
+      "line": 33,
+      "function": "gm",
+      "calls": 50637,
+      "self_s_profiled": 0.33320638700000005,
+      "cumulative_s_profiled": 0.33320638700000005
+    },
+    {
+      "file": "python/pqbench/mldsa.py",
+      "line": 125,
+      "function": "expand_public_key",
+      "calls": 10,
+      "self_s_profiled": 0.010876237,
+      "cumulative_s_profiled": 0.024703625
+    },
+    {
+      "file": "python/pqbench/dilithium.py",
+      "line": 87,
+      "function": "raw",
+      "calls": 10,
+      "self_s_profiled": 2.9498e-05,
+      "cumulative_s_profiled": 0.009987418000000001
+    },
+    {
+      "file": "python/pqbench/dilithium.py",
+      "line": 172,
+      "function": "ntt",
+      "calls": 40,
+      "self_s_profiled": 0.007061416,
+      "cumulative_s_profiled": 0.007282042000000001
+    },
+    {
+      "file": "python/pqbench/dilithium.py",
+      "line": 29,
+      "function": "kh",
+      "calls": 10,
+      "self_s_profiled": 9.2583e-05,
+      "cumulative_s_profiled": 0.002304791
+    }
+  ],
+  "source_sha256": {
+    "python/pqbench/mldsa.py": "756526659fcd99e0446ee913277f75ef47cf6f94513dd6cbe54f6356327d2639",
+    "python/pqbench/dilithium.py": "efc6388ce311e11d6609cf359ee660164232e558e9ab8cef93e09609c8279fed",
+    "python/pqbench/article_inputs.py": "33bf180a38e87e9dd0d4774ca02bc664064bc63043faf0cd20694d615379c3f5"
+  },
+  "record_source": "artifacts/article/mldsa/records.json",
+  "record_source_sha256": "5ae60461b65eea90b976ddb24b039e9b64adc9c426f2dc7c2b7b25a445ca6679",
+  "scope": "Profiles key_identity on ten distinct saved public keys in an isolated process; no proving or source edits. Excludes manifest construction, source regeneration and other parts of the full claim-derivation timer. Profiler instrumentation changes runtime."
+}

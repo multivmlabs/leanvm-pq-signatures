@@ -1,0 +1,409 @@
+{
+  "compile_plan_s": 0.867710375,
+  "depth": 4,
+  "edge_count": 26,
+  "fan_in": 2,
+  "leaf_capacity": 5,
+  "leaf_count": 14,
+  "merge_count": 13,
+  "nodes": [
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+      "leaf": 0,
+      "node": 0,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+      "leaf": 1,
+      "node": 1,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+      "leaf": 2,
+      "node": 2,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+      "leaf": 3,
+      "node": 3,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+      "leaf": 4,
+      "node": 4,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+      "leaf": 5,
+      "node": 5,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+      "leaf": 6,
+      "node": 6,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+      "leaf": 7,
+      "node": 7,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+      "leaf": 8,
+      "node": 8,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+      "leaf": 9,
+      "node": 9,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+      "leaf": 10,
+      "node": 10,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+      "leaf": 11,
+      "node": 11,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+      "leaf": 12,
+      "node": 12,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+      "leaf": 13,
+      "node": 13,
+      "signatures": 5
+    },
+    {
+      "children": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "guest_hash": "0e8b0d22752fbd13acc2be32ca0d9b56033e153f3629521bb5f585641fbbf23b",
+      "leaf": null,
+      "node": 14,
+      "signatures": 10
+    },
+    {
+      "children": [
+        2,
+        3
+      ],
+      "depth": 1,
+      "guest_hash": "0e8b0d22752fbd13acc2be32ca0d9b56033e153f3629521bb5f585641fbbf23b",
+      "leaf": null,
+      "node": 15,
+      "signatures": 10
+    },
+    {
+      "children": [
+        4,
+        5
+      ],
+      "depth": 1,
+      "guest_hash": "0e8b0d22752fbd13acc2be32ca0d9b56033e153f3629521bb5f585641fbbf23b",
+      "leaf": null,
+      "node": 16,
+      "signatures": 10
+    },
+    {
+      "children": [
+        6,
+        7
+      ],
+      "depth": 1,
+      "guest_hash": "0e8b0d22752fbd13acc2be32ca0d9b56033e153f3629521bb5f585641fbbf23b",
+      "leaf": null,
+      "node": 17,
+      "signatures": 10
+    },
+    {
+      "children": [
+        8,
+        9
+      ],
+      "depth": 1,
+      "guest_hash": "0e8b0d22752fbd13acc2be32ca0d9b56033e153f3629521bb5f585641fbbf23b",
+      "leaf": null,
+      "node": 18,
+      "signatures": 10
+    },
+    {
+      "children": [
+        10,
+        11
+      ],
+      "depth": 1,
+      "guest_hash": "0e8b0d22752fbd13acc2be32ca0d9b56033e153f3629521bb5f585641fbbf23b",
+      "leaf": null,
+      "node": 19,
+      "signatures": 10
+    },
+    {
+      "children": [
+        12,
+        13
+      ],
+      "depth": 1,
+      "guest_hash": "0e8b0d22752fbd13acc2be32ca0d9b56033e153f3629521bb5f585641fbbf23b",
+      "leaf": null,
+      "node": 20,
+      "signatures": 10
+    },
+    {
+      "children": [
+        14,
+        15
+      ],
+      "depth": 2,
+      "guest_hash": "f1b33ff768f9e4f5c5a0738dcaac5e98e4a519a4ad31158aa32bfa7fea9ef8b9",
+      "leaf": null,
+      "node": 21,
+      "signatures": 20
+    },
+    {
+      "children": [
+        16,
+        17
+      ],
+      "depth": 2,
+      "guest_hash": "f1b33ff768f9e4f5c5a0738dcaac5e98e4a519a4ad31158aa32bfa7fea9ef8b9",
+      "leaf": null,
+      "node": 22,
+      "signatures": 20
+    },
+    {
+      "children": [
+        18,
+        19
+      ],
+      "depth": 2,
+      "guest_hash": "f1b33ff768f9e4f5c5a0738dcaac5e98e4a519a4ad31158aa32bfa7fea9ef8b9",
+      "leaf": null,
+      "node": 23,
+      "signatures": 20
+    },
+    {
+      "children": [
+        21,
+        22
+      ],
+      "depth": 3,
+      "guest_hash": "1fa594cb6dc4f6ebf8d3efdbff0f55172283439e22a4666043905b11462ffec0",
+      "leaf": null,
+      "node": 24,
+      "signatures": 40
+    },
+    {
+      "children": [
+        23,
+        20
+      ],
+      "depth": 3,
+      "guest_hash": "68f0996ff55a08d20395185497ae86cbdb26e67de50158d471eb0d52b846c201",
+      "leaf": null,
+      "node": 25,
+      "signatures": 30
+    },
+    {
+      "children": [
+        24,
+        25
+      ],
+      "depth": 4,
+      "guest_hash": "c29b0c2db9cde7bf2be5cb72524a748453639bec3aa4639d30e8a934aa387143",
+      "leaf": null,
+      "node": 26,
+      "signatures": 70
+    }
+  ],
+  "plan_hash": "5355d114baf0534404d98ee1b036c28049d5b955ca7d779812d0e72ccd18b9a2",
+  "root_guest_hash": "c29b0c2db9cde7bf2be5cb72524a748453639bec3aa4639d30e8a934aa387143",
+  "schema_version": 1,
+  "scheme": "falcon",
+  "semantic_plan": {
+    "fan_in": 2,
+    "format": "pqbench/tree-v1/all-edges/level-chunks",
+    "leaf_capacity": 5,
+    "leaves": [
+      {
+        "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+        "min_log_committed": 22,
+        "public_input_hex": "61f1027f8b050f369bf01049a79781a39d3757c38dfdf91977ff3e01b0988b11",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+        "min_log_committed": 22,
+        "public_input_hex": "889ea327a84831c4b77912a34ac6fc54cf5a04a8c9ea0e563262e3a8764a0fe7",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+        "min_log_committed": 22,
+        "public_input_hex": "e747bbe52bc7300fda76f5b1cb2e17b4fbe205ed7bda0768801f0d9566f93bc6",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+        "min_log_committed": 22,
+        "public_input_hex": "d8cbb8d69c667032da6d5efa62afcabbe4ab81675fd56cd240bd804f6f20e48d",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+        "min_log_committed": 22,
+        "public_input_hex": "7899f1a35e91575b4bf406cd4a866b70608aa042516792b0946e78a549b7a8f0",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+        "min_log_committed": 22,
+        "public_input_hex": "9c5d91645bba297b79bfcd52f8770a016ef804e22bd3078c01a435fa6b8a036e",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+        "min_log_committed": 22,
+        "public_input_hex": "19db31bc687f93eadc27bc2bebe5a79f88f367118c2087e67a78bf0630d4a6c8",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+        "min_log_committed": 22,
+        "public_input_hex": "e929fa8c8527d1aee2a821a3f54e3fa187d444533ae2647408f33d0ceabbe178",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+        "min_log_committed": 22,
+        "public_input_hex": "df5046c39d401e76206e6abd0d3b03a3b03fdc591aa9d2aee948109c3cc0452f",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+        "min_log_committed": 22,
+        "public_input_hex": "a6d7396ba368c4909e638ba1fd7aa61de45e58f7f0783e1fc7ef537bca7c3d53",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+        "min_log_committed": 22,
+        "public_input_hex": "95b399cd2607ef035137d2ca91971077851f402c25aba4365b5f801ed3944c49",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+        "min_log_committed": 22,
+        "public_input_hex": "7876fe3bbb2541896477304f76c70a36529651f8a705ea982b4488660b039c6f",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+        "min_log_committed": 22,
+        "public_input_hex": "8cc08e814b9444b7dc337ef647f8a478c3df32c3213bc8c79c510651e58e4381",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+        "min_log_committed": 22,
+        "public_input_hex": "506b2770628eec2c5ad6bb8b4d772c33e841565d574bee2deacc13f4de0a6e90",
+        "signatures": 5
+      }
+    ],
+    "schema_version": 1,
+    "scheme": "falcon",
+    "signatures": 70
+  },
+  "signatures": 70,
+  "source_table": [
+    {
+      "bytecode_instructions": 216752,
+      "bytecode_log": 18,
+      "guest_hash": "0e8b0d22752fbd13acc2be32ca0d9b56033e153f3629521bb5f585641fbbf23b",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    },
+    {
+      "bytecode_instructions": 159489,
+      "bytecode_log": 18,
+      "guest_hash": "0ea08e597f877b1ac87c4de3f80452b561ae7edb0f0e8f8d4ab5121468cb6939",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    },
+    {
+      "bytecode_instructions": 216752,
+      "bytecode_log": 18,
+      "guest_hash": "1fa594cb6dc4f6ebf8d3efdbff0f55172283439e22a4666043905b11462ffec0",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    },
+    {
+      "bytecode_instructions": 216754,
+      "bytecode_log": 18,
+      "guest_hash": "68f0996ff55a08d20395185497ae86cbdb26e67de50158d471eb0d52b846c201",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    },
+    {
+      "bytecode_instructions": 216754,
+      "bytecode_log": 18,
+      "guest_hash": "c29b0c2db9cde7bf2be5cb72524a748453639bec3aa4639d30e8a934aa387143",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    },
+    {
+      "bytecode_instructions": 216752,
+      "bytecode_log": 18,
+      "guest_hash": "f1b33ff768f9e4f5c5a0738dcaac5e98e4a519a4ad31158aa32bfa7fea9ef8b9",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    }
+  ]
+}

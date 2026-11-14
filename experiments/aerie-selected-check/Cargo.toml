@@ -1,0 +1,18 @@
+[package]
+name = "aerie-selected-check"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[workspace]
+
+[dependencies]
+aerie-verifier = { path = "../aerie-port/aerie/crates/aerie-verifier", default-features = false }
+aerie-falcon = { path = "../aerie-port/aerie/crates/aerie-falcon", default-features = false }
+aerie-wrapper-format = { path = "../aerie-wrapper-format" }
+akita-types = { git = "https://github.com/LayerZero-Labs/akita.git", rev = "e023b6a46143f7b23199ccecb2684192baf7b640" }
+akita-serialization = { git = "https://github.com/LayerZero-Labs/akita.git", rev = "e023b6a46143f7b23199ccecb2684192baf7b640" }
+serde_json = "1"
+
+[profile.release]
+opt-level = 3

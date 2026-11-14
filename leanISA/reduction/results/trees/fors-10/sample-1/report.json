@@ -1,0 +1,119 @@
+{
+  "action": "prove",
+  "all_reduced_claims_settled": true,
+  "backend_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "depth": 1,
+  "families": [
+    {
+      "bytecode_instructions": 8192,
+      "dimensions": 17,
+      "family": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "min_log_committed": 22,
+      "table_words": 131072
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 1,
+      "guest_hash": "9a644995149507104780db24c34f7bf0a2b0fc7631f05faa743d6002becfb3dc",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    }
+  ],
+  "full_verify_s": 0.006768041,
+  "leaf_prove_s": 0.14698308300000001,
+  "leaf_reports": [
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 0,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 270112,
+      "proof_sha256": "52e88acb9e51809fc88c5515456bacd3d466d118c2084fefd5beba0bcb08b521",
+      "prove_s": 0.086403625,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 1,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 269152,
+      "proof_sha256": "5c7a4130f504374a14be28862cf58c51e526d416372c5ab1dd7eddd734921934",
+      "prove_s": 0.060579458,
+      "signatures": 5
+    }
+  ],
+  "leaf_size": 5,
+  "leaf_slots": 2,
+  "leaf_source_sha256": "c46fc19886ee36392d106b13443440d7daaeaf210f6806dac6836c9b58c91e2c",
+  "merge_count": 1,
+  "merge_prove_s": 0.26247575100000003,
+  "merge_reports": [
+    {
+      "committed_words": 16482304,
+      "cycles": 535769,
+      "level": 1,
+      "native_reduction_prove_s": 0.0016925,
+      "node": 0,
+      "opcode_rows": [
+        160964,
+        214512,
+        28463,
+        91798,
+        29194,
+        10838
+      ],
+      "prepare_s": 0.019543917,
+      "proof_bytes": 339208,
+      "proof_sha256": "5356da11127a0159d47fab292e79a37c6e2efcce6fb9b212cd4819c93af3e5c4",
+      "terminal_families": 1,
+      "total_prove_s": 0.26247575100000003,
+      "wrapper_stark_prove_s": 0.242931834
+    }
+  ],
+  "native_reduction_prove_s": 0.0016925,
+  "original_tree_edges": 2,
+  "padding_slots": 0,
+  "peak_rss_bytes": 1269022720,
+  "pipeline_elapsed_s": 0.746643875,
+  "program_compile_s": 0.15545725,
+  "public_claim_derivation_s": 0.000016416,
+  "public_sha256": "01424e2b0f21745facb77574d9a1a7dc2095f58f32932d836236b96823f3dc28",
+  "real_leaves": 2,
+  "root_auxiliary_bytes": 672,
+  "root_core_bytes": 339208,
+  "root_proof_bytes": 339880,
+  "root_proof_sha256": "3f6e7266ae085991f8b271f74bdc401d8a92c106f427d86e5b9a7add08646033",
+  "schema": 1,
+  "scheme": "fors",
+  "signatures": 10,
+  "status": "accepted",
+  "terminal_evaluations": 1,
+  "threads_env": null,
+  "total_prove_s": 0.40945883400000005,
+  "verification_components": {
+    "root_core_s": 0.006426292,
+    "root_pi_s": 2.416e-6,
+    "terminal_evaluation_s": 0.000330834,
+    "terminal_evaluations": 1
+  },
+  "verified": true,
+  "wrapper_stark_prove_s": 0.242931834,
+  "zero_knowledge": false
+}

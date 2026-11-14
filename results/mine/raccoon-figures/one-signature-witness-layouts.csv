@@ -1,0 +1,5 @@
+label,scope,scheme,committed_words,diagnostic,index,million_words
+Original Raccoon whole,Uncapped layout diagnostic; production refused,raccoon,419337656,1,0,419.337656
+Selected Raccoon whole,Actual verified whole-signature proof,raccoon,247895480,0,1,247.89548
+Original G whole,Uncapped layout diagnostic; production refused,raccoon-g,839237560,1,2,839.23756
+Selected G two-row part,Actual verified partial proof; five parts per signature,raccoon-g,234357176,0,3,234.357176

@@ -1,0 +1,168 @@
+{
+  "scope": "RISC-V interpreter controls, no STARK proof generated",
+  "elf_sha256": "8d1a19b35874db7c3ffff15e851d0312a97c6c9b370ce58c300b674ac57922ee",
+  "fixture_sha256": "b52a160aa81192224cb2e263f54e936977d71b229f7cbfe868d7dd409ef354b2",
+  "harness_sha256": "60156b67355d58be1668753ae82908c64c5cb65b4cc76c67b0562afd6c555072",
+  "controls": [
+    {
+      "name": "honest_one",
+      "advice_sha256": "53c5f771d1ce4c9f6a5e51f16c7464eb63403dd7708a04d04e2927502218b65e",
+      "expected_accepts": true,
+      "exit_code": 0,
+      "expected_output_words_hex": "1076612a6e499ce14560709e6dad31d3d49f48093e146285d9051e32ad78b327",
+      "stdout": "1076612a6e499ce14560709e6dad31d3d49f48093e146285d9051e32ad78b327",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "honest_two_same_claim",
+      "advice_sha256": "9e0627fd2ae95f962a016bc44ac47780780c26b5b4a31d4790ae19fa8735ffd5",
+      "expected_accepts": true,
+      "exit_code": 0,
+      "expected_output_words_hex": "aaab224634dda4071fdaae8d5c25b9fee7655f91925b92cacae7de7d8e2d3d37",
+      "stdout": "aaab224634dda4071fdaae8d5c25b9fee7655f91925b92cacae7de7d8e2d3d37",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "unused_advice",
+      "advice_sha256": "3b18721782d80eb2de828c0a62a53633af0a941a16842a0a9f0db010bf976854",
+      "expected_accepts": true,
+      "exit_code": 0,
+      "expected_output_words_hex": "1076612a6e499ce14560709e6dad31d3d49f48093e146285d9051e32ad78b327",
+      "stdout": "1076612a6e499ce14560709e6dad31d3d49f48093e146285d9051e32ad78b327",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "name": "changed_rho",
+      "advice_sha256": "35f6cf7686b750939846b3a2497d63fe85725a097542cf9cbb25f42e3eace993",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "expected_output_words_hex": null,
+      "stdout": "",
+      "stderr": "guest rejected: Illegal { pc: 268436712 }",
+      "passed": true
+    },
+    {
+      "name": "changed_t1",
+      "advice_sha256": "a96928d7f3286d069da469e8c9d5f36a1f4bdafe08ba8aa7c0defe9d1e52ed3b",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "expected_output_words_hex": null,
+      "stdout": "",
+      "stderr": "guest rejected: Illegal { pc: 268436712 }",
+      "passed": true
+    },
+    {
+      "name": "changed_message",
+      "advice_sha256": "41e266624b93fa5eec82ed86d09e552b76ac7011d3279bc0a74adbe97bfcc3b8",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "expected_output_words_hex": null,
+      "stdout": "",
+      "stderr": "guest rejected: Illegal { pc: 268436712 }",
+      "passed": true
+    },
+    {
+      "name": "changed_challenge",
+      "advice_sha256": "3b7cb29bfafc381ed0b27e9752f2f1b62c45647a2a948e5c6bd55d094a1e5718",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "expected_output_words_hex": null,
+      "stdout": "",
+      "stderr": "guest rejected: Illegal { pc: 268436712 }",
+      "passed": true
+    },
+    {
+      "name": "nonzero_signature_transport_padding",
+      "advice_sha256": "7597d028cda0b89b702037c0b8f62d07176608138cc2cde03512d8e8ccba5fa3",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "expected_output_words_hex": null,
+      "stdout": "",
+      "stderr": "guest rejected: Illegal { pc: 268436712 }",
+      "passed": true
+    },
+    {
+      "name": "hint_count_above_omega",
+      "advice_sha256": "de894ea62660b110397ac9e7dc09027dcd46608d8db64b7b4743def3b163e95c",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "expected_output_words_hex": null,
+      "stdout": "",
+      "stderr": "guest rejected: Illegal { pc: 268436712 }",
+      "passed": true
+    },
+    {
+      "name": "duplicate_hint_indices",
+      "advice_sha256": "56f44a5c77b54186c04f5f90e70575ac1aca95545c66fa6e10a2c0a95a09625a",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "expected_output_words_hex": null,
+      "stdout": "",
+      "stderr": "guest rejected: Illegal { pc: 268436712 }",
+      "passed": true
+    },
+    {
+      "name": "nonzero_unused_hint_index",
+      "advice_sha256": "c77b97dddc1a2f80e1758a2892b94c0e6de19fbb674793f7baa564c1455c57f9",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "expected_output_words_hex": null,
+      "stdout": "",
+      "stderr": "guest rejected: Illegal { pc: 268436712 }",
+      "passed": true
+    },
+    {
+      "name": "decreasing_hint_boundaries",
+      "advice_sha256": "e676db0f10864987341ba72087fcae6d7261a5cd36ec07802e46cd7a05cd8954",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "expected_output_words_hex": null,
+      "stdout": "",
+      "stderr": "guest rejected: Illegal { pc: 268436712 }",
+      "passed": true
+    },
+    {
+      "name": "z_exact_rejection_bound",
+      "advice_sha256": "bbed6e60a67b39cb4c619095704e9fd8892eed9281965225db2a19396b0acadd",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "expected_output_words_hex": null,
+      "stdout": "",
+      "stderr": "guest rejected: Illegal { pc: 268436712 }",
+      "passed": true
+    },
+    {
+      "name": "zero_count",
+      "advice_sha256": "e7b2477dd2c8987454d6ad64c2ef732be13567e84488f08954f007660983c538",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "expected_output_words_hex": null,
+      "stdout": "",
+      "stderr": "guest rejected: Illegal { pc: 268436712 }",
+      "passed": true
+    },
+    {
+      "name": "count_above_guest_limit",
+      "advice_sha256": "6d5fc67478e4f5afd0d34ff6afde48f300cd226fc0fc3ca6bcd6d7aaa3a10726",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "expected_output_words_hex": null,
+      "stdout": "",
+      "stderr": "guest rejected: Illegal { pc: 268436712 }",
+      "passed": true
+    },
+    {
+      "name": "missing_second_record",
+      "advice_sha256": "403376c0a11cfd3214ca15226e2bd94b5a00471c97c36d506b8de38fb044faa0",
+      "expected_accepts": false,
+      "exit_code": 1,
+      "expected_output_words_hex": null,
+      "stdout": "",
+      "stderr": "guest rejected: Illegal { pc: 268436712 }",
+      "passed": true
+    }
+  ]
+}

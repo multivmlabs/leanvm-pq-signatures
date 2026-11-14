@@ -1,0 +1,332 @@
+{
+  "schema": 1,
+  "scope": "Read-only audit of saved production Program::measure evidence, no new VM/prover workload. Largest accepted tested prefix is one, not a universal signature-scheme maximum. Direct proof-call matrix is separate.",
+  "frozen_source_hashes_checked": 349,
+  "capacity_reports": [
+    {
+      "count": 1,
+      "status": "accepted",
+      "report_sha256": "adf866ba6d0b8895f257aaf80e64dc271e1329968351c40a9b71e66fb3d1953c"
+    },
+    {
+      "count": 2,
+      "status": "rejected",
+      "report_sha256": "186ba9273c57e41875c71c4bdb5b532610f288cf1097efc6dc8d8ec10addc5b3"
+    },
+    {
+      "count": 3,
+      "status": "rejected",
+      "report_sha256": "b1d7a4feac9e8cc4af1413ccfcdabb4cdeaed3d5c928ca2d26f83f29aac5a488"
+    },
+    {
+      "count": 4,
+      "status": "rejected",
+      "report_sha256": "e94a23f86ab1a4ba9b2f67a7583e7f35116497600a3c8f1fb87309f1c33a98db"
+    },
+    {
+      "count": 5,
+      "status": "rejected",
+      "report_sha256": "d592186cc2a8e95b11e6f9e08af60d6d08a55f2dc28b304f90f4171bdea55979"
+    },
+    {
+      "count": 6,
+      "status": "rejected",
+      "report_sha256": "52f5b4a392255ac2175b810e8f5088780e8cfb0397a8be008bd02fd23f5d1b26"
+    },
+    {
+      "count": 7,
+      "status": "rejected",
+      "report_sha256": "b4217b69933f0bcdf2c25178cb959b2f308f09b23c286d2043e545e7e90a56f5"
+    },
+    {
+      "count": 8,
+      "status": "rejected",
+      "report_sha256": "614b7ddab9eec8175ffcc60ae2a52a47df28cb9c0f578c66f3c048248c597090"
+    },
+    {
+      "count": 9,
+      "status": "rejected",
+      "report_sha256": "a2ee88fd500e437c8e331763b890edbf4d738222c22059e19a8ca5e3b1b2bb12"
+    },
+    {
+      "count": 10,
+      "status": "rejected",
+      "report_sha256": "40a2abf6fd9d493737f77d59a360ed74bf1a163a1e0b8fb7557147d42ddda64d"
+    },
+    {
+      "count": 11,
+      "status": "rejected",
+      "report_sha256": "1a9da414a03894eb3b56e0a2d9fcb2b05fc56c79c5814fb28b23df851eb614d9"
+    },
+    {
+      "count": 12,
+      "status": "rejected",
+      "report_sha256": "11c9b424634b8119dc002e97096c79ce6507aaf6767e1376b7442e79cc21fc56"
+    },
+    {
+      "count": 13,
+      "status": "rejected",
+      "report_sha256": "7f109bbe5f4a73e2c7d92f69b4ccdfe70b1a75f7760fd50a79e219ee1f5a8ff0"
+    },
+    {
+      "count": 14,
+      "status": "rejected",
+      "report_sha256": "32695c0ce2943670bdba511dc475b3e850bef4c354e18570e56b7a96160795f3"
+    },
+    {
+      "count": 15,
+      "status": "rejected",
+      "report_sha256": "215f7abfc20f83947d04946e28662fd4269868252838b658a3e189fe61cb9d95"
+    },
+    {
+      "count": 16,
+      "status": "rejected",
+      "report_sha256": "5d19c28927f89cf92a0c76a8545102e57a88052de3494a502757cd42cdc938e6"
+    },
+    {
+      "count": 17,
+      "status": "rejected",
+      "report_sha256": "e0d3f547f04e0653f8ba92f474d069db5d07f6d108f4e6a4b2e7400a3f596c4a"
+    },
+    {
+      "count": 18,
+      "status": "rejected",
+      "report_sha256": "92b5879dd8e3e9a425342501c9c032d62f69d4bf3b92d3e75955a19635eca500"
+    },
+    {
+      "count": 19,
+      "status": "rejected",
+      "report_sha256": "437b16191f5378e05f0cda6a5a6c3ae06a533255ff0e0348443dd80c5ca28f7f"
+    },
+    {
+      "count": 20,
+      "status": "rejected",
+      "report_sha256": "93008aaabf724da0f97c8cbca2704d3718827f51850149d9b4d72e16e56b8435"
+    },
+    {
+      "count": 21,
+      "status": "rejected",
+      "report_sha256": "bdfe15539f0f346924611bebf46570fa341940dde819e78779f114ef51bebe97"
+    },
+    {
+      "count": 22,
+      "status": "rejected",
+      "report_sha256": "9ad86158f99fdd8974ab667a024f763600c07134c84ce2b479428deb9080fe87"
+    },
+    {
+      "count": 23,
+      "status": "rejected",
+      "report_sha256": "d87e6cbb62af33fac0924761ceea47db705547bdce7a26204e7d10da89572828"
+    },
+    {
+      "count": 24,
+      "status": "rejected",
+      "report_sha256": "cad01c2ca5b6f3c345ce958ba6351cc9fb53bf8be6ac28611872777a03535f82"
+    },
+    {
+      "count": 25,
+      "status": "rejected",
+      "report_sha256": "34c4f4c3483a6650740cf3606dccc23aaca5f6bd024f7f351e743b04f574deab"
+    },
+    {
+      "count": 26,
+      "status": "rejected",
+      "report_sha256": "7a00d4681e76c5345b8d9ba41a45d6a7610130628e11ba470180f15644445492"
+    },
+    {
+      "count": 27,
+      "status": "rejected",
+      "report_sha256": "686f4b103f1be3fcf0921c551b63aa451a1d5df0422c13c55325924dad16db96"
+    },
+    {
+      "count": 28,
+      "status": "rejected",
+      "report_sha256": "105bd45b235288920348f91ae9342b312479bb563e02903a32973332d4257ebf"
+    },
+    {
+      "count": 29,
+      "status": "rejected",
+      "report_sha256": "e3d8c9194947f3f8eac19877cfb0d8271897d93f1131bc1c1205695f2fdaeea2"
+    },
+    {
+      "count": 30,
+      "status": "rejected",
+      "report_sha256": "e7e52ffda35fcca0cb89b880e70897b822732ae36400c11aff4c37e6f6cc93b2"
+    },
+    {
+      "count": 31,
+      "status": "rejected",
+      "report_sha256": "8f0503ab31f21296aa6b2a9321806175949ef53b64fe0355240befe19552ad0d"
+    },
+    {
+      "count": 32,
+      "status": "rejected",
+      "report_sha256": "bf3d1b5ae8dab3bf2ce1dd3c1736c69775231714b081a91c666f81f7fdc85c88"
+    },
+    {
+      "count": 33,
+      "status": "rejected",
+      "report_sha256": "efecaeada77a79feaa7930e029dd8930c984e03f3559bd4f312c8a01f0ceab6d"
+    },
+    {
+      "count": 34,
+      "status": "rejected",
+      "report_sha256": "074a8b807f00afc2a1244df3c9022ff0f59514fe139a41dff2f89723cb7f7f8d"
+    },
+    {
+      "count": 35,
+      "status": "rejected",
+      "report_sha256": "6d15792fd197e4d64337be3eff1c9982ad9a9ff45772ac798cbc4e8b8f27d898"
+    },
+    {
+      "count": 36,
+      "status": "rejected",
+      "report_sha256": "25a6aff757f4200c3f7a9e5436389ca4fcb629d3814f91979c53521d7897f53d"
+    },
+    {
+      "count": 37,
+      "status": "rejected",
+      "report_sha256": "55bcd3e1c5d83ba1e74993ee48cc8c1ab46519394c47c2eef42dc98ffb5c06e4"
+    },
+    {
+      "count": 38,
+      "status": "rejected",
+      "report_sha256": "fd5e23aaea5afa7a9bcad6db9199c6add5c21127b1d51e19ad440ba5606fae69"
+    },
+    {
+      "count": 39,
+      "status": "rejected",
+      "report_sha256": "dda85e78dbb6a35965753c260de983cee682b1744444046ca758f0c216bf0e6b"
+    },
+    {
+      "count": 40,
+      "status": "rejected",
+      "report_sha256": "dd9cb0520b48a515a090b00273270beac5d2b81637fdf98dd7d16cde48f5bed7"
+    },
+    {
+      "count": 41,
+      "status": "rejected",
+      "report_sha256": "b551ae8b80eb253463ac081eeec35975f1cfd92aae9b4fe07092931cf021f739"
+    },
+    {
+      "count": 42,
+      "status": "rejected",
+      "report_sha256": "9cd97f60f66b29f732bb01745bad6a1496c079d74d0b9ac7cca05dc85d9c95ab"
+    },
+    {
+      "count": 43,
+      "status": "rejected",
+      "report_sha256": "b3c03813943169430edbfc8559b996d08b91f11247fae003772c29d9aedde096"
+    },
+    {
+      "count": 44,
+      "status": "rejected",
+      "report_sha256": "3a9054b30bbb89083f49e0d16e2f0656ea8182647648fd6a14303cf5fc720554"
+    },
+    {
+      "count": 45,
+      "status": "rejected",
+      "report_sha256": "90c27bbb5f93f612574e0ea5ca243ebf1d7850545bacdbc1e7a910cbe9f40231"
+    },
+    {
+      "count": 46,
+      "status": "rejected",
+      "report_sha256": "d4848e306681ca3d7a0f8432c3924db2211f35d34613202fbce1466180f485b1"
+    },
+    {
+      "count": 47,
+      "status": "rejected",
+      "report_sha256": "f403f7f92ef8dbd2d7fa3325cae92e827556bb0b49c9a091874571e211e53bc3"
+    },
+    {
+      "count": 48,
+      "status": "rejected",
+      "report_sha256": "d4341f5c8ca338ad64a63fb3bdcc5eef0d2ddeb906411f35a8be37fdbac392bd"
+    },
+    {
+      "count": 49,
+      "status": "rejected",
+      "report_sha256": "3579f7c85fe668b4a4e8bff6089ed39791ca885fc43bcbfab2c119975aa1ced8"
+    },
+    {
+      "count": 50,
+      "status": "rejected",
+      "report_sha256": "b07324c38442e346b42ec3319a1cc6a643ae91a4b79d43df7328e3a69fec1891"
+    },
+    {
+      "count": 51,
+      "status": "rejected",
+      "report_sha256": "84e9a89e650927e92047be88bfcdd745841a5df9f643715c7954e21b46b91315"
+    },
+    {
+      "count": 52,
+      "status": "rejected",
+      "report_sha256": "5ffd68dead63403a619d1ca7b96126eacb6f0c8acd22e4880dcd6ca6637c5de4"
+    },
+    {
+      "count": 53,
+      "status": "rejected",
+      "report_sha256": "681de6ef09824d9cfe80d7c10b08928adbbc8d3484f1aa925bcbda0e97da9a6a"
+    },
+    {
+      "count": 54,
+      "status": "rejected",
+      "report_sha256": "faaf23f4eadfc6eb5d11d4f18d69a256cdefd9d290e0021455777db5be4acb13"
+    },
+    {
+      "count": 55,
+      "status": "rejected",
+      "report_sha256": "1ec2a487aa0e6a27ba5f2925c40c1611e17bc9d8d2899cac8176af988888575c"
+    },
+    {
+      "count": 56,
+      "status": "rejected",
+      "report_sha256": "79e4aa349168e1d43e86b923e2958d2334e57f33462e1099414db1ea05a7e686"
+    },
+    {
+      "count": 57,
+      "status": "rejected",
+      "report_sha256": "e3a820ec2d548b54e8161db1e38f3e50734d5e303e2c31820ee3fd178ca8c8e1"
+    },
+    {
+      "count": 58,
+      "status": "rejected",
+      "report_sha256": "1967300be4612079594474ef63fd992392b290d076ec7e689639d4ab4fdabb0c"
+    },
+    {
+      "count": 59,
+      "status": "rejected",
+      "report_sha256": "07e0ce3445c3e491fc0e6575a41a8be195cc2dd43c5b97f577abfc9f500bb3a9"
+    },
+    {
+      "count": 60,
+      "status": "rejected",
+      "report_sha256": "c07ec994dca238a5a835c5a69c8494f158514615bde8069291d231ca7ea65f67"
+    },
+    {
+      "count": 61,
+      "status": "rejected",
+      "report_sha256": "0d8572b0d0985f971efcb32fce095dd2b63e65f06f9c9ea9832dd5063093225b"
+    },
+    {
+      "count": 62,
+      "status": "rejected",
+      "report_sha256": "ce5919a083abc4f8aed4906b0ef1884d1c4859717661d25cfb63b3bc2af9dc4e"
+    },
+    {
+      "count": 63,
+      "status": "rejected",
+      "report_sha256": "817f58daa601596eb8c4cad9d9b3379192458c36fe52d16b9679038b0c595f9e"
+    },
+    {
+      "count": 64,
+      "status": "rejected",
+      "report_sha256": "4f7222119fec95130eed2bd3a6054df0fede7884067cc244eaa5d0068b7023c3"
+    }
+  ],
+  "all_100_leaf_shapes_match": true,
+  "all_100_public_outputs_independently_recomputed": true,
+  "leaf_words": 247895480,
+  "statement_sha256": "64086c829f03c71123557c6dc86c6b5fc30677898fb566163de28c86d6969822",
+  "passed": true
+}

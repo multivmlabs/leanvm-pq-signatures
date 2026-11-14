@@ -1,0 +1,90 @@
+{
+  "action": "prove",
+  "arch": "aarch64",
+  "bytecode_instructions": 5848,
+  "committed_cells": 6283264,
+  "compile_s": 0.003560125,
+  "cycles": 217843,
+  "execute_s": 0.0066765,
+  "guest_hash": "101a4c61039087624f5fb845c5c566990cc1872222f240357d30283fc6b9e310",
+  "leanvm_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "leanvm_source_dirty_at_build": "false",
+  "log_inv_rate": 1,
+  "log_memory_cells": 19,
+  "memory_cells": 270135,
+  "metadata": {
+    "count": 29,
+    "fixture_generation_s": 0.02105299999999488,
+    "parameters": {
+      "a": 8,
+      "k": 16,
+      "n": 32
+    },
+    "public_key_bytes": 1856,
+    "raw_key_bytes": 1856,
+    "raw_signature_bytes": 133632,
+    "signature_bytes": 133632
+  },
+  "min_log_committed": 0,
+  "opcode_rows": [
+    59686,
+    56410,
+    41800,
+    29850,
+    25726,
+    4371
+  ],
+  "os": "macos",
+  "process_peak_rss_bytes": 445825024,
+  "proof_bytes": 286800,
+  "proof_bytes_samples": [
+    286800,
+    286800,
+    286800
+  ],
+  "proof_encoding": {
+    "merkle_bytes": 234304,
+    "merkle_phases": [
+      {
+        "opened_field_words": 10752,
+        "opened_rows": 224,
+        "sibling_hashes": 2076
+      },
+      {
+        "opened_field_words": 2688,
+        "opened_rows": 56,
+        "sibling_hashes": 590
+      },
+      {
+        "opened_field_words": 1536,
+        "opened_rows": 32,
+        "sibling_hashes": 323
+      },
+      {
+        "opened_field_words": 1104,
+        "opened_rows": 23,
+        "sibling_hashes": 227
+      }
+    ],
+    "scalar_stream_bytes": 52496,
+    "scalar_stream_count": 2187
+  },
+  "prove_s": [
+    0.094628667,
+    0.093167792,
+    0.091776417
+  ],
+  "public_input_hex": "3c1261bc9760088cbe5b14afd3e5940a11f7da33d0149b74ac74ec4230dda837",
+  "schema_version": 1,
+  "scheme": "fors-keccak-research",
+  "statement_pinned": false,
+  "threads_env": null,
+  "verified": true,
+  "verify_s": [
+    0.008761083,
+    0.0090255,
+    0.008817666
+  ],
+  "warmup_passes": 1,
+  "zero_knowledge": false
+}

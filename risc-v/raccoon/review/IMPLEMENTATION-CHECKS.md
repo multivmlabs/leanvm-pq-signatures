@@ -1,0 +1,15 @@
+# Raccoon implementation checks
+
+This records engineering checks for the new port. It is not an independent cryptographic audit or a proof-system soundness review. No benchmark experiment or STARK production has been performed. Performance and prover-capacity measurements are pending the user's approval.
+
+The approved signature relation and byte-level source mapping are in [SPEC.md](../SPEC.md). Backend pin: `06e5c9cd6981103786f9d0a17324241b559a50d3`. Raccoon reference pin: `e789b4b72a2b7e8a2205df49c487736985fc8417`. Both vendor checkouts are unchanged. `build-manifest.json` pins the executable, compiler identities, complete local build sources and reference C/header files.
+
+Eight release-mode tests passed, including 17 actual interpreter executions of the built ELF. Four are positive executions and thirteen are rejection controls. They cover one- and two-signature records, public output binding, changed keys/messages/challenges, noncanonical public coefficients, byte/bit/transport padding, an unterminated unary code, invalid counts and three norm controls. The norm controls have independently recomputed challenge hashes, so they exercise rejection even when the signature equation itself is consistent. Every actual RISC-V execution still performs the entire signature verification.
+
+Two independently generated parser controls are important. A canonical payload ending at a byte boundary accepts; adding a nonzero trailing byte rejects. A canonical payload using exactly the final bit of all 11524 signature bytes also accepts. The pinned reference decoder fails that final case because it reads the next byte early. Both controls use algebraic zero public keys to isolate parsing. They are stored under `host/testdata`, and the benchmark fixture generator never reads them.
+
+The SDK software Keccak was compared with the unchanged C permutation on 130 complete 25-lane states, including zero and all-one states. Hashing, matrix expansion, challenge derivation, arithmetic and norm checks remain in the reference code, with the local bounded decoder and canonical public-key check described in the specification. C Montgomery arithmetic is compiled with defined signed wraparound (`-fwrapv`).
+
+`crosscheck.py` reproduces a normal fixture's complete key and signature through the separate official Python implementation. It also checks the first prescribed NIST known-answer input and every byte of the resulting public key, secret key and signed message. This controls key generation, signing, serialization and native reference verification independently of the RISC-V harness. The guest's fixed message profile is 32 bytes; the 33-byte NIST known-answer message is only used for the native reference interoperability check.
+
+The release Clippy check passed for all host targets with warnings denied. These checks establish tested interoperability and local guest behavior. Full proof production, isolated proof-consumer mutation controls and tree aggregation have deliberately not been run before approval.

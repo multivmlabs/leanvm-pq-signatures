@@ -1,0 +1,19 @@
+{
+  "actual_leaf_proofs_produced": 2,
+  "actual_wrapper_proofs_produced": 4,
+  "approved_leaf_source_sha256": "44a921d7a4414efaae034ea5558e8f0f28d74c06d321a21bbb3812aaf63397fd",
+  "backend_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "both_malicious_wrapper_executions_have_no_unconstrained_reads": true,
+  "both_malicious_wrapper_proofs_verify_under_approved_wrapper_code": true,
+  "codec_rejects_appended_bytes": true,
+  "dishonest_root_sha256": "1765c1d3f6df15361d038526b79935d0cba1ddb8faf69c02f4e651d9e0e0cd30",
+  "false_claim_carried_through_two_approved_wrappers": true,
+  "false_leaf_full_native_rejection": "Verifier(TableSumcheckTerminal)",
+  "final_production_receiver_rejection": "terminal family 0 is false",
+  "honest_complete_two_level_receiver_accepts": true,
+  "honest_root_sha256": "0ce94c5e051fb5cbbbf0b80d00978c55ed01c3a4ae239118f57b5864ddf529b4",
+  "schema": 1,
+  "scope": "Actual generic recursion/reduction integration control using a small approved leaf relation. It is not a signature forgery or full backend soundness audit.",
+  "terminal_evaluations_required": 2,
+  "wrong_leaf_cycles": 3
+}

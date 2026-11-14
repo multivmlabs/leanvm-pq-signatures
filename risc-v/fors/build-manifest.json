@@ -1,0 +1,25 @@
+{
+  "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "guest_compiler": "rustc 1.101.0-nightly (0abfedbc7 2026-10-02)",
+  "host_compiler": "rustc 1.99.0 (b940084d7 2026-09-28)",
+  "guest_target": "riscv64im-unknown-none-elf",
+  "files_sha256": {
+    ".gitignore": "ab21024816d99b789940f646cce6c00d0f6bfe856aaab768e85542c9576d1d15",
+    "README.md": "566e4107e4d11ea2ff563dfe94b55343fecabdd084a1a386d013cbb5a91074e4",
+    "build.sh": "6976a5577648f3b87871a5424cd06458fcf2e8bb824ad9354f479674cd1b7f7f",
+    "fors.elf": "64480a3bf424f97578f6477a7a4045c2452853a0801f45fc191648eb253e36da",
+    "guest/.cargo/config.toml": "a53dc80e24cd4e074bf696d319c45cad3622d129b0eb49016f92d73203d82c7d",
+    "guest/Cargo.lock": "8ce8586cd6ae9b06e2c9d89029139e827e999d699b20dc28be976f7ecd1e6df4",
+    "guest/Cargo.toml": "c7678986d3e5f688acafb31a7c5e98090bdc48965858e2939af3ec036eaddbc6",
+    "guest/rust-toolchain.toml": "ca26a107d0a658dbe79165f6ae73ac063f46b37b7456cf3e28e3f3e2e17a0739",
+    "guest/src/lib.rs": "6df4d0910cf14682028580a3efdaaaa06226e0b0e31facbfcf4199e6c949fce8",
+    "guest/src/main.rs": "0f2339c819a421322b6a049d2500ffcf75792b80b3e967dfd143a4ffea168859",
+    "host/Cargo.lock": "976d25404a6a77a1d207c400836f27676ca1209b975b3d33b34e3e9a094239f7",
+    "host/Cargo.toml": "3b8a08a6eb8c6dd20f7f76f5b0c32f0a9e98d0407b6a5bb249d2606d5e16e801",
+    "host/src/lib.rs": "a98adec49495b0e9cb12ddff28a232277d9f636be825580238cd6b37d01759ee",
+    "host/src/main.rs": "31180b7aef5d973e3912abe1d7662900f9e3caa1a191596cdb8f289653a6e5cc",
+    "tests/cross-check.json": "0087360fdb4e0a11f2a8d5dbee717764b0e96dd2b41e9654a0f3a10ff5d1365c",
+    "tests/cross_check.py": "045af641153d96e5625f9e4b671cf1ab8ba338b921eb1d203d56ae50db7a7249",
+    "tests/rust-fixtures.json": "f9199d61e6b750e33bc2bac3991f5e5c17c5b612ba154f5ef3650661d8bc4746"
+  }
+}

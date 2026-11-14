@@ -1,0 +1,11 @@
+{
+  "action": "identity",
+  "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "embedded_build_manifest_sha256": "c4e1c276635f82f3a1e9d3a78470de5d749e5b6e103faeab630ba25a17dfdbf3",
+  "embedded_elf_bytes": 37680,
+  "embedded_elf_sha256": "b8b78438d96258c436a4a34f5f40505d469555bb29d289936e01c863dd1f7e6a",
+  "executes_guest": false,
+  "produces_proof": false,
+  "schema": 1,
+  "scheme": "raccoon"
+}

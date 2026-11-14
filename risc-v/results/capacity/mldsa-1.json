@@ -1,0 +1,50 @@
+{
+  "action": "measure",
+  "advice_words": 472,
+  "arch": "aarch64",
+  "count": 1,
+  "elf_sha256": "cbcc3929bae8f3e9ed1dd9035856d7bdaea87ae77a18ac87a7f5bcec53bf0fa4",
+  "execution": {
+    "committed_words": 65436008,
+    "cycles": 1743198,
+    "padded_rows": {
+      "ALU": 1048576,
+      "DIV": 16,
+      "EXT": 8,
+      "HASH": 32,
+      "LD": 262144,
+      "LOAD": 131072,
+      "MUL": 65536,
+      "MULH": 16,
+      "SD": 262144,
+      "SHIFT": 524288,
+      "STORE": 131072
+    },
+    "proven_rows": 2424904,
+    "rows": {
+      "ALU": 818271,
+      "DIV": 0,
+      "EXT": 0,
+      "HASH": 22,
+      "LD": 203369,
+      "LOAD": 76312,
+      "MUL": 60488,
+      "MULH": 0,
+      "SD": 191403,
+      "SHIFT": 327279,
+      "STORE": 66054
+    }
+  },
+  "fixture_s": 0.001189042,
+  "leanvm_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "log_inverse_rate": 1,
+  "measure_s": 0.023956583,
+  "os": "macos",
+  "peak_rss_bytes": 11239424,
+  "program_load_s": 0.006394166,
+  "schema": 1,
+  "scheme": "mldsa",
+  "status": "accepted",
+  "threads": 8,
+  "zero_knowledge": false
+}

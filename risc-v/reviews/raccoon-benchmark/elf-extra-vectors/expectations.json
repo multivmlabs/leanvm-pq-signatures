@@ -1,0 +1,8 @@
+{
+  "exact-full": true,
+  "byte-aligned": true,
+  "hint-l2-fail": false,
+  "hint-inf-fail": false,
+  "response-inf-fail": false,
+  "byte-aligned-nonzero-padding": false
+}

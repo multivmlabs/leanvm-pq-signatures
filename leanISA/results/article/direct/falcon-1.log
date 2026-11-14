@@ -1,0 +1,127 @@
+{
+  "action": "prove",
+  "arch": "aarch64",
+  "bytecode_instructions": 159325,
+  "committed_cells": 40154112,
+  "compile_s": 0.071714375,
+  "cycles": 1612243,
+  "execute_s": 0.060245583,
+  "guest_hash": "5bb12b05d09c8f3b0384be4920fa0d91f6e73f3e13dad2867087ce70c0e73db0",
+  "leanvm_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "leanvm_source_dirty_at_build": "false",
+  "log_inv_rate": 1,
+  "log_memory_cells": 21,
+  "memory_cells": 1601392,
+  "metadata": {
+    "benchmark_note": "Public deterministic keys/randomness; do not use for funds.",
+    "count": 1,
+    "encoding": "canonical expanded uint16 key commitment and expanded s2 witness",
+    "fixture_generation_s": 0.07721349999999916,
+    "hash_to_point_xof_byte_cap": 1280,
+    "message_bytes": 32,
+    "native_C_timing_repeats": 30,
+    "native_build": {
+      "compile_flags": [
+        "-shared",
+        "-fPIC",
+        "-O3",
+        "-DETHFALCON=0"
+      ],
+      "implementation": "pinned ETHFALCON C standard SHAKE branch",
+      "source_and_flags_sha256": "4dcdaa553777bdba089ee0c99cfacee0d27cbefb33a466a4573e95bd00f3b17f"
+    },
+    "native_verify_ns_per_signature": 9863.9,
+    "parameters": {
+      "degree": 512,
+      "message_lengths": [
+        32
+      ],
+      "modulus": 12289,
+      "norm_bound": 34034726
+    },
+    "public_key_bytes": 897,
+    "raw_key_bytes": 897,
+    "raw_signature_bytes": 652,
+    "records": [
+      {
+        "index": 0,
+        "message_hex": "e3a68eab9c72cbd1254e8f13e450a0913c52960bb53b0146cf03f97a3e6bdc32",
+        "native_keygen_ns": 8169250,
+        "native_sign_attempts": 1,
+        "native_sign_ns": 1834542,
+        "provenance": "native standard Falcon512 SHAKE; public deterministic benchmark seeds",
+        "public_key_hex": "0978e5d1b658ca5b651eede27806de16be09e611a516bb8d5098f443871f9257674723d893be289b8d65f2702d10a955a4174b5a81746e4c7728046da48f0bbd2190d9531623910b8e4b311320a5af911e591cc27897baae5a9ea7077dc5efbad29c81a764c4a6211635827e06567b01518f55daa32804e75cf49659852b7695686417ac5da9478dec54eacae41aa907b0404c243d441d4b7695a4219400f6498d2642b640942d48354b5859933046195f39a068a4dacd72f4f968730115a415f2c5889c937bd11c116de3f34d32c4d8d9ac740cbe11c0780f595dfd1f0119a0ec7e7a0b009becaa206e6df226dd86635e4554bd9d45bf761512bfc85462a6e515e82f4c6ba5a369892aa15936198ad51f1d71b546f954081268391e0afca6ed7fa290458e06b72bc4a0693450d68dbe11640ed7456042ae1984e5f0927e833bb0c323626ea9308de3ab29799093c7664d3d083b06c85adc0b9a6f4b496a37712e57c67565ed79da5aa5a61ea8040e6483ffac64aab04598601bd06fed72da6c64f89bd1817296d43329fc1708eda94367acdd57c987cc2c852ed05d80865cc59df7da6ff644bd857ab5009f16b51746fca17325461e179a4879a3c029f97418a6b235dc892dd5dda4c642abf0193e0da2b90978d5939b3c2b6a5d80388af023f478501155f416537161fe9916482b1fe90f99d8054340891c0acc5525b6e5e0b0a23c894f0a696c4abec1d76ee7be21b0e94984d41d659c551a81205ea14d148e112c1ca140a3ef6f3530e91ee106254878f555c05e9d326bb461d581ebf82968d85866ad522950bf06e7172f37bc9b5357e375b591071b989a1399e079463aa4ea4e92dc998115a48dbc5c9ac9626642befab4d80d2302022ad61913c26a267c5283144b043224fb4d6b9360356537aca42f942e7fa78a4dcf0575df092460237118fce1130b197ed5ca386e5e74738d51375147a932b88c590ad0f390b54ae3cbaefdad76935aba497da18eda339ee95b92ec9bfbc5539d62ba109b388c5baa0d5a12f69cfeb25e74f56a258586780997d447b36202f694df6002b2289a475448e9059a5661bcc66cb7891540930d4f7b282ab5b667631a7a2e40c204c1762d6b57e296b842903fdba5e2826611d8d5b08bbb3b5459c5d5136f6305a0d283e60d2f18827972540235c1a7a2eca804579a34b5dee6448fdaa012c9e83a601a7b78ee9d6686c523b4fdeac6ad642144d09274acda17d322947a1fd4874876677b",
+        "record_generation_s": 0.037567375,
+        "signed_message_hex": "026488aff97603f0357615e02197d928bea4a8647be6e239936b35b3e9537d86202e08b07244141bc5b9e3a68eab9c72cbd1254e8f13e450a0913c52960bb53b0146cf03f97a3e6bdc322964c623d891a7d32137ecc458ea6819ac53babc38f269cafeade15ccd537f3561a3e6f7668fbef05a97b732d3b4b4b8848b68c5e54af1e579726976e173def7fed8fb0651dc8fa90e532b91c4120927c3a9e33a3213c33249525f268b1514c0bcfbe7f7ecca577c8ef4a668da32dc54d6105d11182e25cced6d2fd2f41568c9e7060ff8e8a5367c4bfc852a95ce6a473ff323b9599a3ed834a66152fe65a529429384c3f6b9f8ced5a3b102dd5e58e212f94f6846bed31a50e82e041e872e2b696a49d051e351ebf746aa61b4eff56dd0e0ba35a722a1a29cea2fefa3d18e9263789b0230e4c08c156ee277361f0eafdd8b94e1491b793cceb5b6c8642121b7e8e0d52431fe88f5a5e8547db973ec53fc79ab5772c89b90802d88a96259280cd2703e8bcd91a93bb2c2166e9136bd0f6d60b09c7b1ebe421afc58e5bd6addfbbd384115d862167457131eeca58f74951f4161368ff9fe86faede899889f6763ac610c5cf63016d7095df2b1767cc9db411487d27dd12c686e09d051d001ec9ea8f1cd27626c8a38cfbd6a0aa2b1f8be2d68ccda0bbe092b9fc1b492bdb61eff8ba9f3ee38bc0cbb82a5ff9e0b8db579c208dd23ad37d6a38b636feafdcbd2448dfe99b854d7c234d87be5f6ea0a5a87e14dba13d8dbd2a35d67017c8566fd0d72e1af43cc166f42cbc8ae68d266a3c54834846e5f1c8b167e2b52b5bca7bc5f9da5764fe29632bd2c1cba1d9c40193ed7b178d2a754db374189231d049bdf0ec665282da3958f46f8559a944510471dbc47864d02605ec90a779ac57b320924ed28e09dbcf12451a8544bc636f7fa8cd67d91c7753c431f451fb7a372ddc461f5a46260"
+      }
+    ],
+    "signature_bytes": 652
+  },
+  "min_log_committed": 0,
+  "opcode_rows": [
+    153238,
+    870247,
+    230662,
+    280464,
+    77611,
+    21
+  ],
+  "os": "macos",
+  "process_peak_rss_bytes": 2690252800,
+  "proof_bytes": 317040,
+  "proof_bytes_samples": [
+    317040,
+    317040,
+    317040
+  ],
+  "proof_encoding": {
+    "merkle_bytes": 263104,
+    "merkle_phases": [
+      {
+        "opened_field_words": 8736,
+        "opened_rows": 224,
+        "sibling_hashes": 2746
+      },
+      {
+        "opened_field_words": 2688,
+        "opened_rows": 56,
+        "sibling_hashes": 734
+      },
+      {
+        "opened_field_words": 1536,
+        "opened_rows": 32,
+        "sibling_hashes": 401
+      },
+      {
+        "opened_field_words": 1104,
+        "opened_rows": 23,
+        "sibling_hashes": 300
+      },
+      {
+        "opened_field_words": 864,
+        "opened_rows": 18,
+        "sibling_hashes": 218
+      }
+    ],
+    "scalar_stream_bytes": 53936,
+    "scalar_stream_count": 2247
+  },
+  "prove_s": [
+    0.427149167,
+    0.415199791,
+    0.40542175
+  ],
+  "public_input_hex": "74b487075cd40c7b46f855756737b157dcce1b6f61476cef341f57030f7c19b4",
+  "schema_version": 1,
+  "scheme": "falcon-512-shake256",
+  "statement_pinned": false,
+  "threads_env": null,
+  "verified": true,
+  "verify_s": [
+    0.085045,
+    0.085070084,
+    0.084711833
+  ],
+  "warmup_passes": 1,
+  "zero_knowledge": false
+}

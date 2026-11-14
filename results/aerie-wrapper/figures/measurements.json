@@ -1,0 +1,500 @@
+{
+  "schema_version": 1,
+  "scope": "Actual complete-verifier wrapper samples, with measured failures unavailable",
+  "plotting_script_sha256": "8f5c386d07657e8e1a44d13eaaa979b69e0a4bf89ca140bb23f03c4a4e7e568a",
+  "source_sha256": {
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/non-zk/n1/summary.json": "c841fa6bbbad007057956776fc9d7191f2778dafea601c47721ff22741088efc",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/non-zk/n10/summary.json": "b084d02c56322fc49a1b25d855e2f4b728c42b2082dc7303cf3ce5afe580a2ac",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/non-zk/n30/summary.json": "217ebd4e8e30ee568d67569e37b5e467c3ad5be70cb68bbfa031e2492ab4325a",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/non-zk/n70/summary.json": "1ac173269564113c52336596e501458cb1e1e25ac74a29cd2e755a3de80b4e6b",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/non-zk/n100/summary.json": "afbf13ad5fda708732613cbbe28c2ae574684e86158d8140dc5255a7cece0f27",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/baseline/non-zk/n1/summary.json": "729930bccc1e6b16915fd78d121a2bb440be2746289054a01f94695a212207a9",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/baseline/non-zk/n10/summary.json": "df6bd30f5c30821a3224a71cf04e95fbd3d30f96d86faeb2cd6a9e420024c17f",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/baseline/non-zk/n30/summary.json": "6a6e0fbf565a25fd97e7548bc0178e0419a74ae7efd366f1b5c969ab293ca03f",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/baseline/non-zk/n70/summary.json": "c76979b779a1b1dd66a89a64b83181212dade414d7cd9558641ae1f79c0db97c",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/baseline/non-zk/n100/summary.json": "35eac03b888b99d3d39374525b93d1a9615cc30044129038980ae40216788dc4"
+  },
+  "baseline_source_sha256": {
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/baseline/non-zk/n1/summary.json": "729930bccc1e6b16915fd78d121a2bb440be2746289054a01f94695a212207a9",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/baseline/non-zk/n10/summary.json": "df6bd30f5c30821a3224a71cf04e95fbd3d30f96d86faeb2cd6a9e420024c17f",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/baseline/non-zk/n30/summary.json": "6a6e0fbf565a25fd97e7548bc0178e0419a74ae7efd366f1b5c969ab293ca03f",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/baseline/non-zk/n70/summary.json": "c76979b779a1b1dd66a89a64b83181212dade414d7cd9558641ae1f79c0db97c",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/baseline/non-zk/n100/summary.json": "35eac03b888b99d3d39374525b93d1a9615cc30044129038980ae40216788dc4"
+  },
+  "rows": [
+    {
+      "cohort": "trusted-q64-cache",
+      "mode": "non-zk",
+      "records": 1,
+      "padded_records": 8,
+      "status": "measured_capacity_failure",
+      "measured_samples": 0,
+      "measured_native_samples": 3,
+      "measured_guest_samples": 3,
+      "elf_sha256": "f9eb00b035eba3fa3f0a42ad6f2c9e3405e8bca1c35ba146fd7ddec40b761342",
+      "inner_setup_s": 0.015269083,
+      "native_inputs_integrity_sha256": "370e49944bf86380c92277b19526f5d5c19318b79da410ef5008c66941ccd136",
+      "canonical_statement_bytes": 948,
+      "inner_prove_s": {
+        "median": 0.064876125,
+        "min": 0.063064208,
+        "max": 0.066603291
+      },
+      "outer_prove_s": null,
+      "sum_prover_stage_work_s": null,
+      "inner_proof_bytes": {
+        "median": 60239,
+        "min": 60239,
+        "max": 60239
+      },
+      "outer_proof_bytes": null,
+      "cycles": null,
+      "peak_rss_bytes": null,
+      "guest_interpretation_s": {
+        "median": 2.321235792,
+        "min": 2.316097541,
+        "max": 2.339072084
+      },
+      "packed_witness_lower_bound_words": {
+        "median": 9849277184,
+        "min": 9849277184,
+        "max": 9849277184
+      },
+      "one_commitment_limit_words": 268435456,
+      "capacity_error_kind": "leanvm_capacity",
+      "capacity_error": "the run is longer than one proof holds (continuations are not implemented)",
+      "complete_interpreter_output_checked": true,
+      "interpreter_instructions": 275985502,
+      "outer_proof_available": false,
+      "source_report": "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/non-zk/n1/summary.json",
+      "source_report_sha256": "c841fa6bbbad007057956776fc9d7191f2778dafea601c47721ff22741088efc"
+    },
+    {
+      "cohort": "trusted-q64-cache",
+      "mode": "non-zk",
+      "records": 10,
+      "padded_records": 16,
+      "status": "measured_capacity_failure",
+      "measured_samples": 0,
+      "measured_native_samples": 3,
+      "measured_guest_samples": 3,
+      "elf_sha256": "f9eb00b035eba3fa3f0a42ad6f2c9e3405e8bca1c35ba146fd7ddec40b761342",
+      "inner_setup_s": 0.010488417,
+      "native_inputs_integrity_sha256": "173012e9a24a3b416b141a151abc20c9dc1a0da4a963ed5a99e54e4b5bd68aa5",
+      "canonical_statement_bytes": 9426,
+      "inner_prove_s": {
+        "median": 0.068727334,
+        "min": 0.06721625,
+        "max": 0.074259125
+      },
+      "outer_prove_s": null,
+      "sum_prover_stage_work_s": null,
+      "inner_proof_bytes": {
+        "median": 60777,
+        "min": 60777,
+        "max": 60777
+      },
+      "outer_proof_bytes": null,
+      "cycles": null,
+      "peak_rss_bytes": null,
+      "guest_interpretation_s": {
+        "median": 2.3883325,
+        "min": 2.379314,
+        "max": 2.40345225
+      },
+      "packed_witness_lower_bound_words": {
+        "median": 9849277184,
+        "min": 9849277184,
+        "max": 9849277184
+      },
+      "one_commitment_limit_words": 268435456,
+      "capacity_error_kind": "leanvm_capacity",
+      "capacity_error": "the run is longer than one proof holds (continuations are not implemented)",
+      "complete_interpreter_output_checked": true,
+      "interpreter_instructions": 280448365,
+      "outer_proof_available": false,
+      "source_report": "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/non-zk/n10/summary.json",
+      "source_report_sha256": "b084d02c56322fc49a1b25d855e2f4b728c42b2082dc7303cf3ce5afe580a2ac"
+    },
+    {
+      "cohort": "trusted-q64-cache",
+      "mode": "non-zk",
+      "records": 30,
+      "padded_records": 32,
+      "status": "measured_capacity_failure",
+      "measured_samples": 0,
+      "measured_native_samples": 3,
+      "measured_guest_samples": 3,
+      "elf_sha256": "f9eb00b035eba3fa3f0a42ad6f2c9e3405e8bca1c35ba146fd7ddec40b761342",
+      "inner_setup_s": 0.01494875,
+      "native_inputs_integrity_sha256": "06511b41e60f2ffedee8f283976056c00d373a5161f5a13e9d18fc2e2d71a859",
+      "canonical_statement_bytes": 28286,
+      "inner_prove_s": {
+        "median": 0.070588666,
+        "min": 0.069665041,
+        "max": 0.073600709
+      },
+      "outer_prove_s": null,
+      "sum_prover_stage_work_s": null,
+      "inner_proof_bytes": {
+        "median": 61752,
+        "min": 61752,
+        "max": 61752
+      },
+      "outer_proof_bytes": null,
+      "cycles": null,
+      "peak_rss_bytes": null,
+      "guest_interpretation_s": {
+        "median": 2.523261042,
+        "min": 2.504424167,
+        "max": 2.525171834
+      },
+      "packed_witness_lower_bound_words": {
+        "median": 10251930368,
+        "min": 10251930368,
+        "max": 10251930368
+      },
+      "one_commitment_limit_words": 268435456,
+      "capacity_error_kind": "leanvm_capacity",
+      "capacity_error": "the run is longer than one proof holds (continuations are not implemented)",
+      "complete_interpreter_output_checked": true,
+      "interpreter_instructions": 295267059,
+      "outer_proof_available": false,
+      "source_report": "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/non-zk/n30/summary.json",
+      "source_report_sha256": "217ebd4e8e30ee568d67569e37b5e467c3ad5be70cb68bbfa031e2492ab4325a"
+    },
+    {
+      "cohort": "trusted-q64-cache",
+      "mode": "non-zk",
+      "records": 70,
+      "padded_records": 128,
+      "status": "measured_capacity_failure",
+      "measured_samples": 0,
+      "measured_native_samples": 3,
+      "measured_guest_samples": 3,
+      "elf_sha256": "f9eb00b035eba3fa3f0a42ad6f2c9e3405e8bca1c35ba146fd7ddec40b761342",
+      "inner_setup_s": 0.013494083,
+      "native_inputs_integrity_sha256": "761403713e0da93f26db27361e80f76d1e89a68794f83b821ee4c0cbc3d7c4e1",
+      "canonical_statement_bytes": 66006,
+      "inner_prove_s": {
+        "median": 0.078606458,
+        "min": 0.078305542,
+        "max": 0.078901292
+      },
+      "outer_prove_s": null,
+      "sum_prover_stage_work_s": null,
+      "inner_proof_bytes": {
+        "median": 63935,
+        "min": 63935,
+        "max": 63935
+      },
+      "outer_proof_bytes": null,
+      "cycles": null,
+      "peak_rss_bytes": null,
+      "guest_interpretation_s": {
+        "median": 2.759272042,
+        "min": 2.755174542,
+        "max": 2.783865042
+      },
+      "packed_witness_lower_bound_words": {
+        "median": 10654583552,
+        "min": 10654583552,
+        "max": 10654583552
+      },
+      "one_commitment_limit_words": 268435456,
+      "capacity_error_kind": "leanvm_capacity",
+      "capacity_error": "the run is longer than one proof holds (continuations are not implemented)",
+      "complete_interpreter_output_checked": true,
+      "interpreter_instructions": 323575156,
+      "outer_proof_available": false,
+      "source_report": "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/non-zk/n70/summary.json",
+      "source_report_sha256": "1ac173269564113c52336596e501458cb1e1e25ac74a29cd2e755a3de80b4e6b"
+    },
+    {
+      "cohort": "trusted-q64-cache",
+      "mode": "non-zk",
+      "records": 100,
+      "padded_records": 128,
+      "status": "measured_capacity_failure",
+      "measured_samples": 0,
+      "measured_native_samples": 3,
+      "measured_guest_samples": 3,
+      "elf_sha256": "f9eb00b035eba3fa3f0a42ad6f2c9e3405e8bca1c35ba146fd7ddec40b761342",
+      "inner_setup_s": 0.013269667,
+      "native_inputs_integrity_sha256": "608f651588c0a0b76a6e8e56d061ac544a926215e349fec2f2d5e2efc1b3268f",
+      "canonical_statement_bytes": 94296,
+      "inner_prove_s": {
+        "median": 0.078984709,
+        "min": 0.076963209,
+        "max": 0.079178584
+      },
+      "outer_prove_s": null,
+      "sum_prover_stage_work_s": null,
+      "inner_proof_bytes": {
+        "median": 65138,
+        "min": 65138,
+        "max": 65138
+      },
+      "outer_proof_bytes": null,
+      "cycles": null,
+      "peak_rss_bytes": null,
+      "guest_interpretation_s": {
+        "median": 2.852738417,
+        "min": 2.842029125,
+        "max": 2.89452825
+      },
+      "packed_witness_lower_bound_words": {
+        "median": 10654583552,
+        "min": 10654583552,
+        "max": 10654583552
+      },
+      "one_commitment_limit_words": 268435456,
+      "capacity_error_kind": "leanvm_capacity",
+      "capacity_error": "the run is longer than one proof holds (continuations are not implemented)",
+      "complete_interpreter_output_checked": true,
+      "interpreter_instructions": 335455064,
+      "outer_proof_available": false,
+      "source_report": "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/non-zk/n100/summary.json",
+      "source_report_sha256": "afbf13ad5fda708732613cbbe28c2ae574684e86158d8140dc5255a7cece0f27"
+    },
+    {
+      "cohort": "baseline-no-terminal-cache",
+      "mode": "non-zk",
+      "records": 1,
+      "padded_records": 8,
+      "status": "measured_capacity_failure",
+      "measured_samples": 0,
+      "measured_native_samples": 3,
+      "measured_guest_samples": 3,
+      "elf_sha256": "157340510c774c4a48421ec26a8031e3640247d8bf9e598d15e59e454ce375d2",
+      "inner_setup_s": 0.015269083,
+      "native_inputs_integrity_sha256": "370e49944bf86380c92277b19526f5d5c19318b79da410ef5008c66941ccd136",
+      "canonical_statement_bytes": 948,
+      "inner_prove_s": {
+        "median": 0.064876125,
+        "min": 0.063064208,
+        "max": 0.066603291
+      },
+      "outer_prove_s": null,
+      "sum_prover_stage_work_s": null,
+      "inner_proof_bytes": {
+        "median": 60239,
+        "min": 60239,
+        "max": 60239
+      },
+      "outer_proof_bytes": null,
+      "cycles": null,
+      "peak_rss_bytes": null,
+      "guest_interpretation_s": {
+        "median": 2.465074459,
+        "min": 2.457328209,
+        "max": 2.4656413329999998
+      },
+      "packed_witness_lower_bound_words": {
+        "median": 10855910144,
+        "min": 10855910144,
+        "max": 10855910144
+      },
+      "one_commitment_limit_words": 268435456,
+      "capacity_error_kind": "leanvm_capacity",
+      "capacity_error": "the run is longer than one proof holds (continuations are not implemented)",
+      "complete_interpreter_output_checked": true,
+      "interpreter_instructions": 289986617,
+      "outer_proof_available": false,
+      "source_report": "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/baseline/non-zk/n1/summary.json",
+      "source_report_sha256": "729930bccc1e6b16915fd78d121a2bb440be2746289054a01f94695a212207a9"
+    },
+    {
+      "cohort": "baseline-no-terminal-cache",
+      "mode": "non-zk",
+      "records": 10,
+      "padded_records": 16,
+      "status": "measured_capacity_failure",
+      "measured_samples": 0,
+      "measured_native_samples": 3,
+      "measured_guest_samples": 3,
+      "elf_sha256": "157340510c774c4a48421ec26a8031e3640247d8bf9e598d15e59e454ce375d2",
+      "inner_setup_s": 0.010488417,
+      "native_inputs_integrity_sha256": "173012e9a24a3b416b141a151abc20c9dc1a0da4a963ed5a99e54e4b5bd68aa5",
+      "canonical_statement_bytes": 9426,
+      "inner_prove_s": {
+        "median": 0.068727334,
+        "min": 0.06721625,
+        "max": 0.074259125
+      },
+      "outer_prove_s": null,
+      "sum_prover_stage_work_s": null,
+      "inner_proof_bytes": {
+        "median": 60777,
+        "min": 60777,
+        "max": 60777
+      },
+      "outer_proof_bytes": null,
+      "cycles": null,
+      "peak_rss_bytes": null,
+      "guest_interpretation_s": {
+        "median": 2.484857792,
+        "min": 2.484733292,
+        "max": 2.52555
+      },
+      "packed_witness_lower_bound_words": {
+        "median": 10855910144,
+        "min": 10855910144,
+        "max": 10855910144
+      },
+      "one_commitment_limit_words": 268435456,
+      "capacity_error_kind": "leanvm_capacity",
+      "capacity_error": "the run is longer than one proof holds (continuations are not implemented)",
+      "complete_interpreter_output_checked": true,
+      "interpreter_instructions": 294029119,
+      "outer_proof_available": false,
+      "source_report": "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/baseline/non-zk/n10/summary.json",
+      "source_report_sha256": "df6bd30f5c30821a3224a71cf04e95fbd3d30f96d86faeb2cd6a9e420024c17f"
+    },
+    {
+      "cohort": "baseline-no-terminal-cache",
+      "mode": "non-zk",
+      "records": 30,
+      "padded_records": 32,
+      "status": "measured_capacity_failure",
+      "measured_samples": 0,
+      "measured_native_samples": 3,
+      "measured_guest_samples": 3,
+      "elf_sha256": "157340510c774c4a48421ec26a8031e3640247d8bf9e598d15e59e454ce375d2",
+      "inner_setup_s": 0.01494875,
+      "native_inputs_integrity_sha256": "06511b41e60f2ffedee8f283976056c00d373a5161f5a13e9d18fc2e2d71a859",
+      "canonical_statement_bytes": 28286,
+      "inner_prove_s": {
+        "median": 0.070588666,
+        "min": 0.069665041,
+        "max": 0.073600709
+      },
+      "outer_prove_s": null,
+      "sum_prover_stage_work_s": null,
+      "inner_proof_bytes": {
+        "median": 61752,
+        "min": 61752,
+        "max": 61752
+      },
+      "outer_proof_bytes": null,
+      "cycles": null,
+      "peak_rss_bytes": null,
+      "guest_interpretation_s": {
+        "median": 2.6484534159999997,
+        "min": 2.623034792,
+        "max": 2.651704084
+      },
+      "packed_witness_lower_bound_words": {
+        "median": 10855910144,
+        "min": 10855910144,
+        "max": 10855910144
+      },
+      "one_commitment_limit_words": 268435456,
+      "capacity_error_kind": "leanvm_capacity",
+      "capacity_error": "the run is longer than one proof holds (continuations are not implemented)",
+      "complete_interpreter_output_checked": true,
+      "interpreter_instructions": 308396948,
+      "outer_proof_available": false,
+      "source_report": "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/baseline/non-zk/n30/summary.json",
+      "source_report_sha256": "6a6e0fbf565a25fd97e7548bc0178e0419a74ae7efd366f1b5c969ab293ca03f"
+    },
+    {
+      "cohort": "baseline-no-terminal-cache",
+      "mode": "non-zk",
+      "records": 70,
+      "padded_records": 128,
+      "status": "measured_capacity_failure",
+      "measured_samples": 0,
+      "measured_native_samples": 3,
+      "measured_guest_samples": 3,
+      "elf_sha256": "157340510c774c4a48421ec26a8031e3640247d8bf9e598d15e59e454ce375d2",
+      "inner_setup_s": 0.013494083,
+      "native_inputs_integrity_sha256": "761403713e0da93f26db27361e80f76d1e89a68794f83b821ee4c0cbc3d7c4e1",
+      "canonical_statement_bytes": 66006,
+      "inner_prove_s": {
+        "median": 0.078606458,
+        "min": 0.078305542,
+        "max": 0.078901292
+      },
+      "outer_prove_s": null,
+      "sum_prover_stage_work_s": null,
+      "inner_proof_bytes": {
+        "median": 63935,
+        "min": 63935,
+        "max": 63935
+      },
+      "outer_proof_bytes": null,
+      "cycles": null,
+      "peak_rss_bytes": null,
+      "guest_interpretation_s": {
+        "median": 2.884985083,
+        "min": 2.846483041,
+        "max": 2.901736083
+      },
+      "packed_witness_lower_bound_words": {
+        "median": 11661216512,
+        "min": 11661216512,
+        "max": 11661216512
+      },
+      "one_commitment_limit_words": 268435456,
+      "capacity_error_kind": "leanvm_capacity",
+      "capacity_error": "the run is longer than one proof holds (continuations are not implemented)",
+      "complete_interpreter_output_checked": true,
+      "interpreter_instructions": 336571752,
+      "outer_proof_available": false,
+      "source_report": "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/baseline/non-zk/n70/summary.json",
+      "source_report_sha256": "c76979b779a1b1dd66a89a64b83181212dade414d7cd9558641ae1f79c0db97c"
+    },
+    {
+      "cohort": "baseline-no-terminal-cache",
+      "mode": "non-zk",
+      "records": 100,
+      "padded_records": 128,
+      "status": "measured_capacity_failure",
+      "measured_samples": 0,
+      "measured_native_samples": 3,
+      "measured_guest_samples": 3,
+      "elf_sha256": "157340510c774c4a48421ec26a8031e3640247d8bf9e598d15e59e454ce375d2",
+      "inner_setup_s": 0.013269667,
+      "native_inputs_integrity_sha256": "608f651588c0a0b76a6e8e56d061ac544a926215e349fec2f2d5e2efc1b3268f",
+      "canonical_statement_bytes": 94296,
+      "inner_prove_s": {
+        "median": 0.078984709,
+        "min": 0.076963209,
+        "max": 0.079178584
+      },
+      "outer_prove_s": null,
+      "sum_prover_stage_work_s": null,
+      "inner_proof_bytes": {
+        "median": 65138,
+        "min": 65138,
+        "max": 65138
+      },
+      "outer_proof_bytes": null,
+      "cycles": null,
+      "peak_rss_bytes": null,
+      "guest_interpretation_s": {
+        "median": 3.00180475,
+        "min": 2.965094333,
+        "max": 3.017254833
+      },
+      "packed_witness_lower_bound_words": {
+        "median": 12063869696,
+        "min": 12063869696,
+        "max": 12063869696
+      },
+      "one_commitment_limit_words": 268435456,
+      "capacity_error_kind": "leanvm_capacity",
+      "capacity_error": "the run is longer than one proof holds (continuations are not implemented)",
+      "complete_interpreter_output_checked": true,
+      "interpreter_instructions": 348498392,
+      "outer_proof_available": false,
+      "source_report": "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/aerie-wrapper/baseline/non-zk/n100/summary.json",
+      "source_report_sha256": "35eac03b888b99d3d39374525b93d1a9615cc30044129038980ae40216788dc4"
+    }
+  ],
+  "missing_requested_points": [],
+  "null_semantics": "Unavailable outer proving time/size is null, never zero or inferred",
+  "total_work_semantics": "Sum of measured native Aerie and outer proving intervals for matched samples, not distributed latency",
+  "public_transport_excluded": "Trusted ELF/program deployment and intended keys/messages statement"
+}

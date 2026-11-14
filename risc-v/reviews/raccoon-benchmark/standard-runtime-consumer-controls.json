@@ -1,0 +1,160 @@
+{
+  "schema": 1,
+  "kind": "direct",
+  "scheme": "raccoon",
+  "signatures": 1,
+  "runner_sha256": "06664a7cd1099a589a28b4845439cfedf75d6e1e958331027812fb10fa62b99f",
+  "source_statement_sha256": "3d9a90f3572543ea6146a7798a567aef3a127b2ffe2e2f7a276c15f0ab62ebf2",
+  "root_proof_sha256": "e3ef32cc59e8c4cd8691dc204b0500934f77242f12824a28fb49b81a5ffeaa6f",
+  "approved_elf_sha256": "e375033cde726b2e988db2c433bf8d83b8516252c5954c1e43cb6720f3b25eac",
+  "independent_leaf_digest_check": true,
+  "independent_root_binding": null,
+  "description": "No proving. Every native receiver starts in isolation with only intended public records and one root. Recommitted mutations receive fresh caller pins.",
+  "passed": true,
+  "controls": [
+    {
+      "case": "honest",
+      "expected_accept": true,
+      "returncode": 0,
+      "passed": true,
+      "stderr": "",
+      "statement_sha256": "2c145c837f75030ff68b4da2de95907bcf5221d10cc919a3b4bb779e1c29b1e0",
+      "proof_sha256": "e3ef32cc59e8c4cd8691dc204b0500934f77242f12824a28fb49b81a5ffeaa6f"
+    },
+    {
+      "case": "changed-public_key-record-0-recommitted",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim",
+      "statement_sha256": "5143b262ed7cb18700a583a033fa1216a6ba023b23f515ce1c4893315b188fda",
+      "proof_sha256": "e3ef32cc59e8c4cd8691dc204b0500934f77242f12824a28fb49b81a5ffeaa6f"
+    },
+    {
+      "case": "changed-message-record-0-recommitted",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the circuits' reductions: zerocheck: the circuits' claims do not reproduce the zerocheck's final claim",
+      "statement_sha256": "31366a9e21c56d90cb5b1fbdf8b419e33bcaec22c61b38e957cd655823a55e5f",
+      "proof_sha256": "e3ef32cc59e8c4cd8691dc204b0500934f77242f12824a28fb49b81a5ffeaa6f"
+    },
+    {
+      "case": "wrong-signature-count",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch",
+      "statement_sha256": "3654887f181eb537c0753f11b12eb569b8adbb274dabb69f7499f03ef58fc32f",
+      "proof_sha256": "e3ef32cc59e8c4cd8691dc204b0500934f77242f12824a28fb49b81a5ffeaa6f"
+    },
+    {
+      "case": "wrong-cached-public-output",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch",
+      "statement_sha256": "763b3b9bed01b909768cf1ac4676be9723108c545325083a2fcdad20f29a9a04",
+      "proof_sha256": "e3ef32cc59e8c4cd8691dc204b0500934f77242f12824a28fb49b81a5ffeaa6f"
+    },
+    {
+      "case": "wrong-statement-elf",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch",
+      "statement_sha256": "d2e56615d74a1b8611019c9bcdb0ca3a47a8e564a5f65d52da38e7d78d2d8dcd",
+      "proof_sha256": "e3ef32cc59e8c4cd8691dc204b0500934f77242f12824a28fb49b81a5ffeaa6f"
+    },
+    {
+      "case": "wrong-statement-schema",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch",
+      "statement_sha256": "937504f01e5bede16d0db2f578517cd6009202186d3b0c739207b742bf313bb6",
+      "proof_sha256": "e3ef32cc59e8c4cd8691dc204b0500934f77242f12824a28fb49b81a5ffeaa6f"
+    },
+    {
+      "case": "unknown-statement-field",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: unknown field `unrecognized`, expected one of `schema`, `scheme`, `count`, `elf_sha256`, `expected_output`, `public_records` at line 1 column 4880",
+      "statement_sha256": "3af06db175033019dc0d7e077cb35ff3f4ea5dfb5342bff11e2b4b955cd23cab",
+      "proof_sha256": "e3ef32cc59e8c4cd8691dc204b0500934f77242f12824a28fb49b81a5ffeaa6f"
+    },
+    {
+      "case": "wrong-signature-profile",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch",
+      "statement_sha256": "4457df1b2837c225322d27c736a73621c099c6ccd985bdafb816c8eaf50021a5",
+      "proof_sha256": "e3ef32cc59e8c4cd8691dc204b0500934f77242f12824a28fb49b81a5ffeaa6f"
+    },
+    {
+      "case": "wrong-trusted-elf",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: trusted program/statement mismatch",
+      "statement_sha256": "2c145c837f75030ff68b4da2de95907bcf5221d10cc919a3b4bb779e1c29b1e0",
+      "proof_sha256": "e3ef32cc59e8c4cd8691dc204b0500934f77242f12824a28fb49b81a5ffeaa6f"
+    },
+    {
+      "case": "wrong-trusted-statement",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: intended statement hash mismatch",
+      "statement_sha256": "2c145c837f75030ff68b4da2de95907bcf5221d10cc919a3b4bb779e1c29b1e0",
+      "proof_sha256": "e3ef32cc59e8c4cd8691dc204b0500934f77242f12824a28fb49b81a5ffeaa6f"
+    },
+    {
+      "case": "corrupt-magic",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof",
+      "statement_sha256": "2c145c837f75030ff68b4da2de95907bcf5221d10cc919a3b4bb779e1c29b1e0",
+      "proof_sha256": "6b5081a5317d28dd4fcd779af34d69b067bb52f3920c8b5e9ba206e4f51e633b"
+    },
+    {
+      "case": "corrupt-version",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: a proof of protocol version 16, and this verifier reads version 17",
+      "statement_sha256": "2c145c837f75030ff68b4da2de95907bcf5221d10cc919a3b4bb779e1c29b1e0",
+      "proof_sha256": "72f6e83ee2f6bfe69c67e9d9e9efd33a241e4953d9bb644ebf92f0f55d7b364b"
+    },
+    {
+      "case": "corrupt-proof-middle",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the proof does not verify: the opening: hint 0 is invalid",
+      "statement_sha256": "2c145c837f75030ff68b4da2de95907bcf5221d10cc919a3b4bb779e1c29b1e0",
+      "proof_sha256": "f1b8583de03d3993e75d376c8724e3a9e49d7bd27a621b1e8019dddf41300691"
+    },
+    {
+      "case": "truncated-root",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof",
+      "statement_sha256": "2c145c837f75030ff68b4da2de95907bcf5221d10cc919a3b4bb779e1c29b1e0",
+      "proof_sha256": "e74435a8cd17c4e95a31cdba8e2cacebf42fddc76eabbb34480e7788353ec186"
+    },
+    {
+      "case": "trailing-root-byte",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "error: the bytes are no proof",
+      "statement_sha256": "2c145c837f75030ff68b4da2de95907bcf5221d10cc919a3b4bb779e1c29b1e0",
+      "proof_sha256": "99b078e7444221eee3511dffd5fd622df8ec821ca164ecaea9cbafaeac09b303"
+    }
+  ]
+}

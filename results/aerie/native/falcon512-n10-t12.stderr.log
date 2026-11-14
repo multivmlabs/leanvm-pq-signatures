@@ -1,0 +1,9 @@
+# honest inputs: records=10 source=canonical-cache source_ms=0.4 cache=/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/artifacts/aerie/honest-fixtures/fn-dsa-0.3.0-statement-records-v1-falcon512-10-a3e1e5f16e516e31.bin (fixture acquisition excluded from setup/prove/verify)
+# byte_breakdown records=10 salt_mode=per-record salts_bytes=400 header_piop_bytes=3120 pcs_bytes=57257
+# honest inputs: records=10 source=canonical-cache source_ms=0.1 cache=/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/artifacts/aerie/honest-fixtures/fn-dsa-0.3.0-statement-records-v1-falcon512-10-a3e1e5f16e516e31.bin (fixture acquisition excluded from setup/prove/verify)
+# byte_breakdown records=10 salt_mode=per-record salts_bytes=400 header_piop_bytes=3120 pcs_bytes=57257
+# honest inputs: records=10 source=canonical-cache source_ms=0.1 cache=/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/artifacts/aerie/honest-fixtures/fn-dsa-0.3.0-statement-records-v1-falcon512-10-a3e1e5f16e516e31.bin (fixture acquisition excluded from setup/prove/verify)
+# byte_breakdown records=10 salt_mode=per-record salts_bytes=400 header_piop_bytes=3120 pcs_bytes=57257
+# honest inputs: records=10 source=canonical-cache source_ms=0.1 cache=/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/artifacts/aerie/honest-fixtures/fn-dsa-0.3.0-statement-records-v1-falcon512-10-a3e1e5f16e516e31.bin (fixture acquisition excluded from setup/prove/verify)
+# byte_breakdown records=10 salt_mode=per-record salts_bytes=400 header_piop_bytes=3120 pcs_bytes=57257
+# process_peak_rss_bytes	98156544

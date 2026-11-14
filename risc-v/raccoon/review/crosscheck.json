@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "reference_commit": "e789b4b72a2b7e8a2205df49c487736985fc8417",
+  "scheme": "Raccoon-128-1",
+  "status": "passed",
+  "checks": [
+    "fixture accepted by independent Python reference",
+    "changed message rejected",
+    "fixture key and signature byte-for-byte C/Python agreement",
+    "official first NIST KAT seed/message/keypair/signed-message C/Python agreement"
+  ],
+  "fixture_sha256": "ad6e703718b6fd8f18b23abad5bb18028107e1f69b62b2f0a26970d34c7bf0db",
+  "nist_kat_sha256": "3a1cc30adf7b74c913ab17bfe6581468e5ad12b016ddcb21b16f720e522850e9",
+  "benchmarks_run": false
+}

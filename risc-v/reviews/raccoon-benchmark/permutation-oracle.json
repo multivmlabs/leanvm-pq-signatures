@@ -1,0 +1,953 @@
+{
+  "schema": 1,
+  "scope": "Independent exact SHAKE byte-consumption count, not a proof or benchmark timing",
+  "records": [
+    {
+      "scheme": "raccoon",
+      "index": 0,
+      "fixture_sha256": "ad6e703718b6fd8f18b23abad5bb18028107e1f69b62b2f0a26970d34c7bf0db",
+      "diagnostic_sha256": "4f4fca08d1dbea807720f7273cba045fc1eada8a01c61ad2f52668cc1fefecad",
+      "matrix_polynomials": 20,
+      "matrix_details": [
+        {
+          "row": 0,
+          "column": 0,
+          "draws": 531,
+          "accepted": 512,
+          "rejected": 19,
+          "bytes_consumed": 3717,
+          "keccak_permutations": 28
+        },
+        {
+          "row": 0,
+          "column": 1,
+          "draws": 528,
+          "accepted": 512,
+          "rejected": 16,
+          "bytes_consumed": 3696,
+          "keccak_permutations": 28
+        },
+        {
+          "row": 0,
+          "column": 2,
+          "draws": 527,
+          "accepted": 512,
+          "rejected": 15,
+          "bytes_consumed": 3689,
+          "keccak_permutations": 28
+        },
+        {
+          "row": 0,
+          "column": 3,
+          "draws": 528,
+          "accepted": 512,
+          "rejected": 16,
+          "bytes_consumed": 3696,
+          "keccak_permutations": 28
+        },
+        {
+          "row": 1,
+          "column": 0,
+          "draws": 524,
+          "accepted": 512,
+          "rejected": 12,
+          "bytes_consumed": 3668,
+          "keccak_permutations": 27
+        },
+        {
+          "row": 1,
+          "column": 1,
+          "draws": 523,
+          "accepted": 512,
+          "rejected": 11,
+          "bytes_consumed": 3661,
+          "keccak_permutations": 27
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "draws": 527,
+          "accepted": 512,
+          "rejected": 15,
+          "bytes_consumed": 3689,
+          "keccak_permutations": 28
+        },
+        {
+          "row": 1,
+          "column": 3,
+          "draws": 530,
+          "accepted": 512,
+          "rejected": 18,
+          "bytes_consumed": 3710,
+          "keccak_permutations": 28
+        },
+        {
+          "row": 2,
+          "column": 0,
+          "draws": 522,
+          "accepted": 512,
+          "rejected": 10,
+          "bytes_consumed": 3654,
+          "keccak_permutations": 27
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "draws": 523,
+          "accepted": 512,
+          "rejected": 11,
+          "bytes_consumed": 3661,
+          "keccak_permutations": 27
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "draws": 521,
+          "accepted": 512,
+          "rejected": 9,
+          "bytes_consumed": 3647,
+          "keccak_permutations": 27
+        },
+        {
+          "row": 2,
+          "column": 3,
+          "draws": 526,
+          "accepted": 512,
+          "rejected": 14,
+          "bytes_consumed": 3682,
+          "keccak_permutations": 28
+        },
+        {
+          "row": 3,
+          "column": 0,
+          "draws": 520,
+          "accepted": 512,
+          "rejected": 8,
+          "bytes_consumed": 3640,
+          "keccak_permutations": 27
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "draws": 528,
+          "accepted": 512,
+          "rejected": 16,
+          "bytes_consumed": 3696,
+          "keccak_permutations": 28
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "draws": 524,
+          "accepted": 512,
+          "rejected": 12,
+          "bytes_consumed": 3668,
+          "keccak_permutations": 27
+        },
+        {
+          "row": 3,
+          "column": 3,
+          "draws": 519,
+          "accepted": 512,
+          "rejected": 7,
+          "bytes_consumed": 3633,
+          "keccak_permutations": 27
+        },
+        {
+          "row": 4,
+          "column": 0,
+          "draws": 521,
+          "accepted": 512,
+          "rejected": 9,
+          "bytes_consumed": 3647,
+          "keccak_permutations": 27
+        },
+        {
+          "row": 4,
+          "column": 1,
+          "draws": 521,
+          "accepted": 512,
+          "rejected": 9,
+          "bytes_consumed": 3647,
+          "keccak_permutations": 27
+        },
+        {
+          "row": 4,
+          "column": 2,
+          "draws": 527,
+          "accepted": 512,
+          "rejected": 15,
+          "bytes_consumed": 3689,
+          "keccak_permutations": 28
+        },
+        {
+          "row": 4,
+          "column": 3,
+          "draws": 518,
+          "accepted": 512,
+          "rejected": 6,
+          "bytes_consumed": 3626,
+          "keccak_permutations": 27
+        }
+      ],
+      "component_permutations": {
+        "public_key_hash": 17,
+        "message_hash": 1,
+        "challenge": 1,
+        "matrix_expansion": 549,
+        "commitment_hash": 20
+      },
+      "total_keccak_permutations": 588,
+      "observed_function_calls": 588,
+      "matches_diagnostic": true
+    },
+    {
+      "scheme": "raccoon-g",
+      "index": 0,
+      "fixture_sha256": "475e1ddf6277a1d903864d0b8460a30de4cbf3a955e41d5a476b6dc488e262fe",
+      "diagnostic_sha256": "9322a58eb8e45d477193e3257a6393150c8cb975f5ddaa1bdb04d575cd1be7bb",
+      "matrix_polynomials": 81,
+      "matrix_details": [
+        {
+          "row": 0,
+          "column": 0,
+          "draws": 520,
+          "accepted": 256,
+          "rejected": 264,
+          "bytes_consumed": 3640,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 0,
+          "column": 1,
+          "draws": 525,
+          "accepted": 256,
+          "rejected": 269,
+          "bytes_consumed": 3675,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 0,
+          "column": 2,
+          "draws": 500,
+          "accepted": 256,
+          "rejected": 244,
+          "bytes_consumed": 3500,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 0,
+          "column": 3,
+          "draws": 475,
+          "accepted": 256,
+          "rejected": 219,
+          "bytes_consumed": 3325,
+          "keccak_permutations": 20
+        },
+        {
+          "row": 0,
+          "column": 4,
+          "draws": 540,
+          "accepted": 256,
+          "rejected": 284,
+          "bytes_consumed": 3780,
+          "keccak_permutations": 23
+        },
+        {
+          "row": 0,
+          "column": 5,
+          "draws": 510,
+          "accepted": 256,
+          "rejected": 254,
+          "bytes_consumed": 3570,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 0,
+          "column": 6,
+          "draws": 525,
+          "accepted": 256,
+          "rejected": 269,
+          "bytes_consumed": 3675,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 0,
+          "column": 7,
+          "draws": 508,
+          "accepted": 256,
+          "rejected": 252,
+          "bytes_consumed": 3556,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 0,
+          "column": 8,
+          "draws": 483,
+          "accepted": 256,
+          "rejected": 227,
+          "bytes_consumed": 3381,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 1,
+          "column": 0,
+          "draws": 536,
+          "accepted": 256,
+          "rejected": 280,
+          "bytes_consumed": 3752,
+          "keccak_permutations": 23
+        },
+        {
+          "row": 1,
+          "column": 1,
+          "draws": 467,
+          "accepted": 256,
+          "rejected": 211,
+          "bytes_consumed": 3269,
+          "keccak_permutations": 20
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "draws": 533,
+          "accepted": 256,
+          "rejected": 277,
+          "bytes_consumed": 3731,
+          "keccak_permutations": 23
+        },
+        {
+          "row": 1,
+          "column": 3,
+          "draws": 465,
+          "accepted": 256,
+          "rejected": 209,
+          "bytes_consumed": 3255,
+          "keccak_permutations": 20
+        },
+        {
+          "row": 1,
+          "column": 4,
+          "draws": 510,
+          "accepted": 256,
+          "rejected": 254,
+          "bytes_consumed": 3570,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 1,
+          "column": 5,
+          "draws": 518,
+          "accepted": 256,
+          "rejected": 262,
+          "bytes_consumed": 3626,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 1,
+          "column": 6,
+          "draws": 534,
+          "accepted": 256,
+          "rejected": 278,
+          "bytes_consumed": 3738,
+          "keccak_permutations": 23
+        },
+        {
+          "row": 1,
+          "column": 7,
+          "draws": 485,
+          "accepted": 256,
+          "rejected": 229,
+          "bytes_consumed": 3395,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 1,
+          "column": 8,
+          "draws": 499,
+          "accepted": 256,
+          "rejected": 243,
+          "bytes_consumed": 3493,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 2,
+          "column": 0,
+          "draws": 506,
+          "accepted": 256,
+          "rejected": 250,
+          "bytes_consumed": 3542,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "draws": 517,
+          "accepted": 256,
+          "rejected": 261,
+          "bytes_consumed": 3619,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "draws": 504,
+          "accepted": 256,
+          "rejected": 248,
+          "bytes_consumed": 3528,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 2,
+          "column": 3,
+          "draws": 541,
+          "accepted": 256,
+          "rejected": 285,
+          "bytes_consumed": 3787,
+          "keccak_permutations": 23
+        },
+        {
+          "row": 2,
+          "column": 4,
+          "draws": 499,
+          "accepted": 256,
+          "rejected": 243,
+          "bytes_consumed": 3493,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 2,
+          "column": 5,
+          "draws": 511,
+          "accepted": 256,
+          "rejected": 255,
+          "bytes_consumed": 3577,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 2,
+          "column": 6,
+          "draws": 531,
+          "accepted": 256,
+          "rejected": 275,
+          "bytes_consumed": 3717,
+          "keccak_permutations": 23
+        },
+        {
+          "row": 2,
+          "column": 7,
+          "draws": 547,
+          "accepted": 256,
+          "rejected": 291,
+          "bytes_consumed": 3829,
+          "keccak_permutations": 23
+        },
+        {
+          "row": 2,
+          "column": 8,
+          "draws": 539,
+          "accepted": 256,
+          "rejected": 283,
+          "bytes_consumed": 3773,
+          "keccak_permutations": 23
+        },
+        {
+          "row": 3,
+          "column": 0,
+          "draws": 537,
+          "accepted": 256,
+          "rejected": 281,
+          "bytes_consumed": 3759,
+          "keccak_permutations": 23
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "draws": 535,
+          "accepted": 256,
+          "rejected": 279,
+          "bytes_consumed": 3745,
+          "keccak_permutations": 23
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "draws": 492,
+          "accepted": 256,
+          "rejected": 236,
+          "bytes_consumed": 3444,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 3,
+          "column": 3,
+          "draws": 494,
+          "accepted": 256,
+          "rejected": 238,
+          "bytes_consumed": 3458,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 3,
+          "column": 4,
+          "draws": 494,
+          "accepted": 256,
+          "rejected": 238,
+          "bytes_consumed": 3458,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 3,
+          "column": 5,
+          "draws": 504,
+          "accepted": 256,
+          "rejected": 248,
+          "bytes_consumed": 3528,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 3,
+          "column": 6,
+          "draws": 498,
+          "accepted": 256,
+          "rejected": 242,
+          "bytes_consumed": 3486,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 3,
+          "column": 7,
+          "draws": 520,
+          "accepted": 256,
+          "rejected": 264,
+          "bytes_consumed": 3640,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 3,
+          "column": 8,
+          "draws": 506,
+          "accepted": 256,
+          "rejected": 250,
+          "bytes_consumed": 3542,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 4,
+          "column": 0,
+          "draws": 525,
+          "accepted": 256,
+          "rejected": 269,
+          "bytes_consumed": 3675,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 4,
+          "column": 1,
+          "draws": 481,
+          "accepted": 256,
+          "rejected": 225,
+          "bytes_consumed": 3367,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 4,
+          "column": 2,
+          "draws": 492,
+          "accepted": 256,
+          "rejected": 236,
+          "bytes_consumed": 3444,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 4,
+          "column": 3,
+          "draws": 502,
+          "accepted": 256,
+          "rejected": 246,
+          "bytes_consumed": 3514,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 4,
+          "column": 4,
+          "draws": 462,
+          "accepted": 256,
+          "rejected": 206,
+          "bytes_consumed": 3234,
+          "keccak_permutations": 20
+        },
+        {
+          "row": 4,
+          "column": 5,
+          "draws": 504,
+          "accepted": 256,
+          "rejected": 248,
+          "bytes_consumed": 3528,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 4,
+          "column": 6,
+          "draws": 488,
+          "accepted": 256,
+          "rejected": 232,
+          "bytes_consumed": 3416,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 4,
+          "column": 7,
+          "draws": 489,
+          "accepted": 256,
+          "rejected": 233,
+          "bytes_consumed": 3423,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 4,
+          "column": 8,
+          "draws": 527,
+          "accepted": 256,
+          "rejected": 271,
+          "bytes_consumed": 3689,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 5,
+          "column": 0,
+          "draws": 530,
+          "accepted": 256,
+          "rejected": 274,
+          "bytes_consumed": 3710,
+          "keccak_permutations": 23
+        },
+        {
+          "row": 5,
+          "column": 1,
+          "draws": 480,
+          "accepted": 256,
+          "rejected": 224,
+          "bytes_consumed": 3360,
+          "keccak_permutations": 20
+        },
+        {
+          "row": 5,
+          "column": 2,
+          "draws": 511,
+          "accepted": 256,
+          "rejected": 255,
+          "bytes_consumed": 3577,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 5,
+          "column": 3,
+          "draws": 492,
+          "accepted": 256,
+          "rejected": 236,
+          "bytes_consumed": 3444,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 5,
+          "column": 4,
+          "draws": 514,
+          "accepted": 256,
+          "rejected": 258,
+          "bytes_consumed": 3598,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 5,
+          "column": 5,
+          "draws": 526,
+          "accepted": 256,
+          "rejected": 270,
+          "bytes_consumed": 3682,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 5,
+          "column": 6,
+          "draws": 504,
+          "accepted": 256,
+          "rejected": 248,
+          "bytes_consumed": 3528,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 5,
+          "column": 7,
+          "draws": 515,
+          "accepted": 256,
+          "rejected": 259,
+          "bytes_consumed": 3605,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 5,
+          "column": 8,
+          "draws": 490,
+          "accepted": 256,
+          "rejected": 234,
+          "bytes_consumed": 3430,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 6,
+          "column": 0,
+          "draws": 508,
+          "accepted": 256,
+          "rejected": 252,
+          "bytes_consumed": 3556,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 6,
+          "column": 1,
+          "draws": 547,
+          "accepted": 256,
+          "rejected": 291,
+          "bytes_consumed": 3829,
+          "keccak_permutations": 23
+        },
+        {
+          "row": 6,
+          "column": 2,
+          "draws": 465,
+          "accepted": 256,
+          "rejected": 209,
+          "bytes_consumed": 3255,
+          "keccak_permutations": 20
+        },
+        {
+          "row": 6,
+          "column": 3,
+          "draws": 508,
+          "accepted": 256,
+          "rejected": 252,
+          "bytes_consumed": 3556,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 6,
+          "column": 4,
+          "draws": 557,
+          "accepted": 256,
+          "rejected": 301,
+          "bytes_consumed": 3899,
+          "keccak_permutations": 24
+        },
+        {
+          "row": 6,
+          "column": 5,
+          "draws": 531,
+          "accepted": 256,
+          "rejected": 275,
+          "bytes_consumed": 3717,
+          "keccak_permutations": 23
+        },
+        {
+          "row": 6,
+          "column": 6,
+          "draws": 498,
+          "accepted": 256,
+          "rejected": 242,
+          "bytes_consumed": 3486,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 6,
+          "column": 7,
+          "draws": 507,
+          "accepted": 256,
+          "rejected": 251,
+          "bytes_consumed": 3549,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 6,
+          "column": 8,
+          "draws": 532,
+          "accepted": 256,
+          "rejected": 276,
+          "bytes_consumed": 3724,
+          "keccak_permutations": 23
+        },
+        {
+          "row": 7,
+          "column": 0,
+          "draws": 502,
+          "accepted": 256,
+          "rejected": 246,
+          "bytes_consumed": 3514,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 7,
+          "column": 1,
+          "draws": 488,
+          "accepted": 256,
+          "rejected": 232,
+          "bytes_consumed": 3416,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 7,
+          "column": 2,
+          "draws": 505,
+          "accepted": 256,
+          "rejected": 249,
+          "bytes_consumed": 3535,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 7,
+          "column": 3,
+          "draws": 483,
+          "accepted": 256,
+          "rejected": 227,
+          "bytes_consumed": 3381,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 7,
+          "column": 4,
+          "draws": 517,
+          "accepted": 256,
+          "rejected": 261,
+          "bytes_consumed": 3619,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 7,
+          "column": 5,
+          "draws": 528,
+          "accepted": 256,
+          "rejected": 272,
+          "bytes_consumed": 3696,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 7,
+          "column": 6,
+          "draws": 504,
+          "accepted": 256,
+          "rejected": 248,
+          "bytes_consumed": 3528,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 7,
+          "column": 7,
+          "draws": 494,
+          "accepted": 256,
+          "rejected": 238,
+          "bytes_consumed": 3458,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 7,
+          "column": 8,
+          "draws": 547,
+          "accepted": 256,
+          "rejected": 291,
+          "bytes_consumed": 3829,
+          "keccak_permutations": 23
+        },
+        {
+          "row": 8,
+          "column": 0,
+          "draws": 527,
+          "accepted": 256,
+          "rejected": 271,
+          "bytes_consumed": 3689,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 8,
+          "column": 1,
+          "draws": 501,
+          "accepted": 256,
+          "rejected": 245,
+          "bytes_consumed": 3507,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 8,
+          "column": 2,
+          "draws": 538,
+          "accepted": 256,
+          "rejected": 282,
+          "bytes_consumed": 3766,
+          "keccak_permutations": 23
+        },
+        {
+          "row": 8,
+          "column": 3,
+          "draws": 471,
+          "accepted": 256,
+          "rejected": 215,
+          "bytes_consumed": 3297,
+          "keccak_permutations": 20
+        },
+        {
+          "row": 8,
+          "column": 4,
+          "draws": 486,
+          "accepted": 256,
+          "rejected": 230,
+          "bytes_consumed": 3402,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 8,
+          "column": 5,
+          "draws": 507,
+          "accepted": 256,
+          "rejected": 251,
+          "bytes_consumed": 3549,
+          "keccak_permutations": 22
+        },
+        {
+          "row": 8,
+          "column": 6,
+          "draws": 488,
+          "accepted": 256,
+          "rejected": 232,
+          "bytes_consumed": 3416,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 8,
+          "column": 7,
+          "draws": 490,
+          "accepted": 256,
+          "rejected": 234,
+          "bytes_consumed": 3430,
+          "keccak_permutations": 21
+        },
+        {
+          "row": 8,
+          "column": 8,
+          "draws": 508,
+          "accepted": 256,
+          "rejected": 252,
+          "bytes_consumed": 3556,
+          "keccak_permutations": 22
+        }
+      ],
+      "component_permutations": {
+        "public_key_hash": 119,
+        "message_hash": 1,
+        "challenge": 1,
+        "matrix_expansion": 1756,
+        "commitment_hash": 119
+      },
+      "total_keccak_permutations": 1996,
+      "observed_function_calls": 1996,
+      "matches_diagnostic": true
+    }
+  ]
+}

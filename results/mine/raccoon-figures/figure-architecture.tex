@@ -1,0 +1,60 @@
+\documentclass[tikz,border=8pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,backgrounds,calc}
+\begin{document}
+\begin{tikzpicture}[
+  font=\sffamily\small,
+  box/.style={draw=black!70, rounded corners=2pt, align=center,
+    inner sep=5pt, minimum width=3.15cm, fill=white},
+  shared/.style={box, fill=black!6, minimum width=4.4cm},
+  arrow/.style={-{Stealth[length=2.2mm]}, thick, draw=black!70},
+  note/.style={font=\sffamily\footnotesize, align=center, text=black!70},
+]
+
+\node[shared] (P) {Prover:\\keys and signatures};
+
+\node[box, below left=1.45cm and 1.05cm of P] (ELF)
+  {RISC-V guest ELF\\(\texttt{verify})};
+\node[box, below right=1.45cm and 1.05cm of P] (ZK)
+  {zkDSL guest};
+\node[box, below=0.8cm of ZK] (ISA)
+  {leanISA bytecode};
+
+\node[shared, below=3.35cm of P] (LVM) {leanVM prover};
+\node[shared, below=0.7cm of LVM] (S) {STARK};
+\node[shared, below=0.7cm of S] (V)
+  {Verifier:\\intended keys/messages only\\(no signatures)};
+\node[box, below left=1.05cm and 1.05cm of V] (VR)
+  {\texttt{Program::verify}\\+ ELF pin};
+\node[box, below right=1.05cm and 1.05cm of V] (VL)
+  {Native verify\\+ guest-hash pin};
+
+\begin{scope}[on background layer]
+  \node[fill=blue!10, rounded corners=6pt, inner sep=10pt, fit=(ELF)(VR)] (RISCVBG) {};
+  \node[fill=orange!12, rounded corners=6pt, inner sep=10pt, fit=(ZK)(ISA)(VL)] (LEAISABG) {};
+\end{scope}
+\node[font=\sffamily\bfseries\footnotesize, blue!55!black, anchor=north]
+  at ($(RISCVBG.north)+(0,-0.12)$) {RISC-V path};
+\node[font=\sffamily\bfseries\footnotesize, orange!70!black, anchor=north]
+  at ($(LEAISABG.north)+(0,-0.12)$) {leanISA path};
+
+\draw[arrow] (P) -- node[note, left=1pt] {advice:\\count, keys,\\messages, sigs} (ELF);
+\draw[arrow] (P) -- node[note, right=1pt] {named\\witness streams} (ZK);
+\draw[arrow] (ZK) -- node[note, right] {\texttt{lean\_compiler}} (ISA);
+
+\draw[arrow] (ELF.south) -- ++(0,-0.28) -| node[note, near start, left] {RV64IM} (LVM);
+\draw[arrow] (ISA.south) -- ++(0,-0.28) -| node[note, near start, right] {leanISA} (LVM);
+
+% Public claims routed outside the shared stack
+\draw[arrow, densely dashed, draw=black!55]
+  (ELF.west) -- ++(-0.55,0) |- node[note, pos=0.22, left] {public\\digest} (V.west);
+\draw[arrow, densely dashed, draw=black!55]
+  (ISA.east) -- ++(0.55,0) |- node[note, pos=0.22, right] {batch\\commitment} (V.east);
+
+\draw[arrow] (LVM) -- (S);
+\draw[arrow] (S) -- (V);
+\draw[arrow] (V) -- (VR);
+\draw[arrow] (V) -- (VL);
+
+\end{tikzpicture}
+\end{document}

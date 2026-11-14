@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "profile": "raccoong-hd-authors-poc-461a5ed9-v1",
+  "expression": "exp(1/4)*(sqrt(1000)*23*2^7+2^40)*sqrt(256*(9+9))+(23*2^35+2^39)*sqrt(256*9)",
+  "interval_precision_bits": 512,
+  "squared_floor_lower": "25650475979193785709999263840",
+  "squared_floor_upper": "25650475979193785709999263840",
+  "squared_threshold": "25650475979193785709999263840",
+  "upstream_binary64_radius_hex": "0x1.235338d5fc376p+47",
+  "upstream_binary64_radius_squared_as_integer": "25650475979193786198562701312",
+  "upstream_binary64_sqrt_actual_largest_accepted_integer": "25650475979193792795632467967",
+  "upstream_binary64_sqrt_next_integer_rejected": "25650475979193792795632467968",
+  "paper_conformance": "provisional executable reference profile; paper review pending",
+  "benchmarks_run": false
+}

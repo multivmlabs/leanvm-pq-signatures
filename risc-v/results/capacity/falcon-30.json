@@ -1,0 +1,50 @@
+{
+  "action": "measure",
+  "advice_words": 6031,
+  "arch": "aarch64",
+  "count": 30,
+  "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c",
+  "execution": {
+    "committed_words": 243224712,
+    "cycles": 4392629,
+    "padded_rows": {
+      "ALU": 4194304,
+      "DIV": 16,
+      "EXT": 8,
+      "HASH": 512,
+      "LD": 524288,
+      "LOAD": 16,
+      "MUL": 1048576,
+      "MULH": 32,
+      "SD": 524288,
+      "SHIFT": 1048576,
+      "STORE": 16
+    },
+    "proven_rows": 7340632,
+    "rows": {
+      "ALU": 2175332,
+      "DIV": 0,
+      "EXT": 0,
+      "HASH": 435,
+      "LD": 386536,
+      "LOAD": 0,
+      "MUL": 552960,
+      "MULH": 31,
+      "SD": 320834,
+      "SHIFT": 956501,
+      "STORE": 0
+    }
+  },
+  "fixture_s": 0.030870208,
+  "leanvm_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "log_inverse_rate": 1,
+  "measure_s": 0.041156959,
+  "os": "macos",
+  "peak_rss_bytes": 12468224,
+  "program_load_s": 0.001693375,
+  "schema": 1,
+  "scheme": "falcon",
+  "status": "accepted",
+  "threads": 8,
+  "zero_knowledge": false
+}

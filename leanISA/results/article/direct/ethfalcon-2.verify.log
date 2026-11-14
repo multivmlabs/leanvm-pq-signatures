@@ -1,0 +1,69 @@
+{
+  "action": "verify",
+  "arch": "aarch64",
+  "bytecode_prepare_s": 0.074295708,
+  "compile_s": 0.069524208,
+  "guest_hash": "18b0747664990323872332c93a4e65ac3c3e3925e365fa912dc8fa84daece770",
+  "leanvm_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "leanvm_source_dirty_at_build": "false",
+  "metadata": {
+    "count": 2,
+    "fixture_generation_s": 0.1687992920000001,
+    "message_bytes": 64,
+    "public_key_bytes": 1794,
+    "raw_key_bytes": 1794,
+    "raw_signature_bytes": 1305,
+    "signature_bytes": 1305
+  },
+  "min_log_committed": 0,
+  "os": "macos",
+  "process_peak_rss_bytes": 134660096,
+  "proof_bytes": 327976,
+  "proof_encoding": {
+    "merkle_bytes": 272240,
+    "merkle_phases": [
+      {
+        "opened_field_words": 8325,
+        "opened_rows": 225,
+        "sibling_hashes": 2982
+      },
+      {
+        "opened_field_words": 2688,
+        "opened_rows": 56,
+        "sibling_hashes": 787
+      },
+      {
+        "opened_field_words": 1536,
+        "opened_rows": 32,
+        "sibling_hashes": 465
+      },
+      {
+        "opened_field_words": 1104,
+        "opened_rows": 23,
+        "sibling_hashes": 321
+      },
+      {
+        "opened_field_words": 864,
+        "opened_rows": 18,
+        "sibling_hashes": 232
+      }
+    ],
+    "scalar_stream_bytes": 55736,
+    "scalar_stream_count": 2322
+  },
+  "public_input_hex": "47843395f484018cb1a46d3c252038cf9e36c5b136b39bf0863b3c8d9fad4b9d",
+  "schema_version": 1,
+  "scheme": "ethfalcon-512-keccak",
+  "statement_pinned": true,
+  "threads_env": null,
+  "verified": true,
+  "verify_cached_s": [
+    0.006312833,
+    0.00627075,
+    0.006330375
+  ],
+  "verify_s": [
+    0.081613666
+  ],
+  "zero_knowledge": false
+}

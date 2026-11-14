@@ -1,0 +1,17 @@
+   Compiling raccoon-riscv-guest v0.1.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/experiments/raccoon-crt32/guest)
+   Compiling raccoon-riscv-host v0.1.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/experiments/raccoon-crt32/host)
+    Finished `release` profile [optimized] target(s) in 1.28s
+     Running unittests src/lib.rs (.cache/raccoon-crt32-target/release/deps/raccoon_riscv_host-d8c1b779d992bf6d)
+
+running 8 tests
+test tests::sdk_keccak_matches_unchanged_reference_on_full_states ... ok
+test tests::public_digest_binds_count_order_keys_and_messages ... ok
+test tests::norms_are_checked_even_when_the_challenge_equation_is_correct ... ok
+test tests::invalid_encodings_and_transport_bounds_fail_in_actual_guest ... ok
+test tests::valid_coding_at_the_exact_last_signature_bit_is_accepted ... ok
+test tests::byte_aligned_signature_zero_padding_is_enforced ... ok
+test tests::altered_keys_messages_and_challenges_fail_in_actual_guest ... ok
+test tests::deterministic_distinct_records_match_actual_riscv_execution ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+

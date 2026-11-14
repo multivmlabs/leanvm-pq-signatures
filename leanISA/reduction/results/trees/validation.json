@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "samples": 12,
+  "fresh_leaf_STARKs": 126,
+  "fresh_merge_STARKs": 162,
+  "source_and_binary_hashes_match": true,
+  "saved_proof_hashes_match": true,
+  "native_prepare_and_sumcheck_generation_included": true,
+  "all_public_only_receivers_pass": true
+}

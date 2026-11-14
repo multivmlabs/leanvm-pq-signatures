@@ -1,0 +1,186 @@
+{
+  "schema": 1,
+  "scope": "Exact figure/data/provenance snapshot before replacing active FORS recursive curve by the leanISA sumcheck-reduced variant. Original results remain immutable.",
+  "files": [
+    {
+      "original_path": "results/mine/figures/README.md",
+      "archive_file": "README.md",
+      "sha256": "ca817be40a9ca55cb17c3c08c58d6fec627eb547b2bbc29135c3957e700bb522"
+    },
+    {
+      "original_path": "results/mine/figures/falcon.csv",
+      "archive_file": "falcon.csv",
+      "sha256": "ab60e42e1dd1a19fdb435c97ea8bc009c7e6e67f44e8b2018af436414c56bf4a"
+    },
+    {
+      "original_path": "results/mine/figures/figure-1-batching.pdf",
+      "archive_file": "figure-1-batching.pdf",
+      "sha256": "7fa7375f72f9f4a1250e2190f90fa0665f9229e54a6986501ef3892495476c9e"
+    },
+    {
+      "original_path": "results/mine/figures/figure-1-batching.png",
+      "archive_file": "figure-1-batching.png",
+      "sha256": "76b523e762d1f60f8e52fc68adbdabdef06ce2d113f7fd1039094efbef1d8f01"
+    },
+    {
+      "original_path": "results/mine/figures/figure-1-batching.tex",
+      "archive_file": "figure-1-batching.tex",
+      "sha256": "0c0a2cefbe65e4c95a5bd9e71496bd9b4a625fe817ebe931b043a61a2b7e9ab4"
+    },
+    {
+      "original_path": "results/mine/figures/figure-2-verification-memory.pdf",
+      "archive_file": "figure-2-verification-memory.pdf",
+      "sha256": "0b40994f9fcfc7cc91bab6456a36365fd1a44f3dc41f6782a2ce9dd623756e2e"
+    },
+    {
+      "original_path": "results/mine/figures/figure-2-verification-memory.png",
+      "archive_file": "figure-2-verification-memory.png",
+      "sha256": "97a4c41b632a536a6da166ebc1d81ab677fc059aae3f4d7ccc16e4dd9060eff3"
+    },
+    {
+      "original_path": "results/mine/figures/figure-2-verification-memory.tex",
+      "archive_file": "figure-2-verification-memory.tex",
+      "sha256": "7359aea97c199ca2a6396cc8ea08898f6306beadd49609af48ccf34373f4fce5"
+    },
+    {
+      "original_path": "results/mine/figures/figure-3-capacity-efficiency.pdf",
+      "archive_file": "figure-3-capacity-efficiency.pdf",
+      "sha256": "a8c58f2478c06e46a7203c693852a890b0f5921f927bfd723aed54e0703c2277"
+    },
+    {
+      "original_path": "results/mine/figures/figure-3-capacity-efficiency.png",
+      "archive_file": "figure-3-capacity-efficiency.png",
+      "sha256": "e75d24ec044e30926cd462bbe7452634197e3f10b2c2398edacf33a1a993d6bb"
+    },
+    {
+      "original_path": "results/mine/figures/figure-3-capacity-efficiency.tex",
+      "archive_file": "figure-3-capacity-efficiency.tex",
+      "sha256": "cdba3b844f2d3f10fc1a45d74eb19927779765e53be6f77e29c9383586c0d8fa"
+    },
+    {
+      "original_path": "results/mine/figures/figure-4-fors-tree.pdf",
+      "archive_file": "figure-4-fors-tree.pdf",
+      "sha256": "2aecadfb2b134a9c483f3e08b6de920e98e4fe5a3d159c9739f0328c650d1bae"
+    },
+    {
+      "original_path": "results/mine/figures/figure-4-fors-tree.png",
+      "archive_file": "figure-4-fors-tree.png",
+      "sha256": "56915c3b84d80e50ea3dbc802b76d0d7ca98e40f8930e8ba58710486e178cb99"
+    },
+    {
+      "original_path": "results/mine/figures/figure-4-fors-tree.tex",
+      "archive_file": "figure-4-fors-tree.tex",
+      "sha256": "d1f6cede10d584d36324fae1a4d00555d5d74d19ddd9fce6685a49b5b7c16637"
+    },
+    {
+      "original_path": "results/mine/figures/figure-4-recursive-trees.pdf",
+      "archive_file": "figure-4-recursive-trees.pdf",
+      "sha256": "dd1cc21d41e0b927108b48830bca04380062e87e3df4f03afdfe5590b0b3235f"
+    },
+    {
+      "original_path": "results/mine/figures/figure-4-recursive-trees.png",
+      "archive_file": "figure-4-recursive-trees.png",
+      "sha256": "377b3b1dc78bf6408f6085745b75c253b25e176602ac931e0012617a35ea61e4"
+    },
+    {
+      "original_path": "results/mine/figures/figure-4-recursive-trees.tex",
+      "archive_file": "figure-4-recursive-trees.tex",
+      "sha256": "d11cd6c94ec102abde8b6540068a3f4736374baef2f1ab67fd19c9e17003928a"
+    },
+    {
+      "original_path": "results/mine/figures/figure-5-fors-tree-verification.pdf",
+      "archive_file": "figure-5-fors-tree-verification.pdf",
+      "sha256": "65b02420a42d46a43424713cfae95d580329af61f1a981be395691ad7ce50262"
+    },
+    {
+      "original_path": "results/mine/figures/figure-5-fors-tree-verification.png",
+      "archive_file": "figure-5-fors-tree-verification.png",
+      "sha256": "d8a9a15761a0d7386bd316084670ab630b5faa2b212f509ce9ddc1727d22d4d2"
+    },
+    {
+      "original_path": "results/mine/figures/figure-5-fors-tree-verification.tex",
+      "archive_file": "figure-5-fors-tree-verification.tex",
+      "sha256": "3e950f6443086ffec26184c36d3ed64598a2a2805460c1ef7f6498c3540324cf"
+    },
+    {
+      "original_path": "results/mine/figures/figure-5-tree-verification.pdf",
+      "archive_file": "figure-5-tree-verification.pdf",
+      "sha256": "aa98581a0e6c52f89b38ac08d52300ac79e301a823ebd124383a462977c009f2"
+    },
+    {
+      "original_path": "results/mine/figures/figure-5-tree-verification.png",
+      "archive_file": "figure-5-tree-verification.png",
+      "sha256": "538af50229f98357b414e43eb2a5e7cd0c300c968f4bbf5f2f6f1e8c59c98938"
+    },
+    {
+      "original_path": "results/mine/figures/figure-5-tree-verification.tex",
+      "archive_file": "figure-5-tree-verification.tex",
+      "sha256": "5305d702635b6240a5f9ccf88fa1f4f67f5d2bc45ef2d44c5f11df99d7238fe2"
+    },
+    {
+      "original_path": "results/mine/figures/fors-matched.csv",
+      "archive_file": "fors-matched.csv",
+      "sha256": "d9ef6e7bb101f3b5f0eb506e9fddf83e019f7de90e4c9644e6ea29f268f0a911"
+    },
+    {
+      "original_path": "results/mine/figures/fors.csv",
+      "archive_file": "fors.csv",
+      "sha256": "2fea5fc2056d87c5717a71c7b36e87ec9463b37482695a43f820ecd0a1076833"
+    },
+    {
+      "original_path": "results/mine/figures/measurements.csv",
+      "archive_file": "measurements.csv",
+      "sha256": "cf19e49375902f748f2d4de6f2ee032f6dc164690facda5561c66e0174f17ea1"
+    },
+    {
+      "original_path": "results/mine/figures/mldsa.csv",
+      "archive_file": "mldsa.csv",
+      "sha256": "b65e251605d2e766ad674549e099d7901f0d474c05b9a4266d79de88ea398229"
+    },
+    {
+      "original_path": "results/mine/figures/provenance.json",
+      "archive_file": "provenance.json",
+      "sha256": "0f410ab54e767c0d05b8010da5d81bb745dfb6a9ee3ccc53ceabd5faca3dbcc8"
+    },
+    {
+      "original_path": "results/mine/figures/recursive-tree-samples.csv",
+      "archive_file": "recursive-tree-samples.csv",
+      "sha256": "803db80e9fd4efbe2c714ca8cd76b6238426f948ec52d7da1be446d57889a6a4"
+    },
+    {
+      "original_path": "results/mine/figures/recursive-trees.csv",
+      "archive_file": "recursive-trees.csv",
+      "sha256": "e6039ec6b6bf1a752e4a97029a434f5a041a8ef21fc45fc5ca3be9fd68681b88"
+    },
+    {
+      "original_path": "results/mine/figures/tree-falcon.csv",
+      "archive_file": "tree-falcon.csv",
+      "sha256": "3639f18d1c704544f94d84c7252a329fda2863bdcfe70d0b11d4218426bb6c35"
+    },
+    {
+      "original_path": "results/mine/figures/tree-fors.csv",
+      "archive_file": "tree-fors.csv",
+      "sha256": "fd0401c295d0b170c364de2eb45d3337e7075cf8d96ce86f56a5c0689edcca13"
+    },
+    {
+      "original_path": "results/mine/figures/tree-mldsa.csv",
+      "archive_file": "tree-mldsa.csv",
+      "sha256": "a7fbf0badee8c1ff7f749cbcf6c7a63db718842a5be7284c3bb78c38c8455dcd"
+    },
+    {
+      "original_path": "results/mine/figures/tree-samples.csv",
+      "archive_file": "tree-samples.csv",
+      "sha256": "9aa24cdae7cf38066959da394d25c210b820feda068db072564117653ba5ce2f"
+    },
+    {
+      "original_path": "results/mine/figures/tree.csv",
+      "archive_file": "tree.csv",
+      "sha256": "4647baff3f7ab3210f5ebe2366213481aaa9691425b7da836b7d74826354c3ab"
+    },
+    {
+      "original_path": "articles/scripts/mine_figures.py",
+      "archive_file": "mine_figures.py",
+      "sha256": "25ac0735653bf5c38123d90da7258eb631a8dfbf370537a9dbbe72d661e2299b"
+    }
+  ]
+}

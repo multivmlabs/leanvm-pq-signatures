@@ -1,0 +1,21 @@
+{
+  "repository": "https://github.com/p-11/lattice-hd-wallets",
+  "commit": "461a5ed9b6d57e3bf8c381be3bb79325ab21d906",
+  "retrieved_utc": "2026-11-09",
+  "paper_intended": "https://eprint.iacr.org/2026/380",
+  "paper_original_user_url": "https://eprint.iacr.org/2026/1628",
+  "paper_pdf_status": "HTTP403 Cloudflare challenge; complete PDF not read",
+  "source_sha256": {
+    "src/raccoon/thrc-py/raccoon_primitives.py": "22c97483c05dd5c5bb39bc44abc29a6facab462d66975896ee280ea228a04e90",
+    "src/raccoon/thrc-py/thrc_core.py": "6340b645a5072a61bb14e0e6a979f888fc94326b5a3fd20d5ed04f5362d34724",
+    "src/raccoon/thrc-py/polyr.py": "8db5550e259c00ec56c12ebee943f4bf3d65e256014fd08f81c749913d0bb9d1",
+    "src/raccoon/thrc-py/thrc_gauss.py": "6e63cb4f402dd0a3ef10802475d650e7f638b1bb28e403a011b2641ee74e14ba",
+    "src/raccoon/thrc-py/nist_kat_drbg.py": "79bd3fe4309fb60be029f1b017cb03e32f67c7ba0aea6e12e4e0d1cc0fc4c947",
+    "src/raccoon/mod.rs": "5fd8ee819f0eb19d93aebb106ba9ef59ad2bef83523eccd5915afea45ce67be6",
+    "src/crypto_utils.rs": "002ba32d574dfd65085656555a513f2a8bbb6beaf17312b16219be29674cdec3",
+    "scripts/sigparams.sage": "25c3d07dc964fca597a08801e68019eafe42392aedd31810cbf3e827b32b6376",
+    "scripts/gen_ntt_50bit.py": "f32b922c6e3f154f09e28e988925e22625c7463e537938b311b9f28c2177bc57",
+    "README.md": "b5bba1c7e3f176525d3f22a53772a3393fbe30828f8897a61862364668f0f12b"
+  },
+  "benchmarks_run": false
+}

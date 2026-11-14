@@ -1,0 +1,63 @@
+{
+  "action": "prove",
+  "arch": "aarch64",
+  "bytecode_instructions": 5626,
+  "committed_cells": 2437120,
+  "compile_s": 0.003195291,
+  "cycles": 90155,
+  "execute_s": 0.002723584,
+  "guest_hash": "533e0a1b995182c7074e45681a93b0bc497e6b8f41241801a78ba9b5a07ae2fe",
+  "leanvm_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "leanvm_source_dirty_at_build": "false",
+  "log_inv_rate": 1,
+  "log_memory_cells": 17,
+  "memory_cells": 111805,
+  "metadata": {
+    "baseline_native_verify_s": 0.006069624999999412,
+    "count": 12,
+    "fixture_generation_s": 0.4644484170000003,
+    "fixture_start": 0,
+    "native_implementation": "Python reference FORS verifier using PyCryptodome Keccak; not an optimized native baseline",
+    "native_verify_seconds": 0.006069624999999412,
+    "parameters": {
+      "a": 8,
+      "k": 16,
+      "n": 32
+    },
+    "public_key_bytes": 768,
+    "public_key_bytes_per_signature": 64,
+    "raw_key_bytes": 768,
+    "raw_signature_bytes": 55296,
+    "scheme": "fors-keccak-research",
+    "security_note": "Unreviewed few-time FORS variant; not FIPS 205 or leanSPHINCS; benchmark keys are deterministic and distinct.",
+    "signature_bytes": 55296,
+    "signature_bytes_per_signature": 4608
+  },
+  "opcode_rows": [
+    24694,
+    23345,
+    17303,
+    12357,
+    10647,
+    1809
+  ],
+  "os": "macos",
+  "process_peak_rss_bytes": 202145792,
+  "proof_bytes": 254504,
+  "proof_bytes_samples": [
+    254504
+  ],
+  "prove_s": [
+    0.069250958
+  ],
+  "public_input_hex": "c20fd60b9901e3b35f557b490178c04e9d6c8fa4c83b66101b9bc6a5c62e6bfb",
+  "schema_version": 1,
+  "scheme": "fors-keccak-research",
+  "threads_env": null,
+  "verified": true,
+  "verify_s": [
+    0.007975334
+  ],
+  "warmup_passes": 0,
+  "zero_knowledge": false
+}

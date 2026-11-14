@@ -1,0 +1,16 @@
+[package]
+name = "mldsa-twiddle64-probe"
+version = "0.1.0"
+edition = "2024"
+publish = false
+[workspace]
+[dependencies]
+mldsa-riscv-host = { path = "../../../mldsa/host" }
+leanvm = { path = "../../../../vendor/leanVM-riscv/crates/leanvm_core" }
+serde_json = "1"
+sha2 = "0.10"
+parallel = { path = "../../../../vendor/leanVM-riscv/crates/parallel" }
+bench = { path = "../../../../vendor/leanVM-riscv/crates/bench" }
+[profile.release]
+opt-level = 3
+codegen-units = 1

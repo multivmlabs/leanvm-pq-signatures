@@ -1,0 +1,203 @@
+{
+  "action": "prove",
+  "all_reduced_claims_settled": true,
+  "backend_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "depth": 2,
+  "families": [
+    {
+      "bytecode_instructions": 8192,
+      "dimensions": 17,
+      "family": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "min_log_committed": 22,
+      "table_words": 131072
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 1,
+      "guest_hash": "9a644995149507104780db24c34f7bf0a2b0fc7631f05faa743d6002becfb3dc",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 2,
+      "guest_hash": "2d8699877c87d010052a00b89adc6e9aa5f28b1e08501703146d5dd1e1e393c2",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    }
+  ],
+  "full_verify_s": 0.00748475,
+  "leaf_prove_s": 0.212278709,
+  "leaf_reports": [
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 0,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 270112,
+      "proof_sha256": "52e88acb9e51809fc88c5515456bacd3d466d118c2084fefd5beba0bcb08b521",
+      "prove_s": 0.060567416,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 1,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 269152,
+      "proof_sha256": "5c7a4130f504374a14be28862cf58c51e526d416372c5ab1dd7eddd734921934",
+      "prove_s": 0.049071792,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 2,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 268224,
+      "proof_sha256": "865ae5360b567a5c67e1db7055683ff8cc51ffad9a67cd9baf061f0f4f7919e9",
+      "prove_s": 0.051680792,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 3,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 269024,
+      "proof_sha256": "8bde7d67a982d52953230bd860c2ee16d7f974322868b3c389115fea54e8e0f0",
+      "prove_s": 0.050958709,
+      "signatures": 5
+    }
+  ],
+  "leaf_size": 5,
+  "leaf_slots": 4,
+  "leaf_source_sha256": "c46fc19886ee36392d106b13443440d7daaeaf210f6806dac6836c9b58c91e2c",
+  "merge_count": 3,
+  "merge_prove_s": 0.874842001,
+  "merge_reports": [
+    {
+      "committed_words": 16482304,
+      "cycles": 535769,
+      "level": 1,
+      "native_reduction_prove_s": 0.00179575,
+      "node": 0,
+      "opcode_rows": [
+        160964,
+        214512,
+        28463,
+        91798,
+        29194,
+        10838
+      ],
+      "prepare_s": 0.020074958,
+      "proof_bytes": 339208,
+      "proof_sha256": "5356da11127a0159d47fab292e79a37c6e2efcce6fb9b212cd4819c93af3e5c4",
+      "terminal_families": 1,
+      "total_prove_s": 0.253815958,
+      "wrapper_stark_prove_s": 0.233741
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535799,
+      "level": 1,
+      "native_reduction_prove_s": 0.00185975,
+      "node": 1,
+      "opcode_rows": [
+        160964,
+        214512,
+        28489,
+        91802,
+        29220,
+        10812
+      ],
+      "prepare_s": 0.020038792,
+      "proof_bytes": 339784,
+      "proof_sha256": "2972d6c65172cd4b2b19ba25455c4becee18b87aa2ab89c1aeb15489d0007f3e",
+      "terminal_families": 1,
+      "total_prove_s": 0.218439251,
+      "wrapper_stark_prove_s": 0.198400459
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 582309,
+      "level": 2,
+      "native_reduction_prove_s": 0.046283750000000005,
+      "node": 2,
+      "opcode_rows": [
+        173756,
+        229529,
+        32192,
+        102499,
+        31403,
+        12930
+      ],
+      "prepare_s": 0.203465417,
+      "proof_bytes": 339944,
+      "proof_sha256": "7819396c49e4689e3f81e57a35acaa1116bfaed50d7f22e9ac451717175f8a63",
+      "terminal_families": 2,
+      "total_prove_s": 0.402586792,
+      "wrapper_stark_prove_s": 0.199121375
+    }
+  ],
+  "native_reduction_prove_s": 0.049939250000000004,
+  "original_tree_edges": 6,
+  "padding_slots": 0,
+  "peak_rss_bytes": 1346519040,
+  "pipeline_elapsed_s": 1.817527042,
+  "program_compile_s": 0.3082405,
+  "public_claim_derivation_s": 0.00002825,
+  "public_sha256": "57c2be45195c443bc759b3bf5a7244f3ef5462968ca77b672912d57e9583d27d",
+  "real_leaves": 4,
+  "root_auxiliary_bytes": 1232,
+  "root_core_bytes": 339944,
+  "root_proof_bytes": 341176,
+  "root_proof_sha256": "b9763aa478e5c5451217922ca519381ba3a11c36937c691e7785b9de6dad6352",
+  "schema": 1,
+  "scheme": "fors",
+  "signatures": 20,
+  "status": "accepted",
+  "terminal_evaluations": 2,
+  "threads_env": null,
+  "total_prove_s": 1.08712071,
+  "verification_components": {
+    "root_core_s": 0.005861084,
+    "root_pi_s": 2.875e-6,
+    "terminal_evaluation_s": 0.001611667,
+    "terminal_evaluations": 2
+  },
+  "verified": true,
+  "wrapper_stark_prove_s": 0.6312628339999999,
+  "zero_knowledge": false
+}

@@ -1,0 +1,455 @@
+{
+  "schema": 1,
+  "scheme": "raccoon-g",
+  "layout": "five linked two-row parts",
+  "signatures": 1,
+  "runner_sha256": "74b2b0125f7e04d6cb390eecb1582c3f5a18fcd5b9da4d419e4eba2b24c766a8",
+  "approved_elf_sha256": "5c48b8f39b14521773493692034fa601a9df89992552870addd68416cc926eac",
+  "source_statement_sha256": "99127fe5ee985dc766d48d9607824ab849c42e2adc4964cae08bc73b79ba8df4",
+  "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+  "independent_raw_byte_root_binding": {
+    "protocol": 19,
+    "original_signatures": 1,
+    "actual_parts": 5,
+    "unique_rows": 9,
+    "row_computations": 10,
+    "leaf_slots": 8,
+    "padding_slots": 3,
+    "root_digest": "35ecf5b774edff928263634587d03ccd8a1bb61d5299ad776a5fa2c2e80cade6",
+    "root_kind": 1,
+    "core_bytes": 265991,
+    "receipt_bytes": 266115,
+    "overhead_bytes": 124
+  },
+  "scope": "Public-only native receiver in isolated directory. No proof, witnesses, VM capacity or child files generated. Changed original claims receive fresh caller pins; coherent root-header recommit controls require cryptographic rejection.",
+  "passed": true,
+  "controls": [
+    {
+      "case": "honest-isolated-full-receiver",
+      "expected_accept": true,
+      "returncode": 0,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "",
+      "builtin_coverage_controls": {
+        "changed_binding": true,
+        "changed_key_recommitted": true,
+        "changed_message_recommitted": true,
+        "changed_parts_policy": true,
+        "changed_signature_count": true,
+        "corrupt_root": true,
+        "duplicated_part_missing_coverage": true,
+        "reordered_parts": true,
+        "trailing_byte": true,
+        "truncated_receipt": true,
+        "wrong_leaf_count": true
+      }
+    },
+    {
+      "case": "changed-public_key-0-fresh-caller-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "77a4982a36c7421a79561b863278e7dae8da591ac7a318e52ea57a231d68e51b",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: Outputs"
+    },
+    {
+      "case": "changed-public_key-0-fresh-pin-recommitted-root-header",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "77a4982a36c7421a79561b863278e7dae8da591ac7a318e52ea57a231d68e51b",
+      "receipt_sha256": "f445a9d867ff51545fa8a84b851b2c62f8b2b7093de598abf41158aa379b3381",
+      "stderr": "Error: Root(VerifyError(Recursion(Flock(Zerocheck(TerminalMismatch)))))"
+    },
+    {
+      "case": "changed-message-0-fresh-caller-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c5970527ec204d43a4e8066eb421afdcb9012629c38417b40816936d1b3c7eff",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: Outputs"
+    },
+    {
+      "case": "changed-message-0-fresh-pin-recommitted-root-header",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c5970527ec204d43a4e8066eb421afdcb9012629c38417b40816936d1b3c7eff",
+      "receipt_sha256": "1e9291cbe85ac92db945d0e08b39b69d9530662abc656734981d39fff0dc1d17",
+      "stderr": "Error: Root(VerifyError(Recursion(Flock(Zerocheck(TerminalMismatch)))))"
+    },
+    {
+      "case": "changed-untrusted-D-0-word-0",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "8f7c55d65797bf9c443ae82819e0de6793c8ccd2be4c2ef08cf20f371693dbe6",
+      "stderr": "Error: Outputs"
+    },
+    {
+      "case": "changed-untrusted-D-0-word-1",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "c8b59b549b5f03a55e9e25544b79f6699223a66ab246eec157cf13d0be1eac75",
+      "stderr": "Error: Outputs"
+    },
+    {
+      "case": "changed-untrusted-D-0-word-2",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "96d7dfaae2ecd63bc876bb5a93a3ce3cefc7b25c9f39b6099928c9eb7d6a3689",
+      "stderr": "Error: Outputs"
+    },
+    {
+      "case": "changed-untrusted-D-0-word-3",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "2deffff28a699a566a2f88223ef35a6c5bb59c36d3297e14eaddb0da4c74daa1",
+      "stderr": "Error: Outputs"
+    },
+    {
+      "case": "changed-untrusted-D-0-word-4",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "c5130b40ee57eee48f95cbffa2b7d84c994ba779608f9b5f9d09f38828f3d1f4",
+      "stderr": "Error: Outputs"
+    },
+    {
+      "case": "changed-untrusted-D-0-word-5",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "68c0f850b726c07678710ffd810eb15c301d3353dbed919431f4537cabd7e54d",
+      "stderr": "Error: Outputs"
+    },
+    {
+      "case": "changed-untrusted-D-0-word-6",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "db8a8bcaee1fa3280f7e57fb86d1d4077645667d7dfb3317fdad8bda2529509b",
+      "stderr": "Error: Outputs"
+    },
+    {
+      "case": "changed-untrusted-D-0-word-7",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "27b3dfe5f3483e944e77a659820aaa11aa1d6adb82fedd2cb974d0c6969c4cff",
+      "stderr": "Error: Outputs"
+    },
+    {
+      "case": "changed-untrusted-D-0-recommitted-root-header",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "c2d5145274e17687ab2261f9be1a611ca4dd13f9d0dee32c18ddabdfb1032bfe",
+      "stderr": "Error: Root(VerifyError(Recursion(Flock(Zerocheck(TerminalMismatch)))))"
+    },
+    {
+      "case": "wrong-schema-fresh-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "cd8a887a41609068c092d034b4f9fac481438f388ad6f2106c523ec10572fee1",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "wrong-scheme-fresh-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "303b995866811731f9dcce533b28b5a476fdd3d31ba6ff2f1f0707d2f553be3d",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "wrong-profile-fresh-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "5d23d70b378b30b06ebdfb6e060db1484f80b03ef98b8fc9a3ddc4c5d63eb3ef",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "wrong-parts_per_signature-fresh-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "290751b4eb360ffea2fea800df4fcb22f65792d5f73ea507ee60f778d3407740",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "wrong-rows_per_leaf-fresh-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "ee3253ec6447151202b85ca3e32ac296cc992ae83c6079233e8e11f8ed7cc837",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "wrong-rows_per_signature-fresh-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "b6c3cf02f82e58d581fa0484ba06953f77e8d312c85c342dc80187cba2b659e4",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "wrong-signatures-fresh-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "071c093e61a12fc9dd8f8291396ef3dd3006d6ad570c7fc497c5ba37310efdc4",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "wrong-actual_leaves-fresh-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "835dfb32be7376bf38c4d4067f44dcd43cc86a683765c2a6dbeaeb965b3f837d",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "wrong-leaf_slots-fresh-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "537e685394c38b4a02630f53f8eccc5faab68d63bb2411fe58c141f3c50c3ace",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "wrong-arity_0-fresh-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "27a499049951a38623131df6b75a61cbcb2836a64c523f376261592ca343eaa2",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "wrong-arity-fresh-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "39995d08d1f821e314bb61f68ca86689d3ac5920fdac8c38160d7a33af53941a",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "wrong-log_inverse_rate-fresh-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "4e299b4dcb8952efd6aa23f3388b39226dda4a55e243b2e7c06629f5f04480ff",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "wrong-backend_revision-fresh-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "9f9d6e2f81da51a66cff16b3e908ead714d18b59b97052aabfb5cb2f30ffd019",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "wrong-elf_sha256-fresh-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "e494a25c3dda1c7379412e92adeb076cd686630444240403d0b8e34f06de81be",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"caller-approved program hash mismatch\""
+    },
+    {
+      "case": "reject-sender-controlled-statement-bindings",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "454563edf580e731549d6de8c15934a54f60703ff2ff013a52252693c6bd7fc4",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: Error(\"unknown field `bindings`, expected one of `schema`, `backend_revision`, `scheme`, `profile`, `signatures`, `elf_sha256`, `parts_per_signature`, `rows_per_leaf`, `rows_per_signature`, `actual_leaves`, `leaf_slots`, `arity_0`, `arity`, `log_inverse_rate`, `table_rows`, `public_records`\", line: 1, column: 32925)"
+    },
+    {
+      "case": "reject-sender-controlled-statement-expected_leaf_outputs",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "f870c3d50e0ef903f69bcdd0ea02e8799dbba96f7a72d0cf754ccf356774a055",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: Error(\"unknown field `expected_leaf_outputs`, expected one of `schema`, `backend_revision`, `scheme`, `profile`, `signatures`, `elf_sha256`, `parts_per_signature`, `rows_per_leaf`, `rows_per_signature`, `actual_leaves`, `leaf_slots`, `arity_0`, `arity`, `log_inverse_rate`, `table_rows`, `public_records`\", line: 1, column: 32938)"
+    },
+    {
+      "case": "reject-sender-controlled-statement-sender_part_order",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "10d5216be0404e914c9f2e8e984c41e8e94055035cf70fabc0653a7df763f6c7",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: Error(\"unknown field `sender_part_order`, expected one of `schema`, `backend_revision`, `scheme`, `profile`, `signatures`, `elf_sha256`, `parts_per_signature`, `rows_per_leaf`, `rows_per_signature`, `actual_leaves`, `leaf_slots`, `arity_0`, `arity`, `log_inverse_rate`, `table_rows`, `public_records`\", line: 1, column: 32934)"
+    },
+    {
+      "case": "invalid-zero-table-height",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "fc3ff268f670a921b79b55fcf017ef71d9dd9e6cf3fa0d187962291d5ab96c53",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "invalid-non-power-two-table-height",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "8ac0e257f14aee3a499ed0b64c641aaec89d3ac7ab1a6a4a404cb0d1eb7aa15e",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "invalid-above-cap-table-height",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "f996dab3d6e3b7deff455e445dbcce1955b6e2a17f5a53d309bf20606de0f023",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "missing-table-height",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "533d882fa001641c523c6cffa5886756ca8db9d577073d52dd298d3d61a0ba19",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"invalid caller-authorized segmented tree statement\""
+    },
+    {
+      "case": "receipt-codec-byte-0",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "fdf713de2ccbb2ba6d8189a819b1c11dd7b5d9d91e22bdf22d3a2a9369ac0d68",
+      "stderr": "Error: \"receipt magic\""
+    },
+    {
+      "case": "receipt-codec-byte-8",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "3b4c1af45f1808499fc2b5dc03f7232cf677e1c731ca84a633428faf38cbd400",
+      "stderr": "Error: \"receipt policy/count mismatch\""
+    },
+    {
+      "case": "receipt-codec-byte-12",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "36d8fab659eddb34f28848df39d6175fb4ee825a346f7d49ea20379936b834e4",
+      "stderr": "Error: \"receipt policy/count mismatch\""
+    },
+    {
+      "case": "receipt-codec-byte-16",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "74ad0dab2f6b59c77aa54103c45c03beead6621b77082d76be38a186203fc1c2",
+      "stderr": "Error: \"receipt policy/count mismatch\""
+    },
+    {
+      "case": "receipt-codec-byte-20",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "d206ec98bb27e52738e504547e65fe4ccbc7335e9dc8ef176da55b0cda2ee153",
+      "stderr": "Error: \"receipt guest mismatch\""
+    },
+    {
+      "case": "receipt-codec-byte-116",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "699d07a68705a326ca903f1cdf15be671738a2bb4587e90d2d9932b93de115d2",
+      "stderr": "Error: \"truncated receipt or trailing bytes\""
+    },
+    {
+      "case": "corrupted-inner-STARK-with-valid-outer-framing",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "9aa583e816a2fb65a8ebffcbffaada1ea0c3e52d9af7730a6b91dfa98412caa6",
+      "stderr": "Error: Root(VerifyError(Recursion(Open(Transcript(InvalidHint { index: 0 })))))"
+    },
+    {
+      "case": "truncated-receipt",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "0b9b37dc889e101eb26191f014d2c4ce077083c35ef67df4f461c12dc7b606d2",
+      "stderr": "Error: \"truncated receipt or trailing bytes\""
+    },
+    {
+      "case": "trailing-receipt-byte",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "8bd27795503691293fbd1ececdb576d5af7ada3e0bffe0ab118a2c3d4b018329",
+      "stderr": "Error: \"truncated receipt or trailing bytes\""
+    },
+    {
+      "case": "wrong-independent-ELF-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"caller-approved program hash mismatch\""
+    },
+    {
+      "case": "wrong-independent-statement-pin",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "statement_sha256": "c6e4864d3265d1b5232bc37ed8e8a5bd2ac23b11af9b5b6e1149472e0e593cf1",
+      "receipt_sha256": "54ae18063bf9634cbf6b50df1eecfc542e387f968739375814eef28654db8614",
+      "stderr": "Error: \"caller-authorized statement hash mismatch\""
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "inputs_only": [
+    "twiddle64.elf",
+    "capacity-public.json",
+    "capacity-7.proof"
+  ],
+  "no_advice_or_signature_file_present": true,
+  "returncode": 0,
+  "consumer_result": {
+    "count": 7,
+    "elf_sha256": "8d1a19b35874db7c3ffff15e851d0312a97c6c9b370ce58c300b674ac57922ee",
+    "public_only_full_verify": true,
+    "public_output_recomputed": true
+  }
+}

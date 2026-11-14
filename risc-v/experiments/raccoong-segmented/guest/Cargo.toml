@@ -1,0 +1,17 @@
+[package]
+name = "raccoong-segmented-guest"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+leanvm_guest = { path = "../../../../vendor/leanVM-riscv/sdk" }
+original = { package = "raccoong-riscv-guest", path = "../../../raccoon-g/guest" }
+
+[workspace]
+
+[profile.release]
+opt-level = 3
+panic = "abort"
+lto = true
+codegen-units = 1

@@ -1,0 +1,28 @@
+{
+  "rows": [
+    {
+      "scheme": "ethdilithium2-expanded-keccak-prng-v1",
+      "count": 1,
+      "cycles": 6854815,
+      "prove_s": 1.721608042,
+      "prove_min_s": 1.701835042,
+      "prove_max_s": 2.481695208,
+      "verify_ms": 90.842709,
+      "verify_cached_ms": 6.4003749999999995,
+      "bytecode_prepare_ms": 79.844792,
+      "proof_bytes": 349184,
+      "rss_gib": 8.84429931640625,
+      "signatures_per_s": 0.5808523052891269
+    }
+  ],
+  "failures": [
+    {
+      "status": "failed",
+      "scheme": "ethdilithium",
+      "count": 2,
+      "action": "prove",
+      "returncode": 1,
+      "error": "error: prove: WitnessOutOfRange { log_committed: 29 }"
+    }
+  ]
+}

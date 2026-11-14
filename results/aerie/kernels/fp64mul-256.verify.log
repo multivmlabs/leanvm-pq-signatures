@@ -1,0 +1,61 @@
+{
+  "action": "verify",
+  "arch": "aarch64",
+  "bytecode_prepare_s": 0.002768292,
+  "compile_s": 0.00295325,
+  "guest_hash": "ec45fb01667fd1395ee77eea480f18f84228258ba265501301ba7c7adeb07390",
+  "leanvm_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "leanvm_source_dirty_at_build": "false",
+  "metadata": null,
+  "min_log_committed": 0,
+  "os": "macos",
+  "process_peak_rss_bytes": 12828672,
+  "proof_bytes": 321808,
+  "proof_encoding": {
+    "merkle_bytes": 267872,
+    "merkle_phases": [
+      {
+        "opened_field_words": 9184,
+        "opened_rows": 224,
+        "sibling_hashes": 2751
+      },
+      {
+        "opened_field_words": 2688,
+        "opened_rows": 56,
+        "sibling_hashes": 751
+      },
+      {
+        "opened_field_words": 1536,
+        "opened_rows": 32,
+        "sibling_hashes": 426
+      },
+      {
+        "opened_field_words": 1104,
+        "opened_rows": 23,
+        "sibling_hashes": 290
+      },
+      {
+        "opened_field_words": 864,
+        "opened_rows": 18,
+        "sibling_hashes": 218
+      }
+    ],
+    "scalar_stream_bytes": 53936,
+    "scalar_stream_count": 2247
+  },
+  "public_input_hex": "3967a5e475c61111cd1345ee442b43457408c16c89a8a9385ec048367410c09e",
+  "schema_version": 1,
+  "scheme": "aerie-fp64mul-feasibility-kernel-v1",
+  "statement_pinned": true,
+  "threads_env": null,
+  "verified": true,
+  "verify_cached_s": [
+    0.005268708,
+    0.005188291,
+    0.005258667
+  ],
+  "verify_s": [
+    0.00830125
+  ],
+  "zero_knowledge": false
+}

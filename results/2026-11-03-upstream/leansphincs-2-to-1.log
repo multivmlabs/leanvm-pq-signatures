@@ -1,0 +1,9 @@
+aggregation bytecode: 362,263 instructions (2^19 padded), compiled in 0.833 s
+
+recursion 2→1, over leaves of 16 leanSPHINCS signatures
+  cycles (VM steps)           : 553,114 = 2^19.077
+    details                   : MUL 2^17.729 (39.3%)  XOR 2^17.317 (29.5%)  DEREF 2^16.528 (17.1%)  SET 2^15.193 (6.8%)  JUMP 2^14.86 (5.4%)  KECCAK 2^13.425 (2.0%)  MEMORY 2^19.776  BYTECODE 2^18.467  TOTAL_COMMITTED 2^24.02
+  proof size                  : 288.9 KiB
+  proving time                : 0.263 s ± 2.9%      peak memory 1.392 GiB
+  verifying                   : 9.508 ms
+  passes                      : 0.266 s  0.263 s  0.259 s

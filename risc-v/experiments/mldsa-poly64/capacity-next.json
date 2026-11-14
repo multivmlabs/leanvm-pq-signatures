@@ -1,0 +1,9 @@
+{
+  "actual_prover_attempt": true,
+  "count": 8,
+  "guest_sha256": "8d1a19b35874db7c3ffff15e851d0312a97c6c9b370ce58c300b674ac57922ee",
+  "log_inverse_rate": 1,
+  "no_proof_produced": true,
+  "result": "TooLong",
+  "threads": 8
+}

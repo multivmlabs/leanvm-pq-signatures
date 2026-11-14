@@ -1,0 +1,61 @@
+{
+  "date_utc": "2026-11-04T00:45:36.982264+00:00",
+  "hardware": {
+    "date": "2026-11-03",
+    "cpu": "Apple M4 Pro",
+    "logical_cpus": 12,
+    "physical_memory_bytes": 25769803776,
+    "physical_memory_gib": 24,
+    "os": "macOS 26.3",
+    "os_build": "25D125",
+    "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)",
+    "allocator": "upstream bench::Jemalloc",
+    "rustflags": [
+      "-C",
+      "target-cpu=native"
+    ],
+    "leanvm_num_threads": null,
+    "log_inv_rate": 1,
+    "custom_warmup_passes": 1,
+    "custom_measured_passes": 3,
+    "note": "One prover workload at a time; no CPU frequency, temperature or background OS control. See per-run environment.json for exact dependency pins."
+  },
+  "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)",
+  "os_version": "26.3",
+  "vendors": {
+    "leanVM": {
+      "revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+      "working_tree_clean": true
+    },
+    "ETHFALCON": {
+      "revision": "43ac863e30281bb7821748178d39967367d54bc2",
+      "working_tree_clean": true
+    },
+    "ETHDILITHIUM": {
+      "revision": "f9f4fe1d84e68304b425e054c273c276fe44ba11",
+      "working_tree_clean": true
+    },
+    "aerie": {
+      "revision": "49b6c212c209286c536196f53618823ffdf0e899",
+      "working_tree_clean": true
+    }
+  },
+  "aerie_upstream_lock_sha256": "c0df53fbe2c90f6fc64f65e8df5dfe9556d3ba794b9e3bcdf9fe2040d4622f9f",
+  "aerie_paper_sha256": "efc7038f38102e3c854f0288d4ecfad0f1560da8d2a9e8be7a4b2e530d5c9d5b",
+  "source_sha256": {
+    "experiments/aerie-native-controls/Cargo.lock": "f658651039c12ca1951c655fdaa6eda13968dfe1aa5529a63f39669c8f2795c5",
+    "experiments/aerie-native-controls/Cargo.toml": "3c9c81341858f5dbbf64bbc5a98184d05c2d82b211bc6b0ff4008e01cb936b5d",
+    "experiments/aerie-native-controls/src/main.rs": "3f205f5d506d8cb0730c232603602331af85125c44de28f1b4eb8a952d664379",
+    "experiments/aerie-native-verifier/Cargo.lock": "26ed5bfc340dcaa1389be4529b29c076349ac8d814d71eb2642ed64ef37d87fb",
+    "experiments/aerie-native-verifier/Cargo.toml": "4dc2ade1b434f9ab7b656d5f6fad79acad9a6469886f77d0f7a86428ea230214",
+    "experiments/aerie-native-verifier/src/main.rs": "4847de2ecc1a92c03df54055c1732549adb8b6fcd0c46dce4264895b3c985e94",
+    "python/pqbench/aerie_kernels.py": "707d9c024ff13c3748508d507a4a4650bf72caf97976f029e3d7e1e23cc03673",
+    "scripts/aerie_figures.py": "0d1aa43f80e8dd65ea909f51be689ff06d0989733bcbba4dfdd598def77e8fa6",
+    "scripts/aerie_kernel_bench.py": "b1fac198f2b771f082a66aec9e3e86d07c41f76d8b32cd2cf5ef13e6bad3a34a",
+    "scripts/aerie_native_bench.py": "5b3207ae047fa1114d81aada8ca57eece424c2947d40bdaa56fee0479193451b",
+    "tests/test_aerie_kernels.py": "1cbf5ea48f1172b50996d7905fa2122e1e224cc05e8b634353de385f5d96a12c"
+  },
+  "measurement_scopes": "Native unchanged Aerie verifier and a separately constrained Solinas multiplication kernel; no complete Aerie leanSTARK or full-verifier cost estimate.",
+  "native_build": "Upstream --locked bench, falcon-bench feature, Rust1.99, target-cpu=native inherited project Cargo config; one workload at a time.",
+  "native_rss": "Fresh Python subprocess wrapper: getrusage(RUSAGE_CHILDREN).ru_maxrss, macOS bytes, one native child per wrapper; whole process including setup/warmup."
+}

@@ -1,0 +1,12 @@
+{
+  "records": 100,
+  "parameters": {
+    "n": 32,
+    "k": 16,
+    "a": 8
+  },
+  "batch_domain_hex": "464f52533a4241544348000001201008",
+  "public_input_hex": "b8040cf6e71773b1a54678b6c1cd293770edd178dd7d0285adfaf87db7893461",
+  "agrees_with_saved_public_input": true,
+  "method": "Independent byte encoding of100publicheaders fromsavedfixture; no signature values used inpublicclaimhash."
+}

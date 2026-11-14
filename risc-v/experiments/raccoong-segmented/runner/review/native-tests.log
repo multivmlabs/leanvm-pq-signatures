@@ -1,0 +1,11 @@
+   Compiling raccoong-segmented-treebench v0.1.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/experiments/raccoong-segmented/runner)
+    Finished `release` profile [optimized] target(s) in 2.10s
+     Running unittests src/main.rs (.cache/raccoon-optimized-study-target/release/deps/raccoong_segmented_treebench-4668a736abe75e0e)
+
+running 3 tests
+test tests::strict_envelope_codec_rejects_count_policy_truncation_and_trailers ... ok
+test tests::embedded_guest_and_profile_match_build_manifest ... ok
+test tests::complete_coverage_binds_original_pairs_and_untrusted_common_digest ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

@@ -1,0 +1,70 @@
+{
+  "action": "plan",
+  "backend_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "compile_s": 0.614890125,
+  "depth": 4,
+  "families": [
+    {
+      "bytecode_instructions": 8192,
+      "dimensions": 17,
+      "family": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "min_log_committed": 22,
+      "table_words": 131072
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 1,
+      "guest_hash": "9a644995149507104780db24c34f7bf0a2b0fc7631f05faa743d6002becfb3dc",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 2,
+      "guest_hash": "2d8699877c87d010052a00b89adc6e9aa5f28b1e08501703146d5dd1e1e393c2",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 3,
+      "guest_hash": "7bbceba578c4839c75753b07a279adbe2236abf6d8d6ac95c8141ba55db07e27",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 4,
+      "guest_hash": "eba285b335e8fe80a93d95b05d2f2a0ad48918a6ec309a41e9ef3d31c85c4a10",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    }
+  ],
+  "leaf_guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+  "leaf_size": 5,
+  "leaf_slots": 16,
+  "leaf_source_sha256": "c46fc19886ee36392d106b13443440d7daaeaf210f6806dac6836c9b58c91e2c",
+  "policy": [
+    {
+      "c0": 1813863182008549935,
+      "c1": 16047628592991759876,
+      "c2": 0
+    },
+    {
+      "c0": 569931234575716105,
+      "c1": 1186336427901679774,
+      "c2": 0
+    }
+  ],
+  "public_sha256": "0f2dff2da2cb560a496ba0f2e1bd031d1d09b98731a803f7fa428620c88f7998",
+  "real_leaves": 14,
+  "root_guest_hash": "eba285b335e8fe80a93d95b05d2f2a0ad48918a6ec309a41e9ef3d31c85c4a10",
+  "schema": 1,
+  "signatures": 70,
+  "terminal_evaluations": 4
+}

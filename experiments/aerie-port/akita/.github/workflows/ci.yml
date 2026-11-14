@@ -1,0 +1,549 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: ["**", main]
+
+permissions:
+  contents: read
+
+env:
+  RUSTFLAGS: -D warnings
+  CARGO_TERM_COLOR: always
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fmt:
+    name: Format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2.0.0
+        with:
+          components: rustfmt
+      - name: Check formatting
+        run: cargo fmt --all --check
+
+  taplo:
+    name: TOML format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install taplo
+        uses: taiki-e/install-action@3f74d7c16a4242f1c95561e98edc25d36adb4375 # taplo-cli
+        with:
+          tool: taplo-cli
+      - name: Check TOML formatting
+        run: taplo fmt --check
+
+  rust-file-lines:
+    name: Rust file line cap
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Test Rust file line checker
+        run: scripts/test-rust-file-lines.sh
+      - name: Enforce Rust file line cap (zero exceptions)
+        run: scripts/check-rust-file-lines.sh --no-baseline
+      - name: Enforce proof-input guardrails
+        run: scripts/check-proof-stream-guardrails.sh
+
+  clippy:
+    name: Clippy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2.0.0
+        with:
+          components: clippy
+      - name: Clippy (transparent default features)
+        run: cargo clippy --all --all-targets --release --no-default-features --features parallel,disk-persistence,transcript-blake2b -- -D warnings
+      - name: Clippy (no default features)
+        run: cargo clippy --all --all-targets --release --no-default-features --features transcript-blake2b -- -D warnings
+      - name: Clippy (response model diagnostics)
+        run: cargo clippy -p akita-pcs --all-targets --release --no-default-features --features parallel,response-model-diagnostics,transcript-blake2b -- -D warnings
+      - name: Clippy (dev protocol)
+        run: cargo clippy --all --all-targets --release --no-default-features --features parallel,disk-persistence,transcript-blake2b,dev-protocol -- -D warnings
+      - name: Crate dependency hygiene
+        run: |
+          scripts/check-crate-deps.sh akita-verifier
+          scripts/check-crate-deps.sh akita-prover
+          scripts/check-crate-deps.sh akita-cpu-backend
+          scripts/check-crate-deps.sh akita-config
+          scripts/check-crate-deps.sh akita-planner
+          scripts/check-crate-deps.sh akita-setup
+          scripts/check-crate-deps.sh akita-params
+          scripts/check-crate-deps.sh akita-schedules
+          scripts/check-crate-deps.sh akita-sis-estimator
+          scripts/check-crate-deps.sh akita-metal
+          scripts/check-crate-deps.sh akita-zk-verifier
+          scripts/check-crate-deps.sh akita-zk-prover
+          scripts/check-crate-deps.sh akita-labinius-verifier
+          scripts/check-crate-deps.sh akita-labinius-prover
+
+  labinius-trinomial:
+    name: LaBinius trinomial arithmetic and relation bridge
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659 # v1
+        with:
+          components: clippy
+      - name: Test trinomial arithmetic
+        run: cargo test -p akita-algebra --lib --no-default-features --features labinius-trinomial
+      - name: Clippy trinomial arithmetic and benchmarks
+        run: cargo clippy -p akita-algebra --lib --benches --no-default-features --features labinius-trinomial -- -D warnings
+      - name: Test trinomial relation geometry
+        run: cargo test -p akita-types --lib --no-default-features --features labinius-trinomial,transcript-blake2b
+      - name: Test trinomial quotient kernel
+        run: cargo test -p akita-cpu-backend --lib --no-default-features --features labinius-trinomial,transcript-blake2b -- kernels::trinomial_relation
+      - name: Clippy trinomial bridge and benchmarks
+        run: cargo clippy -p akita-types -p akita-cpu-backend --lib --benches --no-default-features --features labinius-trinomial,transcript-blake2b -- -D warnings
+
+
+  labinius-binary:
+    name: LaBinius binary arithmetic
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659 # v1
+        with:
+          components: clippy
+      - name: Test algebra without the extension
+        run: cargo test -p akita-algebra --lib --no-default-features
+      - name: Test binary arithmetic
+        run: cargo test -p akita-algebra --lib --no-default-features --features labinius-binary binary
+      - name: Test parallel binary arithmetic
+        run: cargo test -p akita-algebra --lib --no-default-features --features labinius-binary,parallel binary
+      - name: Lint parallel binary arithmetic and benchmarks
+        run: cargo clippy -p akita-algebra --all-targets --no-default-features --features labinius-binary,parallel -- -D warnings
+      - name: Lint binary arithmetic and benchmarks
+        run: cargo clippy -p akita-algebra --all-targets --no-default-features --features labinius-binary -- -D warnings
+
+  machete:
+    name: Unused dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2.0.0
+      - name: Install cargo-machete
+        uses: taiki-e/install-action@3f74d7c16a4242f1c95561e98edc25d36adb4375 # cargo-machete
+        with:
+          tool: cargo-machete
+      - name: Check unused dependencies
+        run: cargo machete --with-metadata
+
+  shared-field:
+    name: Shared field identity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2.0.0
+      - name: Require one jolt-field identity and no akita-field
+        run: scripts/check-shared-field-identity.sh
+
+  doc:
+    name: Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2.0.0
+      - name: Build documentation
+        run: cargo doc -q --release --no-deps --no-default-features --features parallel,disk-persistence,transcript-blake2b
+        env:
+          RUSTDOCFLAGS: -D warnings
+
+  test:
+    name: Test (${{ matrix.shard }}/${{ strategy.job-total }})
+    runs-on: GitHubRunner-Large-Public
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2.0.0
+        with:
+          cache: false
+      - name: Cache Rust build artifacts
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        with:
+          shared-key: ci-test-release
+          add-job-id-key: false
+          cache-on-failure: true
+      - name: Install cargo-nextest
+        uses: taiki-e/install-action@3f74d7c16a4242f1c95561e98edc25d36adb4375 # carg-nextest
+        with:
+          tool: cargo-nextest
+      - name: Run tests
+        env:
+          SHARD_INDEX: ${{ matrix.shard }}
+          SHARD_TOTAL: ${{ strategy.job-total }}
+        run: |
+          artifact_dir="$RUNNER_TEMP/ci-test-pass-shard-${SHARD_INDEX}"
+          mkdir -p "$artifact_dir"
+          start_epoch=$(date +%s)
+          set +e
+          # --lib --bins --tests matches the default test target set but skips
+          # compiling examples (clippy's --all-targets already compile-checks them).
+          cargo nextest run --lib --bins --tests --profile ci --cargo-profile ci-test --no-default-features --features parallel,disk-persistence,catalog-gen,transcript-blake2b \
+            --partition "slice:${SHARD_INDEX}/${SHARD_TOTAL}"
+          status=$?
+          end_epoch=$(date +%s)
+          if [ -f target/nextest/ci/junit.xml ]; then
+            cp target/nextest/ci/junit.xml "$artifact_dir/junit-shard-${SHARD_INDEX}.xml"
+          fi
+          printf '{"started_at_epoch":%s,"finished_at_epoch":%s,"exit_code":%s,"shard_index":%s,"shard_total":%s}\n' \
+            "$start_epoch" "$end_epoch" "$status" "$SHARD_INDEX" "$SHARD_TOTAL" \
+            > "$artifact_dir/timing-shard-${SHARD_INDEX}.json"
+          exit "$status"
+      - name: Upload test shard artifact
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: ci-test-pass-shard-${{ matrix.shard }}
+          path: ${{ runner.temp }}/ci-test-pass-shard-${{ matrix.shard }}
+          if-no-files-found: warn
+          retention-days: 7
+
+  test-schedule-artifact-drift:
+    name: Schedule artifact drift
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2.0.0
+        with:
+          cache: false
+          components: rustfmt
+      - name: Cache Rust build artifacts
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        with:
+          shared-key: ci-test-schedule-artifact-drift
+          add-job-id-key: false
+          cache-on-failure: true
+      # Every other job consumes tracked artifacts. This is the sole CI
+      # regeneration owner and the merge gate for planner/artifact drift.
+      - name: Trusted artifact guards
+        run: |
+          scripts/check-external-schedule-artifacts.sh
+          cargo test --release -p akita-config --test trusted_schedule_artifact
+      - name: Regenerate schedule artifacts in temporary storage
+        env:
+          AKITA_SCHEDULE_GEN_JOBS: 2
+        run: |
+          artifact_dir="$RUNNER_TEMP/akita-schedule-artifacts"
+          mkdir -p "$artifact_dir"
+          cargo run --release -p akita-planner --features catalog-gen \
+            --bin gen_schedule_artifacts -- "$artifact_dir" --row-progress \
+            --catalog-baseline artifacts/schedule-catalog.tsv \
+            --require-catalog-baseline-match \
+            --catalog-report "$RUNNER_TEMP/akita-schedule-baseline-comparison.tsv"
+          diff -ru artifacts/schedules "$artifact_dir"
+      - name: Direct modeled SIS cost for every schedule
+        run: |
+          cargo run --release -p akita-planner \
+            --features catalog-security \
+            --example catalog_security -- --check
+      - name: Dense multi-chunk PCS e2e
+        run: |
+          cargo test --release -p akita-pcs --test akita_fp128_e2e --no-default-features --features parallel,transcript-blake2b -- --exact fp128_dense_mc
+      - name: One-hot multi-chunk catalog wiring
+        run: |
+          cargo test --release -p akita-pcs --test akita_fp128_e2e --no-default-features --features parallel,transcript-blake2b -- --exact fp128_onehot_mc_catalog_resolves
+      - name: Bounded dense source PCS e2e
+        run: |
+          cargo test --release -p akita-pcs --test akita_fp128_e2e --no-default-features --features parallel,transcript-blake2b -- heterogeneous::bounded_
+          cargo test --release -p akita-config --test bounded_dense_source
+      - name: Combined-family setup at exact capacities
+        run: |
+          cargo test --release -p akita-pcs --test akita_fp128_e2e --no-default-features --features parallel,transcript-blake2b -- --exact heterogeneous::combined_family_setup_matches_per_family_proofs
+
+  # The dev protocol has its own schedule set, so its drift check runs apart
+  # from the default one. Its tests run in `test-dev-protocol`.
+  test-dev-protocol-drift:
+    name: Dev protocol schedule artifact drift
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2.0.0
+        with:
+          cache: false
+      - name: Cache Rust build artifacts
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        with:
+          shared-key: ci-test-dev-protocol-drift
+          add-job-id-key: false
+          cache-on-failure: true
+      - name: Trusted dev artifact guard
+        run: |
+          cargo test --release -p akita-config --features dev-protocol --test trusted_schedule_artifact
+      - name: Regenerate dev schedule artifacts in temporary storage
+        env:
+          AKITA_SCHEDULE_GEN_JOBS: 2
+        run: |
+          artifact_dir="$RUNNER_TEMP/akita-schedule-artifacts-dev"
+          mkdir -p "$artifact_dir"
+          cargo run --release -p akita-planner --features catalog-gen,dev-protocol \
+            --bin gen_schedule_artifacts -- "$artifact_dir" --row-progress \
+            --catalog-baseline artifacts/schedule-catalog-dev.tsv \
+            --require-catalog-baseline-match \
+            --catalog-report "$RUNNER_TEMP/akita-schedule-dev-baseline-comparison.tsv"
+          diff -ru artifacts/schedules-dev "$artifact_dir"
+      - name: Direct modeled SIS cost for every dev schedule
+        run: |
+          cargo run --release -p akita-planner \
+            --features catalog-security,dev-protocol \
+            --example catalog_security -- --check
+
+  # The workspace test suite under the dev protocol, sharded like `test`. It
+  # uploads no timing artifacts; `test-timing` reports the default build.
+  test-dev-protocol:
+    name: Test dev protocol (${{ matrix.shard }}/${{ strategy.job-total }})
+    runs-on: GitHubRunner-Large-Public
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2.0.0
+        with:
+          cache: false
+      - name: Cache Rust build artifacts
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        with:
+          shared-key: ci-test-dev-protocol
+          add-job-id-key: false
+          cache-on-failure: true
+      - name: Install cargo-nextest
+        uses: taiki-e/install-action@3f74d7c16a4242f1c95561e98edc25d36adb4375 # carg-nextest
+        with:
+          tool: cargo-nextest
+      - name: Run tests
+        env:
+          SHARD_INDEX: ${{ matrix.shard }}
+          SHARD_TOTAL: ${{ strategy.job-total }}
+        run: |
+          cargo nextest run --lib --bins --tests --profile ci --cargo-profile ci-test --no-default-features --features parallel,disk-persistence,catalog-gen,transcript-blake2b,dev-protocol \
+            --partition "slice:${SHARD_INDEX}/${SHARD_TOTAL}"
+
+  test-transcript-backends:
+    name: Transcript semantics (${{ matrix.backend }})
+    runs-on: ubuntu-latest
+    # Release builds of several logging-transcript test binaries dominate this
+    # job; it stays well under the schedule-drift job on the critical path.
+    timeout-minutes: 40
+    strategy:
+      matrix:
+        backend: [transcript-blake2b, transcript-keccak]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2.0.0
+      - name: Run semantic transcript suites
+        run: >-
+          cargo test --release -p akita-pcs
+          --test transcript_hardening
+          --test transcript_hardening_proptest
+          --no-default-features
+          --features parallel,logging-transcript,${{ matrix.backend }}
+          --
+          --test-threads=1
+      - name: Run Spongefish stream and mutation suites
+        run: |
+          cargo test --release -p akita-transcript \
+            --no-default-features \
+            --features logging-transcript,${{ matrix.backend }} \
+            proof_stream --lib
+          cargo test --release -p akita-pcs \
+            --no-default-features \
+            --features parallel,logging-transcript,${{ matrix.backend }} \
+            spongefish_roundtrip_and_statement_binding --lib
+          cargo test --release -p akita-pcs \
+            --no-default-features \
+            --features parallel,logging-transcript,${{ matrix.backend }} \
+            selective_l2_proof_rejects_transcript_mutations --lib
+      - name: Run protocol suites with proof channel tracing
+        run: >-
+          cargo test --release -p akita-pcs
+          --test protocol_soundness
+          --test fold_linf
+          --no-default-features
+          --features parallel,logging-transcript,${{ matrix.backend }}
+          --
+          --test-threads=1
+      - name: Audit the grinding plan across akita-types shapes
+        run: >-
+          cargo test --release -p akita-types
+          --features logging-transcript
+
+  # Exercise the proof stream through the opaque CPU backend under both
+  # transcript hashes, including a small-field Stage 1 route.
+  test-proof-stream-roundtrips:
+    name: Proof channel roundtrips (${{ matrix.backend }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      matrix:
+        backend: [transcript-blake2b, transcript-keccak]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659 # v1
+      - name: Audit proof roundtrips
+        run: >-
+          cargo test --release -p akita-pcs --test proof_stream_smoke
+          --no-default-features
+          --features parallel,${{ matrix.backend }}
+          --
+          --test-threads=1
+
+  test-labinius-sis:
+    name: LaBinius SIS foundations
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659 # v1
+        with:
+          components: clippy
+      - name: Test opt-in source bounds and certified table
+        run: |
+          cargo test -p akita-params --lib --no-default-features --features labinius-sis,transcript-blake2b sis::labinius
+          cargo test -p akita-sis-estimator --lib --test labinius_width_table --no-default-features --features labinius-sis
+          cargo test -p akita-sis-estimator --example labinius_infinity_width_table --no-default-features --features labinius-sis
+      - name: Check opt-in estimator targets
+        run: cargo clippy -p akita-params -p akita-sis-estimator --all-targets --no-default-features --features labinius-sis,transcript-blake2b -- -D warnings
+
+  test-labinius-challenges:
+    name: LaBinius challenge families (${{ matrix.backend }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      matrix:
+        backend: [transcript-blake2b, transcript-keccak]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659 # v1
+        with:
+          components: clippy
+      - name: Test opt-in binary families
+        run: cargo test -p akita-challenges --lib --no-default-features --features labinius-challenges,${{ matrix.backend }}
+      - name: Check opt-in challenge targets
+        run: cargo clippy -p akita-challenges --all-targets --no-default-features --features labinius-challenges,${{ matrix.backend }} -- -D warnings
+
+  test-labinius-root:
+    name: LaBinius root reduction (${{ matrix.backend }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        backend: [transcript-blake2b, transcript-keccak]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659 # v1
+        with:
+          components: clippy
+      - name: Test the opt-in root reduction
+        run: cargo test --profile ci-test -p akita-labinius-verifier -p akita-labinius-prover --no-default-features --features labinius,${{ matrix.backend }}
+      - name: Test the parallel opt-in root reduction
+        run: cargo test --profile ci-test -p akita-labinius-verifier -p akita-labinius-prover --no-default-features --features labinius,parallel,${{ matrix.backend }}
+      - name: Check parallel opt-in targets
+        run: cargo clippy -p akita-labinius-verifier -p akita-labinius-prover --all-targets --no-default-features --features labinius,parallel,${{ matrix.backend }} -- -D warnings
+      - name: Check opt-in targets
+        run: cargo clippy -p akita-labinius-verifier -p akita-labinius-prover --all-targets --no-default-features --features labinius,${{ matrix.backend }} -- -D warnings
+      - name: Check unselected extension targets
+        run: cargo clippy -p akita-labinius-verifier -p akita-labinius-prover --all-targets --no-default-features --features ${{ matrix.backend }} -- -D warnings
+
+  test-timing:
+    name: Test timing
+    needs: [test]
+    if: always() && needs.test.result != 'cancelled'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Test timing script fixtures
+        run: python3 -m unittest discover -s scripts/tests -p "test_*.py"
+      - name: Download test shard artifacts
+        continue-on-error: true
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          pattern: ci-test-pass-shard-*
+          merge-multiple: true
+          path: ${{ runner.temp }}/ci-test-pass-shards
+      - name: Merge test timing artifact
+        id: merge
+        if: always()
+        continue-on-error: true
+        env:
+          SOURCE_BRANCH: ${{ github.head_ref || github.ref_name }}
+        run: |
+          set +e
+          python3 scripts/ci_test_timing_report.py prepare-shards \
+            --input-dir "$RUNNER_TEMP/ci-test-pass-shards" \
+            --output-junit "$RUNNER_TEMP/merged-junit.xml" \
+            --output-timing "$RUNNER_TEMP/merged-timing.json"
+          PREPARE_STATUS=$?
+          if [ "$PREPARE_STATUS" -ne 0 ]; then
+            echo "test_status=1" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+
+          SHARD_COUNT="$(python3 -c 'import json, pathlib; path = pathlib.Path("'"$RUNNER_TEMP/merged-timing.json"'"); data = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}; print(int(data.get("shard_total") or 0))')"
+          mkdir -p "$RUNNER_TEMP/ci-test-timing-artifact"
+          set +e
+          python3 scripts/ci_test_timing_report.py merge \
+            --output-dir "$RUNNER_TEMP/ci-test-timing-artifact" \
+            --source-sha "$GITHUB_SHA" \
+            --source-branch "$SOURCE_BRANCH" \
+            --workflow-run-id "$GITHUB_RUN_ID" \
+            --passes-sharded \
+            --shard-count "$SHARD_COUNT" \
+            --pass ci \
+            --profile ci \
+            --junit "$RUNNER_TEMP/merged-junit.xml" \
+            --timing "$RUNNER_TEMP/merged-timing.json"
+          MERGE_STATUS=$?
+          python3 scripts/ci_test_timing_report.py render \
+            "$RUNNER_TEMP/ci-test-timing-artifact/summary.json" \
+            --output-dir "$RUNNER_TEMP/ci-test-timing-artifact" \
+            --compact
+          RENDER_STATUS=$?
+          if [ -f "$RUNNER_TEMP/ci-test-timing-artifact/report.md" ]; then
+            cat "$RUNNER_TEMP/ci-test-timing-artifact/report.md" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          TEST_STATUS="$(python3 -c 'import json, pathlib; path = pathlib.Path("'"$RUNNER_TEMP/merged-timing.json"'"); data = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}; print(int(data.get("exit_code", 1)))')"
+          echo "test_status=$TEST_STATUS" >> "$GITHUB_OUTPUT"
+          if [ "$MERGE_STATUS" -ne 0 ] || [ "$RENDER_STATUS" -ne 0 ]; then
+            exit 1
+          fi
+      - name: Upload test timing artifact
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: ci-test-timing-data
+          path: ${{ runner.temp }}/ci-test-timing-artifact
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Fail if test jobs failed
+        if: always()
+        run: |
+          if [ "${{ steps.merge.outcome }}" = "failure" ]; then
+            exit 1
+          fi
+          if [ "${{ needs.test.result }}" = "failure" ]; then
+            exit 1
+          fi
+
+  typos:
+    name: Typos
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Check spelling
+        uses: crate-ci/typos@d43b6c087ac471e2ea7b8af622ff15f05c0c365b # v1.50.1
+        with:
+          files: .

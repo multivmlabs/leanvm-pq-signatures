@@ -1,0 +1,10 @@
+   Compiling leanisa-reduced-tree v0.1.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/leanISA/reduction)
+    Finished `release` profile [optimized] target(s) in 6.63s
+     Running unittests src/lib.rs (target/release/deps/leanisa_reduced_tree-aea66487efbf930d)
+
+running 1 test
+two real reduction layers retain a false inherited bytecode claim until the complete trusted-table receiver rejects it
+test proof_controls::false_bytecode_claim_survives_two_real_wrappers_but_complete_consumer_rejects ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 10 filtered out; finished in 2.57s
+

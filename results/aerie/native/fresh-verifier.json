@@ -1,0 +1,14 @@
+{
+  "aerie_revision": "49b6c212c209286c536196f53618823ffdf0e899",
+  "kind": "fresh native verifier-only Aerie consumer, not leanVM",
+  "proof_file": "artifacts/aerie/controls/aggregate.aerie",
+  "public_file": "artifacts/aerie/controls/statement.bin",
+  "public_parse_s": 0.000263416,
+  "public_statement_bytes": 94296,
+  "records": 100,
+  "timing_scope": "One correctness demonstration, not a benchmark curve; excludes file I/O. Scalar dependency profile, no signer/witness/prover/Rayon dependency.",
+  "verified": true,
+  "verifier_setup_s": 0.015893375,
+  "verify_s": 0.008581083,
+  "wire_bytes": 65138
+}

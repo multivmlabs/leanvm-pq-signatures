@@ -1,0 +1,143 @@
+{
+  "schema": 1,
+  "passed": true,
+  "reviewed_utc": "2026-11-10T11:12:34.675302+00:00",
+  "method": "Viewed all six final PNGs rasterized at 180 dpi from their corresponding LaTeX/PGFPlots PDFs",
+  "figures": [
+    {
+      "figure": "figure-1-batching",
+      "inspected": true,
+      "artifact_sha256": {
+        "png": "ebb6ea965b7ac4087290ebbfdd36fe82db76566b83b1bca4e794c07c3d2f7084",
+        "pdf": "69d6e0643f26b7a9d0fbea40dc85a8ce483b8d47d0504e88b341cf7612fc2ca6",
+        "tex": "8d8c206ff397c84bea34074ff2d0a3959437490cc6f4c6d1629f2686c388c6ea"
+      },
+      "checks": [
+        "labels and units legible",
+        "legends and notes do not overlap",
+        "axes and plotted values visible",
+        "log scales where specified",
+        "no clipping"
+      ],
+      "special_checks": [
+        "Raccoon-128 display label",
+        "FORS backend label without + Keccak",
+        "Both footer lines removed",
+        "Original plot data and logarithmic proving axis retained"
+      ],
+      "last_reviewed_date": "2026-11-13"
+    },
+    {
+      "figure": "figure-2-verification-memory",
+      "inspected": true,
+      "artifact_sha256": {
+        "png": "bfced25dc493b47a5ba23185448d7badc0295b61de0f3e683bb048a780561e5d",
+        "pdf": "ddf6691af4f42fc8448544b1acf07ad4e4cf37ca3876c28d81f39250f9b6fc56",
+        "tex": "14043040e0562880ba9d5d6ac2e43e9d884a5f7d43350f6055559e57030ac869"
+      },
+      "checks": [
+        "labels and units legible",
+        "legends and notes do not overlap",
+        "axes and plotted values visible",
+        "log scales where specified",
+        "no clipping"
+      ],
+      "special_checks": []
+    },
+    {
+      "figure": "figure-3-capacity-efficiency",
+      "inspected": true,
+      "artifact_sha256": {
+        "png": "24781e4934758fa619b9bc27703b467bf77cfb1563a3fc31dd05636cb341ca29",
+        "pdf": "6d04f4e4787f59200fe9b7e6b460ac32216dd37ec3f0015de2877851b1a2d421",
+        "tex": "4c2b1dfea06d52ff77f66d539d327aa621553677850829ca7223605afb682e8e"
+      },
+      "checks": [
+        "labels and units legible",
+        "legends and notes do not overlap",
+        "axes and plotted values visible",
+        "log scales where specified",
+        "no clipping"
+      ],
+      "special_checks": [
+        "Raccoon-128 display label",
+        "FORS backend label without + Keccak",
+        "Both footer lines removed",
+        "Capacity limit, plot data and logarithmic proving axis retained"
+      ],
+      "last_reviewed_date": "2026-11-13"
+    },
+    {
+      "figure": "figure-4-recursive-trees",
+      "inspected": true,
+      "artifact_sha256": {
+        "png": "660d3114e11ce45184316d9f5865179de3c416901e70706e5ca1320cf315d025",
+        "pdf": "5c4af4897ef0aa407006b034f71bf24c0407d2a6f4fae4a8b134852a1c2530a1",
+        "tex": "3e776425ecf7ee6447cfeca68d62e24fd64887c6a73275f28d6209e741c728ff"
+      },
+      "checks": [
+        "labels and units legible",
+        "legends and notes do not overlap",
+        "axes and plotted values visible",
+        "log scales where specified",
+        "no clipping"
+      ],
+      "special_checks": [
+        "G100 hollow single-run marker and dashed segment",
+        "G70-based estimate excluded from plots",
+        "Raccoon-128 display label",
+        "FORS backend label without + Keccak",
+        "All footer lines removed; G100 single-run marker retained"
+      ],
+      "last_reviewed_date": "2026-11-14"
+    },
+    {
+      "figure": "figure-5-tree-verification",
+      "inspected": true,
+      "artifact_sha256": {
+        "png": "881a0ae4eff7ae295201267e2158d087876c8581b566e3bcfef53aa56c184c99",
+        "pdf": "5ea42d96e39afbefcc1ec54bc54721a9183134fd0c09cbe9a6110abc22491a97",
+        "tex": "9655282210a5d7234580eee650e86374335b58cf8fede0973e99c118bc48d0d0"
+      },
+      "checks": [
+        "labels and units legible",
+        "legends and notes do not overlap",
+        "axes and plotted values visible",
+        "log scales where specified",
+        "no clipping"
+      ],
+      "special_checks": [
+        "G100 hollow single-run marker and dashed segment",
+        "G70-based estimate excluded from plots",
+        "Top row clearly labelled complete totals; bottom row statement preparation and proof checks",
+        "Setup-cached total explicitly includes statement preparation",
+        "Raccoon-128 and FORS (leanISA) legend labels; footer removed",
+        "G100 hollow markers and dashed segments retained",
+        "Extra vertical space between shared legend and top-row titles",
+        "Top titles include T_first_use and T_prepared approximate sums; bottom titles identify matching T components"
+      ],
+      "last_reviewed_date": "2026-11-14"
+    },
+    {
+      "figure": "figure-6-witness-layouts",
+      "inspected": true,
+      "artifact_sha256": {
+        "png": "bc828ac3ddf3645dd435bdc0f7aa2b165ae50148d6477728c1ee5d2b5cd742dd",
+        "pdf": "869c4c3aef54a01aac07ed5cee1a3d8a1eead2ccb477dbed1ab731d60404830a",
+        "tex": "a8f273d431c8715195da21bdf00bea25a2734284452a19094c581c48471fa2d2"
+      },
+      "checks": [
+        "labels and units legible",
+        "legends and notes do not overlap",
+        "axes and plotted values visible",
+        "log scales where specified",
+        "no clipping"
+      ],
+      "special_checks": [
+        "capacity cap is horizontal and diagnostics hatched"
+      ]
+    }
+  ],
+  "remaining_visual_defects": [],
+  "latest_presentation_review_date": "2026-11-14"
+}

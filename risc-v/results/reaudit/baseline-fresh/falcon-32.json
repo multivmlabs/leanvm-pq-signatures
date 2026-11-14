@@ -1,0 +1,85 @@
+{
+  "action": "prove",
+  "advice_words": 6433,
+  "arch": "aarch64",
+  "count": 32,
+  "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c",
+  "execution": {
+    "committed_words": 243229192,
+    "cycles": 4684406,
+    "padded_rows": {
+      "ALU": 4194304,
+      "DIV": 16,
+      "EXT": 8,
+      "HASH": 512,
+      "LD": 524288,
+      "LOAD": 16,
+      "MUL": 1048576,
+      "MULH": 64,
+      "SD": 524288,
+      "SHIFT": 1048576,
+      "STORE": 16
+    },
+    "proven_rows": 7340664,
+    "rows": {
+      "ALU": 2319728,
+      "DIV": 0,
+      "EXT": 0,
+      "HASH": 464,
+      "LD": 412231,
+      "LOAD": 0,
+      "MUL": 589824,
+      "MULH": 33,
+      "SD": 342055,
+      "SHIFT": 1020071,
+      "STORE": 0
+    }
+  },
+  "fixture_s": 0.032689333,
+  "leanvm_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "log_inverse_rate": 1,
+  "measure_s": 0.044847,
+  "os": "macos",
+  "peak_rss_bytes": 18403115008,
+  "program_load_s": 0.001729542,
+  "proof_bytes": 403758,
+  "proof_bytes_samples": [
+    403758
+  ],
+  "prove_median_s": 9.241220958,
+  "prove_s": [
+    9.241220958
+  ],
+  "schema": 1,
+  "scheme": "falcon",
+  "statement_sha256": "b4668695713699a2f38a5d720a884711dcf95709b5c6415e63e088ff65b95855",
+  "status": "accepted",
+  "threads": 8,
+  "verified": true,
+  "verify_median_s": 0.002920625,
+  "verify_s": [
+    0.002920625
+  ],
+  "warmup": 0,
+  "zero_knowledge": false,
+  "command": [
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/.cache/aerie-wrapper-host-target/release/riscv-pqbench",
+    "prove",
+    "--scheme",
+    "falcon",
+    "--n",
+    "32",
+    "--out",
+    "risc-v/results/reaudit/baseline-fresh/falcon-32.json",
+    "--proof",
+    "risc-v/results/reaudit/baseline-fresh/falcon-32.proof",
+    "--threads",
+    "8",
+    "--repeat",
+    "1",
+    "--warmup",
+    "0"
+  ],
+  "runner_sha256": "afd2c1625c2e21b060a9a2005cb74bf5350a4c1262e9a27f9e12491df1018783",
+  "scope": "Fresh production prove/serialize/decode/full verify; one run without warmup, capacity recheck rather than a timing benchmark; original fixture prefix and unchanged guest/backend."
+}

@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "scheme": "fors",
+  "count": 1,
+  "elf_sha256": "64480a3bf424f97578f6477a7a4045c2452853a0801f45fc191648eb253e36da",
+  "expected_output": [
+    17298446621325436214,
+    10203822575033189270,
+    8078884390628892519,
+    2458385896821277126
+  ],
+  "public_records": [
+    {
+      "message": "587ec7773dce95516c3dd92662f23d71e55a5bd44db9e14629dfd82a01b1ad73",
+      "root": "efb8dd3c0da59d2599c946f9b77917e6b5e77b503d4836bcd524fe61482d58b4",
+      "seed": "c8474432ebfd23d0c96c7ce1bd34bb0a9de3c5e9afa69d571d7f7c47c0fb6b1f"
+    }
+  ]
+}

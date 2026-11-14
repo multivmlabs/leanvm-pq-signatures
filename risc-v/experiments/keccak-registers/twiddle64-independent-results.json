@@ -1,0 +1,45 @@
+{
+  "scope": "Independent NTT-width equivalence, no proof production",
+  "changed_reference_files": [
+    "ntt.c"
+  ],
+  "exact_expected_diff": true,
+  "twiddle_count": 256,
+  "max_absolute_twiddle": 4108315,
+  "int32_twiddle_bounds_checked": true,
+  "coefficients_and_t_remain_int32": true,
+  "montgomery_reduce_unchanged": true,
+  "arrays": 192,
+  "full_array_comparisons": 576,
+  "oracle": "Original pinned C NTT, shared unchanged Montgomery reduction",
+  "sanitizers": "AddressSanitizer + UndefinedBehaviorSanitizer, no recovery",
+  "command": [
+    "clang",
+    "-O3",
+    "-g",
+    "-fno-strict-aliasing",
+    "-DETHDILITHIUM=0",
+    "-DDILITHIUM_MODE=2",
+    "-fsanitize=address,undefined",
+    "-fno-sanitize-recover=all",
+    "-I",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/vendor/ETHDILITHIUM/c-ref",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/experiments/keccak-registers/twiddle64-review/baseline.c",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/experiments/keccak-registers/twiddle64-review/candidate.c",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/vendor/ETHDILITHIUM/c-ref/reduce.c",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/experiments/keccak-registers/twiddle64-review/driver.c",
+    "-o",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/experiments/keccak-registers/twiddle64-review/check"
+  ],
+  "stdout": "576 exact full-array comparisons passed\n",
+  "stderr": "",
+  "source_sha256": {
+    "vendor/ETHDILITHIUM/c-ref/ntt.c": "921b76ae7a183305893800e69c0b9ea561bffd2a6e85621767eb789c02a0f8d0",
+    "risc-v/experiments/mldsa-poly64/c-ref/ntt.c": "c97761afb06ca84f5ecd0960ece9787a44a00ad86ba05bb10d3b119f438d3c0b",
+    "vendor/ETHDILITHIUM/c-ref/reduce.c": "3088cac3d23355a3f9adaac9fd4ee864be9caf5fb0ad30bcb4a4da17dba0e4f4",
+    "risc-v/experiments/mldsa-poly64/c-ref/reduce.c": "3088cac3d23355a3f9adaac9fd4ee864be9caf5fb0ad30bcb4a4da17dba0e4f4",
+    "risc-v/experiments/keccak-registers/twiddle64-review/driver.c": "7080ca463a789a61f1fa572e0455110bd083a197101fb06abac17ff2d44e546e",
+    "risc-v/experiments/keccak-registers/twiddle64-review/baseline.c": "84d15fd97c70a9ac24b2656c3a3743f22021d389e5071a791f7da0b471915699",
+    "risc-v/experiments/keccak-registers/twiddle64-review/candidate.c": "34cbe2eef872c02090f74ddab454ec9cdd265caef0e1ebaec8cc0b36c1ed7088"
+  }
+}

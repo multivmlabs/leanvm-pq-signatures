@@ -1,0 +1,70 @@
+{
+  "action": "verify",
+  "all_reduced_claims_settled": true,
+  "backend_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "caller_leaf_guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+  "cold_complete_verify_s": 0.234233833,
+  "depth": 1,
+  "families": [
+    {
+      "bytecode_instructions": 8192,
+      "dimensions": 17,
+      "family": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "min_log_committed": 22,
+      "table_words": 131072
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 1,
+      "guest_hash": "9a644995149507104780db24c34f7bf0a2b0fc7631f05faa743d6002becfb3dc",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    }
+  ],
+  "first_complete_verify_s": 0.005990167,
+  "first_components": {
+    "root_core_s": 0.00567475,
+    "root_pi_s": 1.792e-6,
+    "terminal_evaluation_s": 0.000305125,
+    "terminal_evaluations": 1
+  },
+  "leaf_size": 5,
+  "leaf_slots": 2,
+  "leaf_source_sha256": "c46fc19886ee36392d106b13443440d7daaeaf210f6806dac6836c9b58c91e2c",
+  "original_tree_edges": 2,
+  "padding_slots": 0,
+  "peak_rss_bytes": 189038592,
+  "prepared_complete_verify_median_s": 0.005987417,
+  "prepared_complete_verify_s": [
+    0.005977208,
+    0.005987417,
+    0.005994125
+  ],
+  "program_compile_s": 0.1528005,
+  "public_claim_derivation_s": 0.00001825,
+  "public_sha256": "01424e2b0f21745facb77574d9a1a7dc2095f58f32932d836236b96823f3dc28",
+  "real_leaves": 2,
+  "root_core_s": [
+    0.005684209,
+    0.005694541,
+    0.005701333
+  ],
+  "root_proof_bytes": 339880,
+  "root_proof_sha256": "3f6e7266ae085991f8b271f74bdc401d8a92c106f427d86e5b9a7add08646033",
+  "schema": 1,
+  "signatures": 10,
+  "statement_pinned": true,
+  "table_prepare_s": 0.075443166,
+  "terminal_evaluation_s": [
+    0.000284958,
+    0.000285125,
+    0.00028475
+  ],
+  "terminal_evaluations": 1,
+  "uses_child_proof_files": false,
+  "uses_signature_witnesses": false,
+  "verified": true,
+  "zero_knowledge": false
+}

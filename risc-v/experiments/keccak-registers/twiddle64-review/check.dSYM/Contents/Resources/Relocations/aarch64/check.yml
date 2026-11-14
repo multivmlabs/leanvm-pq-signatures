@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/experiments/keccak-registers/twiddle64-review/check'
+relocations:     []
+...

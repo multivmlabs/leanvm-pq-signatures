@@ -1,0 +1,100 @@
+{
+  "status": "guest_controls_complete_receipts_unavailable",
+  "records": 10,
+  "elf_sha256": "f9eb00b035eba3fa3f0a42ad6f2c9e3405e8bca1c35ba146fd7ddec40b761342",
+  "cases": [
+    {
+      "name": "changed-message",
+      "guest_accepted": false,
+      "expected_guest_accept": false,
+      "raw_negative_input": false,
+      "error_kind": "guest_trap"
+    },
+    {
+      "name": "changed-key",
+      "guest_accepted": false,
+      "expected_guest_accept": false,
+      "raw_negative_input": false,
+      "error_kind": "guest_trap"
+    },
+    {
+      "name": "changed-salt",
+      "guest_accepted": false,
+      "expected_guest_accept": false,
+      "raw_negative_input": false,
+      "error_kind": "guest_trap"
+    },
+    {
+      "name": "changed-proof",
+      "guest_accepted": false,
+      "expected_guest_accept": false,
+      "raw_negative_input": false,
+      "error_kind": "guest_trap"
+    },
+    {
+      "name": "truncated-aerie-proof",
+      "guest_accepted": false,
+      "expected_guest_accept": false,
+      "raw_negative_input": false,
+      "error_kind": "guest_trap"
+    },
+    {
+      "name": "trailing-aerie-byte",
+      "guest_accepted": false,
+      "expected_guest_accept": false,
+      "raw_negative_input": false,
+      "error_kind": "guest_trap"
+    },
+    {
+      "name": "trailing-frame-byte",
+      "guest_accepted": false,
+      "expected_guest_accept": false,
+      "raw_negative_input": true,
+      "error_kind": "guest_trap"
+    },
+    {
+      "name": "truncated-frame",
+      "guest_accepted": false,
+      "expected_guest_accept": false,
+      "raw_negative_input": true,
+      "error_kind": "guest_trap"
+    },
+    {
+      "name": "oversized-statement-header",
+      "guest_accepted": false,
+      "expected_guest_accept": false,
+      "raw_negative_input": true,
+      "error_kind": "guest_trap"
+    },
+    {
+      "name": "wrong-frame-count",
+      "guest_accepted": false,
+      "expected_guest_accept": false,
+      "raw_negative_input": false,
+      "error_kind": "guest_trap"
+    },
+    {
+      "name": "valid-other-claims",
+      "guest_accepted": true,
+      "expected_guest_accept": true,
+      "raw_negative_input": false,
+      "error_kind": null
+    },
+    {
+      "name": "changed-record-order",
+      "guest_accepted": false,
+      "expected_guest_accept": false,
+      "error_kind": "guest_trap",
+      "frame_sha256": "954ed5bf140a10e950a5d704e645402e2cbc36ae4ea61e592a0696d00a887e69"
+    },
+    {
+      "name": "nonzero-advice-padding",
+      "guest_accepted": false,
+      "expected_guest_accept": false,
+      "error_kind": "guest_trap"
+    }
+  ],
+  "receipt_controls": [],
+  "reason": "Actual full guest execution/rejection controls completed. No full outer proof fits this backend, so Aerie receipt verification controls cannot run. Host/backend synthetic-proof tests are separate evidence.",
+  "scope": "Actual reference guest execution, not a STARK or native prevalidation alone."
+}

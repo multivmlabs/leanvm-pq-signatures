@@ -1,0 +1,1087 @@
+{
+  "action": "prove",
+  "all_reduced_claims_settled": true,
+  "backend_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "depth": 5,
+  "families": [
+    {
+      "bytecode_instructions": 8192,
+      "dimensions": 17,
+      "family": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "min_log_committed": 22,
+      "table_words": 131072
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 1,
+      "guest_hash": "9a644995149507104780db24c34f7bf0a2b0fc7631f05faa743d6002becfb3dc",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 2,
+      "guest_hash": "2d8699877c87d010052a00b89adc6e9aa5f28b1e08501703146d5dd1e1e393c2",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 3,
+      "guest_hash": "7bbceba578c4839c75753b07a279adbe2236abf6d8d6ac95c8141ba55db07e27",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 4,
+      "guest_hash": "eba285b335e8fe80a93d95b05d2f2a0ad48918a6ec309a41e9ef3d31c85c4a10",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 5,
+      "guest_hash": "760bcff47f7f6ab756bbff6c78466cac147710c23a3b389237d25ad6a954c628",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    }
+  ],
+  "full_verify_s": 0.012017834,
+  "leaf_prove_s": 1.0221387050000001,
+  "leaf_reports": [
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 0,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 270112,
+      "proof_sha256": "52e88acb9e51809fc88c5515456bacd3d466d118c2084fefd5beba0bcb08b521",
+      "prove_s": 0.06250275,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 1,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 269152,
+      "proof_sha256": "5c7a4130f504374a14be28862cf58c51e526d416372c5ab1dd7eddd734921934",
+      "prove_s": 0.050275041,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 2,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 268224,
+      "proof_sha256": "865ae5360b567a5c67e1db7055683ff8cc51ffad9a67cd9baf061f0f4f7919e9",
+      "prove_s": 0.048383416,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 3,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 269024,
+      "proof_sha256": "8bde7d67a982d52953230bd860c2ee16d7f974322868b3c389115fea54e8e0f0",
+      "prove_s": 0.05033425,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 4,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 268456,
+      "proof_sha256": "e71cbf861a1136ec7c1e9da4c0b073351d7a8e093d57b98c3931acb0a97bdabf",
+      "prove_s": 0.049552583,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 5,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 267968,
+      "proof_sha256": "4d3173156c45ce622d856dc363c3e3878ae4fec42438c3926c7633148acc9b9a",
+      "prove_s": 0.057568583,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 6,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 268576,
+      "proof_sha256": "88ea7414e358abd1e722e6c3ae52765676793a620a1a14b86d468b90658d6067",
+      "prove_s": 0.050152375,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 7,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 267584,
+      "proof_sha256": "25d79bbe3ac192d0f6f7a65b40c1069d054b7d147931a0bd852a4b63e7356302",
+      "prove_s": 0.049152375,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 8,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 268544,
+      "proof_sha256": "72a38d81ad85746c7a482514f1f1fdd97aea1cdefde8f99ac6c2c7bcd03b634c",
+      "prove_s": 0.048350708,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 9,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 269376,
+      "proof_sha256": "e127ec538c384b99a395000c8435776f07338eb1c3c061826722e4d6268c309d",
+      "prove_s": 0.05155025,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 10,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 268320,
+      "proof_sha256": "4852b8d425980a2ebcb4ae94eb2df228619c7875b78e01e34d3fc98d23b13091",
+      "prove_s": 0.049871125,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 11,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 268320,
+      "proof_sha256": "3b439e178546f441b1f81831d879fcc9f28c6946573dc98fa66a998ed0d9da72",
+      "prove_s": 0.048795041,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 12,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 268160,
+      "proof_sha256": "d171982a5856910ff86a6fa51050d6b4005a27f8fbae9333829b16f006fb9c2e",
+      "prove_s": 0.04993725,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 13,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 269440,
+      "proof_sha256": "baa31ca8645402b02f131c9a5127f44257623fbc4d2b091f411e0d1ffe160863",
+      "prove_s": 0.051449583,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 14,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 269312,
+      "proof_sha256": "1f8e3844238deb3e99f1437a798ac09165dd631a994af83fc05ce18c36ca3376",
+      "prove_s": 0.050233583,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 15,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 268384,
+      "proof_sha256": "09740b8df16451e100ab4b38c9983350dc2f0c9014590e785a3313c7f053f7f3",
+      "prove_s": 0.050187042,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 16,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 269888,
+      "proof_sha256": "29cfcc61ad1c2a3e89bee2229590869fe8ef365db8a2aaa10fe84392624fbef8",
+      "prove_s": 0.053662792,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 17,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 268008,
+      "proof_sha256": "76efc69d61e0bd6daa7298c7562e8555e3ce73036390a5db48d69dd94b2f69d9",
+      "prove_s": 0.049622333,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 18,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 268928,
+      "proof_sha256": "d6871903dba130f032d7048a13845f11d12cf7f2101aaaa1e456416062b10f26",
+      "prove_s": 0.0486375,
+      "signatures": 5
+    },
+    {
+      "committed_words": 2992128,
+      "cycles": 37577,
+      "leaf": 19,
+      "opcode_rows": [
+        10286,
+        9729,
+        7216,
+        5154,
+        4438,
+        754
+      ],
+      "proof_bytes": 269000,
+      "proof_sha256": "1a7038b827bd73bf16f957c5c23ae34aa78cf35a9427ed379a1caaa57c6fc434",
+      "prove_s": 0.051920125,
+      "signatures": 5
+    }
+  ],
+  "leaf_size": 5,
+  "leaf_slots": 32,
+  "leaf_source_sha256": "c46fc19886ee36392d106b13443440d7daaeaf210f6806dac6836c9b58c91e2c",
+  "merge_count": 31,
+  "merge_prove_s": 10.257893334,
+  "merge_reports": [
+    {
+      "committed_words": 16482304,
+      "cycles": 535769,
+      "level": 1,
+      "native_reduction_prove_s": 0.001801667,
+      "node": 0,
+      "opcode_rows": [
+        160964,
+        214512,
+        28463,
+        91798,
+        29194,
+        10838
+      ],
+      "prepare_s": 0.021237958,
+      "proof_bytes": 339208,
+      "proof_sha256": "5356da11127a0159d47fab292e79a37c6e2efcce6fb9b212cd4819c93af3e5c4",
+      "terminal_families": 1,
+      "total_prove_s": 0.259027667,
+      "wrapper_stark_prove_s": 0.237789709
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535799,
+      "level": 1,
+      "native_reduction_prove_s": 0.001818291,
+      "node": 1,
+      "opcode_rows": [
+        160964,
+        214512,
+        28489,
+        91802,
+        29220,
+        10812
+      ],
+      "prepare_s": 0.021339625,
+      "proof_bytes": 339784,
+      "proof_sha256": "2972d6c65172cd4b2b19ba25455c4becee18b87aa2ab89c1aeb15489d0007f3e",
+      "terminal_families": 1,
+      "total_prove_s": 0.211984292,
+      "wrapper_stark_prove_s": 0.190644667
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535771,
+      "level": 1,
+      "native_reduction_prove_s": 0.0018555,
+      "node": 2,
+      "opcode_rows": [
+        160964,
+        214512,
+        28471,
+        91792,
+        29202,
+        10830
+      ],
+      "prepare_s": 0.021427167,
+      "proof_bytes": 338216,
+      "proof_sha256": "fe171b728dbbbf3d583bbcee6ab8c28e783ea8e2c66129e416abae201a9ccd2f",
+      "terminal_families": 1,
+      "total_prove_s": 0.211754792,
+      "wrapper_stark_prove_s": 0.190327625
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535781,
+      "level": 1,
+      "native_reduction_prove_s": 0.001821333,
+      "node": 3,
+      "opcode_rows": [
+        160964,
+        214512,
+        28481,
+        91792,
+        29212,
+        10820
+      ],
+      "prepare_s": 0.021292458,
+      "proof_bytes": 339304,
+      "proof_sha256": "810d20feac984893b09fe8218442aec75e9737e42f63417639a6e296cd7cc6a5",
+      "terminal_families": 1,
+      "total_prove_s": 0.21638733300000002,
+      "wrapper_stark_prove_s": 0.195094875
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535787,
+      "level": 1,
+      "native_reduction_prove_s": 0.001757667,
+      "node": 4,
+      "opcode_rows": [
+        160964,
+        214512,
+        28477,
+        91802,
+        29208,
+        10824
+      ],
+      "prepare_s": 0.021257958,
+      "proof_bytes": 338312,
+      "proof_sha256": "ce7122734aa9644c5335c386d90f357896073daca2c28497bcef5e839e88dc4d",
+      "terminal_families": 1,
+      "total_prove_s": 0.216146,
+      "wrapper_stark_prove_s": 0.194888042
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535778,
+      "level": 1,
+      "native_reduction_prove_s": 0.001812333,
+      "node": 5,
+      "opcode_rows": [
+        160964,
+        214512,
+        28476,
+        91794,
+        29207,
+        10825
+      ],
+      "prepare_s": 0.021471625,
+      "proof_bytes": 339016,
+      "proof_sha256": "02bc290f8d415e81eff330d80f4f18d53a2061f3a6e7e79941523f0d537f8dd5",
+      "terminal_families": 1,
+      "total_prove_s": 0.21146125,
+      "wrapper_stark_prove_s": 0.189989625
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535781,
+      "level": 1,
+      "native_reduction_prove_s": 0.001808167,
+      "node": 6,
+      "opcode_rows": [
+        160964,
+        214512,
+        28473,
+        91800,
+        29204,
+        10828
+      ],
+      "prepare_s": 0.021456958,
+      "proof_bytes": 338824,
+      "proof_sha256": "6f711aea7c18e7c0e33a55d5cc54c240ae4edff22749a37d8efd78ea1b427da4",
+      "terminal_families": 1,
+      "total_prove_s": 0.214503958,
+      "wrapper_stark_prove_s": 0.193047
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535783,
+      "level": 1,
+      "native_reduction_prove_s": 0.001841167,
+      "node": 7,
+      "opcode_rows": [
+        160964,
+        214512,
+        28477,
+        91798,
+        29208,
+        10824
+      ],
+      "prepare_s": 0.021415666,
+      "proof_bytes": 337992,
+      "proof_sha256": "551c6c427e14998cf336c7b034629ea5a5e90a9bf287bdcc0e748e3ee40f454a",
+      "terminal_families": 1,
+      "total_prove_s": 0.211569916,
+      "wrapper_stark_prove_s": 0.19015425
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535778,
+      "level": 1,
+      "native_reduction_prove_s": 0.001822417,
+      "node": 8,
+      "opcode_rows": [
+        160964,
+        214512,
+        28474,
+        91796,
+        29205,
+        10827
+      ],
+      "prepare_s": 0.021334292,
+      "proof_bytes": 339144,
+      "proof_sha256": "b8ff1ea5ce8846037680db258c602333c4ca15503d68b837c9ab02ac778ff6af",
+      "terminal_families": 1,
+      "total_prove_s": 0.211821958,
+      "wrapper_stark_prove_s": 0.190487666
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535770,
+      "level": 1,
+      "native_reduction_prove_s": 0.001871875,
+      "node": 9,
+      "opcode_rows": [
+        160964,
+        214512,
+        28468,
+        91794,
+        29199,
+        10833
+      ],
+      "prepare_s": 0.021454458,
+      "proof_bytes": 338088,
+      "proof_sha256": "98916a82662e958087ab4ebc411543de30147862e3912c9f96f36a1d4acc6fd4",
+      "terminal_families": 1,
+      "total_prove_s": 0.214444,
+      "wrapper_stark_prove_s": 0.192989542
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535770,
+      "level": 1,
+      "native_reduction_prove_s": 0.001855208,
+      "node": 10,
+      "opcode_rows": [
+        160964,
+        214512,
+        28466,
+        91796,
+        29197,
+        10835
+      ],
+      "prepare_s": 0.021322541,
+      "proof_bytes": 339144,
+      "proof_sha256": "60aed6f6b3f277621821761847a81cc8afde25e9970da95783509f6e2c2219cc",
+      "terminal_families": 1,
+      "total_prove_s": 0.211945708,
+      "wrapper_stark_prove_s": 0.190623167
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535770,
+      "level": 1,
+      "native_reduction_prove_s": 0.001857917,
+      "node": 11,
+      "opcode_rows": [
+        160964,
+        214512,
+        28466,
+        91796,
+        29197,
+        10835
+      ],
+      "prepare_s": 0.021361875,
+      "proof_bytes": 339144,
+      "proof_sha256": "60aed6f6b3f277621821761847a81cc8afde25e9970da95783509f6e2c2219cc",
+      "terminal_families": 1,
+      "total_prove_s": 0.2112395,
+      "wrapper_stark_prove_s": 0.189877625
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535770,
+      "level": 1,
+      "native_reduction_prove_s": 0.001846334,
+      "node": 12,
+      "opcode_rows": [
+        160964,
+        214512,
+        28466,
+        91796,
+        29197,
+        10835
+      ],
+      "prepare_s": 0.021629875,
+      "proof_bytes": 339144,
+      "proof_sha256": "60aed6f6b3f277621821761847a81cc8afde25e9970da95783509f6e2c2219cc",
+      "terminal_families": 1,
+      "total_prove_s": 0.21535525,
+      "wrapper_stark_prove_s": 0.193725375
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535770,
+      "level": 1,
+      "native_reduction_prove_s": 0.001887541,
+      "node": 13,
+      "opcode_rows": [
+        160964,
+        214512,
+        28466,
+        91796,
+        29197,
+        10835
+      ],
+      "prepare_s": 0.021497708,
+      "proof_bytes": 339144,
+      "proof_sha256": "60aed6f6b3f277621821761847a81cc8afde25e9970da95783509f6e2c2219cc",
+      "terminal_families": 1,
+      "total_prove_s": 0.213573,
+      "wrapper_stark_prove_s": 0.192075292
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535770,
+      "level": 1,
+      "native_reduction_prove_s": 0.001832125,
+      "node": 14,
+      "opcode_rows": [
+        160964,
+        214512,
+        28466,
+        91796,
+        29197,
+        10835
+      ],
+      "prepare_s": 0.021518583,
+      "proof_bytes": 339144,
+      "proof_sha256": "60aed6f6b3f277621821761847a81cc8afde25e9970da95783509f6e2c2219cc",
+      "terminal_families": 1,
+      "total_prove_s": 0.210927958,
+      "wrapper_stark_prove_s": 0.189409375
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 535770,
+      "level": 1,
+      "native_reduction_prove_s": 0.0018585,
+      "node": 15,
+      "opcode_rows": [
+        160964,
+        214512,
+        28466,
+        91796,
+        29197,
+        10835
+      ],
+      "prepare_s": 0.021710667,
+      "proof_bytes": 339144,
+      "proof_sha256": "60aed6f6b3f277621821761847a81cc8afde25e9970da95783509f6e2c2219cc",
+      "terminal_families": 1,
+      "total_prove_s": 0.213101626,
+      "wrapper_stark_prove_s": 0.191390959
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 582309,
+      "level": 2,
+      "native_reduction_prove_s": 0.050214832,
+      "node": 16,
+      "opcode_rows": [
+        173756,
+        229529,
+        32192,
+        102499,
+        31403,
+        12930
+      ],
+      "prepare_s": 0.219086667,
+      "proof_bytes": 339944,
+      "proof_sha256": "7819396c49e4689e3f81e57a35acaa1116bfaed50d7f22e9ac451717175f8a63",
+      "terminal_families": 2,
+      "total_prove_s": 0.418765459,
+      "wrapper_stark_prove_s": 0.199678792
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 582325,
+      "level": 2,
+      "native_reduction_prove_s": 0.050622708,
+      "node": 17,
+      "opcode_rows": [
+        173756,
+        229529,
+        32200,
+        102507,
+        31411,
+        12922
+      ],
+      "prepare_s": 0.219741666,
+      "proof_bytes": 337992,
+      "proof_sha256": "ec39958b1a9835bd68590249aaac4d55c7bfc6d5b6f728c0b6af2679867444e6",
+      "terminal_families": 2,
+      "total_prove_s": 0.418679458,
+      "wrapper_stark_prove_s": 0.198937792
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 582337,
+      "level": 2,
+      "native_reduction_prove_s": 0.050830125,
+      "node": 18,
+      "opcode_rows": [
+        173756,
+        229529,
+        32206,
+        102513,
+        31417,
+        12916
+      ],
+      "prepare_s": 0.219403792,
+      "proof_bytes": 339592,
+      "proof_sha256": "86bdb77a1d825e5048c00dce57a4e7fca6585fb8cf36bb17ca49012c56d285b6",
+      "terminal_families": 2,
+      "total_prove_s": 0.413868542,
+      "wrapper_stark_prove_s": 0.19446475
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 582323,
+      "level": 2,
+      "native_reduction_prove_s": 0.050604249999999996,
+      "node": 19,
+      "opcode_rows": [
+        173756,
+        229529,
+        32202,
+        102503,
+        31413,
+        12920
+      ],
+      "prepare_s": 0.22047125,
+      "proof_bytes": 339464,
+      "proof_sha256": "a041d799c4f7bbca70d9f8cd4f0d59282bb13dd668391217d696a4208f2a94c5",
+      "terminal_families": 2,
+      "total_prove_s": 0.41965620800000003,
+      "wrapper_stark_prove_s": 0.199184958
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 582306,
+      "level": 2,
+      "native_reduction_prove_s": 0.050094083,
+      "node": 20,
+      "opcode_rows": [
+        173756,
+        229529,
+        32195,
+        102493,
+        31406,
+        12927
+      ],
+      "prepare_s": 0.21927625,
+      "proof_bytes": 339368,
+      "proof_sha256": "eddb2187417e12345c804551b092a022ecbc3b87e334524d457b95f2ac577262",
+      "terminal_families": 2,
+      "total_prove_s": 0.417619625,
+      "wrapper_stark_prove_s": 0.198343375
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 582317,
+      "level": 2,
+      "native_reduction_prove_s": 0.050648791000000006,
+      "node": 21,
+      "opcode_rows": [
+        173756,
+        229529,
+        32200,
+        102499,
+        31411,
+        12922
+      ],
+      "prepare_s": 0.219615166,
+      "proof_bytes": 338984,
+      "proof_sha256": "954d7afe710e148745563a2f81c4f1c14f1a5d418c814ecd084470263d20179d",
+      "terminal_families": 2,
+      "total_prove_s": 0.419699125,
+      "wrapper_stark_prove_s": 0.200083959
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 582317,
+      "level": 2,
+      "native_reduction_prove_s": 0.050860458,
+      "node": 22,
+      "opcode_rows": [
+        173756,
+        229529,
+        32200,
+        102499,
+        31411,
+        12922
+      ],
+      "prepare_s": 0.2197575,
+      "proof_bytes": 338984,
+      "proof_sha256": "954d7afe710e148745563a2f81c4f1c14f1a5d418c814ecd084470263d20179d",
+      "terminal_families": 2,
+      "total_prove_s": 0.415915375,
+      "wrapper_stark_prove_s": 0.196157875
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 582317,
+      "level": 2,
+      "native_reduction_prove_s": 0.049944208000000004,
+      "node": 23,
+      "opcode_rows": [
+        173756,
+        229529,
+        32200,
+        102499,
+        31411,
+        12922
+      ],
+      "prepare_s": 0.21932975,
+      "proof_bytes": 338984,
+      "proof_sha256": "954d7afe710e148745563a2f81c4f1c14f1a5d418c814ecd084470263d20179d",
+      "terminal_families": 2,
+      "total_prove_s": 0.415405292,
+      "wrapper_stark_prove_s": 0.196075542
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 585404,
+      "level": 3,
+      "native_reduction_prove_s": 0.099795042,
+      "node": 24,
+      "opcode_rows": [
+        174725,
+        230446,
+        32542,
+        102996,
+        31733,
+        12962
+      ],
+      "prepare_s": 0.267829125,
+      "proof_bytes": 340872,
+      "proof_sha256": "d88f9d4693698f8af94b0e665eeaac12ce4ae05e060fffc23b53a66f17a7e870",
+      "terminal_families": 3,
+      "total_prove_s": 0.464705625,
+      "wrapper_stark_prove_s": 0.1968765
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 585383,
+      "level": 3,
+      "native_reduction_prove_s": 0.099239292,
+      "node": 25,
+      "opcode_rows": [
+        174725,
+        230446,
+        32527,
+        102990,
+        31718,
+        12977
+      ],
+      "prepare_s": 0.268544416,
+      "proof_bytes": 339272,
+      "proof_sha256": "77c251702967d1a043658694b67e6ab3238544a6965d2bc43011f6fb1748b90e",
+      "terminal_families": 3,
+      "total_prove_s": 0.463940958,
+      "wrapper_stark_prove_s": 0.195396542
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 585416,
+      "level": 3,
+      "native_reduction_prove_s": 0.098517167,
+      "node": 26,
+      "opcode_rows": [
+        174725,
+        230446,
+        32548,
+        103002,
+        31739,
+        12956
+      ],
+      "prepare_s": 0.267109709,
+      "proof_bytes": 337352,
+      "proof_sha256": "5b30755a75d4e42e0a59e4577076894970dfecd2a7b5972cbb47d55fa3951cd6",
+      "terminal_families": 3,
+      "total_prove_s": 0.470871167,
+      "wrapper_stark_prove_s": 0.203761458
+    },
+    {
+      "committed_words": 16482304,
+      "cycles": 585414,
+      "level": 3,
+      "native_reduction_prove_s": 0.09929725,
+      "node": 27,
+      "opcode_rows": [
+        174725,
+        230446,
+        32550,
+        102998,
+        31741,
+        12954
+      ],
+      "prepare_s": 0.268480458,
+      "proof_bytes": 338984,
+      "proof_sha256": "707363279eeaf01cfbb369fc45e4f64d16d4f2eec7cc6b26321c4ca082e0620f",
+      "terminal_families": 3,
+      "total_prove_s": 0.46845045799999996,
+      "wrapper_stark_prove_s": 0.19997
+    },
+    {
+      "committed_words": 16744448,
+      "cycles": 588465,
+      "level": 4,
+      "native_reduction_prove_s": 0.146396374,
+      "node": 28,
+      "opcode_rows": [
+        175698,
+        231363,
+        32862,
+        103483,
+        32033,
+        13026
+      ],
+      "prepare_s": 0.31503125,
+      "proof_bytes": 339048,
+      "proof_sha256": "7d08cabbfb116ba2b9cfef1933297e99d368ec8723615b294a00fb84d5cfbe0f",
+      "terminal_families": 4,
+      "total_prove_s": 0.513136167,
+      "wrapper_stark_prove_s": 0.198104917
+    },
+    {
+      "committed_words": 16744448,
+      "cycles": 588490,
+      "level": 4,
+      "native_reduction_prove_s": 0.147427709,
+      "node": 29,
+      "opcode_rows": [
+        175698,
+        231363,
+        32879,
+        103491,
+        32050,
+        13009
+      ],
+      "prepare_s": 0.317143,
+      "proof_bytes": 340488,
+      "proof_sha256": "65f7b4c52d46fe6768624cd06a3f4e44f7f4556f17bc4a16ec036b11a5cc0c09",
+      "terminal_families": 4,
+      "total_prove_s": 0.5136672090000001,
+      "wrapper_stark_prove_s": 0.196524209
+    },
+    {
+      "committed_words": 16744448,
+      "cycles": 591205,
+      "level": 5,
+      "native_reduction_prove_s": 0.196686166,
+      "node": 30,
+      "opcode_rows": [
+        176645,
+        232053,
+        33217,
+        103870,
+        32374,
+        13046
+      ],
+      "prepare_s": 0.365280125,
+      "proof_bytes": 341128,
+      "proof_sha256": "89b0498b828e58d4a213c5bdaf07a42f3bd65592a088355b3d1d864a0ee25be0",
+      "terminal_families": 5,
+      "total_prove_s": 0.568268458,
+      "wrapper_stark_prove_s": 0.202988333
+    }
+  ],
+  "native_reduction_prove_s": 1.320526497,
+  "original_tree_edges": 62,
+  "padding_slots": 12,
+  "peak_rss_bytes": 1510670336,
+  "pipeline_elapsed_s": 15.281617875,
+  "program_compile_s": 0.808109584,
+  "public_claim_derivation_s": 0.000098542,
+  "public_sha256": "28868590083dec5bdc48923fe29a1816cc8e2ba113033655cbae475a2fb48d74",
+  "real_leaves": 20,
+  "root_auxiliary_bytes": 2912,
+  "root_core_bytes": 341128,
+  "root_proof_bytes": 344040,
+  "root_proof_sha256": "b99dd0032216f84dbb4917dd3694821302a9207b2a77ed1bf21c2f5f0fd61391",
+  "schema": 1,
+  "scheme": "fors",
+  "signatures": 100,
+  "status": "accepted",
+  "terminal_evaluations": 5,
+  "threads_env": null,
+  "total_prove_s": 11.280032039,
+  "verification_components": {
+    "root_core_s": 0.006272916,
+    "root_pi_s": 5.209e-6,
+    "terminal_evaluation_s": 0.005731458,
+    "terminal_evaluations": 5
+  },
+  "verified": true,
+  "wrapper_stark_prove_s": 6.0890637960000005,
+  "zero_knowledge": false
+}

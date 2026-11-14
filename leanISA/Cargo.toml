@@ -1,0 +1,26 @@
+[package]
+name = "pq-leanbench"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+lean_compiler = { path = "vendor/leanVM/crates/lean_compiler" }
+leanvm_core = { path = "vendor/leanVM/crates/leanvm_core" }
+primitives = { path = "vendor/leanVM/crates/primitives" }
+fiat_shamir = { path = "vendor/leanVM/crates/fiat_shamir" }
+parallel = { path = "vendor/leanVM/crates/parallel" }
+bench = { path = "vendor/leanVM/crates/bench" }
+verifier = { path = "vendor/leanVM/crates/verifier" }
+pcs = { path = "vendor/leanVM/crates/pcs" }
+signatures = { path = "vendor/leanVM/crates/signatures" }
+lean_da = { path = "vendor/leanVM/crates/lean_da" }
+keccak_gkr = { path = "vendor/leanVM/crates/keccak_gkr" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+bincode = "1"
+libc = "0.2"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

@@ -1,0 +1,50 @@
+{
+  "action": "measure",
+  "advice_words": 202,
+  "arch": "aarch64",
+  "count": 1,
+  "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c",
+  "execution": {
+    "committed_words": 7916072,
+    "cycles": 147758,
+    "padded_rows": {
+      "ALU": 131072,
+      "DIV": 16,
+      "EXT": 8,
+      "HASH": 16,
+      "LD": 16384,
+      "LOAD": 16,
+      "MUL": 32768,
+      "MULH": 16,
+      "SD": 16384,
+      "SHIFT": 32768,
+      "STORE": 16
+    },
+    "proven_rows": 229464,
+    "rows": {
+      "ALU": 73647,
+      "DIV": 0,
+      "EXT": 0,
+      "HASH": 15,
+      "LD": 12619,
+      "LOAD": 0,
+      "MUL": 18432,
+      "MULH": 3,
+      "SD": 11944,
+      "SHIFT": 31098,
+      "STORE": 0
+    }
+  },
+  "fixture_s": 0.007098209,
+  "leanvm_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "log_inverse_rate": 1,
+  "measure_s": 0.001432042,
+  "os": "macos",
+  "peak_rss_bytes": 8634368,
+  "program_load_s": 0.001912375,
+  "schema": 1,
+  "scheme": "falcon",
+  "status": "accepted",
+  "threads": 8,
+  "zero_knowledge": false
+}

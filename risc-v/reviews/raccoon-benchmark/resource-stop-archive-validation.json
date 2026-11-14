@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "archive": "risc-v/results/raccoon-full-matrix/resource-stops/20261110T041747Z",
+  "all_77_archived_hashes_match_original_manifest": true,
+  "manifest_sha256": "ea9eefd0120e7bb2e0da126b546170aa01a8aef72daa44e72729ffeb5e4e497c",
+  "mapping_sha256": "ade915a88f84b512adc57ec954d863794e894ef0b5844d0918633119d994f62f",
+  "saved_partial_leaf_proofs": 71,
+  "merges": 0,
+  "complete_root_exists": false,
+  "failure_class": "operational RSS sampler stop, not backend TooLong",
+  "aborted_elapsed_s": 627.9170861659986,
+  "triggering_sampled_rss_and_final_ru_maxrss_unknown": true,
+  "old_monitor_bytes": 20401094656,
+  "new_monitor_bytes": 21474836480,
+  "cryptographic_cap_unchanged": 268435456,
+  "completed17_root_identities_separately_captured": true,
+  "fresh_retry_required": {
+    "leaves": 350,
+    "merges": 511
+  },
+  "logical_retry_paths_empty": true,
+  "passed": true
+}

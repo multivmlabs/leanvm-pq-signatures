@@ -1,0 +1,14 @@
+{
+  "action": "identity",
+  "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "embedded_build_manifest_sha256": "4eec92261fa92734a24547eb4c2f20b6d0e1b210f07f981ea6c2f16dcc194b68",
+  "embedded_elf_bytes": 28240,
+  "embedded_elf_sha256": "5c48b8f39b14521773493692034fa601a9df89992552870addd68416cc926eac",
+  "executes_guest": false,
+  "parts_per_signature": 5,
+  "produces_proof": false,
+  "profile": "raccoong-hd-authors-poc-strict-segmented-v1",
+  "rows_per_leaf": 2,
+  "rows_per_signature": 9,
+  "schema": 1
+}

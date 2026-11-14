@@ -1,0 +1,5 @@
+{
+  "elf": "risc-v/experiments/raccoon-crt32/raccoon.elf",
+  "elf_bytes": 54264,
+  "elf_sha256": "e375033cde726b2e988db2c433bf8d83b8516252c5954c1e43cb6720f3b25eac"
+}

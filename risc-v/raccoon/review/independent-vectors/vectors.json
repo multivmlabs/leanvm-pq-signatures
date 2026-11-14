@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "vectors": {
+    "reference-order": {
+      "sha256": "4a2074b586e70245b18a757892dd597f16e1576ff12e423cf8c37d2020a4f672",
+      "c_hash": "db9f707ebc995ce6582410a9a2f15cf77e2f258b0bf70114a523d77636c75049",
+      "native_reference_should_accept": true,
+      "literal_nist_pdf_order_should_accept": false,
+      "independent_output_digest": "0e604ecd74453c6a1a68a16bdbf308906b71d87e73872ef7338e8e26f9648f18"
+    },
+    "nist-pdf-order": {
+      "sha256": "40f21860fe213e64797342501f9b3eb7c2a1a65d0a2a3711a7f8ee3cd270fbac",
+      "c_hash": "d41e1057afc7e9e5298d9f1f960bab1f7c7ce90e10b3d095fa66dff394b1ca7e",
+      "native_reference_should_accept": false,
+      "literal_nist_pdf_order_should_accept": true,
+      "independent_output_digest": "0e604ecd74453c6a1a68a16bdbf308906b71d87e73872ef7338e8e26f9648f18"
+    }
+  },
+  "purpose": "Algorithm9 PDF/reference hash-order discrepancy; algebraic zero-key parser controls only",
+  "benchmarks_run": false
+}

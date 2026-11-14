@@ -1,0 +1,19 @@
+{
+  "action": "measure",
+  "advice_words": 12865,
+  "arch": "aarch64",
+  "count": 64,
+  "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c",
+  "error": "TooLong",
+  "fixture_s": 0.055767459,
+  "leanvm_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "log_inverse_rate": 1,
+  "measure_s": 0.045326458,
+  "os": "macos",
+  "program_load_s": 0.001760834,
+  "schema": 1,
+  "scheme": "falcon",
+  "status": "rejected",
+  "threads": 8,
+  "zero_knowledge": false
+}

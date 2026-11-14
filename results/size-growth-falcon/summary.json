@@ -1,0 +1,84 @@
+{
+  "rows": [
+    {
+      "scheme": "ethfalcon-512-keccak",
+      "count": 1,
+      "cycles": 1608881,
+      "prove_s": 0.819803292,
+      "prove_min_s": 0.819803292,
+      "prove_max_s": 0.819803292,
+      "verify_ms": 97.171542,
+      "verify_cached_ms": null,
+      "bytecode_prepare_ms": null,
+      "proof_bytes": 315632,
+      "rss_gib": 2.317138671875,
+      "signatures_per_s": 1.2198048114205426
+    },
+    {
+      "scheme": "ethfalcon-512-keccak",
+      "count": 2,
+      "cycles": 3219597,
+      "prove_s": 2.193461584,
+      "prove_min_s": 2.193461584,
+      "prove_max_s": 2.193461584,
+      "verify_ms": 83.15691699999999,
+      "verify_cached_ms": null,
+      "bytecode_prepare_ms": null,
+      "proof_bytes": 328808,
+      "rss_gib": 3.69415283203125,
+      "signatures_per_s": 0.9118007876631223
+    },
+    {
+      "scheme": "ethfalcon-512-keccak",
+      "count": 3,
+      "cycles": 4831916,
+      "prove_s": 4.565260625,
+      "prove_min_s": 4.565260625,
+      "prove_max_s": 4.565260625,
+      "verify_ms": 96.345625,
+      "verify_cached_ms": null,
+      "bytecode_prepare_ms": null,
+      "proof_bytes": 349992,
+      "rss_gib": 5.111114501953125,
+      "signatures_per_s": 0.657136633902473
+    },
+    {
+      "scheme": "ethfalcon-512-keccak",
+      "count": 4,
+      "cycles": 6445946,
+      "prove_s": 4.649611667,
+      "prove_min_s": 4.649611667,
+      "prove_max_s": 4.649611667,
+      "verify_ms": 105.50783299999999,
+      "verify_cached_ms": null,
+      "bytecode_prepare_ms": null,
+      "proof_bytes": 353728,
+      "rss_gib": 7.6842041015625,
+      "signatures_per_s": 0.8602868984499216
+    },
+    {
+      "scheme": "ethfalcon-512-keccak",
+      "count": 5,
+      "cycles": 8061643,
+      "prove_s": 5.367531083,
+      "prove_min_s": 5.367531083,
+      "prove_max_s": 5.367531083,
+      "verify_ms": 99.08470799999999,
+      "verify_cached_ms": null,
+      "bytecode_prepare_ms": null,
+      "proof_bytes": 358032,
+      "rss_gib": 8.002639770507812,
+      "signatures_per_s": 0.931526976310572
+    }
+  ],
+  "failures": [
+    {
+      "status": "failed",
+      "scheme": "ethfalcon",
+      "count": 6,
+      "action": "prove",
+      "returncode": 1,
+      "error": "error: prove: WitnessOutOfRange { log_committed: 29 }"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "base_sd": 557915,
+  "committed_words": 234357176,
+  "cycles": 6682612,
+  "output_unchanged": true,
+  "padded_sd": 1048576,
+  "padding_function_rows": {
+    "ALU": 98309,
+    "DIV": 0,
+    "EXT": 0,
+    "HASH": 0,
+    "LD": 0,
+    "LOAD": 0,
+    "MUL": 0,
+    "MULH": 0,
+    "SD": 32768,
+    "SHIFT": 0,
+    "STORE": 0
+  },
+  "part": 4,
+  "scope": "Final raw ELF and production measure; no STARK; signature3 part4 old shape outlier",
+  "signature": 3,
+  "volatile_stores": 32768
+}

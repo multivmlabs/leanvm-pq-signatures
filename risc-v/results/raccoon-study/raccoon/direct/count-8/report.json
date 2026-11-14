@@ -1,0 +1,22 @@
+{
+  "action": "prove",
+  "advice_words": 13817,
+  "arch": "aarch64",
+  "count": 8,
+  "elf_sha256": "b8b78438d96258c436a4a34f5f40505d469555bb29d289936e01c863dd1f7e6a",
+  "error": "TooLong",
+  "fixture_s": 0.012801208,
+  "leanvm_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "log_inverse_rate": 1,
+  "measure_s": 0.052707958,
+  "os": "macos",
+  "peak_rss_bytes": 1037500416,
+  "program_load_s": 0.003434292,
+  "prover_error": "TooLong",
+  "prover_rejection_s": 0.148374708,
+  "schema": 1,
+  "scheme": "raccoon",
+  "status": "rejected",
+  "threads": 8,
+  "zero_knowledge": false
+}

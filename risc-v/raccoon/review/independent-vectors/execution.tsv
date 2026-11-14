@@ -1,0 +1,13 @@
+first-one.bin	native=true	output=8d34123d8d729ce998773777cc2f0ba92b797e9fc74f2833d50e92961e707d0a	expected=8d34123d8d729ce998773777cc2f0ba92b797e9fc74f2833d50e92961e707d0a
+honest-two.bin	native=true	output=f4612e20e30b63f891d2f803208ea755c0f940ce78c8c1ed93a73e896f910597	expected=f4612e20e30b63f891d2f803208ea755c0f940ce78c8c1ed93a73e896f910597
+nist-pdf-order.bin	native=false	output=TRAP:Illegal { pc: 268436704 }	expected=0e604ecd74453c6a1a68a16bdbf308906b71d87e73872ef7338e8e26f9648f18
+reference-order.bin	native=true	output=0e604ecd74453c6a1a68a16bdbf308906b71d87e73872ef7338e8e26f9648f18	expected=0e604ecd74453c6a1a68a16bdbf308906b71d87e73872ef7338e8e26f9648f18
+reversed-two.bin	native=true	output=18d4a2061ec5746504c94bac5039e81d2e77d331d2b7560545caa42f1b4ad909	expected=18d4a2061ec5746504c94bac5039e81d2e77d331d2b7560545caa42f1b4ad909
+second-late-key.bin	native=false	output=TRAP:Illegal { pc: 268436704 }	expected=a286a6d061ceae082f11f7b929ba8d376be397e2b9ed94a30d49b70d949a6c9a
+second-late-message.bin	native=false	output=TRAP:Illegal { pc: 268436704 }	expected=01a1a927cd307088a308305ce4cd51893dbe8da253e8fa25f719196b1b4c3e09
+second-noncanonical-final-coefficient.bin	native=false	output=TRAP:Illegal { pc: 268436704 }	expected=cb5baa3dfed2fa5f8a9b9b908cc2be215afc5187bd3b801ca9de1538a2678b12
+second-nonzero-final-padding.bin	native=false	output=TRAP:Illegal { pc: 268436704 }	expected=f4612e20e30b63f891d2f803208ea755c0f940ce78c8c1ed93a73e896f910597
+second-one.bin	native=true	output=d5a18c54118b72a2633f7ea519ad2436daa2c8334b8ff52bcab9dc1d07e615a7	expected=d5a18c54118b72a2633f7ea519ad2436daa2c8334b8ff52bcab9dc1d07e615a7
+second-seed.bin	native=false	output=TRAP:Illegal { pc: 268436704 }	expected=7f7af2f7920dd0565f6addc78cc07245ede91d9ef41fc5af58794f1f68fa8511
+second-signature.bin	native=false	output=TRAP:Illegal { pc: 268436704 }	expected=f4612e20e30b63f891d2f803208ea755c0f940ce78c8c1ed93a73e896f910597
+swapped-signatures.bin	native=false	output=TRAP:Illegal { pc: 268436704 }	expected=f4612e20e30b63f891d2f803208ea755c0f940ce78c8c1ed93a73e896f910597

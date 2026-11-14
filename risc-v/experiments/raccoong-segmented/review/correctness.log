@@ -1,0 +1,19 @@
+   Compiling raccoong-segmented-host v0.1.0 (/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/experiments/raccoong-segmented/host)
+    Finished `release` profile [optimized] target(s) in 0.38s
+     Running unittests src/lib.rs (.cache/raccoon-fit-target/release/deps/raccoong_segmented_host-8b7cc8dda0d84af8)
+
+running 5 tests
+test tests::expected_outputs_bind_public_pair_row_and_both_digest_halves ... ok
+test tests::an_unselected_hint_change_is_only_a_partial_claim_with_a_new_binding ... ok
+test tests::malformed_global_inputs_and_selected_row_equations_fail_in_actual_elf ... ok
+test tests::independent_python_codec_and_challenge_consistent_norm_controls_match_actual_elf ... ok
+test tests::every_row_of_three_original_records_accepts_and_matches_python_commitment ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.79s
+
+   Doc-tests raccoong_segmented_host
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

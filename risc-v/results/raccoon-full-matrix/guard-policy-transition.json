@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "status": "user_stopped_after22_complete_roots",
+  "approved_by": "parent agent under existing user authorization for all experiments",
+  "old_operational_rss_stop_bytes": 20401094656,
+  "new_operational_rss_stop_bytes": 21474836480,
+  "backend_committed_words_cap_unchanged": 268435456,
+  "timeout_s_unchanged": 21600,
+  "coordinator_sha256_unchanged": "c117ef5be9437638c5802f109362d4108b822ed3c8d4c97d16da950cae4ab09d",
+  "native_binaries_and_guest_elfs_unchanged": true,
+  "allocator_policy_unchanged": "dirty_decay_ms:0,muzzy_decay_ms:0",
+  "completed_requested_samples_to_preserve": 17,
+  "stopped_attempt_archive": "risc-v/results/raccoon-full-matrix/resource-stops/20261110T041747Z",
+  "failed_attempt_reused": false,
+  "retry": "Raccoon-G N70 sample2, all350parts and511merges freshly produced",
+  "prepared_utc": "2026-11-10T06:44:31.484907+00:00",
+  "resumed_utc": "2026-11-10T07:43:17.767476+00:00",
+  "coordinator_pid": 64111,
+  "exec_session_id": 23651,
+  "argv": [
+    ".venv/bin/python",
+    "-u",
+    "risc-v/scripts/raccoon_full_matrix.py",
+    "--execute-approved",
+    "--timeout-s",
+    "21600",
+    "--rss-limit-gib",
+    "20"
+  ],
+  "environment": {
+    "_RJEM_MALLOC_CONF": "dirty_decay_ms:0,muzzy_decay_ms:0",
+    "PYTHONPYCACHEPREFIX": "/tmp/raccoon-matrix-pycache",
+    "LEANVM_NUM_THREADS": "8"
+  },
+  "completed17_samples_revalidated_before_retry": true,
+  "first_fresh_retry_started_utc": "2026-11-10T07:43:19.375579+00:00",
+  "recorded_utc": "2026-11-10T07:44:00.437029+00:00",
+  "user_stop_archive": "risc-v/results/raccoon-full-matrix/user-stops/20261110T110242Z",
+  "coordinator_and_producers_exited": true,
+  "final_coordinator_sha256": "c117ef5be9437638c5802f109362d4108b822ed3c8d4c97d16da950cae4ab09d"
+}

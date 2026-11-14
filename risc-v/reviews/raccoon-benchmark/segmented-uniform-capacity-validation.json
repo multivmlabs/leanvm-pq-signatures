@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "scope": "Read-only production all100corpus x fiveparts plan evidence. No new VM/prover workload.",
+  "source_hashes_checked": 303,
+  "elf_sha256": "5c48b8f39b14521773493692034fa601a9df89992552870addd68416cc926eac",
+  "binary_sha256": "74b2b0125f7e04d6cb390eecb1582c3f5a18fcd5b9da4d419e4eba2b24c766a8",
+  "plan_sha256": "c7eacb5050c81c566c817cd8b679ed72afaa391f765ce1e80a73ab7cf8df97d8",
+  "parts_checked": 500,
+  "signatures": 100,
+  "all_parts_covered": true,
+  "all_padded_shapes_match": true,
+  "all_committed_words": 234357176,
+  "below_original_cap": true,
+  "failed_parts": [],
+  "passed": true
+}

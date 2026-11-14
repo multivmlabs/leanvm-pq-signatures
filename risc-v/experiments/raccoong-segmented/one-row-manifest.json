@@ -1,0 +1,20 @@
+{
+  "scope": "Preserved single-row implementation before two-row trial",
+  "elf_sha256": "b9d0e027567ec9770fe00bafac275e754000898cc9975f40b4a77a5cd071153e",
+  "elf_bytes": 27824,
+  "archive_sha256": "381244e86ec0a0631143b4373bc75810d67c7df8ff9d74071a6202ff7bb7b037",
+  "measurement_sha256": "3c33da715d799972088a7f25f09253b384a2c1f43a058866722f0f1bd283d806",
+  "source_sha256": {
+    "guest/Cargo.toml": "58bc8447cd7a70a166d8f69c99a4463b5c0089c2aa485cdcb1e947599d73ccdf",
+    "guest/Cargo.lock": "4d76251405ba5c0f9b59e0d670cab5281a56651d5f97b37a2eeb77aea0ce2072",
+    "guest/rust-toolchain.toml": "ca26a107d0a658dbe79165f6ae73ac063f46b37b7456cf3e28e3f3e2e17a0739",
+    "guest/.cargo/config.toml": "f7822a93086f4d4849549c7791e43467e622742d7bce342cbe412a68a5b05445",
+    "guest/src/lib.rs": "a98f87d2aec636c2b3fe2b227286f6ae1d7df3c31d368759f65050c4df9bd6c1",
+    "guest/src/main.rs": "c814dfba912916c4b187109a7a698aac16e41f7f333357b3ebc143de5d4947ba",
+    "host/Cargo.toml": "d7ba1960e08eadfec2664c89359d68764cbda307cefd1942337769ae723e766e",
+    "host/Cargo.lock": "fce2ae1befbba94b0f2b38cd83132e4605fe215fe419674bf0668a4d34d790a1",
+    "host/examples/measure.rs": "8e25d4ce1f2d3e34440bf2e4962bde6a5c3e3119ce92cfc0f785ba03f1dd67d0",
+    "host/src/lib.rs": "f001e36fa2adc2f1f592911f0dcd1ad175af4fe488f5c5715cef95c05c8b02a8",
+    "host/src/tests.rs": "1262194daa71ee105c67b3b2e406bec857d146903f70113158f4efa583450fad"
+  }
+}

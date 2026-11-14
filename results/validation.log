@@ -1,0 +1,34 @@
+cargo build --release --locked
+    Finished `release` profile [optimized] target(s) in 0.04s
+.venv/bin/python -m unittest discover -s tests -v
+test_changed_challenge_rejection (test_dilithium.EthDilithiumTests) ... ok
+test_changed_hint (test_dilithium.EthDilithiumTests) ... ok
+test_changed_message_even_when_public_commitment_matches (test_dilithium.EthDilithiumTests) ... ok
+test_count_positive (test_dilithium.EthDilithiumTests) ... ok
+test_invalid_modular_witness (test_dilithium.EthDilithiumTests) ... ok
+test_nonboolean_multiplication_bit (test_dilithium.EthDilithiumTests) ... ok
+test_norm_and_rounding_boundaries (test_dilithium.EthDilithiumTests) ... ok
+test_replay_rebuilds_original_witness (test_dilithium.EthDilithiumTests) ... ok
+test_replay_rejects_invalid_compact_signature (test_dilithium.EthDilithiumTests) ... ok
+test_valid_signature (test_dilithium.EthDilithiumTests) ... ok
+test_z_out_of_range (test_dilithium.EthDilithiumTests) ... ok
+test_changed_message_and_key_with_recomputed_public_statement (test_falcon.FalconGuestTests) ... ok
+test_fully_recomputed_zero_signature_fails_norm_check (test_falcon.FalconGuestTests) ... ok
+test_quotient_remainder_and_ranges (test_falcon.FalconGuestTests) ... ok
+test_rejected_hash_candidate_cannot_be_accepted (test_falcon.FalconGuestTests) ... ok
+test_valid_batches (test_falcon.FalconGuestTests) ... ok
+test_invalid_count_and_key_encoding (test_falcon.FalconNativeTests) ... ok
+test_mutated_signature_and_message_rejected (test_falcon.FalconNativeTests) ... ok
+test_upstream_c_verifier_and_mutated_signed_message (test_falcon.FalconNativeTests) ... ok
+test_upstream_keccak_vectors (test_falcon.FalconNativeTests) ... ok
+test_all_negative_witnesses (test_fors.ForsIntegrationTests) ... ok
+test_guest_source_is_independent_of_signature_data (test_fors.ForsIntegrationTests) ... ok
+test_valid_single_and_three_record_batches (test_fors.ForsIntegrationTests) ... ok
+test_witness_free_verification_and_corrupted_proof_or_statement (test_fors.ForsIntegrationTests) ... ok
+test_forest_paths_and_message_binding (test_fors.NativeForsTests) ... ok
+test_parameter_bounds (test_fors.NativeForsTests) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 11.601s
+
+OK

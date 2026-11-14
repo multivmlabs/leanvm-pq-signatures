@@ -1,0 +1,30 @@
+{
+  "classification": "DEFECT: completeness mismatch, not forged signature acceptance",
+  "upstream_revision": "43ac863e30281bb7821748178d39967367d54bc2",
+  "location_before_fix": "guests/ethfalcon.py:272; python/pqbench/falcon.py:126",
+  "claim": "625 bytes was described as the reference compressed payload budget",
+  "relation": "s2=a*(1+X+...+X^511), h=c*(1-X)/(2*a), so h*s2=c modulo X^512+1 and q=12289",
+  "pre_fix_target": {
+    "a": 128,
+    "s0": "all zero",
+    "norm": 8388608,
+    "compressed_payload_bytes": 640,
+    "upstream_C_accepts_and_recovers_message": true,
+    "Python_accepts": false,
+    "VM_accepts": false,
+    "VM_error": "verify_signature generated line 319, WildPointer from log(lengths)<393"
+  },
+  "pre_fix_control": {
+    "a": 127,
+    "s0": "all zero",
+    "norm": 8258048,
+    "compressed_payload_bytes": 576,
+    "upstream_C_accepts_and_recovers_message": true,
+    "Python_accepts": true,
+    "VM_accepts": true
+  },
+  "boundary": "Synthetic keys are canonical verifier inputs, not asserted to have a corresponding generated Falcon secret key. This demonstrates differing verifier relations; it is not an attack on honest-key signature unforgeability. crypto_sign_open has no total payload cap, whereas crypto_sign uses a 647-byte payload buffer.",
+  "fix": "Remove invented total payload bound; retain canonical coefficient and norm constraints.",
+  "reproduction": ".venv/bin/python review/falcon/independent_audit.py (post-fix both accepted); tests/test_falcon.py retains regression controls",
+  "novelty": "Local guest port defect; no claim of upstream vulnerability or independent cryptographic novelty."
+}

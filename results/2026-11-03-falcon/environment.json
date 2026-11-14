@@ -1,0 +1,29 @@
+{
+  "platform": "macOS-26.3-arm64-arm-64bit",
+  "uname": [
+    "Darwin",
+    "manuelbsantos",
+    "25.3.0",
+    "Darwin Kernel Version 25.3.0: Wed Jan 28 20:48:41 PST 2026; root:xnu-12377.81.4~5/RELEASE_ARM64_T6041",
+    "arm64",
+    "arm"
+  ],
+  "logical_cpus": 12,
+  "python": "3.9.6 (default, Apr  7 2026, 02:38:40) \n[Clang 21.0.0 (clang-2100.0.123.102)]",
+  "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)",
+  "threads_env": null,
+  "upstream": {
+    "leanVM": {
+      "url": "https://github.com/leanEthereum/leanVM.git",
+      "rev": "575df819d9c857f38068cecf7b1640e0ce4bfb29"
+    },
+    "ETHFALCON": {
+      "url": "https://github.com/ZKNoxHQ/ETHFALCON.git",
+      "rev": "43ac863e30281bb7821748178d39967367d54bc2"
+    },
+    "ETHDILITHIUM": {
+      "url": "https://github.com/ZKNoxHQ/ETHDILITHIUM.git",
+      "rev": "f9f4fe1d84e68304b425e054c273c276fe44ba11"
+    }
+  }
+}

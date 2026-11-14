@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "signatures": 30,
+  "sample": 1,
+  "producer_command": [
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/target/release/leanisa-reduced-tree",
+    "prove",
+    "--public",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/leanISA/reduction/results/trees/fors-30/public.json",
+    "--inputs",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/leanISA/reduction/results/trees/fors-30",
+    "--out",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/leanISA/reduction/results/trees/fors-30/sample-1"
+  ],
+  "consumer_command": [
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/target/release/leanisa-reduced-tree",
+    "verify",
+    "--public",
+    "/tmp/leanisa-reduced-receiver-ulywvl1j/public.json",
+    "--proof",
+    "/tmp/leanisa-reduced-receiver-ulywvl1j/root.proof",
+    "--expect-public-sha256",
+    "f581a6bea566ec1ca4691e88655fc6ddfb68d3095ddf64abb587fb8a791fff0f",
+    "--expect-leaf-guest-hash",
+    "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+    "--out",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/leanISA/reduction/results/trees/fors-30/sample-1/verification.json"
+  ],
+  "host_binary_sha256": "1d683e440929570d459dca6747f18b74760fa94ee385d7adb0261129fbba38b5",
+  "public_sha256": "f581a6bea566ec1ca4691e88655fc6ddfb68d3095ddf64abb587fb8a791fff0f",
+  "approved_leaf_guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+  "root_proof_sha256": "1a3eaeca56b2d6ba2894ae7cf4d299af6ad947024bd51a9bc34538c90ee26f9d",
+  "verified_public_only": true,
+  "receiver_files": [
+    "public.json",
+    "root.proof"
+  ],
+  "process_elapsed_s": 4.470007459
+}

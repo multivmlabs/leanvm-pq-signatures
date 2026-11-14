@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "controls": [
+    {
+      "name": "first-one",
+      "expected_accept": true,
+      "native_accept": true,
+      "actual_guest_accept": true,
+      "expected_digest_matches_hashlib": true
+    },
+    {
+      "name": "honest-two",
+      "expected_accept": true,
+      "native_accept": true,
+      "actual_guest_accept": true,
+      "expected_digest_matches_hashlib": true
+    },
+    {
+      "name": "reversed-two",
+      "expected_accept": true,
+      "native_accept": true,
+      "actual_guest_accept": true,
+      "expected_digest_matches_hashlib": true
+    },
+    {
+      "name": "second-challenge",
+      "expected_accept": false,
+      "native_accept": false,
+      "actual_guest_accept": false,
+      "expected_digest_matches_hashlib": true
+    },
+    {
+      "name": "second-final-hint-residue-2048",
+      "expected_accept": false,
+      "native_accept": false,
+      "actual_guest_accept": false,
+      "expected_digest_matches_hashlib": true
+    },
+    {
+      "name": "second-final-hint",
+      "expected_accept": false,
+      "native_accept": false,
+      "actual_guest_accept": false,
+      "expected_digest_matches_hashlib": true
+    },
+    {
+      "name": "second-final-message-byte",
+      "expected_accept": false,
+      "native_accept": false,
+      "actual_guest_accept": false,
+      "expected_digest_matches_hashlib": true
+    },
+    {
+      "name": "second-final-public-low-bit",
+      "expected_accept": false,
+      "native_accept": false,
+      "actual_guest_accept": false,
+      "expected_digest_matches_hashlib": true
+    },
+    {
+      "name": "second-final-public-residue-q",
+      "expected_accept": false,
+      "native_accept": false,
+      "actual_guest_accept": false,
+      "expected_digest_matches_hashlib": true
+    },
+    {
+      "name": "second-final-response-residue-q",
+      "expected_accept": false,
+      "native_accept": false,
+      "actual_guest_accept": false,
+      "expected_digest_matches_hashlib": true
+    },
+    {
+      "name": "second-one",
+      "expected_accept": true,
+      "native_accept": true,
+      "actual_guest_accept": true,
+      "expected_digest_matches_hashlib": true
+    },
+    {
+      "name": "swapped-signature-witnesses",
+      "expected_accept": false,
+      "native_accept": false,
+      "actual_guest_accept": false,
+      "expected_digest_matches_hashlib": true
+    }
+  ],
+  "elf_sha256": "24816e301dbcf77167e8c0d7a5090f93ba7e1ba448c6cc79ed4664ade2e8a56d",
+  "source_files_checked": 24,
+  "fixture_files_checked": 5,
+  "prover_invoked": false,
+  "benchmarks_run": false
+}

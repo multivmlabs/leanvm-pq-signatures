@@ -1,0 +1,341 @@
+{
+  "schema": 1,
+  "status": "completed_scope_as_reduced_by_user",
+  "root_count": 22,
+  "coordinator_sha256": "c117ef5be9437638c5802f109362d4108b822ed3c8d4c97d16da950cae4ab09d",
+  "proof_cap_words": 268435456,
+  "points": [
+    {
+      "scheme": "raccoon",
+      "signatures": 10,
+      "fresh_complete_samples": 3,
+      "observation_type": "median of three fresh complete pipelines",
+      "prove_samples_s": [
+        119.11424058600001,
+        120.32697225399998,
+        120.362277501
+      ],
+      "reported_prove_s": 120.32697225399998,
+      "root_bytes_samples": [
+        266815,
+        266815,
+        266815
+      ],
+      "reported_root_bytes": 266815,
+      "peak_rss_samples_bytes": [
+        19587219456,
+        19805356032,
+        19489587200
+      ],
+      "prepared_full_or_core_verify_medians_s": [
+        0.002423667,
+        0.002465917,
+        0.002459541
+      ],
+      "public_claim_derivation_s": [
+        0.000480458,
+        0.000342625,
+        0.000348833
+      ],
+      "public_configuration_prepare_s": [
+        null,
+        null,
+        null
+      ],
+      "cold_complete_verify_s": [
+        0.074418209,
+        0.06860770899999999,
+        0.06973291599999999
+      ]
+    },
+    {
+      "scheme": "raccoon",
+      "signatures": 30,
+      "fresh_complete_samples": 3,
+      "observation_type": "median of three fresh complete pipelines",
+      "prove_samples_s": [
+        350.28299233,
+        362.73677124600005,
+        358.09257533499994
+      ],
+      "reported_prove_s": 358.09257533499994,
+      "root_bytes_samples": [
+        267199,
+        267199,
+        267199
+      ],
+      "reported_root_bytes": 267199,
+      "peak_rss_samples_bytes": [
+        19778502656,
+        19741196288,
+        19487506432
+      ],
+      "prepared_full_or_core_verify_medians_s": [
+        0.00246475,
+        0.002506916,
+        0.002435959
+      ],
+      "public_claim_derivation_s": [
+        0.001178833,
+        0.001020542,
+        0.000855416
+      ],
+      "public_configuration_prepare_s": [
+        null,
+        null,
+        null
+      ],
+      "cold_complete_verify_s": [
+        0.075539542,
+        0.072929876,
+        0.06982825000000001
+      ]
+    },
+    {
+      "scheme": "raccoon",
+      "signatures": 70,
+      "fresh_complete_samples": 3,
+      "observation_type": "median of three fresh complete pipelines",
+      "prove_samples_s": [
+        828.7043988790001,
+        817.2885436660006,
+        841.509924502
+      ],
+      "reported_prove_s": 828.7043988790001,
+      "root_bytes_samples": [
+        266207,
+        266207,
+        266207
+      ],
+      "reported_root_bytes": 266207,
+      "peak_rss_samples_bytes": [
+        19962249216,
+        20334100480,
+        20225851392
+      ],
+      "prepared_full_or_core_verify_medians_s": [
+        0.002446166,
+        0.00254775,
+        0.00249725
+      ],
+      "public_claim_derivation_s": [
+        0.001630958,
+        0.002301125,
+        0.002538709
+      ],
+      "public_configuration_prepare_s": [
+        null,
+        null,
+        null
+      ],
+      "cold_complete_verify_s": [
+        0.069113917,
+        0.073286874,
+        0.074486207
+      ]
+    },
+    {
+      "scheme": "raccoon",
+      "signatures": 100,
+      "fresh_complete_samples": 3,
+      "observation_type": "median of three fresh complete pipelines",
+      "prove_samples_s": [
+        1164.9054815839995,
+        1185.207180970001,
+        1164.2087461239996
+      ],
+      "reported_prove_s": 1164.9054815839995,
+      "root_bytes_samples": [
+        267647,
+        267647,
+        267647
+      ],
+      "reported_root_bytes": 267647,
+      "peak_rss_samples_bytes": [
+        20248182784,
+        20031799296,
+        19866468352
+      ],
+      "prepared_full_or_core_verify_medians_s": [
+        0.002432833,
+        0.002497,
+        0.002534583
+      ],
+      "public_claim_derivation_s": [
+        0.003063417,
+        0.002804375,
+        0.003281083
+      ],
+      "public_configuration_prepare_s": [
+        null,
+        null,
+        null
+      ],
+      "cold_complete_verify_s": [
+        0.072319376,
+        0.071807251,
+        0.074773833
+      ]
+    },
+    {
+      "scheme": "raccoon-g",
+      "signatures": 10,
+      "fresh_complete_samples": 3,
+      "observation_type": "median of three fresh complete pipelines",
+      "prove_samples_s": [
+        477.4688040039999,
+        488.283147623,
+        490.0736493790001
+      ],
+      "reported_prove_s": 488.283147623,
+      "root_bytes_samples": [
+        267899,
+        267899,
+        267899
+      ],
+      "reported_root_bytes": 267899,
+      "peak_rss_samples_bytes": [
+        20039155712,
+        19587334144,
+        19313590272
+      ],
+      "prepared_full_or_core_verify_medians_s": [
+        0.003754459,
+        0.003707,
+        0.003718792
+      ],
+      "public_claim_derivation_s": [
+        0.001640792,
+        0.001629708,
+        0.001635291
+      ],
+      "public_configuration_prepare_s": [
+        0.000995875,
+        0.000984125,
+        0.001000375
+      ],
+      "cold_complete_verify_s": [
+        0.07392862500000001,
+        0.073255291,
+        0.07416125000000001
+      ]
+    },
+    {
+      "scheme": "raccoon-g",
+      "signatures": 30,
+      "fresh_complete_samples": 3,
+      "observation_type": "median of three fresh complete pipelines",
+      "prove_samples_s": [
+        1507.2325499110004,
+        1479.0049617829998,
+        1438.803282499
+      ],
+      "reported_prove_s": 1479.0049617829998,
+      "root_bytes_samples": [
+        268859,
+        268859,
+        268859
+      ],
+      "reported_root_bytes": 268859,
+      "peak_rss_samples_bytes": [
+        19810549760,
+        19731808256,
+        19714179072
+      ],
+      "prepared_full_or_core_verify_medians_s": [
+        0.006077916,
+        0.006098917,
+        0.0061515
+      ],
+      "public_claim_derivation_s": [
+        0.003467041,
+        0.004033667,
+        0.004546292
+      ],
+      "public_configuration_prepare_s": [
+        0.001970208,
+        0.002442209,
+        0.0028135
+      ],
+      "cold_complete_verify_s": [
+        0.07297150100000001,
+        0.074100168,
+        0.07706358299999999
+      ]
+    },
+    {
+      "scheme": "raccoon-g",
+      "signatures": 70,
+      "fresh_complete_samples": 3,
+      "observation_type": "median of three fresh complete pipelines",
+      "prove_samples_s": [
+        3323.246012353001,
+        3315.204024955996,
+        3411.896912629001
+      ],
+      "reported_prove_s": 3323.246012353001,
+      "root_bytes_samples": [
+        271355,
+        271355,
+        271355
+      ],
+      "reported_root_bytes": 271355,
+      "peak_rss_samples_bytes": [
+        20108017664,
+        20257079296,
+        19638370304
+      ],
+      "prepared_full_or_core_verify_medians_s": [
+        0.010712375,
+        0.010795167,
+        0.010722125
+      ],
+      "public_claim_derivation_s": [
+        0.009272708,
+        0.009227083,
+        0.00800175
+      ],
+      "public_configuration_prepare_s": [
+        0.005541875,
+        0.005602667,
+        0.004547583
+      ],
+      "cold_complete_verify_s": [
+        0.080220624,
+        0.080212542,
+        0.079949208
+      ]
+    },
+    {
+      "scheme": "raccoon-g",
+      "signatures": 100,
+      "fresh_complete_samples": 1,
+      "observation_type": "single measured pipeline",
+      "prove_samples_s": [
+        4906.049766407995
+      ],
+      "reported_prove_s": 4906.049766407995,
+      "root_bytes_samples": [
+        273403
+      ],
+      "reported_root_bytes": 273403,
+      "peak_rss_samples_bytes": [
+        20035633152
+      ],
+      "prepared_full_or_core_verify_medians_s": [
+        0.014215916
+      ],
+      "public_claim_derivation_s": [
+        0.011711833
+      ],
+      "public_configuration_prepare_s": [
+        0.006546458
+      ],
+      "cold_complete_verify_s": [
+        0.085717834
+      ]
+    }
+  ],
+  "resource_stop_archive": "resource-stops/20261110T041747Z",
+  "user_stop_archive": "user-stops/20261110T110242Z"
+}

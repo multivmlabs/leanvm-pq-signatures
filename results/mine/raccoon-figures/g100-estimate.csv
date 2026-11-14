@@ -1,0 +1,4 @@
+classification,basis_sample,basis_count,target_count,estimated_prove_s,estimated_receipt_bytes,included_in_measured_curves
+"heuristic estimate, not a benchmark",0,70,100,4697.933134998145,273275,False
+"heuristic estimate, not a benchmark",1,70,100,4686.695522741423,273275,False
+"heuristic estimate, not a benchmark",2,70,100,4825.573414502287,273275,False

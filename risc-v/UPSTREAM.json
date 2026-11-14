@@ -1,0 +1,24 @@
+{
+  "backend": {
+    "repository": "https://github.com/leanEthereum/leanVM",
+    "branch": "riscv-exploration",
+    "commit": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+    "local_path": "../vendor/leanVM-riscv",
+    "patches": []
+  },
+  "falcon": {
+    "pull_request": "https://github.com/leanEthereum/leanVM/pull/490",
+    "guest": "programs/falcon/guest",
+    "profile": "round-3 Falcon-512, SHAKE256, 32-byte messages, fixed compressed body up to 625 bytes"
+  },
+  "mldsa": {
+    "reference_repository": "https://github.com/ZKNoxHQ/ETHDILITHIUM",
+    "reference_commit": "f9f4fe1d84e68304b425e054c273c276fe44ba11",
+    "profile": "FIPS 204 ML-DSA-44, pure mode, empty context, compact public keys and signatures, 32-byte messages",
+    "local_adapters": "mldsa/build-manifest.json"
+  },
+  "fors": {
+    "profile": "FORS, n=32, k=16, a=8, Keccak-256, fixed domains and addresses",
+    "local_sources": "fors/build-manifest.json"
+  }
+}

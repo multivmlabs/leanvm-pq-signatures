@@ -1,0 +1,27 @@
+{
+  "distinct_keys": 33,
+  "public_record_count": 33,
+  "python_blake2s_digest_matches": true,
+  "separate_root_cli_full_verification_passed": true,
+  "command": [
+    ".cache/riscv-host-target/release/riscv-pqbench",
+    "verify",
+    "--scheme",
+    "falcon",
+    "--proof",
+    "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start96-proved.proof",
+    "--statement",
+    "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start96-proved.statement.json",
+    "--expect-statement-sha256",
+    "609d8a0264132fa950d9486e7dd32ac90d28f2c98150158362fe8efa34dc5972",
+    "--expect-elf-sha256",
+    "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c",
+    "--repeat",
+    "1",
+    "--warmup",
+    "0",
+    "--out",
+    "risc-v/reviews/lattice-capacity-reaudit/results/reverify-falcon-33.json"
+  ],
+  "statement_sha256": "609d8a0264132fa950d9486e7dd32ac90d28f2c98150158362fe8efa34dc5972"
+}

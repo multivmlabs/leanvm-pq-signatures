@@ -1,0 +1,20 @@
+{
+  "action": "measure",
+  "advice_words": 4705,
+  "arch": "aarch64",
+  "count": 8,
+  "elf_sha256": "64480a3bf424f97578f6477a7a4045c2452853a0801f45fc191648eb253e36da",
+  "error": "TooLong",
+  "fixture_s": 0.017391417,
+  "leanvm_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "log_inverse_rate": 1,
+  "measure_s": 0.065153708,
+  "os": "macos",
+  "peak_rss_bytes": 11599872,
+  "program_load_s": 0.001857583,
+  "schema": 1,
+  "scheme": "fors",
+  "status": "rejected",
+  "threads": 8,
+  "zero_knowledge": false
+}

@@ -1,0 +1,54 @@
+{
+  "action": "plan",
+  "backend_revision": "575df819d9c857f38068cecf7b1640e0ce4bfb29",
+  "compile_s": 0.315513083,
+  "depth": 2,
+  "families": [
+    {
+      "bytecode_instructions": 8192,
+      "dimensions": 17,
+      "family": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "min_log_committed": 22,
+      "table_words": 131072
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 1,
+      "guest_hash": "9a644995149507104780db24c34f7bf0a2b0fc7631f05faa743d6002becfb3dc",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    },
+    {
+      "bytecode_instructions": 262144,
+      "dimensions": 22,
+      "family": 2,
+      "guest_hash": "2d8699877c87d010052a00b89adc6e9aa5f28b1e08501703146d5dd1e1e393c2",
+      "min_log_committed": 22,
+      "table_words": 4194304
+    }
+  ],
+  "leaf_guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+  "leaf_size": 5,
+  "leaf_slots": 4,
+  "leaf_source_sha256": "c46fc19886ee36392d106b13443440d7daaeaf210f6806dac6836c9b58c91e2c",
+  "policy": [
+    {
+      "c0": 1813863182008549935,
+      "c1": 16047628592991759876,
+      "c2": 0
+    },
+    {
+      "c0": 569931234575716105,
+      "c1": 1186336427901679774,
+      "c2": 0
+    }
+  ],
+  "public_sha256": "57c2be45195c443bc759b3bf5a7244f3ef5462968ca77b672912d57e9583d27d",
+  "real_leaves": 4,
+  "root_guest_hash": "2d8699877c87d010052a00b89adc6e9aa5f28b1e08501703146d5dd1e1e393c2",
+  "schema": 1,
+  "signatures": 20,
+  "terminal_evaluations": 2
+}

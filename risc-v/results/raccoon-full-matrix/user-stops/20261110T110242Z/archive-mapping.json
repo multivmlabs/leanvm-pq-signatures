@@ -1,0 +1,50 @@
+{
+  "risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1/leaf-0.proof": {
+    "archived": "evidence/risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1/leaf-0.proof",
+    "sha256": "566f9163085a33827b993c74998925d357fe95a1aa91924663c0baec1b3c5457"
+  },
+  "risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1/leaf-1.proof": {
+    "archived": "evidence/risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1/leaf-1.proof",
+    "sha256": "6771488a447acc1bb69c1badfabbf8044e9c8de82ee22116a5ebe66ea3335ad5"
+  },
+  "risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1/leaf-2.proof": {
+    "archived": "evidence/risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1/leaf-2.proof",
+    "sha256": "5dd6779a10de149f5884fed319d58d4c669f8e1a0c43e61b4ed1e67aa54b4d9c"
+  },
+  "risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1/leaf-3.proof": {
+    "archived": "evidence/risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1/leaf-3.proof",
+    "sha256": "8a03323625c85b4955d4f7a5db5b343573f5c84b227e0e9392ed66b6c325d1a1"
+  },
+  "risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1/leaf-4.proof": {
+    "archived": "evidence/risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1/leaf-4.proof",
+    "sha256": "bfa5349df5be75b0117d621132ab2e60e222f78420f3394776bc2da4906f78f3"
+  },
+  "risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1/leaf-5.proof": {
+    "archived": "evidence/risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1/leaf-5.proof",
+    "sha256": "dc76916127a70071f1edd7d0d909040e2b3aaff21b0c9f3096098e0c5db24992"
+  },
+  "risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1/leaf-6.proof": {
+    "archived": "evidence/risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1/leaf-6.proof",
+    "sha256": "39976c8746e9ee273914300501bceca6a4301c5bf4345b70eb799ebd06c7086b"
+  },
+  "risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1/report.json": {
+    "archived": "evidence/risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1/report.json",
+    "sha256": "3ccc3747cd48df16e687e8018fcaebe3325043fa3f080b6178bf5e20685cbc45"
+  },
+  "risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1-producer.started.json": {
+    "archived": "evidence/risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1-producer.started.json",
+    "sha256": "53c813b6de959be5b0e1109bd482b673915aad24ba5fefb2fe166dafd939819d"
+  },
+  "risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1-producer.stderr.log": {
+    "archived": "evidence/risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1-producer.stderr.log",
+    "sha256": "f1c30cd9d603c97098f6121fd439c4874a293da9509ebc272c9eb87a374a41b0"
+  },
+  "risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1-producer.stdout.log": {
+    "archived": "evidence/risc-v/results/raccoong-segmented-uniform-trees/count-100/sample-1-producer.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "risc-v/results/raccoon-full-matrix/progress.json": {
+    "archived": "evidence/risc-v/results/raccoon-full-matrix/progress.json",
+    "sha256": "4291d5408352b3577fb6748f9be52850ec52e78b1c8165e4678764727bfa20db"
+  }
+}

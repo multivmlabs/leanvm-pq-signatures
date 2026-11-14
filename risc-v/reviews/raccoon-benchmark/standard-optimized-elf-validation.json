@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "elf_sha256": "e375033cde726b2e988db2c433bf8d83b8516252c5954c1e43cb6720f3b25eac",
+  "actual_elf_controls": [
+    {
+      "case": "first-one",
+      "expected_accept": true,
+      "actual_guest_accept": true,
+      "independent_public_digest": "8d34123d8d729ce998773777cc2f0ba92b797e9fc74f2833d50e92961e707d0a",
+      "passed": true
+    },
+    {
+      "case": "honest-two",
+      "expected_accept": true,
+      "actual_guest_accept": true,
+      "independent_public_digest": "f4612e20e30b63f891d2f803208ea755c0f940ce78c8c1ed93a73e896f910597",
+      "passed": true
+    },
+    {
+      "case": "nist-pdf-order",
+      "expected_accept": false,
+      "actual_guest_accept": false,
+      "independent_public_digest": "0e604ecd74453c6a1a68a16bdbf308906b71d87e73872ef7338e8e26f9648f18",
+      "passed": true
+    },
+    {
+      "case": "reference-order",
+      "expected_accept": true,
+      "actual_guest_accept": true,
+      "independent_public_digest": "0e604ecd74453c6a1a68a16bdbf308906b71d87e73872ef7338e8e26f9648f18",
+      "passed": true
+    },
+    {
+      "case": "reversed-two",
+      "expected_accept": true,
+      "actual_guest_accept": true,
+      "independent_public_digest": "18d4a2061ec5746504c94bac5039e81d2e77d331d2b7560545caa42f1b4ad909",
+      "passed": true
+    },
+    {
+      "case": "second-late-key",
+      "expected_accept": false,
+      "actual_guest_accept": false,
+      "independent_public_digest": "a286a6d061ceae082f11f7b929ba8d376be397e2b9ed94a30d49b70d949a6c9a",
+      "passed": true
+    },
+    {
+      "case": "second-late-message",
+      "expected_accept": false,
+      "actual_guest_accept": false,
+      "independent_public_digest": "01a1a927cd307088a308305ce4cd51893dbe8da253e8fa25f719196b1b4c3e09",
+      "passed": true
+    },
+    {
+      "case": "second-noncanonical-final-coefficient",
+      "expected_accept": false,
+      "actual_guest_accept": false,
+      "independent_public_digest": "cb5baa3dfed2fa5f8a9b9b908cc2be215afc5187bd3b801ca9de1538a2678b12",
+      "passed": true
+    },
+    {
+      "case": "second-nonzero-final-padding",
+      "expected_accept": false,
+      "actual_guest_accept": false,
+      "independent_public_digest": "f4612e20e30b63f891d2f803208ea755c0f940ce78c8c1ed93a73e896f910597",
+      "passed": true
+    },
+    {
+      "case": "second-one",
+      "expected_accept": true,
+      "actual_guest_accept": true,
+      "independent_public_digest": "d5a18c54118b72a2633f7ea519ad2436daa2c8334b8ff52bcab9dc1d07e615a7",
+      "passed": true
+    },
+    {
+      "case": "second-seed",
+      "expected_accept": false,
+      "actual_guest_accept": false,
+      "independent_public_digest": "7f7af2f7920dd0565f6addc78cc07245ede91d9ef41fc5af58794f1f68fa8511",
+      "passed": true
+    },
+    {
+      "case": "second-signature",
+      "expected_accept": false,
+      "actual_guest_accept": false,
+      "independent_public_digest": "f4612e20e30b63f891d2f803208ea755c0f940ce78c8c1ed93a73e896f910597",
+      "passed": true
+    },
+    {
+      "case": "swapped-signatures",
+      "expected_accept": false,
+      "actual_guest_accept": false,
+      "independent_public_digest": "f4612e20e30b63f891d2f803208ea755c0f940ce78c8c1ed93a73e896f910597",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "kernels": [
+    {
+      "source": "risc-v/experiments/raccoon-crt32/guest/src/register_keccak.rs",
+      "sha256": "fade11791d19c5163ff1afd36b19f2af9b5d619b94921420f33376b76be59af3",
+      "identical_to_previously_tested_kernel": "risc-v/experiments/keccak-registers/sdk/src/keccak.rs"
+    },
+    {
+      "source": "risc-v/experiments/raccoon-crt32/guest/src/keccak_rv64.S",
+      "sha256": "c17df902a611eb5171d50a932c95ef23b978722cbee9d8bf235d06ce110db309",
+      "identical_to_previously_tested_kernel": "risc-v/experiments/keccak-registers/sdk/src/keccak_rv64.S"
+    }
+  ],
+  "scope": "No proof or measurement; actual final ELF raw-interpreter correctness and independent public binding"
+}

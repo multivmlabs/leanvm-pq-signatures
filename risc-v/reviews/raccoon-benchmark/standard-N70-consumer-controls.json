@@ -1,0 +1,291 @@
+{
+  "schema": 1,
+  "kind": "tree",
+  "scheme": "raccoon",
+  "signatures": 70,
+  "runner_sha256": "901f975bd275dcb3668673113b12bcd27243324b475bf6a685e5e34eee795feb",
+  "source_statement_sha256": "0b33cb21a6c1fa822abf0e0f603d2c4c85d4a484c80dc5822aba0113422be88b",
+  "root_proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f",
+  "approved_elf_sha256": "e375033cde726b2e988db2c433bf8d83b8516252c5954c1e43cb6720f3b25eac",
+  "independent_leaf_digest_check": true,
+  "independent_root_binding": {
+    "protocol": 19,
+    "statement_words": 98,
+    "root_kind": 1,
+    "ordered_root_digest": "0b30301b8303140b0816dcbcb4b735d783a96b9d2979a23bd85ecf893479dfb7"
+  },
+  "description": "No proving. Every native receiver starts in isolation with only intended public records and one root. Recommitted mutations receive fresh caller pins.",
+  "passed": true,
+  "controls": [
+    {
+      "case": "honest",
+      "expected_accept": true,
+      "returncode": 0,
+      "passed": true,
+      "stderr": "",
+      "statement_sha256": "5d48ffd6ab1b1f095eef40ae8d49bfe31a134710e7890c13cd14e33097ddf4c1",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "changed-public_key-record-0-recommitted",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Outputs",
+      "statement_sha256": "1ce6ed3a6c6848becaff521eb06e715b33232a062c9a75fd35722fd37a604fc6",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "changed-public_key-record-69-recommitted",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Outputs",
+      "statement_sha256": "95ca19473bbd8fe01fd915f6908b407a57faca4a5c6d4b546eba0f85d1682e72",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "changed-message-record-0-recommitted",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Outputs",
+      "statement_sha256": "670391a9261d87f9e7704164b4c42bdc20aab4f39dd4980de1294ae481503e2e",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "changed-message-record-69-recommitted",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Outputs",
+      "statement_sha256": "c06a17bde4ec086bc2ccf0d94c7a65bac0de1864c28ee5462e95904ea0402dfe",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "reordered-records-recommitted",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Outputs",
+      "statement_sha256": "efaec02274db6fe8708cb1d36e24825bcaacc443693fb797a7f7fcf861a07dfb",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "duplicated-record-recommitted",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"repeated public key in intended records\"",
+      "statement_sha256": "9d1c7b2b406a11ee153cf62a5cc47922615db2802c340b63df08cd7211610a21",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "wrong-signature-count",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted tree configuration\"",
+      "statement_sha256": "9bf59841c79f3b8a104c8e69ff1008a655e75f15539748fba11183b45ca46c13",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "wrong-cached-public-output",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"cached leaf output differs from intended public records\"",
+      "statement_sha256": "bc6981789a5421ff52aa627b3aa7d5f7c8730c9eded6b767b15cd2909dd4cda2",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "wrong-statement-elf",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"caller-trusted ELF digest mismatch\"",
+      "statement_sha256": "57d4eacae24941d0a097dd72a30869a507ceab4ddd14599e2d87230f85babdd5",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "wrong-statement-schema",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted tree configuration\"",
+      "statement_sha256": "84adacd4017705184223b5124e939bf18bfcb0a92dfee1b96946953dd1a154e7",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "unknown-statement-field",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Error(\"unknown field `unrecognized`, expected one of `schema`, `backend_revision`, `scheme`, `signatures`, `elf_sha256`, `leaf_size`, `actual_leaves`, `leaf_slots`, `arity_0`, `arity`, `log_inverse_rate`, `table_rows`, `expected_leaf_outputs`, `public_records`\", line: 1, column: 329360)",
+      "statement_sha256": "86190761cc3089c9ec35e35ebbf6242e776f0fc8f0875ef4431b8a351bb778b1",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "wrong-signature-profile",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"caller-trusted ELF digest mismatch\"",
+      "statement_sha256": "c57d0c9699b09ae16868b81922734db651d681c547f2ec6ab88676cfac31e805",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "reordered-leaves-recommitted",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Outputs",
+      "statement_sha256": "efaec02274db6fe8708cb1d36e24825bcaacc443693fb797a7f7fcf861a07dfb",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "wrong-leaf_slots",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted tree configuration\"",
+      "statement_sha256": "4bff3643ad7b9da677ee99426071addb5517fe5c75df84e7cd6ec53a68194335",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "wrong-arity",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted tree configuration\"",
+      "statement_sha256": "383d145f80285479abf86869acbc6548318ca916b004d694f837633e16184433",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "wrong-arity_0",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted tree configuration\"",
+      "statement_sha256": "5c5becd1566080aed93797af8677224fc30eb3d4daa54bf4e2f5e179856cea96",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "wrong-backend_revision",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted tree configuration\"",
+      "statement_sha256": "ab57934a4089f55aa21af06b360cbf8fe155eaf42958e799daf09e234205f1c0",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "wrong-log_inverse_rate",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Rate { expected: Rate(2), got: Rate(1) }",
+      "statement_sha256": "f148f98c3dc2a81e1341cce6ec17f29d6215cb68a58e0b084fc60ae186600c9e",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "zero-height",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted table heights\"",
+      "statement_sha256": "6141609bf440171c94996c69f636de9d3d2bdb286fef0a9dcb66b2e6462c755e",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "non-power-two-height",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted table heights\"",
+      "statement_sha256": "cb41a1540d8f0546af5407413a62041c1d5cb6d08951c6cfa7658037fdaf2fd2",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "too-large-height",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted table heights\"",
+      "statement_sha256": "873c523f3cd9de97664abc8ccc1c3c4b1375f43c7c51c1dc15887e842f1f8037",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "missing-table-height",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"invalid trusted table heights\"",
+      "statement_sha256": "f8dd958751fd7bb7a346702485d8cbc60640a086308be80c46b73812d04b3f34",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "wrong-trusted-elf",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"caller-trusted ELF digest mismatch\"",
+      "statement_sha256": "5d48ffd6ab1b1f095eef40ae8d49bfe31a134710e7890c13cd14e33097ddf4c1",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "wrong-trusted-statement",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: \"caller-trusted statement digest mismatch\"",
+      "statement_sha256": "5d48ffd6ab1b1f095eef40ae8d49bfe31a134710e7890c13cd14e33097ddf4c1",
+      "proof_sha256": "81f598af1754c26db75975aeb4aff70cfdbe23dcdf352b5a240f55afeeaaeb3f"
+    },
+    {
+      "case": "corrupt-magic",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Malformed",
+      "statement_sha256": "5d48ffd6ab1b1f095eef40ae8d49bfe31a134710e7890c13cd14e33097ddf4c1",
+      "proof_sha256": "ac6ca6e6c16d4d38f830a2d184b6b3ec94bd4f3bdbc8ac29d3e72c03740fa2db"
+    },
+    {
+      "case": "corrupt-version",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: UnsupportedVersion { found: 18, expected: 19 }",
+      "statement_sha256": "5d48ffd6ab1b1f095eef40ae8d49bfe31a134710e7890c13cd14e33097ddf4c1",
+      "proof_sha256": "512fc10b255116c55339358757fd581b37eb09f0b376f7727f628e6d07e5250a"
+    },
+    {
+      "case": "corrupt-proof-middle",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Root(VerifyError(Recursion(Open(Transcript(InvalidHint { index: 0 })))))",
+      "statement_sha256": "5d48ffd6ab1b1f095eef40ae8d49bfe31a134710e7890c13cd14e33097ddf4c1",
+      "proof_sha256": "9fb62bf59af373dda1697b4e6e8ae0485b226e59bcbbc5fd713d5eaed5f156cf"
+    },
+    {
+      "case": "truncated-root",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Malformed",
+      "statement_sha256": "5d48ffd6ab1b1f095eef40ae8d49bfe31a134710e7890c13cd14e33097ddf4c1",
+      "proof_sha256": "8295eb2accc1fe3b90a7c68629d0b52df671d29938cb0686a56ff377edafa610"
+    },
+    {
+      "case": "trailing-root-byte",
+      "expected_accept": false,
+      "returncode": 1,
+      "passed": true,
+      "stderr": "Error: Malformed",
+      "statement_sha256": "5d48ffd6ab1b1f095eef40ae8d49bfe31a134710e7890c13cd14e33097ddf4c1",
+      "proof_sha256": "32099cfb561fc45791e010ecff0c55f9e509e0a101e778a604b0bd6a24f99f51"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[package]
+name = "aerie-wrapper-format"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[workspace]
+
+[dependencies]
+sha3 = { version = "=0.10.9", default-features = false }

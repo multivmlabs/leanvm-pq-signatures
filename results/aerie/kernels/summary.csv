@@ -1,0 +1,5 @@
+count,cycles,cycles_per_modmul,memory_cells,committed_cells,derived_log_committed_ceiling,prove_s_median,prove_s_min,prove_s_max,saved_proof_bytes,proof_bytes_samples,process_peak_rss_bytes,fresh_core_verify_s,cached_verify_s_median,report,verified,resume_integrity_check_passed
+1,6802,6802.0,6750,445184,19,0.026932459,0.0267165,0.027342292,235176,"[235176, 235176, 235176]",55148544,0.006055625,0.004560667,results/aerie/kernels/fp64mul-1.json,True,True
+8,54311,6788.875,53895,1375232,21,0.039026458,0.039018375,0.039426667,248880,"[248880, 248880, 248880]",138215424,0.006528125,0.004758833,results/aerie/kernels/fp64mul-8.json,True,True
+64,434383,6787.234375,431055,10650624,24,0.128059541,0.122213,0.132438417,294648,"[294648, 294648, 294648]",767541248,0.006588792,0.004967416,results/aerie/kernels/fp64mul-64.json,True,True
+256,1737487,6787.05859375,1724175,42456064,26,0.499761125,0.400164875,0.514285584,321808,"[321808, 321808, 321808]",2696101888,0.00830125,0.005258667,results/aerie/kernels/fp64mul-256.json,True,True

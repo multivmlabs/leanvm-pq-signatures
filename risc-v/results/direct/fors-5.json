@@ -1,0 +1,92 @@
+{
+  "action": "prove",
+  "advice_words": 2941,
+  "arch": "aarch64",
+  "count": 5,
+  "elf_sha256": "64480a3bf424f97578f6477a7a4045c2452853a0801f45fc191648eb253e36da",
+  "execution": {
+    "committed_words": 194689112,
+    "cycles": 4581278,
+    "padded_rows": {
+      "ALU": 4194304,
+      "DIV": 16,
+      "EXT": 8,
+      "HASH": 16,
+      "LD": 524288,
+      "LOAD": 512,
+      "MUL": 16,
+      "MULH": 1024,
+      "SD": 524288,
+      "SHIFT": 2097152,
+      "STORE": 128
+    },
+    "proven_rows": 7341752,
+    "rows": {
+      "ALU": 2701036,
+      "DIV": 0,
+      "EXT": 0,
+      "HASH": 9,
+      "LD": 421916,
+      "LOAD": 400,
+      "MUL": 0,
+      "MULH": 736,
+      "SD": 396379,
+      "SHIFT": 1060722,
+      "STORE": 80
+    }
+  },
+  "fixture_s": 0.011502333,
+  "leanvm_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "log_inverse_rate": 1,
+  "measure_s": 0.044671083,
+  "os": "macos",
+  "peak_rss_bytes": 16704864256,
+  "program_load_s": 0.001874417,
+  "proof_bytes": 383254,
+  "proof_bytes_samples": [
+    383254,
+    383254,
+    383254
+  ],
+  "prove_median_s": 21.461130875,
+  "prove_s": [
+    17.927364,
+    21.461130875,
+    26.4743205
+  ],
+  "schema": 1,
+  "scheme": "fors",
+  "statement_sha256": "7a3fe9603cc6dde435816320f7af609067a9bb77644fc8eeb0ebb2e5eee76e0a",
+  "status": "accepted",
+  "threads": 8,
+  "verified": true,
+  "verify_median_s": 0.004181959,
+  "verify_s": [
+    0.005364875,
+    0.004181959,
+    0.004065458
+  ],
+  "warmup": 1,
+  "zero_knowledge": false,
+  "host_binary_sha256": "3ebadbc341e04bdf96201af2a247234f0c5dc210a454337725595a1b7cc72629",
+  "command": [
+    "riscv-pqbench",
+    "prove",
+    "--scheme",
+    "fors",
+    "--n",
+    "5",
+    "--threads",
+    "8",
+    "--rate",
+    "1",
+    "--repeat",
+    "3",
+    "--warmup",
+    "1",
+    "--out",
+    "risc-v/results/direct/fors-5.json",
+    "--proof",
+    "risc-v/artifacts/fors-5.proof"
+  ]
+}

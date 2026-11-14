@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "scope": "Independent hashlib codec/output comparison only; no VM or proof benchmark",
+  "source_sha256": "3067648c2190f752525e9ab803d03c7f5c26d243d7c85181547545f508b2e15f",
+  "controls": [
+    {
+      "name": "ordinary-0",
+      "binding_matches": true,
+      "all_five_public_outputs_match": true,
+      "expected_integer_accepts": true
+    },
+    {
+      "name": "ordinary-1",
+      "binding_matches": true,
+      "all_five_public_outputs_match": true,
+      "expected_integer_accepts": true
+    },
+    {
+      "name": "ordinary-2",
+      "binding_matches": true,
+      "all_five_public_outputs_match": true,
+      "expected_integer_accepts": true
+    },
+    {
+      "name": "zero-positive",
+      "binding_matches": true,
+      "all_five_public_outputs_match": true,
+      "expected_integer_accepts": true
+    },
+    {
+      "name": "exact-bound-positive",
+      "binding_matches": true,
+      "all_five_public_outputs_match": true,
+      "expected_integer_accepts": true
+    },
+    {
+      "name": "one-above-bound-negative",
+      "binding_matches": true,
+      "all_five_public_outputs_match": true,
+      "expected_integer_accepts": false
+    },
+    {
+      "name": "negative-sign-exact-bound-positive",
+      "binding_matches": true,
+      "all_five_public_outputs_match": true,
+      "expected_integer_accepts": true
+    },
+    {
+      "name": "negative-sign-one-above-bound-negative",
+      "binding_matches": true,
+      "all_five_public_outputs_match": true,
+      "expected_integer_accepts": false
+    },
+    {
+      "name": "single-radius-plus-one-negative",
+      "binding_matches": true,
+      "all_five_public_outputs_match": true,
+      "expected_integer_accepts": false
+    },
+    {
+      "name": "hint-midpoint-negative",
+      "binding_matches": true,
+      "all_five_public_outputs_match": true,
+      "expected_integer_accepts": false
+    }
+  ],
+  "passed": true
+}

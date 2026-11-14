@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "layout": "segmented-five-parts",
+  "source_report": "risc-v/results/raccoong-segmented-uniform-trees/count-1/sample-0/report.json",
+  "source_report_sha256": "1126e4f87903f096802275608691f31042d3a21d07b2cac9efeb9c9fc83a7c8b",
+  "statement_sha256": "99127fe5ee985dc766d48d9607824ab849c42e2adc4964cae08bc73b79ba8df4",
+  "approved_elf_sha256": "5c48b8f39b14521773493692034fa601a9df89992552870addd68416cc926eac",
+  "signatures": 1,
+  "actual_fresh_leaves": 5,
+  "canonical_slots": 8,
+  "fresh_merges": 7,
+  "binding_check": {
+    "protocol": 19,
+    "original_signatures": 1,
+    "actual_parts": 5,
+    "unique_rows": 9,
+    "row_computations": 10,
+    "leaf_slots": 8,
+    "padding_slots": 3,
+    "root_digest": "35ecf5b774edff928263634587d03ccd8a1bb61d5299ad776a5fa2c2e80cade6",
+    "root_kind": 1,
+    "core_bytes": 265991,
+    "receipt_bytes": 266115,
+    "overhead_bytes": 124
+  },
+  "all_saved_proof_hashes_checked": true,
+  "saved_proofs": [
+    {
+      "name": "leaf-0.proof",
+      "sha256": "566f9163085a33827b993c74998925d357fe95a1aa91924663c0baec1b3c5457",
+      "bytes": 399478
+    },
+    {
+      "name": "leaf-1.proof",
+      "sha256": "6771488a447acc1bb69c1badfabbf8044e9c8de82ee22116a5ebe66ea3335ad5",
+      "bytes": 400086
+    },
+    {
+      "name": "leaf-2.proof",
+      "sha256": "5dd6779a10de149f5884fed319d58d4c669f8e1a0c43e61b4ed1e67aa54b4d9c",
+      "bytes": 399702
+    },
+    {
+      "name": "leaf-3.proof",
+      "sha256": "8a03323625c85b4955d4f7a5db5b343573f5c84b227e0e9392ed66b6c325d1a1",
+      "bytes": 399414
+    },
+    {
+      "name": "leaf-4.proof",
+      "sha256": "bfa5349df5be75b0117d621132ab2e60e222f78420f3394776bc2da4906f78f3",
+      "bytes": 399318
+    },
+    {
+      "name": "merge-0.proof",
+      "sha256": "49af6635c453e7923852989fadba1e7f6bb356c30bcee52b23d07844eaa182bb",
+      "bytes": 267679
+    },
+    {
+      "name": "merge-1.proof",
+      "sha256": "cf48821f33c9f1793f86defaa583ad33b173d1811132f5375570cf6490fcacce",
+      "bytes": 267903
+    },
+    {
+      "name": "merge-2.proof",
+      "sha256": "cddc0c37332bb1fc459c72dff99afae6563c7374158e16130cffb3d54128b053",
+      "bytes": 267039
+    },
+    {
+      "name": "merge-3.proof",
+      "sha256": "cddc0c37332bb1fc459c72dff99afae6563c7374158e16130cffb3d54128b053",
+      "bytes": 267039
+    },
+    {
+      "name": "merge-4.proof",
+      "sha256": "1c76bcb6e2c648db3dbd59dd0598f0fd4b35cbdfd010596ffecf41b6319a0cf0",
+      "bytes": 267711
+    },
+    {
+      "name": "merge-5.proof",
+      "sha256": "f6d23d3e03f6226719536a000e02fbcda3c6ee76fb18c9c673f1993235b9017b",
+      "bytes": 266655
+    },
+    {
+      "name": "merge-6.proof",
+      "sha256": "83484cf34863100e556931cdd6c2d5980a6c6a57cddcf201e6f6f4e879810f35",
+      "bytes": 265991
+    }
+  ],
+  "total_prove_s_accounting_matches": true,
+  "public_only_full_verification_evidence": true,
+  "verifier_scope": "Envelope decode, all original-pair/part commitments from untrusted D, TreeProof decode and complete Tree::verify",
+  "plain_proofs_may_be_deterministic": true,
+  "description": "Read-only saved-evidence audit. Freshness is checked against producer source and command records; equal plain-proof hashes across samples do not imply reuse. This audit does not rerun full cryptographic verification.",
+  "passed": true
+}

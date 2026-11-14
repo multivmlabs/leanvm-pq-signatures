@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "signatures": 100,
+  "real_leaves": 20,
+  "leaf_slots": 32,
+  "independently_recomputed_semantic_digest_hex": "360c54ebf4d9201de8ad003c5aa11e9f7837c0ae355a43385774d2690ff78dd6",
+  "all_public_pairs_bound": true,
+  "public_only_isolated_cwd": true,
+  "binary_sha256": "1d683e440929570d459dca6747f18b74760fa94ee385d7adb0261129fbba38b5",
+  "source_sha256": "54a8668dfa4f711ccd147d3565f69edfb0ed960db3a281bbf322fba40255051f",
+  "proof_sha256": "b99dd0032216f84dbb4917dd3694821302a9207b2a77ed1bf21c2f5f0fd61391",
+  "passed": 18,
+  "cases": [
+    {
+      "case": "honest-public-only",
+      "expected_accept": true,
+      "accepted": true,
+      "passed": true,
+      "stderr": ""
+    },
+    {
+      "case": "changed-key-recommitted",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"root differs from caller-trusted program/claims/shape\""
+    },
+    {
+      "case": "changed-message-recommitted",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"root differs from caller-trusted program/claims/shape\""
+    },
+    {
+      "case": "reordered-records-recommitted",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"root differs from caller-trusted program/claims/shape\""
+    },
+    {
+      "case": "duplicate-pair",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"public key/message format or repeated intended pair\""
+    },
+    {
+      "case": "changed-count-recommitted",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"root differs from caller-trusted program/claims/shape\""
+    },
+    {
+      "case": "changed-backend",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"unsupported public FORS configuration\""
+    },
+    {
+      "case": "unapproved-leaf-source",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"caller-trusted leaf program mismatch\""
+    },
+    {
+      "case": "wrong-public-pin",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"caller-trusted public statement digest mismatch\""
+    },
+    {
+      "case": "wrong-leaf-pin",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"caller-trusted leaf program mismatch\""
+    },
+    {
+      "case": "changed-root-magic",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"root differs from caller-trusted program/claims/shape\""
+    },
+    {
+      "case": "changed-root-seed",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"root differs from caller-trusted program/claims/shape\""
+    },
+    {
+      "case": "changed-semantic-high-limb",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"root differs from caller-trusted program/claims/shape\""
+    },
+    {
+      "case": "changed-accumulator-point-high-limb",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"root proof: GkrLayer(22)\""
+    },
+    {
+      "case": "changed-accumulator-value-high-limb",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"root proof: GkrLayer(22)\""
+    },
+    {
+      "case": "corrupted-root-transcript",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"root proof: MerkleRootMismatch\""
+    },
+    {
+      "case": "appended-root-bytes",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"Slice had bytes remaining after deserialization\""
+    },
+    {
+      "case": "truncated-root",
+      "expected_accept": false,
+      "accepted": false,
+      "passed": true,
+      "stderr": "Error: \"io error: unexpected end of file\""
+    }
+  ]
+}

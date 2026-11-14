@@ -1,0 +1,18 @@
+[
+  ".cache/aerie-wrapper-host-target/release/aerie-leanvm-host",
+  "execute",
+  "--elf",
+  ".cache/aerie-wrapper-target/riscv64im-unknown-none-elf/release/aerie-leanvm-guest",
+  "--expect-elf-sha256",
+  "f95cd517e13cab122ef1d12f1a6f8b36fcc6f920cf22e6f4524618cd49f2931f",
+  "--input",
+  "artifacts/aerie-wrapper/development/n1/sample-0/input.frame",
+  "--report",
+  "results/aerie-wrapper/development/n1-execution.json",
+  "--repeat",
+  "1",
+  "--warmup",
+  "0",
+  "--threads",
+  "12"
+]

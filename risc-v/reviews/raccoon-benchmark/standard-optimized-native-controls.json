@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "scope": "Independent native old/new decoder and byte-oracle checks, not proof production",
+  "decoder_cases": 1072,
+  "accepted_decoder_cases": 985,
+  "rejected_decoder_cases": 87,
+  "bulk40_alignment_boundary_cases": 209,
+  "aligned_and_unaligned_load_store_cases": 1600,
+  "passed": true,
+  "command": [
+    "clang",
+    "-O3",
+    "-fno-strict-aliasing",
+    "-fwrapv",
+    "-shared",
+    "-include",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/experiments/raccoon-crt32/c/include/plat_local.h",
+    "-I",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/vendor/raccoon/ref-c",
+    "-I",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/vendor/raccoon/ref-c/inc",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/reviews/raccoon-benchmark/native-parser-controls/old.c",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/reviews/raccoon-benchmark/native-parser-controls/new.c",
+    "-o",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/risc-v/reviews/raccoon-benchmark/native-parser-controls/controls.dylib"
+  ],
+  "source_sha256": {
+    "risc-v/raccoon/c/adapter.c": "38c596f079c20b94f9f38d20210a04a5f7ee1ddfa6d883989dafd75feb1360ef",
+    "risc-v/experiments/raccoon-crt32/c/adapter.c": "b8abf01a7ede71c2b17f9b7c85503af6b8eec1b87db5458e84bfd022744d5909",
+    "risc-v/experiments/raccoon-crt32/c/include/plat_local.h": "148d96d35a41f6398145c4108a87d873a57f5849775571ae9ea91700548b9d50"
+  }
+}

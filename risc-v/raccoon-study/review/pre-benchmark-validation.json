@@ -1,0 +1,19 @@
+{
+  "benchmarks_run": false,
+  "paper_conformance": "Raccoon-G full-paper check pending PDF access",
+  "standard_policy": "User approved official reference and known-answer interoperability with documented PDF discrepancies",
+  "guests": {
+    "raccoon": {
+      "elf_sha256": "b8b78438d96258c436a4a34f5f40505d469555bb29d289936e01c863dd1f7e6a",
+      "sources_checked": 52
+    },
+    "raccoon-g": {
+      "elf_sha256": "24816e301dbcf77167e8c0d7a5090f93ba7e1ba448c6cc79ed4664ade2e8a56d",
+      "sources_checked": 24
+    }
+  },
+  "runners": {
+    "direct": "e9145fb60f18f388302d73f67b44773568ce770ccc23d0aed6c2f337a77b6a6b",
+    "tree": "134ba51bb7b408e78af54757595503486055a538ddf5fe7f0fa03840f181a817"
+  }
+}

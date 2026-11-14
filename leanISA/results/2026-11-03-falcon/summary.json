@@ -1,0 +1,42 @@
+{
+  "rows": [
+    {
+      "scheme": "ethfalcon-512-keccak",
+      "count": 1,
+      "cycles": 1630904,
+      "prove_s": 0.483549458,
+      "prove_min_s": 0.437497375,
+      "prove_max_s": 0.497680125,
+      "verify_ms": 83.12,
+      "verify_cached_ms": 6.170958,
+      "bytecode_prepare_ms": 74.64691699999999,
+      "proof_bytes": 318192,
+      "rss_gib": 2.50897216796875,
+      "signatures_per_s": 2.068040783534494
+    },
+    {
+      "scheme": "ethfalcon-512-keccak",
+      "count": 4,
+      "cycles": 6534038,
+      "prove_s": 3.6078,
+      "prove_min_s": 3.273475417,
+      "prove_max_s": 4.258432,
+      "verify_ms": 99.92841700000001,
+      "verify_cached_ms": 6.34325,
+      "bytecode_prepare_ms": 74.759416,
+      "proof_bytes": 355712,
+      "rss_gib": 8.818252563476562,
+      "signatures_per_s": 1.1087089084760795
+    }
+  ],
+  "failures": [
+    {
+      "status": "failed",
+      "scheme": "ethfalcon",
+      "count": 8,
+      "action": "prove",
+      "returncode": 1,
+      "error": "error: prove: WitnessOutOfRange { log_committed: 29 }"
+    }
+  ]
+}

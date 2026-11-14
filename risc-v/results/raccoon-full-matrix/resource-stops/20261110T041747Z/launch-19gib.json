@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "started_utc": "2026-11-09T23:30:33.603279+00:00",
+  "coordinator_sha256": "c117ef5be9437638c5802f109362d4108b822ed3c8d4c97d16da950cae4ab09d",
+  "argv": [
+    ".venv/bin/python",
+    "-u",
+    "risc-v/scripts/raccoon_full_matrix.py",
+    "--execute-approved",
+    "--timeout-s",
+    "21600",
+    "--rss-limit-gib",
+    "19"
+  ],
+  "environment": {
+    "_RJEM_MALLOC_CONF": "dirty_decay_ms:0,muzzy_decay_ms:0",
+    "PYTHONPYCACHEPREFIX": "/tmp/raccoon-matrix-pycache",
+    "LEANVM_NUM_THREADS": "8"
+  },
+  "operational_stop_bytes": 20401094656
+}

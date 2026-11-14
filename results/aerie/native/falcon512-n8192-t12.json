@@ -1,0 +1,343 @@
+{
+  "schema_version": 1,
+  "kind": "native Aerie, not leanVM",
+  "all_roundtrips_passed": true,
+  "aerie_revision": "49b6c212c209286c536196f53618823ffdf0e899",
+  "metadata": {
+    "benchmark_schema": "8",
+    "profiled": "false",
+    "rayon_threads": "12",
+    "simd_backend": "small_signed_dot=neon;key_unpack=neon",
+    "keccak_backend": "hybrid",
+    "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)",
+    "akita_rev": "e023b6a46143f7b23199ccecb2684192baf7b640",
+    "git_revision": "49b6c212c209286c536196f53618823ffdf0e899",
+    "heap_profile": "none",
+    "parameter_set": "Falcon-512",
+    "salt_mode": "per-record",
+    "byte_breakdown_columns": "salts_bytes\theader_piop_bytes\tpcs_bytes"
+  },
+  "actual_records": 8192,
+  "padded_records": 8192,
+  "worker_threads": 12,
+  "warmup_passes": 1,
+  "measured_passes": 3,
+  "warmups": [
+    {
+      "records": 8192,
+      "setup_ms": 61.0,
+      "prove_ms": 321.3,
+      "transport_materialize_ms": 0.1,
+      "transport_binding_ms": 1.9,
+      "record_materialize_ms": 0.0,
+      "native_verify_ms": 18.1,
+      "direct_witness_ms": 8.3,
+      "pack_ms": 0.1,
+      "encodability_ms": 8.2,
+      "group_materialization_ms": 0.0,
+      "commit_ms": 34.7,
+      "projection_ms": 9.7,
+      "stage1_ms": 24.9,
+      "stage2_ms": 43.4,
+      "stage3_ms": 51.1,
+      "pcs_prove_ms": 141.1,
+      "output_encode_ms": 0.1,
+      "verify_parallel_ms": 9.8,
+      "verify_decode_ms": 0.0,
+      "verify_hash_to_point_ms": 3.7,
+      "verify_binding_ms": 0.3,
+      "stage_verify_ms": 1.4,
+      "pcs_verify_ms": 4.3,
+      "verify_single_thread_ms": 38.2,
+      "stage_verify_single_thread_ms": 2.7,
+      "pcs_verify_single_thread_ms": 5.7,
+      "verifier_setup_heap_bytes": 6235865,
+      "verify_peak_heap_bytes": 2514993,
+      "verify_single_thread_peak_heap_bytes": 2514993,
+      "commitment_bytes": 512,
+      "pcs_proof_bytes": 60990,
+      "envelope_bytes": 393892,
+      "commit_groups_ms": "s1:5.5;slack:2.5;digits:29.2;budget:3.0",
+      "padded_records": 8192,
+      "salts_bytes": 327680,
+      "header_piop_bytes": 4702,
+      "pcs_bytes": 61510
+    }
+  ],
+  "samples": [
+    {
+      "records": 8192,
+      "setup_ms": 42.2,
+      "prove_ms": 315.8,
+      "transport_materialize_ms": 0.1,
+      "transport_binding_ms": 1.7,
+      "record_materialize_ms": 0.0,
+      "native_verify_ms": 15.6,
+      "direct_witness_ms": 10.7,
+      "pack_ms": 0.9,
+      "encodability_ms": 7.7,
+      "group_materialization_ms": 0.0,
+      "commit_ms": 32.5,
+      "projection_ms": 25.3,
+      "stage1_ms": 23.1,
+      "stage2_ms": 38.8,
+      "stage3_ms": 48.4,
+      "pcs_prove_ms": 132.4,
+      "output_encode_ms": 0.1,
+      "verify_parallel_ms": 9.5,
+      "verify_decode_ms": 0.0,
+      "verify_hash_to_point_ms": 3.7,
+      "verify_binding_ms": 0.4,
+      "stage_verify_ms": 1.3,
+      "pcs_verify_ms": 4.1,
+      "verify_single_thread_ms": 38.0,
+      "stage_verify_single_thread_ms": 2.8,
+      "pcs_verify_single_thread_ms": 5.7,
+      "verifier_setup_heap_bytes": 5999080,
+      "verify_peak_heap_bytes": 2514993,
+      "verify_single_thread_peak_heap_bytes": 2514993,
+      "commitment_bytes": 512,
+      "pcs_proof_bytes": 60990,
+      "envelope_bytes": 393892,
+      "commit_groups_ms": "s1:4.8;slack:1.9;digits:27.6;budget:1.3",
+      "padded_records": 8192,
+      "salts_bytes": 327680,
+      "header_piop_bytes": 4702,
+      "pcs_bytes": 61510
+    },
+    {
+      "records": 8192,
+      "setup_ms": 43.1,
+      "prove_ms": 328.5,
+      "transport_materialize_ms": 0.1,
+      "transport_binding_ms": 1.7,
+      "record_materialize_ms": 0.0,
+      "native_verify_ms": 15.6,
+      "direct_witness_ms": 6.9,
+      "pack_ms": 0.8,
+      "encodability_ms": 7.7,
+      "group_materialization_ms": 0.0,
+      "commit_ms": 37.6,
+      "projection_ms": 8.0,
+      "stage1_ms": 22.9,
+      "stage2_ms": 40.7,
+      "stage3_ms": 70.3,
+      "pcs_prove_ms": 133.4,
+      "output_encode_ms": 0.1,
+      "verify_parallel_ms": 9.3,
+      "verify_decode_ms": 0.0,
+      "verify_hash_to_point_ms": 3.7,
+      "verify_binding_ms": 0.4,
+      "stage_verify_ms": 1.3,
+      "pcs_verify_ms": 4.0,
+      "verify_single_thread_ms": 37.9,
+      "stage_verify_single_thread_ms": 2.7,
+      "pcs_verify_single_thread_ms": 5.6,
+      "verifier_setup_heap_bytes": 5999080,
+      "verify_peak_heap_bytes": 2514993,
+      "verify_single_thread_peak_heap_bytes": 2514993,
+      "commitment_bytes": 512,
+      "pcs_proof_bytes": 60990,
+      "envelope_bytes": 393892,
+      "commit_groups_ms": "s1:5.2;slack:2.6;digits:32.4;budget:1.8",
+      "padded_records": 8192,
+      "salts_bytes": 327680,
+      "header_piop_bytes": 4702,
+      "pcs_bytes": 61510
+    },
+    {
+      "records": 8192,
+      "setup_ms": 44.8,
+      "prove_ms": 300.4,
+      "transport_materialize_ms": 0.1,
+      "transport_binding_ms": 1.9,
+      "record_materialize_ms": 0.0,
+      "native_verify_ms": 15.1,
+      "direct_witness_ms": 10.0,
+      "pack_ms": 0.8,
+      "encodability_ms": 0.8,
+      "group_materialization_ms": 0.0,
+      "commit_ms": 39.5,
+      "projection_ms": 8.1,
+      "stage1_ms": 23.2,
+      "stage2_ms": 38.9,
+      "stage3_ms": 49.0,
+      "pcs_prove_ms": 133.1,
+      "output_encode_ms": 0.1,
+      "verify_parallel_ms": 9.6,
+      "verify_decode_ms": 0.0,
+      "verify_hash_to_point_ms": 3.8,
+      "verify_binding_ms": 0.3,
+      "stage_verify_ms": 1.3,
+      "pcs_verify_ms": 4.1,
+      "verify_single_thread_ms": 38.0,
+      "stage_verify_single_thread_ms": 2.8,
+      "pcs_verify_single_thread_ms": 5.6,
+      "verifier_setup_heap_bytes": 5999080,
+      "verify_peak_heap_bytes": 2514993,
+      "verify_single_thread_peak_heap_bytes": 2514993,
+      "commitment_bytes": 512,
+      "pcs_proof_bytes": 60990,
+      "envelope_bytes": 393892,
+      "commit_groups_ms": "s1:5.0;slack:2.2;digits:34.5;budget:9.1",
+      "padded_records": 8192,
+      "salts_bytes": 327680,
+      "header_piop_bytes": 4702,
+      "pcs_bytes": 61510
+    }
+  ],
+  "summary_ms": {
+    "setup_ms": {
+      "median": 43.1,
+      "min": 42.2,
+      "max": 44.8
+    },
+    "prove_ms": {
+      "median": 315.8,
+      "min": 300.4,
+      "max": 328.5
+    },
+    "transport_materialize_ms": {
+      "median": 0.1,
+      "min": 0.1,
+      "max": 0.1
+    },
+    "transport_binding_ms": {
+      "median": 1.7,
+      "min": 1.7,
+      "max": 1.9
+    },
+    "record_materialize_ms": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "native_verify_ms": {
+      "median": 15.6,
+      "min": 15.1,
+      "max": 15.6
+    },
+    "direct_witness_ms": {
+      "median": 10.0,
+      "min": 6.9,
+      "max": 10.7
+    },
+    "pack_ms": {
+      "median": 0.8,
+      "min": 0.8,
+      "max": 0.9
+    },
+    "encodability_ms": {
+      "median": 7.7,
+      "min": 0.8,
+      "max": 7.7
+    },
+    "group_materialization_ms": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "commit_ms": {
+      "median": 37.6,
+      "min": 32.5,
+      "max": 39.5
+    },
+    "projection_ms": {
+      "median": 8.1,
+      "min": 8.0,
+      "max": 25.3
+    },
+    "stage1_ms": {
+      "median": 23.1,
+      "min": 22.9,
+      "max": 23.2
+    },
+    "stage2_ms": {
+      "median": 38.9,
+      "min": 38.8,
+      "max": 40.7
+    },
+    "stage3_ms": {
+      "median": 49.0,
+      "min": 48.4,
+      "max": 70.3
+    },
+    "pcs_prove_ms": {
+      "median": 133.1,
+      "min": 132.4,
+      "max": 133.4
+    },
+    "output_encode_ms": {
+      "median": 0.1,
+      "min": 0.1,
+      "max": 0.1
+    },
+    "verify_parallel_ms": {
+      "median": 9.5,
+      "min": 9.3,
+      "max": 9.6
+    },
+    "verify_decode_ms": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "verify_hash_to_point_ms": {
+      "median": 3.7,
+      "min": 3.7,
+      "max": 3.8
+    },
+    "verify_binding_ms": {
+      "median": 0.4,
+      "min": 0.3,
+      "max": 0.4
+    },
+    "stage_verify_ms": {
+      "median": 1.3,
+      "min": 1.3,
+      "max": 1.3
+    },
+    "pcs_verify_ms": {
+      "median": 4.1,
+      "min": 4.0,
+      "max": 4.1
+    },
+    "verify_single_thread_ms": {
+      "median": 38.0,
+      "min": 37.9,
+      "max": 38.0
+    },
+    "stage_verify_single_thread_ms": {
+      "median": 2.8,
+      "min": 2.7,
+      "max": 2.8
+    },
+    "pcs_verify_single_thread_ms": {
+      "median": 5.6,
+      "min": 5.6,
+      "max": 5.7
+    }
+  },
+  "process_peak_rss_bytes": 786366464,
+  "process_elapsed_s": 2.042907625000005,
+  "command": [
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/.venv/bin/python",
+    "-c",
+    "import resource, subprocess, sys\nresult = subprocess.run(sys.argv[1:])\nrss = resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss\nif sys.platform != 'darwin': rss *= 1024\nprint('# process_peak_rss_bytes\\t' + str(rss), file=sys.stderr)\nsys.exit(result.returncode)\n",
+    "/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/.cache/aerie-target/release/deps/falcon-a15cae0811601085",
+    "8192",
+    "8192",
+    "8192",
+    "8192"
+  ],
+  "rss_measurement": "Fresh Python wrapper getrusage(RUSAGE_CHILDREN), macOS reports bytes; whole native process including setup/warmup",
+  "source_sha256": {
+    "results/aerie/native/falcon512-n8192-t12.stdout.tsv": "d6566cb2d6991e2314d6a1a2e6741776fa9ea5ffb917c4d17a1c3666532fef8c",
+    "results/aerie/native/falcon512-n8192-t12.stderr.log": "5fbad281423ada146cac9a1a7f1a9d8f57e89f30c7e41e52f5dfa46aa2d75159",
+    ".cache/aerie-target/release/deps/falcon-a15cae0811601085": "e43cd4bc877a9814ae2ef7c853bfdb3c0505913942287096a1ee42da0896f9de"
+  },
+  "timing_scope": "Upstream unmodified harness: prove starts from canonical records and includes native checking, witness construction and wire encoding; fixture acquisition and reusable setup excluded. Verification starts with an already canonical-parsed public statement; includes proof decoding, hashed-key derivation, streamed key/target evaluation, binding, stages and Akita; canonical public-statement parse and setup excluded. HashToPoint timer also includes target field contraction, not SHAKE alone. Prover phase intervals can overlap; use total prove_ms rather than their sum. Upstream timing fields rounded to0.1ms.",
+  "sample_scope": "Requested warmup rows followed by measured fresh proof roundtrips in a fresh process per N/thread setting; per-pass shape setup timed separately. Verification uses selected Rayon pool and a dedicated one-thread pool. RSS is whole process including setup/warmup.",
+  "relation": "Falcon v1.2 padded, fn-dsa0.3.0, empty context/raw mode, key-prefixed SHAKE256 framing; not the earlier round3/ETH corpus.",
+  "fixture_scope": "Deterministic fn-dsa test keypairs; distinct keys, signatures, salts and ASCII messages validated by upstream harness; not production secret material. Sizes exclude public keys/messages."
+}

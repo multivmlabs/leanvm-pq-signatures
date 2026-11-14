@@ -1,0 +1,1188 @@
+{
+  "action": "prove",
+  "compile_plan_s": 0.491349875,
+  "depth": 2,
+  "edge_count": 16,
+  "fan_in": 8,
+  "leaf_capacity": 5,
+  "leaf_count": 14,
+  "leaf_reports": [
+    {
+      "cache_load_verify_s": 0.008964166,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 0,
+      "original_report": {
+        "committed_cells": 2992128,
+        "cycles": 37577,
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "input_prepare_s": 0.000150084,
+        "leaf": 0,
+        "log_committed": 22,
+        "log_memory_cells": 19,
+        "memory_cells": 46609,
+        "min_log_committed": 22,
+        "opcode_rows": [
+          10286,
+          9729,
+          7216,
+          5154,
+          4438,
+          754
+        ],
+        "proof_bytes": 270112,
+        "proof_stream_scalars": 2045,
+        "prove_s": 0.063203917,
+        "public_input_hex": "193f79b6a405cef6174195b643a311e92852d141fec708ede87b9b7ac948ea67",
+        "rate": 1,
+        "reused": false,
+        "self_verify_s": 0.008305916,
+        "signatures": 5
+      },
+      "proof_bytes": 270112,
+      "proof_stream_scalars": 2045,
+      "public_input_hex": "193f79b6a405cef6174195b643a311e92852d141fec708ede87b9b7ac948ea67",
+      "rate": 1,
+      "reused": true
+    },
+    {
+      "cache_load_verify_s": 0.008824583,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 1,
+      "original_report": {
+        "committed_cells": 2992128,
+        "cycles": 37577,
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "input_prepare_s": 0.000134458,
+        "leaf": 1,
+        "log_committed": 22,
+        "log_memory_cells": 19,
+        "memory_cells": 46609,
+        "min_log_committed": 22,
+        "opcode_rows": [
+          10286,
+          9729,
+          7216,
+          5154,
+          4438,
+          754
+        ],
+        "proof_bytes": 269152,
+        "proof_stream_scalars": 2045,
+        "prove_s": 0.049601042,
+        "public_input_hex": "2cd786cf79f91f146e1bb2caf7615f04f0ccb2911977539325ec01f221331e9b",
+        "rate": 1,
+        "reused": false,
+        "self_verify_s": 0.0084625,
+        "signatures": 5
+      },
+      "proof_bytes": 269152,
+      "proof_stream_scalars": 2045,
+      "public_input_hex": "2cd786cf79f91f146e1bb2caf7615f04f0ccb2911977539325ec01f221331e9b",
+      "rate": 1,
+      "reused": true
+    },
+    {
+      "cache_load_verify_s": 0.008934375,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 2,
+      "original_report": {
+        "committed_cells": 2992128,
+        "cycles": 37577,
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "input_prepare_s": 0.000136833,
+        "leaf": 2,
+        "log_committed": 22,
+        "log_memory_cells": 19,
+        "memory_cells": 46609,
+        "min_log_committed": 22,
+        "opcode_rows": [
+          10286,
+          9729,
+          7216,
+          5154,
+          4438,
+          754
+        ],
+        "proof_bytes": 268224,
+        "proof_stream_scalars": 2045,
+        "prove_s": 0.048648833,
+        "public_input_hex": "787729e16af318ef4a536443a2b63f7e0a90fa68b93e8c0ea9ddc0280a26fb7e",
+        "rate": 1,
+        "reused": false,
+        "self_verify_s": 0.008658667,
+        "signatures": 5
+      },
+      "proof_bytes": 268224,
+      "proof_stream_scalars": 2045,
+      "public_input_hex": "787729e16af318ef4a536443a2b63f7e0a90fa68b93e8c0ea9ddc0280a26fb7e",
+      "rate": 1,
+      "reused": true
+    },
+    {
+      "cache_load_verify_s": 0.008837875,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 3,
+      "original_report": {
+        "committed_cells": 2992128,
+        "cycles": 37577,
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "input_prepare_s": 0.000142125,
+        "leaf": 3,
+        "log_committed": 22,
+        "log_memory_cells": 19,
+        "memory_cells": 46609,
+        "min_log_committed": 22,
+        "opcode_rows": [
+          10286,
+          9729,
+          7216,
+          5154,
+          4438,
+          754
+        ],
+        "proof_bytes": 269024,
+        "proof_stream_scalars": 2045,
+        "prove_s": 0.050171125,
+        "public_input_hex": "f50ef804a493e17d9e788505fd4b20f43a33bec48dba5bac2331437f82669e84",
+        "rate": 1,
+        "reused": false,
+        "self_verify_s": 0.008611083,
+        "signatures": 5
+      },
+      "proof_bytes": 269024,
+      "proof_stream_scalars": 2045,
+      "public_input_hex": "f50ef804a493e17d9e788505fd4b20f43a33bec48dba5bac2331437f82669e84",
+      "rate": 1,
+      "reused": true
+    },
+    {
+      "cache_load_verify_s": 0.008701208,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 4,
+      "original_report": {
+        "committed_cells": 2992128,
+        "cycles": 37577,
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "input_prepare_s": 0.0001365,
+        "leaf": 4,
+        "log_committed": 22,
+        "log_memory_cells": 19,
+        "memory_cells": 46609,
+        "min_log_committed": 22,
+        "opcode_rows": [
+          10286,
+          9729,
+          7216,
+          5154,
+          4438,
+          754
+        ],
+        "proof_bytes": 268456,
+        "proof_stream_scalars": 2045,
+        "prove_s": 0.049646833,
+        "public_input_hex": "4398834f053652c5216a6e1fec9f91dacb20adf350f21a0d3b5db2f3d4a0fe7d",
+        "rate": 1,
+        "reused": false,
+        "self_verify_s": 0.008438583,
+        "signatures": 5
+      },
+      "proof_bytes": 268456,
+      "proof_stream_scalars": 2045,
+      "public_input_hex": "4398834f053652c5216a6e1fec9f91dacb20adf350f21a0d3b5db2f3d4a0fe7d",
+      "rate": 1,
+      "reused": true
+    },
+    {
+      "cache_load_verify_s": 0.008642584,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 5,
+      "original_report": {
+        "committed_cells": 2992128,
+        "cycles": 37577,
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "input_prepare_s": 0.000134625,
+        "leaf": 5,
+        "log_committed": 22,
+        "log_memory_cells": 19,
+        "memory_cells": 46609,
+        "min_log_committed": 22,
+        "opcode_rows": [
+          10286,
+          9729,
+          7216,
+          5154,
+          4438,
+          754
+        ],
+        "proof_bytes": 267968,
+        "proof_stream_scalars": 2045,
+        "prove_s": 0.054908666,
+        "public_input_hex": "dd25c8cb585af0d5c4d23838e738116229516e74533cc4ba1951b791eb8c4c34",
+        "rate": 1,
+        "reused": false,
+        "self_verify_s": 0.0084485,
+        "signatures": 5
+      },
+      "proof_bytes": 267968,
+      "proof_stream_scalars": 2045,
+      "public_input_hex": "dd25c8cb585af0d5c4d23838e738116229516e74533cc4ba1951b791eb8c4c34",
+      "rate": 1,
+      "reused": true
+    },
+    {
+      "cache_load_verify_s": 0.008581125,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 6,
+      "original_report": {
+        "committed_cells": 2992128,
+        "cycles": 37577,
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "input_prepare_s": 0.000144,
+        "leaf": 6,
+        "log_committed": 22,
+        "log_memory_cells": 19,
+        "memory_cells": 46609,
+        "min_log_committed": 22,
+        "opcode_rows": [
+          10286,
+          9729,
+          7216,
+          5154,
+          4438,
+          754
+        ],
+        "proof_bytes": 268576,
+        "proof_stream_scalars": 2045,
+        "prove_s": 0.050376875,
+        "public_input_hex": "b63daefd09606f25155287a8f674f7f80779532e6e883ed1f19f95c45a0f81c1",
+        "rate": 1,
+        "reused": false,
+        "self_verify_s": 0.008610792,
+        "signatures": 5
+      },
+      "proof_bytes": 268576,
+      "proof_stream_scalars": 2045,
+      "public_input_hex": "b63daefd09606f25155287a8f674f7f80779532e6e883ed1f19f95c45a0f81c1",
+      "rate": 1,
+      "reused": true
+    },
+    {
+      "cache_load_verify_s": 0.008566708,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 7,
+      "original_report": {
+        "committed_cells": 2992128,
+        "cycles": 37577,
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "input_prepare_s": 0.000137125,
+        "leaf": 7,
+        "log_committed": 22,
+        "log_memory_cells": 19,
+        "memory_cells": 46609,
+        "min_log_committed": 22,
+        "opcode_rows": [
+          10286,
+          9729,
+          7216,
+          5154,
+          4438,
+          754
+        ],
+        "proof_bytes": 267584,
+        "proof_stream_scalars": 2045,
+        "prove_s": 0.04934075,
+        "public_input_hex": "bcb02cd59088d55197eb30599d5cf6cfe72fae0124bf53f031afd06b9797d8ef",
+        "rate": 1,
+        "reused": false,
+        "self_verify_s": 0.008660833,
+        "signatures": 5
+      },
+      "proof_bytes": 267584,
+      "proof_stream_scalars": 2045,
+      "public_input_hex": "bcb02cd59088d55197eb30599d5cf6cfe72fae0124bf53f031afd06b9797d8ef",
+      "rate": 1,
+      "reused": true
+    },
+    {
+      "cache_load_verify_s": 0.008536125,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 8,
+      "original_report": {
+        "committed_cells": 2992128,
+        "cycles": 37577,
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "input_prepare_s": 0.000127333,
+        "leaf": 8,
+        "log_committed": 22,
+        "log_memory_cells": 19,
+        "memory_cells": 46609,
+        "min_log_committed": 22,
+        "opcode_rows": [
+          10286,
+          9729,
+          7216,
+          5154,
+          4438,
+          754
+        ],
+        "proof_bytes": 268544,
+        "proof_stream_scalars": 2045,
+        "prove_s": 0.049179791,
+        "public_input_hex": "6a8d3313282aeb2656ddc69526dbb89d4ce8fa2176fbfb577da626260325881a",
+        "rate": 1,
+        "reused": false,
+        "self_verify_s": 0.008682875,
+        "signatures": 5
+      },
+      "proof_bytes": 268544,
+      "proof_stream_scalars": 2045,
+      "public_input_hex": "6a8d3313282aeb2656ddc69526dbb89d4ce8fa2176fbfb577da626260325881a",
+      "rate": 1,
+      "reused": true
+    },
+    {
+      "cache_load_verify_s": 0.008623042,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 9,
+      "original_report": {
+        "committed_cells": 2992128,
+        "cycles": 37577,
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "input_prepare_s": 0.0001375,
+        "leaf": 9,
+        "log_committed": 22,
+        "log_memory_cells": 19,
+        "memory_cells": 46609,
+        "min_log_committed": 22,
+        "opcode_rows": [
+          10286,
+          9729,
+          7216,
+          5154,
+          4438,
+          754
+        ],
+        "proof_bytes": 269376,
+        "proof_stream_scalars": 2045,
+        "prove_s": 0.050969292,
+        "public_input_hex": "dba1f6d43ce02d06afd34ff1f2b29e6b02cab741a8e415f721fe80817ebb100f",
+        "rate": 1,
+        "reused": false,
+        "self_verify_s": 0.008619917,
+        "signatures": 5
+      },
+      "proof_bytes": 269376,
+      "proof_stream_scalars": 2045,
+      "public_input_hex": "dba1f6d43ce02d06afd34ff1f2b29e6b02cab741a8e415f721fe80817ebb100f",
+      "rate": 1,
+      "reused": true
+    },
+    {
+      "cache_load_verify_s": 0.008682708,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 10,
+      "original_report": {
+        "committed_cells": 2992128,
+        "cycles": 37577,
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "input_prepare_s": 0.000138292,
+        "leaf": 10,
+        "log_committed": 22,
+        "log_memory_cells": 19,
+        "memory_cells": 46609,
+        "min_log_committed": 22,
+        "opcode_rows": [
+          10286,
+          9729,
+          7216,
+          5154,
+          4438,
+          754
+        ],
+        "proof_bytes": 268320,
+        "proof_stream_scalars": 2045,
+        "prove_s": 0.052050375,
+        "public_input_hex": "e5822bf9ab60da44744eeb1d56a46cd2727943e3ca3da34f5241689a60989486",
+        "rate": 1,
+        "reused": false,
+        "self_verify_s": 0.008606458,
+        "signatures": 5
+      },
+      "proof_bytes": 268320,
+      "proof_stream_scalars": 2045,
+      "public_input_hex": "e5822bf9ab60da44744eeb1d56a46cd2727943e3ca3da34f5241689a60989486",
+      "rate": 1,
+      "reused": true
+    },
+    {
+      "cache_load_verify_s": 0.008672292,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 11,
+      "original_report": {
+        "committed_cells": 2992128,
+        "cycles": 37577,
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "input_prepare_s": 0.000138959,
+        "leaf": 11,
+        "log_committed": 22,
+        "log_memory_cells": 19,
+        "memory_cells": 46609,
+        "min_log_committed": 22,
+        "opcode_rows": [
+          10286,
+          9729,
+          7216,
+          5154,
+          4438,
+          754
+        ],
+        "proof_bytes": 268320,
+        "proof_stream_scalars": 2045,
+        "prove_s": 0.049238334,
+        "public_input_hex": "f5f4834fe449389b966cf45e0a16015f6c5b3336f298f3e3203eec22c8dc5ae5",
+        "rate": 1,
+        "reused": false,
+        "self_verify_s": 0.008582125,
+        "signatures": 5
+      },
+      "proof_bytes": 268320,
+      "proof_stream_scalars": 2045,
+      "public_input_hex": "f5f4834fe449389b966cf45e0a16015f6c5b3336f298f3e3203eec22c8dc5ae5",
+      "rate": 1,
+      "reused": true
+    },
+    {
+      "cache_load_verify_s": 0.008568709,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 12,
+      "original_report": {
+        "committed_cells": 2992128,
+        "cycles": 37577,
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "input_prepare_s": 0.000143583,
+        "leaf": 12,
+        "log_committed": 22,
+        "log_memory_cells": 19,
+        "memory_cells": 46609,
+        "min_log_committed": 22,
+        "opcode_rows": [
+          10286,
+          9729,
+          7216,
+          5154,
+          4438,
+          754
+        ],
+        "proof_bytes": 268160,
+        "proof_stream_scalars": 2045,
+        "prove_s": 0.051402,
+        "public_input_hex": "7f19ad9ec1128c206df2716b940c6d298fef00423de1a70d225142ef9beb3b06",
+        "rate": 1,
+        "reused": false,
+        "self_verify_s": 0.008768666,
+        "signatures": 5
+      },
+      "proof_bytes": 268160,
+      "proof_stream_scalars": 2045,
+      "public_input_hex": "7f19ad9ec1128c206df2716b940c6d298fef00423de1a70d225142ef9beb3b06",
+      "rate": 1,
+      "reused": true
+    },
+    {
+      "cache_load_verify_s": 0.008599375,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 13,
+      "original_report": {
+        "committed_cells": 2992128,
+        "cycles": 37577,
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "input_prepare_s": 0.000144667,
+        "leaf": 13,
+        "log_committed": 22,
+        "log_memory_cells": 19,
+        "memory_cells": 46609,
+        "min_log_committed": 22,
+        "opcode_rows": [
+          10286,
+          9729,
+          7216,
+          5154,
+          4438,
+          754
+        ],
+        "proof_bytes": 269440,
+        "proof_stream_scalars": 2045,
+        "prove_s": 0.051388167,
+        "public_input_hex": "db77c87d3cfc24bbc7894f1dfc563b4fd89568d70ae8849b656ecb9bcd3d3f35",
+        "rate": 1,
+        "reused": false,
+        "self_verify_s": 0.008728459,
+        "signatures": 5
+      },
+      "proof_bytes": 269440,
+      "proof_stream_scalars": 2045,
+      "public_input_hex": "db77c87d3cfc24bbc7894f1dfc563b4fd89568d70ae8849b656ecb9bcd3d3f35",
+      "rate": 1,
+      "reused": true
+    }
+  ],
+  "leaf_reuse_count": 14,
+  "merge_count": 3,
+  "merge_passes": [
+    {
+      "elapsed_s": 2.123746875,
+      "nodes": [
+        {
+          "children": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "committed_cells": 65142784,
+          "cycles": 2135237,
+          "depth": 1,
+          "guest_hash": "d2bf3a709cf87790f8c3de2e84992662e2bad48d2eb97772399d5c7ba9714437",
+          "log_committed": 26,
+          "log_memory_cells": 22,
+          "memory_cells": 3485206,
+          "min_log_committed": 22,
+          "node": 14,
+          "opcode_rows": [
+            642364,
+            856126,
+            111752,
+            365538,
+            116259,
+            43198
+          ],
+          "prepare_s": 0.078556708,
+          "proof_bytes": 366688,
+          "proof_stream_scalars": 2469,
+          "prove_s": 0.729885292,
+          "public_input_hex": "770807da6b517f96c526e989247b712df3b0e2c07653370407f653726d0d3aba",
+          "rate": 1,
+          "self_verify_s": 0.083610834,
+          "signatures": 40
+        },
+        {
+          "children": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "committed_cells": 54329344,
+          "cycles": 1601541,
+          "depth": 1,
+          "guest_hash": "5e8d4e4f61243223dde966164214a272d588b75aa2dfab7418f420239f70d12e",
+          "log_committed": 26,
+          "log_memory_cells": 22,
+          "memory_cells": 2614018,
+          "min_log_committed": 22,
+          "node": 15,
+          "opcode_rows": [
+            481772,
+            642095,
+            83900,
+            274180,
+            87193,
+            32401
+          ],
+          "prepare_s": 0.058782542,
+          "proof_bytes": 345088,
+          "proof_stream_scalars": 2445,
+          "prove_s": 0.624571,
+          "public_input_hex": "230fbdee3ac703ecaebb9d35d0ae7468abc4ca05e5b49d4b81e089abe1ef8935",
+          "rate": 1,
+          "self_verify_s": 0.085679375,
+          "signatures": 30
+        },
+        {
+          "children": [
+            14,
+            15
+          ],
+          "committed_cells": 16744448,
+          "cycles": 606736,
+          "depth": 2,
+          "guest_hash": "2bd8c3f1f8133000bf1a06cb5491cb7035fdf34c768069315fbe849af5334ba0",
+          "log_committed": 24,
+          "log_memory_cells": 20,
+          "memory_cells": 999402,
+          "min_log_committed": 22,
+          "node": 16,
+          "opcode_rows": [
+            180592,
+            238206,
+            33440,
+            108487,
+            31587,
+            14424
+          ],
+          "prepare_s": 0.1694445,
+          "proof_bytes": 341480,
+          "proof_stream_scalars": 2295,
+          "prove_s": 0.208111292,
+          "public_input_hex": "f5504e1504a79635bcb435ae41d4b66ab1fb43eef2fcbdb3a33d5d0f170183b8",
+          "rate": 1,
+          "self_verify_s": 0.082801208,
+          "signatures": 70
+        }
+      ],
+      "pass": 0
+    },
+    {
+      "elapsed_s": 2.181632291,
+      "nodes": [
+        {
+          "children": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "committed_cells": 65142784,
+          "cycles": 2135237,
+          "depth": 1,
+          "guest_hash": "d2bf3a709cf87790f8c3de2e84992662e2bad48d2eb97772399d5c7ba9714437",
+          "log_committed": 26,
+          "log_memory_cells": 22,
+          "memory_cells": 3485206,
+          "min_log_committed": 22,
+          "node": 14,
+          "opcode_rows": [
+            642364,
+            856126,
+            111752,
+            365538,
+            116259,
+            43198
+          ],
+          "prepare_s": 0.078030042,
+          "proof_bytes": 366688,
+          "proof_stream_scalars": 2469,
+          "prove_s": 0.727615458,
+          "public_input_hex": "770807da6b517f96c526e989247b712df3b0e2c07653370407f653726d0d3aba",
+          "rate": 1,
+          "self_verify_s": 0.084043583,
+          "signatures": 40
+        },
+        {
+          "children": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "committed_cells": 54329344,
+          "cycles": 1601541,
+          "depth": 1,
+          "guest_hash": "5e8d4e4f61243223dde966164214a272d588b75aa2dfab7418f420239f70d12e",
+          "log_committed": 26,
+          "log_memory_cells": 22,
+          "memory_cells": 2614018,
+          "min_log_committed": 22,
+          "node": 15,
+          "opcode_rows": [
+            481772,
+            642095,
+            83900,
+            274180,
+            87193,
+            32401
+          ],
+          "prepare_s": 0.058337333,
+          "proof_bytes": 345088,
+          "proof_stream_scalars": 2445,
+          "prove_s": 0.674233833,
+          "public_input_hex": "230fbdee3ac703ecaebb9d35d0ae7468abc4ca05e5b49d4b81e089abe1ef8935",
+          "rate": 1,
+          "self_verify_s": 0.088126708,
+          "signatures": 30
+        },
+        {
+          "children": [
+            14,
+            15
+          ],
+          "committed_cells": 16744448,
+          "cycles": 606736,
+          "depth": 2,
+          "guest_hash": "2bd8c3f1f8133000bf1a06cb5491cb7035fdf34c768069315fbe849af5334ba0",
+          "log_committed": 24,
+          "log_memory_cells": 20,
+          "memory_cells": 999402,
+          "min_log_committed": 22,
+          "node": 16,
+          "opcode_rows": [
+            180592,
+            238206,
+            33440,
+            108487,
+            31587,
+            14424
+          ],
+          "prepare_s": 0.170027417,
+          "proof_bytes": 341480,
+          "proof_stream_scalars": 2295,
+          "prove_s": 0.216412333,
+          "public_input_hex": "f5504e1504a79635bcb435ae41d4b66ab1fb43eef2fcbdb3a33d5d0f170183b8",
+          "rate": 1,
+          "self_verify_s": 0.083059417,
+          "signatures": 70
+        }
+      ],
+      "pass": 1
+    },
+    {
+      "elapsed_s": 2.132092083,
+      "nodes": [
+        {
+          "children": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "committed_cells": 65142784,
+          "cycles": 2135237,
+          "depth": 1,
+          "guest_hash": "d2bf3a709cf87790f8c3de2e84992662e2bad48d2eb97772399d5c7ba9714437",
+          "log_committed": 26,
+          "log_memory_cells": 22,
+          "memory_cells": 3485206,
+          "min_log_committed": 22,
+          "node": 14,
+          "opcode_rows": [
+            642364,
+            856126,
+            111752,
+            365538,
+            116259,
+            43198
+          ],
+          "prepare_s": 0.078262292,
+          "proof_bytes": 366688,
+          "proof_stream_scalars": 2469,
+          "prove_s": 0.728714542,
+          "public_input_hex": "770807da6b517f96c526e989247b712df3b0e2c07653370407f653726d0d3aba",
+          "rate": 1,
+          "self_verify_s": 0.086843208,
+          "signatures": 40
+        },
+        {
+          "children": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "committed_cells": 54329344,
+          "cycles": 1601541,
+          "depth": 1,
+          "guest_hash": "5e8d4e4f61243223dde966164214a272d588b75aa2dfab7418f420239f70d12e",
+          "log_committed": 26,
+          "log_memory_cells": 22,
+          "memory_cells": 2614018,
+          "min_log_committed": 22,
+          "node": 15,
+          "opcode_rows": [
+            481772,
+            642095,
+            83900,
+            274180,
+            87193,
+            32401
+          ],
+          "prepare_s": 0.05878925,
+          "proof_bytes": 345088,
+          "proof_stream_scalars": 2445,
+          "prove_s": 0.624003958,
+          "public_input_hex": "230fbdee3ac703ecaebb9d35d0ae7468abc4ca05e5b49d4b81e089abe1ef8935",
+          "rate": 1,
+          "self_verify_s": 0.085807125,
+          "signatures": 30
+        },
+        {
+          "children": [
+            14,
+            15
+          ],
+          "committed_cells": 16744448,
+          "cycles": 606736,
+          "depth": 2,
+          "guest_hash": "2bd8c3f1f8133000bf1a06cb5491cb7035fdf34c768069315fbe849af5334ba0",
+          "log_committed": 24,
+          "log_memory_cells": 20,
+          "memory_cells": 999402,
+          "min_log_committed": 22,
+          "node": 16,
+          "opcode_rows": [
+            180592,
+            238206,
+            33440,
+            108487,
+            31587,
+            14424
+          ],
+          "prepare_s": 0.176980042,
+          "proof_bytes": 341480,
+          "proof_stream_scalars": 2295,
+          "prove_s": 0.203614167,
+          "public_input_hex": "f5504e1504a79635bcb435ae41d4b66ab1fb43eef2fcbdb3a33d5d0f170183b8",
+          "rate": 1,
+          "self_verify_s": 0.085854292,
+          "signatures": 70
+        }
+      ],
+      "pass": 2
+    }
+  ],
+  "merge_reuse_count": 0,
+  "nodes": [
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 0,
+      "node": 0,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 1,
+      "node": 1,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 2,
+      "node": 2,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 3,
+      "node": 3,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 4,
+      "node": 4,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 5,
+      "node": 5,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 6,
+      "node": 6,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 7,
+      "node": 7,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 8,
+      "node": 8,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 9,
+      "node": 9,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 10,
+      "node": 10,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 11,
+      "node": 11,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 12,
+      "node": 12,
+      "signatures": 5
+    },
+    {
+      "children": [],
+      "depth": 0,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "leaf": 13,
+      "node": 13,
+      "signatures": 5
+    },
+    {
+      "children": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "depth": 1,
+      "guest_hash": "d2bf3a709cf87790f8c3de2e84992662e2bad48d2eb97772399d5c7ba9714437",
+      "leaf": null,
+      "node": 14,
+      "signatures": 40
+    },
+    {
+      "children": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "depth": 1,
+      "guest_hash": "5e8d4e4f61243223dde966164214a272d588b75aa2dfab7418f420239f70d12e",
+      "leaf": null,
+      "node": 15,
+      "signatures": 30
+    },
+    {
+      "children": [
+        14,
+        15
+      ],
+      "depth": 2,
+      "guest_hash": "2bd8c3f1f8133000bf1a06cb5491cb7035fdf34c768069315fbe849af5334ba0",
+      "leaf": null,
+      "node": 16,
+      "signatures": 70
+    }
+  ],
+  "pipeline_elapsed_s": 9.246031625,
+  "plan_hash": "5bf51863c2d5749b619136253a03e873e2b45034d975cbb54065fadb1c4a6737",
+  "process_peak_rss_bytes": 4461510656,
+  "rate": 1,
+  "repeat": 3,
+  "repeat_scope": "all merge nodes; leaves prepared once, cache reuse explicitly reported",
+  "root_guest_hash": "2bd8c3f1f8133000bf1a06cb5491cb7035fdf34c768069315fbe849af5334ba0",
+  "schema_version": 1,
+  "scheme": "fors",
+  "semantic_plan": {
+    "fan_in": 8,
+    "format": "pqbench/tree-v1/all-edges/level-chunks",
+    "leaf_capacity": 5,
+    "leaves": [
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "193f79b6a405cef6174195b643a311e92852d141fec708ede87b9b7ac948ea67",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "2cd786cf79f91f146e1bb2caf7615f04f0ccb2911977539325ec01f221331e9b",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "787729e16af318ef4a536443a2b63f7e0a90fa68b93e8c0ea9ddc0280a26fb7e",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "f50ef804a493e17d9e788505fd4b20f43a33bec48dba5bac2331437f82669e84",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "4398834f053652c5216a6e1fec9f91dacb20adf350f21a0d3b5db2f3d4a0fe7d",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "dd25c8cb585af0d5c4d23838e738116229516e74533cc4ba1951b791eb8c4c34",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "b63daefd09606f25155287a8f674f7f80779532e6e883ed1f19f95c45a0f81c1",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "bcb02cd59088d55197eb30599d5cf6cfe72fae0124bf53f031afd06b9797d8ef",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "6a8d3313282aeb2656ddc69526dbb89d4ce8fa2176fbfb577da626260325881a",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "dba1f6d43ce02d06afd34ff1f2b29e6b02cab741a8e415f721fe80817ebb100f",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "e5822bf9ab60da44744eeb1d56a46cd2727943e3ca3da34f5241689a60989486",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "f5f4834fe449389b966cf45e0a16015f6c5b3336f298f3e3203eec22c8dc5ae5",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "7f19ad9ec1128c206df2716b940c6d298fef00423de1a70d225142ef9beb3b06",
+        "signatures": 5
+      },
+      {
+        "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+        "min_log_committed": 22,
+        "public_input_hex": "db77c87d3cfc24bbc7894f1dfc563b4fd89568d70ae8849b656ecb9bcd3d3f35",
+        "signatures": 5
+      }
+    ],
+    "schema_version": 1,
+    "scheme": "fors",
+    "signatures": 70
+  },
+  "signatures": 70,
+  "source_table": [
+    {
+      "bytecode_instructions": 216754,
+      "bytecode_log": 18,
+      "guest_hash": "2bd8c3f1f8133000bf1a06cb5491cb7035fdf34c768069315fbe849af5334ba0",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    },
+    {
+      "bytecode_instructions": 217500,
+      "bytecode_log": 18,
+      "guest_hash": "5e8d4e4f61243223dde966164214a272d588b75aa2dfab7418f420239f70d12e",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    },
+    {
+      "bytecode_instructions": 5534,
+      "bytecode_log": 13,
+      "guest_hash": "9f26663ec851871efc147c210850edbf0f2b4b49a43bc22684a2e53df878a14b",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 8192
+    },
+    {
+      "bytecode_instructions": 217946,
+      "bytecode_log": 18,
+      "guest_hash": "d2bf3a709cf87790f8c3de2e84992662e2bad48d2eb97772399d5c7ba9714437",
+      "min_log_committed": 22,
+      "padded_bytecode_instructions": 262144
+    }
+  ],
+  "statement_pinned": true,
+  "verification": {
+    "aggregate_wire_bytes": 348476,
+    "compile_plan_s": 0.491349875,
+    "deferred_bytecode_prepare_s": 0.155294292,
+    "deferred_edge_count": 16,
+    "deferred_evaluation_s": [
+      0.007230334
+    ],
+    "deferred_program_count": 3,
+    "plan_hash": "5bf51863c2d5749b619136253a03e873e2b45034d975cbb54065fadb1c4a6737",
+    "public_input_hex": "f5504e1504a79635bcb435ae41d4b66ab1fb43eef2fcbdb3a33d5d0f170183b8",
+    "root_bytecode_prepare_s": 0.075816667,
+    "root_core_proof_bytes": 341480,
+    "root_core_verify_cached_s": [
+      0.006188375
+    ],
+    "root_core_verify_cold_s": [
+      0.082067209
+    ],
+    "root_guest_hash": "2bd8c3f1f8133000bf1a06cb5491cb7035fdf34c768069315fbe849af5334ba0",
+    "statement_pinned": true,
+    "verification_operation_total_s": 0.326621667,
+    "verification_uses_child_proofs": false,
+    "verification_uses_signatures": false,
+    "verified": true,
+    "zero_knowledge": false
+  },
+  "warmup": 1,
+  "zero_knowledge": false,
+  "article_scheme": "fors",
+  "article_count": 70,
+  "article_fan_in": 8,
+  "article_leaf_capacity": 5,
+  "experiment_process_elapsed_s": 9.843883542000185,
+  "measurement_scope": "repeated merges with checked reusable leaves"
+}

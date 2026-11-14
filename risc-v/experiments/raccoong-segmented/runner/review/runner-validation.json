@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "scope": "Runner compilation and pure native codec/public-binding checks only; no guest execution or proof",
+  "binary_sha256": "6ce0210981e547a70355332b882221a910a9ef0d72942b96b17d1f217e2caedc",
+  "source_sha256": {
+    "risc-v/experiments/raccoong-segmented/matrix.py": "79b84ed76c65eb275511c6073e89f5b965ccf81b501a56315b3601b220c89b78",
+    "risc-v/experiments/raccoong-segmented/runner/Cargo.toml": "84b671621ff419dd74fdfe48a46452036bcdc3ff302376b39f01700900bb6fad",
+    "risc-v/experiments/raccoong-segmented/runner/Cargo.lock": "dfa05aa72d29d9a15b52d195c453042cab421c4fb7d35cecf84c583dedd3035a",
+    "risc-v/experiments/raccoong-segmented/runner/src/main.rs": "41fbd114ee0ae854263ecb9793ba2de70371146471f8796be4f6c1ef0c6875f3"
+  },
+  "identity": {
+    "action": "identity",
+    "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+    "embedded_build_manifest_sha256": "4d5dcc0295e16687dbfafc6bb82438629d0feda6efc3677fd1490a49547d59f5",
+    "embedded_elf_bytes": 28104,
+    "embedded_elf_sha256": "a9ab1a596f88a737200f96bd045ed4d8176d3f9bcf8eaa6ad06a85ffd9ebfddc",
+    "executes_guest": false,
+    "parts_per_signature": 5,
+    "produces_proof": false,
+    "profile": "raccoong-hd-authors-poc-strict-segmented-v1",
+    "rows_per_leaf": 2,
+    "rows_per_signature": 9,
+    "schema": 1
+  },
+  "native_tests_passed": 3,
+  "clippy_all_targets_warnings_denied": true,
+  "python_static_check": true,
+  "experiments_run_by_runner_agent": false
+}

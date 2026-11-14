@@ -1,0 +1,2153 @@
+{
+  "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "all_25_original_report_sizes_reproduced": true,
+  "cap_words": 268435456,
+  "reports": [
+    {
+      "scheme": "falcon",
+      "n": 1,
+      "start": 0,
+      "cycles": 147758,
+      "max_periodic_words": 4849904,
+      "production_measure": {
+        "accepted": true,
+        "committed_words": 7916072
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-1-start0.json",
+      "committed_words": 7916072,
+      "mu": 23,
+      "filled_rows": {
+        "ALU": 131072,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 16,
+        "LD": 16384,
+        "LOAD": 16,
+        "MUL": 32768,
+        "MULH": 16,
+        "SD": 16384,
+        "SHIFT": 32768,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 28,
+      "start": 0,
+      "cycles": 4106614,
+      "max_periodic_words": 145182856,
+      "production_measure": {
+        "accepted": true,
+        "committed_words": 145182856
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-28-start0.json",
+      "committed_words": 145182856,
+      "mu": 28,
+      "filled_rows": {
+        "ALU": 2097152,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 524288,
+        "MULH": 32,
+        "SD": 524288,
+        "SHIFT": 1048576,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 29,
+      "start": 0,
+      "cycles": 4249723,
+      "max_periodic_words": 145182856,
+      "production_measure": {
+        "accepted": true,
+        "committed_words": 243224712
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-29-start0.json",
+      "committed_words": 243224712,
+      "mu": 28,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 32,
+        "SD": 524288,
+        "SHIFT": 1048576,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 32,
+      "start": 0,
+      "cycles": 4684406,
+      "max_periodic_words": 243229192,
+      "production_measure": {
+        "accepted": true,
+        "committed_words": 243229192
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-32-start0-instrumented.json",
+      "committed_words": 243229192,
+      "mu": 28,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 1048576,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 274,
+      "keccak_function_rows": {
+        "ALU": 923380,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 141658,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 128780,
+        "SHIFT": 381408,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 32,
+      "start": 0,
+      "cycles": 4684406,
+      "max_periodic_words": 243229192,
+      "production_measure": {
+        "accepted": true,
+        "committed_words": 243229192
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-32-start0.json",
+      "committed_words": 243229192,
+      "mu": 28,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 1048576,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 33,
+      "start": 0,
+      "cycles": 4833219,
+      "max_periodic_words": 243229192,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start0-instrumented.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 283,
+      "keccak_function_rows": {
+        "ALU": 953710,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 146311,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 133010,
+        "SHIFT": 393936,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 33,
+      "start": 0,
+      "cycles": 4833219,
+      "max_periodic_words": 243229192,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start0.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 33,
+      "start": 1,
+      "cycles": 4833209,
+      "max_periodic_words": 243229192,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start1.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 33,
+      "start": 128,
+      "cycles": 4845254,
+      "max_periodic_words": 243229192,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start128.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 33,
+      "start": 16,
+      "cycles": 4844979,
+      "max_periodic_words": 243229192,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start16.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 33,
+      "start": 2,
+      "cycles": 4833349,
+      "max_periodic_words": 243229192,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start2.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 33,
+      "start": 24,
+      "cycles": 4845339,
+      "max_periodic_words": 243229192,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start24.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 33,
+      "start": 3,
+      "cycles": 4833407,
+      "max_periodic_words": 243229192,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start3.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 33,
+      "start": 32,
+      "cycles": 4862900,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start32.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 33,
+      "start": 4,
+      "cycles": 4833390,
+      "max_periodic_words": 243229192,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start4.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 33,
+      "start": 48,
+      "cycles": 4827609,
+      "max_periodic_words": 243229192,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start48.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 33,
+      "start": 64,
+      "cycles": 4821781,
+      "max_periodic_words": 243229192,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start64.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 33,
+      "start": 8,
+      "cycles": 4839080,
+      "max_periodic_words": 243229192,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start8.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 33,
+      "start": 96,
+      "cycles": 4810362,
+      "max_periodic_words": 243229192,
+      "production_measure": {
+        "accepted": true,
+        "committed_words": 243229192
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start96-proved.json",
+      "committed_words": 243229192,
+      "mu": 28,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 1048576,
+        "STORE": 16
+      },
+      "actual_proof": {
+        "advice_sha256": "a57cd6f1b19f5c0d9295780ef1e5e0c705d7524bfefef2fcd7ace34133f4c0ad",
+        "elf_sha256": "421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c",
+        "executable_sha256": "0dbe723295d1c2dfc4751e489de4d72e1c707175c6ccbebe798840a8820e3271",
+        "peak_rss_bytes": 10667311104,
+        "proof_bytes": 402606,
+        "proof_sha256": "b023f97b7a0fe1edfd13136c81e8bcbe21453b6a1cf8783c36ce2ff77284ad8e",
+        "proving_s": 14.222380583,
+        "rate": 1,
+        "repeat": 1,
+        "scope": "One real unmodified production Prover::prove followed by serialization, decode, full Program::verify and wrong-public-output rejection. Not a three-sample timing benchmark.",
+        "threads": 8,
+        "verified": true,
+        "verifying_s": 0.004609417,
+        "warmup": 0,
+        "wrong_output_rejected": true
+      },
+      "keccak_permutation_calls": 279,
+      "keccak_function_rows": {
+        "ALU": 940230,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 144243,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 131130,
+        "SHIFT": 388368,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 33,
+      "start": 96,
+      "cycles": 4810362,
+      "max_periodic_words": 243229192,
+      "production_measure": {
+        "accepted": true,
+        "committed_words": 243229192
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-33-start96.json",
+      "committed_words": 243229192,
+      "mu": 28,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 1048576,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 34,
+      "start": 0,
+      "cycles": 4976129,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-34-start0.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 291,
+      "keccak_function_rows": {
+        "ALU": 980670,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 150447,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 136770,
+        "SHIFT": 405072,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 34,
+      "start": 128,
+      "cycles": 4988240,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-34-start128.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 293,
+      "keccak_function_rows": {
+        "ALU": 987410,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 151481,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 137710,
+        "SHIFT": 407856,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 34,
+      "start": 160,
+      "cycles": 4975742,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-34-start160.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 291,
+      "keccak_function_rows": {
+        "ALU": 980670,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 150447,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 136770,
+        "SHIFT": 405072,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 34,
+      "start": 192,
+      "cycles": 4988091,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-34-start192.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 293,
+      "keccak_function_rows": {
+        "ALU": 987410,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 151481,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 137710,
+        "SHIFT": 407856,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 34,
+      "start": 224,
+      "cycles": 4965541,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-34-start224.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 289,
+      "keccak_function_rows": {
+        "ALU": 973930,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 149413,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 135830,
+        "SHIFT": 402288,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 34,
+      "start": 256,
+      "cycles": 5022884,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-34-start256.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 299,
+      "keccak_function_rows": {
+        "ALU": 1007630,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 154583,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 140530,
+        "SHIFT": 416208,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 34,
+      "start": 32,
+      "cycles": 5011669,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-34-start32.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 297,
+      "keccak_function_rows": {
+        "ALU": 1000890,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 153549,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 139590,
+        "SHIFT": 413424,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 34,
+      "start": 64,
+      "cycles": 4964774,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-34-start64.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 289,
+      "keccak_function_rows": {
+        "ALU": 973930,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 149413,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 135830,
+        "SHIFT": 402288,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 34,
+      "start": 96,
+      "cycles": 4959060,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-34-start96.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 288,
+      "keccak_function_rows": {
+        "ALU": 970560,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 148896,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 135360,
+        "SHIFT": 400896,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 35,
+      "start": 0,
+      "cycles": 5125010,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-35-start0.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 300,
+      "keccak_function_rows": {
+        "ALU": 1011000,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 155100,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 141000,
+        "SHIFT": 417600,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 35,
+      "start": 128,
+      "cycles": 5131233,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-35-start128.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 301,
+      "keccak_function_rows": {
+        "ALU": 1014370,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 155617,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 141470,
+        "SHIFT": 418992,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 35,
+      "start": 160,
+      "cycles": 5118786,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-35-start160.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 299,
+      "keccak_function_rows": {
+        "ALU": 1007630,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 154583,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 140530,
+        "SHIFT": 416208,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 35,
+      "start": 192,
+      "cycles": 5136874,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-35-start192.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 302,
+      "keccak_function_rows": {
+        "ALU": 1017740,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 156134,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 141940,
+        "SHIFT": 420384,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 35,
+      "start": 224,
+      "cycles": 5114393,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-35-start224.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 298,
+      "keccak_function_rows": {
+        "ALU": 1004260,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 154066,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 140060,
+        "SHIFT": 414816,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 35,
+      "start": 256,
+      "cycles": 5171745,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-35-start256.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 308,
+      "keccak_function_rows": {
+        "ALU": 1037960,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 159236,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 144760,
+        "SHIFT": 428736,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 35,
+      "start": 32,
+      "cycles": 5154747,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-35-start32.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 305,
+      "keccak_function_rows": {
+        "ALU": 1027850,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 157685,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 143350,
+        "SHIFT": 424560,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 35,
+      "start": 64,
+      "cycles": 5107816,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-35-start64.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 297,
+      "keccak_function_rows": {
+        "ALU": 1000890,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 153549,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 139590,
+        "SHIFT": 413424,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 35,
+      "start": 96,
+      "cycles": 5107904,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-35-start96.json",
+      "committed_words": 273637896,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 512,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 297,
+      "keccak_function_rows": {
+        "ALU": 1000890,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 153549,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 139590,
+        "SHIFT": 413424,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 36,
+      "start": 0,
+      "cycles": 5273833,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-36-start0.json",
+      "committed_words": 273789448,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 1024,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 309,
+      "keccak_function_rows": {
+        "ALU": 1041330,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 159753,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 145230,
+        "SHIFT": 430128,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 36,
+      "start": 128,
+      "cycles": 5274050,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-36-start128.json",
+      "committed_words": 273789448,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 1024,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 309,
+      "keccak_function_rows": {
+        "ALU": 1041330,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 159753,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 145230,
+        "SHIFT": 430128,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 36,
+      "start": 160,
+      "cycles": 5261755,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-36-start160.json",
+      "committed_words": 273789448,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 1024,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 307,
+      "keccak_function_rows": {
+        "ALU": 1034590,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 158719,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 144290,
+        "SHIFT": 427344,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 36,
+      "start": 192,
+      "cycles": 5285634,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-36-start192.json",
+      "committed_words": 273789448,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 1024,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 311,
+      "keccak_function_rows": {
+        "ALU": 1048070,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 160787,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 146170,
+        "SHIFT": 432912,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 36,
+      "start": 224,
+      "cycles": 5257290,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-36-start224.json",
+      "committed_words": 273789448,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 1024,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 306,
+      "keccak_function_rows": {
+        "ALU": 1031220,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 158202,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 143820,
+        "SHIFT": 425952,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 36,
+      "start": 256,
+      "cycles": 5320557,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-36-start256.json",
+      "committed_words": 273789448,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 1024,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 317,
+      "keccak_function_rows": {
+        "ALU": 1068290,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 163889,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 148990,
+        "SHIFT": 441264,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 36,
+      "start": 32,
+      "cycles": 5303435,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-36-start32.json",
+      "committed_words": 273789448,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 1024,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 314,
+      "keccak_function_rows": {
+        "ALU": 1058180,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 162338,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 147580,
+        "SHIFT": 437088,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 36,
+      "start": 64,
+      "cycles": 5256584,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-36-start64.json",
+      "committed_words": 273789448,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 1024,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 306,
+      "keccak_function_rows": {
+        "ALU": 1031220,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 158202,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 143820,
+        "SHIFT": 425952,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "falcon",
+      "n": 36,
+      "start": 96,
+      "cycles": 5256632,
+      "max_periodic_words": 273637896,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/falcon-36-start96.json",
+      "committed_words": 273789448,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 1024,
+        "LD": 524288,
+        "LOAD": 16,
+        "MUL": 1048576,
+        "MULH": 64,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 16
+      },
+      "keccak_permutation_calls": 306,
+      "keccak_function_rows": {
+        "ALU": 1031220,
+        "DIV": 0,
+        "EXT": 0,
+        "HASH": 0,
+        "LD": 158202,
+        "LOAD": 0,
+        "MUL": 0,
+        "MULH": 0,
+        "SD": 143820,
+        "SHIFT": 425952,
+        "STORE": 0
+      }
+    },
+    {
+      "scheme": "fors",
+      "n": 1,
+      "start": 0,
+      "cycles": 916420,
+      "max_periodic_words": 27445488,
+      "production_measure": {
+        "accepted": true,
+        "committed_words": 42128704
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/fors-1-start0.json",
+      "committed_words": 42128704,
+      "mu": 26,
+      "filled_rows": {
+        "ALU": 1048576,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 8,
+        "LD": 131072,
+        "LOAD": 128,
+        "MUL": 16,
+        "MULH": 256,
+        "SD": 131072,
+        "SHIFT": 262144,
+        "STORE": 16
+      }
+    },
+    {
+      "scheme": "fors",
+      "n": 7,
+      "start": 0,
+      "cycles": 6413707,
+      "max_periodic_words": 211990616,
+      "production_measure": {
+        "accepted": true,
+        "committed_words": 212148312
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/fors-7-start0.json",
+      "committed_words": 212148312,
+      "mu": 28,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 16,
+        "LD": 1048576,
+        "LOAD": 1024,
+        "MUL": 16,
+        "MULH": 2048,
+        "SD": 1048576,
+        "SHIFT": 2097152,
+        "STORE": 128
+      }
+    },
+    {
+      "scheme": "fors",
+      "n": 8,
+      "start": 0,
+      "cycles": 7329902,
+      "max_periodic_words": 329588824,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/fors-8-start0.json",
+      "committed_words": 329588824,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 8388608,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 16,
+        "LD": 1048576,
+        "LOAD": 1024,
+        "MUL": 16,
+        "MULH": 2048,
+        "SD": 1048576,
+        "SHIFT": 2097152,
+        "STORE": 128
+      }
+    },
+    {
+      "scheme": "mldsa",
+      "n": 1,
+      "start": 0,
+      "cycles": 1071681,
+      "max_periodic_words": 36847008,
+      "production_measure": {
+        "accepted": true,
+        "committed_words": 51534184
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/mldsa-1-start0.json",
+      "committed_words": 51534184,
+      "mu": 26,
+      "filled_rows": {
+        "ALU": 1048576,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 32,
+        "LD": 65536,
+        "LOAD": 131072,
+        "MUL": 65536,
+        "MULH": 16,
+        "SD": 65536,
+        "SHIFT": 262144,
+        "STORE": 131072
+      }
+    },
+    {
+      "scheme": "mldsa",
+      "n": 4,
+      "start": 0,
+      "cycles": 4285637,
+      "max_periodic_words": 204111464,
+      "production_measure": {
+        "accepted": true,
+        "committed_words": 204130408
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/mldsa-4-start0.json",
+      "committed_words": 204130408,
+      "mu": 28,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 128,
+        "LD": 262144,
+        "LOAD": 524288,
+        "MUL": 262144,
+        "MULH": 16,
+        "SD": 262144,
+        "SHIFT": 1048576,
+        "STORE": 524288
+      }
+    },
+    {
+      "scheme": "mldsa",
+      "n": 5,
+      "start": 0,
+      "cycles": 5356788,
+      "max_periodic_words": 257345640,
+      "production_measure": {
+        "accepted": true,
+        "committed_words": 257345640
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/mldsa-5-start0.json",
+      "committed_words": 257345640,
+      "mu": 28,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 128,
+        "LD": 524288,
+        "LOAD": 524288,
+        "MUL": 524288,
+        "MULH": 16,
+        "SD": 262144,
+        "SHIFT": 2097152,
+        "STORE": 524288
+      }
+    },
+    {
+      "scheme": "mldsa",
+      "n": 6,
+      "start": 0,
+      "cycles": 6427967,
+      "max_periodic_words": 261277800,
+      "production_measure": {
+        "accepted": true,
+        "committed_words": 261277800
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/mldsa-6-start0.json",
+      "committed_words": 261277800,
+      "mu": 28,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 128,
+        "LD": 524288,
+        "LOAD": 524288,
+        "MUL": 524288,
+        "MULH": 16,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 524288
+      }
+    },
+    {
+      "scheme": "mldsa",
+      "n": 7,
+      "start": 0,
+      "cycles": 7499435,
+      "max_periodic_words": 276482152,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/mldsa-7-start0.json",
+      "committed_words": 276520040,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 256,
+        "LD": 524288,
+        "LOAD": 1048576,
+        "MUL": 524288,
+        "MULH": 16,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 524288
+      }
+    },
+    {
+      "scheme": "mldsa",
+      "n": 7,
+      "start": 1,
+      "cycles": 7499379,
+      "max_periodic_words": 276482152,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/mldsa-7-start1.json",
+      "committed_words": 276520040,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 256,
+        "LD": 524288,
+        "LOAD": 1048576,
+        "MUL": 524288,
+        "MULH": 16,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 524288
+      }
+    },
+    {
+      "scheme": "mldsa",
+      "n": 7,
+      "start": 16,
+      "cycles": 7499380,
+      "max_periodic_words": 276482152,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/mldsa-7-start16.json",
+      "committed_words": 276520040,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 256,
+        "LD": 524288,
+        "LOAD": 1048576,
+        "MUL": 524288,
+        "MULH": 16,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 524288
+      }
+    },
+    {
+      "scheme": "mldsa",
+      "n": 7,
+      "start": 2,
+      "cycles": 7499463,
+      "max_periodic_words": 276482152,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/mldsa-7-start2.json",
+      "committed_words": 276520040,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 256,
+        "LD": 524288,
+        "LOAD": 1048576,
+        "MUL": 524288,
+        "MULH": 16,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 524288
+      }
+    },
+    {
+      "scheme": "mldsa",
+      "n": 7,
+      "start": 3,
+      "cycles": 7499309,
+      "max_periodic_words": 276482152,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/mldsa-7-start3.json",
+      "committed_words": 276520040,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 256,
+        "LD": 524288,
+        "LOAD": 1048576,
+        "MUL": 524288,
+        "MULH": 16,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 524288
+      }
+    },
+    {
+      "scheme": "mldsa",
+      "n": 7,
+      "start": 32,
+      "cycles": 7499524,
+      "max_periodic_words": 276482152,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/mldsa-7-start32.json",
+      "committed_words": 276520040,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 256,
+        "LD": 524288,
+        "LOAD": 1048576,
+        "MUL": 524288,
+        "MULH": 16,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 524288
+      }
+    },
+    {
+      "scheme": "mldsa",
+      "n": 7,
+      "start": 4,
+      "cycles": 7499186,
+      "max_periodic_words": 276482152,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/mldsa-7-start4.json",
+      "committed_words": 276520040,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 256,
+        "LD": 524288,
+        "LOAD": 1048576,
+        "MUL": 524288,
+        "MULH": 16,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 524288
+      }
+    },
+    {
+      "scheme": "mldsa",
+      "n": 7,
+      "start": 64,
+      "cycles": 7499356,
+      "max_periodic_words": 276482152,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/mldsa-7-start64.json",
+      "committed_words": 276520040,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 256,
+        "LD": 524288,
+        "LOAD": 1048576,
+        "MUL": 524288,
+        "MULH": 16,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 524288
+      }
+    },
+    {
+      "scheme": "mldsa",
+      "n": 7,
+      "start": 8,
+      "cycles": 7499090,
+      "max_periodic_words": 276482152,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "path": "risc-v/reviews/lattice-capacity-reaudit/results/mldsa-7-start8.json",
+      "committed_words": 276520040,
+      "mu": 29,
+      "filled_rows": {
+        "ALU": 4194304,
+        "DIV": 16,
+        "EXT": 8,
+        "HASH": 256,
+        "LD": 524288,
+        "LOAD": 1048576,
+        "MUL": 524288,
+        "MULH": 16,
+        "SD": 524288,
+        "SHIFT": 2097152,
+        "STORE": 524288
+      }
+    }
+  ],
+  "findings": [
+    "Falcon32 was the boundary of the original prefix, not a universal maximum.",
+    "An unchanged production proof of33 valid signatures at signer indices96..128 succeeds.",
+    "All27 predeclared34/35/36 windows failed production measure.",
+    "MLDSA7 fails all9 tested windows; no universal maximum is proved.",
+    "Raw interpreter completions and exact public-size replica distinguish guest validity from backend capacity.",
+    "No transient early-guard false rejection was found; the fixed column weights also bound register-packing savings."
+  ]
+}

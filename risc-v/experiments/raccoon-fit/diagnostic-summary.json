@@ -1,0 +1,36 @@
+{
+  "scope": "Diagnostic raw interpreter and exact public layout replica; no production check disabled, no proof produced",
+  "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
+  "cap_words": 268435456,
+  "records": {
+    "raccoon": {
+      "elf_sha256": "b8b78438d96258c436a4a34f5f40505d469555bb29d289936e01c863dd1f7e6a",
+      "instructions": 8238032,
+      "committed_words": 419337656,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "keccak_permutations": 588,
+      "keccak_instructions": 3380412,
+      "keccak_only_words": 106063280,
+      "first_failing_check": 6029312
+    },
+    "raccoong": {
+      "elf_sha256": "24816e301dbcf77167e8c0d7a5090f93ba7e1ba448c6cc79ed4664ade2e8a56d",
+      "instructions": 19132604,
+      "committed_words": 839237560,
+      "production_measure": {
+        "accepted": false,
+        "error": "TooLong"
+      },
+      "keccak_permutations": 1996,
+      "keccak_instructions": 11475004,
+      "keccak_only_words": 388777392,
+      "first_failing_check": 7405568
+    }
+  },
+  "probe_source_sha256": "73e76adc2540317d41c6c2457c636683712d23ddb1889593ba4a6368137cf365",
+  "probe_binary_sha256": "8d87b92607f62206ab56c664bd3e7f354365b33864c3655e8bdbb6b8b8077470",
+  "layout_crosscheck": "Exact public-layout replica matches 25 production reports"
+}
