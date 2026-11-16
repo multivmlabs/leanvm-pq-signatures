@@ -1,4 +1,6 @@
-# Motivation
+# Exploring post-quantum signature aggregation for EIP-8288
+
+## Motivation
 
 Nowadays, the wallet ecosystem contains a plethora of features depending on different security models. These features require classical signatures to support threshold signing, key derivation or implementations that fit hardware signers. These properties are not generically present in post-quantum signature schemes; however, some proposed schemes do support them. Examples include [Efficient Threshold ML-DSA](https://www.usenix.org/system/files/conference/usenixsecurity26/sec26_prepub_celi.pdf), [Threshold Raccoon](https://csrc.nist.gov/presentations/2024/threshold-raccoon), [Falcon on Ledger Nano S+](https://github.com/ZKNoxHQ/ZKNOX-HW-FALCON), and [Raccoon-G HD wallets](https://eprint.iacr.org/2026/380), which support public child-key derivation for watch-only wallets.
 
@@ -7,7 +9,7 @@ Ethereum is following a hash-based approach which generically lack the ability t
 
 In this post, we run five different signature schemes (Falcon-512, ML-DSA-44, FORS, Raccoon-128 and Raccoon-G) under a STARK proof and measure the proving, proof-size and verification costs of that approach.
 
-# Implementation
+## Implementation
 
 You can check this (experimental) implementation [in this repository](../README.md). Falcon, ML-DSA and both Raccoon variants use leanVM's experimental `riscv-exploration` branch, pinned to [`06e5c9cd6981103786f9d0a17324241b559a50d3`](https://github.com/leanEthereum/leanVM/tree/06e5c9cd6981103786f9d0a17324241b559a50d3). Falcon reuses the implementation introduced by [PR #490](https://github.com/leanEthereum/leanVM/pull/490). On the other hand, FORS uses the [Python leanISA guest](../leanISA/guests/fors.py) at [`575df819d9c857f38068cecf7b1640e0ce4bfb29`](https://github.com/leanEthereum/leanVM/tree/575df819d9c857f38068cecf7b1640e0ce4bfb29). As per the current state, FORS achieve better performance with its specialised Keccak circuit.
 
@@ -18,7 +20,7 @@ Both RISC-V and leanISA based implementation follow the approach supported by le
 
 All four signature (Falcon, ML-DSA, FORS and Raccoon-128) verification mechanism fit inside one leanSTARK proof. However, Raccoon-G verification exceeds leanVM's commitment cap: approximately 839 million witness words against a limit of 268 million. We explore next the approach taken to create a leanSTARK proof of one Raccoon-G signature verification mechanism. 
 
-## Raccoon-G verification approach
+### Raccoon-G verification approach
 
 The Raccoon-G verification mechanism follows the original Raccoon process described in Algorithm 3 of [[PKPR24]](https://eprint.iacr.org/2024/1291.pdf). The expensive step is step 4 which can be summarized as:
 
@@ -27,7 +29,7 @@ $$y := A\cdot z - c_{poly}\cdot T, \tag{1}\label{eq:full}$$
 
 where $A$ is a $9\times 9$ matrix of polynomials, $z$ is a signature components, $c_{poly}$ is its challenge polynomial, and $T$ is a rounded and scaled public-key vector. The verifier, in step 5, computes the commitment vector $w':= \text{Round}(y) + h$, using the signature hint $h$, and then reconstructs  $c'_{hash}=\mathsf{ChalHash}(w', \mu)$. Here $\mu$ binds together the full public key and message and $c_{hash}$ is the signature’s challenge digest. 
 
-### Multi-STARK verification
+#### Multi-STARK verification
 
 As mentioned before, the whole signature verification process exceeds leamVM's commitment cap, making it impossible to directly fit into one leanSTARK proof. Therefore, we focus on splitting the verification method into different leanSTARK proofs, which are then aggregated in a final leanSTARK.
 
@@ -52,17 +54,17 @@ The receiver the is able to reconstruct all five expected outputs from its inten
 ![proof-aggregation](figures/proof-aggregation.png)
 *Figure 3: Aggregation of multiple leanSTARK proofs into a final leanSTARK proof.*
 
-# Experimental results
+## Experimental results
 
 In this section, run some experiments to check the performance for proof generation and verification of alternative signatures under leanVM. We start by exploring single STARK proof generation for batched signatures and then check the impacts and limitations of having 10, 30, 70 and 100 distinct signatures for each of the five categories implemented (Falcon-512, ML-DSA-44, FORS, Raccoon-128 and Raccoon-G). 
 
 The machine used to host the experiments was an Apple M4 Pro with 24 GiB RAM. Direct batches use three measured proofs after one warmup. Recursive points use three fresh complete pipelines in separate processes, without an in-process proving warmup; Raccoon-G at 100 signatures has one completed run. Bars shown in the figures depict the full range. Also, we monitor the process-lifetime memory peak (RSS, Resident Set Size), including setup and warmup.
 
-## Direct batches
+### Direct batches
 
 We start by checking how many signatures can be batched together in a single STARK. It verifies every signature and commits to the ordered keys and messages. As described in Figure 1 above, the verifier then needs to derive the expected commitment from its own intended public records, checks the approached program and proof parameters. In this section, we omit Raccoon-G because it requires more than one STARK proof for one signature proof verification. 
 
-### Prover
+#### Prover
 
 ![prover-overview](figures/figure-prover-overview.png)
 *Figure 4: Direct-batch proving costs under leanVM. Proof size (top left), proving time (top right), and peak prover memory (bottom) as the batch grows.*
@@ -76,14 +78,14 @@ It is interesting to observe that the largest batch is not always the best opera
 
 FORS instead benefits from specialised Keccak: its 100-signature batch uses only 19.4 million words and a 298.02 KiB proof, below its 450 KiB signature payload.
 
-### Verifier
+#### Verifier
 
 Below, we measure complete direct-proof verification and exclude public claim derivation, setup and file reads.
 
 ![direct-batch-verification](figures/figure-direct-batch-verification.png)
 *Figure 6: Direct-batch STARK verification time under leanVM as the number of signatures increases.*
 
-## Recursive trees
+### Recursive trees
 
 Now, we cover STARK trees containing 10, 30, 70 and 100 original signature verification procedures. Each leaf proves a small signature verification workload and we selected a binary tree with the following leaf structure:
 
@@ -95,7 +97,7 @@ Now, we cover STARK trees containing 10, 30, 70 and 100 original signature verif
 | Raccoon, RISC-V | 1 signature | 
 | Raccoon-G, RISC-V | 2 matrix rows | 
 
-### Prover
+#### Prover
 
 ![recursive-trees](figures/figure-4-recursive-trees.png)
 *Figure 7: Recursive STARK aggregation under leanVM: complete-tree proving work (left) and aggregate size (right). Points show medians of three runs, except Raccoon-G at 100 signatures, which shows one completed run. Error bars show the range. Sizes exclude public keys and messages.*
@@ -106,7 +108,7 @@ On the other hand, FORS uses a different backend and recursive construction: lea
 
 For each signature scheme, peak RSS remains roughly constant across the tested signature counts. Leaf batches and recursive merges are proved sequentially, allowing working memory to be reused as the tree grows. Consequently, although these measurements cover the complete proof pipeline, the peak memory usage is very similar to that of proving a single leaf.
 
-### Verifier
+#### Verifier
 
 The verifier receives a receipt which contains the root STARK plus any auxiliary data required to verify it, such as Raccoon-G's witness bindings or FORS's remaining polynomial claims. So, the verifier performs three kinds of work which we presente in Figure 8 below:
 
@@ -132,7 +134,7 @@ For RISC-V, complete `Tree::verify` checks the recursive proof and settles its r
 ![tree-verification](figures/figure-5-tree-verification.png)
 *Figure 8: Recursive STARK verification under leanVM. Top: complete verification including program setup (left) and with setup cached (right). Bottom: complete proof checks (left) and preparation of the public statement from all keys and messages (right).*
 
-# Wallet infrastructure discussion
+## Wallet infrastructure discussion
 
 EIP-8288 opens the ability to integrate more complex cryptographic verification flows off-loading work from the EVM to off-chain proof computation. This makes it possible to integrate alternative signatures in wallet flows. 
 
