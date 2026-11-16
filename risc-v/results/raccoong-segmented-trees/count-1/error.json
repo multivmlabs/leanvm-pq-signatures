@@ -1,7 +1,0 @@
-{
-  "action": "plan",
-  "backend_revision": "06e5c9cd6981103786f9d0a17324241b559a50d3",
-  "error": "one or more corpus parts cannot share the selected proof shape",
-  "profile": "raccoong-hd-authors-poc-strict-segmented-v1",
-  "schema": 1
-}

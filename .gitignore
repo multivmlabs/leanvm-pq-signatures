@@ -1,16 +1,18 @@
 /.venv/
-/.cache/
-/target/
+.cache/
+target/
 /vendor/
-/artifacts/
+/artifacts/*
+!/artifacts/article/
+/artifacts/article/*
+!/artifacts/article/fors/
+/artifacts/article/fors/*
+!/artifacts/article/fors/direct-*.json
+!/artifacts/article/fors/direct-*.proof
 /build/
 __pycache__/
 *.pyc
 .DS_Store
-
-# Generated files in nested experiments
-**/target/
 **/.tectonic-cache/
-**/.cache/
-**/.venv/
-**/node_modules/
+/risc-v/raccoon-g/sources/lattice-hd-wallets/
+*.render.log

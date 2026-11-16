@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Render mine.md figures from verified RISC-V lattice and leanISA FORS reports.
-
-This script never runs a prover or invents unmeasured tree results. Original
-reports and figures are read only. All output goes to results/mine/figures.
-"""
+"""Load the article's verified Falcon, ML-DSA and FORS measurements."""
 from __future__ import annotations
 
 import argparse
@@ -120,57 +116,6 @@ def direct():
     return sorted(rows, key=lambda row: (("falcon", "mldsa", "fors").index(row["scheme"]), row["count"]))
 
 
-def trees():
-    environment = read(ROOT / "leanISA/results/article/environment.json")
-    require(environment["upstream"]["leanVM"]["rev"] == ISA_PIN,
-            "Unexpected backend pin for archived FORS tree runs")
-    rows, samples = [], []
-    for count in COUNTS:
-        selected = []
-        for sample in range(3):
-            path = ROOT / f"leanISA/results/article/trees/fors-{count}-b4/sample-{sample}.json"
-            report = read(path)
-            verification = read(path.with_name(f"sample-{sample}.fresh-verification.json"))
-            require(report["scheme"] == "fors" and report["signatures"] == count
-                    and report["fan_in"] == 4 and report["leaf_capacity"] == 5
-                    and report["rate"] == 1 and report["leaf_reuse_count"] == 0
-                    and report["merge_reuse_count"] == 0 and len(report["merge_passes"]) == 1,
-                    f"Not the fresh FORS main-tree workload: {path}")
-            require(verification.get("verified") is True
-                    and verification.get("statement_pinned") is True
-                    and verification.get("verification_uses_child_proofs") is False
-                    and verification.get("verification_uses_signatures") is False,
-                    f"Missing complete public-only verification: {path}")
-            for field in ("plan_hash", "root_guest_hash"):
-                require(report[field] == verification[field], f"Tree identity mismatch: {path}")
-            require(report["edge_count"] == verification["deferred_edge_count"],
-                    f"Deferred edge count mismatch: {path}")
-            leaves = report["leaf_reports"]
-            require(len(leaves) == report["leaf_count"] and all(not leaf["reused"] for leaf in leaves),
-                    f"Reused or missing leaves: {path}")
-            merge_nodes = report["merge_passes"][0]["nodes"]
-            require(len(merge_nodes) == report["merge_count"], f"Missing merge nodes: {path}")
-            evaluation = statistics.median(verification["deferred_evaluation_s"])
-            core_cold = statistics.median(verification["root_core_verify_cold_s"])
-            core_cached = statistics.median(verification["root_core_verify_cached_s"])
-            selected.append({"count": count, "sample": sample,
-                "prove_s": sum(leaf["prove_s"] for leaf in leaves) + sum(node["prove_s"] for node in merge_nodes),
-                "proof_kib": verification["aggregate_wire_bytes"] / 1024,
-                "core_kib": verification["root_core_proof_bytes"] / 1024,
-                "auxiliary_kib": (verification["aggregate_wire_bytes"] - verification["root_core_proof_bytes"]) / 1024,
-                "verify_cold_ms": 1000 * (verification["compile_plan_s"] + verification["deferred_bytecode_prepare_s"] + evaluation + core_cold),
-                "verify_cached_ms": 1000 * (evaluation + core_cached),
-                "claim_ms": 1000 * verification["public_claim_derivation_s"],
-                "rss_gib": report["process_peak_rss_bytes"] / 2**30,
-                "leaf_count": report["leaf_count"], "merge_count": report["merge_count"],
-                "edge_count": report["edge_count"]})
-        samples.extend(selected)
-        row = {"count": count}
-        for field in selected[0]:
-            if field not in ("count", "sample"):
-                stats(row, field, [entry[field] for entry in selected])
-        rows.append(row)
-    return rows, samples
 
 
 def riscv_trees(schemes=("falcon", "mldsa"), counts=COUNTS):
@@ -278,6 +223,10 @@ def reduced_fors_trees(counts=COUNTS):
         actual_hash = hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
         require(actual_hash == expected_hash, f"Reduced FORS source changed since measurement: {name}")
         SOURCES[name] = actual_hash
+    for name in ("leanISA/src/recursion_guest.rs", "leanISA/src/recursion_support.rs",
+                 "leanISA/guests/aggregate_falcon.py", "leanISA/guests/fors.py",
+                 "leanISA/python/pqbench/article_inputs.py", "leanISA/python/pqbench/fors.py"):
+        SOURCES[name] = hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
     rows, samples = [], []
     thread_settings = set()
     for count in counts:
@@ -371,13 +320,8 @@ def reduced_fors_trees(counts=COUNTS):
                     and abs(wrapper_stark - report["wrapper_stark_prove_s"]) < 1e-8
                     and abs(leaf_work + merge_work - report["total_prove_s"]) < 1e-8,
                     f"Native reduction or STARK proving work omitted: {run}")
-            for kind, components in (("leaf", leaves), ("merge", merges)):
-                for index, component in enumerate(components):
-                    path = run / f"{kind}-{index}.proof"
-                    raw = path.read_bytes()
-                    require(len(raw) == component["proof_bytes"]
-                            and hashlib.sha256(raw).hexdigest() == component["proof_sha256"],
-                            f"Saved component proof mismatch: {path}")
+            # Per-node work and proof identities remain in the measured report.
+            # Only final receipts are distributed; child proofs are reproducible.
             proof_path = run / "root.proof"
             proof = proof_path.read_bytes()
             require(hashlib.sha256(proof).hexdigest() == report["root_proof_sha256"]
@@ -426,204 +370,9 @@ def write_csv(path, rows):
         writer.writerows(rows)
 
 
-def tree_tex(verification=False):
-    if verification:
-        panels = [("verify_cold_ms", "Complete tree verification (ms)", "Cold setup", "tree.csv", "FORS, cold", "mldsaorange"),
-                  ("verify_cached_ms", "Complete tree verification (ms)", "Prepared programs and tables", "tree.csv", "FORS, prepared", "forsgreen")]
-    else:
-        panels = [("prove_s", "Proving work (s)", "Fresh leaves and merges", "tree.csv", "FORS tree", "forsgreen"),
-                  ("proof_kib", "Proof size (KiB)", "Root STARK plus auxiliary data", "tree.csv", "FORS tree", "forsgreen")]
-    axes = []
-    for index, (field, ylabel, title, file, label, color) in enumerate(panels):
-        axes.append(r"\begin{axis}[" + f"at={{({index * 8.6}cm,0cm)}},width=7.1cm,height=5.3cm,"
-                    + f"title={{{title}}},ylabel={{{ylabel}}},"
-                    + r"xlabel={Signatures in the tree},xmin=5,xmax=105,xtick={10,30,70,100},ymin=0,grid=major,grid style={gray!15},"
-                    + r"axis line style={gray!65},tick style={gray!65},line width=0.9pt,tick label style={font=\small},"
-                    + r"label style={font=\small},title style={font=\small},scaled y ticks=false,"
-                    + r"legend style={font=\small,draw=none,fill=none,at={(0.5,1.15)},anchor=south,legend columns=-1},legend cell align=left]")
-        error = "" if field == "proof_kib" else r",error bars/.cd,y dir=both,y explicit,error bar style={line width=0.65pt},error mark options={rotate=90,mark size=2pt}"
-        columns = f"x=count,y={field},col sep=comma"
-        if error:
-            columns += f",y error minus={field}_error_minus,y error plus={field}_error_plus"
-        axes.append(f"\\addplot+[color={color},mark=triangle*,mark size=2.1pt{error}] table[{columns}] {{{file}}};")
-        axes.append(f"\\addlegendentry{{{label}}}")
-        if not verification:
-            direct_columns = f"x=count,y={field},col sep=comma"
-            if error:
-                direct_columns += f",y error minus={field}_error_minus,y error plus={field}_error_plus"
-            axes.append(f"\\addplot+[color=falconblue,dashed,mark=*,mark size=2.1pt{error}] table[{direct_columns}] {{fors-matched.csv}};")
-            axes.append(r"\addlegendentry{FORS direct batch}")
-        axes.append(r"\end{axis}")
-    return r"""\documentclass[tikz,border=5pt]{standalone}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-\definecolor{falconblue}{HTML}{0072B2}
-\definecolor{mldsaorange}{HTML}{D55E00}
-\definecolor{forsgreen}{HTML}{009E73}
-\begin{document}
-\begin{tikzpicture}
-AXES
-\end{tikzpicture}
-\end{document}
-""".replace("AXES", "\n".join(axes))
 
 
-def recursive_tree_tex(rows, verification=False, legacy=False):
-    """Comparable plot quantities, with the differing proof protocols documented."""
-    panels = [("verify_cold_ms", "Complete verification (ms)", "Including program setup"),
-              ("verify_cached_ms", "Complete verification (ms)", "Prepared programs and tables")] if verification else [
-              ("prove_s", "Proving work (s)", "Fresh leaves and merges"),
-              ("proof_kib", "Complete aggregate (KiB)", "Serialized aggregate proof")]
-    labels = (("falcon", "Falcon-512 (RISC-V)", "falconblue", "*"),
-              ("mldsa", "ML-DSA-44 (RISC-V)", "mldsaorange", "square"),
-              ("fors", "FORS (leanISA, legacy)" if legacy else "FORS (leanISA, reduced)", "forsgreen", "triangle*"))
-    axes = []
-    for index, (field, ylabel, title) in enumerate(panels):
-        if field == "proof_kib":
-            scale = "ymin=0,"
-        else:
-            minimum = min(row[field + "_min"] for row in rows)
-            require(minimum > 0, "Nonpositive recursive timing")
-            scale = f"ymode=log,log basis y=10,ymin={minimum * 0.75:.12g},"
-            if field == "verify_cold_ms":
-                scale += "ytick={50,100,200,500,1000},yticklabels={50,100,200,500,1000},"
-            elif field == "verify_cached_ms":
-                scale += "ytick={1,2,5,10,20,50},yticklabels={1,2,5,10,20,50},"
-        axes.append(r"\begin{axis}[" + f"at={{({index * 8.6}cm,0cm)}},width=7.1cm,height=5.3cm,"
-                    + f"title={{{title}}},ylabel={{{ylabel}}},{scale}"
-                    + r"xlabel={Distinct signatures},xmin=5,xmax=105,xtick={10,30,70,100},grid=major,grid style={gray!15},"
-                    + r"axis line style={gray!65},tick style={gray!65},line width=0.9pt,tick label style={font=\small},"
-                    + r"label style={font=\small},title style={font=\small},scaled y ticks=false,"
-                    + r"legend style={font=\scriptsize,draw=none,fill=none,at={(1.15,1.22)},anchor=south,legend columns=-1},legend cell align=left]")
-        for scheme, label, color, mark in labels:
-            error = "" if field == "proof_kib" else r",error bars/.cd,y dir=both,y explicit,error bar style={line width=0.65pt},error mark options={rotate=90,mark size=2pt}"
-            columns = f"x=count,y={field},col sep=comma"
-            if error:
-                columns += f",y error minus={field}_error_minus,y error plus={field}_error_plus"
-            file = "tree-fors-legacy.csv" if legacy and scheme == "fors" else f"tree-{scheme}.csv"
-            axes.append(f"\\addplot+[color={color},mark={mark},mark size=2.1pt{error}] table[{columns}] {{{file}}};")
-            if index == 0:
-                axes.append(f"\\addlegendentry{{{label}}}")
-        axes.append(r"\end{axis}")
-    return r"""\documentclass[tikz,border=5pt]{standalone}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-\definecolor{falconblue}{HTML}{0072B2}
-\definecolor{mldsaorange}{HTML}{D55E00}
-\definecolor{forsgreen}{HTML}{009E73}
-\begin{document}
-\begin{tikzpicture}
-AXES
-\node[font=\scriptsize,align=center,anchor=north] at (7.85cm,-1.0cm)
-{FOOTNOTE};
-\end{tikzpicture}
-\end{document}
-""".replace("AXES", "\n".join(axes)).replace("FOOTNOTE", (
-        r"Falcon: 10 signatures/leaf; ML-DSA: 2; both binary with padding charged.\\Legacy FORS: 5 signatures/leaf, fan-in 4, separate edge obligations."
-        if legacy else r"Falcon: 10 signatures/leaf; ML-DSA: 2; FORS: 5. Binary trees; padding charged.\\FORS keeps specialised Keccak and reduces to one claim per program family."))
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", type=Path, default=ROOT / "results/mine/figures")
-    parser.add_argument("--render", action="store_true")
-    args = parser.parse_args()
-    output = args.output.resolve()
-    output.mkdir(parents=True, exist_ok=True)
-    module_spec = importlib.util.spec_from_file_location("rv_figures", ROOT / "risc-v/scripts/figures.py")
-    helper = importlib.util.module_from_spec(module_spec)
-    module_spec.loader.exec_module(helper)
-    helper.SCHEMES = {"falcon": ("Falcon-512 (RISC-V)", "falconblue", "*"),
-                      "mldsa": ("ML-DSA-44 (RISC-V)", "mldsaorange", "square*"),
-                      "fors": ("FORS (leanISA + Keccak)", "forsgreen", "triangle*")}
-    rows = direct()
-    tree_rows, tree_samples = trees()
-    rv_tree_rows, rv_tree_samples = riscv_trees()
-    reduced_rows, reduced_samples = reduced_fors_trees()
-    recursive_rows = rv_tree_rows + reduced_rows
-    recursive_samples = rv_tree_samples + reduced_samples
-    legacy_recursive_rows = rv_tree_rows + [{"scheme": "fors", "backend": "leanISA-legacy", **row} for row in tree_rows]
-    legacy_recursive_samples = rv_tree_samples + [{"scheme": "fors", "backend": "leanISA-legacy", **row} for row in tree_samples]
-    write_csv(output / "measurements.csv", rows)
-    # Keep the original FORS-only CSVs available for the earlier figure artifacts.
-    write_csv(output / "tree.csv", tree_rows)
-    write_csv(output / "tree-samples.csv", tree_samples)
-    write_csv(output / "recursive-trees.csv", recursive_rows)
-    write_csv(output / "recursive-tree-samples.csv", recursive_samples)
-    write_csv(output / "legacy-recursive-trees.csv", legacy_recursive_rows)
-    write_csv(output / "legacy-recursive-tree-samples.csv", legacy_recursive_samples)
-    write_csv(output / "tree-fors-legacy.csv", [{"scheme": "fors", "backend": "leanISA-legacy", **row} for row in tree_rows])
-    for scheme in helper.SCHEMES:
-        write_csv(output / f"{scheme}.csv", [row for row in rows if row["scheme"] == scheme])
-        write_csv(output / f"tree-{scheme}.csv", [row for row in recursive_rows if row["scheme"] == scheme])
-    write_csv(output / "fors-matched.csv", [row for row in rows if row["scheme"] == "fors" and row["count"] in COUNTS])
-    definitions = {
-        "figure-1-batching": (("proof_kib", "Proof size (KiB)", "Direct batch proof size"), ("prove_s", "Proving time (s)", "Direct batch proving")),
-        "figure-2-verification-memory": (("verify_ms", "Verification time (ms)", "Direct batch verification"), ("rss_gib", "Peak process RSS (GiB)", "Prover memory")),
-        "figure-3-capacity-efficiency": (("capacity_percent", "Commitment budget used (\\%)", "Capacity"), ("prove_per_signature_ms", "Proving time per signature (ms)", "Amortized proving time")),
-    }
-    documents = {name: helper.tex_document(left, right, rows, output)
-                 for name, (left, right) in definitions.items()}
-    for name, title, field in (
-            ("figure-1-batching", "Direct batch proving", "prove_s"),
-            ("figure-3-capacity-efficiency", "Amortized proving time", "prove_per_signature_ms")):
-        # Timing spans several orders of magnitude across the two backends.
-        # Apply log y only to this timing panel, retaining linear proof/capacity axes.
-        minimum = min(row[field + "_min"] for row in rows)
-        require(minimum > 0, f"Nonpositive logarithmic timing measurement: {name}")
-        sections = documents[name].split(r"\begin{axis}")
-        for index, section in enumerate(sections):
-            if f"title={{{title}}}" in section:
-                sections[index] = section.replace("ymin=0", f"ymode=log,log basis y=10,ymin={minimum * 0.75:.12g}", 1)
-        documents[name] = r"\begin{axis}".join(sections)
-    documents["figure-4-fors-tree"] = tree_tex()
-    documents["figure-5-fors-tree-verification"] = tree_tex(verification=True)
-    documents["figure-4-recursive-trees"] = recursive_tree_tex(recursive_rows)
-    documents["figure-5-tree-verification"] = recursive_tree_tex(recursive_rows, verification=True)
-    documents["figure-4-legacy-recursive-trees"] = recursive_tree_tex(legacy_recursive_rows, legacy=True)
-    documents["figure-5-legacy-tree-verification"] = recursive_tree_tex(legacy_recursive_rows, verification=True, legacy=True)
-    cache = output / ".tectonic-cache"
-    if args.render:
-        helper.prepare_tex_cache(cache)
-    for name, document in documents.items():
-        # Long, explicit backend names need a smaller shared legend.
-        document = document.replace("legend style={font=\\small", "legend style={font=\\scriptsize")
-        tex = output / f"{name}.tex"
-        tex.write_text(document)
-        if args.render:
-            helper.render(tex, cache)
-    for path in (Path(__file__), ROOT / "risc-v/scripts/figures.py", ROOT / "risc-v/tree-bench/src/main.rs",
-                 ROOT / "risc-v/tree-bench/Cargo.lock", ROOT / "leanISA/scripts/article_figures.py",
-                 ROOT / "leanISA/results/article/environment.json"):
-        SOURCES[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
-    metadata = {
-        "schema": 3, "backends": {"falcon": RV_PIN, "mldsa": RV_PIN, "fors": ISA_PIN},
-        "riscv_baseline_guest_sha256": RV_GUESTS,
-        "direct_measurements": len(rows), "tree_counts": list(COUNTS), "tree_samples_per_count": 3,
-        "recursive_tree_measurements": len(recursive_rows), "recursive_tree_schemes": ["falcon", "mldsa", "fors"],
-        "sample_policy": "Direct proof points: three fresh proofs after one warmup. Tree points: three complete fresh leaf-plus-merge runs. Medians and full min/max ranges, not extrapolations.",
-        "thread_policy": {"falcon_and_mldsa": "Requests eight workers; the backend topology can add efficiency-core workers, so this is not a total process-thread count", "fors": "Automatic leanVM thread selection, threads_env=null on the 12-logical-CPU host"},
-        "direct_verification": {"falcon_and_mldsa": "Proof decoding plus complete Program::verify, no program loading/public-claim derivation/file I/O", "fors": "Prepared-bytecode verifier::verify_execution, median of three verify_cached_s samples from independent pinned public-only receiver; excludes compilation/table setup/public-claim derivation/file I/O"},
-        "tree_scope": "Active trees: RISC-V Falcon ten signatures per real leaf, RISC-V ML-DSA two, reduced leanISA FORS five; all binary, rate one. FORS keeps its unchanged specialised-Keccak leaf and proves sumcheck reductions in the Python DSL. Archived legacy FORS uses fan-in four and separate edge obligations. Separate pilots are not timing-curve points.",
-        "tree_backend_pin_source": "RISC-V producer, receiver and statement pin RV_PIN. Reduced FORS producer, receiver, public statement, family plan and frozen environment pin ISA_PIN and the approved legacy FORS5 leaf seed. Original FORS reports are additionally checked against their archived environment pin.",
-        "tree_padding": "Active trees repeat the final real leaf proof into a balanced power-of-two slot count. RISC-V requires at least two slots; selected FORS cases already have at least two real leaves. Padding is not counted as new signatures. Every merge is freshly proved and charged; real leaves are freshly proved once per pipeline.",
-        "tree_proving": "RISC-V: sum fresh leaf and native merge API times. Reduced FORS: sum all fresh leaves plus every merge's complete prepare_s (native child verification/advice and sumcheck generation) and wrapper_stark_prove_s. Native reduction work is included, not precomputed for free. Compilation, fixtures, serialization and file handling are outside these work sums; elapsed pipelines remain in raw reports.",
-        "tree_size": "RISC-V: serialized TreeProof with reduced claims. Active FORS: serialized LIRDT001 root receipt including the root STARK and one point/value per distinct descendant program family. Legacy FORS: root plus per-edge auxiliary points. Public records and shared programs are additional transport in every case.",
-        "tree_verification_cold": {"riscv": "program_load_s + tree_setup_s + first_complete_verify_s (decode plus Tree::verify)", "fors_reduced": "program_compile_s + table_prepare_s + first_complete_verify_s; decoded receipt, full root STARK and every final trusted-program evaluation", "fors_legacy": "compile_plan_s + deferred_bytecode_prepare_s + median(deferred_evaluation_s) + median(root_core_verify_cold_s)"},
-        "tree_verification_prepared": {"riscv": "median of three decode plus Tree::verify samples after one warmup; all folded dense-polynomial and Flock matrix claims settled", "fors_reduced": "median of three complete receipt::Verifier calls after one warmup; root STARK and one trusted bytecode evaluation for every descendant program family, from a decoded receipt", "fors_legacy": "median(deferred_evaluation_s) + median(root_core_verify_cached_s), every edge plus root"},
-        "fors_reduction_scope": "One obligation per distinct descendant program, normally one per depth in the selected bounded binary tree. Its final work grows with depth, unlike the fixed-family native RISC-V design. It does not claim constant-cost unlimited recursion or the same approximately2ms verification.",
-        "legacy_archive": "legacy-edge-obligations/ contains an exact snapshot of the earlier figures, CSVs, generator and provenance. Additional legacy-recursive-trees.csv and legacy Figures4/5 regenerate the earlier selected numeric curves with explicit protocol labels.",
-        "tree_verification_excludes": "Public-claim derivation and file I/O. Public-claim derivation is retained as claim_ms in CSV, not added to plotted verifier time.",
-        "timing_comparison": "Backend acceleration, worker policy, tree arity, signatures per leaf, padding and verification timer boundaries differ. These are implementation measurements, not controlled signature-only speedup ratios.",
-        "axis_scales": "Figure1 proving time, Figure3 per-signature proving time and the new recursive tree timing panels use log10 y axes. Proof size, capacity, direct verification and RSS remain linear. Direct batch counts use log2 x axes; tree counts remain linear. Earlier FORS-only Figures4/5 are retained with their original linear axes.",
-        "capacity": "Same numerical 2^28 bound, different witness representations. Percentages are backend-specific budget occupancy, not interchangeable witness units.",
-        "rendering": "LaTeX/PGFPlots through cached Tectonic, PNG from the same PDF through pdftoppm at 180dpi",
-        "source_sha256": SOURCES,
-    }
-    (output / "provenance.json").write_text(json.dumps(metadata, indent=2) + "\n")
-    print(json.dumps({"direct_measurements": len(rows), "tree_counts": list(COUNTS),
-                      "rendered": args.render, "output": str(output)}))
 
 
-if __name__ == "__main__":
-    main()

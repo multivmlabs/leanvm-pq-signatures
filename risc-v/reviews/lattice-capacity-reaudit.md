@@ -125,7 +125,7 @@ Artifacts:
 - [Proof](lattice-capacity-reaudit/results/falcon-33-start96-proved.proof)
 - [Public statement](lattice-capacity-reaudit/results/falcon-33-start96-proved.statement.json)
 - [Actual advice](lattice-capacity-reaudit/results/falcon-33-start96-proved.advice.bin)
-- [Compiled validation producer](lattice-capacity-reaudit/proof-producer.bin),
+- Compiled validation producer (historical build product; regenerate from the retained probe source),
   SHA-256 `0dbe723295d1c2dfc4751e489de4d72e1c707175c6ccbebe798840a8820e3271`
 - ELF SHA-256: `421470c0aef38d3b2c2ca392edd7786c7425085f6a430b0286a679c69f0f9a4c`
 - Proof SHA-256: `b023f97b7a0fe1edfd13136c81e8bcbe21453b6a1cf8783c36ce2ff77284ad8e`

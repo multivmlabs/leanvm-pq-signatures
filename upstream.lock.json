@@ -1,5 +1,27 @@
 {
-  "leanVM": {"url": "https://github.com/leanEthereum/leanVM.git", "rev": "575df819d9c857f38068cecf7b1640e0ce4bfb29"},
-  "ETHFALCON": {"url": "https://github.com/ZKNoxHQ/ETHFALCON.git", "rev": "43ac863e30281bb7821748178d39967367d54bc2"},
-  "ETHDILITHIUM": {"url": "https://github.com/ZKNoxHQ/ETHDILITHIUM.git", "rev": "f9f4fe1d84e68304b425e054c273c276fe44ba11"}
+  "leanVM": {
+    "url": "https://github.com/leanEthereum/leanVM.git",
+    "rev": "575df819d9c857f38068cecf7b1640e0ce4bfb29"
+  },
+  "ETHFALCON": {
+    "url": "https://github.com/ZKNoxHQ/ETHFALCON.git",
+    "rev": "43ac863e30281bb7821748178d39967367d54bc2"
+  },
+  "ETHDILITHIUM": {
+    "url": "https://github.com/ZKNoxHQ/ETHDILITHIUM.git",
+    "rev": "f9f4fe1d84e68304b425e054c273c276fe44ba11"
+  },
+  "leanVM-riscv": {
+    "url": "https://github.com/leanEthereum/leanVM.git",
+    "rev": "06e5c9cd6981103786f9d0a17324241b559a50d3"
+  },
+  "raccoon": {
+    "url": "https://github.com/masksign/raccoon.git",
+    "rev": "e789b4b72a2b7e8a2205df49c487736985fc8417"
+  },
+  "lattice-hd-wallets": {
+    "url": "https://github.com/p-11/lattice-hd-wallets.git",
+    "rev": "461a5ed9b6d57e3bf8c381be3bb79325ab21d906",
+    "path": "risc-v/raccoon-g/sources/lattice-hd-wallets"
+  }
 }

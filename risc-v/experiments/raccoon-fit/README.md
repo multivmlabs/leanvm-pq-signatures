@@ -43,17 +43,6 @@ arithmetic cannot make the original whole-signature guest fit. This is a bound
 for this software kernel, not a lower bound on all possible Keccak circuits or
 all RISC-V implementations.
 
-## Official CRT32 trial
-
-`standard-crt32/` copies the standard guest and adapter, selects the official
-`POLYR_Q32` arithmetic and compiles `ntt32.c` instead of `ntt64.c`. No signature
-parameters, parser, transcript, public-output commitment or proof cap change.
-The preliminary one-record diagnostic returns the original expected output,
-but grows to 9,347,894 instructions and 446,856,808 words. Production measurement
-still refuses. This does not establish complete correctness of the trial; it is
-only a rejected optimization candidate. Further review/testing belongs to the
-separate CRT investigation.
-
 ## Reproduction
 
 From the project root:
@@ -77,5 +66,5 @@ it does not affect full execution counts or commitment sizes.
 
 The JSON reports retain every table, fill operation and periodic size check.
 `diagnostic-summary.json` records original ELF, probe-source and probe-binary
-hashes. The earlier actual prover refusals remain in the approved benchmark
-study; diagnostic results are not replacement proof benchmarks.
+hashes. The summary separately records production-capacity refusal; diagnostic results
+are not replacement proof benchmarks.

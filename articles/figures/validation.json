@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "direct_measurements": 51,
+  "tree_measurements": 20,
+  "fresh_tree_pipelines": 58,
+  "final_receipts_checked": true,
+  "intermediate_proofs_distributed": false,
+  "cryptographic_verification_rerun": false
+}

@@ -30,87 +30,10 @@ SCHEMES = {
 CAP = 2**28
 
 
-def median(values):
-    return statistics.median(float(value) for value in values)
 
 
-def read_reports(directory):
-    rows = []
-    sources = []
-    for scheme in SCHEMES:
-        for path in sorted(directory.glob(f"{scheme}-*.json")):
-            try:
-                raw = path.read_bytes()
-                data = json.loads(raw)
-            except json.JSONDecodeError:
-                print(f"Skipping incomplete report: {path}", file=sys.stderr)
-                continue
-            if (data.get("action") != "prove" or data.get("status") != "accepted"
-                    or data.get("verified") is not True):
-                continue
-            if data.get("scheme") != scheme:
-                raise ValueError(f"Scheme mismatch: {path}")
-            times, verifies = data.get("prove_s", []), data.get("verify_s", [])
-            if not times or not verifies:
-                raise ValueError(f"Accepted proof has no timing samples: {path}")
-            count = int(data["count"])
-            if count < 1:
-                raise ValueError(f"Invalid count: {path}")
-            sizes = data.get("proof_bytes_samples", [data["proof_bytes"]])
-            committed = int(data["execution"]["committed_words"])
-            row = {
-                "scheme": scheme,
-                "count": count,
-                "proof_kib": median(sizes) / 1024,
-                "prove_s": median(times),
-                "prove_min_s": min(times),
-                "prove_max_s": max(times),
-                "prove_error_minus_s": median(times) - min(times),
-                "prove_error_plus_s": max(times) - median(times),
-                "verify_ms": 1000 * median(verifies),
-                "verify_min_ms": 1000 * min(verifies),
-                "verify_max_ms": 1000 * max(verifies),
-                "verify_error_minus_ms": 1000 * (median(verifies) - min(verifies)),
-                "verify_error_plus_ms": 1000 * (max(verifies) - median(verifies)),
-                "rss_gib": int(data["peak_rss_bytes"]) / 2**30,
-                "committed_words": committed,
-                "capacity_percent": 100 * committed / CAP,
-                "prove_per_signature_ms": 1000 * median(times) / count,
-                "prove_per_signature_error_minus_ms": 1000 * (median(times) - min(times)) / count,
-                "prove_per_signature_error_plus_ms": 1000 * (max(times) - median(times)) / count,
-                "cycles": int(data["execution"]["cycles"]),
-            }
-            rows.append(row)
-            sources.append({
-                "path": str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path),
-                "sha256": hashlib.sha256(raw).hexdigest(),
-                "backend_revision": data["leanvm_revision"],
-                "threads": data["threads"],
-                "log_inverse_rate": data["log_inverse_rate"],
-                "samples": len(times),
-                "warmup": data["warmup"],
-                "elf_sha256": data["elf_sha256"],
-            })
-    rows.sort(key=lambda row: (list(SCHEMES).index(row["scheme"]), row["count"]))
-    if not rows:
-        raise ValueError("No completed accepted and verified prove reports")
-    if len({(row["scheme"], row["count"]) for row in rows}) != len(rows):
-        raise ValueError("Duplicate scheme/count measurements")
-    for key in ("backend_revision", "threads", "log_inverse_rate"):
-        if len({source[key] for source in sources}) != 1:
-            raise ValueError(f"Mixed experiment configuration: {key}")
-    for scheme in SCHEMES:
-        selected = [source["elf_sha256"] for source in sources if Path(source["path"]).name.startswith(scheme + "-")]
-        if len(set(selected)) > 1:
-            raise ValueError(f"Mixed guest ELF identities for {scheme}; rerun on one build")
-    return rows, sources
 
 
-def write_csv(path, rows):
-    with path.open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
-        writer.writeheader()
-        writer.writerows(rows)
 
 
 def tex_document(left, right, rows, output_dir):
@@ -228,45 +151,5 @@ def render(tex, cache):
     ], check=True, capture_output=True)
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--results", type=Path, default=ROOT / "risc-v/results/direct")
-    parser.add_argument("--output", type=Path, default=ROOT / "risc-v/figures")
-    parser.add_argument("--render", action="store_true", help="Compile the generated LaTeX and rasterize its PDFs")
-    args = parser.parse_args()
-    output = args.output.resolve()
-    output.mkdir(parents=True, exist_ok=True)
-    rows, sources = read_reports(args.results.resolve())
-    write_csv(output / "measurements.csv", rows)
-    for scheme in SCHEMES:
-        selected = [row for row in rows if row["scheme"] == scheme]
-        if selected:
-            write_csv(output / f"{scheme}.csv", selected)
-    figures = {
-        "figure-1-batching": (("proof_kib", "Proof size (KiB)", "Proof size"), ("prove_s", "Proving time (s)", "Proving time")),
-        "figure-2-verification-memory": (("verify_ms", "Verification time (ms)", "Verification"), ("rss_gib", "Peak process RSS (GiB)", "Prover memory")),
-        "figure-3-capacity-efficiency": (("capacity_percent", "Commitment budget used (\\%)", "Capacity"), ("prove_per_signature_ms", "Proving time per signature (ms)", "Amortized proving time")),
-    }
-    for name, (left, right) in figures.items():
-        tex = output / f"{name}.tex"
-        tex.write_text(tex_document(left, right, rows, output))
-        if args.render:
-            cache = output / ".tectonic-cache"
-            prepare_tex_cache(cache)
-            render(tex, cache)
-    metadata = {
-        "source_reports": sources,
-        "plotted_measurements": len(rows),
-        "schemes_present": [scheme for scheme in SCHEMES if any(row["scheme"] == scheme for row in rows)],
-        "statistics": "Points are medians; vertical error bars span the recorded minimum to maximum proof/verification times. One process RSS high-water per report.",
-        "capacity_words": CAP,
-        "missing_or_rejected_measurements": "Not plotted; no extrapolation.",
-        "curve_lines": "Straight line segments connect measured points only.",
-        "rendering": "LaTeX/PGFPlots via Tectonic; PNG previews rasterized from the same PDFs by pdftoppm at180dpi.",
-    }
-    (output / "provenance.json").write_text(json.dumps(metadata, indent=2) + "\n")
-    print(json.dumps({"measurements": len(rows), "schemes": metadata["schemes_present"], "output": str(output), "rendered": args.render}))
 
 
-if __name__ == "__main__":
-    main()

@@ -1,2 +1,0 @@
-# Optional: generate the saved proof-size figure.
-matplotlib==3.9.4

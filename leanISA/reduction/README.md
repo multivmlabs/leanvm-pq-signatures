@@ -66,7 +66,7 @@ statements has not been benchmarked.
 Apple M4 Pro, 24 GiB RAM, automatic upstream worker selection. Every point uses
 three complete fresh producer processes followed by separate public-only
 receivers. Signature witnesses and child proof files are absent from the
-isolated receiver's working directory. Pilots and proof controls are separate.
+isolated receiver's working directory. Proof controls are separate.
 
 | Distinct signatures | Proving work, s | Complete receipt, KiB | Full verify prepared, ms | Full verify including setup, ms | Final family evaluations |
 |---:|---:|---:|---:|---:|---:|
@@ -91,10 +91,7 @@ and file reads precede these timers, matching the older FORS accounting.
 
 The complete 100-signature receipt is 344,040 bytes: 341,128 root-core bytes and
 2,912 accumulator/header bytes. Peak resident process memory is about 1.406 GiB.
-The old fan-in-four wrapper measured 343.12 KiB and 20.84 ms prepared verification;
-it remains archived. Its proving timer excluded native advice preparation and
-it used fewer merges, so its 3.58 s cannot be treated as an isolated comparison
-of reduction overhead. Direct FORS batching still wins at this count: 0.283 s
+Direct FORS batching still wins at this count: 0.283 s
 and 298.02 KiB. No optimum or larger-count capacity is claimed.
 
 ## Correctness evidence
@@ -110,7 +107,7 @@ and 298.02 KiB. No optimum or larger-count capacity is claimed.
   the full padded semantic digest, proof hashes and complete consumer receipts.
 
 See [review evidence](review/REVIEW.md) and
-[benchmark validation](results/trees/validation.json). This is a scoped research
+[figure-input validation](../../articles/figures/validation.json). This is a scoped research
 implementation, not a formal proof-system audit. The unchanged FORS construction
 is a few-time component with the limitations documented in
 [the original FORS relation](../docs/fors.md); it is not full SLH-DSA. Proofs are
@@ -123,7 +120,7 @@ CARGO_HOME="$PWD/.cache/riscv-cargo" \
  CARGO_TARGET_DIR="$PWD/target" RUSTFLAGS="-C target-cpu=native" \
  cargo +stable build --release --locked --offline --manifest-path leanISA/reduction/Cargo.toml
 .venv/bin/python leanISA/reduction/run_benchmarks.py --output leanISA/reduction/results/trees-rerun
-python3 articles/scripts/mine_figures.py --render
+python3 articles/scripts/raccoon_figures.py --output build/figures --render
 ```
 
 For a single actual two-level twenty-signature tree:
@@ -140,7 +137,7 @@ public digest must come from the receiver's own intended records; the approved
 leaf identity must come from its own trusted policy. Values attached by an
 untrusted sender do not authenticate either one.
 
-Raw per-node work, native reduction cost, exact commands, binary/source hashes,
-root states and complete receipts are in [results/trees](results/trees/).
+Raw per-node work, native reduction cost, exact commands, binary/source hashes
+and complete receipts are in [results/trees](results/trees/).
 The frozen benchmark binary SHA-256 is
 `1d683e440929570d459dca6747f18b74760fa94ee385d7adb0261129fbba38b5`.

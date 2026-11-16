@@ -1,6 +1,6 @@
-# Standard Raccoon fitting trials
+# Selected Raccoon-128 implementation
 
-This directory preserves implementation trials for the unchanged ordinary
+This directory contains the measured optimized implementation of the ordinary
 Raccoon-128-1 signature relation. The original port and backend remain untouched.
 The directory name records the first CRT32 experiment; **the selected variant
 uses the original 64-bit Montgomery NTT**, because the CRT32 trials were worse.
@@ -32,32 +32,13 @@ remain those of the reviewed original reference-interoperability profile.
   `c67701c037c11d229c563671419ccc48827b5c2d`. It executes all rounds as ordinary
   RISC-V instructions. There is no Keccak precompile, hash hint or changed cap.
 
-## Execution and witness-plan results
+## Measured operating point
 
-These are completed raw-interpreter executions and separately checked production
-`Program::measure` results. They are **not STARK production benchmarks**. The
-diagnostic reproduces the pinned backend's public table layout without bypassing
-the production proof checks. Every run returns the original expected public
-output for the identical ordinary signature fixture at index zero.
-
-| Variant | Instructions | Witness words | Production measure |
-|---|---:|---:|---|
-| Original 64-bit reference port | 8,238,032 | 419,337,656 | `TooLong` |
-| Official CRT32 and SDK Keccak | 9,347,894 | 446,856,808 | `TooLong` |
-| CRT32 and register Keccak | 8,862,206 | 438,214,248 | `TooLong` |
-| 64-bit, bulk decoder and register Keccak | 6,848,407 | 284,071,352 | `TooLong` |
-| Selected: add aligned byte helpers | 6,499,305 | 247,895,480 | Accepted |
-
-The selected plan is below 268,435,456 words. The main study subsequently produced
-and independently verified a complete one-signature STARK. Its three-run direct
-sample and separate public-only verification are in
-`risc-v/results/raccoon-runtime-study/raccoon/direct/count-1/`. The witness-plan
-figures above remain separate from proof-production timings. Capacity beyond one
-signature is checked separately on every prefix through the input limit.
-
-The initial aligned-header trial without explicit forced inclusion had no effect:
-reference headers found their own `plat_local.h` first. Its saved result is
-retained, but it is not a distinct effective optimization.
+The selected guest executes 6,499,305 instructions and uses 247,895,480 witness
+words for signature zero, below the 268,435,456-word cap. The actual direct
+three-run proof measurement and public-only receiver are retained in
+`risc-v/results/raccoon-runtime-study/raccoon/direct/count-1/`.
+Earlier CRT32 and decoder trials are omitted; the directory name is historical.
 
 ## Correctness evidence
 
@@ -88,6 +69,5 @@ CARGO_HOME="$PWD/.cache/riscv-cargo" CARGO_TARGET_DIR="$PWD/.cache/raccoon-crt32
 ```
 
 The native host preserves the original host API for the common benchmark runner.
-Failed CRT32 and intermediate ELFs/layout reports remain separate from the
-selected executable. The main study owns all resource-monitored production
-proofs and complete proof verification.
+The main study retains the measured production reports, final receipts and
+complete public-only verification records.

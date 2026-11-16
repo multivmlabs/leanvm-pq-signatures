@@ -1,0 +1,29 @@
+{
+  "scheme": "fors-keccak-research",
+  "source": "# Research Keccak FORS verifier, not SLH-DSA or leanSPHINCS.\n# COUNT, K and A are set by the fixture builder; no signature data is compiled in.\nfrom snark_lib import *\n\nCOUNT = 15\nK = 16\nA = 8\nDS_LEAF = 10717549832351364888980182688012062534\nDS_NODE = 10717549832351364870752428345206656838\nDS_ROOT = 10717549832351365148246227383313649478\nDS_MSG = 10717549832351363598144384841756593990\nDS_BATCH = 10717549832351704845394674473036304198\n\n\ndef canonical(word):\n    low = StackBuf(1)\n    hint_f192_limbs(low, word)\n    high = (word + low[0]) / f192(0, 1, 0)\n    assert_in_k(low[0], high)\n    return\n\n\ndef bits128(word):\n    bits = StackBuf(128)\n    hint_decompose_bits(bits, word, 128)\n    value = 0\n    for j in unroll(0, 64):\n        assert bits[j] * (bits[j] + 1) == 0\n        value = value + bits[j] * const(2 ** j)\n    for j in unroll(64, 128):\n        assert bits[j] * (bits[j] + 1) == 0\n        value = value + bits[j] * const(2 ** (j - 64)) * f192(0, 1, 0)\n    assert value == word\n    return bits\n\n\ndef verify_one(claims, base):\n    header = StackBuf(6)\n    hint_witness(header, \"fors_header\")\n    for j in unroll(0, 6):\n        canonical(header[j])\n        claims[base * GEN ** j] = header[j]\n\n    # Header = public seed || forest public root || 32-byte message.\n    md = StackBuf(2)\n    keccak_cells([DS_MSG, header[0], header[1], header[2], header[3], header[4], header[5]], md)\n    digest_bits = bits128(md[0])\n    roots = StackBuf(3 + 2 * K)\n    roots[0] = DS_ROOT\n    roots[1] = header[0]\n    roots[2] = header[1]\n\n    for tree in unroll(0, K):\n        secret = StackBuf(2)\n        hint_witness(secret, \"fors_secret\")\n        canonical(secret[0])\n        canonical(secret[1])\n        index = 0\n        for bit in unroll(0, A):\n            index = index + digest_bits[tree * A + bit] * const(2 ** bit)\n        node = StackBuf(2)\n        # Address = LE32(tree) || LE32(height) || LE64(index).\n        address = const(tree) + f192(0, 1, 0) * index\n        keccak_cells([DS_LEAF, header[0], header[1], address, secret[0], secret[1]], node)\n\n        for height in unroll(0, A):\n            sibling = StackBuf(2)\n            hint_witness(sibling, \"fors_auth\")\n            canonical(sibling[0])\n            canonical(sibling[1])\n            side = digest_bits[tree * A + height]\n            delta0 = side * (node[0] + sibling[0])\n            delta1 = side * (node[1] + sibling[1])\n            left0 = node[0] + delta0\n            left1 = node[1] + delta1\n            right0 = sibling[0] + delta0\n            right1 = sibling[1] + delta1\n            parent_index = 0\n            for bit in unroll(height + 1, A):\n                parent_index = parent_index + digest_bits[tree * A + bit] * const(2 ** (bit - height - 1))\n            parent_address = const(tree + (height + 1) * 2 ** 32) + f192(0, 1, 0) * parent_index\n            parent = StackBuf(2)\n            keccak_cells([DS_NODE, header[0], header[1], parent_address, left0, left1, right0, right1], parent)\n            node = parent\n        roots[3 + 2 * tree] = node[0]\n        roots[4 + 2 * tree] = node[1]\n\n    # Equality against the claimed public root authenticates the forest.\n    keccak_cells(roots, header[2:4])\n    return\n\n\ndef main():\n    claims = HeapBuf(1 + 6 * COUNT)\n    claims[1] = DS_BATCH\n    for i in mul_range(1, GEN ** COUNT):\n        verify_one(claims, GEN * i ** 6)\n    digest = StackBuf(2)\n    keccak_cells(claims[0:1 + 6 * COUNT], digest)\n    public = GEN ** 0\n    public[1] = digest[0]\n    public[GEN] = digest[1]\n    return\n",
+  "public_input": [
+    [
+      7336817990930595837,
+      16188932841087651978,
+      0
+    ],
+    [
+      17615178766762488780,
+      11884739933762945678,
+      0
+    ]
+  ],
+  "metadata": {
+    "count": 15,
+    "fixture_generation_s": 0.010592416999998022,
+    "parameters": {
+      "a": 8,
+      "k": 16,
+      "n": 32
+    },
+    "public_key_bytes": 960,
+    "raw_key_bytes": 960,
+    "raw_signature_bytes": 69120,
+    "signature_bytes": 69120
+  }
+}

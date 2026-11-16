@@ -1,6 +1,0 @@
-falcon N=30 sample-0: prove leaf 1/3
-falcon N=30 sample-0: prove leaf 2/3
-falcon N=30 sample-0: prove leaf 3/3
-falcon N=30 sample-0: first-level merge 1/2
-falcon N=30 sample-0: first-level merge 2/2
-falcon N=30 sample-0: level 1 merge 1/1

@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Add Raccoon curves to the three existing schemes from verified reports only.
-
-No prover is run. Missing Raccoon studies cause an error before any output is
-written. Existing article figures and raw measurements remain unchanged.
-"""
+"""Validate retained measurements and regenerate the five article plots."""
 from __future__ import annotations
 
 import argparse
@@ -223,12 +219,6 @@ def trees(directory, frozen, old, schemes=("raccoon",)):
                 require(len(leaves) == actual and len(merges) == report["merge_count"] == slots - 1
                         and all(leaf["signatures"] == leaf_size for leaf in leaves),
                         f"Incorrect fresh leaf or merge work: {run}")
-                for kind, reports in (("leaf", leaves), ("merge", merges)):
-                    for index, item in enumerate(reports):
-                        proof = run / f"{kind}-{index}.proof"
-                        require(digest(proof) == item["proof_sha256"]
-                                and proof.stat().st_size == item["proof_bytes"],
-                                f"Changed intermediate proof: {proof}")
                 work = sum(p["prove_s"] for p in leaves + merges)
                 require(abs(work - report["total_prove_s"]) < 1e-8,
                         f"Incomplete proving work: {run}")
@@ -364,12 +354,6 @@ def segmented_trees(directory, frozen, old, policy):
             for index, leaf in enumerate(leaves):
                 require(leaf["leaf"] == index and leaf["signature"] == index // 5
                         and leaf["part"] == index % 5, f"Wrong G part coverage: {run}")
-            for kind, items in (("leaf", leaves), ("merge", merges)):
-                for index, item in enumerate(items):
-                    proof = run / f"{kind}-{index}.proof"
-                    require(digest(proof) == item["proof_sha256"]
-                            and proof.stat().st_size == item["proof_bytes"],
-                            f"Changed G intermediate proof: {proof}")
             preparation = sum(report["native_prepare_samples_s"])
             work = preparation + sum(item["prove_s"] for item in leaves + merges)
             require(abs(preparation - report["native_prepare_s"]) < 1e-8
@@ -470,54 +454,6 @@ def aggregate(samples, old, policy):
     return rows
 
 
-def refusal_ledger(directory, frozen):
-    """Retain failed experiments as failures, never as zero-valued curve points."""
-    rows = []
-    for scheme in NEW:
-        for count in range(1, 65):
-            folder = directory / scheme / "capacity"
-            report = read(folder / f"count-{count}.json")
-            complete_command(folder / f"count-{count}.completed.json", frozen["direct_binary_sha256"])
-            require(report["action"] == "measure" and report["status"] == "rejected"
-                    and report["scheme"] == scheme and report["count"] == count
-                    and report["elf_sha256"] == frozen["schemes"][scheme]["elf_sha256"]
-                    and report["leanvm_revision"] == PIN,
-                    f"Unexpected original capacity result: {scheme} {count}")
-            rows.append({"cohort": str(directory.relative_to(ROOT)), "scheme": scheme,
-                         "study": "capacity", "count": count, "status": "rejected",
-                         "error": report["error"], "elf_sha256": report["elf_sha256"],
-                         "proof_produced": False})
-        for count in range(1, 31):
-            folder = directory / scheme / "direct" / f"count-{count}"
-            report = read(folder / "report.json")
-            complete_command(folder / "producer.completed.json", frozen["direct_binary_sha256"])
-            require(report["action"] == "prove" and report["status"] == "rejected"
-                    and "prover_error" in report and report["scheme"] == scheme
-                    and report["count"] == count and report["leanvm_revision"] == PIN
-                    and report["elf_sha256"] == frozen["schemes"][scheme]["elf_sha256"],
-                    f"Missing original actual prover refusal: {folder}")
-            rows.append({"cohort": str(directory.relative_to(ROOT)), "scheme": scheme,
-                         "study": "direct prover", "count": count, "status": "rejected",
-                         "error": report["prover_error"], "elf_sha256": report["elf_sha256"],
-                         "proof_produced": False})
-        for count in COUNTS:
-            for sample in range(3):
-                folder = directory / scheme / "tree-attempts" / f"count-{count}" / f"sample-{sample}"
-                command = read(folder / "preflight.completed.json")
-                error = read(folder / "error.json")
-                args = command["command"]
-                require(command.get("exit_code") != 0 and command.get("aborted") is None
-                        and command["binary_sha256"] == frozen["tree_binary_sha256"]
-                        and error["action"] == "plan" and error["backend_revision"] == PIN
-                        and args[1] == "plan" and args[args.index("--scheme") + 1] == scheme
-                        and args[args.index("--n") + 1] == str(count),
-                        f"Missing original failed fresh tree preflight: {folder}")
-                rows.append({"cohort": str(directory.relative_to(ROOT)), "scheme": scheme,
-                             "study": "tree preflight", "count": count, "sample": sample,
-                             "status": "rejected before proving", "error": error["error"],
-                             "elf_sha256": frozen["schemes"][scheme]["elf_sha256"],
-                             "proof_produced": False})
-    return rows
 
 
 def sampling_policy(directory):
@@ -536,229 +472,12 @@ def sampling_policy(directory):
     return policy
 
 
-def user_stop_ledger(directory, segmented_environment, policy):
-    archive = ROOT / policy["user_stop_archive"]
-    manifest = read(archive / "manifest.json")
-    mapping = read(archive / "archive-mapping.json")
-    stopped = read(archive / "stop-confirmation.json")
-    require(manifest["classification"] == "user_requested_stop"
-            and manifest["proof_capacity_failure"] is False
-            and manifest["resident_memory_failure"] is False
-            and manifest["counted_as_accepted_curve_sample"] is False
-            and manifest["verified_complete_root_exists_for_stopped_sample"] is False
-            and manifest["completed_required_roots_after_user_scope_change"] == 22
-            and manifest["saved_leaf_proofs"] == 7 and manifest["saved_merge_proofs"] == 0
-            and manifest["sample_2_never_started"] is True
-            and stopped["producers_idle"] is True
-            and stopped["no_more_benchmark_authorized"] is True
-            and set(mapping) == set(manifest["files"]) and len(mapping) == 12,
-            "User-stopped attempt misclassified or producers not confirmed idle")
-    for original, expected in manifest["files"].items():
-        entry = mapping[original]
-        path = (archive / entry["archived"]).resolve()
-        require(archive.resolve() in path.parents and entry["sha256"] == expected
-                and digest(path) == expected, f"Changed user-stop evidence: {original}")
-    original_sample = "risc-v/results/" + manifest["original_sample"]
-    record = read(archive / mapping[original_sample + "/report.json"]["archived"])
-    require(record["elf_sha256"] == segmented_environment["elf_sha256"]
-            and record["status"] == "running" and len(record["leaf_reports"]) == 7
-            and not record["merge_reports"] and "root_proof_bytes" not in record
-            and not (ROOT / original_sample).exists()
-            and not (ROOT / original_sample).with_name("sample-2").exists(),
-            "User-stopped partial sample entered the selected measurement cohort")
-    return [{"scheme": "raccoon-g", "count": 100, "sample": 1,
-             "classification": "user requested stop", "saved_partial_leaves": 7,
-             "saved_partial_leaf_prove_s": manifest["saved_partial_leaf_prove_s"],
-             "saved_merges": 0, "complete_root_produced": False,
-             "included_in_successful_medians": False, "proof_capacity_failure": False,
-             "archive": str(archive.relative_to(ROOT)), "archived_files_checked": len(mapping)}]
 
 
-def forecast_rows(directory):
-    """Independently recompute the G70-based forecast, separate from all curves."""
-    forecast = read(directory / "g100-estimate.json")
-    require(forecast["classification"] == "heuristic_estimate_not_a_benchmark_measurement"
-            and forecast["basis_signatures"] == 70 and forecast["target_signatures"] == 100
-            and forecast["basis_and_target_leaf_slots"] == 512
-            and forecast["basis_and_target_merge_count"] == 511
-            and len(forecast["basis"]) == 3, "Wrong independent forecast basis")
-    times, sizes = [], []
-    rows = []
-    for basis in forecast["basis"]:
-        path = ROOT / basis["report"]
-        require(digest(path) == basis["report_sha256"], "Changed forecast basis report")
-        report = read(path)
-        leaf = sum(item["prove_s"] for item in report["leaf_reports"])
-        merge = sum(item["prove_s"] for item in report["merge_reports"])
-        require(abs(leaf - basis["leaf_prove_s"]) < 1e-8
-                and abs(merge - basis["merge_prove_s"]) < 1e-8
-                and report["native_prepare_s"] == basis["native_prepare_s"]
-                and report["root_core_bytes"] == basis["root_core_bytes"], "Forecast component mismatch")
-        estimate = (leaf + report["native_prepare_s"]) * (100 / 70) + merge
-        require(abs(estimate - basis["estimated_100_s"]) < 1e-8, "Wrong forecast formula")
-        times.append(estimate)
-        sizes.append(report["root_core_bytes"])
-        rows.append({"classification": "heuristic estimate, not a benchmark", "basis_sample": basis["sample"],
-                     "basis_count": 70, "target_count": 100, "estimated_prove_s": estimate,
-                     "estimated_receipt_bytes": report["root_core_bytes"] + 60 + 6400,
-                     "included_in_measured_curves": False})
-    require(abs(statistics.median(times) - forecast["estimated_time_s"]["median"]) < 1e-8
-            and statistics.median(sizes) + 60 + 6400 == forecast["estimated_receipt_bytes"],
-            "Wrong forecast summary")
-    actual = forecast["actual_single_run_validation"]
-    require(digest(ROOT / actual["report"]) == actual["report_sha256"]
-            and actual["sample_count"] == 1, "Changed independent G100 validation report")
-    actual_report = read(ROOT / actual["report"])
-    require(abs(actual_report["total_prove_s"] - actual["actual_prove_s"]) < 1e-8
-            and actual_report["root_proof_bytes"] == actual["actual_receipt_bytes"],
-            "G100 actual and forecast validation disagree")
-    return rows, forecast
 
 
-def resource_stop_ledger(directory, segmented_environment, standard_directory, segmented_directory, policy):
-    """Verify archived operational failures without turning them into samples.
-
-    Called only during final figure generation, after timed producers are idle.
-    Original paths can now hold a fresh retry, so hashes use archive-mapping.json.
-    """
-    transition = read(directory / "guard-policy-transition.json")
-    require(transition["old_operational_rss_stop_bytes"] == 19 * 2**30
-            and transition["new_operational_rss_stop_bytes"] == 20 * 2**30
-            and transition["backend_committed_words_cap_unchanged"] == 2**28
-            and transition["timeout_s_unchanged"] == 21600
-            and transition["native_binaries_and_guest_elfs_unchanged"] is True
-            and transition["allocator_policy_unchanged"] == PURGING_POLICY
-            and transition["failed_attempt_reused"] is False,
-            "Unexpected operational-guard transition")
-    coordinator_hash = digest(ROOT / "risc-v/scripts/raccoon_full_matrix.py")
-    require(coordinator_hash == transition["coordinator_sha256_unchanged"],
-            "Coordinator changed across the operational-guard transition")
-    rows, archives = [], []
-    for manifest_path in sorted((directory / "resource-stops").glob("*/manifest.json")):
-        archive = manifest_path.parent
-        manifest = read(manifest_path)
-        mapping = read(archive / "archive-mapping.json")
-        require(manifest["classification"] == "operational_resident_memory_limit"
-                and manifest["proof_capacity_failure"] is False
-                and manifest["counted_as_accepted_curve_sample"] is False
-                and manifest["verified_complete_root_exists"] is False
-                and manifest["partial_proof_reuse_allowed"] is False
-                and manifest["backend_committed_words_cap_unchanged"] == 2**28
-                and manifest["coordinator_sha256"] == coordinator_hash
-                and manifest["operational_stop_bytes"] == 19 * 2**30
-                and set(mapping) == set(manifest["files"]),
-                f"Wrong operational-stop classification or archive mapping: {archive}")
-        for original_path, expected in manifest["files"].items():
-            entry = mapping[original_path]
-            archived_path = (archive / entry["archived"]).resolve()
-            require(archive.resolve() in archived_path.parents and entry["sha256"] == expected
-                    and digest(archived_path) == expected,
-                    f"Changed archived interrupted-attempt evidence: {original_path}")
-        original_sample = "risc-v/results/" + manifest["original_sample"]
-        report_path = original_sample + "/report.json"
-        command_path = original_sample + "-producer.completed.json"
-        report = read(archive / mapping[report_path]["archived"])
-        command = read(archive / mapping[command_path]["archived"])
-        require(command["aborted"] == "resident_memory_limit" and command["exit_code"] != 0
-                and command["rss_limit_bytes"] == manifest["operational_stop_bytes"]
-                and command["binary_sha256"] == segmented_environment["binary_sha256"]
-                and report["elf_sha256"] == segmented_environment["elf_sha256"]
-                and report["status"] == "running" and report["signatures"] == 70
-                and report["sample"] == "sample-2"
-                and len(report["leaf_reports"]) == manifest["saved_leaf_proofs"] == 71
-                and len(report["merge_reports"]) == manifest["saved_merge_proofs"] == 0
-                and "root_proof_bytes" not in report and "peak_rss_bytes" not in report,
-                f"Interrupted attempt was misclassified as a complete proof: {archive}")
-        replacement = read(ROOT / original_sample / "pipeline-completed.json")
-        replacement_command = read(ROOT / (original_sample + "-producer.completed.json"))
-        require(replacement["verified_public_only"] is True
-                and replacement["binary_sha256"] == command["binary_sha256"]
-                and replacement["elf_sha256"] == report["elf_sha256"]
-                and replacement_command["rss_limit_bytes"] == 20 * 2**30
-                and datetime.fromisoformat(replacement_command["started_utc"])
-                > datetime.fromisoformat(command["finished_utc"]),
-                "The interrupted pipeline lacks its separately verified fresh replacement")
-        stopped_path = "risc-v/results/raccoon-full-matrix/progress.json"
-        stopped = read(archive / mapping[stopped_path]["archived"])
-        previous_samples = stopped["completed_samples"]
-        require(len(previous_samples) == manifest["completed_requested_pipelines"]
-                == transition["completed_requested_samples_to_preserve"] == 17,
-                "Wrong number of previously completed pipelines at the operating stop")
-        for previous in previous_samples:
-            if previous["scheme"] == "raccoon":
-                previous_folder = standard_directory / f"raccoon/trees/count-{previous['count']}"
-            else:
-                require(previous["scheme"] == "raccoon-g", "Unknown preserved scheme")
-                previous_folder = segmented_directory / f"count-{previous['count']}"
-            previous_report = read(previous_folder / f"sample-{previous['sample']}/report.json")
-            require(previous_report["root_proof_sha256"] == previous["root_proof_sha256"]
-                    and previous_report["statement_sha256"] == previous["statement_sha256"]
-                    and previous_report["elf_sha256"] == previous["elf_sha256"]
-                    and previous_report["root_proof_bytes"] == previous["root_proof_bytes"]
-                    and abs(previous_report["total_prove_s"] - previous["total_prove_s"]) < 1e-8,
-                    "A completed sample changed after the operational stop")
-        rows.append({"scheme": "raccoon-g", "count": 70, "sample": 2,
-                     "classification": "operational resident-memory stop",
-                     "elapsed_s": command["process_elapsed_s"],
-                     "sampled_rss_stop_target_bytes": command["rss_limit_bytes"],
-                     "new_sampled_rss_stop_target_bytes": transition["new_operational_rss_stop_bytes"],
-                     "measured_failed_peak_rss_bytes": None,
-                     "saved_partial_leaves": len(report["leaf_reports"]), "saved_merges": 0,
-                     "complete_root_produced": False, "included_in_successful_medians": False,
-                     "partial_proof_reuse_allowed": False,
-                     "backend_committed_words_cap": 2**28,
-                     "archive": str(archive.relative_to(ROOT)),
-                     "archived_files_checked": len(mapping)})
-        archives.append(str(archive.relative_to(ROOT)))
-    require(len(rows) == 1 and rows[0]["archived_files_checked"] == 77,
-            "Expected the disclosed single interrupted G70 attempt with 77 archived files")
-    guard_counts = {19 * 2**30: 0, 20 * 2**30: 0}
-    for scheme, base in (("raccoon", standard_directory / "raccoon/trees"),
-                         ("raccoon-g", segmented_directory)):
-        for count in COUNTS:
-            for sample in policy["expected_samples"][scheme][str(count)]:
-                command = read(base / f"count-{count}/sample-{sample}-producer.completed.json")
-                require(command["rss_limit_bytes"] in guard_counts
-                        and command["aborted"] is None and command["exit_code"] == 0,
-                        f"Unexpected completed-pipeline operating guard: {scheme} {count} {sample}")
-                guard_counts[command["rss_limit_bytes"]] += 1
-    require(guard_counts == {19 * 2**30: 17, 20 * 2**30: 5},
-            "Completed pipeline guards do not match the disclosed transition")
-    return rows, {"transition": str((directory / "guard-policy-transition.json").relative_to(ROOT)),
-                  "archives": archives, "interrupted_attempts": len(rows),
-                  "initial_sampled_rss_target_bytes": 19 * 2**30,
-                  "resumed_sampled_rss_target_bytes": 20 * 2**30,
-                  "completed_pipelines_at_initial_target": 17,
-                  "completed_pipelines_at_resumed_target": 5,
-                  "previously_completed_sample_hashes_and_proving_totals_preserved": True,
-                  "failed_peak_rss_recorded": False,
-                  "effect_on_curves": "No interrupted elapsed time, partial-proof size or partial leaf count enters a successful curve or median"}
 
 
-def capacity_comparison(standard_directory, segmented_directory, original):
-    diagnostic = read(ROOT / "risc-v/experiments/raccoon-fit/diagnostic-summary.json")
-    require(diagnostic["backend_revision"] == PIN and diagnostic["cap_words"] == 2**28,
-            "Wrong raw-layout diagnostic backend or cap")
-    rows = []
-    for scheme, key in (("raccoon", "raccoon"), ("raccoon-g", "raccoong")):
-        item = diagnostic["records"][key]
-        require(item["elf_sha256"] == original["schemes"][scheme]["elf_sha256"]
-                and item["production_measure"]["accepted"] is False
-                and item["committed_words"] > 2**28,
-                "Uncapped diagnostic does not match the refused production guest")
-        rows.append({"label": "Original Raccoon whole" if scheme == "raccoon" else "Original G whole",
-                     "scope": "Uncapped layout diagnostic; production refused", "scheme": scheme,
-                     "committed_words": item["committed_words"], "diagnostic": 1})
-    direct = read(standard_directory / "raccoon/direct/count-1/report.json")
-    partial = read(segmented_directory / "count-10/sample-0/report.json")["leaf_reports"][0]
-    rows.insert(1, {"label": "Selected Raccoon whole", "scope": "Actual verified whole-signature proof",
-                    "scheme": "raccoon", "committed_words": direct["execution"]["committed_words"], "diagnostic": 0})
-    rows.append({"label": "Selected G two-row part", "scope": "Actual verified partial proof; five parts per signature",
-                 "scheme": "raccoon-g", "committed_words": partial["execution"]["committed_words"], "diagnostic": 0})
-    for index, row in enumerate(rows):
-        row["index"] = index
-        row["million_words"] = row["committed_words"] / 1e6
-    return rows
 
 
 def colors(document):
@@ -818,11 +537,13 @@ def tree_document(rows, verification=False):
               ("public_processing_ms", "Public processing (ms)",
                r"\shortstack{Preparing the public statement\\[2pt]\footnotesize $T_{\text{public processing}}$ (all keys and messages)}")] if verification else [
               ("prove_s", "Proving work (s)", "Fresh leaves and merges"),
-              ("proof_kib", "Complete aggregate (KiB)", "Serialized aggregate proof")]
+              ("proof_kib", "Complete aggregate (KiB)", "Serialized aggregate proof"),
+              ("rss_gib", "Peak process RSS (GiB)", "Prover memory")]
     axes = []
     for panel, (field, ylabel, title) in enumerate(panels):
-        scale = "ymin=0," if field == "proof_kib" else "ymode=log,log basis y=10,"
-        position = (8.6 * (panel % 2), -7.2 * (panel // 2))
+        scale = "ymin=0," if field in ("proof_kib", "rss_gib") else "ymode=log,log basis y=10,"
+        position = (4.3, -5.8) if not verification and panel == 2 else (
+            8.6 * (panel % 2), -7.2 * (panel // 2))
         axes.append("\\begin{axis}["
             f"at={{({position[0]}cm,{position[1]}cm)}},width=7.1cm,height=5.3cm,title={{{title}}},ylabel={{{ylabel}}},"
             + scale + r"xlabel={Distinct signatures},xmin=5,xmax=105,xtick={10,30,70,100},grid=major,"
@@ -866,35 +587,6 @@ AXES
         "FORS (leanISA + Keccak)", "FORS (leanISA)")
 
 
-def capacity_document(rows):
-    labels = (r"{Raccoon whole\\original port},{Raccoon whole\\selected port},"
-              r"{G whole\\original port},{G two-row part\\selected port}")
-    plots = []
-    for row in rows:
-        color = "raccoonpurple" if row["scheme"] == "raccoon" else "raccoonggold"
-        pattern = f",pattern=north east lines,pattern color={color}" if row["diagnostic"] else ""
-        plots.append(f"\\addplot+[bar shift=0pt,draw={color},fill={color}!65{pattern}] coordinates {{({row['index']},{row['million_words']:.9f})}};")
-    return colors(r"""\documentclass[tikz,border=5pt]{standalone}
-\usepackage{pgfplots}
-\usetikzlibrary{patterns}
-\pgfplotsset{compat=1.18}
-\begin{document}
-\begin{tikzpicture}
-\begin{axis}[width=15.7cm,height=6cm,ybar,bar width=25pt,ymin=0,
-ylabel={Committed witness words (millions)},
-xtick={0,1,2,3},xticklabels={LABELS},x tick label style={font=\small,align=center},
-xmin=-0.6,xmax=3.6,grid=major,grid style={gray!15},scaled y ticks=false,
-tick label style={font=\small},label style={font=\small}]
-PLOTS
-\addplot[sharp plot,gray,dashed,no marks,forget plot] coordinates {(-0.6,268.435456) (3.6,268.435456)};
-\node[font=\scriptsize,anchor=south east] at (axis cs:3.5,268.435456) {$2^{28}$ production cap};
-\end{axis}
-\node[font=\scriptsize,align=center,anchor=north] at (7.85cm,-1.45cm)
-{Hatched bars: uncapped layout diagnostics, rejected by production. Solid bars: actual verified proof layouts.\\
-The G partial leaf checks two rows; a complete signature requires five linked leaves.};
-\end{tikzpicture}
-\end{document}
-""".replace("LABELS", labels).replace("PLOTS", "\n".join(plots)))
 
 
 def main():
@@ -903,37 +595,22 @@ def main():
                         default=ROOT / "risc-v/results/raccoon-runtime-study")
     parser.add_argument("--segmented-study", type=Path,
                         default=ROOT / "risc-v/results/raccoong-segmented-uniform-trees")
-    parser.add_argument("--reference-study", type=Path,
-                        default=ROOT / "risc-v/results/raccoon-study")
     parser.add_argument("--matrix-control", type=Path,
                         default=ROOT / "risc-v/results/raccoon-full-matrix")
-    parser.add_argument("--output", type=Path, default=ROOT / "results/mine/raccoon-figures")
+    parser.add_argument("--output", type=Path, default=ROOT / "build/figures")
     parser.add_argument("--render", action="store_true")
     args = parser.parse_args()
     standard, segmented = args.standard_study.resolve(), args.segmented_study.resolve()
-    reference, output = args.reference_study.resolve(), args.output.resolve()
-    require(output != ROOT / "results/mine/figures", "Use an additive output directory")
-    require(not output.exists(), "Choose a new output directory; existing figures are preserved")
-    original_directory = ROOT / "results/mine/figures"
-    original_provenance = read(original_directory / "provenance.json")
-    for source, expected in original_provenance["source_sha256"].items():
-        require(digest(ROOT / source) == expected, f"An original three-scheme input changed: {source}")
-    original_snapshot = {str(path.relative_to(ROOT)): digest(path)
-                         for path in original_directory.iterdir() if path.is_file()}
+    output = args.output.resolve()
+    require(not output.exists(), "Choose a new output directory")
     frozen = environment(standard, selected=True)
     segmented_environment = environment(segmented, segmented=True, selected=True)
-    reference_environment = environment(reference)
     old = module("mine_original_figures", ROOT / "articles/scripts/mine_figures.py")
     helper = module("raccoon_plot_helper", ROOT / "risc-v/scripts/figures.py")
     policy = sampling_policy(args.matrix_control.resolve())
     new_direct = direct(standard, frozen, old)
     _, standard_samples = trees(standard, frozen, old)
     segmented_samples, segmented_raw_timers = segmented_trees(segmented, segmented_environment, old, policy)
-    failures = refusal_ledger(reference, reference_environment)
-    resource_stops, guard_history = resource_stop_ledger(args.matrix_control.resolve(), segmented_environment,
-                                                        standard, segmented, policy)
-    user_stops = user_stop_ledger(args.matrix_control.resolve(), segmented_environment, policy)
-    estimates, forecast = forecast_rows(args.matrix_control.resolve())
     direct_rows = old.direct() + new_direct
     direct_rows.sort(key=lambda row: (list(SCHEMES).index(row["scheme"]), row["count"]))
     _, rv_samples = old.riscv_trees()
@@ -943,7 +620,6 @@ def main():
     tree_samples = regular_samples + segmented_samples
     tree_rows = aggregate(tree_samples, old, policy)
     require(len(tree_samples) == 58 and len(tree_rows) == 20, "Wrong authorized curve/sample count")
-    capacity = capacity_comparison(standard, segmented, reference_environment)
     SOURCES.update(old.SOURCES)
     helper.SCHEMES = {scheme: label for scheme, label in SCHEMES.items()
                       if any(row["scheme"] == scheme for row in direct_rows)}
@@ -953,11 +629,6 @@ def main():
     old.write_csv(output / "recursive-trees.csv", tree_rows)
     old.write_csv(output / "recursive-tree-samples.csv", tree_samples)
     old.write_csv(output / "verification-raw-timers.csv", raw_timers)
-    old.write_csv(output / "refused-experiments.csv", failures)
-    old.write_csv(output / "resource-stops.csv", resource_stops)
-    old.write_csv(output / "user-stops.csv", user_stops)
-    old.write_csv(output / "g100-estimate.csv", estimates)
-    old.write_csv(output / "one-signature-witness-layouts.csv", capacity)
     for scheme in SCHEMES:
         selected_direct = [r for r in direct_rows if r["scheme"] == scheme]
         if selected_direct:
@@ -1000,7 +671,11 @@ def main():
         documents["figure-1-batching"], documents["figure-2-verification-memory"])
     documents["figure-4-recursive-trees"] = tree_document(tree_rows)
     documents["figure-5-tree-verification"] = tree_document(tree_rows, verification=True)
-    documents["figure-6-witness-layouts"] = capacity_document(capacity)
+    # Publish only the five experimental plots used by the article.
+    documents = {name: documents[name] for name in (
+        "figure-prover-overview", "figure-3-capacity-efficiency",
+        "figure-direct-batch-verification", "figure-4-recursive-trees",
+        "figure-5-tree-verification")}
     cache = output / ".tectonic-cache"
     if args.render:
         helper.prepare_tex_cache(cache)
@@ -1011,65 +686,27 @@ def main():
             helper.render(tex, cache)
     for source in (Path(__file__), ROOT / "articles/scripts/mine_figures.py", ROOT / "risc-v/scripts/figures.py"):
         digest(source)
-    require(all(digest(ROOT / source) == expected for source, expected in original_snapshot.items()),
-            "Original three-scheme figure artifacts changed during additive generation")
     (output / "provenance.json").write_text(json.dumps({
-        "schema": 2, "backend_revision": PIN, "schemes": list(SCHEMES),
-        "guest_identities": {"raccoon": frozen["schemes"]["raccoon"], "raccoon-g": {
-            key: segmented_environment[key] for key in
-            ("elf", "elf_sha256", "guest_manifest", "guest_manifest_sha256", "profile")}},
-        "selected_standard_cohort": str(standard.relative_to(ROOT)),
-        "selected_segmented_G_cohort": str(segmented.relative_to(ROOT)),
-        "original_refusal_cohort": str(reference.relative_to(ROOT)),
-        "original_three_scheme_artifact_snapshot": original_snapshot,
+        "schema": 3, "backend_revision": PIN, "schemes": list(SCHEMES),
+        "source_sha256": SOURCES,
         "direct_measurements": len(direct_rows),
-        "recursive_tree_measurements": len(tree_rows), "source_sha256": SOURCES,
-        "policy": "Actual verified measurements only; direct lines connect measured points. Three fresh tree pipelines per scheme/count except user-authorized G100 with one complete measured pipeline, hollow marker and dashed link. No forecast enters measured curves.",
+        "recursive_tree_measurements": len(tree_rows),
+        "fresh_tree_pipelines": len(tree_samples),
         "sampling_policy": policy,
-        "G100_independent_forecast": forecast,
-        "user_stop_policy": "The user stopped further G100 proving after one complete measured pipeline. The next partial attempt is archived separately and excluded; sample 2 never started.",
-        "refusal_policy": "Original monolithic capacity refusals, actual prover refusals and failed fresh tree preflights are retained separately; none is a zero-valued curve point.",
-        "operational_guard_history": guard_history,
-        "operational_stop_policy": "A sampled process-RSS stop at a 19 GiB target interrupted one G70 attempt after 71 partial leaves and no root. Its 77 archived files are checked through archive-mapping.json. That entire attempt is excluded from successful medians; the replacement is a complete fresh pipeline under a 20 GiB target. These are sampled operating targets, not hard allocation bounds or a measured failed peak. Source, ELFs, proof rate, workers, allocator and backend witness cap are unchanged.",
-        "direct_scope": "Standard Raccoon uses its measured optimized whole-signature port. Monolithic G has no accepted direct point. Cold pilots and nonuniform segmented candidates are excluded.",
-        "segmented_G_scope": "Five fresh two-row partial leaves per original signature, all native W/D/advice preparation charged, every merge charged, complete RGSTK001 receipt with 60+64*N auxiliary bytes. Final row is repeated and charged.",
-        "segmented_G_assumptions": "Common-witness composition is conditional on extraction and joint commitment binding as stated in the implementation specification/review; no formal composition theorem or full-paper conformance is claimed.",
-        "verification": "Complete independent public-only consumers; every folded claim settled and every intended public pair processed. G additionally derives all five part outputs from one untrusted 64-byte binding per original pair.",
-        "verification_end_to_end_cold": "Old four: separately measured public_claim_derivation_s plus cold_complete_verify_s. G: recorded cold_complete_verify_s already includes public_configuration_prepare_s and first complete call with D-derived outputs.",
-        "verification_end_to_end_prepared": "Old four: explicitly derived sums of public_claim_derivation_s and median complete proof verification. G: measured complete-call samples already include envelope and D-derived outputs; only public_configuration_prepare_s is added. Independently timed component medians need not sum exactly to a complete-call median.",
-        "verification_core": "Native tree verification with intended outputs prepared. Every plotted proof verifier checks the root and all terminal obligations. G prepared_core_verify_s still calls full Tree::verify, excluding only RGSTK001 envelope/public-output derivation. FORS starts from a decoded envelope; native RISC-V timers include TreeProof decoding.",
-        "verification_public_processing": "Old four use public_claim_derivation_s. G adds public_configuration_prepare_s and public_claim_derivation_s; this standalone timer includes envelope and D-derived outputs. It is not subtracted from the complete-call samples.",
-        "allocator_policy": "New standard and segmented G cohorts set _RJEM_MALLOC_CONF=dirty_decay_ms:0,muzzy_decay_ms:0; old three schemes retain their original recorded policies. Implementation timings are not controlled primitive-only comparisons.",
-        "capacity_comparison": "Over-cap whole-guest bars use clearly identified uncapped layout diagnostics crosschecked against production refusals. Fitting bars use actual verified whole/partial proof layouts; a G part is not a whole signature.",
-        "rendering": "LaTeX/PGFPlots, PNG rasterized from the same PDF", "rendered": args.render,
+        "policy": "Measured results only; three fresh tree pipelines per point except Raccoon-G at 100 signatures (one). No estimates enter curves.",
+        "validation_scope": "Frozen measured sources, final receipt and public-statement hashes, complete receiver records, all component timings and G part coverage. Intermediate proof files are omitted; their hashes and sizes remain in the reports. This command does not rerun cryptographic verification.",
+        "rendered": args.render,
     }, indent=2) + "\n")
     (output / "validation.json").write_text(json.dumps({
-        "schema": 1, "passed": True,
-        "scope": "Figure-input consistency, complete production receiver records and retained proof/statement hashes; not an independent proof-system audit",
-        "direct_measurements": len(direct_rows), "tree_measurements": len(tree_rows),
-        "fresh_tree_pipelines": len(tree_samples), "tree_signatures": list(COUNTS),
-        "samples_per_scheme_count": "3 except Raccoon-G at 100: 1 complete producer pipeline", "new_direct_schemes": ["raccoon"],
-        "G_direct_point_inferred": False,
-        "original_refusal_ledger_rows": len(failures),
-        "operational_resource_stop_rows": len(resource_stops),
-        "user_requested_stop_rows": len(user_stops),
-        "user_stop_archive_hashes_match": True,
-        "G100_forecast_independently_recomputed_and_excluded_from_curves": True,
-        "operational_stop_archive_hashes_match": True,
-        "operational_stops_excluded_from_successful_curves": True,
-        "failed_attempt_peak_rss_inferred": False,
-        "all_new_frozen_sources_and_guest_identities_match": True,
-        "original_three_scheme_279_inputs_and_artifacts_unchanged": True,
-        "all_new_saved_proofs_match_producer_and_public_only_receiver": True,
-        "every_G_part_and_common_binding_covered": True,
-        "G_native_prepare_and_all_partial_merge_proofs_charged": True,
-        "G_complete_wire_header_core_and_64_byte_bindings_counted": True,
-        "verification_component_scopes_recorded": True,
-        "input_files_hashed": len(SOURCES), "PDFs_rendered": args.render,
-        "visual_review": "Pending separate rendered-image inspection" if args.render else "Not rendered",
+        "passed": True, "direct_measurements": len(direct_rows),
+        "tree_measurements": len(tree_rows), "fresh_tree_pipelines": len(tree_samples),
+        "final_receipts_checked": True, "intermediate_proofs_distributed": False,
+        "cryptographic_verification_rerun": False,
     }, indent=2) + "\n")
     print(json.dumps({"output": str(output), "direct_points": len(direct_rows),
                       "tree_points": len(tree_rows), "rendered": args.render}))
+
+
 
 
 if __name__ == "__main__":

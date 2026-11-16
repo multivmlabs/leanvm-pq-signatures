@@ -1,8 +1,0 @@
-{
-  "status": "failed",
-  "scheme": "ethdilithium",
-  "count": 2,
-  "action": "prove",
-  "returncode": 1,
-  "error": "error: prove: WitnessOutOfRange { log_committed: 29 }"
-}

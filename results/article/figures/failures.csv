@@ -1,9 +1,0 @@
-study,scheme,count,error,report
-direct,ethdilithium,2,"error: prove: WitnessOutOfRange { log_committed: 29 }
-",/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/article/direct/ethdilithium-2.failed.json
-direct,ethfalcon,6,"error: prove: WitnessOutOfRange { log_committed: 29 }
-",/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/article/direct/ethfalcon-6.failed.json
-direct,falcon,7,"error: prove: WitnessOutOfRange { log_committed: 29 }
-",/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/article/direct/falcon-7.failed.json
-direct,mldsa,2,"error: prove: WitnessOutOfRange { log_committed: 29 }
-",/Users/manuelbsantos/Documents/Github/work/multivm-labs/aggregation/eip-8288/results/article/direct/mldsa-2.failed.json

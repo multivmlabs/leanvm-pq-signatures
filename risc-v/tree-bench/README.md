@@ -13,11 +13,7 @@ did not satisfy that condition; choosing ten avoids those shape differences
 without selecting a favourable subset of records.
 
 The runner supports several leaf sizes. Its ML-DSA default is five; the article
-explicitly requests `--leaf-size 2`. A preliminary ten-signature pilot with
-five-signature leaves took 56.999 s, versus 8.053 s with two-signature leaves,
-including every merge. Both are actual verified roots, kept separately under
-`results/trees/pilot/`. This comparison selected a smaller operating point
-before the three-sample matrix; it does not weaken the signature verification.
+explicitly requests `--leaf-size 2`. The smaller ML-DSA leaf is the measured article operating point.
 
 The native positional tree requires a power-of-two number of leaf slots.
 Actual leaves are padded to the next power of two, at least two, by copying the
@@ -47,10 +43,10 @@ CARGO_HOME="$PWD/.cache/riscv-cargo" \
  cargo +stable build --release --offline --manifest-path risc-v/tree-bench/Cargo.toml
 
 .cache/riscv-host-target/release/riscv-pq-treebench plan \
- --scheme falcon --n 10 --outdir risc-v/results/trees/falcon-10 --threads 8 --rate 1
+ --scheme falcon --n 10 --outdir build/trees/falcon-10 --threads 8 --rate 1
 
 .cache/riscv-host-target/release/riscv-pq-treebench prove \
- --scheme falcon --n 10 --outdir risc-v/results/trees/falcon-10 \
+ --scheme falcon --n 10 --outdir build/trees/falcon-10 \
  --sample sample-0 --threads 8 --rate 1
 
 # All eight configurations, three fresh producer/receiver pairs each.
@@ -71,9 +67,9 @@ an expected hash from an untrusted sender.
 
 ```sh
 .cache/riscv-host-target/release/riscv-pq-treebench verify \
- --outdir risc-v/results/trees/falcon-10/sample-0 \
- --statement risc-v/results/trees/falcon-10/statement.json \
- --proof risc-v/results/trees/falcon-10/sample-0/root.proof \
+ --outdir build/trees/falcon-10/sample-0 \
+ --statement build/trees/falcon-10/statement.json \
+ --proof build/trees/falcon-10/sample-0/root.proof \
  --expect-statement-sha256 "$TRUSTED_STATEMENT_SHA256" \
  --expect-elf-sha256 "$TRUSTED_ELF_SHA256" --threads 8 --controls true
 ```
@@ -82,8 +78,7 @@ The receiver reads no advice, signatures or child proof files. It recomputes
 the outputs from public records, applies the canonical padding, constructs the
 approved tree and invokes complete `Tree::verify`. That call verifies the root
 recursion proof and settles the folded bytecode, image, fixed-polynomial and
-Flock-matrix claims. Unlike the archived leanISA wrapper, it does not send an
-O(E) list of edge obligations for separate checking.
+Flock-matrix claims. The receiver needs only the final receipt and the intended public statement.
 
 The public `LeafShape` API takes a `Stats` value, whose constructor is private.
 The receiver obtains a container by measuring an exit-only local program and
@@ -111,8 +106,7 @@ separate transport.
 
 Each producer invocation is one complete fresh pipeline, without an in-process
 proving warmup. The article's sample matrix uses three new sample directories
-in separate processes for each configuration. Preliminary pilots are retained
-separately and are not in-process warmups or timing-curve samples. No real leaf
+in separate processes for each configuration. Pilots are excluded from the timing curves and omitted from this repository. No real leaf
 or merge proof is cached between pipelines.
 Requested worker counts and the exact backend/guest pins are recorded; the
 upstream pool may add efficiency-core workers.

@@ -1,8 +1,0 @@
-KERNEL N=1: 1 warmup + 3 measured proofs
-KERNEL N=1: proved 6802 cycles; saved proof 235176 bytes; fresh verification passed
-KERNEL N=8: 1 warmup + 3 measured proofs
-KERNEL N=8: proved 54311 cycles; saved proof 248880 bytes; fresh verification passed
-KERNEL N=64: 1 warmup + 3 measured proofs
-KERNEL N=64: proved 434383 cycles; saved proof 294648 bytes; fresh verification passed
-KERNEL N=256: 1 warmup + 3 measured proofs
-KERNEL N=256: proved 1737487 cycles; saved proof 321808 bytes; fresh verification passed

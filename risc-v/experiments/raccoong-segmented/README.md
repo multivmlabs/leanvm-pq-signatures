@@ -31,11 +31,6 @@ The unnormalized candidate used 226,492,856 words per part for the first signatu
 An exhaustive check of all 500 parts from the unchanged 100-signature corpus
 found one part, signature three's final part, with a different padded store-table
 height. All parts fit the cap, but that shape difference prevents one native tree.
-The candidate's executable, sources and original build manifest are preserved in
-`nonuniform-two-row.elf`, `nonuniform-two-row-source.zip` and
-`nonuniform-two-row-build-manifest.json`. Its exact identities and all-corpus
-store-count range are in `nonuniform-two-row-manifest.json`.
-
 The uniform guest executes **32768 fixed volatile stores** to an aligned local
 scratch cell after every signature check and public-value commit. The count
 does not depend on any input, and the scratch is never read. This is charged
@@ -49,13 +44,9 @@ function, with no other instruction classes. That part still has the original
 public output and passes production measurement at **234,357,176 words**.
 `review/uniform-padding.json` records this. A fresh production planning pass
 under the final executable checked all 500 parts: every part fits at 234,357,176
-words and has the same padded shape. The plan is retained in
-`risc-v/results/raccoong-segmented-uniform-trees/count-1/plan.json`. These layout
-measurements do not mean that the whole signature fits a direct proof.
-
-The earlier one-row candidate used nine partial leaves and 182,780,344 words per
-leaf on the same input. Its exact ELF, source and measurement identities are
-preserved in `one-row.elf`, `one-row-source.zip` and `one-row-manifest.json`.
+words and has the same padded shape. The selected per-part layouts and complete pipeline measurements are retained in
+`risc-v/results/raccoong-segmented-uniform-trees/`. These layout measurements do
+not mean that the whole signature fits a direct proof.
 
 ## Preparation and host API
 
@@ -116,11 +107,9 @@ CARGO_HOME="$PWD/.cache/riscv-cargo" \
 ```
 
 Proof production and the full public-only receiver are in `runner/`, with the
-approved matrix launcher `matrix.py`. A complete one-signature pilot produced
-five fresh partial leaves and seven merges for eight padded slots. Its separate
-public-only receiver passed; raw reports and proof files are in
-`risc-v/results/raccoong-segmented-uniform-trees/count-1/sample-0/`. That single
-pilot is excluded from the requested three-run 10/30/70/100 curves.
+matrix launcher `matrix.py`. The repository retains the selected 10/30/70/100
+measurements and their final receipts; pilot and intermediate proof files have
+been removed. Use a new output directory when regenerating a tree.
 
 Report five fresh partial leaves per original signature, every merge and padding
 slot, all witness preparation, the complete root plus auxiliary binding bytes,

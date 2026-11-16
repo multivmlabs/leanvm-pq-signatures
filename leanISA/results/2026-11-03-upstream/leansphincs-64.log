@@ -1,9 +1,0 @@
-
-aggregation, 64 leanSPHINCS signatures
-  cycles (VM steps)           : 125,579 = 2^16.938
-    details                   : SET 2^15.016 (26.4%)  XOR 2^14.993 (26.0%)  MUL 2^14.275 (15.8%)  KECCAK 2^14.064 (13.6%)  DEREF 2^13.868 (11.9%)  JUMP 2^12.955 (6.3%)  MEMORY 2^18.869  BYTECODE 2^18.467  TOTAL_COMMITTED 2^22.827
-  proof size                  : 298.5 KiB
-  proving time                : 0.142 s ± 10.0%      peak memory 0.909 GiB
-  per signature               : 451.779 signatures/s
-  verifying                   : 7.011 ms
-  passes                      : 0.149 s  0.138 s  0.138 s

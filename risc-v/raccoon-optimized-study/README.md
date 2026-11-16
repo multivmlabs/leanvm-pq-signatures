@@ -1,5 +1,14 @@
-# Optimized standard Raccoon benchmark runner
+# Measured Raccoon benchmark runners
 
-This version retains the original signature relation and public commitment, but embeds the separately reviewed optimized standard guest. Original failed compact-guest experiments remain under ../results/raccoon-study. Raccoon-G monolithic support stays available for identity/reference; segmented G trees use a separate runner.
+These runners embed the [selected Raccoon-128 guest](../experiments/raccoon-crt32)
+and preserve its full signature relation and public commitment. Monolithic
+Raccoon-G remains a linked identity/reference; its measured trees use the
+[segmented runner](../experiments/raccoong-segmented).
 
-All expensive stages remain serial, source-frozen, rate one and eight requested workers, with complete public-only verification. The original study runner and binaries are unchanged.
+`runtime_study.py` records the explicit Jemalloc page-purging policy, rate one
+and eight requested workers. Proving is serial with a separate complete
+public-only receiver. Source-frozen implementations are unchanged.
+
+See the [reproduction guide](../../docs/reproduce.md) and
+[selected measurements](../results/raccoon-runtime-study). Use a new output
+location for any rerun; historical binaries and temporary proofs are omitted.
